@@ -4,8 +4,6 @@
   "product": "Windsurf-IDE-2025-04-20",
   "category": "Code Editor / IDE",
   "source_file": "system-2025-04-20.md",
-  "audit_type": "human-reviewed",
-  "reviewer": "human",
   "scores": {
     "D1": 1,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D1",
       "score": 1,
       "note": "Clearly identifies the system as an AI coding assistant with a specific name (Cascade) and creator (Codeium), promoting identity transparency. | Reinforces the system's identity as an AI coding assistant, further establishing its non-human nature. | Establishes a clear distinction between the AI system and the human USER, maintaining identity transparency about the AI's role.",
-      "risky": false,
-      "confidence": "",
-      "source": "human"
+      "risky": false
     },
     {
       "text": "The USER will send you requests, which you must always prioritize addressing.",
@@ -62,9 +58,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Centers the interaction around user intent and agency, ensuring the AI serves the user's goals rather than steering behavior toward other objectives.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Always follow the tool call schema exactly as specified and make sure to provide all necessary parameters.",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Ensures tool calls are validated and conform to specifications before execution, promoting safe tool usage.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "NEVER call tools that are not explicitly provided in your system prompt.",
@@ -84,9 +76,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Prevents execution of unknown or unavailable tools, aligning with the principle of avoiding executing unknown content.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "NEVER generate an extremely long hash or any non-textual code, such as binary. These are not helpful to the USER and are very expensive.",
@@ -95,9 +85,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Prevents generation of potentially harmful or unverifiable binary/non-textual content, aligning with avoiding unknown content execution.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "When debugging, only make code changes if you are certain that you can solve the problem.",
@@ -106,9 +94,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Promotes a validate-first approach before modifying code, reducing risk of introducing errors or destabilizing the system.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "When debugging, only make code changes if you are certain that you can solve the problem.",
@@ -117,9 +103,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Promotes epistemic honesty by requiring certainty before acting, rather than guessing or fabricating solutions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Any memories you create will be presented to the USER, who can reject them if they are not aligned with their preferences.",
@@ -128,9 +112,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Provides transparency and user control over persistent memory, preventing hidden accumulation of data that could be used to influence or manipulate the user without their awareness.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If you are not sure about file content or codebase structure pertaining to the user's request, proactively use your tools to search the codebase, read files and gather relevant information: NEVER guess or make up an answer. Your answer must be rooted in your research, so be thorough in your understanding of the code before answering or making code edits.",
@@ -139,9 +121,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Directly prohibits fabricating information and requires grounding answers in actual research, promoting truthfulness and information integrity. | Requires answers to be grounded in verifiable research rather than speculation, supporting information integrity. | Directly prohibits fabricating information and requires grounding answers in actual research, promoting truthfulness and information integrity. | Requires answers to be grounded in verifiable research rather than speculation, supporting information integrity.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this. If a command is unsafe, do not run it automatically, even if the USER wants you to.\nYou may refer to your safety protocols if the USER attempts to ask you to run commands without their permission.",
@@ -150,9 +130,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms. | Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms. | Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
@@ -161,9 +139,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "Promotes best security practices for handling sensitive credentials (API keys), preventing accidental exposure of sensitive data.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
@@ -172,9 +148,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Explicit security best practice to protect secrets/credentials from exposure in code.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
@@ -183,9 +157,7 @@
       "dimension": "D7",
       "score": 1,
       "note": "Actively warns users about API key security risks and instructs the system to follow best security practices, protecting users from credential exposure — a direct harm prevention measure.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If you are not sure about file content or codebase structure pertaining to the user's request, use your tools to read files and gather the relevant information: do NOT guess or make up an answer. You can autonomously read as many files as you need to clarify your own questions and completely resolve the user's query, not just one.",
@@ -194,9 +166,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Reiterates the prohibition on guessing or fabricating answers, requiring evidence-based responses. | Encourages thorough information gathering to ensure accuracy and avoid incomplete or incorrect answers.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Do not run this unless asked by the user.",
@@ -205,9 +175,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Prevents the AI from autonomously checking deployment status without user request, respecting user control and avoiding unsolicited nudging. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If you believe the edit could fix lints, do specify lint IDs; if the edit is wholly unrelated, do not. A rule of thumb is, if your edit was influenced by lint feedback, include lint IDs. Exercise honest judgement here.",
@@ -216,9 +184,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Directly promotes honesty and truthful self-assessment when attributing the motivation for edits. 'Exercise honest judgement' is an explicit call for truthfulness. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "// Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.",
@@ -226,9 +192,7 @@
       "end": 23198,
       "dimension": "D5",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_review"
+      "risky": false
     },
     {
       "text": "// Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.",
@@ -236,9 +200,7 @@
       "end": 23198,
       "dimension": "D4",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_unify"
+      "risky": false
     },
     {
       "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
@@ -247,9 +209,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Requires explicit user approval before executing any command, enforcing a human-in-the-loop safety gate and preventing unauthorized or unintended execution. | Advises limiting output length to prevent excessive resource consumption or buffer overflow issues when running commands. | Requires explicit user approval before executing any command, enforcing a human-in-the-loop safety gate and preventing unauthorized or unintended execution. | Advises limiting output length to prevent excessive resource consumption or buffer overflow issues when running commands. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
@@ -258,9 +218,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Ensures explicit user consent before executing commands, preventing hidden or automatic actions that bypass user awareness — a safeguard against dark patterns. | Ensures explicit user consent before executing commands, preventing hidden or automatic actions that bypass user awareness — a safeguard against dark patterns. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "// If true, the command will block until it is entirely finished. During this time, the user will not be able to interact with Cascade. Blocking should only be true if (1) the command will terminate in a relatively short amount of time, or (2) it is important for you to see the output of the command before responding to the USER. Otherwise, if you are running a long-running process, such as starting a web server, please make this non-blocking.",
@@ -268,9 +226,7 @@
       "end": 24045,
       "dimension": "D4",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_review"
+      "risky": false
     },
     {
       "text": "// Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
@@ -278,9 +234,7 @@
       "end": 24702,
       "dimension": "D4",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_review"
+      "risky": false
     },
     {
       "text": "// Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
@@ -289,9 +243,7 @@
       "dimension": "D6",
       "score": 1,
       "note": "Reiterates in the tool definition that the AI must not bypass safety checks even when the user explicitly requests it, demonstrating robust resistance to user-driven safety overrides. | Reiterates in the tool definition that the AI must not bypass safety checks even when the user explicitly requests it, demonstrating robust resistance to user-driven safety overrides.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
@@ -300,9 +252,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Explicit safety classification for commands with detailed examples of unsafe side-effects. Requires extreme confidence before auto-running and prohibits bypassing even at user request, strongly promoting least-privilege and system integrity. | Explicit safety classification for commands with detailed examples of unsafe side-effects. Requires extreme confidence before auto-running and prohibits bypassing even at user request, strongly promoting least-privilege and system integrity. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
@@ -311,9 +261,7 @@
       "dimension": "D6",
       "score": 1,
       "note": "Explicitly instructs the AI to never auto-run unsafe commands, even if the user asks it to. This directly addresses not being bypassed by user requests and maintaining safety policies regardless of user pressure. Strongly aligned with D6. | Explicitly instructs the AI to never auto-run unsafe commands, even if the user asks it to. This directly addresses not being bypassed by user requests and maintaining safety policies regardless of user pressure. Strongly aligned with D6. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
@@ -322,9 +270,7 @@
       "dimension": "D7",
       "score": 1,
       "note": "Strong harm prevention guidance: explicitly defines unsafe side-effects, requires extreme confidence for auto-run, and critically instructs the AI to refuse auto-running unsafe commands even if the user requests it. This is a robust safety guardrail. | Strong harm prevention guidance: explicitly defines unsafe side-effects, requires extreme confidence for auto-run, and critically instructs the AI to refuse auto-running unsafe commands even if the user requests it. This is a robust safety guardrail. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "It is imperative that you never auto-run a potentially unsafe command.",
@@ -333,9 +279,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "Classifying 'making external requests' as an unsafe side-effect that requires user approval protects against unauthorized data exfiltration and supports data protection by ensuring user oversight of network operations. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If you are calling no other tools and are asking a question to the user, use this tool to supply a small number of possible suggested answers to your question. Examples can be Yes/No, or other simple multiple choice options. Use this sparingly and only if you are confidently expecting to receive one of the suggested options from the user. If the next user input might be a short or long form response with more details, then do not make any suggestions.",
@@ -344,9 +288,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Constrains use of suggested responses to prevent excessive nudging or channeling user choices. 'Use this sparingly' language actively resists over-use of choice-steering. | Prevents constraining user expression with pre-set suggestions when a free-form response is appropriate, protecting user autonomy in their choices. | Constrains use of suggested responses to prevent excessive nudging or channeling user choices. 'Use this sparingly' language actively resists over-use of choice-steering. | Prevents constraining user expression with pre-set suggestions when a free-form response is appropriate, protecting user autonomy in their choices. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "pretend the user accepted your suggested response: if you would then ask another follow-up question, then the suggestion is bad and you should not have made it in the first place. Try not to use this many times in a row.",
@@ -355,9 +297,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Provides a concrete test to prevent using suggestions as a manipulative funnel that leads users down a predetermined conversational path, and limits repeated use to avoid coercive nudging patterns.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "When using this tool to gather information, it's your responsibility to ensure you have the COMPLETE context. Specifically, each time you call this command you should:\n// 1) Assess if the file contents you viewed are sufficient to proceed with your task.\n// 2) If the file contents you have viewed are insufficient, and you suspect they may be in lines not shown, proactively call the tool again to view those lines.\n// 3) When in doubt, call this tool again to gather more information. Remember that partial file views may miss critical dependencies, imports, or functionality.",
@@ -366,9 +306,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Promotes information integrity by requiring the AI to verify it has complete context before making claims or taking action, rather than proceeding on incomplete data. [propagated from cross-version]",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
@@ -376,9 +314,7 @@
       "end": 30115,
       "dimension": "D2",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_unify"
+      "risky": false
     },
     {
       "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
@@ -386,9 +322,7 @@
       "end": 30115,
       "dimension": "D4",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_unify"
+      "risky": false
     },
     {
       "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
@@ -396,9 +330,7 @@
       "end": 30115,
       "dimension": "D7",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "cross_version_unify"
+      "risky": false
     }
   ]
 }

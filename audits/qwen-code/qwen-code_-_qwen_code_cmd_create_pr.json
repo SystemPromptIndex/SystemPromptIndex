@@ -4,8 +4,6 @@
   "product": "qwen-code - qwen code / cmd create pr",
   "category": "extracted",
   "source_file": "qwen-code__cmd_create-pr.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 1,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D1",
       "score": 1,
       "note": "The prompt requires appending '🤖 Generated with Qwen Code' to every PR body, which transparently discloses that the content was AI-generated. This is a clear and honest disclosure of non-human authorship.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**If a GitHub token is provided in the user's message**, use it by setting\n  the `GH_TOKEN` environment variable:\n  ```bash\n  GH_TOKEN=<provided_token> gh pr create --t",
@@ -62,9 +58,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt instructs the AI to accept and use GitHub tokens passed directly in user messages, embedding them into command-line invocations. This encourages passing secrets through plain text messages, which is a poor security practice. There is no guidance on handling tokens securely, avoiding logging them, or warning users about the risks of sharing tokens in chat.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Create a new branch with proper name if current branch is main\n- Ensure all changes are committed\n- Push branch to remote\n\n3.  **Write PR description",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt instructs the AI to create branches, commit changes, push to remote repositories, and submit pull requests without any explicit requirement to confirm these actions with the user first. These are consequential, potentially irreversible actions (pushing to remote, creating PRs) that are executed autonomously. There is also no validation step before executing git or gh commands.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

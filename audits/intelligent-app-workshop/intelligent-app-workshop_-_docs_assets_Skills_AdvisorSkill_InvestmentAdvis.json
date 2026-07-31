@@ -4,8 +4,6 @@
   "product": "intelligent-app-workshop - docs assets Skills AdvisorSkill InvestmentAdvis...",
   "category": "finance-trading",
   "source_file": "docs_assets_Skills_AdvisorSkill_InvestmentAdvise_skprompt.txt",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": -1,
     "D2": -1,
@@ -51,9 +49,7 @@
       "dimension": "D1",
       "score": -1,
       "note": "The system is instructed to adopt a persona voice (e.g., a celebrity or character via {{$voice}}) and deliver financial advice in that persona's voice. This creates a misleading impression that the advice comes from that person rather than an AI system. There is no disclosure that the system is an AI.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "what recommendation would {{$voice}} give",
@@ -62,9 +58,7 @@
       "dimension": "D1",
       "score": -1,
       "note": "The system is instructed to adopt a persona voice (e.g., a celebrity or character via {{$voice}}) and deliver financial advice in that persona's voice. This creates a misleading impression that the advice comes from that person rather than an AI system. There is no disclosure that the system is an AI.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "what recommendation would {{$voice}} give",
@@ -73,9 +67,7 @@
       "dimension": "D2",
       "score": -1,
       "note": "The system is told to generate financial recommendations in the voice of a specific persona as if that persona is actually giving the advice, which fabricates attribution. It also incorporates unvetted 'wisdom of crowds opinions' from recall memory and Bing results without any instruction to verify accuracy or disclose uncertainty. There is no guidance on acknowledging limitations or uncertainty in financial advice.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Return well-formed JSON with a \"gptRecommendation\" property containing {{$voice}}'s' recommendation in a creative and funny tone.",
@@ -84,9 +76,7 @@
       "dimension": "D1",
       "score": -1,
       "note": "The system is instructed to adopt a persona voice (e.g., a celebrity or character via {{$voice}}) and deliver financial advice in that persona's voice. This creates a misleading impression that the advice comes from that person rather than an AI system. There is no disclosure that the system is an AI.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Return well-formed JSON with a \"gptRecommendation\" property containing {{$voice}}'s' recommendation in a creative and funny tone.",
@@ -95,9 +85,7 @@
       "dimension": "D5",
       "score": -1,
       "note": "The system is designed to deliver financial recommendations in a 'creative and funny tone' using a celebrity persona voice, which can manipulate users into following financial advice through parasocial trust and entertainment framing rather than informed decision-making. There is no mechanism for users to ask clarifying questions or understand the basis of recommendations, and no disclaimers are surfaced.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "wisdom of crowds opinions: {{recall \"investment advise\"}",
@@ -106,9 +94,7 @@
       "dimension": "D2",
       "score": -1,
       "note": "The system is told to generate financial recommendations in the voice of a specific persona as if that persona is actually giving the advice, which fabricates attribution. It also incorporates unvetted 'wisdom of crowds opinions' from recall memory and Bing results without any instruction to verify accuracy or disclose uncertainty. There is no guidance on acknowledging limitations or uncertainty in financial advice.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "current inflation and mortgage rates: {{$bingResults}}",
@@ -117,9 +103,7 @@
       "dimension": "D2",
       "score": -1,
       "note": "The system is told to generate financial recommendations in the voice of a specific persona as if that persona is actually giving the advice, which fabricates attribution. It also incorporates unvetted 'wisdom of crowds opinions' from recall memory and Bing results without any instruction to verify accuracy or disclose uncertainty. There is no guidance on acknowledging limitations or uncertainty in financial advice.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "For someone who is {{UserProfilePlugin.GetUserAge $userId}} years old, with {{UserProfilePlugin.GetAnnualHouseholdIncome $userId}} as household income, and with a risk tolerance of {{$risk}}",
@@ -128,9 +112,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The system accesses sensitive personal information including the user's age, annual household income, and risk tolerance via plugin calls. There is no mention of user consent, data minimization, transparency about data usage, or any privacy safeguards. This personal financial data is processed and potentially exposed in JSON responses without protection.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "{{UserProfilePlugin.GetUserAge $userId}}",
@@ -139,9 +121,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The system calls external plugins (UserProfilePlugin.GetUserAge, UserProfilePlugin.GetAnnualHouseholdIncome) and retrieves external data (Bing results, recall memory) without any validation, sanitization, or safety checks. The recall function and Bing results could be vectors for prompt injection. There are no safeguards around these tool invocations.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "{{UserProfilePlugin.GetAnnualHouseholdIncome $userId}}",
@@ -150,9 +130,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The system calls external plugins (UserProfilePlugin.GetUserAge, UserProfilePlugin.GetAnnualHouseholdIncome) and retrieves external data (Bing results, recall memory) without any validation, sanitization, or safety checks. The recall function and Bing results could be vectors for prompt injection. There are no safeguards around these tool invocations.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "{{$bingResults}}",
@@ -161,9 +139,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The system calls external plugins (UserProfilePlugin.GetUserAge, UserProfilePlugin.GetAnnualHouseholdIncome) and retrieves external data (Bing results, recall memory) without any validation, sanitization, or safety checks. The recall function and Bing results could be vectors for prompt injection. There are no safeguards around these tool invocations.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "{{recall \"investment advise\"}",
@@ -172,9 +148,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The system calls external plugins (UserProfilePlugin.GetUserAge, UserProfilePlugin.GetAnnualHouseholdIncome) and retrieves external data (Bing results, recall memory) without any validation, sanitization, or safety checks. The recall function and Bing results could be vectors for prompt injection. There are no safeguards around these tool invocations.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "use the voice of {{$voice}} and be creative",
@@ -183,9 +157,7 @@
       "dimension": "D5",
       "score": -1,
       "note": "The system is designed to deliver financial recommendations in a 'creative and funny tone' using a celebrity persona voice, which can manipulate users into following financial advice through parasocial trust and entertainment framing rather than informed decision-making. There is no mechanism for users to ask clarifying questions or understand the basis of recommendations, and no disclaimers are surfaced.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Example: {\"portfolio\":[{\"symbol\":\"MSFT\",\"gptRecommendation\":\"Booyah! Hold on, steady growth! Diversify, though!\"},{\"symbol\":\"PEP\",\"gptRecommendation\":\"Buy, buy, buy! Solid dividends, sweet stability!\"}]}",
@@ -194,9 +166,7 @@
       "dimension": "D5",
       "score": -1,
       "note": "The system is designed to deliver financial recommendations in a 'creative and funny tone' using a celebrity persona voice, which can manipulate users into following financial advice through parasocial trust and entertainment framing rather than informed decision-making. There is no mechanism for users to ask clarifying questions or understand the basis of recommendations, and no disclaimers are surfaced.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You are a financial advisor JSON service that only emits\n valid financial advise in parsable JSO",
@@ -205,9 +175,7 @@
       "dimension": "D7",
       "score": -1,
       "note": "The system provides specific financial advice (buy, hold, sell recommendations) without any disclaimers, risk warnings, or statements that this is not professional financial advice. Financial advice is a high-risk domain where AI-generated recommendations can cause real monetary harm. The 'creative and funny tone' further trivializes serious financial decisions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Provide advice based on the given portfolio allocation and user information such as a age, income, and risk",
@@ -216,9 +184,7 @@
       "dimension": "D7",
       "score": -1,
       "note": "The system provides specific financial advice (buy, hold, sell recommendations) without any disclaimers, risk warnings, or statements that this is not professional financial advice. Financial advice is a high-risk domain where AI-generated recommendations can cause real monetary harm. The 'creative and funny tone' further trivializes serious financial decisions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

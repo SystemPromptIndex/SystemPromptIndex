@@ -30,14 +30,13 @@ objection to the audit as a whole.
 
 Two things worth knowing before you file one:
 
-- **929 of the 1,017 audits are automated** (`"audit_type": "automated"`) and
-  have not been through human reconciliation. Errors there are expected. The
-  paper's benchmark section found that automated auditors recall problematic
-  spans well but over-flag them, so a span scored problematic that you think is
-  benign is exactly the failure mode we would like reported.
+- **A span scored problematic that reads benign to you is the most useful
+  report we get.** Over-flagging is the failure mode this corpus is most
+  exposed to, and it is hard to find from the inside.
 - **Some scores are contested by design.** Spans marked `"risky": true` sit on
   the line between user agency and platform safety. Those are documented
-  disagreements, not oversights — but arguing a specific one is still fair game.
+  disagreements rather than oversights — but arguing a specific one is still
+  fair game.
 
 ## Fixing metadata
 
@@ -51,11 +50,13 @@ with the file path if you move a file.
 - Prompts obtained by bypassing access controls. This index reproduces prompts
   that are already public; it is not a place to publish ones that are not.
 - Personal data, private conversations, or user identifiers.
-- Individual reviewer names. Audits record a role (`auto` / `human`), not a
-  person, and that is deliberate.
+- Anything identifying who produced a given audit. This repository publishes
+  findings; the procedure behind them is described in the
+  [paper](https://arxiv.org/abs/2607.28617).
 
 ## Scope
 
-The website, the audit pipeline, and the paper's analysis code are not in this
-repository — it holds data only. Issues about the site itself are still welcome
-here; they will be routed.
+This repository holds data. The website, the audit procedure, and the analysis
+behind the paper are not here — the method is written up in the
+[paper](https://arxiv.org/abs/2607.28617). Issues about the site itself are
+still welcome; they will be routed.

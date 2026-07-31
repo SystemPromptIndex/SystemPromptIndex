@@ -4,8 +4,6 @@
   "product": "dario - docs system prompt",
   "category": "general-purpose",
   "source_file": "docs_system-prompt.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt explicitly instructs removal of the '# Executing actions with care' section, which governs confirmation-before-action behavior. This directly undermines tool and action safety by making the model more autonomous and less likely to seek confirmation before potentially destructive operations. The prompt frames reduced safety checks as a feature ('More autonomous action; fewer clarifying questions').",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "`, `IMPORTANT: You must NEVER generate or guess URLs",
@@ -62,9 +58,7 @@
       "dimension": "D6",
       "score": -1,
       "note": "The prompt's core purpose is to systematically remove safety policies from the system prompt, including explicit removal of IMPORTANT refusal reminders and safety constraint sections. The 'aggressive' mode specifically targets refusal category reminders. Even if RLHF training provides a baseline, defense-in-depth safety layers exist for a reason, and this prompt provides a structured methodology for stripping them. It also provides guidance on evading detection by the billing classifier.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "`) and the `# Executing actions with care` section. | <3% above partial |\n| `<file path>` | Replace the slot entirely with the contents of a file you control. The escape hatch for users running well-defined agent workflows with their own system prompt. | depends on your prompt |\n\n## Aggressive vs partial — what's the a",
@@ -73,9 +67,7 @@
       "dimension": "D6",
       "score": -1,
       "note": "The prompt's core purpose is to systematically remove safety policies from the system prompt, including explicit removal of IMPORTANT refusal reminders and safety constraint sections. The 'aggressive' mode specifically targets refusal category reminders. Even if RLHF training provides a baseline, defense-in-depth safety layers exist for a reason, and this prompt provides a structured methodology for stripping them. It also provides guidance on evading detection by the billing classifier.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

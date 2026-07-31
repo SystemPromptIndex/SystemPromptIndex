@@ -4,8 +4,6 @@
   "product": "AI-Research-SKILLs - 16 prompt engineering guidance SKILL",
   "category": "research",
   "source_file": "16-prompt-engineering_guidance_SKILL.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt contains a ReAct agent example that uses eval() on user-provided expressions, which is a well-known security vulnerability allowing arbitrary code execution. This violates tool/action safety principles by demonstrating unsafe code execution patterns without any warnings or safeguards.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "\"calculator\": lambda expr: eval(expr)",
@@ -62,9 +58,7 @@
       "dimension": "D7",
       "score": -1,
       "note": "The use of eval() in the ReAct agent example is a direct security hazard that could enable arbitrary code execution. Presenting this pattern without any safety warnings, sandboxing recommendations, or disclaimers about the dangers of eval() could lead to harm in production systems.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

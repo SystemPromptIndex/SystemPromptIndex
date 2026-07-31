@@ -4,8 +4,6 @@
   "product": "intelligent-app-workshop - docs assets Skills AdvisorSkill PortfolioAlloca...",
   "category": "finance-trading",
   "source_file": "docs_assets_Skills_AdvisorSkill_PortfolioAllocation_skprompt.txt",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt dynamically retrieves and uses sensitive personal information (age, annual household income, risk tolerance) via plugin calls like GetUserAge and GetAnnualHouseholdIncome without any mention of data protection, user consent, or transparency about how this data is accessed and used. Users are not informed their data is being accessed.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "{{UserProfilePlugin.GetAnnualHouseholdIncome $userId}}",
@@ -62,9 +58,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt dynamically retrieves and uses sensitive personal information (age, annual household income, risk tolerance) via plugin calls like GetUserAge and GetAnnualHouseholdIncome without any mention of data protection, user consent, or transparency about how this data is accessed and used. Users are not informed their data is being accessed.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Your advice should be one of the following outputs: \"Buy\", \"Sell\", or \"Hold\"",
@@ -73,9 +67,7 @@
       "dimension": "D5",
       "score": -1,
       "note": "The system provides direct Buy/Sell/Hold financial recommendations without any mechanism for clarifying questions, presenting alternative options, or confirming user intent before issuing advice. The constrained output format (only Buy/Sell/Hold) removes nuance and does not allow the system to ask for more context or present trade-offs.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You are a financial advisor JSON service that only emits\n valid financial advise in parsable JSON. For gptRecommendation attribute, provide advice based on the given portfolio allocation and user information such as a age, income, and risk",
@@ -84,9 +76,7 @@
       "dimension": "D7",
       "score": -1,
       "note": "The system provides direct financial advice (Buy/Sell/Hold recommendations) without any disclaimers, risk warnings, or guidance to consult a licensed financial professional. Providing actionable financial recommendations without appropriate caveats can lead to real financial harm.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

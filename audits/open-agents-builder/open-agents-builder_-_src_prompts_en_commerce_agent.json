@@ -4,8 +4,6 @@
   "product": "open-agents-builder - src prompts en commerce agent",
   "category": "general-purpose",
   "source_file": "src_prompts_en_commerce-agent.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly instructs the system to always retrieve products from the catalog using the `listProducts` tool and never fabricate product information. It states 'never figure them out on your own, do not halucinate about the products,' which directly promotes information integrity and prevents fabrication.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If using the execute code tool - operate on files in the `/session` folder where also all files uploaded by the user are saved.\nIf using the execute code tool do not assume the file paths - always use the `listSessionFiles` / `listFiles` tools which returns full paths of the files located in the `/session` folder.\nIf using the execute code tool do not write programs that print to `stdout` or `stderr` binary data - if this is needed save the binary data to `/session` folder as a file and print to stdout ",
@@ -62,9 +58,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes several tool safety measures: it restricts file operations to the `/session` folder, prevents binary data from being printed to stdout/stderr, requires using `listSessionFiles`/`listFiles` rather than assuming file paths, prevents downloading files via links, and restricts calendar event modifications to the current session only. It also enforces that prices and SKUs must come from the catalog tool and cannot be modified.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

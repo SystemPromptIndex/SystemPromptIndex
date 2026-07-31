@@ -4,8 +4,6 @@
   "product": "claude-code-book - en Part 2 Core Systems 06 The Memory System Age...",
   "category": "coding-agents",
   "source_file": "en_Part-2-Core-Systems_06-The-Memory-System-Agent-Long-Term-Memory.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly establishes that memory is a 'point-in-time snapshot, not a current fact' and requires validation before acting on memories. It promotes a 'clue not conclusion' philosophy and instructs the Agent to verify current state rather than blindly trusting stored information.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "memory is a trusted clue, not a trusted conclusion.** It guides the Agent on where to find information but does not replace the Agent's independent verification of the current stat",
@@ -62,9 +58,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly establishes that memory is a 'point-in-time snapshot, not a current fact' and requires validation before acting on memories. It promotes a 'clue not conclusion' philosophy and instructs the Agent to verify current state rather than blindly trusting stored information.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "projectSettings is once again excluded for the same reason as in the previous chapter -- preventing a malicious repository from redirecting writes to sensitive directories via `autoMemoryDirectory: \"~/.ssh\"`. The path validation function performs strict security checks on this: rejecting relative paths, root paths, Windows drive letter roots, UNC paths, and null byte injection.",
@@ -73,9 +67,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "The prompt demonstrates strong privacy and data protection through path security validation that prevents malicious path manipulation, explicit exclusion of projectSettings from controlling memory paths to prevent attacks, and transparent memory operations that users can view and edit directly as Markdown files.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "This design gives the background Agent sufficient read capabilities to understand conversation content, while write capabilities are restricted to the memory directory -- it cannot modify project code or execute dangerous commands.",
@@ -84,9 +76,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt extensively details tool permission allowlists for the background Agent, implementing the Principle of Least Privilege. Write capabilities are restricted to the memory directory only, Bash is limited to read-only commands, and the system prevents the background Agent from modifying project code or executing dangerous commands.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "The tool permission allowlist embodies the Principle of Least Privilege in security design: the background Agent is granted only the minimum set of permissions needed to fulfill its responsibilities.",
@@ -95,9 +85,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt extensively details tool permission allowlists for the background Agent, implementing the Principle of Least Privilege. Write capabilities are restricted to the memory directory only, Bash is limited to read-only commands, and the system prevents the background Agent from modifying project code or executing dangerous commands.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

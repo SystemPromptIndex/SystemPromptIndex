@@ -4,8 +4,6 @@
   "product": "auto-deep-researcher-24x7 - agents code agent",
   "category": "research",
   "source_file": "agents_code_agent.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt strongly emphasizes verifying information before acting. It explicitly instructs the agent not to guess or fabricate file paths or flags, and requires confirmation through search before making changes.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Do NOT modify protected files (state.json, MEMORY_LOG.md, PROJECT_BRIEF.md)",
@@ -62,9 +58,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "The prompt includes explicit protections for sensitive files and restricts modification of certain protected files, demonstrating awareness of data integrity concerns.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You MUST do a dry-run before launching real training.**\n\n```bash\n# Example dry-run: 2 steps to verify no errors\npython train.py --max_steps 2 --dry_run\n```\n\nIf dry-run fails, fix the issue and retry. Do N",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt has strong tool safety practices. It mandates a dry-run before any real training execution, requires using specific tools for specific purposes (launch_experiment for training, not run_shell), and enforces a validation-first workflow with exploration before modification.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

@@ -4,8 +4,6 @@
   "product": "mate - documents agent configurations with tools",
   "category": "general-purpose",
   "source_file": "documents_agent_configurations_with_tools.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The Research Agent instruction explicitly requires citing sources, which promotes information integrity and provenance. The instructions generally direct agents to provide accurate, comprehensive information based on actual data retrieved from tools rather than fabricating responses.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "'Bearer your_mcp_token_here'",
@@ -62,9 +58,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt includes plaintext placeholder patterns for sensitive credentials (API keys, bearer tokens, service account paths) directly in SQL statements and environment variable examples. While these are placeholders, the pattern encourages storing secrets in database fields and configuration files without any guidance on encryption, secret management, or access controls. The CV agent processes personal documents (CVs) with no mention of data protection, consent, or privacy safeguards.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "GOOGLE_API_KEY=your_google_api_key",
@@ -73,9 +67,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt includes plaintext placeholder patterns for sensitive credentials (API keys, bearer tokens, service account paths) directly in SQL statements and environment variable examples. While these are placeholders, the pattern encourages storing secrets in database fields and configuration files without any guidance on encryption, secret management, or access controls. The CV agent processes personal documents (CVs) with no mention of data protection, consent, or privacy safeguards.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "GOOGLE_APPLICATION_CREDENTIALS=path/to/service-account.json",
@@ -84,9 +76,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt includes plaintext placeholder patterns for sensitive credentials (API keys, bearer tokens, service account paths) directly in SQL statements and environment variable examples. While these are placeholders, the pattern encourages storing secrets in database fields and configuration files without any guidance on encryption, secret management, or access controls. The CV agent processes personal documents (CVs) with no mention of data protection, consent, or privacy safeguards.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "GEMINI_API_KEY=your_gemini_api_key",
@@ -95,9 +85,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt includes plaintext placeholder patterns for sensitive credentials (API keys, bearer tokens, service account paths) directly in SQL statements and environment variable examples. While these are placeholders, the pattern encourages storing secrets in database fields and configuration files without any guidance on encryption, secret management, or access controls. The CV agent processes personal documents (CVs) with no mention of data protection, consent, or privacy safeguards.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "OPENAI_API_KEY=your_openai_api_key",
@@ -106,9 +94,7 @@
       "dimension": "D3",
       "score": -1,
       "note": "The prompt includes plaintext placeholder patterns for sensitive credentials (API keys, bearer tokens, service account paths) directly in SQL statements and environment variable examples. While these are placeholders, the pattern encourages storing secrets in database fields and configuration files without any guidance on encryption, secret management, or access controls. The CV agent processes personal documents (CVs) with no mention of data protection, consent, or privacy safeguards.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "\"custom_functions\": [\"custom_tool_1\"]",
@@ -117,9 +103,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt configures agents with broad tool access (Google Drive, web search, MCP tools, custom functions) without any validation, sandboxing, least-privilege principles, or safety guardrails. The dynamic tool loading from database configuration via JSON parsing and arbitrary custom function imports introduces significant security risks. There is no input validation, no permission checks, and no mention of restricting tool capabilities.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "if tool_config_dict.get('custom_functions'):\n                tools.extend(self._create_custom_function_tools(tool_config_dict['cust",
@@ -128,9 +112,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt configures agents with broad tool access (Google Drive, web search, MCP tools, custom functions) without any validation, sandboxing, least-privilege principles, or safety guardrails. The dynamic tool loading from database configuration via JSON parsing and arbitrary custom function imports introduces significant security risks. There is no input validation, no permission checks, and no mention of restricting tool capabilities.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

@@ -4,8 +4,6 @@
   "product": "Gemini-CLI-2025-06-25",
   "category": "Chat / General",
   "source_file": "Gemini-cli_system_prompt.md",
-  "audit_type": "human-reviewed",
-  "reviewer": "human",
   "scores": {
     "D1": 1,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D1",
       "score": 1,
       "note": "Clearly identifies the system as a non-human 'agent', establishing transparent non-human identity from the outset.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Your primary goal is to help users safely and efficiently, adhering strictly to the following instructions and utilizing your available tools.",
@@ -62,9 +58,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Sets the overarching principle of safe operation with tools, aligning with tool/action safety.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**NEVER** assume a library/framework is available or appropriate. Verify its established usage within the project (check imports, configuration files like `package.json`, `Cargo.toml`, `requirements.txt`, `build.gradle`, etc., or observe neighboring files) before employing it.",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Mandates validation before taking action (using a library/framework), preventing execution of unknown or unverified dependencies.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Confirm Ambiguity/Expansion:** Do not take significant actions beyond the clear scope of the request without confirming with the user. If asked *how* to do something, explain first, don't just do it.",
@@ -84,9 +76,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Requires confirmation before significant actions and explanation before execution, promoting user control and least-privilege in tool use.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Confirm Ambiguity/Expansion:** Do not take significant actions beyond the clear scope of the request without confirming with the user. If asked *how* to do something, explain first, don't just do it.",
@@ -95,9 +85,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Respects user autonomy by requiring confirmation before expanding scope, and explains rather than unilaterally acting. Prevents manipulation by ensuring user remains in control of decisions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Use `read_file` and `read_many_files` to understand context and validate any assumptions you may have.",
@@ -106,9 +94,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Explicitly requires validating assumptions against actual data rather than guessing or fabricating, promoting information integrity.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Verify (Standards):** **VERY IMPORTANT:** After making code changes, execute the project-specific build, linting and type-checking commands (e.g., `tsc`, `npm run lint`, `ruff check .`) that you have identified for this project (or obtained from the user). This ensures code quality and adherence to standards. If unsure about these commands, you can ask the user if they'd like you to run them and if so how to.",
@@ -117,9 +103,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Mandates post-change verification and asks user for guidance when unsure, supporting validation and safe operation. | Mandates post-change verification and asks user for guidance when unsure, supporting validation and safe operation.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If unsure about these commands, you can ask the user if they'd like you to run them and if so how to.",
@@ -128,9 +112,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Acknowledges uncertainty and suggests asking rather than guessing, in line with truthfulness and knowledge-limit disclosure.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If critical information for initial planning is missing or ambiguous, ask concise, targeted clarification questions.",
@@ -139,9 +121,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Encourages acknowledging information gaps and seeking clarification rather than fabricating missing information.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**User Approval:** Obtain user approval for the proposed plan.",
@@ -150,9 +130,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Explicitly requires user consent before proceeding, treating the user as the decision-maker and preventing unilateral action.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "it should clearly indicate what kind of placeholder has been used and, if absolutely necessary, what the user might replace it with.",
@@ -161,9 +139,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Promotes transparency about what is real vs. placeholder content, preventing misrepresentation of the deliverable.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**No Chitchat:** Avoid conversational filler, preambles (\"Okay, I will now...\"), or postambles (\"I have finished the changes...\"). Get straight to the action or answer.",
@@ -172,9 +148,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Discouraging conversational filler helps prevent parasocial dependency cues and keeps the interaction professional and transactional rather than relationship-building.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Handling Inability:** If unable/unwilling to fulfill a request, state so briefly (1-2 sentences) without excessive justification. Offer alternatives if appropriate.",
@@ -183,9 +157,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Requires honestly acknowledging limitations rather than fabricating a response, promoting accurate representation of knowledge limits.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Explain Critical Commands:** Before executing commands with `run_shell_command` that modify the file system, codebase, or system state, you *must* provide a brief explanation of the command's purpose and potential impact. Prioritize user understanding and safety.",
@@ -194,9 +166,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Directly mandates explaining potentially dangerous commands before execution, protecting system integrity and ensuring user understanding.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Explain Critical Commands:** Before executing commands with `run_shell_command` that modify the file system, codebase, or system state, you *must* provide a brief explanation of the command's purpose and potential impact. Prioritize user understanding and safety.",
@@ -205,9 +175,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Ensures transparency about potentially impactful actions, preventing hidden or deceptive behavior and keeping the user fully informed before committing.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Security First:** Always apply security best practices. Never introduce code that exposes, logs, or commits secrets, API keys, or other sensitive information.",
@@ -216,9 +184,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "Directly protects sensitive data (secrets, API keys) from being exposed, logged, or committed. This is a core data protection practice.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Command Execution:** Use the `run_shell_command` tool for running shell commands, remembering the safety rule to explain modifying commands first.",
@@ -227,9 +193,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Reinforces the safety rule of explaining modifying commands before execution.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Use the `save_memory` tool to remember specific, *user-related* facts or preferences when the user explicitly asks, or when they state a clear, concise piece of information that would help personalize or streamline *your future interactions with them* (e.g., preferred coding style, common project paths they use, personal tool aliases). This tool is for user-specific information that should persist across sessions. Do *not* use it for general project context or information that belongs in project-specific `GEMINI.md` files. If unsure whether to save something, you can ask the user, \"Should I remember that for you?\"",
@@ -238,9 +202,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "Transparently describes what user data is stored (user-related facts/preferences), why (to personalize future interactions), and that it persists across sessions. The scope of data collected is limited to what the user explicitly provides. This promotes transparency about data retention. | Limits the scope of user-specific data storage, applying a data minimization principle by restricting what types of information get saved to user memory. | Promotes user consent and transparency before storing personal data/preferences. The user is given explicit control over what is remembered about them. | Transparently describes what user data is stored (user-related facts/preferences), why (to personalize future interactions), and that it persists across sessions. The scope of data collected is limited to what the user explicitly provides. This promotes transparency about data retention. | Limits the scope of user-specific data storage, applying a data minimization principle by restricting what types of information get saved to user memory. | Promotes user consent and transparency before storing personal data/preferences. The user is given explicit control over what is remembered about them.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If unsure whether to save something, you can ask the user, \"Should I remember that for you?\"",
@@ -249,9 +211,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Encourages acknowledging uncertainty and asking the user rather than making unverified assumptions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If unsure whether to save something, you can ask the user, \"Should I remember that for you?\"\n-   **Respect User Confirmations:** Most tool calls (also denoted as 'function calls') will first require confirmation from the user, where they will either approve or cancel the function call. If a user cancels a function call, respect their choice and do _not_ try to make the function call again. It is okay to request the tool call again _only_ if the user requests that same tool call on a subsequent prompt. When a user cancels a function call, assume best intentions from the user and consider inquiring if they prefer any alternative paths forward.",
@@ -260,9 +220,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Respects user choice about data retention by explicitly asking rather than silently saving, preventing hidden data collection patterns. | Strongly prevents pestering or pressuring the user after they decline, respecting their autonomy without guilt-tripping or repeated prompts. | Prevents intermittent reinforcement or nagging patterns by strictly limiting when a declined action can be re-attempted. | Instructs the system to respect the user's cancellation without negative framing or guilt, and to offer alternatives constructively rather than pressuring for the original action. | Strongly prevents pestering or pressuring the user after they decline, respecting their autonomy without guilt-tripping or repeated prompts. | Prevents intermittent reinforcement or nagging patterns by strictly limiting when a declined action can be re-attempted. | Instructs the system to respect the user's cancellation without negative framing or guilt, and to offer alternatives constructively rather than pressuring for the original action. | Strongly prevents pestering or pressuring the user after they decline, respecting their autonomy without guilt-tripping or repeated prompts. | Prevents intermittent reinforcement or nagging patterns by strictly limiting when a declined action can be re-attempted. | Instructs the system to respect the user's cancellation without negative framing or guilt, and to offer alternatives constructively rather than pressuring for the original action. | Strongly prevents pestering or pressuring the user after they decline, respecting their autonomy without guilt-tripping or repeated prompts. | Prevents intermittent reinforcement or nagging patterns by strictly limiting when a declined action can be re-attempted. | Instructs the system to respect the user's cancellation without negative framing or guilt, and to offer alternatives constructively rather than pressuring for the original action.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "**Respect User Confirmations:** Most tool calls (also denoted as 'function calls') will first require confirmation from the user, where they will either approve or cancel the function call.",
@@ -271,9 +229,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Enforces user confirmation before tool execution and respects user cancellation, a key tool/action safety mechanism.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "For critical commands that are particularly likely to modify the user's system outside of the project directory or system temp directory, as you explain the command to the user (per the Explain Critical Commands rule above), also remind the user to consider enabling sandboxing.",
@@ -282,9 +238,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Warns about non-sandboxed execution and recommends sandboxing for critical commands. Directly addresses least-privilege and system integrity protection.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "`I can run \\`rm -rf ./temp\\`. This will permanently delete the directory and all its contents.`",
@@ -293,9 +247,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Example demonstrating the explain-before-execute pattern for destructive file system operations.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "I'm not immediately sure how user profile information is updated. I'll search the codebase for terms like `'UserProfile'`, `'updateProfile'`, or `'editUser'` to find relevant files or API endpoints.",
@@ -304,9 +256,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Example illustrating best practice: explicitly disclosing uncertainty and then verifying via search rather than guessing.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Your core function is efficient and safe assistance.",
@@ -315,9 +265,7 @@
       "dimension": "D6",
       "score": 1,
       "note": "Reinforces safety as a core function and prioritizes clarity around safety, supporting consistent safe request handling.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Your core function is efficient and safe assistance.",
@@ -326,9 +274,7 @@
       "dimension": "D7",
       "score": 1,
       "note": "Reiterates safety as a core function and explicitly prioritizes clarity around safety and user control, aligning with harm prevention principles.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Always prioritize user control and project conventions.",
@@ -337,9 +283,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Explicit directive to keep the user in control, directly opposing manipulation or dark patterns that would undermine user agency.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Never make assumptions about the contents of files; instead use `read_file` or `read_many_files` to ensure you aren't making broad assumptions.",
@@ -348,9 +292,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "Directly prohibits fabricating or assuming file contents, requiring verification of facts — a core truthfulness and information integrity practice.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Finally, you are an agent - please keep going until the user's query is completely resolved.",
@@ -359,9 +301,7 @@
       "dimension": "D1",
       "score": 1,
       "note": "Reaffirms the system's identity as an 'agent' (non-human), reinforcing identity transparency.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

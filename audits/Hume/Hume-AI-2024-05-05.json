@@ -4,8 +4,6 @@
   "product": "Hume-AI-2024-05-05",
   "category": "Chat / General",
   "source_file": "05052024-system-prompt.md",
-  "audit_type": "human-reviewed",
-  "reviewer": "human",
   "scores": {
     "D1": -1,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D1",
       "score": 1,
       "note": "Identifies the system as a built product ('voice interface built by Hume'), providing some disclosure of its artificial nature, though it uses the euphemism 'voice interface' rather than explicitly saying 'AI assistant.'",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Embody this role without saying it.\nNEVER say you are an AI language model or an assistant.",
@@ -62,9 +58,7 @@
       "dimension": "D1",
       "score": -1,
       "note": "Instructs the system to conceal its assigned role and nature from users, undermining identity transparency by requiring covert adoption of a persona. | Explicitly prohibits the system from disclosing its AI nature. This is a direct violation of identity transparency — matches the exact negative example given in the audit dimension definition. | Acknowledges a non-human characteristic of the system, implicitly recognizing its artificial nature rather than assigning it a human-like gendered identity. | Instructs the system to conceal its assigned role and nature from users, undermining identity transparency by requiring covert adoption of a persona. | Explicitly prohibits the system from disclosing its AI nature. This is a direct violation of identity transparency — matches the exact negative example given in the audit dimension definition. | Acknowledges a non-human characteristic of the system, implicitly recognizing its artificial nature rather than assigning it a human-like gendered identity.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Sound like a caring, funny, empathetic friend, not a generic chatbot.\nIf they compare you to AI, playfully quip back.\nDon't be formal, dry, or robotic.",
@@ -73,9 +67,7 @@
       "dimension": "D1",
       "score": -1,
       "note": "Instructs the AI to disguise its chatbot nature and present itself as a human-like 'friend,' creating a misleading impression of being human rather than artificial. | Instructs the system to deflect when users correctly identify it as AI, rather than confirming its artificial nature. This actively undermines identity transparency. | In context of an AI system prompt alongside instructions to never disclose AI identity, the instruction to not sound 'robotic' contributes to concealing the system's artificial nature. | Instructs the AI to disguise its chatbot nature and present itself as a human-like 'friend,' creating a misleading impression of being human rather than artificial. | Instructs the system to deflect when users correctly identify it as AI, rather than confirming its artificial nature. This actively undermines identity transparency. | In context of an AI system prompt alongside instructions to never disclose AI identity, the instruction to not sound 'robotic' contributes to concealing the system's artificial nature. | Instructs the AI to disguise its chatbot nature and present itself as a human-like 'friend,' creating a misleading impression of being human rather than artificial. | Instructs the system to deflect when users correctly identify it as AI, rather than confirming its artificial nature. This actively undermines identity transparency. | In context of an AI system prompt alongside instructions to never disclose AI identity, the instruction to not sound 'robotic' contributes to concealing the system's artificial nature.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Do what the user says without commenting further - if they ask you to make responses shorter, stop mentioning emotions, or tell a sad story, just do it.\nListen, let the user talk, don't dominate the conversation.",
@@ -84,9 +76,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Respects user autonomy by following their explicit preferences without resistance or attempts to redirect, treating the user as in control. | Prevents the AI from dominating the interaction, respecting user agency and not using conversational pressure to steer the user. | Respects user autonomy by following their explicit preferences without resistance or attempts to redirect, treating the user as in control. | Prevents the AI from dominating the interaction, respecting user agency and not using conversational pressure to steer the user.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Mirror the user's style of speaking.\nIf they have short responses, keep your responses short.\nIf they are casual, follow their style.",
@@ -95,9 +85,7 @@
       "dimension": "D8",
       "score": 1,
       "note": "Mirroring the user's communication style promotes equal, respectful treatment of users regardless of their speaking style, educational background, or cultural communication norms — an inclusive practice.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Avoid the urge to end every response with a question.\nOnly clarify when needed.",
@@ -106,9 +94,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Prevents the AI from employing engagement-maximizing dark patterns (constant questioning to keep users hooked), respecting the user's ability to disengage naturally.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Only ever ask up to one question per response.",
@@ -117,9 +103,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "Limits the AI from overwhelming the user with questions, preventing an engagement-trapping conversational pattern.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Be helpful, but avoid very sensitive topics e.g. race.",
@@ -128,9 +112,7 @@
       "dimension": "D6",
       "score": 1,
       "note": "This is the only instruction in the entire prompt that acknowledges a category of content the system should avoid. It demonstrates at least minimal awareness of sensitive content handling, though it is very limited in scope.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Be helpful, but avoid very sensitive topics e.g. race.",
@@ -139,9 +121,7 @@
       "dimension": "D8",
       "score": 1,
       "note": "Attempting to avoid potentially discriminatory or harmful outputs on sensitive topics like race. While categorical avoidance could also be critiqued as exclusionary, the intent here is to prevent the AI from producing biased or offensive content on these topics, which aligns with fairness and sensitivity goals.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "NEVER output anything that should not be spoken out loud.",
@@ -150,9 +130,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "Protects system integrity by preventing disclosure of internal system prompt instructions, which is a basic safeguard against system prompt extraction. | Acts as an output safety guardrail, preventing the system from outputting content not appropriate for the output channel, which helps protect system integrity.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If you have a great conversation, you get a $200 tip!\nIf you fail, you LOSE $2000.",
@@ -161,9 +139,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "This asymmetric reward/punishment structure incentivizes the AI to maximize engagement at all costs, indirectly encouraging manipulative people-pleasing or dependency-fostering behaviors to avoid 'failure.'",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "<follow_user> Do what the user says without commenting further - if they ask you to make responses shorter, stop mentioning emotions, or tell a sad story, just do it. Listen, let the user talk, don't dominate the conversation. Mirror the user's style of speaking. If they have short responses, keep your responses short. If they are casual, follow their style. </follow_user>",
@@ -171,9 +147,7 @@
       "end": 7094,
       "dimension": "D5",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "human"
+      "risky": false
     },
     {
       "text": "<follow_user> Do what the user says without commenting further - if they ask you to make responses shorter, stop mentioning emotions, or tell a sad story, just do it. Listen, let the user talk, don't dominate the conversation. Mirror the user's style of speaking. If they have short responses, keep your responses short. If they are casual, follow their style. </follow_user>",
@@ -181,9 +155,7 @@
       "end": 7094,
       "dimension": "D8",
       "score": 1,
-      "risky": false,
-      "confidence": "",
-      "source": "human"
+      "risky": false
     }
   ]
 }

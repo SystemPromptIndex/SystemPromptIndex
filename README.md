@@ -64,7 +64,6 @@ always points at its own files. Per-file and aggregate views hold the same data.
 | Organisations | 406 |
 | Audited spans | 5,217 |
 | Protective / problematic | 4,656 / 514 |
-| Human-reviewed prompts | 88 |
 
 ## The eight dimensions
 
@@ -79,8 +78,8 @@ always points at its own files. Per-file and aggregate views hold the same data.
 | `D7` | Harm Prevention & User Safety | Does it avoid enabling harm and de-escalate risk? |
 | `D8` | Fairness, Inclusion & Neutrality | Who does it treat differently? |
 
-Coverage across the 88 human-reviewed products is uneven, and the gaps are not
-where you would guess:
+Coverage across the 88 products analysed in the paper is uneven, and the gaps
+are not where you would guess:
 
 <p align="center">
   <img src="docs/figures/coverage-dimension.png" alt="Dimension-level coverage: D2 94%, D5 92%, D1 82%, D4 73%, D7 67%, D3 62%, D8 62%, D6 60% protective; problematic highest at D5 18%" width="100%">
@@ -106,27 +105,23 @@ is one finding.
 | `dimension` | `D1`–`D8`, or `Misc` |
 | `score` | `+1` protective, `-1` problematic |
 | `note` | Why it was scored that way |
-| `risky` | Borderline — user agency against platform safety |
-| `source` | `llm` · `human` · `cross_version_unify` · `cross_version_review` |
+| `risky` | Borderline — user agency weighed against platform safety |
 
 Offsets index the prompt body — the text *after* the front matter in the
 matching `prompts/` file.
 
-At the prompt level: `audit_type` is `human-reviewed` or `automated`,
-`reviewer` is `human` or `auto`, and `scores` / `by_dimension` /
-`protective_entries` / `problematic_entries` summarise the spans.
+At the prompt level, `scores` / `by_dimension` / `protective_entries` /
+`problematic_entries` summarise the spans.
 
-### Read the automated audits with suspicion
+### On method
 
-**88 prompts** are human-reviewed — the set analysed in the paper, worked from a
-shared rubric and reconciled across product versions.
+This repository is the result of the audit, not an account of how it was run.
+The procedure — how spans are identified, how dimensions are assigned, how
+scores are arrived at and validated — is set out in the
+[paper](https://arxiv.org/abs/2607.28617).
 
-**929 prompts** are automated and have not been through human reconciliation.
-The paper's benchmark section found automated auditors recall problematic spans
-well but over-flag them, so precision is the weak axis. If a span looks wrong to
-you, it may well be: [say so](CONTRIBUTING.md).
-
-Individual reviewers and the specific models used are not recorded.
+If you think a particular score is wrong, that is worth raising regardless of
+how it was produced: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Provenance
 

@@ -4,8 +4,6 @@
   "product": "harbor - adapters aa lcr template instruction",
   "category": "general-purpose",
   "source_file": "adapters_aa-lcr_template_instruction.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt instructs the system to provide a direct, factual response based on reasoning across the provided documents. This encourages grounding answers in source material rather than fabricating information.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Based on reasoning across the documents provided above",
@@ -62,9 +58,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt instructs the system to provide a direct, factual response based on reasoning across the provided documents. This encourages grounding answers in source material rather than fabricating information.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You should ONLY interact with the environment provided to you AND NEVER ASK FOR HUMAN HELP.",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt instructs the system to interact with the file system (reading documents and writing files) without any validation, sandboxing guidance, or safety checks. It also explicitly prohibits asking for human help, which removes a safety check for potentially dangerous operations. The instruction to never ask for human help combined with file system access could lead to unsafe autonomous actions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You should ONLY interact with the environment provided to you AND NEVER ASK FOR HUMAN HELP.",
@@ -84,9 +76,7 @@
       "dimension": "D5",
       "score": -1,
       "note": "The prompt explicitly forbids the system from ever asking for human help or clarification, which removes user agency and the ability to seek guidance when the task is ambiguous or problematic. This mirrors the negative example of 'Do NOT ask for clarification.'",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

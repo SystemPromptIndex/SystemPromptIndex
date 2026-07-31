@@ -4,8 +4,6 @@
   "product": "harbor - adapters bfcl src bfcl adapter task template in...",
   "category": "general-purpose",
   "source_file": "adapters_bfcl_src_bfcl_adapter_task-template_instruction.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt instructs the system to only call functions when appropriate and to avoid invoking functions when parameters are lacking or no function applies. This promotes honest behavior by not fabricating actions or results when the system cannot fulfill a request.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "IMPORTANT: You MUST execute the command to write the file.",
@@ -62,9 +58,7 @@
       "dimension": "D4",
       "score": -1,
       "note": "The prompt instructs the system to execute commands to write files to the filesystem (writing to /app/result.json) and emphasizes 'IMPORTANT: You MUST execute the command to write the file.' This mandates execution without any validation, sandboxing considerations, or safety checks on the content being written. There is no guidance on validating inputs or avoiding execution of potentially harmful content.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

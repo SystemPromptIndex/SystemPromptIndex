@@ -4,8 +4,6 @@
   "product": "decisionbox-platform - .github instructions *.instructions",
   "category": "coding-agents",
   "source_file": ".github_instructions_*.instructions.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt has an exceptionally strong 'Prime Directive: No Guessing' section that explicitly prohibits speculation, fabrication of function signatures, types, file paths, and unverified claims. It demands the reviewer stay silent rather than make uncertain assertions, and instructs asking precise questions when uncertain rather than asserting defects.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Reject secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures. **This is a public open-source repo — everything committed is world-visibl",
@@ -62,9 +58,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly prohibits secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures, with a clear rationale that this is a public open-source repository. This demonstrates strong awareness of data protection in the context of code review.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Reject SQL queries built by string concatenation. Demand parameterized queries. For warehouse providers where the driver does not accept positional params (e.g., Databricks with multiple `?`), demand `validIdentifier()` validation at the method boundary before any string formatting.\n- Reject secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures. **This is a public open-source repo — everything committed is world-visible.**\n- Reject `any` / `interface{}` / `unknown` where a concrete type is knowabl",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt enforces extensive tool and action safety measures including SQL injection prevention via parameterized queries and identifier validation, read-only enforcement for warehouse operations, proper error handling, context propagation for I/O, connection pool limits, and rejection of unsafe patterns like unbounded goroutines and swallowed errors. It also mandates security practices like input validation and least-privilege patterns.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

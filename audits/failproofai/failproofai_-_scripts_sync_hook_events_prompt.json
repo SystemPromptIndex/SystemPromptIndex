@@ -4,8 +4,6 @@
   "product": "failproofai - scripts sync hook events prompt",
   "category": "general-purpose",
   "source_file": "scripts_sync-hook-events-prompt.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 1,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D1",
       "score": 1,
       "note": "The prompt clearly identifies the system as 'an automated agent running in GitHub Actions,' making its non-human, automated nature explicit from the very first sentence. There is no attempt to impersonate a human or conceal its artificial nature.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Do NOT run any shell commands (no git, no gh, no bun, no curl).\n- Do NOT modify `src/hooks/integrations.ts`, `src/hooks/policy-evaluator.ts`,\n  `src/hooks/manager.ts`, `src/hooks/handler.ts`, or any other source file.\n- Do NOT add entries to any `*EVENT_MAP` or to `GEMINI_TOOL_MAP` for\n  newly-added events. Removing keys from a map when their array",
@@ -62,9 +58,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt demonstrates strong tool/action safety practices. It explicitly restricts which files can be edited, prohibits running shell commands, forbids modifying specific critical source files, and intentionally leaves certain changes (event map entries) for human review. The principle of least privilege and careful scoping of automated actions is well-enforced.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Each new agent-side event needs a canonical Claude PascalCase mapping that\nrequires human judgement",
@@ -73,9 +67,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves human agency by explicitly requiring human review for consequential decisions. New event map entries require human judgment, the PR must be reviewed before merging, and the system intentionally surfaces build failures to alert reviewers rather than making autonomous guesses.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

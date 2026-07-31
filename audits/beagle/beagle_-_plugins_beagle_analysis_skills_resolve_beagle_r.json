@@ -4,8 +4,6 @@
   "product": "beagle - plugins beagle analysis skills resolve beagle r...",
   "category": "multi-agent",
   "source_file": "plugins_beagle-analysis_skills_resolve-beagle_references_subagent-prompts.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly requires subagents to cite evidence, provide file paths and line numbers, prefer primary/authoritative sources, and explicitly flag uncertainty rather than guessing. The instruction 'If the subagent cannot produce a recommendation with evidence, it should say so explicitly in Open sub-questions rather than guess' directly promotes truthfulness.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "Your job: read the relevant code and return a structured proposal answering the question. Use Grep, Glob, and Read. Do not modify any files.",
@@ -62,9 +58,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The Codebase pattern template explicitly restricts subagents to read-only operations, preventing unintended modifications. The instruction 'Do not modify any files' enforces a least-privilege, safety-first approach to file system interactions.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

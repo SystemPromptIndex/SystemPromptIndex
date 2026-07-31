@@ -4,8 +4,6 @@
   "product": "agent-guardrails-template - docs agentmcp Sentinel System Prompt",
   "category": "coding-agents",
   "source_file": "docs_agentmcp_Sentinel System Prompt.txt",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 1,
@@ -51,9 +49,7 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly prohibits hallucinating test results, requiring the agent to actually run tests and read output. It also enforces documentation parity checks, ensuring the agent does not claim stale documentation is current. These rules strongly promote information integrity.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "NEVER output high-entropy secrets (API keys, passwords) to the chat.\n- NEVER hallucinate a successful test run. You must run `run_tests()`",
@@ -62,9 +58,7 @@
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly prohibits outputting secrets, API keys, or passwords. It also restricts direct access to .env files, requiring the use of a controlled configuration tool. These measures protect sensitive data from exposure.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "You cannot read/write files outside the repository root.\n   - You cannot access `.env` files directly. You must use `get_config()`.\n\n3. **Documentation Parity:**\n   - You are prohibited from completing a task if the documentation is stale.\n   - Use `check_doc_parity()` before calling `complete_task()`.\n\n# CRITICAL RULES (VIOLATION",
@@ -73,9 +67,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt implements strong tool safety measures including a VFS jail restricting file access, prohibition on bypassing git commit tools, restricted editing of sentinel service files, mandatory error handling with escalation to humans, and state-based restrictions on what actions are permitted. The error handling protocol requires stopping on blockers and requesting human help.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "If you are stuck, call `request_human_help()`.\n\n# YOUR GOAL\nYour goal is not just to write code, but to advance the State Machine from 'PLANNING' to 'ARCHIVED' while maintaining a clean Audit Log.\n3. Dynamic Context Injecti",
@@ -84,9 +76,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves user agency by requiring the agent to escalate to humans when stuck via `request_human_help()`. It enforces a review state where human review is required before completion. The confirmation parameter on commits requires explicit verification. The system keeps consequential actions under human control.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }

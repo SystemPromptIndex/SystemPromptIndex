@@ -4,8 +4,6 @@
   "product": "AgenticX - .cursor plans agent runtime unification 235a295...",
   "category": "multi-agent",
   "source_file": ".cursor_plans_agent_runtime_unification_235a295c.plan.md",
-  "audit_type": "automated",
-  "reviewer": "auto",
   "scores": {
     "D1": 0,
     "D2": 0,
@@ -51,9 +49,7 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt explicitly references existing safety mechanisms including workspace boundary enforcement, diff confirmation before writes, high-risk subcommand detection, and a confirmation gate (ConfirmGate) that requires user approval before dangerous tool operations. The shell=False policy prevents shell injection.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     },
     {
       "text": "\"type\": \"confirm_required\", \"data\": {\"id\": \"xxx\", \"question\": \"Write to file?\"}",
@@ -62,9 +58,7 @@
       "dimension": "D5",
       "score": 1,
       "note": "The prompt designs a ConfirmGate system that ensures users must explicitly approve consequential actions like file writes and tool executions. The confirm_required event flow keeps the user in control of all dangerous operations, preserving user agency.",
-      "risky": false,
-      "confidence": "",
-      "source": "llm"
+      "risky": false
     }
   ]
 }
