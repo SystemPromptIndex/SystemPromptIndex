@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="docs/banner.png" alt="System Prompt Index — 1,017 prompts, 406 organisations, 8 dimensions, 5,217 audited spans" width="100%">
+  <a href="https://systempromptindex.com">
+    <img src="docs/homepage.png" alt="System Prompt Index — the homepage, showing quoted instructions from real system prompts around the headline, and counts of 400+ products and 1,000+ system prompts" width="100%">
+  </a>
 </p>
 
 <p align="center">
