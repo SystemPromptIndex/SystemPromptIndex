@@ -8,7 +8,8 @@
   <a href="https://systempromptindex.com"><b>systempromptindex.com</b></a> &nbsp;·&nbsp;
   <a href="https://arxiv.org/abs/2607.28617">Paper</a> &nbsp;·&nbsp;
   <a href="https://systempromptindex.com/aispa">AISPA standard</a> &nbsp;·&nbsp;
-  <a href="CONTRIBUTING.md">Contributing</a>
+  <a href="CONTRIBUTING.md">Contributing</a> &nbsp;·&nbsp;
+  <a href="https://x.com/aisystemprompt">@aisystemprompt</a>
 </p>
 
 **1,017 system prompts from real AI products, read instruction by instruction.**
