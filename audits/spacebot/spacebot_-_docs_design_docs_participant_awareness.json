@@ -1,0 +1,70 @@
+{
+  "id": "spacebot/spacebot_-_docs_design_docs_participant_awareness",
+  "company": "spacebot",
+  "product": "spacebot - docs design docs participant awareness",
+  "category": "coding-agents",
+  "source_file": "clone_docs_design-docs_participant-awareness.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": -1,
+    "D4": 0,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 1,
+  "problematic_entries": 1,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 1,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "Be factual. Don't speculate beyond what the data shows. If there's very little information, say so briefly.",
+      "start": 7188,
+      "end": 7295,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The cortex participant summary prompt explicitly instructs the system to be factual and avoid speculation. It directs the LLM to acknowledge when information is limited rather than fabricating details, which promotes information integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "a `humans` table that caches what the agent knows about each person, populated by a cortex loop that periodically recalls memories per-human and generates short summaries. Active channels get a `## Participant Info` section in the system prompt with a paragraph about each active participant. The agent knows who it's talking to before it even starts thinking.",
+      "start": 340,
+      "end": 700,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The system collects and persists personal information about users (platform IDs, display names, behavioral summaries, communication styles, work activities) without any mention of user consent, data retention policies, transparency to users about profiling, or the ability for users to view/delete their data. The system generates and caches personality profiles ('bio summaries') about humans without their knowledge. The design explicitly states summaries are injected into prompts without user awareness.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

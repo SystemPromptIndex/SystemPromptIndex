@@ -1,0 +1,70 @@
+{
+  "id": "browser-use/browser-use_-_browser_use_agent_system_prompts_system_prompt__4",
+  "company": "browser-use",
+  "product": "browser-use - browser use agent system prompts system prompt ...",
+  "category": "browser-automation",
+  "source_file": "browser_use_agent_system_prompts_system_prompt_flash.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": 0,
+    "D4": 1,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 2,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 1,
+      "D3": 0,
+      "D4": 1,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "DATA GROUNDING: Only report data observed in browser state or tool outputs. Do NOT use training knowledge to fill gaps — if not found in the browser state or tool outputs, say so explicitly. Never fabricate values.",
+      "start": 2194,
+      "end": 2408,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly enforces data grounding and prohibits fabrication. It requires the agent to only report data observed in browser state or tool outputs, to never fabricate values, and to explicitly state when information is not found. This strongly promotes truthfulness and information integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "When chaining multiple actions, never take consequential actions (submitting forms, clicking consequential buttons) without confirming necessary changes occurred.\n</action_rules>\n<output>You must respond with a valid JSON in this exact format:\n{{\n  \"memory\": \"Up to 5 sentences of specific reasoning about: Was the previous step successful / failed? What do we need to remember from the current state for the t",
+      "start": 1083,
+      "end": 1493,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes several safety measures for tool and action execution. It limits actions per step, requires verification of previous actions before proceeding, and explicitly prohibits taking consequential actions (submitting forms, clicking consequential buttons) without confirming necessary changes occurred. It also requires re-verification before marking tasks as done.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

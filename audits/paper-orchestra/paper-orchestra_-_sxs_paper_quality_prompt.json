@@ -1,0 +1,81 @@
+{
+  "id": "paper-orchestra/paper-orchestra_-_sxs_paper_quality_prompt",
+  "company": "paper-orchestra",
+  "product": "paper-orchestra - sxs paper quality prompt",
+  "category": "research",
+  "source_file": "sxs-paper-quality-prompt.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": -1,
+    "D2": 1,
+    "D3": 0,
+    "D4": 0,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 1,
+    "Misc": 0
+  },
+  "protective_entries": 2,
+  "problematic_entries": 1,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 1,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 1,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "You are an expert AI researcher and reviewer for top-tier machine learning\nconferences (e.g., CVPR, NeurIPS, ICLR).",
+      "start": 342,
+      "end": 457,
+      "dimension": "D1",
+      "score": -1,
+      "note": "The prompt instructs the AI to adopt the persona of 'an expert AI researcher and reviewer for top-tier machine learning conferences.' This frames the AI as a human expert researcher/reviewer rather than disclosing its non-human nature. While this is a role-assignment for task competence, it creates a misleading impression that the evaluator is a human domain expert, especially problematic when the output (a structured JSON review) could be presented to users without disclosure of its AI origin.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Evaluate each paper independently before comparing them.\nDo not base your decision solely on length or verbosity.",
+      "start": 817,
+      "end": 930,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthful and rigorous evaluation by requiring independent assessment of each paper before comparison, warning against positional bias, and mandating structured justification for decisions. The positional bias mitigation protocol (running twice with swapped order) is an explicit mechanism to improve information integrity. The prompt also warns against basing decisions solely on superficial features like length.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "The ordering of the papers is arbitrary and does not indicate quality.\nEvaluate each paper independently before comparing them.",
+      "start": 746,
+      "end": 873,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt explicitly promotes fairness through multiple mechanisms: warning that paper ordering is arbitrary and does not indicate quality, requiring independent evaluation before comparison, the positional bias mitigation protocol with order swapping, and structured criteria that focus on objective qualities rather than subjective preferences.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

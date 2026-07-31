@@ -1,0 +1,70 @@
+{
+  "id": "travel/travel_-_travel_itinerary_agent_macro_itinerary_syst",
+  "company": "travel",
+  "product": "travel - travel / itinerary agent / macro itinerary syst...",
+  "category": "extracted",
+  "source_file": "travel__itinerary-agent__macro_itinerary_system_prompt.txt",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": 0,
+    "D4": 0,
+    "D5": -1,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 1,
+  "problematic_entries": 1,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 1,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 1,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "**All recommendations must come from tools** - never use internal knowledge",
+      "start": 745,
+      "end": 820,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires that all recommendations come from tools and never from internal knowledge, which promotes information integrity by ensuring data comes from real-time, verifiable sources. This prevents fabrication of travel information.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "**No follow-up questions** - work with provided information",
+      "start": 1199,
+      "end": 1258,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt explicitly instructs 'No follow-up questions - work with provided information,' which removes the user's ability to clarify or refine their preferences. This undermines user agency by preventing the system from asking clarifying questions when information may be ambiguous or incomplete, potentially leading to suboptimal or unwanted recommendations. Additionally, 'No partial summaries - only complete final itinerary allowed' prevents users from reviewing and providing feedback on intermediate steps.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

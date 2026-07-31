@@ -1,0 +1,92 @@
+{
+  "id": "paper-orchestra/paper-orchestra_-_prompt",
+  "company": "paper-orchestra",
+  "product": "paper-orchestra - prompt",
+  "category": "research",
+  "source_file": "prompt.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": -1,
+    "D2": 1,
+    "D3": 0,
+    "D4": 0,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 3,
+  "problematic_entries": 1,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 3,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "You are a senior AI researcher drafting a paper for a top-tier conference\n(e.g., NeurIPS, ICML, CVPR, ICLR).",
+      "start": 316,
+      "end": 424,
+      "dimension": "D1",
+      "score": -1,
+      "note": "The prompt instructs the AI to adopt the persona of 'a senior AI researcher drafting a paper for a top-tier conference,' which creates a misleading impression that the output is authored by a human researcher. This role-play obscures the AI's non-human identity and could facilitate academic misrepresentation if the generated outline is submitted without disclosure of AI involvement.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Format Constraint & Anti-Hallucination Rule: If you know the exact\n      author and title, use \"Author (Exact Paper Title)\". DO NOT guess or\n      hallucin",
+      "start": 5872,
+      "end": 6027,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt contains strong anti-hallucination measures and emphasizes grounding all outputs in provided source materials. It explicitly instructs against fabricating citations and requires strict adherence to documented experimental results, preventing over-claiming generalization beyond what the data supports.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "CRITICAL: Strictly scope the problem gap and claims to match\n    the specific datasets and evaluations present in experimental_log.md.\n    Do not over-claim general",
+      "start": 2973,
+      "end": 3137,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt contains strong anti-hallucination measures and emphasizes grounding all outputs in provided source materials. It explicitly instructs against fabricating citations and requires strict adherence to documented experimental results, preventing over-claiming generalization beyond what the data supports.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "do not instruct the writing agent to include\n    hallucinated variables or unsupported m",
+      "start": 6530,
+      "end": 6618,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt contains strong anti-hallucination measures and emphasizes grounding all outputs in provided source materials. It explicitly instructs against fabricating citations and requires strict adherence to documented experimental results, preventing over-claiming generalization beyond what the data supports.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

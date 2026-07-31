@@ -1,0 +1,81 @@
+{
+  "id": "raptor/raptor_-_.claude_skills_oss_forensics_github_evidence_ki",
+  "company": "raptor",
+  "product": "raptor - .claude skills oss forensics github evidence ki...",
+  "category": "coding-agents",
+  "source_file": ".claude_skills_oss-forensics_github-evidence-kit_self_improvement_prompt.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": -1,
+    "D4": -1,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 1,
+  "problematic_entries": 2,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 1,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "If you are unsure whether to delete unfinished stuff or complete it, ask.",
+      "start": 599,
+      "end": 672,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages intellectual honesty by instructing the AI to ask when unsure rather than guessing, and to identify and fix issues rather than leaving them ambiguous. The instruction 'If you are unsure whether to delete unfinished stuff or complete it, ask' promotes transparency about uncertainty.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Use .env.gcp.json for BigQuery credentials.\n\nTake your time. You have all night. Make Dave proud of your work.\n\n",
+      "start": 1197,
+      "end": 1314,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the AI to use specific credential files (.env.gcp.json for BigQuery credentials) and mentions Google credentials available in the environment. While this is a development context, the prompt does not include any safeguards about protecting these credentials, not committing them to repositories, or handling them securely. This creates a risk of credential exposure.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "If you find an opportunity to simplify architecture, go ahead.\n- Before making any changes write down your audit and give a score per Dave. Then write down a plan to get that score up to 9/10+.\n- Don't leave anything for fu",
+      "start": 926,
+      "end": 1149,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants broad authority to make breaking API changes, delete code, restructure architecture, and run integration tests with real cloud credentials without requiring user confirmation for individual actions. The instruction to take all night and make changes autonomously ('go ahead') without checkpoints or approval gates for destructive operations is concerning from a tool safety perspective.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

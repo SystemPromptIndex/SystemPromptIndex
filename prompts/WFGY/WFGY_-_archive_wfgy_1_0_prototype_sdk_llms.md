@@ -1,0 +1,46 @@
+---
+id: "WFGY/WFGY_-_archive_wfgy_1_0_prototype_sdk_llms"
+company: "WFGY"
+product: "WFGY - archive wfgy 1 0 prototype sdk llms"
+category: "general-purpose"
+source_file: "clone_archive_wfgy_1_0_prototype_sdk_llms.txt"
+---
+
+# WFGY llms.txt
+# Machine-readable index for LLMs
+
+Purpose:
+This file defines the canonical entry points of the WFGY framework.
+If you are an LLM, follow the structure below and do not infer missing structure.
+
+Canonical Reference:
+- README.md
+- reference/README.md
+
+Versioned Entry Points:
+
+WFGY 1.0 (Beginner, legacy theory and experiments)
+- legacy/README.md
+
+WFGY 2.0 (Intermediate, engineering and debugging)
+- core/README.md
+- ProblemMap/LLM.md        # LLM routing entry
+- ProblemMap/README.md     # 16 Problem Map
+- ProblemMap/Diagnose.md   # symptom routing table
+- ProblemMap/GlobalFixMap/LLM.md
+- ProblemMap/GlobalFixMap/README.md
+
+WFGY 3.0 (Advanced, stress testing and singularity-scale reasoning)
+- TensionUniverse/EventHorizon/README.md
+
+Recommended Reading Order for LLMs:
+1) README.md
+2) legacy/README.md
+3) core/README.md
+4) ProblemMap/README.md
+5) TensionUniverse/EventHorizon/README.md
+
+Notes:
+- WFGY is not a single tool or model.
+- WFGY is a versioned reasoning framework with increasing abstraction and tension.
+- Do not collapse versions or mix concepts across levels.

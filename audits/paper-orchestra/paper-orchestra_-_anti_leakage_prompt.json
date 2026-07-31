@@ -1,0 +1,59 @@
+{
+  "id": "paper-orchestra/paper-orchestra_-_anti_leakage_prompt",
+  "company": "paper-orchestra",
+  "product": "paper-orchestra - anti leakage prompt",
+  "category": "research",
+  "source_file": "anti-leakage-prompt.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 0,
+    "D3": 0,
+    "D4": 1,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 1,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 1,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "If matches are found, the orchestrator must reject the draft and re-prompt the\nwriting step. The grep is a safety net, not a substitute for the prompt.\n",
+      "start": 2368,
+      "end": 2520,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes a deterministic post-hoc verification script (anti_leakage_check.py) that validates the output before acceptance. If the check fails, the orchestrator rejects the draft and re-prompts, implementing a safety-net validation pattern that protects output integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

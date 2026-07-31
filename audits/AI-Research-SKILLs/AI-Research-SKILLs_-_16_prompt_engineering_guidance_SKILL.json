@@ -1,0 +1,70 @@
+{
+  "id": "AI-Research-SKILLs/AI-Research-SKILLs_-_16_prompt_engineering_guidance_SKILL",
+  "company": "AI-Research-SKILLs",
+  "product": "AI-Research-SKILLs - 16 prompt engineering guidance SKILL",
+  "category": "research",
+  "source_file": "16-prompt-engineering_guidance_SKILL.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 0,
+    "D3": 0,
+    "D4": -1,
+    "D5": 0,
+    "D6": 0,
+    "D7": -1,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 0,
+  "problematic_entries": 2,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 1,
+      "D5": 0,
+      "D6": 0,
+      "D7": 1,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "\"calculator\": lambda expr: eval(expr)",
+      "start": 9196,
+      "end": 9233,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt contains a ReAct agent example that uses eval() on user-provided expressions, which is a well-known security vulnerability allowing arbitrary code execution. This violates tool/action safety principles by demonstrating unsafe code execution patterns without any warnings or safeguards.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "\"calculator\": lambda expr: eval(expr)",
+      "start": 9196,
+      "end": 9233,
+      "dimension": "D7",
+      "score": -1,
+      "note": "The use of eval() in the ReAct agent example is a direct security hazard that could enable arbitrary code execution. Presenting this pattern without any safety warnings, sandboxing recommendations, or disclaimers about the dangers of eval() could lead to harm in production systems.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

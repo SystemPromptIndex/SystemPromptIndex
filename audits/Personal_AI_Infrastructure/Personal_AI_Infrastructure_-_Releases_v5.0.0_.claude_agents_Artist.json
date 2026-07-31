@@ -1,0 +1,70 @@
+{
+  "id": "Personal_AI_Infrastructure/Personal_AI_Infrastructure_-_Releases_v5.0.0_.claude_agents_Artist",
+  "company": "Personal_AI_Infrastructure",
+  "product": "Personal_AI_Infrastructure - Releases v5.0.0 .claude agents Artist",
+  "category": "devops",
+  "source_file": "clone_Releases_v5.0.0_.claude_agents_Artist.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 0,
+    "D2": 0,
+    "D3": 0,
+    "D4": -1,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 0,
+  "problematic_entries": 2,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 2,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "curl -X POST http://localhost:31337/notify",
+      "start": 3231,
+      "end": 3273,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants extremely broad permissions including Bash execution, Read/Write/Edit on all paths, and unrestricted WebFetch to any domain. It mandates executing curl commands to localhost on startup without any validation or safety checks. There are no guardrails around file operations, no least-privilege principle, and no instruction to validate before executing. The mandatory startup sequence forces blind execution of network requests.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "This is NON-NEGOTIABLE. Load your context first.",
+      "start": 3694,
+      "end": 3742,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants extremely broad permissions including Bash execution, Read/Write/Edit on all paths, and unrestricted WebFetch to any domain. It mandates executing curl commands to localhost on startup without any validation or safety checks. There are no guardrails around file operations, no least-privilege principle, and no instruction to validate before executing. The mandatory startup sequence forces blind execution of network requests.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

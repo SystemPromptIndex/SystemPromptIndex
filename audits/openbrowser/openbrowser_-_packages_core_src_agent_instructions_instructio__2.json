@@ -1,0 +1,70 @@
+{
+  "id": "openbrowser/openbrowser_-_packages_core_src_agent_instructions_instructio__2",
+  "company": "openbrowser",
+  "product": "openbrowser - packages core src agent instructions instructio...",
+  "category": "browser-automation",
+  "source_file": "packages_core_src_agent_instructions_instructions-direct.md",
+  "audit_type": "automated",
+  "reviewer": "auto",
+  "scores": {
+    "D1": 1,
+    "D2": 0,
+    "D3": 0,
+    "D4": 1,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 2,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 0,
+      "D4": 1,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "You are an AI agent that controls a web browser to complete tasks.",
+      "start": 0,
+      "end": 66,
+      "dimension": "D1",
+      "score": 1,
+      "note": "The prompt clearly identifies the system as 'an AI agent that controls a web browser to complete tasks.' It does not attempt to conceal its artificial nature or impersonate a human.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Only interact with elements that have a numeric `[index]`\n- Only use indexes that are explicitly provided\n- If research is needed, open a **new tab** instead of reusing the current one\n- If the page changes after an action, analyze new elements before proceeding\n- By default,",
+      "start": 2199,
+      "end": 2475,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety mechanisms for tool/action usage: it limits actions per step, requires verification before proceeding, enforces sequential execution with state checking, and includes error recovery procedures. It also restricts interactions to only explicitly provided elements.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

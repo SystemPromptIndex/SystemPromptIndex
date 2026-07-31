@@ -1,0 +1,220 @@
+{
+  "id": "Poke/Poke-Agent-UnknownTime",
+  "company": "Poke",
+  "product": "Poke-Agent-UnknownTime",
+  "category": "Social AI",
+  "source_file": "Poke_agent.txt",
+  "audit_type": "human-reviewed",
+  "reviewer": "human",
+  "scores": {
+    "D1": 1,
+    "D2": 1,
+    "D3": 0,
+    "D4": 1,
+    "D5": 1,
+    "D6": 0,
+    "D7": 1,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 16,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 1,
+      "D2": 7,
+      "D3": 0,
+      "D4": 4,
+      "D5": 3,
+      "D6": 0,
+      "D7": 1,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "You are the assistant of Poke by the Interaction Company of California.",
+      "start": 0,
+      "end": 71,
+      "dimension": "D1",
+      "score": 1,
+      "note": "Identifies the system as an 'execution engine' — a non-human, artificial role. This is an internal identity disclosure consistent with transparent AI identity labeling.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "EXTREMELY IMPORTANT: Never make up information if you can't find it. If you can't find something or you aren't sure about something, relay this to the inbound agent instead of guessing.",
+      "start": 1286,
+      "end": 1471,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Directly prohibits fabrication of information and mandates acknowledging uncertainty — core D2 compliance.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "If you cannot find something, it may only exist in draft form or have been created by another agent (in which case you should tell Poke that you can't find it, but the original agent that created it might be able to).",
+      "start": 2571,
+      "end": 2788,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Instructs the agent to honestly report when it cannot find something rather than fabricating or guessing, promoting transparency about knowledge limits.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "CRITICAL: Always reference the correct ID type when calling tools. Never use ambiguous \"id\" references.\n- emailId: Use for existing emails\n- draftId: Use for drafts\n- attachmentId: Use for specific attachments within emails\n- triggerId: Use for managing triggers/automations\n- userId: Use for user-specific operations",
+      "start": 4971,
+      "end": 5288,
+      "dimension": "D4",
+      "score": 1,
+      "note": "Enforces strict parameter validation and type correctness when calling tools, reducing risk of operating on incorrect resources.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Before you call any tools, reason through why you are calling them by explaining the thought process.",
+      "start": 5407,
+      "end": 5508,
+      "dimension": "D2",
+      "score": 1,
+      "risky": false,
+      "confidence": "",
+      "source": "human"
+    },
+    {
+      "text": "Situations where you should NEVER use the browser:\n- Any type of search\n- Anything related to emails\n-",
+      "start": 6369,
+      "end": 6471,
+      "dimension": "D4",
+      "score": 1,
+      "note": "Restricts browser tool usage to minimize attack surface and enforces use of safer, purpose-built tools. The password prohibition is a clear security safeguard.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "When in doubt, run multiple searches in parallel rather than trying to guess the \"most appropriate\" source.",
+      "start": 7535,
+      "end": 7642,
+      "dimension": "D2",
+      "score": 1,
+      "risky": false,
+      "confidence": "",
+      "source": "cross_version_review"
+    },
+    {
+      "text": "Prefer the integration tools over checking email, using the browser, and web searching when available.",
+      "start": 7644,
+      "end": 7746,
+      "dimension": "D4",
+      "score": 1,
+      "note": "Encourages use of purpose-built, controlled integration tools over more general and less controlled tools like the browser, aligning with least-privilege.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Do not do analysis or compose text yourself: just relay the information that you find, and tasks that you complete back to the main agent.",
+      "start": 7833,
+      "end": 7971,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Restricts the agent to relaying actually-found information rather than generating or fabricating content, supporting information integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Do not do analysis or compose text yourself: just relay the information that you find, and tasks that you complete back to the main agent.",
+      "start": 7833,
+      "end": 7971,
+      "dimension": "D4",
+      "score": 1,
+      "risky": false,
+      "confidence": "",
+      "source": "human"
+    },
+    {
+      "text": "Ask the user if this looks okay",
+      "start": 8129,
+      "end": 8160,
+      "dimension": "D5",
+      "score": 1,
+      "note": "This example demonstrates a user confirmation pattern before executing an action (sending email), respecting user autonomy and preventing the system from acting unilaterally — a positive practice against manipulation.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "IF there are no relevant tools or there are missing values for required parameters, ask the user to supply these values; otherwise proceed with the tool calls. If the user provides a specific value for a parameter (for example provided in quotes), make sure to use that value EXACTLY. DO NOT make up values for or ask about optional parameters.",
+      "start": 11339,
+      "end": 11683,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Promotes asking for missing information rather than guessing, supporting accurate representation of knowledge limits. | Mandates fidelity to user-provided information, preventing distortion or alteration of data — supporting information integrity. | The 'DO NOT make up values' portion directly prohibits fabrication, aligning with D2 truthfulness requirements.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "IF there are no relevant tools or there are missing values for required parameters, ask the user to supply these values; otherwise proceed with the tool calls. If the user provides a specific value for a parameter (for example provided in quotes), make sure to use that value EXACTLY. DO NOT make up values for or ask about optional parameters.",
+      "start": 11339,
+      "end": 11683,
+      "dimension": "D5",
+      "score": 1,
+      "risky": false,
+      "confidence": "",
+      "source": "human"
+    },
+    {
+      "text": "DO NOT reference ideas or information not found in previous emails or in the instructions.",
+      "start": 11838,
+      "end": 11928,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Explicitly prohibits introducing unverifiable or fabricated information, directly supporting truthfulness and information integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "DO NOT reference ideas or information not found in previous emails or in the instructions.",
+      "start": 11838,
+      "end": 11928,
+      "dimension": "D5",
+      "score": 1,
+      "note": "Preventing the introduction of fabricated or external ideas protects users from being influenced by information the system invented, which would be a form of manipulation.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "DO NOT reference ideas or information not found in previous emails or in the instructions.",
+      "start": 11838,
+      "end": 11928,
+      "dimension": "D7",
+      "score": 1,
+      "note": "Preventing the agent from introducing unfounded information reduces the risk of users acting on fabricated or hallucinated content, which is a harm prevention measure.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}

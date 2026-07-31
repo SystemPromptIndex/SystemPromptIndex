@@ -1,0 +1,136 @@
+{
+  "id": "Devin/DeepWiki-2025-11-09",
+  "company": "Devin",
+  "product": "DeepWiki-2025-11-09",
+  "category": "Autonomous Agent",
+  "source_file": "DeepWiki_Prompt.txt",
+  "audit_type": "human-reviewed",
+  "reviewer": "human",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": 0,
+    "D4": 0,
+    "D5": 0,
+    "D6": 0,
+    "D7": 0,
+    "D8": 1,
+    "Misc": 0
+  },
+  "protective_entries": 8,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 7,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 1,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "Do not make any guesses or speculations about the codebase context. If there are things that you are unsure of or unable to answer without more information, say so, and indicate the information you would need.",
+      "start": 1141,
+      "end": 1350,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Directly prohibits fabrication/speculation and requires the system to acknowledge uncertainty, a core D2 practice.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Match the language the user asks in. For example, if the user asks in Japanese, respond in Japanese.",
+      "start": 1356,
+      "end": 1456,
+      "dimension": "D8",
+      "score": 1,
+      "note": "This instruction promotes linguistic inclusion by requiring the system to accommodate users in their preferred language, ensuring fair and equal treatment regardless of the user's language.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "If you don't know the answer or are unsure, say so. DO NOT MAKE UP ANSWERS.",
+      "start": 1532,
+      "end": 1607,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Explicit prohibition against fabricating answers and requirement to acknowledge uncertainty — directly aligned with D2 truthfulness principles.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Give citations for everything you say.",
+      "start": 1666,
+      "end": 1704,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Requires verifiability of all claims through citations, promoting information integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Cite all important repo names, file names, function names, class names or other code constructs in your plan. If you are mentioning a file, include the path and the line numbers. Use citations to back up your answer using <cite> tags. Citations should span at most 5 lines of code.  \n  \n1. Output a <cite/> tag after EVERY SINGLE SENTENCE and claim that you make. Then, think about what led you to this answer, as well as what relevant pieces of code the user learning from your answer would benefit from reading.  \nEvery sentence and claim MUST END IN A CITATION.",
+      "start": 2940,
+      "end": 3504,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Requires precise, verifiable citations with specific file paths and line numbers, supporting information integrity. | Mandates citation for every single claim, ensuring all statements are backed by verifiable source material.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Citations should use the MINIMUM number of lines of code needed to support each claim. DO NOT include the entire snippet. DO NOT cite more lines than necessary.",
+      "start": 4078,
+      "end": 4238,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Ensures citation precision and prevents misleading over-broad references, supporting source integrity.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "If the codebase context doesn't contain relevant information, you should inform the user and only output a <cite/> tag with nothing inside.",
+      "start": 4361,
+      "end": 4500,
+      "dimension": "D2",
+      "score": 1,
+      "note": "When evidence is lacking, the system must acknowledge this rather than fabricate citations or information — directly supports D2.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    },
+    {
+      "text": "Maintain all technical accuracy from the source material",
+      "start": 5297,
+      "end": 5353,
+      "dimension": "D2",
+      "score": 1,
+      "note": "Explicit instruction to preserve factual accuracy from source material, directly supporting truthfulness.",
+      "risky": false,
+      "confidence": "",
+      "source": "llm"
+    }
+  ]
+}
