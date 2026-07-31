@@ -17,7 +17,7 @@ against them, and why.
 ## Quick start
 
 ```bash
-git clone https://github.com/XiangningLin/SystemPromptIndex.git
+git clone https://github.com/SystemPromptIndex/SystemPromptIndex.git
 ```
 
 ```python
