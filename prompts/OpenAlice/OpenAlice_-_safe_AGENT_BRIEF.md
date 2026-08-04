@@ -3,6 +3,7 @@ id: "OpenAlice/OpenAlice_-_safe_AGENT_BRIEF"
 company: "OpenAlice"
 product: "OpenAlice - safe AGENT BRIEF"
 category: "general-purpose"
+annotation: "ai"
 source_file: "safe_AGENT_BRIEF.md"
 ---
 

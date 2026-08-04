@@ -3,6 +3,7 @@ id: "openmanus/openmanus_-_openmanus_browser"
 company: "openmanus"
 product: "openmanus - openmanus / browser"
 category: "extracted"
+annotation: "ai"
 source_file: "openmanus__browser.txt"
 ---
 

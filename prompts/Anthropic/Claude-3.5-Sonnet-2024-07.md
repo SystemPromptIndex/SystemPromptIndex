@@ -2,6 +2,7 @@
 id: "Anthropic/Claude-3.5-Sonnet-2024-07"
 company: "Anthropic"
 product: "Claude-3.5-Sonnet-2024-07"
+annotation: "ai"
 source_file: "Claude_Sonnet_3.5.md"
 ---
 

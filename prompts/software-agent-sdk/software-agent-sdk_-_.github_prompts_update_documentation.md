@@ -3,6 +3,7 @@ id: "software-agent-sdk/software-agent-sdk_-_.github_prompts_update_documentatio
 company: "software-agent-sdk"
 product: "software-agent-sdk - .github prompts update documentation"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_prompts_update-documentation.md"
 ---
 

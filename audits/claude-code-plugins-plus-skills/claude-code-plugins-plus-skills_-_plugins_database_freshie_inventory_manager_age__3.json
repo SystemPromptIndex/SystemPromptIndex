@@ -3,10 +3,11 @@
   "company": "claude-code-plugins-plus-skills",
   "product": "claude-code-plugins-plus-skills - plugins database freshie inventory manager agen...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_plugins_database_freshie-inventory-manager_agents_discovery-scanner.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If `rebuild-inventory.py` fails, report the error output verbatim",
+      "start": 1507,
+      "end": 1572,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes accurate reporting by requiring delta comparisons against previous runs, verbatim error output reporting, and handling edge cases like first runs or missing databases honestly rather than fabricating results.",
+      "risky": false
+    },
+    {
+      "text": "If this is the first run (no previous), just report absolute counts",
+      "start": 1575,
+      "end": 1642,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes accurate reporting by requiring delta comparisons against previous runs, verbatim error output reporting, and handling edge cases like first runs or missing databases honestly rather than fabricating results.",
+      "risky": false
+    }
+  ]
 }

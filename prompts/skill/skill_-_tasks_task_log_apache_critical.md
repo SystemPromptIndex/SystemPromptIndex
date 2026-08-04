@@ -3,6 +3,7 @@ id: "skill/skill_-_tasks_task_log_apache_critical"
 company: "skill"
 product: "skill - tasks task log apache critical"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_tasks_task_log_apache_critical.md"
 ---
 

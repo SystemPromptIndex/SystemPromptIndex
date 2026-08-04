@@ -3,6 +3,7 @@
   "company": "decisionbox-platform",
   "product": "decisionbox-platform - .github instructions *.instructions",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": ".github_instructions_*.instructions.md",
   "scores": {
     "D1": 0,
@@ -43,27 +44,27 @@
   },
   "spans": [
     {
-      "text": "Do not speculate about behavior you have not verified in the diff or surrounding code.\n- Do not invent function signatures, types, fields, env vars, or APIs. If you reference one, it must exist in this repository.\n- Do not assume a library's behavior. If you claim a function does X, you must be certain from the library's documented contract.\n- If you cannot verify a claim, do not make the claim. Stay silent on that point.\n- Do not hallucinate file paths, package names, or call sites. Cite the exact file and line you are commenting on.\n- When uncertain whether something i",
-      "start": 1198,
-      "end": 1775,
+      "text": "Do not assume a library's behavior. If you claim a function does X, you must be certain from the library's documented contract.",
+      "start": 1414,
+      "end": 1541,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt has an exceptionally strong 'Prime Directive: No Guessing' section that explicitly prohibits speculation, fabrication of function signatures, types, file paths, and unverified claims. It demands the reviewer stay silent rather than make uncertain assertions, and instructs asking precise questions when uncertain rather than asserting defects.",
       "risky": false
     },
     {
-      "text": "Reject secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures. **This is a public open-source repo — everything committed is world-visibl",
+      "text": "Reject secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures.",
       "start": 4879,
-      "end": 5068,
+      "end": 4993,
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly prohibits secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures, with a clear rationale that this is a public open-source repository. This demonstrates strong awareness of data protection in the context of code review.",
       "risky": false
     },
     {
-      "text": "Reject SQL queries built by string concatenation. Demand parameterized queries. For warehouse providers where the driver does not accept positional params (e.g., Databricks with multiple `?`), demand `validIdentifier()` validation at the method boundary before any string formatting.\n- Reject secrets, tokens, API keys, internal hostnames, IPs, or customer data in code, comments, tests, or fixtures. **This is a public open-source repo — everything committed is world-visible.**\n- Reject `any` / `interface{}` / `unknown` where a concrete type is knowabl",
+      "text": "Reject SQL queries built by string concatenation. Demand parameterized queries. For warehouse providers where the driver does not accept positional params (e.g., Databricks with multiple `?`), demand `validIdentifier()` validation at the method boundary before any string formatting.",
       "start": 4593,
-      "end": 5148,
+      "end": 4876,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt enforces extensive tool and action safety measures including SQL injection prevention via parameterized queries and identifier validation, read-only enforcement for warehouse operations, proper error handling, context propagation for I/O, connection pool limits, and rejection of unsafe patterns like unbounded goroutines and swallowed errors. It also mandates security practices like input validation and least-privilege patterns.",

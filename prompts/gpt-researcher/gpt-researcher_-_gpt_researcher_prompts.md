@@ -3,6 +3,7 @@ id: "gpt-researcher/gpt-researcher_-_gpt_researcher_prompts"
 company: "gpt-researcher"
 product: "gpt-researcher - gpt researcher / prompts"
 category: "extracted"
+annotation: "ai"
 source_file: "gpt-researcher__prompts.py"
 ---
 

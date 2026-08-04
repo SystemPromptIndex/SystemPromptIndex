@@ -3,6 +3,7 @@ id: "agenthub/agenthub_-_.github_copilot_instructions"
 company: "agenthub"
 product: "agenthub - .github copilot instructions"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_copilot-instructions.md"
 ---
 

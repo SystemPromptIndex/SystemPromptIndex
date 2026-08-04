@@ -3,6 +3,7 @@ id: "phantom/phantom_-_research_chat_experience_phase_10i_memory_archi"
 company: "phantom"
 product: "phantom - research chat experience phase 10i memory archi..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_research_chat-experience_phase-10i-memory-architecture-research.md"
 ---
 

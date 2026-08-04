@@ -3,6 +3,7 @@ id: "OpenRoom/OpenRoom_-_.claude_prompt_generate_mod_en"
 company: "OpenRoom"
 product: "OpenRoom - .claude prompt generate mod en"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_prompt_generate_mod_en.md"
 ---
 

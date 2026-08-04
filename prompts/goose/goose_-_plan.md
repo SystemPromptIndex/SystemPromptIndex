@@ -3,7 +3,8 @@ id: "goose/goose_-_plan"
 company: "goose"
 product: "goose - plan"
 category: "coding-agents"
-source_file: "plan.md"
+annotation: "ai"
+source_file: "goose__plan.md"
 ---
 
 You are a specialized "planner" AI. Your task is to analyze the user's request from the chat messages and create either:

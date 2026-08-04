@@ -3,6 +3,7 @@ id: "ailice/ailice_-_prompt_researcher"
 company: "ailice"
 product: "ailice - prompt researcher"
 category: "browser-automation"
+annotation: "ai"
 source_file: "prompt_researcher.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "bug-hunter/bug-hunter_-_prompts_recon"
 company: "bug-hunter"
 product: "bug-hunter - prompts recon"
 category: "coding-agents"
+annotation: "ai"
 source_file: "prompts_recon.md"
 ---
 

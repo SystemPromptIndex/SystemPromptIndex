@@ -3,6 +3,7 @@ id: "opendraft/opendraft_-_engine_prompts_02_structure_citation_manager"
 company: "opendraft"
 product: "opendraft - engine prompts 02 structure citation manager"
 category: "coding-agents"
+annotation: "ai"
 source_file: "engine_prompts_02_structure_citation_manager.md"
 ---
 

@@ -3,6 +3,7 @@ id: "phantom/phantom_-_docs_roles"
 company: "phantom"
 product: "phantom - docs roles"
 category: "multi-agent"
+annotation: "ai"
 source_file: "docs_roles.md"
 ---
 

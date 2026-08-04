@@ -3,24 +3,25 @@
   "company": "claude-council",
   "product": "claude-council - skills deep execution agent prompt template",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "skills_deep-execution_agent-prompt-template.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 2,
+  "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -33,7 +34,7 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "The Full Response section must contain the complete, unedited provider response",
+      "start": 1401,
+      "end": 1480,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the agent to be honest in quality assessments, identify blind spots, evaluate whether responses are substantive vs. vague, and preserve the full unedited provider response. This promotes information integrity and honest evaluation.",
+      "risky": false
+    },
+    {
+      "text": "For Blind Spots, think about what a different expert perspective might critique",
+      "start": 1583,
+      "end": 1662,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the agent to be honest in quality assessments, identify blind spots, evaluate whether responses are substantive vs. vague, and preserve the full unedited provider response. This promotes information integrity and honest evaluation.",
+      "risky": false
+    },
+    {
+      "text": "Run this command:\n```bash\nCOUNCIL_TIMEOUT=500 bash {SCRIPT_PATH} \"{QUESTION}\"",
+      "start": 266,
+      "end": 343,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to execute bash scripts with user-provided input without any validation, sandboxing, or safety checks. The question parameter is passed directly into a shell command, creating potential command injection risks. There is no mention of validating the script path or the question content before execution.",
+      "risky": false
+    }
+  ]
 }

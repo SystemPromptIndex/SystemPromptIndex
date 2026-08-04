@@ -3,6 +3,7 @@ id: "agentic-ai-prompt-research/agentic-ai-prompt-research_-_prompts_06_teammate
 company: "agentic-ai-prompt-research"
 product: "agentic-ai-prompt-research - prompts 06 teammate prompt addendum"
 category: "research"
+annotation: "ai"
 source_file: "clone_prompts_06_teammate_prompt_addendum.md"
 ---
 

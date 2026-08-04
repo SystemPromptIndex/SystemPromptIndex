@@ -3,6 +3,7 @@ id: "numasec/numasec_-_packages_numasec_src_agent_prompt_appsec"
 company: "numasec"
 product: "numasec - packages numasec src agent prompt appsec"
 category: "coding-agents"
+annotation: "ai"
 source_file: "packages_numasec_src_agent_prompt_appsec.txt"
 ---
 

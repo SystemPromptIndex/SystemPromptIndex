@@ -3,6 +3,7 @@ id: "skynet-agent/skynet-agent_-_motive_force_prompt"
 company: "skynet-agent"
 product: "skynet-agent - motive force prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "motive-force-prompt.md"
 ---
 

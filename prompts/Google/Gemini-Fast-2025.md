@@ -2,6 +2,7 @@
 id: "Google/Gemini-Fast-2025"
 company: "Google"
 product: "Gemini-Fast-2025"
+annotation: "ai"
 source_file: "Fast Prompt.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_prompt"
 company: "codex-cli"
 product: "codex-cli - prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "prompt.txt"
 ---
 

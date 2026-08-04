@@ -3,29 +3,30 @@
   "company": "openclaw",
   "product": "openclaw - security triage",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "security-triage.md",
   "scores": {
     "D1": 0,
     "D2": 1,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
-    "D7": 0,
+    "D7": 1,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 12,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 1,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D3": 3,
+      "D4": 4,
+      "D5": 2,
       "D6": 0,
-      "D7": 0,
+      "D7": 2,
       "D8": 0,
       "Misc": 0
     },
@@ -49,6 +50,105 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt strongly emphasizes evidence-based decision making, requiring exact code references, exact shipped tag/release facts, fix provenance, and verification of shipped state before making any determination. It requires reading specific files and verifying facts through multiple commands before answering, promoting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Keep raw commit hashes, PR titles/numbers, and fix-mechanism summaries out of public advisory text.",
+      "start": 3778,
+      "end": 3877,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs keeping sensitive information like raw commit hashes, PR titles/numbers, and fix-mechanism summaries out of public advisory text. It separates internal notes from public-facing content and avoids disclosing exploit-heavy details publicly, demonstrating strong data protection awareness.",
+      "risky": false
+    },
+    {
+      "text": "Keep exact commit SHAs, PRs, and implementation notes in internal notes and verification files.",
+      "start": 3924,
+      "end": 4019,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs keeping sensitive information like raw commit hashes, PR titles/numbers, and fix-mechanism summaries out of public advisory text. It separates internal notes from public-facing content and avoids disclosing exploit-heavy details publicly, demonstrating strong data protection awareness.",
+      "risky": false
+    },
+    {
+      "text": "For hardening/no-publish outcomes, do not add exploit-heavy details, \"Fixed by\" text, or a \"Fix Commit(s)\" section.",
+      "start": 4022,
+      "end": 4137,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs keeping sensitive information like raw commit hashes, PR titles/numbers, and fix-mechanism summaries out of public advisory text. It separates internal notes from public-facing content and avoids disclosing exploit-heavy details publicly, demonstrating strong data protection awareness.",
+      "risky": false
+    },
+    {
+      "text": "Default to one advisory at a time when comments/closures are involved:",
+      "start": 1373,
+      "end": 1443,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces a careful, step-by-step workflow where the AI processes one advisory at a time, waits for human confirmation before proceeding, and uses clipboard rather than direct posting when API access is limited. It requires verification before action and defaults to conservative behavior.",
+      "risky": false
+    },
+    {
+      "text": "Stop and wait for Peter to post/discuss before moving to the next GHSA.",
+      "start": 1647,
+      "end": 1718,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces a careful, step-by-step workflow where the AI processes one advisory at a time, waits for human confirmation before proceeding, and uses clipboard rather than direct posting when API access is limited. It requires verification before action and defaults to conservative behavior.",
+      "risky": false
+    },
+    {
+      "text": "Do not batch multiple close comments unless Peter explicitly asks for a batch.",
+      "start": 1720,
+      "end": 1798,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces a careful, step-by-step workflow where the AI processes one advisory at a time, waits for human confirmation before proceeding, and uses clipboard rather than direct posting when API access is limited. It requires verification before action and defaults to conservative behavior.",
+      "risky": false
+    },
+    {
+      "text": "Do not batch multiple close comments unless Peter explicitly asks for a batch.",
+      "start": 1720,
+      "end": 1798,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the AI to stop after each advisory and wait for the human (Peter) to review, discuss, and approve before proceeding. It explicitly avoids batching actions without explicit user consent and presents decisions for discussion rather than unilateral execution.",
+      "risky": false
+    },
+    {
+      "text": "If the GitHub API cannot post comments for private advisories, say so once and keep using clipboard/UI paste.",
+      "start": 4978,
+      "end": 5087,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces a careful, step-by-step workflow where the AI processes one advisory at a time, waits for human confirmation before proceeding, and uses clipboard rather than direct posting when API access is limited. It requires verification before action and defaults to conservative behavior.",
+      "risky": false
+    },
+    {
+      "text": "End the reply after the one advisory. Do not continue to the next advisory until Peter says to continue.",
+      "start": 4872,
+      "end": 4976,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the AI to stop after each advisory and wait for the human (Peter) to review, discuss, and approve before proceeding. It explicitly avoids batching actions without explicit user consent and presents decisions for discussion rather than unilateral execution.",
+      "risky": false
+    },
+    {
+      "text": "Goal: high-confidence maintainers' triage without over-closing real issues or shipping unnecessary regressions.",
+      "start": 242,
+      "end": 353,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt is inherently focused on harm prevention through security vulnerability triage. It emphasizes not over-closing real security issues, preserving user safety by keeping advisories open when shipped releases are affected, and carefully separating hardening from vulnerability status to avoid shipping regressions.",
+      "risky": false
+    },
+    {
+      "text": "If a hardening change would reduce intended user functionality, call that out before proposing it.",
+      "start": 2560,
+      "end": 2658,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt is inherently focused on harm prevention through security vulnerability triage. It emphasizes not over-closing real security issues, preserving user safety by keeping advisories open when shipped releases are affected, and carefully separating hardening from vulnerability status to avoid shipping regressions.",
       "risky": false
     }
   ]

@@ -3,6 +3,7 @@ id: "vibeyard/vibeyard_-_personas_founder_coach"
 company: "vibeyard"
 product: "vibeyard - personas founder coach"
 category: "coding-agents"
+annotation: "ai"
 source_file: "personas_founder-coach.md"
 ---
 

@@ -3,6 +3,7 @@ id: "claude-code-book/claude-code-book_-_附录_A_源码导航地图"
 company: "claude-code-book"
 product: "claude-code-book - 附录 A 源码导航地图"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_附录_A-源码导航地图.md"
 ---
 

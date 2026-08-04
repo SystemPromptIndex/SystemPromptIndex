@@ -3,6 +3,7 @@ id: "RL/RL_-_examples_prompts_gsm8k"
 company: "RL"
 product: "RL - examples prompts gsm8k"
 category: "general-purpose"
+annotation: "ai"
 source_file: "examples_prompts_gsm8k.txt"
 ---
 

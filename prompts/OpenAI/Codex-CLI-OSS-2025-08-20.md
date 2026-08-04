@@ -2,6 +2,7 @@
 id: "OpenAI/Codex-CLI-OSS-2025-08-20"
 company: "OpenAI"
 product: "Codex-CLI-OSS-2025-08-20"
+annotation: "ai"
 source_file: "openai-codex-cli-system-prompt-20250820.txt"
 ---
 

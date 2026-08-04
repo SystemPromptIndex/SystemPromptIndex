@@ -3,6 +3,7 @@ id: "Curie/Curie_-_benchmark_exp_bench_evaluation_prompts_eval_gen"
 company: "Curie"
 product: "Curie - benchmark exp bench evaluation prompts eval gen..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "benchmark_exp_bench_evaluation_prompts_eval_gen_prompt.txt"
 ---
 

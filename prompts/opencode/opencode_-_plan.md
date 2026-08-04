@@ -3,6 +3,7 @@ id: "opencode/opencode_-_plan"
 company: "opencode"
 product: "opencode - plan"
 category: "coding-agents"
+annotation: "ai"
 source_file: "plan.txt"
 ---
 

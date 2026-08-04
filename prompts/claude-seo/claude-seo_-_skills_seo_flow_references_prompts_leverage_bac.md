@@ -3,6 +3,7 @@ id: "claude-seo/claude-seo_-_skills_seo_flow_references_prompts_leverage_bac"
 company: "claude-seo"
 product: "claude-seo - skills seo flow references prompts leverage bac..."
 category: "browser-automation"
+annotation: "ai"
 source_file: "skills_seo-flow_references_prompts_leverage_backlink-competition-prompt.md"
 ---
 

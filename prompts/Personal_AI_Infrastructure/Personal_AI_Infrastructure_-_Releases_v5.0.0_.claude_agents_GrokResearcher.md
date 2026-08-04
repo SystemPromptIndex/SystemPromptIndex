@@ -3,6 +3,7 @@ id: "Personal_AI_Infrastructure/Personal_AI_Infrastructure_-_Releases_v5.0.0_.cl
 company: "Personal_AI_Infrastructure"
 product: "Personal_AI_Infrastructure - Releases v5.0.0 .claude agents GrokResearcher"
 category: "devops"
+annotation: "ai"
 source_file: "clone_Releases_v5.0.0_.claude_agents_GrokResearcher.md"
 ---
 

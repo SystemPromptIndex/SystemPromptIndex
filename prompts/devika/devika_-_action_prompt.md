@@ -3,6 +3,7 @@ id: "devika/devika_-_action_prompt"
 company: "devika"
 product: "devika - action prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "action_prompt.jinja2"
 ---
 

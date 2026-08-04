@@ -3,6 +3,7 @@ id: "fastapi-langgraph-agent-production-ready-template/fastapi-langgraph-agent-p
 company: "fastapi-langgraph-agent-production-ready-template"
 product: "fastapi-langgraph-agent-production-ready-template - docs authentication"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_authentication.md"
 ---
 

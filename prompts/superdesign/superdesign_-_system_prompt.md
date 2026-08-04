@@ -3,6 +3,7 @@ id: "superdesign/superdesign_-_system_prompt"
 company: "superdesign"
 product: "superdesign - system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "system-prompt.txt"
 ---
 

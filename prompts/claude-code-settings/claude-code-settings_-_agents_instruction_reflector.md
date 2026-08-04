@@ -3,6 +3,7 @@ id: "claude-code-settings/claude-code-settings_-_agents_instruction_reflector"
 company: "claude-code-settings"
 product: "claude-code-settings - agents instruction reflector"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agents_instruction-reflector.md"
 ---
 

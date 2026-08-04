@@ -3,6 +3,7 @@ id: "dream/dream_-_annotators_emotional_bot_response_emotion_chang"
 company: "dream"
 product: "dream - annotators emotional bot response emotion chang..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "annotators_emotional_bot_response_emotion_change_prompt.txt"
 ---
 

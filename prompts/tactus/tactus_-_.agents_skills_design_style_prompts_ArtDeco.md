@@ -3,6 +3,7 @@ id: "tactus/tactus_-_.agents_skills_design_style_prompts_ArtDeco"
 company: "tactus"
 product: "tactus - .agents skills design style prompts ArtDeco"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".agents_skills_design-style_prompts_ArtDeco.md"
 ---
 

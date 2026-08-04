@@ -2,6 +2,7 @@
 id: "Microsoft/VS-Code-Tab-Completion-2025"
 company: "Microsoft"
 product: "VS-Code-Tab-Completion-2025"
+annotation: "ai"
 source_file: "nes-tab-completion.txt"
 ---
 

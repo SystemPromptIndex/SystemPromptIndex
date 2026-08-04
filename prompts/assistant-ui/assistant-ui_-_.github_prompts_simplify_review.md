@@ -3,6 +3,7 @@ id: "assistant-ui/assistant-ui_-_.github_prompts_simplify_review"
 company: "assistant-ui"
 product: "assistant-ui - .github prompts simplify review"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_prompts_simplify-review.md"
 ---
 

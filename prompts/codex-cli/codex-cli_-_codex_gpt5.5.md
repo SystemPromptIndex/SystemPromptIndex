@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_codex_gpt5.5"
 company: "codex-cli"
 product: "codex-cli - codex gpt5.5"
 category: "coding-agents"
+annotation: "ai"
 source_file: "codex_gpt5.5.md"
 ---
 

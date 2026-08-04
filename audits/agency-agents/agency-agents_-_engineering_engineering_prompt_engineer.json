@@ -3,28 +3,29 @@
   "company": "agency-agents",
   "product": "agency-agents - engineering engineering prompt engineer",
   "category": "legal",
+  "annotation": "ai",
   "source_file": "engineering_engineering-prompt-engineer.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D5": 1,
+    "D6": 1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D5": 1,
+      "D6": 2,
       "D7": 0,
       "D8": 0,
       "Misc": 0
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Flag any prompt that relies on assumed knowledge the model may not have; ground it with context or examples instead",
+      "start": 1705,
+      "end": 1820,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes precision, honesty about limitations, and grounding claims in evidence. It explicitly requires documenting known limitations, quantifying improvements with data, flagging assumed knowledge, and being honest about failure modes. The entire methodology is built around empirical testing and avoiding unsubstantiated claims.",
+      "risky": false
+    },
+    {
+      "text": "Ask: \"What is the exact output format?\" — get JSON schema, Markdown template, or prose spec",
+      "start": 4702,
+      "end": 4793,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt's workflow explicitly preserves user agency through a collaborative requirements-gathering process. Phase 1 involves asking clarifying questions before writing anything, and the methodology emphasizes translating user requirements rather than imposing decisions. The prompt also instructs building guardrails that redirect rather than manipulate users.",
+      "risky": false
+    },
+    {
+      "text": "Writes prompts with explicit injection-resistance layers: role-locking, input sanitization instructions, and fallback phrases",
+      "start": 7925,
+      "end": 8050,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt explicitly addresses prompt injection defense and adversarial input handling. It includes testing for injection attempts, role-locking, input sanitization, and content boundary checking. The system prompt template includes scope limitations and fallback messages for out-of-scope requests.",
+      "risky": false
+    },
+    {
+      "text": "Implements content boundary checking: instructs the model to validate inputs before processing",
+      "start": 8179,
+      "end": 8273,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt explicitly addresses prompt injection defense and adversarial input handling. It includes testing for injection attempts, role-locking, input sanitization, and content boundary checking. The system prompt template includes scope limitations and fallback messages for out-of-scope requests.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "Locus/Locus_-_agent_git_system"
 company: "Locus"
 product: "Locus - agent git system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agent_git_system.md"
 ---
 

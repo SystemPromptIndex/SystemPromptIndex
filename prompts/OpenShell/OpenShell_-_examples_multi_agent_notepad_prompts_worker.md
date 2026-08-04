@@ -3,6 +3,7 @@ id: "OpenShell/OpenShell_-_examples_multi_agent_notepad_prompts_worker"
 company: "OpenShell"
 product: "OpenShell - examples multi agent notepad prompts worker"
 category: "general-purpose"
+annotation: "ai"
 source_file: "examples_multi-agent-notepad_prompts_worker.md"
 ---
 

@@ -3,6 +3,7 @@ id: "OpenOmniBot/OpenOmniBot_-_skills_creator"
 company: "OpenOmniBot"
 product: "OpenOmniBot - skills creator"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_skills-creator.md"
 ---
 

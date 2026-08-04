@@ -3,6 +3,7 @@ id: "numasec/numasec_-_docs_PROMPTS"
 company: "numasec"
 product: "numasec - docs PROMPTS"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_PROMPTS.md"
 ---
 

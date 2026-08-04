@@ -3,6 +3,7 @@ id: "dario/dario_-_docs_system_prompt"
 company: "dario"
 product: "dario - docs system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_system-prompt.md"
 ---
 

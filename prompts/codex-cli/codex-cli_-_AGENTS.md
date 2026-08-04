@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_AGENTS"
 company: "codex-cli"
 product: "codex-cli - AGENTS"
 category: "coding-agents"
+annotation: "ai"
 source_file: "AGENTS.md"
 ---
 

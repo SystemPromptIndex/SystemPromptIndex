@@ -3,6 +3,7 @@ id: "bitterbot-desktop/bitterbot-desktop_-_docs_tools_subagents"
 company: "bitterbot-desktop"
 product: "bitterbot-desktop - docs tools subagents"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_docs_tools_subagents.md"
 ---
 

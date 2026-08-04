@@ -3,6 +3,7 @@ id: "phantom/phantom_-_prompts_phase_10a_activity_correctness_builder"
 company: "phantom"
 product: "phantom - prompts phase 10a activity correctness builder"
 category: "multi-agent"
+annotation: "ai"
 source_file: "prompts_phase-10a-activity-correctness-builder.md"
 ---
 

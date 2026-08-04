@@ -3,28 +3,29 @@
   "company": "axonhub",
   "product": "axonhub - docs en guides prompt protection rules",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "docs_en_guides_prompt-protection-rules.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 1,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
-    "D6": 0,
+    "D6": 1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 1,
-      "D4": 0,
+      "D3": 2,
+      "D4": 1,
       "D5": 0,
-      "D6": 0,
+      "D6": 1,
       "D7": 0,
       "D8": 0,
       "Misc": 0
@@ -49,6 +50,33 @@
       "dimension": "D3",
       "score": 1,
       "note": "The entire system prompt is dedicated to protecting sensitive data such as API keys, passwords, credit card numbers, email addresses, and phone numbers. It provides detailed patterns and mechanisms for masking or rejecting requests containing PII and sensitive information, and explicitly mentions compliance with data privacy regulations.",
+      "risky": false
+    },
+    {
+      "text": "Filtering inappropriate content",
+      "start": 673,
+      "end": 704,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The entire system prompt is dedicated to protecting sensitive data such as API keys, passwords, credit card numbers, email addresses, and phone numbers. It provides detailed patterns and mechanisms for masking or rejecting requests containing PII and sensitive information, and explicitly mentions compliance with data privacy regulations.",
+      "risky": false
+    },
+    {
+      "text": "**Test Thoroughly** - Verify rules work as expected before enabling in production",
+      "start": 7878,
+      "end": 7959,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt describes a system that validates and sanitizes input before it reaches AI providers, acting as a protective pipeline. It implements defense-in-depth principles, recommends thorough testing before production deployment, and processes rules to block or mask potentially dangerous content before execution.",
+      "risky": false
+    },
+    {
+      "text": "Preventing prompt injection attacks",
+      "start": 593,
+      "end": 628,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt explicitly provides mechanisms to detect and reject unsafe requests, including prompt injection attacks. It includes a specific example of blocking prompt injection attempts (e.g., 'ignore previous instructions') and provides a reject action that blocks entire requests containing disallowed content.",
       "risky": false
     }
   ]

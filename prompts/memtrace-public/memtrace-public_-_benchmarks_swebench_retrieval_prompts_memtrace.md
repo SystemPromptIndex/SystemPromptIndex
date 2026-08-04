@@ -3,6 +3,7 @@ id: "memtrace-public/memtrace-public_-_benchmarks_swebench_retrieval_prompts_mem
 company: "memtrace-public"
 product: "memtrace-public - benchmarks swebench retrieval prompts memtrace ..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "benchmarks_swebench-retrieval_prompts_memtrace_query.md"
 ---
 

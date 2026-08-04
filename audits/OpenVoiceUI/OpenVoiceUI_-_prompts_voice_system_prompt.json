@@ -3,11 +3,12 @@
   "company": "OpenVoiceUI",
   "product": "OpenVoiceUI - prompts voice system prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "prompts_voice-system-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
+    "D2": 1,
+    "D3": 1,
     "D4": 0,
     "D5": 0,
     "D6": 0,
@@ -15,13 +16,13 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
+      "D2": 2,
+      "D3": 2,
       "D4": 0,
       "D5": 0,
       "D6": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Use a URL listed in CLIENT.md (if the client has artist-specific SoundCloud URLs there), OR\n  2. Run the soundcloud skill:",
+      "start": 6985,
+      "end": 7107,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt contains multiple instructions that promote information integrity, particularly around not fabricating URLs or data. It explicitly instructs the system to never invent SoundCloud or Bandcamp URLs and to use verified sources or skill scripts to find real URLs. It also instructs verification of canvas page operations.",
+      "risky": false
+    },
+    {
+      "text": "NEVER invent URLs — use the bandcamp skill:",
+      "start": 7697,
+      "end": 7740,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt contains multiple instructions that promote information integrity, particularly around not fabricating URLs or data. It explicitly instructs the system to never invent SoundCloud or Bandcamp URLs and to use verified sources or skill scripts to find real URLs. It also instructs verification of canvas page operations.",
+      "risky": false
+    },
+    {
+      "text": "Only use when someone explicitly asks or introduces themselves — never register without consent.",
+      "start": 9112,
+      "end": 9208,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt demonstrates strong privacy awareness around face recognition and identity. It explicitly requires consent before face registration and prohibits using names without current-session face recognition confirmation, preventing cross-session identity leakage. This protects user privacy in a multi-user environment.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT address anyone by name unless a [FACE RECOGNITION] tag appears in this exact message confirming their identity. Different people use this interface. Never use names from memory or prior sessions without face recognition confirmation in the current message.",
+      "start": 1785,
+      "end": 2048,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt demonstrates strong privacy awareness around face recognition and identity. It explicitly requires consent before face registration and prohibits using names without current-session face recognition confirmation, preventing cross-session identity leakage. This protects user privacy in a multi-user environment.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "pua/pua_-_vscode_copilot_instructions_en"
 company: "pua"
 product: "pua - vscode copilot instructions en"
 category: "general-purpose"
+annotation: "ai"
 source_file: "vscode_copilot-instructions-en.md"
 ---
 

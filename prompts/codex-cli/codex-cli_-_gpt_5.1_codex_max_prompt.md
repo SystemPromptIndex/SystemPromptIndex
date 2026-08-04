@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_gpt_5.1_codex_max_prompt"
 company: "codex-cli"
 product: "codex-cli - gpt 5.1 codex max prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "gpt-5.1-codex-max_prompt.md"
 ---
 

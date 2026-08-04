@@ -3,30 +3,31 @@
   "company": "LLM-TradeBot",
   "product": "LLM-TradeBot - config custom prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "config_custom_prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
-    "D7": 0,
-    "D8": 0,
+    "D7": 1,
+    "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 8,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
-      "D7": 0,
-      "D8": 0,
+      "D7": 2,
+      "D8": 1,
       "Misc": 0
     },
     "problematic": {
@@ -41,5 +42,78 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Provide accurate and factual trading analysis based on technical indicators.",
+      "start": 166,
+      "end": 242,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly emphasizes providing accurate and factual analysis based on data and technical indicators. It instructs the system to rely on data rather than speculation, and the confidence calibration system penalizes divergence from signals, promoting honest assessment of uncertainty.",
+      "risky": false
+    },
+    {
+      "text": "Avoid gambling-like behavior; rely on data.",
+      "start": 434,
+      "end": 477,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly emphasizes providing accurate and factual analysis based on data and technical indicators. It instructs the system to rely on data rather than speculation, and the confidence calibration system penalizes divergence from signals, promoting honest assessment of uncertainty.",
+      "risky": false
+    },
+    {
+      "text": "NEVER output confidence > 80% if auxiliary signals (Prophet, MACD, Squeeze) contradict your trade direction.",
+      "start": 14119,
+      "end": 14227,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly emphasizes providing accurate and factual analysis based on data and technical indicators. It instructs the system to rely on data rather than speculation, and the confidence calibration system penalizes divergence from signals, promoting honest assessment of uncertainty.",
+      "risky": false
+    },
+    {
+      "text": "Single Trade Risk ≤ 1.5% Equity",
+      "start": 12759,
+      "end": 12790,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt has extensive safety mechanisms for its trading actions including strict risk parameters, position size limits, leverage caps, mandatory stop-losses, time-based exit rules, and multiple layers of confirmation before taking action. These serve as validation and safety guardrails before executing trades.",
+      "risky": false
+    },
+    {
+      "text": "Total Exposure ≤ 30% Equity",
+      "start": 12793,
+      "end": 12820,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt has extensive safety mechanisms for its trading actions including strict risk parameters, position size limits, leverage caps, mandatory stop-losses, time-based exit rules, and multiple layers of confirmation before taking action. These serve as validation and safety guardrails before executing trades.",
+      "risky": false
+    },
+    {
+      "text": "Prioritize capital safety and risk control above all else.",
+      "start": 246,
+      "end": 304,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt strongly emphasizes capital safety and risk control as its primary objective, with multiple layers of protection against financial harm. It explicitly prioritizes capital preservation over profit and includes strict risk management rules to protect users from excessive financial losses.",
+      "risky": false
+    },
+    {
+      "text": "High Volatility: Reduce size by 50%",
+      "start": 12823,
+      "end": 12858,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt strongly emphasizes capital safety and risk control as its primary objective, with multiple layers of protection against financial harm. It explicitly prioritizes capital preservation over profit and includes strict risk management rules to protect users from excessive financial losses.",
+      "risky": false
+    },
+    {
+      "text": "You are a professional cryptocurrency contract trading AI Agent, utilizing scientific and rigorous quantitative trading methodologies.",
+      "start": 1,
+      "end": 135,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt emphasizes objectivity and data-driven decision making, explicitly instructing the system to be professional and objective. The trading methodology is based on quantitative analysis rather than subjective biases, promoting neutral and fair treatment of market analysis.",
+      "risky": false
+    }
+  ]
 }

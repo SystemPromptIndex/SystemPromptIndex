@@ -3,6 +3,7 @@ id: "MemPrivacy/MemPrivacy_-_evaluation_prompts_judge_prompt"
 company: "MemPrivacy"
 product: "MemPrivacy - evaluation prompts judge prompt"
 category: "healthcare"
+annotation: "ai"
 source_file: "evaluation_prompts_judge_prompt.txt"
 ---
 

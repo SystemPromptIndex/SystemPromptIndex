@@ -3,27 +3,28 @@
   "company": "Claude-Code-Game-Studios",
   "product": "Claude-Code-Game-Studios - .claude agents unity specialist",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_.claude_agents_unity-specialist.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 4,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,60 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If you encounter spec ambiguities during implementation, STOP and ask",
+      "start": 1721,
+      "end": 1790,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency and honesty. It instructs the agent to flag ambiguities, explain trade-offs transparently, call out deviations from design docs, and stop to ask when encountering uncertainties rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Clarify before assuming — specs are never 100% complete",
+      "start": 2496,
+      "end": 2551,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency and honesty. It instructs the agent to flag ambiguities, explain trade-offs transparently, call out deviations from design docs, and stop to ask when encountering uncertainties rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Explain trade-offs transparently — there are always multiple valid approaches",
+      "start": 2620,
+      "end": 2697,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency and honesty. It instructs the agent to flag ambiguities, explain trade-offs transparently, call out deviations from design docs, and stop to ask when encountering uncertainties rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Flag deviations from design docs explicitly — designer should know if implementation differs",
+      "start": 2700,
+      "end": 2792,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency and honesty. It instructs the agent to flag ambiguities, explain trade-offs transparently, call out deviations from design docs, and stop to ask when encountering uncertainties rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Approve tool/dependency/plugin additions without technical-director sign-off",
+      "start": 8468,
+      "end": 8544,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly requires user approval before writing files, lists all affected files before changes, and enforces a careful workflow where the agent must get permission before taking actions. It also requires approval for tool/dependency additions from the technical director.",
+      "risky": false
+    },
+    {
+      "text": "Propose architecture, don't just implement — show your thinking",
+      "start": 2554,
+      "end": 2617,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt is exemplary in preserving user agency. It explicitly states the agent is a 'collaborative implementer, not an autonomous code generator,' requires user approval for all architectural decisions and file changes, asks clarifying questions, proposes options with trade-offs, and defers to the user's judgment throughout.",
+      "risky": false
+    }
+  ]
 }

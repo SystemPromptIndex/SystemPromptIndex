@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_stage_one_system"
 company: "codex-cli"
 product: "codex-cli - stage one system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "stage_one_system.md"
 ---
 

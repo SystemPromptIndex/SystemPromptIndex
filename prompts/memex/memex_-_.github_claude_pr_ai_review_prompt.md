@@ -3,6 +3,7 @@ id: "memex/memex_-_.github_claude_pr_ai_review_prompt"
 company: "memex"
 product: "memex - .github claude pr ai review prompt"
 category: "research"
+annotation: "ai"
 source_file: ".github_claude_pr-ai-review-prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "JDOxyGent4J/JDOxyGent4J_-_docs_docs_zh_01_07_live_prompt"
 company: "JDOxyGent4J"
 product: "JDOxyGent4J - docs docs zh 01 07 live prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_docs_zh_01-07-live_prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_commit"
 company: "qwen-code"
 product: "qwen-code - commit"
 category: "coding-agents"
+annotation: "ai"
 source_file: "commit.md"
 ---
 

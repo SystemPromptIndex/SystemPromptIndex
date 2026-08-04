@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_sxs_paper_quality_prompt"
 company: "paper-orchestra"
 product: "paper-orchestra - sxs paper quality prompt"
 category: "research"
+annotation: "ai"
 source_file: "sxs-paper-quality-prompt.md"
 ---
 

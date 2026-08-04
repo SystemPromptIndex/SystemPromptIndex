@@ -3,6 +3,7 @@ id: "topsha/topsha_-_core_src_agent_system"
 company: "topsha"
 product: "topsha - core src agent system"
 category: "general-purpose"
+annotation: "ai"
 source_file: "core_src_agent_system.txt"
 ---
 

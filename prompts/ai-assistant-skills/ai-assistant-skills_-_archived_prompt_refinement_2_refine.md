@@ -3,6 +3,7 @@ id: "ai-assistant-skills/ai-assistant-skills_-_archived_prompt_refinement_2_refi
 company: "ai-assistant-skills"
 product: "ai-assistant-skills - archived prompt refinement 2 refine"
 category: "general-purpose"
+annotation: "ai"
 source_file: "archived_prompt-refinement_2-refine.md"
 ---
 

@@ -3,6 +3,7 @@ id: "ralph-claude-code/ralph-claude-code_-_templates_PROMPT"
 company: "ralph-claude-code"
 product: "ralph-claude-code - templates PROMPT"
 category: "coding-agents"
+annotation: "ai"
 source_file: "templates_PROMPT.md"
 ---
 

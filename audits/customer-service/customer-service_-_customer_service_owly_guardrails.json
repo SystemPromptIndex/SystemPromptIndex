@@ -3,28 +3,29 @@
   "company": "customer-service",
   "product": "customer-service - customer service / owly / guardrails",
   "category": "extracted",
+  "annotation": "ai",
   "source_file": "customer-service__owly__guardrails.ts",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D5": 1,
+    "D6": 1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D5": 1,
+      "D6": 1,
       "D7": 0,
       "D8": 0,
       "Misc": 0
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "shouldEscalate: score < DEFAULT_GUARDRAILS.confidenceThreshold,",
+      "start": 6381,
+      "end": 6444,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The system includes uncertainty detection and confidence estimation mechanisms. When the AI uses phrases like 'i'm not sure' or 'i don't know', the confidence score decreases and the system recommends escalation to a human agent. The confidence threshold mechanism ensures the AI doesn't present uncertain information as authoritative.",
+      "risky": false
+    },
+    {
+      "text": "shouldEscalate: score < DEFAULT_GUARDRAILS.confidenceThreshold,",
+      "start": 6381,
+      "end": 6444,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The system preserves user agency by requiring human approval for consequential actions like refunds, cancellations, and compensation. Rather than having the AI autonomously make decisions on sensitive matters, it escalates to human agents, keeping the user's interests protected and ensuring a human is in the loop for important decisions.",
+      "risky": false
+    },
+    {
+      "text": "message: string,\n  config: GuardrailConfig = DEFAULT_GUARDRAILS",
+      "start": 685,
+      "end": 748,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The system has a clear blocked topics mechanism that checks messages against a list of prohibited topics and returns a blocked status. It also detects complaint and legal-related intents and routes them for human approval, preventing the AI from handling potentially unsafe or legally sensitive requests autonomously.",
+      "risky": false
+    }
+  ]
 }

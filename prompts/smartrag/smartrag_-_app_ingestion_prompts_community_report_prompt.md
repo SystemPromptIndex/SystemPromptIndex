@@ -3,6 +3,7 @@ id: "smartrag/smartrag_-_app_ingestion_prompts_community_report_prompt"
 company: "smartrag"
 product: "smartrag - app ingestion prompts community report prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "app_ingestion_prompts_community-report-prompt.txt"
 ---
 

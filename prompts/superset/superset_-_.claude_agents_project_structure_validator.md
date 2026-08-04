@@ -3,6 +3,7 @@ id: "superset/superset_-_.claude_agents_project_structure_validator"
 company: "superset"
 product: "superset - .claude agents project structure validator"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.claude_agents_project-structure-validator.md"
 ---
 

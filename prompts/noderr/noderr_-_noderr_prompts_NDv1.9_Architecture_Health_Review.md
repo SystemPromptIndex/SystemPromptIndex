@@ -3,6 +3,7 @@ id: "noderr/noderr_-_noderr_prompts_NDv1.9_Architecture_Health_Review"
 company: "noderr"
 product: "noderr - noderr prompts NDv1.9 / Architecture Health Review"
 category: "coding-agents"
+annotation: "ai"
 source_file: "noderr_prompts_NDv1.9__Architecture_Health_Review.md"
 ---
 

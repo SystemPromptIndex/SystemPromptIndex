@@ -3,6 +3,7 @@ id: "mnemory/mnemory_-_docs_system_prompts_openwebui_basic"
 company: "mnemory"
 product: "mnemory - docs system prompts openwebui basic"
 category: "multi-agent"
+annotation: "ai"
 source_file: "docs_system-prompts_openwebui-basic.md"
 ---
 

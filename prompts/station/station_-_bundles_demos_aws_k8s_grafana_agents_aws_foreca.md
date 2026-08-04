@@ -3,6 +3,7 @@ id: "station/station_-_bundles_demos_aws_k8s_grafana_agents_aws_foreca"
 company: "station"
 product: "station - bundles demos aws k8s grafana agents aws foreca..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "bundles_demos_aws-k8s-grafana_agents_aws-forecast-and-budget-risk.prompt"
 ---
 

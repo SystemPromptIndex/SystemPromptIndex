@@ -3,6 +3,7 @@ id: "Nemotron/Nemotron_-_usage_cookbook_Nemotron_Nano2_VL_README"
 company: "Nemotron"
 product: "Nemotron - usage cookbook Nemotron Nano2 VL README"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_usage-cookbook_Nemotron-Nano2-VL_README.md"
 ---
 

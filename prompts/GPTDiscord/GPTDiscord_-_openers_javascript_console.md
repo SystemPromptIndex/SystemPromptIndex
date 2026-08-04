@@ -3,6 +3,7 @@ id: "GPTDiscord/GPTDiscord_-_openers_javascript_console"
 company: "GPTDiscord"
 product: "GPTDiscord - openers javascript console"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_openers_javascript_console.txt"
 ---
 

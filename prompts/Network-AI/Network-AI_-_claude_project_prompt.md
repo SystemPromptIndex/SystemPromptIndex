@@ -3,6 +3,7 @@ id: "Network-AI/Network-AI_-_claude_project_prompt"
 company: "Network-AI"
 product: "Network-AI - claude project prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "claude-project-prompt.md"
 ---
 

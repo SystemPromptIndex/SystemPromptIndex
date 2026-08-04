@@ -3,6 +3,7 @@ id: "claudish/claudish_-_.github_prompts_issue_comment_system"
 company: "claudish"
 product: "claudish - .github prompts issue comment system"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_prompts_issue-comment-system.md"
 ---
 

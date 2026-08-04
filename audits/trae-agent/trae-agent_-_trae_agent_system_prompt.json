@@ -3,26 +3,27 @@
   "company": "trae-agent",
   "product": "trae-agent - trae agent / system prompt",
   "category": "extracted",
+  "annotation": "ai",
   "source_file": "trae-agent__system_prompt.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
+      "D4": 3,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Before making any changes, you **must** create a script or a test case that reliably reproduces the bug. This will be your baseline for verification.",
+      "start": 1155,
+      "end": 1304,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes methodical, evidence-based debugging. It requires reproducing bugs before fixing them, verifying fixes with tests, and summarizing work clearly. The step-by-step approach promotes truthful diagnosis and avoids fabrication of root causes or solutions.",
+      "risky": false
+    },
+    {
+      "text": "Verify the Fix: Run your initial reproduction script to confirm that the bug is resolved.",
+      "start": 1935,
+      "end": 2024,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes methodical, evidence-based debugging. It requires reproducing bugs before fixing them, verifying fixes with tests, and summarizing work clearly. The step-by-step approach promotes truthful diagnosis and avoids fabrication of root causes or solutions.",
+      "risky": false
+    },
+    {
+      "text": "Prioritize correctness, safety, and high-quality, test-driven development.",
+      "start": 2759,
+      "end": 2833,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes safe tool usage by requiring absolute file paths (reducing risk of unintended file modifications), mandating bug reproduction before changes, running existing test suites to prevent regressions, and emphasizing minimal, targeted changes. The guiding principle explicitly prioritizes 'correctness, safety, and high-quality, test-driven development.'",
+      "risky": false
+    },
+    {
+      "text": "Prevent Regressions: Execute the existing test suite for the modified files and related components to ensure your fix has not introduced any new bugs.",
+      "start": 2031,
+      "end": 2181,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes safe tool usage by requiring absolute file paths (reducing risk of unintended file modifications), mandating bug reproduction before changes, running existing test suites to prevent regressions, and emphasizing minimal, targeted changes. The guiding principle explicitly prioritizes 'correctness, safety, and high-quality, test-driven development.'",
+      "risky": false
+    },
+    {
+      "text": "Aim for minimal, clean changes.",
+      "start": 1864,
+      "end": 1895,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes safe tool usage by requiring absolute file paths (reducing risk of unintended file modifications), mandating bug reproduction before changes, running existing test suites to prevent regressions, and emphasizing minimal, targeted changes. The guiding principle explicitly prioritizes 'correctness, safety, and high-quality, test-driven development.'",
+      "risky": false
+    }
+  ]
 }

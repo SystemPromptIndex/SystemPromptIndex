@@ -3,6 +3,7 @@ id: "ruflo/ruflo_-_plugins_ruflo_goals_agents_deep_researcher"
 company: "ruflo"
 product: "ruflo - plugins ruflo goals agents deep researcher"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_ruflo-goals_agents_deep-researcher.md"
 ---
 

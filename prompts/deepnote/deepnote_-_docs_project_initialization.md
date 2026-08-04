@@ -3,6 +3,7 @@ id: "deepnote/deepnote_-_docs_project_initialization"
 company: "deepnote"
 product: "deepnote - docs project initialization"
 category: "data-analytics"
+annotation: "ai"
 source_file: "clone_docs_project-initialization.md"
 ---
 

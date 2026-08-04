@@ -3,6 +3,7 @@ id: "onlook/onlook_-_packages_ai_test_prompt_data_system"
 company: "onlook"
 product: "onlook - packages ai test prompt data system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_packages_ai_test_prompt_data_system.txt"
 ---
 

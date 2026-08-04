@@ -3,6 +3,7 @@ id: "ai-gateway/ai-gateway_-_docs_proposals_008_gemini_context_caching_proposal"
 company: "ai-gateway"
 product: "ai-gateway - docs proposals 008 gemini context caching proposal"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_proposals_008-gemini-context-caching_proposal.md"
 ---
 

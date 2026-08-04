@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_on_request"
 company: "codex-cli"
 product: "codex-cli - on request"
 category: "coding-agents"
+annotation: "ai"
 source_file: "on_request.md"
 ---
 

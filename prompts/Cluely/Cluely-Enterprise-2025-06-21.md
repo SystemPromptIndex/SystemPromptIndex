@@ -3,6 +3,7 @@ id: "Cluely/Cluely-Enterprise-2025-06-21"
 company: "Cluely"
 product: "Cluely-Enterprise-2025-06-21"
 category: "Controversial"
+annotation: "human"
 source_file: "Enterprise_Prompt.txt"
 ---
 

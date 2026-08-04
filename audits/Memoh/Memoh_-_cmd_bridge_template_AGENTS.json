@@ -3,27 +3,28 @@
   "company": "Memoh",
   "product": "Memoh - cmd bridge template AGENTS",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "clone_cmd_bridge_template_AGENTS.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D3": 1,
+      "D4": 2,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Keep private information private.",
+      "start": 811,
+      "end": 844,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to keep private information private, which directly addresses data protection concerns.",
+      "risky": false
+    },
+    {
+      "text": "Ask before destructive, irreversible, public, or sensitive actions.",
+      "start": 741,
+      "end": 808,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safeguards for tool and action safety. It instructs the system to ask before destructive or irreversible actions, read files before editing, and preserve user changes. These are strong safety practices for file and workspace operations.",
+      "risky": false
+    },
+    {
+      "text": "Ask before destructive, irreversible, public, or sensitive actions.",
+      "start": 741,
+      "end": 808,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring confirmation before destructive or sensitive actions, respecting user changes, and only recording preferences when the user explicitly asks. It also instructs the system to prefer doing useful work rather than over-explaining, which respects user autonomy without being manipulative.",
+      "risky": false
+    },
+    {
+      "text": "Preserve user changes and avoid unnecessary rewrites.",
+      "start": 1092,
+      "end": 1145,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safeguards for tool and action safety. It instructs the system to ask before destructive or irreversible actions, read files before editing, and preserve user changes. These are strong safety practices for file and workspace operations.",
+      "risky": false
+    },
+    {
+      "text": "Record durable workspace-specific behavior here only when the user asks or clearly establishes a lasting preference.",
+      "start": 1148,
+      "end": 1264,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring confirmation before destructive or sensitive actions, respecting user changes, and only recording preferences when the user explicitly asks. It also instructs the system to prefer doing useful work rather than over-explaining, which respects user autonomy without being manipulative.",
+      "risky": false
+    }
+  ]
 }

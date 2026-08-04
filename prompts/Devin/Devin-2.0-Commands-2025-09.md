@@ -2,6 +2,7 @@
 id: "Devin/Devin-2.0-Commands-2025-09"
 company: "Devin"
 product: "Devin-2.0-Commands-2025-09"
+annotation: "ai"
 source_file: "Devin_2.0_Commands.md"
 ---
 

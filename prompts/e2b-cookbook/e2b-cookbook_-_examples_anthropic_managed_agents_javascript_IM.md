@@ -3,6 +3,7 @@ id: "e2b-cookbook/e2b-cookbook_-_examples_anthropic_managed_agents_javascript_IM
 company: "e2b-cookbook"
 product: "e2b-cookbook - examples anthropic managed agents javascript IM..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_examples_anthropic-managed-agents_javascript_IMPLEMENTATION.md"
 ---
 

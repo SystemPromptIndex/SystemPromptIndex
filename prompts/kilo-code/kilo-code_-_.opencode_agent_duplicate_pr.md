@@ -3,6 +3,7 @@ id: "kilo-code/kilo-code_-_.opencode_agent_duplicate_pr"
 company: "kilo-code"
 product: "kilo-code - .opencode agent duplicate pr"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.opencode_agent_duplicate-pr.md"
 ---
 

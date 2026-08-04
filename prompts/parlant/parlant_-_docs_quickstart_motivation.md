@@ -3,6 +3,7 @@ id: "parlant/parlant_-_docs_quickstart_motivation"
 company: "parlant"
 product: "parlant - docs quickstart motivation"
 category: "healthcare"
+annotation: "ai"
 source_file: "clone_docs_quickstart_motivation.md"
 ---
 

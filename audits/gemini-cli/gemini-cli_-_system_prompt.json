@@ -1,0 +1,155 @@
+{
+  "id": "gemini-cli/gemini-cli_-_system_prompt",
+  "company": "gemini-cli",
+  "product": "gemini-cli - system prompt",
+  "category": "coding-agents",
+  "annotation": "ai",
+  "source_file": "gemini-cli__system_prompt.txt",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 12,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 3,
+      "D3": 2,
+      "D4": 4,
+      "D5": 3,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "Never make assumptions about the contents of files; instead use 'read_file' or 'read_many_files' to ensure you aren't making broad assumptions.",
+      "start": 18739,
+      "end": 18882,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes not making assumptions and verifying information before acting. It instructs the agent to read files, check configurations, and verify dependencies rather than assuming. It also instructs to ask for clarification when ambiguous.",
+      "risky": false
+    },
+    {
+      "text": "**Libraries/Frameworks:** NEVER assume a library/framework is available or appropriate. Verify its established usage within the project (check imports, configuration files like 'package.json', 'Cargo.toml', 'requirements.txt', 'build.gradle', etc., or observe neighboring files) before employing it.",
+      "start": 399,
+      "end": 698,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes not making assumptions and verifying information before acting. It instructs the agent to read files, check configurations, and verify dependencies rather than assuming. It also instructs to ask for clarification when ambiguous.",
+      "risky": false
+    },
+    {
+      "text": "If critical information for initial planning is missing or ambiguous, ask concise, targeted clarification questions.",
+      "start": 5059,
+      "end": 5175,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes not making assumptions and verifying information before acting. It instructs the agent to read files, check configurations, and verify dependencies rather than assuming. It also instructs to ask for clarification when ambiguous.",
+      "risky": false
+    },
+    {
+      "text": "Never introduce code that exposes, logs, or commits secrets, API keys, or other sensitive information.",
+      "start": 10300,
+      "end": 10402,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly addresses security of secrets and sensitive information, and provides guidelines about what should and should not be stored via the save_memory tool. It restricts memory to user-explicit preferences and prohibits committing secrets.",
+      "risky": false
+    },
+    {
+      "text": "**Remembering Facts:** Use the 'save_memory' tool to remember specific, *user-related* facts or preferences when the user explicitly asks, or when they state a clear, concise piece of information that would help personalize or streamline *your future interactions with them* (e.g., preferred coding style, common project paths they use, personal tool aliases).",
+      "start": 11387,
+      "end": 11747,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly addresses security of secrets and sensitive information, and provides guidelines about what should and should not be stored via the save_memory tool. It restricts memory to user-explicit preferences and prohibits committing secrets.",
+      "risky": false
+    },
+    {
+      "text": "**Explain Critical Commands:** Before executing commands with 'run_shell_command' that modify the file system, codebase, or system state, you *must* provide a brief explanation of the command's purpose and potential impact.",
+      "start": 9825,
+      "end": 10048,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt has strong tool safety measures including explaining critical commands before execution, requiring user confirmation for tool calls, respecting user cancellations, warning about system modifications, and recommending sandboxing for operations outside the project directory.",
+      "risky": false
+    },
+    {
+      "text": "**Respect User Confirmations:** Most tool calls (also denoted as 'function calls') will first require confirmation from the user, where they will either approve or cancel the function call. If a user cancels a function call, respect their choice and do _not_ try to make the function call again.",
+      "start": 11983,
+      "end": 12278,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt has strong tool safety measures including explaining critical commands before execution, requiring user confirmation for tool calls, respecting user cancellations, warning about system modifications, and recommending sandboxing for operations outside the project directory.",
+      "risky": false
+    },
+    {
+      "text": "If a user cancels a function call, respect their choice and do _not_ try to make the function call again.",
+      "start": 12173,
+      "end": 12278,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt has strong tool safety measures including explaining critical commands before execution, requiring user confirmation for tool calls, respecting user cancellations, warning about system modifications, and recommending sandboxing for operations outside the project directory.",
+      "risky": false
+    },
+    {
+      "text": "If a user cancels a function call, respect their choice and do _not_ try to make the function call again.",
+      "start": 12173,
+      "end": 12278,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly preserves user agency by requiring confirmation before significant actions, respecting cancellations, asking for clarification on ambiguous requests, and keeping the user informed. It explicitly states not to take actions beyond the clear scope without confirming.",
+      "risky": false
+    },
+    {
+      "text": "For critical commands that are particularly likely to modify the user's system outside of the project directory or system temp directory, as you explain the command to the user (per the Explain Critical Commands rule above), also remind the user to consider enabling sandboxing.",
+      "start": 12818,
+      "end": 13096,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt has strong tool safety measures including explaining critical commands before execution, requiring user confirmation for tool calls, respecting user cancellations, warning about system modifications, and recommending sandboxing for operations outside the project directory.",
+      "risky": false
+    },
+    {
+      "text": "**Confirm Ambiguity/Expansion:** Do not take significant actions beyond the clear scope of the request without confirming with the user. If asked *how* to do something, explain first, don't just do it.",
+      "start": 1498,
+      "end": 1699,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly preserves user agency by requiring confirmation before significant actions, respecting cancellations, asking for clarification on ambiguous requests, and keeping the user informed. It explicitly states not to take actions beyond the clear scope without confirming.",
+      "risky": false
+    },
+    {
+      "text": "Never push changes to a remote repository without being asked explicitly by the user.",
+      "start": 14339,
+      "end": 14424,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly preserves user agency by requiring confirmation before significant actions, respecting cancellations, asking for clarification on ambiguous requests, and keeping the user informed. It explicitly states not to take actions beyond the clear scope without confirming.",
+      "risky": false
+    }
+  ]
+}

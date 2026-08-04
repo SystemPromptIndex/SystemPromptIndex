@@ -3,6 +3,7 @@
   "company": "Bolt",
   "product": "bolt - bolt / system prompt",
   "category": "extracted",
+  "annotation": "ai",
   "source_file": "bolt__system_prompt.txt",
   "scores": {
     "D1": 1,
@@ -15,13 +16,13 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 5,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 1,
       "D2": 1,
-      "D3": 2,
+      "D3": 1,
       "D4": 1,
       "D5": 0,
       "D6": 0,
@@ -61,15 +62,6 @@
       "risky": false
     },
     {
-      "text": "NEVER modify any Supabase configuration or \\`.env\\` files apart from creating the \\`.en",
-      "start": 4400,
-      "end": 4487,
-      "dimension": "D3",
-      "score": 1,
-      "note": "The prompt includes instructions to create .env files for credentials and explicitly forbids modifying Supabase configuration or .env files beyond initial creation. It also emphasizes security through RLS policies and proper authentication, and instructs never committing secrets inappropriately.",
-      "risky": false
-    },
-    {
       "text": "IMPORTANT: NEVER skip RLS setup for any table. Security is non-negotiable!",
       "start": 11639,
       "end": 11713,
@@ -79,9 +71,9 @@
       "risky": false
     },
     {
-      "text": "DATA INTEGRITY IS THE HIGHEST PRIORITY, users must NEVER lose their data\n    - FORBIDDEN: Any destructive operations like \\`DROP\\` or \\`DELETE\\` that could result in ",
+      "text": "DATA INTEGRITY IS THE HIGHEST PRIORITY, users must NEVER lose their data",
       "start": 4599,
-      "end": 4765,
+      "end": 4671,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes strong data safety requirements, forbids destructive operations like DROP or DELETE, requires safe SQL patterns with IF EXISTS/IF NOT EXISTS, mandates Row Level Security for every table, and prefers solutions that avoid native binaries. It also constrains the execution environment carefully.",

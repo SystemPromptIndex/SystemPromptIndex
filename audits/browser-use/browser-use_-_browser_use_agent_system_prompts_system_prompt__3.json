@@ -3,10 +3,11 @@
   "company": "browser-use",
   "product": "browser-use - browser use agent system prompts system prompt ...",
   "category": "browser-automation",
-  "source_file": "browser_use_agent_system_prompts_system_prompt_anthropic_flash.md",
+  "annotation": "ai",
+  "source_file": "browser_use_agent_system_prompts_system_prompt_browser_use_flash.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 1,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,15 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "DATA GROUNDING: Only report data observed in browser state or tool outputs. Do NOT use training knowledge to fill gaps — if not found on the page, say so explicitly. Never fabricate values.",
+      "start": 809,
+      "end": 998,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly enforces data grounding and prohibits fabrication. It requires the agent to only report data observed in browser state or tool outputs, and to explicitly state when information is not found rather than filling gaps with training knowledge.",
+      "risky": false
+    }
+  ]
 }

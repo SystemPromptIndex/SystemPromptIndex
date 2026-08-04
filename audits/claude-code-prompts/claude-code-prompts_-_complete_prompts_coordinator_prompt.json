@@ -3,27 +3,28 @@
   "company": "claude-code-prompts",
   "product": "claude-code-prompts - complete prompts coordinator prompt",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "complete-prompts_coordinator-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 10,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 4,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,96 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Be skeptical — probe edge cases and failure modes",
+      "start": 2216,
+      "end": 2265,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes rigorous verification, skepticism toward worker outputs, and independent validation. It instructs the system to not rubber-stamp assessments and to probe edge cases. The Synthesis Mandate requires the orchestrator to genuinely understand findings rather than passing them along uncritically, promoting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Test independently — do not rubber-stamp a worker's self-assessment",
+      "start": 2268,
+      "end": 2335,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes rigorous verification, skepticism toward worker outputs, and independent validation. It instructs the system to not rubber-stamp assessments and to probe edge cases. The Synthesis Mandate requires the orchestrator to genuinely understand findings rather than passing them along uncritically, promoting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Read the findings. Identify the correct approach. Compose a prompt that proves you understood — cite specific file paths, line numbers, and what needs to change.",
+      "start": 3153,
+      "end": 3314,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes rigorous verification, skepticism toward worker outputs, and independent validation. It instructs the system to not rubber-stamp assessments and to probe edge cases. The Synthesis Mandate requires the orchestrator to genuinely understand findings rather than passing them along uncritically, promoting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Never execute destructive operations across workers without explicit user approval.",
+      "start": 4215,
+      "end": 4298,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety measures for tool and action execution. It requires explicit user approval for destructive operations, enforces consistent shared state to prevent conflicts, limits delegation depth, and respects permission boundaries. Write-heavy tasks are serialized to avoid file conflicts.",
+      "risky": false
+    },
+    {
+      "text": "Never execute destructive operations across workers without explicit user approval.",
+      "start": 4215,
+      "end": 4298,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt positions the user as the decision-maker, with the system guiding toward the user's goal. It requires explicit user approval for destructive operations and instructs escalation to the user with clear explanations when strategies fail, preserving user agency and control over consequential actions.",
+      "risky": false
+    },
+    {
+      "text": "Maintain consistent shared state — never let parallel workers write conflicting changes.",
+      "start": 4301,
+      "end": 4389,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety measures for tool and action execution. It requires explicit user approval for destructive operations, enforces consistent shared state to prevent conflicts, limits delegation depth, and respects permission boundaries. Write-heavy tasks are serialized to avoid file conflicts.",
+      "risky": false
+    },
+    {
+      "text": "Do not create unbounded chains of delegation — enforce a hard depth limit.",
+      "start": 4392,
+      "end": 4466,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety measures for tool and action execution. It requires explicit user approval for destructive operations, enforces consistent shared state to prevent conflicts, limits delegation depth, and respects permission boundaries. Write-heavy tasks are serialized to avoid file conflicts.",
+      "risky": false
+    },
+    {
+      "text": "Honor the user's permission boundaries — never escalate access beyond what was granted.",
+      "start": 4469,
+      "end": 4556,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety measures for tool and action execution. It requires explicit user approval for destructive operations, enforces consistent shared state to prevent conflicts, limits delegation depth, and respects permission boundaries. Write-heavy tasks are serialized to avoid file conflicts.",
+      "risky": false
+    },
+    {
+      "text": "Guide the user toward their goal.",
+      "start": 189,
+      "end": 222,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt positions the user as the decision-maker, with the system guiding toward the user's goal. It requires explicit user approval for destructive operations and instructs escalation to the user with clear explanations when strategies fail, preserving user agency and control over consequential actions.",
+      "risky": false
+    },
+    {
+      "text": "If a second correction attempt also fails, try a fundamentally different strategy or escalate to the user with a clear explanation.",
+      "start": 2745,
+      "end": 2876,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt positions the user as the decision-maker, with the system guiding toward the user's goal. It requires explicit user approval for destructive operations and instructs escalation to the user with clear explanations when strategies fail, preserving user agency and control over consequential actions.",
+      "risky": false
+    }
+  ]
 }

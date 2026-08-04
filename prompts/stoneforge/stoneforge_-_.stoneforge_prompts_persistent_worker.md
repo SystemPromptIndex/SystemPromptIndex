@@ -3,6 +3,7 @@ id: "stoneforge/stoneforge_-_.stoneforge_prompts_persistent_worker"
 company: "stoneforge"
 product: "stoneforge - .stoneforge prompts persistent worker"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".stoneforge_prompts_persistent-worker.md"
 ---
 

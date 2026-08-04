@@ -3,6 +3,7 @@ id: "gambit/gambit_-_scaffolds_demo_examples_advanced_agent_with_mul"
 company: "gambit"
 product: "gambit - scaffolds demo examples advanced agent with mul..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "scaffolds_demo_examples_advanced_agent_with_multi_actions_PROMPT.md"
 ---
 

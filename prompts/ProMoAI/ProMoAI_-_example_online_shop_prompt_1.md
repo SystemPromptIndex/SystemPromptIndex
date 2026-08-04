@@ -3,6 +3,7 @@ id: "ProMoAI/ProMoAI_-_example_online_shop_prompt_1"
 company: "ProMoAI"
 product: "ProMoAI - example online shop prompt 1"
 category: "general-purpose"
+annotation: "ai"
 source_file: "example_online_shop_prompt_1.txt"
 ---
 

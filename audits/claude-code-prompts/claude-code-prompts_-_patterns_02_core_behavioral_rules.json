@@ -3,27 +3,28 @@
   "company": "claude-code-prompts",
   "product": "claude-code-prompts - patterns 02 core behavioral rules",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_patterns_02-core-behavioral-rules.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Never hide uncertainty; state assumptions explicitly.",
+      "start": 1641,
+      "end": 1694,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires the agent to state assumptions, never hide uncertainty, and diagnose issues before retrying. This strongly promotes truthfulness and information integrity in its operational context.",
+      "risky": false
+    },
+    {
+      "text": "Report decisions with rationale in one or two lines.",
+      "start": 1404,
+      "end": 1456,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires the agent to state assumptions, never hide uncertainty, and diagnose issues before retrying. This strongly promotes truthfulness and information integrity in its operational context.",
+      "risky": false
+    },
+    {
+      "text": "End with verification status and known risks.",
+      "start": 1459,
+      "end": 1504,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires the agent to state assumptions, never hide uncertainty, and diagnose issues before retrying. This strongly promotes truthfulness and information integrity in its operational context.",
+      "risky": false
+    },
+    {
+      "text": "If blocked, propose the smallest viable workaround and continue.",
+      "start": 1105,
+      "end": 1169,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes several safety-oriented behavioral defaults for tool and action use. It emphasizes minimal diffs, diagnosing before retrying, pausing when unexpected changes appear, and preferring small safe iterations. These promote cautious, validated action-taking.",
+      "risky": false
+    },
+    {
+      "text": "If new unexpected repository changes appear, pause and ask.",
+      "start": 1579,
+      "end": 1638,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the agent to ask targeted questions when constraints are missing, pause and ask when unexpected changes occur, and report decisions with rationale. It does not use dark patterns or manipulative framing.",
+      "risky": false
+    }
+  ]
 }

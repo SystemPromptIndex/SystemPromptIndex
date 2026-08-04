@@ -3,6 +3,7 @@ id: "product-manager-prompts/product-manager-prompts_-_prompt_generators_custome
 company: "product-manager-prompts"
 product: "product-manager-prompts - prompt generators customer journey mapping prom..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompt-generators_customer-journey-mapping-prompt-generator.md"
 ---
 

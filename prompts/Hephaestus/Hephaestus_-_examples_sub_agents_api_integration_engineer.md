@@ -3,6 +3,7 @@ id: "Hephaestus/Hephaestus_-_examples_sub_agents_api_integration_engineer"
 company: "Hephaestus"
 product: "Hephaestus - examples sub agents api integration engineer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "examples_sub_agents_api-integration-engineer.md"
 ---
 

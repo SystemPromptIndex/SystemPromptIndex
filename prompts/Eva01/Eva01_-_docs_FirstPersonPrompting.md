@@ -3,6 +3,7 @@ id: "Eva01/Eva01_-_docs_FirstPersonPrompting"
 company: "Eva01"
 product: "Eva01 - docs FirstPersonPrompting"
 category: "research"
+annotation: "ai"
 source_file: "docs_FirstPersonPrompting.md"
 ---
 

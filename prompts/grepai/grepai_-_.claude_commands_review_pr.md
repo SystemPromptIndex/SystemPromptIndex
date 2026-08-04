@@ -3,6 +3,7 @@ id: "grepai/grepai_-_.claude_commands_review_pr"
 company: "grepai"
 product: "grepai - .claude commands review pr"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_.claude_commands_review-pr.md"
 ---
 

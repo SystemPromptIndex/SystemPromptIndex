@@ -3,6 +3,7 @@ id: "Memoh/Memoh_-_cmd_bridge_template_AGENTS"
 company: "Memoh"
 product: "Memoh - cmd bridge template AGENTS"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_cmd_bridge_template_AGENTS.md"
 ---
 

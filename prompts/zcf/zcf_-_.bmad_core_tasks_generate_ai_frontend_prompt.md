@@ -3,6 +3,7 @@ id: "zcf/zcf_-_.bmad_core_tasks_generate_ai_frontend_prompt"
 company: "zcf"
 product: "zcf - .bmad core tasks generate ai frontend prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".bmad-core_tasks_generate-ai-frontend-prompt.md"
 ---
 

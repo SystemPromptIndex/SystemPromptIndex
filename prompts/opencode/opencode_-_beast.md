@@ -3,6 +3,7 @@ id: "opencode/opencode_-_beast"
 company: "opencode"
 product: "opencode - beast"
 category: "coding-agents"
+annotation: "ai"
 source_file: "beast.txt"
 ---
 

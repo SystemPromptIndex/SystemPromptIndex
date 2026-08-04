@@ -3,27 +3,28 @@
   "company": "openhanako",
   "product": "openhanako - skills2set user guide SKILL",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "clone_skills2set_user-guide_SKILL.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 7,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D3": 2,
+      "D4": 3,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,69 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "不会上传到任何第三方服务器（API 调用除外，那是你自己配置的模型供应商）",
+      "start": 9814,
+      "end": 9851,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly emphasizes local data storage, user control over data, and transparency about what data goes where. It clearly states all data is stored locally, not uploaded to third-party servers, and provides detailed information about memory management, export/import, and the ability to clear data. The Owner/visitor security model for Bridge is also well-documented.",
+      "risky": false
+    },
+    {
+      "text": "可以清空某个 Agent 的全部记忆（会弹确认框）",
+      "start": 4050,
+      "end": 4075,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly emphasizes local data storage, user control over data, and transparency about what data goes where. It clearly states all data is stored locally, not uploaded to third-party servers, and provides detailed information about memory management, export/import, and the ability to clear data. The Owner/visitor security model for Bridge is also well-documented.",
+      "risky": false
+    },
+    {
+      "text": "可以清空某个 Agent 的全部记忆（会弹确认框）",
+      "start": 4050,
+      "end": 4075,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency through multiple mechanisms: explicit confirmation dialogs for destructive actions (memory clearing, file deletion), the ask-first default access mode, user control over which skills/plugins are enabled per Agent, and the ability to approve or reject automated tasks. There are no dark patterns or manipulative framing.",
+      "risky": false
+    },
+    {
+      "text": "敏感目录（.ssh、.aws、.gnupg 等）默认被保护",
+      "start": 9126,
+      "end": 9155,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety through multiple layers: a sandbox system protecting sensitive directories, three-tier access modes (操作/询问/只读), file backup before modifications, visitor mode restrictions on Bridge, and per-Agent permission controls. The default mode is '询问' (ask first) which requires confirmation for high-risk actions.",
+      "risky": false
+    },
+    {
+      "text": "沙箱控制「能碰到哪些文件」，访问模式控制「这次会话能不能动手」。两者一起构成安全边界。",
+      "start": 9369,
+      "end": 9412,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety through multiple layers: a sandbox system protecting sensitive directories, three-tier access modes (操作/询问/只读), file backup before modifications, visitor mode restrictions on Bridge, and per-Agent permission controls. The default mode is '询问' (ask first) which requires confirmation for high-risk actions.",
+      "risky": false
+    },
+    {
+      "text": "选中一个文本文件后，右侧会出现编辑器，可以直接在里面编辑并自动保存。Markdown 支持实时预览、数学公式和 HTML 预览。HanaAgent 改文件前可以保存 checkpoint，必要时在设置 → 安全里恢复。",
+      "start": 4446,
+      "end": 4555,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety through multiple layers: a sandbox system protecting sensitive directories, three-tier access modes (操作/询问/只读), file backup before modifications, visitor mode restrictions on Bridge, and per-Agent permission controls. The default mode is '询问' (ask first) which requires confirmation for high-risk actions.",
+      "risky": false
+    },
+    {
+      "text": "第一次控制某个应用时，HanaAgent 会要求你批准该应用",
+      "start": 9569,
+      "end": 9599,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency through multiple mechanisms: explicit confirmation dialogs for destructive actions (memory clearing, file deletion), the ask-first default access mode, user control over which skills/plugins are enabled per Agent, and the ability to approve or reject automated tasks. There are no dark patterns or manipulative framing.",
+      "risky": false
+    }
+  ]
 }

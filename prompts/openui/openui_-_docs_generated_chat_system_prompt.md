@@ -3,6 +3,7 @@ id: "openui/openui_-_docs_generated_chat_system_prompt"
 company: "openui"
 product: "openui - docs generated chat system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_generated_chat-system-prompt.txt"
 ---
 

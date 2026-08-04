@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_apply_patch_tool_instructions"
 company: "codex-cli"
 product: "codex-cli - apply patch tool instructions"
 category: "coding-agents"
+annotation: "ai"
 source_file: "apply_patch_tool_instructions.md"
 ---
 

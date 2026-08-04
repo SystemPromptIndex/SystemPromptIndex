@@ -3,6 +3,7 @@ id: "fern/fern_-_.devin_automation_sentry_triage_SUBAGENT_CONTRACT"
 company: "fern"
 product: "fern - .devin automation sentry triage SUBAGENT CONTRACT"
 category: "multi-agent"
+annotation: "ai"
 source_file: ".devin_automation_sentry-triage_SUBAGENT_CONTRACT.md"
 ---
 

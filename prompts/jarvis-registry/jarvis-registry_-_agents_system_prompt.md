@@ -3,6 +3,7 @@ id: "jarvis-registry/jarvis-registry_-_agents_system_prompt"
 company: "jarvis-registry"
 product: "jarvis-registry - agents system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "agents_system_prompt.txt"
 ---
 

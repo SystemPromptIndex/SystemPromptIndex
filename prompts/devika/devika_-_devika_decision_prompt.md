@@ -3,6 +3,7 @@ id: "devika/devika_-_devika_decision_prompt"
 company: "devika"
 product: "devika - devika / decision prompt"
 category: "extracted"
+annotation: "ai"
 source_file: "devika__decision_prompt.txt"
 ---
 

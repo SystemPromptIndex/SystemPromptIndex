@@ -3,6 +3,7 @@ id: "agent-guardrails-template/agent-guardrails-template_-_docs_AGENT_GUARDRAILS
 company: "agent-guardrails-template"
 product: "agent-guardrails-template - docs AGENT GUARDRAILS"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_AGENT_GUARDRAILS.md"
 ---
 

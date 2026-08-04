@@ -3,6 +3,7 @@ id: "ai-prompts/ai-prompts_-_ChatGPT_Chain_of_Thought_OpenAI_o3_prompt"
 company: "ai-prompts"
 product: "ai-prompts - ChatGPT Chain of Thought OpenAI o3 prompt"
 category: "data-analytics"
+annotation: "ai"
 source_file: "ChatGPT_Chain-of-Thought_OpenAI o3_prompt.txt"
 ---
 

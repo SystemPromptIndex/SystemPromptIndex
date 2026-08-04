@@ -3,6 +3,7 @@ id: "GPTDiscord/GPTDiscord_-_openers_position_interviewer"
 company: "GPTDiscord"
 product: "GPTDiscord - openers position interviewer"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_openers_position_interviewer.txt"
 ---
 

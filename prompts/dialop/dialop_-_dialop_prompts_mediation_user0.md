@@ -3,6 +3,7 @@ id: "dialop/dialop_-_dialop_prompts_mediation_user0"
 company: "dialop"
 product: "dialop - dialop prompts mediation user0"
 category: "general-purpose"
+annotation: "ai"
 source_file: "dialop_prompts_mediation_user0.txt"
 ---
 

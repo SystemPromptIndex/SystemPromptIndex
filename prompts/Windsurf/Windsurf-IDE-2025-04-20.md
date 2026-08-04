@@ -3,6 +3,7 @@ id: "Windsurf/Windsurf-IDE-2025-04-20"
 company: "Windsurf"
 product: "Windsurf-IDE-2025-04-20"
 category: "Code Editor / IDE"
+annotation: "human"
 source_file: "system-2025-04-20.md"
 ---
 

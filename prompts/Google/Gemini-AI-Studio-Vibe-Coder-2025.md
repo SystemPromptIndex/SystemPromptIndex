@@ -2,6 +2,7 @@
 id: "Google/Gemini-AI-Studio-Vibe-Coder-2025"
 company: "Google"
 product: "Gemini-AI-Studio-Vibe-Coder-2025"
+annotation: "ai"
 source_file: "AI Studio vibe-coder.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "claude-code-from-scratch/claude-code-from-scratch_-_docs_03_system_prompt"
 company: "claude-code-from-scratch"
 product: "claude-code-from-scratch - docs 03 system prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_03-system-prompt.md"
 ---
 

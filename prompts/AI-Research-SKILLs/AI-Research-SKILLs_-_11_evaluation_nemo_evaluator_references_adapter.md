@@ -3,6 +3,7 @@ id: "AI-Research-SKILLs/AI-Research-SKILLs_-_11_evaluation_nemo_evaluator_refere
 company: "AI-Research-SKILLs"
 product: "AI-Research-SKILLs - 11 evaluation nemo evaluator references adapter..."
 category: "research"
+annotation: "ai"
 source_file: "11-evaluation_nemo-evaluator_references_adapter-system.md"
 ---
 

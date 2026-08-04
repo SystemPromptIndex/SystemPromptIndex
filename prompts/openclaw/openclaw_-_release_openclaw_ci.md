@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_release_openclaw_ci"
 company: "openclaw"
 product: "openclaw - release openclaw ci"
 category: "coding-agents"
+annotation: "ai"
 source_file: "release-openclaw-ci.md"
 ---
 

@@ -3,6 +3,7 @@ id: "thepopebot/thepopebot_-_docker_coding_agent_CLAUDE"
 company: "thepopebot"
 product: "thepopebot - docker coding agent CLAUDE"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_docker_coding-agent_CLAUDE.md"
 ---
 

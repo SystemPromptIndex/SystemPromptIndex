@@ -3,27 +3,28 @@
   "company": "openclaw",
   "product": "openclaw - openclaw small bugfix sweep",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "openclaw-small-bugfix-sweep.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 8,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 4,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,78 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do not pad with low-confidence fixes.",
+      "start": 2355,
+      "end": 2392,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes epistemic humility and avoiding low-confidence work. It requires proving root cause before fixing, skipping when repro or root cause is uncertain, and explicitly prohibits guessing at dependency behavior. This promotes truthfulness and information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Read body, comments, linked refs, changed files, current code, adjacent tests, and dependency contracts when relevant.",
+      "start": 1402,
+      "end": 1520,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes epistemic humility and avoiding low-confidence work. It requires proving root cause before fixing, skipping when repro or root cause is uncertain, and explicitly prohibits guessing at dependency behavior. This promotes truthfulness and information integrity.",
+      "risky": false
+    },
+    {
+      "text": "no commit during the review/prove phase",
+      "start": 2591,
+      "end": 2630,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety by implementing a multi-phase gating process. It explicitly prohibits pushing, creating PRs, commenting, closing, labeling, landing, or merging during the review/prove phase. All publishing actions require Peter's manual review and approval, enforcing a human-in-the-loop for consequential actions.",
+      "risky": false
+    },
+    {
+      "text": "Stop with the dirty diff summary, touched files, and test/gate output for Peter's manual review.",
+      "start": 607,
+      "end": 703,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety by implementing a multi-phase gating process. It explicitly prohibits pushing, creating PRs, commenting, closing, labeling, landing, or merging during the review/prove phase. All publishing actions require Peter's manual review and approval, enforcing a human-in-the-loop for consequential actions.",
+      "risky": false
+    },
+    {
+      "text": "Stop with the dirty diff summary, touched files, and test/gate output for Peter's manual review.",
+      "start": 607,
+      "end": 703,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user (Peter's) agency by requiring explicit human approval before any consequential action. The entire workflow is designed around a human review gate, ensuring the user maintains full control over what gets committed and published.",
+      "risky": false
+    },
+    {
+      "text": "Peter always wants to review code before commits.",
+      "start": 383,
+      "end": 432,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user (Peter's) agency by requiring explicit human approval before any consequential action. The entire workflow is designed around a human review gate, ensuring the user maintains full control over what gets committed and published.",
+      "risky": false
+    },
+    {
+      "text": "After Peter approves shipping, make one commit per accepted fix, with a changelog entry for each user-facing fix.",
+      "start": 707,
+      "end": 820,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user (Peter's) agency by requiring explicit human approval before any consequential action. The entire workflow is designed around a human review gate, ensuring the user maintains full control over what gets committed and published.",
+      "risky": false
+    },
+    {
+      "text": "`needs-fixup`: small bug is clear, but PR branch needs changes; list exact files/tests and wait for explicit fix/push/automerge instruction",
+      "start": 3000,
+      "end": 3139,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user (Peter's) agency by requiring explicit human approval before any consequential action. The entire workflow is designed around a human review gate, ensuring the user maintains full control over what gets committed and published.",
+      "risky": false
+    }
+  ]
 }

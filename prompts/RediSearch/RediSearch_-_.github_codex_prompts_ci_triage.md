@@ -3,6 +3,7 @@ id: "RediSearch/RediSearch_-_.github_codex_prompts_ci_triage"
 company: "RediSearch"
 product: "RediSearch - .github codex prompts ci triage"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_codex_prompts_ci-triage.md"
 ---
 

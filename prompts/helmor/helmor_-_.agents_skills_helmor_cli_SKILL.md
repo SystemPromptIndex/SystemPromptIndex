@@ -3,6 +3,7 @@ id: "helmor/helmor_-_.agents_skills_helmor_cli_SKILL"
 company: "helmor"
 product: "helmor - .agents skills helmor cli SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.agents_skills_helmor-cli_SKILL.md"
 ---
 

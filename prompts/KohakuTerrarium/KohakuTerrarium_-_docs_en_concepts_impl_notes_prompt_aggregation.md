@@ -3,6 +3,7 @@ id: "KohakuTerrarium/KohakuTerrarium_-_docs_en_concepts_impl_notes_prompt_aggreg
 company: "KohakuTerrarium"
 product: "KohakuTerrarium - docs en concepts impl notes prompt aggregation"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_en_concepts_impl-notes_prompt-aggregation.md"
 ---
 

@@ -3,6 +3,7 @@ id: "context-engineering-kit/context-engineering-kit_-_plugins_sdd_prompts_judge
 company: "context-engineering-kit"
 product: "context-engineering-kit - plugins sdd prompts judge"
 category: "coding-agents"
+annotation: "ai"
 source_file: "plugins_sdd_prompts_judge.md"
 ---
 

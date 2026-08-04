@@ -3,6 +3,7 @@ id: "decisionbox-platform/decisionbox-platform_-_.github_instructions_.instructi
 company: "decisionbox-platform"
 product: "decisionbox-platform - .github instructions *.instructions"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_instructions_*.instructions.md"
 ---
 

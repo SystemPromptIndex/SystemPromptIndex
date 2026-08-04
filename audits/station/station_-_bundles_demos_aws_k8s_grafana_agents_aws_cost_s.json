@@ -3,10 +3,11 @@
   "company": "station",
   "product": "station - bundles demos aws k8s grafana agents aws cost s...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "bundles_demos_aws-k8s-grafana_agents_aws-cost-spike-rca.prompt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "confidence: 0.0-1.0 based on evidence strength",
+      "start": 2801,
+      "end": 2847,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes a confidence score (0.0-1.0) based on evidence strength, which explicitly encourages the system to communicate uncertainty. The structured output requiring evidence sources and metric samples promotes information provenance and integrity. The investigation process is methodical and evidence-based.",
+      "risky": false
+    },
+    {
+      "text": "evidence: Prometheus metric samples showing correlation (request spikes, pod scaling, etc.)",
+      "start": 2707,
+      "end": 2798,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes a confidence score (0.0-1.0) based on evidence strength, which explicitly encourages the system to communicate uncertainty. The structured output requiring evidence sources and metric samples promotes information provenance and integrity. The investigation process is methodical and evidence-based.",
+      "risky": false
+    }
+  ]
 }

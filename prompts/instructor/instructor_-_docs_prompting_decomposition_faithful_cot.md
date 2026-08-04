@@ -3,6 +3,7 @@ id: "instructor/instructor_-_docs_prompting_decomposition_faithful_cot"
 company: "instructor"
 product: "instructor - docs prompting decomposition faithful cot"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_prompting_decomposition_faithful_cot.md"
 ---
 

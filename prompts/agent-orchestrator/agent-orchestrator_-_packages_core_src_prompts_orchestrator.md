@@ -3,6 +3,7 @@ id: "agent-orchestrator/agent-orchestrator_-_packages_core_src_prompts_orchestra
 company: "agent-orchestrator"
 product: "agent-orchestrator - packages core src prompts orchestrator"
 category: "multi-agent"
+annotation: "ai"
 source_file: "packages_core_src_prompts_orchestrator.md"
 ---
 

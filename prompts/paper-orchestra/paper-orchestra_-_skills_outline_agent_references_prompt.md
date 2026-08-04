@@ -1,9 +1,10 @@
 ---
-id: "paper-orchestra/paper-orchestra_-_prompt"
+id: "paper-orchestra/paper-orchestra_-_skills_outline_agent_references_prompt"
 company: "paper-orchestra"
-product: "paper-orchestra - prompt"
+product: "paper-orchestra - skills outline agent references prompt"
 category: "research"
-source_file: "prompt.md"
+annotation: "ai"
+source_file: "skills_outline-agent_references__prompt.md"
 ---
 
 # Outline Agent — verbatim prompt

@@ -3,6 +3,7 @@ id: "ScreenAgent/ScreenAgent_-_client_prompt_evaluator_agent_linux_en"
 company: "ScreenAgent"
 product: "ScreenAgent - client prompt evaluator agent linux en"
 category: "general-purpose"
+annotation: "ai"
 source_file: "client_prompt_evaluator_agent_linux_en.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "moling/moling_-_prompts_command"
 company: "moling"
 product: "moling - prompts command"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_command.md"
 ---
 

@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_codegraph_SKILL"
 company: "qwen-code"
 product: "qwen-code - codegraph SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "codegraph_SKILL.md"
 ---
 

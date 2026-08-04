@@ -2,6 +2,7 @@
 id: "DIA/Dia-DraftSkill-2025"
 company: "DIA"
 product: "Dia-DraftSkill-2025"
+annotation: "ai"
 source_file: "Dia_DraftSkill.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "voyager/voyager_-_voyager_prompts_curriculum_task_decomposition"
 company: "voyager"
 product: "voyager - voyager prompts curriculum task decomposition"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_voyager_prompts_curriculum_task_decomposition.txt"
 ---
 

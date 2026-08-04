@@ -3,6 +3,7 @@ id: "agnosticui/agnosticui_-_v2_docs_llm_prompt_guide"
 company: "agnosticui"
 product: "agnosticui - v2 docs llm prompt guide"
 category: "general-purpose"
+annotation: "ai"
 source_file: "v2_docs_llm-prompt-guide.md"
 ---
 

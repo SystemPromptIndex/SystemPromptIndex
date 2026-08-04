@@ -3,6 +3,7 @@ id: "CodeMachine-CLI/CodeMachine-CLI_-_prompts_templates_ali_chained_step_04_pro
 company: "CodeMachine-CLI"
 product: "CodeMachine-CLI - prompts templates ali chained step 04 prompts"
 category: "coding-agents"
+annotation: "ai"
 source_file: "prompts_templates_ali_chained_step-04-prompts.md"
 ---
 

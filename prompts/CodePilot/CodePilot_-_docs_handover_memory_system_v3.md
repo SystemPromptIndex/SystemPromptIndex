@@ -3,6 +3,7 @@ id: "CodePilot/CodePilot_-_docs_handover_memory_system_v3"
 company: "CodePilot"
 product: "CodePilot - docs handover memory system v3"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_handover_memory-system-v3.md"
 ---
 

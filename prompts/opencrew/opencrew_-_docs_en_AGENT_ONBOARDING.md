@@ -3,6 +3,7 @@ id: "opencrew/opencrew_-_docs_en_AGENT_ONBOARDING"
 company: "opencrew"
 product: "opencrew - docs en AGENT ONBOARDING"
 category: "multi-agent"
+annotation: "ai"
 source_file: "docs_en_AGENT_ONBOARDING.md"
 ---
 

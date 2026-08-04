@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_codex_rs_core_templates_personalities_gpt_5.2_c"
 company: "codex-cli"
 product: "codex-cli - codex rs core templates personalities gpt 5.2 c..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_codex-rs_core_templates_personalities_gpt-5.2-codex_pragmatic.md"
 ---
 

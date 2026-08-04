@@ -3,6 +3,7 @@ id: "Clawdboss/Clawdboss_-_templates_workspace_SOUL"
 company: "Clawdboss"
 product: "Clawdboss - templates workspace SOUL"
 category: "legal"
+annotation: "ai"
 source_file: "templates_workspace_SOUL.md"
 ---
 

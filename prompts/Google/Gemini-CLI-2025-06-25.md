@@ -3,6 +3,7 @@ id: "Google/Gemini-CLI-2025-06-25"
 company: "Google"
 product: "Gemini-CLI-2025-06-25"
 category: "Chat / General"
+annotation: "human"
 source_file: "Gemini-cli_system_prompt.md"
 ---
 

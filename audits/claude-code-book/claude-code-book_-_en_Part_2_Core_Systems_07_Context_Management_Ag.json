@@ -3,27 +3,28 @@
   "company": "claude-code-book",
   "product": "claude-code-book - en Part 2 Core Systems 07 Context Management Ag...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "en_Part-2-Core-Systems_07-Context-Management-Agent-Working-Memory.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Compression loses conversation details, but if key information has already been saved as memory files, the Agent can still recover critical context by reading memories after compression.",
+      "start": 27473,
+      "end": 27659,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness and information integrity through its transparent explanation of system limitations, token constraints, and compression trade-offs. It explicitly discusses information loss during compression and encourages users to understand what is preserved and what is lost. The dual-phase output structure with analysis/summary separation demonstrates commitment to accurate summarization.",
+      "risky": false
+    },
+    {
+      "text": "Each prompt includes a critical anti-tool-call preamble: it instructs the model to respond only in text form and not to invoke any tools (including Read, Bash, Grep, etc.).",
+      "start": 18538,
+      "end": 18710,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety principles through its circuit breaker pattern that prevents cascading failures, the restricted forked agent environment for compression (maximum 1 turn, no tool calls), and the anti-tool-call preamble in compression prompts. The progressive compression strategy itself is designed to protect system integrity.",
+      "risky": false
+    },
+    {
+      "text": "Each prompt includes a critical anti-tool-call preamble: it instructs the model to respond only in text form and not to invoke any tools (including Read, Bash, Grep, etc.). This directive ensures the summary generation process does not trigger tool calls, because compression runs in a restricted forked agent environment (maximum 1 turn), and a rejected tool call would directly result in empty output.",
+      "start": 18538,
+      "end": 18941,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety principles through its circuit breaker pattern that prevents cascading failures, the restricted forked agent environment for compression (maximum 1 turn, no tool calls), and the anti-tool-call preamble in compression prompts. The progressive compression strategy itself is designed to protect system integrity.",
+      "risky": false
+    },
+    {
+      "text": "**Best Practice:** When you see token usage exceed 80%, you should consider manually triggering compression (by typing `/compact`) rather than waiting for auto-compression to trigger. Proactive compression typically preserves more valuable content because you can provide advance guidance on which information is most important.",
+      "start": 4593,
+      "end": 4921,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt actively promotes user agency by encouraging proactive compression over reactive compression, giving users control through manual /compact commands with custom preservation hints, and providing transparent warnings at multiple threshold levels so users can make informed decisions.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "ai-agents-for-beginners/ai-agents-for-beginners_-_02_explore_agentic_framew
 company: "ai-agents-for-beginners"
 product: "ai-agents-for-beginners - 02 explore agentic frameworks azure ai foundry ..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_02-explore-agentic-frameworks_azure-ai-foundry-agent-creation.md"
 ---
 

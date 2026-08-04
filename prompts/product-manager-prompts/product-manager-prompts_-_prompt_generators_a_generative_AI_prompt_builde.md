@@ -3,6 +3,7 @@ id: "product-manager-prompts/product-manager-prompts_-_prompt_generators_a_gener
 company: "product-manager-prompts"
 product: "product-manager-prompts - prompt generators a generative AI prompt builde..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompt-generators_a-generative-AI-prompt-builder-for-product-professionals.md"
 ---
 

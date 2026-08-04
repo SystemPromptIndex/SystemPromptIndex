@@ -3,6 +3,7 @@ id: "diaggym/diaggym_-_fidelity_fullchain_evaluation"
 company: "diaggym"
 product: "diaggym - fidelity fullchain evaluation"
 category: "healthcare"
+annotation: "ai"
 source_file: "fidelity_fullchain_evaluation.txt"
 ---
 

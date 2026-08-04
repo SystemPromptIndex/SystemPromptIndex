@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_complete_prompts_agent_prompts_so
 company: "claude-code-prompts"
 product: "claude-code-prompts - complete prompts agent prompts solution architect"
 category: "coding-agents"
+annotation: "ai"
 source_file: "complete-prompts_agent-prompts_solution-architect.md"
 ---
 

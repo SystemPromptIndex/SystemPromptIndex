@@ -3,29 +3,30 @@
   "company": "zenml",
   "product": "zenml - docs book getting started zenml pro personal ac...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "docs_book_getting-started_zenml-pro_personal-access-tokens.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
-    "D7": 0,
+    "D7": 1,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
-      "D7": 0,
+      "D7": 1,
       "D8": 0,
       "Misc": 0
     },
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "This approach, albeit simple, is not recommended because the long-lived PAT is exposed with every API request, which makes it easier to be compromised.",
+      "start": 2213,
+      "end": 2364,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation explicitly promotes secure handling of credentials and sensitive data. It recommends secure storage of PATs, warns against exposing long-lived tokens, and advises never storing tokens in code repositories.",
+      "risky": false
+    },
+    {
+      "text": "For automation tasks like CI/CD pipelines, we strongly recommend using [service accounts](service-accounts.md) instead, following the principle of least privilege. Service accounts allow you to grant only the specific permissions needed for automated workflows.",
+      "start": 550,
+      "end": 811,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The documentation strongly promotes the principle of least privilege, recommends using service accounts over personal tokens for automation, advocates for token rotation, and provides secure authentication patterns including short-lived token exchange.",
+      "risky": false
+    },
+    {
+      "text": "**Immediate Deactivation**: Deactivate PATs immediately when they're no longer needed or if a device is lost or compromised",
+      "start": 13043,
+      "end": 13166,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The documentation includes multiple security warnings, best practices for incident response, and guidance on immediate deactivation of compromised tokens. It proactively warns users about security risks and provides mitigation strategies.",
+      "risky": false
+    }
+  ]
 }

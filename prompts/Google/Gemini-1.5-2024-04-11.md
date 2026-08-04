@@ -3,6 +3,7 @@ id: "Google/Gemini-1.5-2024-04-11"
 company: "Google"
 product: "Gemini-1.5-2024-04-11"
 category: "Chat / General"
+annotation: "human"
 source_file: "gemini-1.5-04112024.md"
 ---
 

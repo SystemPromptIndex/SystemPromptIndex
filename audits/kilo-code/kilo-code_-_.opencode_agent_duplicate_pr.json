@@ -3,26 +3,27 @@
   "company": "kilo-code",
   "product": "kilo-code - .opencode agent duplicate pr",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_.opencode_agent_duplicate-pr.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If no duplicates are found, say so clearly. BUT ONLY SAY \"No duplicate PRs found\" (don't say anything else if no dups)",
+      "start": 767,
+      "end": 885,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages truthful reporting by instructing the agent to clearly state when no duplicates are found and to explain why found PRs might be related. It does not encourage fabrication or speculation beyond what the search tool returns.",
+      "risky": false
+    },
+    {
+      "text": "tools:\n  \"*\": false\n  \"github-pr-search\": true",
+      "start": 87,
+      "end": 133,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt follows a least-privilege approach by explicitly disabling all tools except the one needed ('github-pr-search'). This restricts the agent's capabilities to only what is necessary for its task, demonstrating good tool safety practices.",
+      "risky": false
+    }
+  ]
 }

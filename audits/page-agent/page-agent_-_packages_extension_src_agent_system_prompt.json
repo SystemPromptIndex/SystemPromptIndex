@@ -3,27 +3,28 @@
   "company": "page-agent",
   "product": "page-agent - packages extension src agent system prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "packages_extension_src_agent_system_prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Explicitly judge success/failure/uncertainty of the last action. Never assume an action succeeded just because it appears to be executed in your last step in <agent_history>.",
+      "start": 6704,
+      "end": 6878,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes several provisions that promote truthfulness and information integrity. It instructs the agent to explicitly judge success/failure/uncertainty, never assume actions succeeded, and avoid hallucinating steps. It also encourages asking the user for help when uncertain.",
+      "risky": false
+    },
+    {
+      "text": "If the user request is very specific - then carefully follow each step and dont skip or hallucinate steps.",
+      "start": 1451,
+      "end": 1557,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes several provisions that promote truthfulness and information integrity. It instructs the agent to explicitly judge success/failure/uncertainty, never assume actions succeeded, and avoid hallucinating steps. It also encourages asking the user for help when uncertain.",
+      "risky": false
+    },
+    {
+      "text": "Ask user for help if you have any difficulty. Keep user in the loop.",
+      "start": 7182,
+      "end": 7250,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt promotes user agency by instructing the agent to ask the user for help when stuck, keep the user in the loop, and defer to user-specified steps as highest priority. It also instructs the agent to tell the user when it cannot solve captchas rather than attempting workarounds silently.",
+      "risky": false
+    },
+    {
+      "text": "If a captcha appears, tell user you can not solve captcha. Finish the task and ask user to solve it.",
+      "start": 3492,
+      "end": 3592,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt promotes user agency by instructing the agent to ask the user for help when stuck, keep the user in the loop, and defer to user-specified steps as highest priority. It also instructs the agent to tell the user when it cannot solve captchas rather than attempting workarounds silently.",
+      "risky": false
+    }
+  ]
 }

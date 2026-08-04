@@ -3,6 +3,7 @@ id: "damocles/damocles_-_.claude_commands_optimize_prompt"
 company: "damocles"
 product: "damocles - .claude commands optimize prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".claude_commands_optimize-prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "aicommits/aicommits_-_tests_fixtures_README"
 company: "aicommits"
 product: "aicommits - tests fixtures README"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_tests_fixtures_README.md"
 ---
 

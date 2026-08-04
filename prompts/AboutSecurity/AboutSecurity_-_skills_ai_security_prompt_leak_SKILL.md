@@ -3,6 +3,7 @@ id: "AboutSecurity/AboutSecurity_-_skills_ai_security_prompt_leak_SKILL"
 company: "AboutSecurity"
 product: "AboutSecurity - skills ai security prompt leak SKILL"
 category: "security"
+annotation: "ai"
 source_file: "skills_ai-security_prompt-leak_SKILL.md"
 ---
 

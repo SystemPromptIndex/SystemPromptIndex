@@ -3,6 +3,7 @@ id: "x-cmd/x-cmd_-_mod_claw_lib_data_workspace_msg_SOUL"
 company: "x-cmd"
 product: "x-cmd - mod claw lib data workspace msg SOUL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "mod_claw_lib_data_workspace_msg_SOUL.md"
 ---
 

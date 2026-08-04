@@ -3,6 +3,7 @@ id: "noderr/noderr_-_noderr_prompts_NDv1.9_Advanced_Security_Audit"
 company: "noderr"
 product: "noderr - noderr prompts NDv1.9 / Advanced Security Audit"
 category: "coding-agents"
+annotation: "ai"
 source_file: "noderr_prompts_NDv1.9__Advanced_Security_Audit.md"
 ---
 

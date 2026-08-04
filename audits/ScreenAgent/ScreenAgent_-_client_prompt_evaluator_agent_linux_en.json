@@ -3,6 +3,7 @@
   "company": "ScreenAgent",
   "product": "ScreenAgent - client prompt evaluator agent linux en",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "client_prompt_evaluator_agent_linux_en.txt",
   "scores": {
     "D1": 0,
@@ -11,12 +12,12 @@
     "D4": -1,
     "D5": 0,
     "D6": -1,
-    "D7": 0,
+    "D7": -1,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 4,
+  "problematic_entries": 5,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -36,46 +37,55 @@
       "D4": 2,
       "D5": 0,
       "D6": 2,
-      "D7": 0,
+      "D7": 1,
       "D8": 0,
       "Misc": 0
     }
   },
   "spans": [
     {
-      "text": "Your current goal is to act as a reward model to judge whether or not this image meets the goal",
+      "text": "Your current goal is to act as a reward model to judge whether or not this image meets the goal, video width:",
       "start": 72,
-      "end": 167,
+      "end": 181,
       "dimension": "D4",
       "score": -1,
       "note": "The prompt instructs the system to act as a reward model for an automated agent operating a Linux system, evaluating subtask completion and directing the agent to retry or continue. There are no safety guardrails, validation steps, or restrictions on what tasks can be executed. The system blindly evaluates arbitrary task prompts (injected via {{task_prompt}}) without any checks on whether the operations are safe, use least privilege, or could harm system integrity.",
       "risky": false
     },
     {
-      "text": "the overall mission is: \"{{task_prompt}}\"",
-      "start": 231,
-      "end": 272,
+      "text": "Your current goal is to act as a reward model to judge whether or not this image meets the goal, video width: {{video_width}}, video height: {{video_height}}, the overall mission is: \"{{task_prompt}}\".",
+      "start": 72,
+      "end": 273,
       "dimension": "D4",
       "score": -1,
       "note": "The prompt instructs the system to act as a reward model for an automated agent operating a Linux system, evaluating subtask completion and directing the agent to retry or continue. There are no safety guardrails, validation steps, or restrictions on what tasks can be executed. The system blindly evaluates arbitrary task prompts (injected via {{task_prompt}}) without any checks on whether the operations are safe, use least privilege, or could harm system integrity.",
       "risky": false
     },
     {
-      "text": "the overall mission is: \"{{task_prompt}}\"",
-      "start": 231,
-      "end": 272,
+      "text": "Your current goal is to act as a reward model to judge whether or not this image meets the goal, video width: {{video_width}}, video height: {{video_height}}, the overall mission is: \"{{task_prompt}}\".",
+      "start": 72,
+      "end": 273,
       "dimension": "D6",
       "score": -1,
       "note": "The prompt has no mechanism to recognize or refuse unsafe or illicit tasks. The {{task_prompt}} variable is injected without any filtering or safety checks, making the system vulnerable to prompt injection and to evaluating potentially harmful operations (e.g., deleting system files, exfiltrating data, installing malware) as legitimate subtasks.",
       "risky": false
     },
     {
-      "text": "Now the current subtask is: \"{{current_task}}\".\nPlease describe whether or not this image meets the current subtask",
+      "text": "Now the current subtask is: \"{{current_task}}\".\nPlease describe whether or not this image meets the current subtask, please answer json format:",
       "start": 421,
-      "end": 536,
+      "end": 564,
       "dimension": "D6",
       "score": -1,
       "note": "The prompt has no mechanism to recognize or refuse unsafe or illicit tasks. The {{task_prompt}} variable is injected without any filtering or safety checks, making the system vulnerable to prompt injection and to evaluating potentially harmful operations (e.g., deleting system files, exfiltrating data, installing malware) as legitimate subtasks.",
+      "risky": false
+    },
+    {
+      "text": "```json  {\"action_type\":\"EvaluateSubTaskAction\", \"situation\": \"sub_task_success\"} ```",
+      "start": 654,
+      "end": 739,
+      "dimension": "D7",
+      "score": -1,
+      "note": "The system acts as a reward model that can approve continuation of arbitrary automated tasks on a Linux system without any harm prevention guardrails. It could approve and encourage completion of harmful operations such as destructive commands, unauthorized access, or other dangerous system-level actions.",
       "risky": false
     }
   ]

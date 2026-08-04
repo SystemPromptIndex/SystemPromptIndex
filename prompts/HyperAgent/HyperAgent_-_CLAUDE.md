@@ -3,6 +3,7 @@ id: "HyperAgent/HyperAgent_-_CLAUDE"
 company: "HyperAgent"
 product: "HyperAgent - CLAUDE"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_CLAUDE.md"
 ---
 

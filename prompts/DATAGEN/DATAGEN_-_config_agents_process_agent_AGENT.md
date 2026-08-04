@@ -3,6 +3,7 @@ id: "DATAGEN/DATAGEN_-_config_agents_process_agent_AGENT"
 company: "DATAGEN"
 product: "DATAGEN - config agents process agent AGENT"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_config_agents_process_agent_AGENT.md"
 ---
 

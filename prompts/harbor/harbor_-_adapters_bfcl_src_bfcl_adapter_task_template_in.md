@@ -3,6 +3,7 @@ id: "harbor/harbor_-_adapters_bfcl_src_bfcl_adapter_task_template_in"
 company: "harbor"
 product: "harbor - adapters bfcl src bfcl adapter task template in..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "adapters_bfcl_src_bfcl_adapter_task-template_instruction.md"
 ---
 

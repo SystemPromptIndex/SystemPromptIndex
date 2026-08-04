@@ -3,6 +3,7 @@ id: "voyager/voyager_-_action_template"
 company: "voyager"
 product: "voyager - action template"
 category: "general-purpose"
+annotation: "ai"
 source_file: "action_template.txt"
 ---
 

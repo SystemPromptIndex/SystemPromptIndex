@@ -1,0 +1,146 @@
+{
+  "id": "paper-orchestra/paper-orchestra_-_skills_paper_orchestra_SKILL",
+  "company": "paper-orchestra",
+  "product": "paper-orchestra - skills paper orchestra SKILL",
+  "category": "research",
+  "annotation": "ai",
+  "source_file": "14101__SKILL.md",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 11,
+  "problematic_entries": 0,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 3,
+      "D3": 1,
+      "D4": 4,
+      "D5": 3,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "Before any LLM call that *writes* paper content (outline, intro/related work,\nsection writing, refinement), you MUST prepend the **Anti-Leakage Prompt** at\n`references/anti-leakage-prompt.md` to your system prompt. This is verbatim\nfrom Appendix D.4 of the paper and prevents pre-training-data leakage.",
+      "start": 3118,
+      "end": 3420,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes multiple mechanisms to ensure information integrity: an anti-leakage prompt to prevent pre-training data leakage, a claim-evidence gate that verifies numeric claims in the draft are grounded in the experimental log, provenance tracking with file hashes, and cross-validation of consistency between inputs. These measures collectively enforce truthfulness and information provenance.",
+      "risky": false
+    },
+    {
+      "text": "from Appendix D.4 of the paper and prevents pre-training-data leakage.",
+      "start": 3350,
+      "end": 3420,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes multiple mechanisms to ensure information integrity: an anti-leakage prompt to prevent pre-training data leakage, a claim-evidence gate that verifies numeric claims in the draft are grounded in the experimental log, provenance tracking with file hashes, and cross-validation of consistency between inputs. These measures collectively enforce truthfulness and information provenance.",
+      "risky": false
+    },
+    {
+      "text": "Then write `workspace/provenance.json` capturing input file hashes, outline\nhash, refs hash, figure hashes, and final tex/pdf hashes (helper:",
+      "start": 10912,
+      "end": 11053,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes multiple mechanisms to ensure information integrity: an anti-leakage prompt to prevent pre-training data leakage, a claim-evidence gate that verifies numeric claims in the draft are grounded in the experimental log, provenance tracking with file hashes, and cross-validation of consistency between inputs. These measures collectively enforce truthfulness and information provenance.",
+      "risky": false
+    },
+    {
+      "text": "`scripts/anti_leakage_check.py` — grep draft for leaked author names/emails/affils",
+      "start": 13384,
+      "end": 13466,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt includes an anti-leakage check script that explicitly greps the draft for leaked author names, emails, and affiliations, demonstrating awareness of privacy concerns in generated outputs. The data_access_level is set to 'raw' which is transparent about access scope.",
+      "risky": false
+    },
+    {
+      "text": "If `validate_inputs.py` or `check_idea_density.py` fail (exit code 1 or 2), stop",
+      "start": 4458,
+      "end": 4538,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements extensive validation gates before proceeding at each pipeline step. It requires pre-flight checks, input validation, consistency checks, and multiple deterministic gates (orphan cite gate, LaTeX sanity check, anti-leakage check, claim-evidence gate) before advancing. It explicitly halts the pipeline on validation failures rather than proceeding blindly.",
+      "risky": false
+    },
+    {
+      "text": "and tell the user what's missing or below threshold — do not proceed until fixed.",
+      "start": 4539,
+      "end": 4620,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements extensive validation gates before proceeding at each pipeline step. It requires pre-flight checks, input validation, consistency checks, and multiple deterministic gates (orphan cite gate, LaTeX sanity check, anti-leakage check, claim-evidence gate) before advancing. It explicitly halts the pipeline on validation failures rather than proceeding blindly.",
+      "risky": false
+    },
+    {
+      "text": "**Halt the pipeline if validation fails** — every downstream agent depends on the schema.",
+      "start": 6267,
+      "end": 6356,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements extensive validation gates before proceeding at each pipeline step. It requires pre-flight checks, input validation, consistency checks, and multiple deterministic gates (orphan cite gate, LaTeX sanity check, anti-leakage check, claim-evidence gate) before advancing. It explicitly halts the pipeline on validation failures rather than proceeding blindly.",
+      "risky": false
+    },
+    {
+      "text": "If any gate fails, the host agent must fix the issue (re-prompting the writing\nstep with the gate's error report) before proceeding.",
+      "start": 9830,
+      "end": 9962,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements extensive validation gates before proceeding at each pipeline step. It requires pre-flight checks, input validation, consistency checks, and multiple deterministic gates (orphan cite gate, LaTeX sanity check, anti-leakage check, claim-evidence gate) before advancing. It explicitly halts the pipeline on validation failures rather than proceeding blindly.",
+      "risky": false
+    },
+    {
+      "text": "Show the user the `reconciliation_summary.md` (even if no changes — it confirms\nthe outline matched the actual literature).",
+      "start": 8033,
+      "end": 8156,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by asking the user for input when files are missing rather than making assumptions, reporting warnings and summaries to the user, and showing reconciliation summaries even when no changes occur. The user is kept informed and in control throughout the pipeline.",
+      "risky": false
+    },
+    {
+      "text": "Report to the user: the path to `workspace/final/paper.pdf`, a brief summary of\nwhich sections were drafted, citation count, refinement iterations completed,",
+      "start": 11183,
+      "end": 11340,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by asking the user for input when files are missing rather than making assumptions, reporting warnings and summaries to the user, and showing reconciliation summaries even when no changes occur. The user is kept informed and in control throughout the pipeline.",
+      "risky": false
+    },
+    {
+      "text": "and any gates that failed mid-pipeline.",
+      "start": 11341,
+      "end": 11380,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by asking the user for input when files are missing rather than making assumptions, reporting warnings and summaries to the user, and showing reconciliation summaries even when no changes occur. The user is kept informed and in control throughout the pipeline.",
+      "risky": false
+    }
+  ]
+}

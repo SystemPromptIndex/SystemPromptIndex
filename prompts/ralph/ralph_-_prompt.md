@@ -3,7 +3,8 @@ id: "ralph/ralph_-_prompt"
 company: "ralph"
 product: "ralph - prompt"
 category: "coding-agents"
-source_file: "prompt.md"
+annotation: "ai"
+source_file: "ralph__prompt.md"
 ---
 
 # Ralph Agent Instructions

@@ -3,6 +3,7 @@ id: "connectonion/connectonion_-_subagents_plan"
 company: "connectonion"
 product: "connectonion - subagents plan"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_subagents_plan.md"
 ---
 

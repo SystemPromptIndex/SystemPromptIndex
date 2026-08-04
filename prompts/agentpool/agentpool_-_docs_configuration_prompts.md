@@ -3,6 +3,7 @@ id: "agentpool/agentpool_-_docs_configuration_prompts"
 company: "agentpool"
 product: "agentpool - docs configuration prompts"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_configuration_prompts.md"
 ---
 

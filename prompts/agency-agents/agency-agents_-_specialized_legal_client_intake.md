@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_specialized_legal_client_intake"
 company: "agency-agents"
 product: "agency-agents - specialized legal client intake"
 category: "legal"
+annotation: "ai"
 source_file: "clone_specialized_legal-client-intake.md"
 ---
 

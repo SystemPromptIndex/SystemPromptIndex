@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_design_design_inclusive_visuals_specialist"
 company: "agency-agents"
 product: "agency-agents - design design inclusive visuals specialist"
 category: "legal"
+annotation: "ai"
 source_file: "clone_design_design-inclusive-visuals-specialist.md"
 ---
 

@@ -3,6 +3,7 @@ id: "opencode/opencode_-_gemini"
 company: "opencode"
 product: "opencode - gemini"
 category: "coding-agents"
+annotation: "ai"
 source_file: "gemini.txt"
 ---
 

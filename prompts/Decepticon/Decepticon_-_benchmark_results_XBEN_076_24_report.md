@@ -3,6 +3,7 @@ id: "Decepticon/Decepticon_-_benchmark_results_XBEN_076_24_report"
 company: "Decepticon"
 product: "Decepticon - benchmark results XBEN 076 24 report"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_benchmark_results_XBEN-076-24_report.md"
 ---
 

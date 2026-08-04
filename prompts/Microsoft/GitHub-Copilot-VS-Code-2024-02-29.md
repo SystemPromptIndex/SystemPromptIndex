@@ -3,6 +3,7 @@ id: "Microsoft/GitHub-Copilot-VS-Code-2024-02-29"
 company: "Microsoft"
 product: "GitHub-Copilot-VS-Code-2024-02-29"
 category: "Code Assistant"
+annotation: "human"
 source_file: "github_copilot_vscode_02292024.md"
 ---
 

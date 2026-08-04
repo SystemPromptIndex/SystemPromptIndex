@@ -3,27 +3,28 @@
   "company": "moling",
   "product": "moling - prompts command",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "prompts_command.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "When dealing with sensitive operations or destructive commands, please confirm before execution. Report back with clear\nstatus updates, success/failure indicators, and any relevant output or results.",
+      "start": 2051,
+      "end": 2250,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly requires confirmation before executing sensitive or destructive commands, and requires clear instructions including specific commands, parameters, and expected results before execution. This promotes validation-first and cautious execution practices.",
+      "risky": false
+    },
+    {
+      "text": "status updates, success/failure indicators, and any relevant output or results.",
+      "start": 2171,
+      "end": 2250,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly requires confirmation before executing sensitive or destructive commands, and requires clear instructions including specific commands, parameters, and expected results before execution. This promotes validation-first and cautious execution practices.",
+      "risky": false
+    },
+    {
+      "text": "Required parameters (file paths, directory names, etc.)",
+      "start": 1879,
+      "end": 1934,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the user to provide clear instructions before any action is taken, including specific commands, parameters, and expected results. It also requires confirmation for sensitive operations, keeping consequential actions under user control.",
+      "risky": false
+    }
+  ]
 }

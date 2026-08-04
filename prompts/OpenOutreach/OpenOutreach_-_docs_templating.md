@@ -3,6 +3,7 @@ id: "OpenOutreach/OpenOutreach_-_docs_templating"
 company: "OpenOutreach"
 product: "OpenOutreach - docs templating"
 category: "sales"
+annotation: "ai"
 source_file: "clone_docs_templating.md"
 ---
 

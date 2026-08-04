@@ -3,6 +3,7 @@ id: "harmonist/harmonist_-_agents_specialized_specialized_french_consultin"
 company: "harmonist"
 product: "harmonist - agents specialized specialized french consultin..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_agents_specialized_specialized-french-consulting-market.md"
 ---
 

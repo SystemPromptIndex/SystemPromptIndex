@@ -3,6 +3,7 @@ id: "devika/devika_-_devika_coder_prompt"
 company: "devika"
 product: "devika - devika / coder prompt"
 category: "extracted"
+annotation: "ai"
 source_file: "devika__coder_prompt.txt"
 ---
 

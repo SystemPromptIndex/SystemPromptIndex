@@ -3,6 +3,7 @@ id: "gambit/gambit_-_examples_dev_simpsons_explainer_user_PROMPT"
 company: "gambit"
 product: "gambit - examples dev simpsons explainer user PROMPT"
 category: "general-purpose"
+annotation: "ai"
 source_file: "examples_dev_simpsons_explainer_user_PROMPT.md"
 ---
 

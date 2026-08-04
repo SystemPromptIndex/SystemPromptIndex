@@ -3,6 +3,7 @@ id: "OpenMonoAgent.ai/OpenMonoAgent.ai_-_docs_playbooks_examples_incident_respon
 company: "OpenMonoAgent.ai"
 product: "OpenMonoAgent.ai - docs playbooks examples incident response PLAYBOOK"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_playbooks-examples_incident-response_PLAYBOOK.md"
 ---
 

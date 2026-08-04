@@ -3,6 +3,7 @@ id: "SuperPrompt/SuperPrompt_-_tm_prompt"
 company: "SuperPrompt"
 product: "SuperPrompt - tm prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "tm_prompt.md"
 ---
 

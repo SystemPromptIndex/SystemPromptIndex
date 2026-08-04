@@ -3,6 +3,7 @@ id: "ai-assistant-skills/ai-assistant-skills_-_archived_vibe_architecting_flow_2
 company: "ai-assistant-skills"
 product: "ai-assistant-skills - archived vibe architecting flow 2 prd prep prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "archived_vibe-architecting-flow_2-prd-prep-prompt.md"
 ---
 

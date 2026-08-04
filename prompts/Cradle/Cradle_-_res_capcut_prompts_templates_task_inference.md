@@ -3,6 +3,7 @@ id: "Cradle/Cradle_-_res_capcut_prompts_templates_task_inference"
 company: "Cradle"
 product: "Cradle - res capcut prompts templates task inference"
 category: "general-purpose"
+annotation: "ai"
 source_file: "res_capcut_prompts_templates_task_inference.prompt"
 ---
 

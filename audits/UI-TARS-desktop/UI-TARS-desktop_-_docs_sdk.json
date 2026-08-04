@@ -3,20 +3,21 @@
   "company": "UI-TARS-desktop",
   "product": "UI-TARS-desktop - docs sdk",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "clone_docs_sdk.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
-    "D6": 0,
-    "D7": 0,
+    "D6": -1,
+    "D7": -1,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 3,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -33,13 +34,41 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
-      "D6": 0,
-      "D7": 0,
+      "D6": 1,
+      "D7": 1,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "await guiAgent.run('send \"hello world\" to x.com');",
+      "start": 3392,
+      "end": 3442,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The SDK enables autonomous GUI control including mouse clicks, keyboard input, typing, hotkeys, and scrolling without any documented safety validations, user confirmation requirements, or least-privilege principles. The agent autonomously executes actions based on model predictions with no validation step, confirmation prompt, or sandboxing mentioned. The example 'send \"hello world\" to x.com' demonstrates the agent autonomously performing actions on external services without user confirmation at each step.",
+      "risky": false
+    },
+    {
+      "text": "await guiAgent.run('send \"hello world\" to x.com');",
+      "start": 3392,
+      "end": 3442,
+      "dimension": "D6",
+      "score": -1,
+      "note": "The SDK provides no guidance or mechanisms for refusing unsafe requests. There are no content filters, safety checks, or restrictions on what instructions can be passed to the agent. The agent could be instructed to perform harmful actions on a user's computer or interact with services in unauthorized ways, and no safeguards are documented.",
+      "risky": false
+    },
+    {
+      "text": "Keyboard input: typing, hotkeys",
+      "start": 2925,
+      "end": 2956,
+      "dimension": "D7",
+      "score": -1,
+      "note": "The SDK enables full computer control including mouse, keyboard, and screen interaction without any documented harm prevention measures. There are no warnings about potential risks of autonomous computer control, no restrictions on dangerous actions (e.g., deleting files, making purchases, sending messages), and no safety guidelines for developers building with the toolkit.",
+      "risky": false
+    }
+  ]
 }

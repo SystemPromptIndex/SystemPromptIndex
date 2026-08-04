@@ -3,6 +3,7 @@ id: "metagpt/metagpt_-_metagpt_swe_agent"
 company: "metagpt"
 product: "metagpt - metagpt / swe agent"
 category: "extracted"
+annotation: "ai"
 source_file: "metagpt__swe_agent.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "Perplexity/Perplexity-Deep-Research-2025-04-23"
 company: "Perplexity"
 product: "Perplexity-Deep-Research-2025-04-23"
 category: "Search / Research"
+annotation: "human"
 source_file: "Perplexity_Deep_Research.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "Microsoft/VS-Code-Agent-2025-04-21"
 company: "Microsoft"
 product: "VS-Code-Agent-2025-04-21"
 category: "Code Assistant"
+annotation: "human"
 source_file: "Prompt.txt"
 ---
 

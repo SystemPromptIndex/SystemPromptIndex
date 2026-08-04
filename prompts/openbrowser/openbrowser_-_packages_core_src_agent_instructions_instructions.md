@@ -3,6 +3,7 @@ id: "openbrowser/openbrowser_-_packages_core_src_agent_instructions_instructions
 company: "openbrowser"
 product: "openbrowser - packages core src agent instructions instructions"
 category: "browser-automation"
+annotation: "ai"
 source_file: "packages_core_src_agent_instructions_instructions.md"
 ---
 

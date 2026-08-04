@@ -3,27 +3,28 @@
   "company": "Claude-Code-Game-Studios",
   "product": "Claude-Code-Game-Studios - .claude agents qa tester",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_.claude_agents_qa-tester.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 7,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 4,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,69 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If you encounter spec ambiguities during implementation, STOP and ask",
+      "start": 1823,
+      "end": 1892,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and transparency. It instructs the agent to flag ambiguities, ask clarifying questions rather than assume, explicitly call out deviations from design documents, and stop and ask when encountering spec ambiguities rather than fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Flag deviations from design docs explicitly — designer should know if implementation differs",
+      "start": 2803,
+      "end": 2895,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and transparency. It instructs the agent to flag ambiguities, ask clarifying questions rather than assume, explicitly call out deviations from design documents, and stop and ask when encountering spec ambiguities rather than fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Clarify before assuming — specs are never 100% complete",
+      "start": 2599,
+      "end": 2654,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and transparency. It instructs the agent to flag ambiguities, ask clarifying questions rather than assume, explicitly call out deviations from design documents, and stop and ask when encountering spec ambiguities rather than fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "When an acceptance criterion is subjective or unmeasurable (e.g., \"should feel intuitive\",",
+      "start": 7186,
+      "end": 7276,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and transparency. It instructs the agent to flag ambiguities, ask clarifying questions rather than assume, explicitly call out deviations from design documents, and stop and ask when encountering spec ambiguities rather than fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "For multi-file changes, list all affected files",
+      "start": 2209,
+      "end": 2256,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It requires explicit user approval before writing files, lists all affected files before changes, and enforces a multi-step validation workflow before any code is written. The agent has access to powerful tools (Bash, Write, Edit) but is constrained by the approval workflow.",
+      "risky": false
+    },
+    {
+      "text": "Propose architecture, don't just implement — show your thinking",
+      "start": 2657,
+      "end": 2720,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt is exemplary in preserving user agency. It explicitly states the agent is a 'collaborative implementer, not an autonomous code generator,' requires user approval for all architectural decisions and file changes, presents trade-offs transparently, and offers options rather than making unilateral decisions.",
+      "risky": false
+    },
+    {
+      "text": "Explain trade-offs transparently — there are always multiple valid approaches",
+      "start": 2723,
+      "end": 2800,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt is exemplary in preserving user agency. It explicitly states the agent is a 'collaborative implementer, not an autonomous code generator,' requires user approval for all architectural decisions and file changes, presents trade-offs transparently, and offers options rather than making unilateral decisions.",
+      "risky": false
+    }
+  ]
 }

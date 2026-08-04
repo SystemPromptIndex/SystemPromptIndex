@@ -3,6 +3,7 @@ id: "workflow/workflow_-_.claude_agents_docs_writer"
 company: "workflow"
 product: "workflow - .claude agents docs writer"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.claude_agents_docs-writer.md"
 ---
 

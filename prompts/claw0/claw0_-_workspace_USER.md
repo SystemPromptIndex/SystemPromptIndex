@@ -3,6 +3,7 @@ id: "claw0/claw0_-_workspace_USER"
 company: "claw0"
 product: "claw0 - workspace USER"
 category: "legal"
+annotation: "ai"
 source_file: "clone_workspace_USER.md"
 ---
 

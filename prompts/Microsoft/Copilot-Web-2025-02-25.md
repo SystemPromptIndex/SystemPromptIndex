@@ -3,6 +3,7 @@ id: "Microsoft/Copilot-Web-2025-02-25"
 company: "Microsoft"
 product: "Copilot-Web-2025-02-25"
 category: "Code Assistant"
+annotation: "human"
 source_file: "microsoft_copilot_website_02252025.md"
 ---
 

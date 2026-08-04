@@ -3,6 +3,7 @@ id: "feast/feast_-_docs_reference_type_system"
 company: "feast"
 product: "feast - docs reference type system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_reference_type-system.md"
 ---
 

@@ -3,6 +3,7 @@ id: "LightAgent/LightAgent_-_docs_multi_agent_failure_map"
 company: "LightAgent"
 product: "LightAgent - docs multi agent failure map"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_multi_agent_failure_map.md"
 ---
 

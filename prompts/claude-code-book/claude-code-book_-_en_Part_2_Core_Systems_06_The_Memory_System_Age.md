@@ -3,6 +3,7 @@ id: "claude-code-book/claude-code-book_-_en_Part_2_Core_Systems_06_The_Memory_Sy
 company: "claude-code-book"
 product: "claude-code-book - en Part 2 Core Systems 06 The Memory System Age..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "en_Part-2-Core-Systems_06-The-Memory-System-Agent-Long-Term-Memory.md"
 ---
 

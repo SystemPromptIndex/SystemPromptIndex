@@ -3,6 +3,7 @@ id: "saas-builder/saas-builder_-_gocodeo_cli_templates_prompts_system"
 company: "saas-builder"
 product: "saas-builder - gocodeo cli templates prompts system"
 category: "general-purpose"
+annotation: "ai"
 source_file: "gocodeo_cli_templates_prompts_system.txt"
 ---
 

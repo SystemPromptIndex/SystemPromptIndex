@@ -2,6 +2,7 @@
 id: "Anthropic/Claude-4.1-2025-04"
 company: "Anthropic"
 product: "Claude-4.1-2025-04"
+annotation: "ai"
 source_file: "Claude-4.1.txt"
 ---
 

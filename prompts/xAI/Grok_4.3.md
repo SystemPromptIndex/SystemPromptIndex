@@ -2,6 +2,7 @@
 id: "xAI/Grok_4.3"
 company: "xAI"
 product: "Grok 4.3"
+annotation: "ai"
 source_file: "grok-4.3-beta.md"
 ---
 

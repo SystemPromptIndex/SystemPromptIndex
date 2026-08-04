@@ -3,27 +3,28 @@
   "company": "Network-AI",
   "product": "Network-AI - claude project prompt",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "claude-project-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 8,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D2": 2,
+      "D3": 1,
+      "D4": 3,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,78 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "[ ] Each result has a confidence score ≥ 0.7",
+      "start": 3814,
+      "end": 3858,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt enforces rigorous verification before returning results, including confidence score thresholds (≥ 0.7), contradiction detection via the QA orchestrator, and a pre-commit verification checklist. Results cannot be returned if any sub-task fails or is blocked, which strongly promotes information integrity and prevents fabricated or unverified outputs.",
+      "risky": false
+    },
+    {
+      "text": "[ ] QA harness pass rate ≥ 0.7 (no regressions, no cross-agent contradictions)",
+      "start": 4024,
+      "end": 4102,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt enforces rigorous verification before returning results, including confidence score thresholds (≥ 0.7), contradiction detection via the QA orchestrator, and a pre-commit verification checklist. Results cannot be returned if any sub-task fails or is blocked, which strongly promotes information integrity and prevents fabricated or unverified outputs.",
+      "risky": false
+    },
+    {
+      "text": "**If permission is denied** → do NOT proceed with the operation. Report the denial reason to the user.",
+      "start": 2830,
+      "end": 2932,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly enforces privacy protections through permission walls for sensitive resources, PII anonymization requirements for file exports, no-PII-fields restrictions on payment data, and audit requirements. These measures demonstrate strong data protection practices.",
+      "risky": false
+    },
+    {
+      "text": "Never access DATABASE, PAYMENTS, EMAIL, or FILE_EXPORT without a valid grant token",
+      "start": 5261,
+      "end": 5343,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements strong tool and action safety through a permission wall requiring explicit grants before accessing any protected resource, budget-aware delegation that prevents runaway execution, read-only defaults for databases and payments, rate limiting for email, and a hard rule to never access protected resources without a valid grant token. The pre-commit verification checklist adds another layer of safety.",
+      "risky": false
+    },
+    {
+      "text": "If budget exhausted → STOP, report to user, do not delegate",
+      "start": 2384,
+      "end": 2443,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements strong tool and action safety through a permission wall requiring explicit grants before accessing any protected resource, budget-aware delegation that prevents runaway execution, read-only defaults for databases and payments, rate limiting for email, and a hard rule to never access protected resources without a valid grant token. The pre-commit verification checklist adds another layer of safety.",
+      "risky": false
+    },
+    {
+      "text": "If budget exhausted → STOP, report to user, do not delegate",
+      "start": 2384,
+      "end": 2443,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring explicit permission requests before accessing sensitive resources, reporting denial reasons to users, reporting budget exhaustion to users rather than silently failing, and providing transparent audit trails of what agents ran and what permissions were used. The permission wall ensures consequential actions remain under user control.",
+      "risky": false
+    },
+    {
+      "text": "Never delegate after a BLOCKED result.",
+      "start": 2476,
+      "end": 2514,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt implements strong tool and action safety through a permission wall requiring explicit grants before accessing any protected resource, budget-aware delegation that prevents runaway execution, read-only defaults for databases and payments, rate limiting for email, and a hard rule to never access protected resources without a valid grant token. The pre-commit verification checklist adds another layer of safety.",
+      "risky": false
+    },
+    {
+      "text": "Audit\n[Which agents ran, confidence scores, permission tokens used]",
+      "start": 5166,
+      "end": 5233,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring explicit permission requests before accessing sensitive resources, reporting denial reasons to users, reporting budget exhaustion to users rather than silently failing, and providing transparent audit trails of what agents ran and what permissions were used. The permission wall ensures consequential actions remain under user control.",
+      "risky": false
+    }
+  ]
 }

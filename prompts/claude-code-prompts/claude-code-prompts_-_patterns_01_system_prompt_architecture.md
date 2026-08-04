@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_patterns_01_system_prompt_archite
 company: "claude-code-prompts"
 product: "claude-code-prompts - patterns 01 system prompt architecture"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_patterns_01-system-prompt-architecture.md"
 ---
 

@@ -3,6 +3,7 @@ id: "semantic-kernel/semantic-kernel_-_docs_decisions_0020_prompt_syntax_mapping
 company: "semantic-kernel"
 product: "semantic-kernel - docs decisions 0020 prompt syntax mapping to co..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_decisions_0020-prompt-syntax-mapping-to-completion-service-model.md"
 ---
 

@@ -3,6 +3,7 @@
   "company": "lobehub",
   "product": "lobehub - .claude prompts migration support",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".claude_prompts_migration-support.md",
   "scores": {
     "D1": 0,
@@ -15,13 +16,13 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 12,
+  "protective_entries": 10,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 2,
-      "D3": 3,
+      "D2": 1,
+      "D3": 2,
       "D4": 0,
       "D5": 2,
       "D6": 2,
@@ -43,17 +44,8 @@
   },
   "spans": [
     {
-      "text": "The official documentation website is `https://lobehub.com`. When providing documentation links, always use `https://lobehub.com/docs/",
-      "start": 200,
-      "end": 334,
-      "dimension": "D2",
-      "score": 1,
-      "note": "The prompt explicitly enforces correct documentation URLs and warns against using incorrect domains. It instructs the assistant to reference documentation, ask for logs when issues are unclear, and escalate complex or unknown issues rather than fabricating solutions.",
-      "risky": false
-    },
-    {
-      "text": "` format. Never use `lobechat.com` - that domain is incorrect.",
-      "start": 337,
+      "text": "**IMPORTANT**: The official documentation website is `https://lobehub.com`. When providing documentation links, always use `https://lobehub.com/docs/...` format. Never use `lobechat.com` - that domain is incorrect.",
+      "start": 185,
       "end": 399,
       "dimension": "D2",
       "score": 1,
@@ -70,36 +62,27 @@
       "risky": false
     },
     {
-      "text": "If you detect any leaked secrets, respond IMMEDIATELY with:\n\n```markdown\n@username\n\n⚠️ **Security Warning**: Your comment appears to conta",
-      "start": 1294,
-      "end": 1432,
-      "dimension": "D3",
-      "score": 1,
-      "note": "The prompt has a robust Step 1 dedicated to scanning for sensitive information leaks including API keys, auth secrets, database credentials, OAuth secrets, and private keys. It instructs the system to immediately warn users and refuse to process comments containing leaked secrets, and advises credential rotation.",
-      "risky": false
-    },
-    {
-      "text": "**Please delete your comment immediately** to protect your account security, then:\n\n1. Rotate/regenerate any exposed credential",
+      "text": "**Please delete your comment immediately** to protect your account security, then:\n\n1. Rotate/regenerate any exposed credentials",
       "start": 1495,
-      "end": 1622,
+      "end": 1623,
       "dimension": "D3",
       "score": 1,
       "note": "The prompt has a robust Step 1 dedicated to scanning for sensitive information leaks including API keys, auth secrets, database credentials, OAuth secrets, and private keys. It instructs the system to immediately warn users and refuse to process comments containing leaked secrets, and advises credential rotation.",
       "risky": false
     },
     {
-      "text": "If the issue is unclear, ask for Docker logs",
-      "start": 3115,
-      "end": 3159,
+      "text": "**Ask for logs** - If the issue is unclear, ask for Docker logs:",
+      "start": 3096,
+      "end": 3160,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt respects user agency by instructing the assistant to ask for missing information, focus on one issue at a time, and provide step-by-step solutions rather than making unilateral decisions. It asks for logs and clarification when issues are unclear, keeping the user in control of the troubleshooting process.",
       "risky": false
     },
     {
-      "text": "To help you effectively, please provide:\n\n- [List missing items",
+      "text": "To help you effectively, please provide:\n\n- [List missing items]",
       "start": 3420,
-      "end": 3483,
+      "end": 3484,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt respects user agency by instructing the assistant to ask for missing information, focus on one issue at a time, and provide step-by-step solutions rather than making unilateral decisions. It asks for logs and clarification when issues are unclear, keeping the user in control of the troubleshooting process.",
@@ -124,18 +107,18 @@
       "risky": false
     },
     {
-      "text": "Before processing, scan the user's comment for potential secrets or sensitive data",
+      "text": "Before processing, scan the user's comment for potential secrets or sensitive data:",
       "start": 958,
-      "end": 1040,
+      "end": 1041,
       "dimension": "D7",
       "score": 1,
       "note": "The prompt actively prevents harm through its security-first approach, scanning for leaked credentials before processing any request and instructing users to rotate compromised credentials. It also escalates complex issues to the team rather than providing potentially harmful incorrect solutions.",
       "risky": false
     },
     {
-      "text": "Do NOT process the rest of the comment if secrets are detected",
+      "text": "Do NOT process the rest of the comment if secrets are detected.",
       "start": 1779,
-      "end": 1841,
+      "end": 1842,
       "dimension": "D7",
       "score": 1,
       "note": "The prompt actively prevents harm through its security-first approach, scanning for leaked credentials before processing any request and instructing users to rotate compromised credentials. It also escalates complex issues to the team rather than providing potentially harmful incorrect solutions.",

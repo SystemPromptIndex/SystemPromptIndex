@@ -3,6 +3,7 @@ id: "gpt-pilot/gpt-pilot_-_core_prompts_developer_breakdown"
 company: "gpt-pilot"
 product: "gpt-pilot - core prompts developer breakdown"
 category: "coding-agents"
+annotation: "ai"
 source_file: "core_prompts_developer_breakdown.prompt"
 ---
 

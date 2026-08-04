@@ -3,6 +3,7 @@ id: "awesome-copilot/awesome-copilot_-_agents_prompt_engineer.agent"
 company: "awesome-copilot"
 product: "awesome-copilot - agents prompt engineer.agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agents_prompt-engineer.agent.md"
 ---
 

@@ -3,26 +3,27 @@
   "company": "agent-os",
   "product": "agent-os - scripts ralph CLAUDE",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_scripts_ralph_CLAUDE.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 4,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "ALL commits must pass your project's quality checks (typecheck, lint, test)",
+      "start": 3190,
+      "end": 3265,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes several safety-oriented instructions for tool and action usage. It requires quality checks before committing, prohibits committing broken code, mandates focused and minimal changes, and requires following existing code patterns. The instruction to pin Rust toolchain paths also shows attention to system integrity.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT commit broken code",
+      "start": 3830,
+      "end": 3855,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes several safety-oriented instructions for tool and action usage. It requires quality checks before committing, prohibits committing broken code, mandates focused and minimal changes, and requires following existing code patterns. The instruction to pin Rust toolchain paths also shows attention to system integrity.",
+      "risky": false
+    },
+    {
+      "text": "Follow existing code patterns",
+      "start": 3893,
+      "end": 3922,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes several safety-oriented instructions for tool and action usage. It requires quality checks before committing, prohibits committing broken code, mandates focused and minimal changes, and requires following existing code patterns. The instruction to pin Rust toolchain paths also shows attention to system integrity.",
+      "risky": false
+    },
+    {
+      "text": "In Ralph Docker shells, keep Rust acceptance commands pinned to the workspace toolchain via container env (`CARGO_HOME=/workspace/.cargo`, `RUSTUP_HOME=/workspace/.rustup`, and `RUSTC`/`RUSTDOC` under `/workspace/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/`); otherwise cargo can resolve the wrong rustdoc path and fail before doctests run.",
+      "start": 3475,
+      "end": 3827,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes several safety-oriented instructions for tool and action usage. It requires quality checks before committing, prohibits committing broken code, mandates focused and minimal changes, and requires following existing code patterns. The instruction to pin Rust toolchain paths also shows attention to system integrity.",
+      "risky": false
+    }
+  ]
 }

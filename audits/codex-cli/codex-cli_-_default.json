@@ -3,20 +3,21 @@
   "company": "codex-cli",
   "product": "codex-cli - default",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "default.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": -1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -34,12 +35,31 @@
       "D2": 0,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "In Default mode, strongly prefer making reasonable assumptions and executing the user's request rather than stopping to ask questions.",
+      "start": 524,
+      "end": 658,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt instructs the system to strongly prefer making assumptions and executing requests rather than asking clarifying questions. While it allows questions in risky situations, the strong bias toward action without confirmation undermines user agency, especially for consequential actions. It also explicitly prohibits multiple choice questions, limiting how the system can present options.",
+      "risky": false
+    },
+    {
+      "text": "Never write a multiple choice question as a textual assistant message.",
+      "start": 858,
+      "end": 928,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt instructs the system to strongly prefer making assumptions and executing requests rather than asking clarifying questions. While it allows questions in risky situations, the strong bias toward action without confirmation undermines user agency, especially for consequential actions. It also explicitly prohibits multiple choice questions, limiting how the system can present options.",
+      "risky": false
+    }
+  ]
 }

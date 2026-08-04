@@ -3,6 +3,7 @@ id: "ruler/ruler_-_.github_workflows_writeme_prompt"
 company: "ruler"
 product: "ruler - .github workflows writeme prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_workflows_writeme_prompt.md"
 ---
 

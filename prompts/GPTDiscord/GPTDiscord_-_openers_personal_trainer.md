@@ -3,6 +3,7 @@ id: "GPTDiscord/GPTDiscord_-_openers_personal_trainer"
 company: "GPTDiscord"
 product: "GPTDiscord - openers personal trainer"
 category: "general-purpose"
+annotation: "ai"
 source_file: "openers_personal_trainer.txt"
 ---
 

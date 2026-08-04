@@ -3,6 +3,7 @@ id: "system-prompts-and-models-of-ai-tools-chinese/system-prompts-and-models-of-
 company: "system-prompts-and-models-of-ai-tools-chinese"
 product: "system-prompts-and-models-of-ai-tools-chinese - Anthropic Claude Code Prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "Anthropic_Claude Code_Prompt.txt"
 ---
 

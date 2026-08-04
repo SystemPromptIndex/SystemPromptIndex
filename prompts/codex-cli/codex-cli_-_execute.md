@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_execute"
 company: "codex-cli"
 product: "codex-cli - execute"
 category: "coding-agents"
+annotation: "ai"
 source_file: "execute.md"
 ---
 

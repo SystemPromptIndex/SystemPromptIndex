@@ -3,6 +3,7 @@ id: "deer-flow/deer-flow_-_deer_flow_lead_agent"
 company: "deer-flow"
 product: "deer-flow - deer flow / lead agent"
 category: "extracted"
+annotation: "ai"
 source_file: "deer-flow__lead_agent.txt"
 ---
 

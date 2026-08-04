@@ -3,6 +3,7 @@ id: "eli5/eli5_-_.github_copilot_instructions"
 company: "eli5"
 product: "eli5 - .github copilot instructions"
 category: "multi-agent"
+annotation: "ai"
 source_file: ".github_copilot-instructions.md"
 ---
 

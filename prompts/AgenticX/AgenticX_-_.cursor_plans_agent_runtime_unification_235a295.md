@@ -3,6 +3,7 @@ id: "AgenticX/AgenticX_-_.cursor_plans_agent_runtime_unification_235a295"
 company: "AgenticX"
 product: "AgenticX - .cursor plans agent runtime unification 235a295..."
 category: "multi-agent"
+annotation: "ai"
 source_file: ".cursor_plans_agent_runtime_unification_235a295c.plan.md"
 ---
 

@@ -3,6 +3,7 @@ id: "context-engineering-kit/context-engineering-kit_-_plugins_reflexion_skills_
 company: "context-engineering-kit"
 product: "context-engineering-kit - plugins reflexion skills critique SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_reflexion_skills_critique_SKILL.md"
 ---
 

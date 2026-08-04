@@ -3,6 +3,7 @@ id: "formax/formax_-_.codex_skills_formax_system_prompt_workflow_SKILL"
 company: "formax"
 product: "formax - .codex skills formax system prompt workflow SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".codex_skills_formax-system-prompt-workflow_SKILL.md"
 ---
 

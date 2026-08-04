@@ -3,6 +3,7 @@ id: "opendraft/opendraft_-_engine_prompts_01_research_signal"
 company: "opendraft"
 product: "opendraft - engine prompts 01 research signal"
 category: "coding-agents"
+annotation: "ai"
 source_file: "engine_prompts_01_research_signal.md"
 ---
 

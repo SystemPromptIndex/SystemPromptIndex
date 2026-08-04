@@ -3,6 +3,7 @@ id: "agentic-ai-prompt-research/agentic-ai-prompt-research_-_prompts_09_agent_cr
 company: "agentic-ai-prompt-research"
 product: "agentic-ai-prompt-research - prompts 09 agent creation architect"
 category: "research"
+annotation: "ai"
 source_file: "clone_prompts_09_agent_creation_architect.md"
 ---
 

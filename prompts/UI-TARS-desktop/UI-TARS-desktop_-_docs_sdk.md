@@ -3,6 +3,7 @@ id: "UI-TARS-desktop/UI-TARS-desktop_-_docs_sdk"
 company: "UI-TARS-desktop"
 product: "UI-TARS-desktop - docs sdk"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_docs_sdk.md"
 ---
 

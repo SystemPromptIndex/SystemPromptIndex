@@ -3,27 +3,28 @@
   "company": "zcf",
   "product": "zcf - .bmad core tasks generate ai frontend prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".bmad-core_tasks_generate-ai-frontend-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 1,
+      "D4": 1,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -43,9 +44,36 @@
   },
   "spans": [
     {
-      "text": "Explain the structure of the prompt and why certain information was included, referencing the principles above.\n",
+      "text": "<important_note>Conclude by reminding the user that all AI-generated code will require careful human review, testing, and refinement to be considered production-ready.</important_note>",
+      "start": 4426,
+      "end": 4610,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly reminds users that AI-generated code requires human review and is not guaranteed to be production-ready, which promotes honesty about limitations. It also advises iterative refinement rather than expecting perfection, acknowledging the AI's limitations.",
+      "risky": false
+    },
+    {
+      "text": "**Define a Strict Scope**: Explicitly define the boundaries of the task. Tell the AI which files it can modify and, more importantly, which files to leave untouched to prevent unintended changes across the codebase.",
+      "start": 2935,
+      "end": 3150,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes tool/action safety by emphasizing strict scope definition, explicitly instructing which files can be modified and which should be left untouched, preventing unintended changes across the codebase. This aligns with least-privilege and system integrity principles.",
+      "risky": false
+    },
+    {
+      "text": "Output the complete, generated prompt in a clear, copy-pasteable format (e.g., a large code block).",
+      "start": 4204,
+      "end": 4303,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by structuring the workflow as collaborative and iterative. It instructs the AI to present the prompt, explain its structure, and allow the user to refine it. It also emphasizes that the user should review and test all output.",
+      "risky": false
+    },
+    {
+      "text": "Explain the structure of the prompt and why certain information was included, referencing the principles above.",
       "start": 4309,
-      "end": 4421,
+      "end": 4420,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves user agency by structuring the workflow as collaborative and iterative. It instructs the AI to present the prompt, explain its structure, and allow the user to refine it. It also emphasizes that the user should review and test all output.",

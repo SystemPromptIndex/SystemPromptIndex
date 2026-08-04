@@ -3,6 +3,7 @@ id: "Poke/Poke-Agent-UnknownTime"
 company: "Poke"
 product: "Poke-Agent-UnknownTime"
 category: "Social AI"
+annotation: "human"
 source_file: "Poke_agent.txt"
 ---
 

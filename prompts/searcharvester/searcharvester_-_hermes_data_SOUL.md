@@ -3,6 +3,7 @@ id: "searcharvester/searcharvester_-_hermes_data_SOUL"
 company: "searcharvester"
 product: "searcharvester - hermes data SOUL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "hermes-data_SOUL.md"
 ---
 

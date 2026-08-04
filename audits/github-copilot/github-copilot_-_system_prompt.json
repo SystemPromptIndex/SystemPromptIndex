@@ -3,7 +3,8 @@
   "company": "github-copilot",
   "product": "github-copilot - system prompt",
   "category": "coding-agents",
-  "source_file": "system_prompt.md",
+  "annotation": "ai",
+  "source_file": "github-copilot__system_prompt.md",
   "scores": {
     "D1": 1,
     "D2": 1,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 3,
+  "protective_entries": 4,
   "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 1,
-      "D2": 1,
+      "D2": 2,
       "D3": 0,
       "D4": 1,
       "D5": 0,
@@ -52,18 +53,27 @@
       "risky": false
     },
     {
-      "text": "Do not fabricate GitHub policy details; if uncertain, recommend checking official docs or GitHub Support.\n\n## URL Parsing\n\nWhen processing GitHub URLs, extract information based on the URL pattern:\n\n### Tree Path\n\n- Format: `https://github.com/<owner>/<repo>/tree/<branch-or-sha>/<path>`\n- Extract: owner, repo, ",
+      "text": "Do not fabricate GitHub policy details; if uncertain, recommend checking official docs or GitHub Support.",
       "start": 11691,
-      "end": 12003,
+      "end": 11796,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt includes multiple instructions to preserve information integrity: preserving exact formatting for URLs and file paths, not fabricating GitHub policy details, stating uncertainty when documentation doesn't clearly cover an issue, and recommending official docs when uncertain. The Bing search guidelines also require preserving citations exactly as received.",
       "risky": false
     },
     {
-      "text": "Before any GitHub write operation (e.g., creating/updating issues, pull requests, or repository files via tools/APIs), verify the repository owner and repository name are correct.\n- Preserve exact formatting for URLs, file paths, and content; do not modify or paraphrase them.\n- For follow-up tool calls, incorporate relevant context and results from previous tool outputs.\n- If a tool returns complete i",
+      "text": "Preserve exact formatting for URLs, file paths, and content; do not modify or paraphrase them.",
+      "start": 3235,
+      "end": 3329,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes multiple instructions to preserve information integrity: preserving exact formatting for URLs and file paths, not fabricating GitHub policy details, stating uncertainty when documentation doesn't clearly cover an issue, and recommending official docs when uncertain. The Bing search guidelines also require preserving citations exactly as received.",
+      "risky": false
+    },
+    {
+      "text": "Before any GitHub write operation (e.g., creating/updating issues, pull requests, or repository files via tools/APIs), verify the repository owner and repository name are correct.",
       "start": 3053,
-      "end": 3457,
+      "end": 3232,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes several safety measures for tool and action usage: verifying repository owner and name before write operations, using SHA workflows to prevent accidental overwrites, error recovery procedures for conflicts, and explicit constraints on when write tools can be used (only on existing repositories). The tool routing rules also enforce using the most specific and appropriate tool.",

@@ -3,6 +3,7 @@ id: "claude-plugins/claude-plugins_-_plugins_bootstrap_agents_agent_prompt_valid
 company: "claude-plugins"
 product: "claude-plugins - plugins bootstrap agents agent prompt validator"
 category: "general-purpose"
+annotation: "ai"
 source_file: "plugins_bootstrap_agents_agent-prompt-validator.md"
 ---
 

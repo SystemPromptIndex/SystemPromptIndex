@@ -3,6 +3,7 @@ id: "gpt-play-pokemon-firered/gpt-play-pokemon-firered_-_server_prompts_path_fin
 company: "gpt-play-pokemon-firered"
 product: "gpt-play-pokemon-firered - server prompts path finding"
 category: "general-purpose"
+annotation: "ai"
 source_file: "server_prompts_path_finding.txt"
 ---
 

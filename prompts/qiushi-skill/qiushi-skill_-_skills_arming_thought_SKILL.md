@@ -3,6 +3,7 @@ id: "qiushi-skill/qiushi-skill_-_skills_arming_thought_SKILL"
 company: "qiushi-skill"
 product: "qiushi-skill - skills arming thought SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_skills_arming-thought_SKILL.md"
 ---
 

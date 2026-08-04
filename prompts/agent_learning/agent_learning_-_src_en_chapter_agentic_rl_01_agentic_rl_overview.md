@@ -3,6 +3,7 @@ id: "agent_learning/agent_learning_-_src_en_chapter_agentic_rl_01_agentic_rl_ove
 company: "agent_learning"
 product: "agent_learning - src en chapter agentic rl 01 agentic rl overview"
 category: "healthcare"
+annotation: "ai"
 source_file: "src_en_chapter_agentic_rl_01_agentic_rl_overview.md"
 ---
 

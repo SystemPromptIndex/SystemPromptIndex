@@ -3,6 +3,7 @@ id: "devika/devika_-_src_agents_formatter_prompt"
 company: "devika"
 product: "devika - src agents formatter prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_src_agents_formatter_prompt.jinja2"
 ---
 

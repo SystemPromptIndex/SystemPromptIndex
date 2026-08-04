@@ -3,6 +3,7 @@ id: "cai/cai_-_system_network_analyzer"
 company: "cai"
 product: "cai - system network analyzer"
 category: "security"
+annotation: "ai"
 source_file: "system_network_analyzer.md"
 ---
 

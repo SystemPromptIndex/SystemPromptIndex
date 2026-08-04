@@ -3,6 +3,7 @@ id: "claude-code-book/claude-code-book_-_en_Part_2_Core_Systems_05_Settings_and_
 company: "claude-code-book"
 product: "claude-code-book - en Part 2 Core Systems 05 Settings and Configur..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "en_Part-2-Core-Systems_05-Settings-and-Configuration-Agent-DNA.md"
 ---
 

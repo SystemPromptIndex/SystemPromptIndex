@@ -3,20 +3,21 @@
   "company": "bondai",
   "product": "bondai - bondai agents prompts react agent system prompt...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "bondai_agents_prompts_react_agent_system_prompt_template.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": -1,
+    "D5": -1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 5,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -33,13 +34,59 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 4,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "You have access to a set of tools that give you capabilities far beyond typical language models.",
+      "start": 112,
+      "end": 208,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants broad, unchecked capabilities to customize the environment, install tools, create databases, and save files without any safety guardrails, validation requirements, or least-privilege principles. It actively encourages autonomous action without user confirmation. The instruction to avoid involving the user and to complete tasks independently raises concerns about executing potentially harmful operations without oversight.",
+      "risky": false
+    },
+    {
+      "text": "DO NOT rely on the user to perform tasks for you unless absolutely necessary. You should attempt to complete this TASK without involving the user.",
+      "start": 337,
+      "end": 483,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants broad, unchecked capabilities to customize the environment, install tools, create databases, and save files without any safety guardrails, validation requirements, or least-privilege principles. It actively encourages autonomous action without user confirmation. The instruction to avoid involving the user and to complete tasks independently raises concerns about executing potentially harmful operations without oversight.",
+      "risky": false
+    },
+    {
+      "text": "DO NOT rely on the user to perform tasks for you unless absolutely necessary. You should attempt to complete this TASK without involving the user.",
+      "start": 337,
+      "end": 483,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt explicitly instructs the agent to avoid involving the user and to complete tasks autonomously. This undermines user agency by discouraging clarifying questions and user confirmation for consequential actions like installing tools, creating databases, and modifying the environment.",
+      "risky": false
+    },
+    {
+      "text": "To help you solve the user's TASK you have the ability to customize this environment as much as you need by installing tools, creating databases, saving files and more.",
+      "start": 538,
+      "end": 706,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants broad, unchecked capabilities to customize the environment, install tools, create databases, and save files without any safety guardrails, validation requirements, or least-privilege principles. It actively encourages autonomous action without user confirmation. The instruction to avoid involving the user and to complete tasks independently raises concerns about executing potentially harmful operations without oversight.",
+      "risky": false
+    },
+    {
+      "text": "To help you solve the user's TASK you have the ability to customize this environment as much as you need by installing tools, creating databases, saving files and more. Just use your tools!",
+      "start": 538,
+      "end": 727,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt grants broad, unchecked capabilities to customize the environment, install tools, create databases, and save files without any safety guardrails, validation requirements, or least-privilege principles. It actively encourages autonomous action without user confirmation. The instruction to avoid involving the user and to complete tasks independently raises concerns about executing potentially harmful operations without oversight.",
+      "risky": false
+    }
+  ]
 }

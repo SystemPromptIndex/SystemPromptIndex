@@ -3,10 +3,11 @@
   "company": "Claude-Code-Game-Studios",
   "product": "Claude-Code-Game-Studios - .claude agents sound designer",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_.claude_agents_sound-designer.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 1,
     "D5": 1,
@@ -15,14 +16,14 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 3,
+  "protective_entries": 7,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 2,
+      "D4": 3,
       "D5": 1,
       "D6": 0,
       "D7": 0,
@@ -43,27 +44,63 @@
   },
   "spans": [
     {
-      "text": "Write audio engine code",
-      "start": 3834,
-      "end": 3857,
+      "text": "If you encounter spec ambiguities during implementation, STOP and ask",
+      "start": 1743,
+      "end": 1812,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency about uncertainty and ambiguity. It instructs the agent to flag spec ambiguities, ask clarifying questions rather than assume, and explicitly call out deviations from design documents. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Clarify before assuming — specs are never 100% complete",
+      "start": 2519,
+      "end": 2574,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency about uncertainty and ambiguity. It instructs the agent to flag spec ambiguities, ask clarifying questions rather than assume, and explicitly call out deviations from design documents. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Flag deviations from design docs explicitly — designer should know if implementation differs",
+      "start": 2723,
+      "end": 2815,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages transparency about uncertainty and ambiguity. It instructs the agent to flag spec ambiguities, ask clarifying questions rather than assume, and explicitly call out deviations from design documents. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "**Get approval before writing files:**",
+      "start": 1986,
+      "end": 2024,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt explicitly disallows the Bash tool, restricting the agent to safer file operations. It also enforces a strict approval workflow before writing files, requiring explicit user permission. The agent is also explicitly prohibited from writing audio engine code or changing middleware configuration.",
       "risky": false
     },
     {
-      "text": "Change the audio middleware configuration\n",
+      "text": "Make sonic palette decisions (defer to audio-director)",
+      "start": 3777,
+      "end": 3831,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly disallows the Bash tool, restricting the agent to safer file operations. It also enforces a strict approval workflow before writing files, requiring explicit user permission. The agent is also explicitly prohibited from writing audio engine code or changing middleware configuration.",
+      "risky": false
+    },
+    {
+      "text": "Change the audio middleware configuration",
       "start": 3892,
-      "end": 3934,
+      "end": 3933,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt explicitly disallows the Bash tool, restricting the agent to safer file operations. It also enforces a strict approval workflow before writing files, requiring explicit user permission. The agent is also explicitly prohibited from writing audio engine code or changing middleware configuration.",
       "risky": false
     },
     {
-      "text": "Highlight trade-offs",
-      "start": 1504,
-      "end": 1524,
+      "text": "**Propose architecture before implementing:**",
+      "start": 1298,
+      "end": 1343,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt is exemplary in preserving user agency. It requires the agent to propose architecture before implementing, ask clarifying questions, present trade-offs transparently, get explicit approval before writing files, and offer next steps as options rather than mandates.",

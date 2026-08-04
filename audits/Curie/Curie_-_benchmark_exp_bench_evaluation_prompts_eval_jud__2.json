@@ -3,10 +3,11 @@
   "company": "Curie",
   "product": "Curie - benchmark exp bench evaluation prompts eval jud...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "benchmark_exp_bench_evaluation_prompts_eval_judge_setup_prompt.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Compare setup_output against setup_ground_truth. Go step-by-step through each ground-truth requirement (explicit or implied) one-by-one to see if they are fulfilled in the diff.",
+      "start": 657,
+      "end": 834,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to perform careful, step-by-step comparison against ground truth requirements, focus on intent over exact matching, and provide detailed explanations and failure analyses. This promotes rigorous truthfulness and information integrity in evaluation.",
+      "risky": false
+    },
+    {
+      "text": "At the end, calculate a score based on the number of requirements that are correctly implemented.",
+      "start": 1243,
+      "end": 1340,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to perform careful, step-by-step comparison against ground truth requirements, focus on intent over exact matching, and provide detailed explanations and failure analyses. This promotes rigorous truthfulness and information integrity in evaluation.",
+      "risky": false
+    },
+    {
+      "text": "If applicable, include a failure analysis of what requirements were missed or incorrectly implemented.",
+      "start": 1547,
+      "end": 1649,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to perform careful, step-by-step comparison against ground truth requirements, focus on intent over exact matching, and provide detailed explanations and failure analyses. This promotes rigorous truthfulness and information integrity in evaluation.",
+      "risky": false
+    }
+  ]
 }

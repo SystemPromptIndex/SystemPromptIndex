@@ -3,6 +3,7 @@ id: "AutoR/AutoR_-_src_prompts_00_intake"
 company: "AutoR"
 product: "AutoR - src prompts 00 intake"
 category: "general-purpose"
+annotation: "ai"
 source_file: "src_prompts_00_intake.md"
 ---
 

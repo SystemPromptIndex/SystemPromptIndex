@@ -3,6 +3,7 @@ id: "Cline/Cline-Source-Code-2025-04"
 company: "Cline"
 product: "Cline-Source-Code-2025-04"
 category: "Autonomous Agent"
+annotation: "human"
 source_file: "system.ts"
 ---
 

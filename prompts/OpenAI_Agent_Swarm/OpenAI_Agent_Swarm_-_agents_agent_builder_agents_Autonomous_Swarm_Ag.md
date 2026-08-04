@@ -3,6 +3,7 @@ id: "OpenAI_Agent_Swarm/OpenAI_Agent_Swarm_-_agents_agent_builder_agents_Autonom
 company: "OpenAI_Agent_Swarm"
 product: "OpenAI_Agent_Swarm - agents agent builder agents Autonomous Swarm Ag..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "agents_agent_builder_agents_Autonomous Swarm Agent Builder_files_OpenAI_Documentation.md"
 ---
 

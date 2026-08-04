@@ -3,6 +3,7 @@ id: "sales/sales_-_sales_salesgpt_en"
 company: "sales"
 product: "sales - sales / salesgpt en"
 category: "extracted"
+annotation: "ai"
 source_file: "sales__salesgpt_en.txt"
 ---
 

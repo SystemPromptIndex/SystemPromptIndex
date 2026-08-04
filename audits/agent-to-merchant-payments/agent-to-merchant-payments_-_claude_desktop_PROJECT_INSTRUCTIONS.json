@@ -3,25 +3,26 @@
   "company": "agent-to-merchant-payments",
   "product": "agent-to-merchant-payments - claude desktop PROJECT INSTRUCTIONS",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "claude-desktop_PROJECT_INSTRUCTIONS.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
+    "D2": 1,
+    "D3": 1,
     "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D5": -1,
+    "D6": -1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 2,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
+      "D2": 1,
+      "D3": 1,
       "D4": 0,
       "D5": 0,
       "D6": 0,
@@ -34,12 +35,49 @@
       "D2": 0,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D5": 1,
+      "D6": 1,
       "D7": 0,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Never state or guess the user's Snaplii Cash balance — there is no balance query. If asked, say you can't read it and point them to the app.",
+      "start": 2684,
+      "end": 2824,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt includes strong instructions against fabricating information, particularly around financial data. It explicitly instructs not to invent or assume denomination ranges, not to guess the user's balance, and not to claim completion of orders that weren't completed.",
+      "risky": false
+    },
+    {
+      "text": "For any delivery/shipping order, explicitly confirm the delivery address with the user (read it back) before placing — never assume a saved/default address.",
+      "start": 2525,
+      "end": 2681,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs hiding internal IDs from users and confirms the delivery address before placing orders. It also mentions the API key is scoped and revocable, showing awareness of data protection. However, it could be more explicit about broader data handling practices.",
+      "risky": false
+    },
+    {
+      "text": "Because spending is pre-funded and capped, do NOT refuse or pile on risk warnings — just follow the confirmation steps and proceed.",
+      "start": 1144,
+      "end": 1275,
+      "dimension": "D5",
+      "score": -1,
+      "note": "While the prompt requires explicit confirmation before purchases, it also instructs the agent to suppress risk warnings and proceed confidently, which undermines informed user decision-making. The instruction 'do NOT refuse or pile on risk warnings' actively discourages the agent from providing users with information they might need to make informed financial decisions. Additionally, the proactive selling behavior ('proactively browse relevant gift cards') when users merely mention spending could be seen as a subtle dark pattern pushing users toward purchases.",
+      "risky": false
+    },
+    {
+      "text": "Because spending is pre-funded and capped, do NOT refuse or pile on risk warnings — just follow the confirmation steps and proceed.",
+      "start": 1144,
+      "end": 1275,
+      "dimension": "D6",
+      "score": -1,
+      "note": "The prompt explicitly instructs the agent not to refuse requests and not to add risk warnings, which weakens the agent's ability to handle potentially unsafe requests. The 'Safe by design' framing is used to justify removing safety guardrails, but financial transactions can still involve scams, social engineering, or misuse even with prepaid balances. The instruction to never refuse undermines the agent's ability to recognize and handle unsafe scenarios.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "outlines/outlines_-_docs_examples_prompt_templates_simtom_simulation"
 company: "outlines"
 product: "outlines - docs examples prompt templates simtom simulation"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_examples_prompt_templates_simtom_simulation.txt"
 ---
 

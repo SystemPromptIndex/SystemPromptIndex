@@ -3,6 +3,7 @@ id: "Kiro/kiro_-_spec_prompt"
 company: "Kiro"
 product: "kiro - spec prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "spec_prompt.txt"
 ---
 

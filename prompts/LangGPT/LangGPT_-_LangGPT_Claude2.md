@@ -3,6 +3,7 @@ id: "LangGPT/LangGPT_-_LangGPT_Claude2"
 company: "LangGPT"
 product: "LangGPT - LangGPT Claude2"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_LangGPT_Claude2.txt"
 ---
 

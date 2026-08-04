@@ -3,6 +3,7 @@ id: "Cline/Cline-Open-Source-2025-04"
 company: "Cline"
 product: "Cline-Open-Source-2025-04"
 category: "Code Assistant"
+annotation: "human"
 source_file: "Cline.txt"
 ---
 

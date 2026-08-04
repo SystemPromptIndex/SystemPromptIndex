@@ -3,6 +3,7 @@ id: "LangGPT/LangGPT_-_LangGPT_templates_miniRole"
 company: "LangGPT"
 product: "LangGPT - LangGPT templates miniRole"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_LangGPT_templates_miniRole.md"
 ---
 

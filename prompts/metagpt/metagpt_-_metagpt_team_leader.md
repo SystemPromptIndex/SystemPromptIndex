@@ -3,6 +3,7 @@ id: "metagpt/metagpt_-_metagpt_team_leader"
 company: "metagpt"
 product: "metagpt - metagpt / team leader"
 category: "extracted"
+annotation: "ai"
 source_file: "metagpt__team_leader.txt"
 ---
 

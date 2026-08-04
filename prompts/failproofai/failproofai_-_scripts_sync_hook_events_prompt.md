@@ -3,6 +3,7 @@ id: "failproofai/failproofai_-_scripts_sync_hook_events_prompt"
 company: "failproofai"
 product: "failproofai - scripts sync hook events prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "scripts_sync-hook-events-prompt.md"
 ---
 

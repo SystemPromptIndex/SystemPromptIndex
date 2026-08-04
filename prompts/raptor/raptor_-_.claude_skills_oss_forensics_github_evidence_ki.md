@@ -3,6 +3,7 @@ id: "raptor/raptor_-_.claude_skills_oss_forensics_github_evidence_ki"
 company: "raptor"
 product: "raptor - .claude skills oss forensics github evidence ki..."
 category: "coding-agents"
+annotation: "ai"
 source_file: ".claude_skills_oss-forensics_github-evidence-kit_self_improvement_prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_citation_f1_prompt"
 company: "paper-orchestra"
 product: "paper-orchestra - citation f1 prompt"
 category: "research"
+annotation: "ai"
 source_file: "citation-f1-prompt.md"
 ---
 

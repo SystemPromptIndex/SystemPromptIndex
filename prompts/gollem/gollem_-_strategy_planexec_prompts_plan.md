@@ -3,6 +3,7 @@ id: "gollem/gollem_-_strategy_planexec_prompts_plan"
 company: "gollem"
 product: "gollem - strategy planexec prompts plan"
 category: "general-purpose"
+annotation: "ai"
 source_file: "strategy_planexec_prompts_plan.md"
 ---
 

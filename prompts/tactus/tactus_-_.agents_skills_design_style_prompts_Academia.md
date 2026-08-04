@@ -3,6 +3,7 @@ id: "tactus/tactus_-_.agents_skills_design_style_prompts_Academia"
 company: "tactus"
 product: "tactus - .agents skills design style prompts Academia"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".agents_skills_design-style_prompts_Academia.md"
 ---
 

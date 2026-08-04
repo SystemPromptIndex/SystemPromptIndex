@@ -3,6 +3,7 @@ id: "Autonomix/Autonomix_-_Resources_SystemPrompt_autonomix_system_prompt"
 company: "Autonomix"
 product: "Autonomix - Resources SystemPrompt autonomix system prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "Resources_SystemPrompt_autonomix_system_prompt.txt"
 ---
 

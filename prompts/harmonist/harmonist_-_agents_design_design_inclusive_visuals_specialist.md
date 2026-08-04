@@ -3,6 +3,7 @@ id: "harmonist/harmonist_-_agents_design_design_inclusive_visuals_specialist"
 company: "harmonist"
 product: "harmonist - agents design design inclusive visuals specialist"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_agents_design_design-inclusive-visuals-specialist.md"
 ---
 

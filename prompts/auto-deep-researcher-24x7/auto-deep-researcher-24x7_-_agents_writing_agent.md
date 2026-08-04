@@ -3,6 +3,7 @@ id: "auto-deep-researcher-24x7/auto-deep-researcher-24x7_-_agents_writing_agent"
 company: "auto-deep-researcher-24x7"
 product: "auto-deep-researcher-24x7 - agents writing agent"
 category: "research"
+annotation: "ai"
 source_file: "agents_writing_agent.md"
 ---
 

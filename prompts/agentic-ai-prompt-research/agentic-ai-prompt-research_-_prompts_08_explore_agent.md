@@ -3,6 +3,7 @@ id: "agentic-ai-prompt-research/agentic-ai-prompt-research_-_prompts_08_explore_
 company: "agentic-ai-prompt-research"
 product: "agentic-ai-prompt-research - prompts 08 explore agent"
 category: "research"
+annotation: "ai"
 source_file: "prompts_08_explore_agent.md"
 ---
 

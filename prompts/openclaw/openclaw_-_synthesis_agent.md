@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_synthesis_agent"
 company: "openclaw"
 product: "openclaw - synthesis agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: "synthesis-agent.md"
 ---
 

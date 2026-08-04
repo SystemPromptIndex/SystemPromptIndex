@@ -2,6 +2,7 @@
 id: "Replit/Replit-Agent-2025"
 company: "Replit"
 product: "Replit-Agent-2025"
+annotation: "ai"
 source_file: "Replit_Agent.md"
 ---
 

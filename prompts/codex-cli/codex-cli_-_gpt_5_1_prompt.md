@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_gpt_5_1_prompt"
 company: "codex-cli"
 product: "codex-cli - gpt 5 1 prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "gpt_5_1_prompt.md"
 ---
 

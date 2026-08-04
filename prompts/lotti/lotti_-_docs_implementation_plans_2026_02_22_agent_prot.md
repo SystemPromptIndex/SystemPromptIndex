@@ -3,6 +3,7 @@ id: "lotti/lotti_-_docs_implementation_plans_2026_02_22_agent_prot"
 company: "lotti"
 product: "lotti - docs implementation plans 2026 02 22 agent prot..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_implementation_plans_2026-02-22_agent_prototypes_learning_feedback.md"
 ---
 

@@ -3,20 +3,21 @@
   "company": "UI-TARS-desktop",
   "product": "UI-TARS-desktop - docs archive 1.0 sdk",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "clone_docs_archive-1.0_sdk.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
-    "D6": 0,
-    "D7": 0,
+    "D4": -1,
+    "D5": -1,
+    "D6": -1,
+    "D7": -1,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 4,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -33,13 +34,50 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
-      "D6": 0,
-      "D7": 0,
+      "D4": 1,
+      "D5": 1,
+      "D6": 1,
+      "D7": 1,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "await guiAgent.run('send \"hello world\" to x.com');",
+      "start": 3155,
+      "end": 3205,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The SDK enables autonomous GUI control including mouse clicks, keyboard input, typing, and executing arbitrary actions on a user's computer without any documented safety validation, sandboxing, or confirmation mechanisms. The agent takes screenshots and executes actions in a loop without requiring user confirmation for potentially destructive operations. The example 'send \"hello world\" to x.com' demonstrates the agent autonomously performing actions on external services without explicit safety guardrails.",
+      "risky": false
+    },
+    {
+      "text": "await guiAgent.run('send \"hello world\" to x.com');",
+      "start": 3155,
+      "end": 3205,
+      "dimension": "D6",
+      "score": -1,
+      "note": "The prompt provides no guidance on refusing unsafe or illicit requests. The agent will execute any instruction passed to it, including potentially harmful ones. There are no content filters, safety policies, or mechanisms to detect and refuse malicious instructions that could control a user's computer for harmful purposes.",
+      "risky": false
+    },
+    {
+      "text": "for (const planning of planningList) {\n  await guiAgent.run(planning);\n}",
+      "start": 10644,
+      "end": 10716,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The agent execution process shows a fully autonomous loop where the agent takes screenshots, gets model predictions, and executes actions without any human-in-the-loop confirmation step for consequential actions. While an abort signal exists, there is no mechanism for the user to review or approve individual actions before execution, removing user agency over potentially impactful operations on their system.",
+      "risky": false
+    },
+    {
+      "text": "Keyboard input: typing, hotkeys",
+      "start": 2688,
+      "end": 2719,
+      "dimension": "D7",
+      "score": -1,
+      "note": "The SDK enables full computer control including mouse, keyboard, and screen capture with no documented safety mechanisms to prevent harm. An autonomous agent with these capabilities could be used to perform destructive actions, exfiltrate data, or cause system damage. No warnings about potential risks, no safety boundaries, and no harm prevention measures are documented.",
+      "risky": false
+    }
+  ]
 }

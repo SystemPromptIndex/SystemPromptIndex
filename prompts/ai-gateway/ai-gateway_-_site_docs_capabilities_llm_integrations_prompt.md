@@ -3,6 +3,7 @@ id: "ai-gateway/ai-gateway_-_site_docs_capabilities_llm_integrations_prompt"
 company: "ai-gateway"
 product: "ai-gateway - site docs capabilities llm integrations prompt ..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "site_docs_capabilities_llm-integrations_prompt-caching.md"
 ---
 

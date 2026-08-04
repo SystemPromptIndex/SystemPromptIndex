@@ -3,6 +3,7 @@ id: "spacebot/spacebot_-_presets_community_manager_ROLE"
 company: "spacebot"
 product: "spacebot - presets community manager ROLE"
 category: "coding-agents"
+annotation: "ai"
 source_file: "presets_community-manager_ROLE.md"
 ---
 

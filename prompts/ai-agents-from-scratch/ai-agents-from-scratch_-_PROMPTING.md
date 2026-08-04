@@ -3,6 +3,7 @@ id: "ai-agents-from-scratch/ai-agents-from-scratch_-_PROMPTING"
 company: "ai-agents-from-scratch"
 product: "ai-agents-from-scratch - PROMPTING"
 category: "general-purpose"
+annotation: "ai"
 source_file: "PROMPTING.md"
 ---
 

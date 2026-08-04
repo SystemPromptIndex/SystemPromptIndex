@@ -3,6 +3,7 @@ id: "GitHub/Copilot-Agent-2025-02-06"
 company: "GitHub"
 product: "Copilot-Agent-2025-02-06"
 category: "Code Assistant"
+annotation: "human"
 source_file: "github_copilot_agent.md"
 ---
 

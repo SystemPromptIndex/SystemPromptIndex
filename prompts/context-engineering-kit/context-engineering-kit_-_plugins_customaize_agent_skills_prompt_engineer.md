@@ -3,6 +3,7 @@ id: "context-engineering-kit/context-engineering-kit_-_plugins_customaize_agent_
 company: "context-engineering-kit"
 product: "context-engineering-kit - plugins customaize agent skills prompt engineer..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "plugins_customaize-agent_skills_prompt-engineering_SKILL.md"
 ---
 

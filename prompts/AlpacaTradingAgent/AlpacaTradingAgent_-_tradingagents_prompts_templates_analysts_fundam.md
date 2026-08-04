@@ -3,6 +3,7 @@ id: "AlpacaTradingAgent/AlpacaTradingAgent_-_tradingagents_prompts_templates_ana
 company: "AlpacaTradingAgent"
 product: "AlpacaTradingAgent - tradingagents prompts templates analysts fundam..."
 category: "finance-trading"
+annotation: "ai"
 source_file: "tradingagents_prompts_templates_analysts_fundamentals_system.md"
 ---
 

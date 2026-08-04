@@ -3,6 +3,7 @@ id: "openmanus/openmanus_-_openmanus_manus"
 company: "openmanus"
 product: "openmanus - openmanus / manus"
 category: "extracted"
+annotation: "ai"
 source_file: "openmanus__manus.txt"
 ---
 

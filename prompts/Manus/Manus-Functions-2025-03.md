@@ -2,6 +2,7 @@
 id: "Manus/Manus-Functions-2025-03"
 company: "Manus"
 product: "Manus-Functions-2025-03"
+annotation: "ai"
 source_file: "Manus_Functions.txt"
 ---
 

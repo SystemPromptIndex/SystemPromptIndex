@@ -2,6 +2,7 @@
 id: "Lovable/Lovable-2.0-2025"
 company: "Lovable"
 product: "Lovable-2.0-2025"
+annotation: "ai"
 source_file: "Lovable_2.0.txt"
 ---
 

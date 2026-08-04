@@ -3,6 +3,7 @@ id: "agents-from-scratch/agents-from-scratch_-_lessons_06_agent_loop"
 company: "agents-from-scratch"
 product: "agents-from-scratch - lessons 06 agent loop"
 category: "general-purpose"
+annotation: "ai"
 source_file: "lessons_06_agent_loop.md"
 ---
 

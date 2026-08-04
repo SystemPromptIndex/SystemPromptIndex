@@ -3,6 +3,7 @@ id: "Cursor/cursor_-_full_prompt"
 company: "Cursor"
 product: "cursor - full prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "full_prompt.md"
 ---
 

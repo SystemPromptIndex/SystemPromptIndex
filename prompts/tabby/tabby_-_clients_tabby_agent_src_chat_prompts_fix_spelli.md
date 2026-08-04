@@ -3,6 +3,7 @@ id: "tabby/tabby_-_clients_tabby_agent_src_chat_prompts_fix_spelli"
 company: "tabby"
 product: "tabby - clients tabby agent src chat prompts fix spelli..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clients_tabby-agent_src_chat_prompts_fix-spelling-and-grammar.md"
 ---
 

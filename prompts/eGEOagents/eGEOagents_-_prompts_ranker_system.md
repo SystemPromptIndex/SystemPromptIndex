@@ -3,6 +3,7 @@ id: "eGEOagents/eGEOagents_-_prompts_ranker_system"
 company: "eGEOagents"
 product: "eGEOagents - prompts ranker system"
 category: "multi-agent"
+annotation: "ai"
 source_file: "prompts_ranker_system.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "Claude-Code-Game-Studios/Claude-Code-Game-Studios_-_.claude_agents_ui_progr
 company: "Claude-Code-Game-Studios"
 product: "Claude-Code-Game-Studios - .claude agents ui programmer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.claude_agents_ui-programmer.md"
 ---
 

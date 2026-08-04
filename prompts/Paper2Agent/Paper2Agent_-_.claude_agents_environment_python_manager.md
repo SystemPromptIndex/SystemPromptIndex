@@ -3,6 +3,7 @@ id: "Paper2Agent/Paper2Agent_-_.claude_agents_environment_python_manager"
 company: "Paper2Agent"
 product: "Paper2Agent - .claude agents environment python manager"
 category: "research"
+annotation: "ai"
 source_file: "clone_.claude_agents_environment-python-manager.md"
 ---
 

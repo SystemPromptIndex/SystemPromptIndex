@@ -3,6 +3,7 @@ id: "SenseNova-Skills/SenseNova-Skills_-_skills_sn_infographic_references_prompt
 company: "SenseNova-Skills"
 product: "SenseNova-Skills - skills sn infographic references prompts critic..."
 category: "browser-automation"
+annotation: "ai"
 source_file: "skills_sn-infographic_references_prompts-critic-system.md"
 ---
 

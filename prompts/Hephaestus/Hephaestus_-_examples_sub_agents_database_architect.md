@@ -3,6 +3,7 @@ id: "Hephaestus/Hephaestus_-_examples_sub_agents_database_architect"
 company: "Hephaestus"
 product: "Hephaestus - examples sub agents database architect"
 category: "coding-agents"
+annotation: "ai"
 source_file: "examples_sub_agents_database-architect.md"
 ---
 

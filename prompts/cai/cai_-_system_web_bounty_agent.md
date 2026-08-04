@@ -3,6 +3,7 @@ id: "cai/cai_-_system_web_bounty_agent"
 company: "cai"
 product: "cai - system web bounty agent"
 category: "security"
+annotation: "ai"
 source_file: "system_web_bounty_agent.md"
 ---
 

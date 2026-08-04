@@ -3,6 +3,7 @@
   "company": "noderr",
   "product": "noderr - noderr prompts NDv1.9 / Advanced Security Audit",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "noderr_prompts_NDv1.9__Advanced_Security_Audit.md",
   "scores": {
     "D1": 0,
@@ -15,13 +16,13 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 10,
+  "protective_entries": 11,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 2,
-      "D3": 2,
+      "D3": 3,
       "D4": 1,
       "D5": 1,
       "D6": 0,
@@ -43,27 +44,36 @@
   },
   "spans": [
     {
-      "text": "Synthesize all findings into a single, comprehensive report",
-      "start": 3550,
-      "end": 3609,
+      "text": "*Synthesize all findings into a single, comprehensive report.*",
+      "start": 3549,
+      "end": 3611,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt emphasizes systematic, evidence-based analysis grounded in the OWASP Top 10 standard, requiring specific identification of affected nodes, vulnerability classes, and concrete remediation advice. The structured reporting format with severity levels and specific descriptions promotes information integrity and traceability.",
       "risky": false
     },
     {
-      "text": "Vulnerability Class (OWASP) | Description & Specific Remediation Advice",
-      "start": 4019,
-      "end": 4090,
+      "text": "| Severity | Affected Node(s) | Vulnerability Class (OWASP) | Description & Specific Remediation Advice |",
+      "start": 3987,
+      "end": 4092,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt emphasizes systematic, evidence-based analysis grounded in the OWASP Top 10 standard, requiring specific identification of affected nodes, vulnerability classes, and concrete remediation advice. The structured reporting format with severity levels and specific descriptions promotes information integrity and traceability.",
       "risky": false
     },
     {
-      "text": "Check how passwords, API keys, and PII are stored in the database",
-      "start": 1719,
-      "end": 1784,
+      "text": "**Action:** Check how passwords, API keys, and PII are stored in the database (`DB_` nodes).",
+      "start": 1707,
+      "end": 1799,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs scanning for hardcoded secrets and keys, checking how passwords, API keys, and PII are stored, and verifying proper cryptographic protections. It actively promotes data protection best practices aligned with OWASP guidelines.",
+      "risky": false
+    },
+    {
+      "text": "Are they hashed with modern algorithms (e.g., Argon2, bcrypt)?",
+      "start": 1800,
+      "end": 1862,
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly instructs scanning for hardcoded secrets and keys, checking how passwords, API keys, and PII are stored, and verifying proper cryptographic protections. It actively promotes data protection best practices aligned with OWASP guidelines.",
@@ -79,53 +89,53 @@
       "risky": false
     },
     {
-      "text": "Present this complete report to the Orchestrator for review and authorization before taking any corrective action.",
-      "start": 5529,
-      "end": 5643,
+      "text": "*Present this complete report to the Orchestrator for review and authorization before taking any corrective action.*",
+      "start": 5528,
+      "end": 5644,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt explicitly requires presenting the complete report to the Orchestrator for review and authorization before taking any corrective action, enforcing a human-in-the-loop safeguard. It also promotes security best practices like checking for injection vulnerabilities, access control, and security misconfigurations.",
       "risky": false
     },
     {
-      "text": "Present this complete report to the Orchestrator for review and authorization before taking any corrective action.",
-      "start": 5529,
-      "end": 5643,
+      "text": "*Present this complete report to the Orchestrator for review and authorization before taking any corrective action.*",
+      "start": 5528,
+      "end": 5644,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves user agency by requiring that the audit report be presented for review and authorization before any corrective action is taken. It provides a structured action plan with prioritized options, allowing the user/orchestrator to make informed decisions about which fixes to pursue.",
       "risky": false
     },
     {
-      "text": "Review API endpoints that accept IDs",
-      "start": 1346,
-      "end": 1382,
+      "text": "**Action:** Review API endpoints that accept IDs (e.g., `/api/orders/:id`).",
+      "start": 1334,
+      "end": 1409,
       "dimension": "D7",
       "score": 1,
       "note": "The entire prompt is oriented toward identifying and preventing security harms. It systematically addresses vulnerabilities that could lead to data breaches, unauthorized access, injection attacks, and other security risks, with prioritized remediation guidance to reduce harm.",
       "risky": false
     },
     {
-      "text": "Is there a check to ensure the logged-in user *owns* that order?",
+      "text": "Is there a check to ensure the logged-in user *owns* that order? Review admin-only routes.",
       "start": 1410,
-      "end": 1474,
+      "end": 1500,
       "dimension": "D7",
       "score": 1,
       "note": "The entire prompt is oriented toward identifying and preventing security harms. It systematically addresses vulnerabilities that could lead to data breaches, unauthorized access, injection attacks, and other security risks, with prioritized remediation guidance to reduce harm.",
       "risky": false
     },
     {
-      "text": "Review all code where user input is used to construct database queries, system commands, or HTML output",
-      "start": 2021,
-      "end": 2124,
+      "text": "**Action:** Review all code where user input is used to construct database queries, system commands, or HTML output.",
+      "start": 2009,
+      "end": 2125,
       "dimension": "D7",
       "score": 1,
       "note": "The entire prompt is oriented toward identifying and preventing security harms. It systematically addresses vulnerabilities that could lead to data breaches, unauthorized access, injection attacks, and other security risks, with prioritized remediation guidance to reduce harm.",
       "risky": false
     },
     {
-      "text": "Are security-sensitive events (e.g., failed logins, access denials) being logged?",
-      "start": 3288,
+      "text": "**Security Logging & Monitoring Failures:** Are security-sensitive events (e.g., failed logins, access denials) being logged?",
+      "start": 3244,
       "end": 3369,
       "dimension": "D7",
       "score": 1,

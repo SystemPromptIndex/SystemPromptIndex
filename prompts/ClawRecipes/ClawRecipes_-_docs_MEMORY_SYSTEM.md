@@ -3,6 +3,7 @@ id: "ClawRecipes/ClawRecipes_-_docs_MEMORY_SYSTEM"
 company: "ClawRecipes"
 product: "ClawRecipes - docs MEMORY SYSTEM"
 category: "legal"
+annotation: "ai"
 source_file: "docs_MEMORY_SYSTEM.md"
 ---
 

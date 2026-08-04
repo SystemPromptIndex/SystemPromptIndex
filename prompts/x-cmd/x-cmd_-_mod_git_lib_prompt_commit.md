@@ -3,6 +3,7 @@ id: "x-cmd/x-cmd_-_mod_git_lib_prompt_commit"
 company: "x-cmd"
 product: "x-cmd - mod git lib prompt commit"
 category: "coding-agents"
+annotation: "ai"
 source_file: "mod_git_lib_prompt_commit.txt"
 ---
 

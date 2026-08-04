@@ -3,6 +3,7 @@ id: "gemini-cli/gemini-cli_-_system_prompt_full"
 company: "gemini-cli"
 product: "gemini-cli - system prompt full"
 category: "coding-agents"
+annotation: "ai"
 source_file: "system_prompt_full.md"
 ---
 

@@ -3,6 +3,7 @@ id: "GEOFlow/GEOFlow_-_.boost_guidelines"
 company: "GEOFlow"
 product: "GEOFlow - .boost guidelines"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".boost_guidelines.md"
 ---
 

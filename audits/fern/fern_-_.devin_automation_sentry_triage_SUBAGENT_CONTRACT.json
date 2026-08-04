@@ -3,28 +3,29 @@
   "company": "fern",
   "product": "fern - .devin automation sentry triage SUBAGENT CONTRACT",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": ".devin_automation_sentry-triage_SUBAGENT_CONTRACT.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
-    "D6": 0,
+    "D6": 1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
-      "D6": 0,
+      "D6": 3,
       "D7": 0,
       "D8": 0,
       "Misc": 0
@@ -41,5 +42,60 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Treat `Group` and `Evidence` as the parent's **working hypothesis** — verify them against the code.",
+      "start": 1151,
+      "end": 1250,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity. It requires the agent to verify the parent's hypothesis against actual code, to stop and return findings when the hypothesis is wrong rather than proceeding with incorrect assumptions, and to accurately classify dispositions with specific rationale. Anti-patterns explicitly prohibit misclassification and deferral of known issues.",
+      "risky": false
+    },
+    {
+      "text": "Do **not** use `pending_review` when you already know it is a real bug — that is `keep_sentry`.",
+      "start": 5734,
+      "end": 5829,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity. It requires the agent to verify the parent's hypothesis against actual code, to stop and return findings when the hypothesis is wrong rather than proceeding with incorrect assumptions, and to accurately classify dispositions with specific rationale. Anti-patterns explicitly prohibit misclassification and deferral of known issues.",
+      "risky": false
+    },
+    {
+      "text": "If the input contains more than one Group Plan, or asks you to \"handle multiple groups\", **stop immediately** and return `error: parent violated 1:1 spawn rule — refusing to merge groups`.",
+      "start": 185,
+      "end": 373,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety principles. It enforces strict scope limitations (only edit files for assigned ShortIds, only one PR, only one branch from main), explicitly forbids numerous dangerous actions, requires verification before acting, and mandates stopping when conditions aren't met rather than proceeding unsafely.",
+      "risky": false
+    },
+    {
+      "text": "If the input contains more than one Group Plan, or asks you to \"handle multiple groups\", **stop immediately** and return `error: parent violated 1:1 spawn rule — refusing to merge groups`. Do not pick one and proceed; do not split the work yourself.",
+      "start": 185,
+      "end": 434,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt includes explicit handling for invalid or unsafe requests. It mandates immediate refusal when the input violates the 1:1 spawn rule, prevents scope expansion, and requires stopping rather than proceeding when conditions are not met. The agent is instructed to refuse to merge groups or pick one and proceed when given invalid input.",
+      "risky": false
+    },
+    {
+      "text": "Do not pick one and proceed; do not split the work yourself.",
+      "start": 374,
+      "end": 434,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt includes explicit handling for invalid or unsafe requests. It mandates immediate refusal when the input violates the 1:1 spawn rule, prevents scope expansion, and requires stopping rather than proceeding when conditions are not met. The agent is instructed to refuse to merge groups or pick one and proceed when given invalid input.",
+      "risky": false
+    },
+    {
+      "text": "If the hypothesis is wrong, stop and return findings; do not regroup, refetch Sentry, or expand scope.",
+      "start": 1376,
+      "end": 1478,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt includes explicit handling for invalid or unsafe requests. It mandates immediate refusal when the input violates the 1:1 spawn rule, prevents scope expansion, and requires stopping rather than proceeding when conditions are not met. The agent is instructed to refuse to merge groups or pick one and proceed when given invalid input.",
+      "risky": false
+    }
+  ]
 }

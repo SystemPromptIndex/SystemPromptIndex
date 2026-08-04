@@ -3,6 +3,7 @@ id: "gepa/gepa_-_src_gepa_examples_terminal_bench_prompt_templat"
 company: "gepa"
 product: "gepa - src gepa examples terminal bench prompt templat..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "src_gepa_examples_terminal-bench_prompt-templates_instruction_prompt.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_synthesis_prompt"
 company: "paper-orchestra"
 product: "paper-orchestra - synthesis prompt"
 category: "research"
+annotation: "ai"
 source_file: "synthesis-prompt.md"
 ---
 

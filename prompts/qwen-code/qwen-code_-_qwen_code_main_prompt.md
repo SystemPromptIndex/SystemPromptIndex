@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_qwen_code_main_prompt"
 company: "qwen-code"
 product: "qwen-code - qwen code / main prompt"
 category: "extracted"
+annotation: "ai"
 source_file: "qwen-code__main_prompt.ts"
 ---
 

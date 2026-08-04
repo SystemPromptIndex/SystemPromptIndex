@@ -3,6 +3,7 @@ id: "lumibot/lumibot_-_docs_AI_TRADING_AGENTS"
 company: "lumibot"
 product: "lumibot - docs AI TRADING AGENTS"
 category: "finance-trading"
+annotation: "ai"
 source_file: "docs_AI_TRADING_AGENTS.md"
 ---
 

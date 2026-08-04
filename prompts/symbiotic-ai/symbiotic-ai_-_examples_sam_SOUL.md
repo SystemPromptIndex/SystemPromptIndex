@@ -3,6 +3,7 @@ id: "symbiotic-ai/symbiotic-ai_-_examples_sam_SOUL"
 company: "symbiotic-ai"
 product: "symbiotic-ai - examples sam SOUL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "examples_sam_SOUL.md"
 ---
 

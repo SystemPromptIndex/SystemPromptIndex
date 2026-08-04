@@ -3,6 +3,7 @@ id: "gitagent/gitagent_-_agents_assistant_SOUL"
 company: "gitagent"
 product: "gitagent - agents assistant SOUL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "agents_assistant_SOUL.md"
 ---
 

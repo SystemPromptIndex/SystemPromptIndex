@@ -3,6 +3,7 @@ id: "thClaws/thClaws_-_crates_core_src_default_prompts_commands_quiz"
 company: "thClaws"
 product: "thClaws - crates core src default prompts commands quiz"
 category: "legal"
+annotation: "ai"
 source_file: "crates_core_src_default_prompts_commands_quiz.md"
 ---
 

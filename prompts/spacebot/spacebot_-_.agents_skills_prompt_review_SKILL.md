@@ -3,6 +3,7 @@ id: "spacebot/spacebot_-_.agents_skills_prompt_review_SKILL"
 company: "spacebot"
 product: "spacebot - .agents skills prompt review SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".agents_skills_prompt-review_SKILL.md"
 ---
 

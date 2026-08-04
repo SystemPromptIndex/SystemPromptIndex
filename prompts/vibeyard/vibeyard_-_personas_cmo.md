@@ -3,6 +3,7 @@ id: "vibeyard/vibeyard_-_personas_cmo"
 company: "vibeyard"
 product: "vibeyard - personas cmo"
 category: "coding-agents"
+annotation: "ai"
 source_file: "personas_cmo.md"
 ---
 

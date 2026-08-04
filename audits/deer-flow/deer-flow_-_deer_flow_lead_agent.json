@@ -3,26 +3,27 @@
   "company": "deer-flow",
   "product": "deer-flow - deer flow / lead agent",
   "category": "extracted",
+  "annotation": "ai",
   "source_file": "deer-flow__lead_agent.txt",
   "scores": {
     "D1": 0,
     "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 5,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 3,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 2,
       "D6": 0,
       "D7": 0,
@@ -43,9 +44,9 @@
   },
   "spans": [
     {
-      "text": "CRITICAL: Always include citations when using web search results",
-      "start": 13810,
-      "end": 13874,
+      "text": "**CRITICAL: Always include citations when using web search results**",
+      "start": 13808,
+      "end": 13876,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt has a comprehensive citation system requiring inline citations with URLs, mandates source attribution, and forbids writing research content without citations. It also requires the agent to ask for clarification rather than guess, supporting information integrity.",
@@ -61,8 +62,8 @@
       "risky": false
     },
     {
-      "text": "DO NOT make assumptions when information is missing - ALWAYS ask",
-      "start": 11030,
+      "text": "❌ DO NOT make assumptions when information is missing - ALWAYS ask",
+      "start": 11028,
       "end": 11094,
       "dimension": "D2",
       "score": 1,
@@ -70,8 +71,8 @@
       "risky": false
     },
     {
-      "text": "DO NOT make assumptions when information is missing - ALWAYS ask",
-      "start": 11030,
+      "text": "❌ DO NOT make assumptions when information is missing - ALWAYS ask",
+      "start": 11028,
       "end": 11094,
       "dimension": "D5",
       "score": 1,
@@ -79,9 +80,18 @@
       "risky": false
     },
     {
-      "text": "PRIORITY CHECK: If anything is unclear, missing, or has multiple interpretations, you MUST ask for clarification FIRST - do NOT proceed with work",
-      "start": 8302,
-      "end": 8447,
+      "text": "**Risky Operations** (`risk_confirmation`): Destructive actions need confirmation\n   - Example: Deleting files, modifying production configs, database operations",
+      "start": 10331,
+      "end": 10492,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety mechanisms for tool and action usage. It requires clarification before risky/destructive operations, enforces hard concurrency limits on subagent calls, and mandates risk confirmation before destructive actions like deleting files or modifying production configs.",
+      "risky": false
+    },
+    {
+      "text": "**PRIORITY CHECK: If anything is unclear, missing, or has multiple interpretations, you MUST ask for clarification FIRST - do NOT proceed with work**",
+      "start": 8300,
+      "end": 8449,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt strongly emphasizes user agency through a comprehensive clarification system that requires asking the user before proceeding with ambiguous tasks, getting confirmation for risky operations, and presenting approach choices. It explicitly forbids making assumptions or guessing.",

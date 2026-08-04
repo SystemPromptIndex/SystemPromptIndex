@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_openclaw_debugging"
 company: "openclaw"
 product: "openclaw - openclaw debugging"
 category: "coding-agents"
+annotation: "ai"
 source_file: "openclaw-debugging.md"
 ---
 

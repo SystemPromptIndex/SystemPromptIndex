@@ -3,6 +3,7 @@ id: "awesome-agentic-ai-zh/awesome-agentic-ai-zh_-_stages_02_prompt_engineering.
 company: "awesome-agentic-ai-zh"
 product: "awesome-agentic-ai-zh - stages 02 prompt engineering.en"
 category: "multi-agent"
+annotation: "ai"
 source_file: "stages_02-prompt-engineering.en.md"
 ---
 

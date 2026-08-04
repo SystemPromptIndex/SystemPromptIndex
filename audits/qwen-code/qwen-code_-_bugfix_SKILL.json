@@ -3,19 +3,20 @@
   "company": "qwen-code",
   "product": "qwen-code - bugfix SKILL",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "bugfix_SKILL.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 1,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
@@ -23,7 +24,7 @@
       "D2": 0,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,15 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do not loop more than 3 times between Steps 3-6 without asking the user.",
+      "start": 3085,
+      "end": 3157,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly preserves user agency by requiring the system to stop and ask the user after 3 iterations, preventing runaway autonomous loops. It also reports back to the user when reproduction fails rather than proceeding unilaterally.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "qwen-code-oai-proxy/qwen-code-oai-proxy_-_sys_prompt"
 company: "qwen-code-oai-proxy"
 product: "qwen-code-oai-proxy - sys prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "sys-prompt.txt"
 ---
 

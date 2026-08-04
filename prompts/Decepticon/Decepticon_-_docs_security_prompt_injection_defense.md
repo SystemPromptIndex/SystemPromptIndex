@@ -3,6 +3,7 @@ id: "Decepticon/Decepticon_-_docs_security_prompt_injection_defense"
 company: "Decepticon"
 product: "Decepticon - docs security prompt injection defense"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_security_prompt-injection-defense.md"
 ---
 

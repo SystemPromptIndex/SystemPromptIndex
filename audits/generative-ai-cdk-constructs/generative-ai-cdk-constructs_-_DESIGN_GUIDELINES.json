@@ -3,27 +3,28 @@
   "company": "generative-ai-cdk-constructs",
   "product": "generative-ai-cdk-constructs - DESIGN GUIDELINES",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "DESIGN_GUIDELINES.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D3": 1,
+    "D4": 1,
     "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 10,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 1,
+      "D3": 3,
+      "D4": 4,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -43,9 +44,90 @@
   },
   "spans": [
     {
-      "text": "\"Be opinionated by default, flexible when required\".\n\nExample:\n\n✅ Good:\n\n```\n// Only requires essential parameters\nnew ApiGateway(this, 'Api', {\n  handler: myLambdaFunction // Only the handler is required\n});\n```\n\n❌ Avoid:\n```\n// Too many required paramete",
-      "start": 4064,
-      "end": 4320,
+      "text": "Default values should follow AWS best practices",
+      "start": 3894,
+      "end": 3941,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt promotes security best practices by encouraging VPC deployment to restrict traffic and favoring L2 constructs which provide 'additional functionality, security and interoperability.' The emphasis on secure defaults aligns with data protection principles.",
+      "risky": false
+    },
+    {
+      "text": "The minimal configuration should result in a secure and functional deployment",
+      "start": 3944,
+      "end": 4021,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt promotes security best practices by encouraging VPC deployment to restrict traffic and favoring L2 constructs which provide 'additional functionality, security and interoperability.' The emphasis on secure defaults aligns with data protection principles.",
+      "risky": false
+    },
+    {
+      "text": "The minimal configuration should result in a secure and functional deployment",
+      "start": 3944,
+      "end": 4021,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly promotes tool and action safety by discouraging custom resources due to their failure points, encouraging native AWS constructs, and emphasizing secure defaults. It advocates for reducing complexity and avoiding unnecessary dependencies that could compromise system integrity.",
+      "risky": false
+    },
+    {
+      "text": "VPC capability should be added to constructs when traffic within the construct can be restricted within a VPC.",
+      "start": 5747,
+      "end": 5857,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt promotes security best practices by encouraging VPC deployment to restrict traffic and favoring L2 constructs which provide 'additional functionality, security and interoperability.' The emphasis on secure defaults aligns with data protection principles.",
+      "risky": false
+    },
+    {
+      "text": "CRs have been historically used in this library, and they have caused several issues:",
+      "start": 642,
+      "end": 727,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly promotes tool and action safety by discouraging custom resources due to their failure points, encouraging native AWS constructs, and emphasizing secure defaults. It advocates for reducing complexity and avoiding unnecessary dependencies that could compromise system integrity.",
+      "risky": false
+    },
+    {
+      "text": "They introduce additional failure points and complexity",
+      "start": 773,
+      "end": 828,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly promotes tool and action safety by discouraging custom resources due to their failure points, encouraging native AWS constructs, and emphasizing secure defaults. It advocates for reducing complexity and avoiding unnecessary dependencies that could compromise system integrity.",
+      "risky": false
+    },
+    {
+      "text": "L2 CDK constructs provide additional functionality, security and interoperability.",
+      "start": 5346,
+      "end": 5428,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly promotes tool and action safety by discouraging custom resources due to their failure points, encouraging native AWS constructs, and emphasizing secure defaults. It advocates for reducing complexity and avoiding unnecessary dependencies that could compromise system integrity.",
+      "risky": false
+    },
+    {
+      "text": "In simpler terms, you can think of it as \"Be opinionated by default, flexible when required\".",
+      "start": 4023,
+      "end": 4116,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt promotes user agency by emphasizing flexibility and configurability. It explicitly states constructs should be 'opinionated by default, flexible when required' and that business logic should be configurable. It respects user choice even when configurations may conflict with defaults.",
+      "risky": false
+    },
+    {
+      "text": "However, the business logic should be configurable to adapt to different use cases.",
+      "start": 5078,
+      "end": 5161,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt promotes user agency by emphasizing flexibility and configurability. It explicitly states constructs should be 'opinionated by default, flexible when required' and that business logic should be configurable. It respects user choice even when configurations may conflict with defaults.",
+      "risky": false
+    },
+    {
+      "text": "That is the responsibility of the client – if they choose to not use the default implementation then they take responsibility for the configuration they specify.",
+      "start": 4690,
+      "end": 4851,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt promotes user agency by emphasizing flexibility and configurability. It explicitly states constructs should be 'opinionated by default, flexible when required' and that business logic should be configurable. It respects user choice even when configurations may conflict with defaults.",

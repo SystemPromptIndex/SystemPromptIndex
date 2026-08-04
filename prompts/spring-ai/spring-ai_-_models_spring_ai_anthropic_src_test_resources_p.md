@@ -3,6 +3,7 @@ id: "spring-ai/spring-ai_-_models_spring_ai_anthropic_src_test_resources_p"
 company: "spring-ai"
 product: "spring-ai - models spring ai anthropic src test resources p..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_models_spring-ai-anthropic_src_test_resources_prompts_conversation-history-cache-prompt.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "zed/zed_-_crates_edit_prediction_cli_src_prompts_teacher"
 company: "zed"
 product: "zed - crates edit prediction cli src prompts teacher"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_crates_edit_prediction_cli_src_prompts_teacher.md"
 ---
 

@@ -3,6 +3,7 @@ id: "opendraft/opendraft_-_engine_prompts_02_structure_architect"
 company: "opendraft"
 product: "opendraft - engine prompts 02 structure architect"
 category: "coding-agents"
+annotation: "ai"
 source_file: "engine_prompts_02_structure_architect.md"
 ---
 

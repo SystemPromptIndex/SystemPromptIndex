@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_hierarchical"
 company: "codex-cli"
 product: "codex-cli - hierarchical"
 category: "coding-agents"
+annotation: "ai"
 source_file: "hierarchical.md"
 ---
 

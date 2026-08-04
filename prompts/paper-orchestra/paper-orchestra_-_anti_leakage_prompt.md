@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_anti_leakage_prompt"
 company: "paper-orchestra"
 product: "paper-orchestra - anti leakage prompt"
 category: "research"
+annotation: "ai"
 source_file: "anti-leakage-prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "ai-assistant-skills/ai-assistant-skills_-_archived_claude_code_slash_comman
 company: "ai-assistant-skills"
 product: "ai-assistant-skills - archived claude code slash commands create prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "archived_claude_code_slash_commands_create-prompt.md"
 ---
 

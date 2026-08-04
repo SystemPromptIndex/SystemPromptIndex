@@ -3,6 +3,7 @@ id: "devika/devika_-_patcher_prompt"
 company: "devika"
 product: "devika - patcher prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "patcher_prompt.jinja2"
 ---
 

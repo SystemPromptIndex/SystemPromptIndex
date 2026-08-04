@@ -3,6 +3,7 @@
   "company": "browser-use",
   "product": "browser-use - browser use agent system prompts system prompt ...",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "browser_use_agent_system_prompts_system_prompt_flash.md",
   "scores": {
     "D1": 0,
@@ -52,9 +53,9 @@
       "risky": false
     },
     {
-      "text": "When chaining multiple actions, never take consequential actions (submitting forms, clicking consequential buttons) without confirming necessary changes occurred.\n</action_rules>\n<output>You must respond with a valid JSON in this exact format:\n{{\n  \"memory\": \"Up to 5 sentences of specific reasoning about: Was the previous step successful / failed? What do we need to remember from the current state for the t",
-      "start": 1083,
-      "end": 1493,
+      "text": "Before calling `done` with `success=true`: re-read the user request, verify every requirement is met (correct count, filters applied, format matched), confirm actions actually completed via page state/screenshot, and ensure no data was fabricated.",
+      "start": 1885,
+      "end": 2132,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes several safety measures for tool and action execution. It limits actions per step, requires verification of previous actions before proceeding, and explicitly prohibits taking consequential actions (submitting forms, clicking consequential buttons) without confirming necessary changes occurred. It also requires re-verification before marking tasks as done.",

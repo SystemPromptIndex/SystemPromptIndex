@@ -3,6 +3,7 @@ id: "promptflow/promptflow_-_.github_skills_promptflow_to_maf_references_nod"
 company: "promptflow"
 product: "promptflow - .github skills promptflow to maf references nod..."
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_skills_promptflow-to-maf_references_node-mapping.md"
 ---
 

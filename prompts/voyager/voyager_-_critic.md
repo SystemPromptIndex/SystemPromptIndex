@@ -3,6 +3,7 @@ id: "voyager/voyager_-_critic"
 company: "voyager"
 product: "voyager - critic"
 category: "general-purpose"
+annotation: "ai"
 source_file: "critic.txt"
 ---
 

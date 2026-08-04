@@ -2,6 +2,7 @@
 id: "Replit/Replit-CodeGen-2025"
 company: "Replit"
 product: "Replit-CodeGen-2025"
+annotation: "ai"
 source_file: "Replit_Initial_Code_Generation_Prompt.md"
 ---
 

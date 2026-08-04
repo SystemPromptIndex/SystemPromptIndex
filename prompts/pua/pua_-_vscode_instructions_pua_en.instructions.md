@@ -3,6 +3,7 @@ id: "pua/pua_-_vscode_instructions_pua_en.instructions"
 company: "pua"
 product: "pua - vscode instructions pua en.instructions"
 category: "general-purpose"
+annotation: "ai"
 source_file: "vscode_instructions_pua-en.instructions.md"
 ---
 

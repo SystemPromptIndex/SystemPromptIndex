@@ -3,6 +3,7 @@ id: "Speech-AI-Forge/Speech-AI-Forge_-_modules_prompts_podcast_prompt"
 company: "Speech-AI-Forge"
 product: "Speech-AI-Forge - modules prompts podcast prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "modules_prompts_podcast_prompt.txt"
 ---
 

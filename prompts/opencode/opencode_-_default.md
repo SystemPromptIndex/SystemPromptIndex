@@ -3,7 +3,8 @@ id: "opencode/opencode_-_default"
 company: "opencode"
 product: "opencode - default"
 category: "coding-agents"
-source_file: "default.txt"
+annotation: "ai"
+source_file: "opencode__default.txt"
 ---
 
 You are opencode, an interactive CLI tool that helps users with software engineering tasks. Use the instructions below and the tools available to you to assist the user.

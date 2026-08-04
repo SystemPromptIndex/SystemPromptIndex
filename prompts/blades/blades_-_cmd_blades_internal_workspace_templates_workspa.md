@@ -3,6 +3,7 @@ id: "blades/blades_-_cmd_blades_internal_workspace_templates_workspa"
 company: "blades"
 product: "blades - cmd blades internal workspace templates workspa..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "cmd_blades_internal_workspace_templates_workspace_SOUL.md"
 ---
 

@@ -3,6 +3,7 @@ id: "ailice/ailice_-_prompt_searchengine"
 company: "ailice"
 product: "ailice - prompt searchengine"
 category: "browser-automation"
+annotation: "ai"
 source_file: "prompt_searchengine.txt"
 ---
 

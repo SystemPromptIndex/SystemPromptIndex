@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_reviewer_rubric"
 company: "paper-orchestra"
 product: "paper-orchestra - reviewer rubric"
 category: "research"
+annotation: "ai"
 source_file: "reviewer-rubric.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Auto-claude-code-research-in-sleep/Auto-claude-code-research-in-sleep_-_AGE
 company: "Auto-claude-code-research-in-sleep"
 product: "Auto-claude-code-research-in-sleep - AGENT GUIDE"
 category: "research"
+annotation: "ai"
 source_file: "clone_AGENT_GUIDE.md"
 ---
 

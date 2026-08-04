@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_docs_framework_agent"
 company: "openclaw"
 product: "openclaw - docs framework agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs-framework-agent.md"
 ---
 

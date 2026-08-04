@@ -3,6 +3,7 @@ id: "Google/Antigravity-2025-11-18"
 company: "Google"
 product: "Antigravity-2025-11-18"
 category: "Chat / General"
+annotation: "human"
 source_file: "20251118-Antigravity.md"
 ---
 

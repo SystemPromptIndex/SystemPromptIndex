@@ -3,6 +3,7 @@ id: "claude-code-settings/claude-code-settings_-_skills_autonomous_skill_templat
 company: "claude-code-settings"
 product: "claude-code-settings - skills autonomous skill templates initializer p..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "skills_autonomous-skill_templates_initializer-prompt.md"
 ---
 

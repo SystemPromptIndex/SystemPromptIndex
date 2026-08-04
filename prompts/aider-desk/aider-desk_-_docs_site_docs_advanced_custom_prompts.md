@@ -3,6 +3,7 @@ id: "aider-desk/aider-desk_-_docs_site_docs_advanced_custom_prompts"
 company: "aider-desk"
 product: "aider-desk - docs site docs advanced custom prompts"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs-site_docs_advanced_custom-prompts.md"
 ---
 

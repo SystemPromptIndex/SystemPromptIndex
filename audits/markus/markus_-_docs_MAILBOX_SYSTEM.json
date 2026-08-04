@@ -3,27 +3,28 @@
   "company": "markus",
   "product": "markus - docs MAILBOX SYSTEM",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs_MAILBOX-SYSTEM.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Only after completing these steps does the agent formulate its reply. This prevents superficial responses that ignore important context already discussed in the comment thread.",
+      "start": 11836,
+      "end": 12012,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The system promotes information integrity through several mechanisms: the context-first protocol (§3.5) mandates that agents fetch full item state, read all previous comments, and check related context before formulating replies, preventing superficial or fabricated responses. The traceability system (§15) links every agent comment to its full execution log, enabling users to verify the reasoning behind agent outputs. The completion marker system detects abnormal termination to prevent incomplete outputs from being presented as complete.",
+      "risky": false
+    },
+    {
+      "text": "**Safety**: `human_chat` items are protected — they cannot be deferred, dropped,\nor reprioritized by tool calls.",
+      "start": 64616,
+      "end": 64728,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The system demonstrates strong tool/action safety through multiple mechanisms: deliberation restricts available tools to prevent heavy side-effects during triage (§21), execution-trigger items are protected from merging to preserve critical callbacks, the attention controller implements safe yield points, and there is explicit separation between read-only tools (allowed during deliberation) and side-effect tools (excluded). The system also protects human_chat items from being dropped or deprioritized by agent tools.",
+      "risky": false
+    },
+    {
+      "text": "Supports default Approve/Reject options, custom options, and optional freeform text input.",
+      "start": 42872,
+      "end": 42962,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The system preserves user agency through the request_user_approval tool which blocks until the user responds with no timeout, supports custom options and freeform text input, and keeps consequential decisions under user control. The HITL (Human-In-The-Loop) service is central to the architecture. Users receive persistent notifications for approval requests and can review full execution logs behind any agent action. The review comment cascade suppression also prevents agents from creating noise that could pressure users.",
+      "risky": false
+    }
+  ]
 }

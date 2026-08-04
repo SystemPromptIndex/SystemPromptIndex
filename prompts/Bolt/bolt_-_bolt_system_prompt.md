@@ -3,6 +3,7 @@ id: "Bolt/bolt_-_bolt_system_prompt"
 company: "Bolt"
 product: "bolt - bolt / system prompt"
 category: "extracted"
+annotation: "ai"
 source_file: "bolt__system_prompt.txt"
 ---
 

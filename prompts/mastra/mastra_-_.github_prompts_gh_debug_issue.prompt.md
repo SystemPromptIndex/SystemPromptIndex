@@ -3,6 +3,7 @@ id: "mastra/mastra_-_.github_prompts_gh_debug_issue.prompt"
 company: "mastra"
 product: "mastra - .github prompts gh debug issue.prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_prompts_gh-debug-issue.prompt.md"
 ---
 

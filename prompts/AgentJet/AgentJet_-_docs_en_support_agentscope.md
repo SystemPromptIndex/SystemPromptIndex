@@ -3,6 +3,7 @@ id: "AgentJet/AgentJet_-_docs_en_support_agentscope"
 company: "AgentJet"
 product: "AgentJet - docs en support agentscope"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_en_support_agentscope.md"
 ---
 

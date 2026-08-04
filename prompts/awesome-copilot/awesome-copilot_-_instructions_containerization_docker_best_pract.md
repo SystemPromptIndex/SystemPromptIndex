@@ -3,6 +3,7 @@ id: "awesome-copilot/awesome-copilot_-_instructions_containerization_docker_best
 company: "awesome-copilot"
 product: "awesome-copilot - instructions containerization docker best pract..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_instructions_containerization-docker-best-practices.instructions.md"
 ---
 

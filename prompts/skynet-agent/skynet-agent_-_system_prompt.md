@@ -3,6 +3,7 @@ id: "skynet-agent/skynet-agent_-_system_prompt"
 company: "skynet-agent"
 product: "skynet-agent - system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "system-prompt.md"
 ---
 

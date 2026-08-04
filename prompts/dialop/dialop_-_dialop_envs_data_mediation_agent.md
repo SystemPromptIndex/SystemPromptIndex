@@ -3,6 +3,7 @@ id: "dialop/dialop_-_dialop_envs_data_mediation_agent"
 company: "dialop"
 product: "dialop - dialop envs data mediation agent"
 category: "general-purpose"
+annotation: "ai"
 source_file: "dialop_envs_data_mediation_agent.txt"
 ---
 

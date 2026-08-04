@@ -3,6 +3,7 @@ id: "hermes-agent/hermes-agent_-_docker_SOUL"
 company: "hermes-agent"
 product: "hermes-agent - docker SOUL"
 category: "research"
+annotation: "ai"
 source_file: "docker_SOUL.md"
 ---
 

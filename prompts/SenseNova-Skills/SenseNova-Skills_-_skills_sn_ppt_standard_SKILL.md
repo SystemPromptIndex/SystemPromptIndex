@@ -3,6 +3,7 @@ id: "SenseNova-Skills/SenseNova-Skills_-_skills_sn_ppt_standard_SKILL"
 company: "SenseNova-Skills"
 product: "SenseNova-Skills - skills sn ppt standard SKILL"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_skills_sn-ppt-standard_SKILL.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Anthropic/Claude-Sonnet-4.5-2025-10-28"
 company: "Anthropic"
 product: "Claude-Sonnet-4.5-2025-10-28"
 category: "Chat / General"
+annotation: "human"
 source_file: "20251028-Claude-Sonnet4.5.md"
 ---
 

@@ -3,6 +3,7 @@ id: "generalbots/generalbots_-_botbook_src_04_basic_scripting_prompt_blocks"
 company: "generalbots"
 product: "generalbots - botbook src 04 basic scripting prompt blocks"
 category: "general-purpose"
+annotation: "ai"
 source_file: "botbook_src_04-basic-scripting_prompt-blocks.md"
 ---
 

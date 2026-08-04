@@ -3,6 +3,7 @@ id: "ai-agents-for-beginners/ai-agents-for-beginners_-_.github_prompts_git_cherr
 company: "ai-agents-for-beginners"
 product: "ai-agents-for-beginners - .github prompts git cherrypicking.prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_prompts_git-cherrypicking.prompt.md"
 ---
 

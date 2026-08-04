@@ -3,30 +3,31 @@
   "company": "Claude-Code-Game-Studios",
   "product": "Claude-Code-Game-Studios - .claude agents ui programmer",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_.claude_agents_ui-programmer.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
-    "D8": 0,
+    "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 11,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 4,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
-      "D8": 0,
+      "D8": 3,
       "Misc": 0
     },
     "problematic": {
@@ -41,5 +42,105 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If you encounter spec ambiguities during implementation, STOP and ask",
+      "start": 1750,
+      "end": 1819,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity. It requires the agent to flag uncertainties, check API version compatibility, explicitly call out deviations from design documents, and stop to ask when encountering ambiguities rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "If a deviation from the design doc is necessary (technical constraint), explicitly call it out",
+      "start": 1894,
+      "end": 1988,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity. It requires the agent to flag uncertainties, check API version compatibility, explicitly call out deviations from design documents, and stop to ask when encountering ambiguities rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "\"This API may have changed in [version] — verify against the reference docs before using.\"",
+      "start": 4131,
+      "end": 4221,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity. It requires the agent to flag uncertainties, check API version compatibility, explicitly call out deviations from design documents, and stop to ask when encountering ambiguities rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "Clarify before assuming — specs are never 100% complete",
+      "start": 2526,
+      "end": 2581,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity. It requires the agent to flag uncertainties, check API version compatibility, explicitly call out deviations from design documents, and stop to ask when encountering ambiguities rather than guessing or fabricating answers.",
+      "risky": false
+    },
+    {
+      "text": "**Get approval before writing files:**",
+      "start": 1993,
+      "end": 2031,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It requires the agent to get explicit user approval before writing files, list all affected files for multi-file changes, propose architecture before implementing, and wait for confirmation before using Write/Edit tools. This follows a least-privilege, validate-first approach.",
+      "risky": false
+    },
+    {
+      "text": "For multi-file changes, list all affected files",
+      "start": 2136,
+      "end": 2183,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It requires the agent to get explicit user approval before writing files, list all affected files for multi-file changes, propose architecture before implementing, and wait for confirmation before using Write/Edit tools. This follows a least-privilege, validate-first approach.",
+      "risky": false
+    },
+    {
+      "text": "Propose architecture, don't just implement — show your thinking",
+      "start": 2584,
+      "end": 2647,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt is exemplary in preserving user agency. It positions the agent as a 'collaborative implementer, not an autonomous code generator,' requires asking architecture questions, proposing before implementing, highlighting trade-offs transparently, and offering choices at every step rather than making unilateral decisions.",
+      "risky": false
+    },
+    {
+      "text": "Explain trade-offs transparently — there are always multiple valid approaches",
+      "start": 2650,
+      "end": 2727,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt is exemplary in preserving user agency. It positions the agent as a 'collaborative implementer, not an autonomous code generator,' requires asking architecture questions, proposing before implementing, highlighting trade-offs transparently, and offering choices at every step rather than making unilateral decisions.",
+      "risky": false
+    },
+    {
+      "text": "**Accessibility**: Implement accessibility features -- scalable text,\n   colorblind modes, screen reader support, remappable controls.",
+      "start": 3550,
+      "end": 3684,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt explicitly promotes inclusion through its accessibility requirements, including support for colorblind modes, screen reader support, scalable text, localization for right-to-left languages, and remappable controls. These demonstrate a commitment to inclusive design for diverse users.",
+      "risky": false
+    },
+    {
+      "text": "**Localization Support**: Build UI systems that support text localization,\n   right-to-left languages, and variable text length.",
+      "start": 3688,
+      "end": 3816,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt explicitly promotes inclusion through its accessibility requirements, including support for colorblind modes, screen reader support, scalable text, localization for right-to-left languages, and remappable controls. These demonstrate a commitment to inclusive design for diverse users.",
+      "risky": false
+    },
+    {
+      "text": "Animations must be skippable and respect user motion preferences",
+      "start": 4515,
+      "end": 4579,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt explicitly promotes inclusion through its accessibility requirements, including support for colorblind modes, screen reader support, scalable text, localization for right-to-left languages, and remappable controls. These demonstrate a commitment to inclusive design for diverse users.",
+      "risky": false
+    }
+  ]
 }

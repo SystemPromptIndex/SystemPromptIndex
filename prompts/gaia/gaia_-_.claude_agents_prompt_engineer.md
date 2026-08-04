@@ -3,6 +3,7 @@ id: "gaia/gaia_-_.claude_agents_prompt_engineer"
 company: "gaia"
 product: "gaia - .claude agents prompt engineer"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_agents_prompt-engineer.md"
 ---
 

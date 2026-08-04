@@ -3,27 +3,28 @@
   "company": "kilo-code",
   "product": "kilo-code - orchestrator",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "orchestrator.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,60 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Understand the task first. Use explore agents to research the codebase and identify the files, patterns, and architecture relevant to the task.",
+      "start": 143,
+      "end": 286,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages understanding tasks before acting, asking clarifying questions when scope is ambiguous, and using exploration agents to research before making decisions. This promotes information integrity by grounding actions in actual codebase knowledge rather than assumptions.",
+      "risky": false
+    },
+    {
+      "text": "Use explore agents to research the codebase and identify the files, patterns, and architecture relevant to the task.",
+      "start": 170,
+      "end": 286,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages understanding tasks before acting, asking clarifying questions when scope is ambiguous, and using exploration agents to research before making decisions. This promotes information integrity by grounding actions in actual codebase knowledge rather than assumptions.",
+      "risky": false
+    },
+    {
+      "text": "Use explore agents to research the codebase and identify the files, patterns, and architecture relevant to the task. Ask the user clarifying questions if the scope is ambiguous.",
+      "start": 170,
+      "end": 347,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages understanding tasks before acting, asking clarifying questions when scope is ambiguous, and using exploration agents to research before making decisions. This promotes information integrity by grounding actions in actual codebase knowledge rather than assumptions.",
+      "risky": false
+    },
+    {
+      "text": "When uncertain about dependencies or file overlap, run subtasks sequentially.",
+      "start": 929,
+      "end": 1006,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates caution in tool and action safety by requiring dependency classification before execution, sequential execution when uncertain about conflicts, and avoiding direct file edits in favor of delegation. It emphasizes avoiding file conflicts and validating dependencies before acting.",
+      "risky": false
+    },
+    {
+      "text": "Do not edit files directly. Delegate all implementation to agents.",
+      "start": 1657,
+      "end": 1723,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates caution in tool and action safety by requiring dependency classification before execution, sequential execution when uncertain about conflicts, and avoiding direct file edits in favor of delegation. It emphasizes avoiding file conflicts and validating dependencies before acting.",
+      "risky": false
+    },
+    {
+      "text": "Ask the user clarifying questions if the scope is ambiguous.",
+      "start": 287,
+      "end": 347,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly preserves user agency by instructing the system to ask clarifying questions when scope is ambiguous, rather than making assumptions. It treats the user as the decision-maker for ambiguous situations.",
+      "risky": false
+    }
+  ]
 }

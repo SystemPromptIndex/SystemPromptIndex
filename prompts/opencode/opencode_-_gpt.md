@@ -3,6 +3,7 @@ id: "opencode/opencode_-_gpt"
 company: "opencode"
 product: "opencode - gpt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "gpt.txt"
 ---
 

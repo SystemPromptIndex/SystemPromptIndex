@@ -3,26 +3,27 @@
   "company": "memex",
   "product": "memex - .github claude pr ai review prompt",
   "category": "research",
+  "annotation": "ai",
   "source_file": ".github_claude_pr-ai-review-prompt.md",
   "scores": {
     "D1": 1,
     "D2": 1,
     "D3": 1,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 3,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 1,
       "D2": 1,
       "D3": 1,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -52,9 +53,9 @@
       "risky": false
     },
     {
-      "text": "If the diff is too incomplete to assess a relevant area, raise risk instead of\n   pretending confidence is hi",
+      "text": "If the diff is too incomplete to assess a relevant area, raise risk instead of\n   pretending confidence is high.",
       "start": 1249,
-      "end": 1358,
+      "end": 1361,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly instructs the AI to raise risk levels when information is incomplete rather than feigning confidence. This directly promotes epistemic honesty and transparency about uncertainty. It also requires citing evidence for claims.",
@@ -67,6 +68,15 @@
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly prohibits revealing secrets, environment variables, tokens, or large diff excerpts. It also treats the PR branch as untrusted data, demonstrating a security-conscious approach to data handling.",
+      "risky": false
+    },
+    {
+      "text": "Read only the prepared input files and repository policy documents.",
+      "start": 227,
+      "end": 294,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces strict read-only constraints and explicitly prohibits editing files, running build/test commands, pushing commits, or posting comments. It treats the PR branch as untrusted data and follows a least-privilege principle by restricting the agent to only reading prepared input files.",
       "risky": false
     }
   ]

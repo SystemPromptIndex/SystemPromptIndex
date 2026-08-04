@@ -3,27 +3,28 @@
   "company": "thepopebot",
   "product": "thepopebot - .claude commands review issue",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "clone_.claude_commands_review-issue.md",
   "scores": {
     "D1": 0,
     "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 9,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 1,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 3,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -43,12 +44,84 @@
   },
   "spans": [
     {
-      "text": "Do NOT proceed with a plan until you have enough information\n- STOP here — do not analyze the codebase yet\n\nSkip this check only if the request is dead obvious (typo fix, trivial change).\n\n## Step 2 — Analyze and P",
-      "start": 1098,
-      "end": 1312,
+      "text": "Tag the issue author (e.g., @username) and ask for the specific missing details",
+      "start": 968,
+      "end": 1047,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt emphasizes gathering complete information before proceeding, asking clarifying questions when requirements are unclear, and cross-referencing against the actual codebase. It explicitly instructs the system to not proceed without sufficient information and to identify open questions and uncertainties.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT proceed with a plan until you have enough information",
+      "start": 1098,
+      "end": 1158,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes gathering complete information before proceeding, asking clarifying questions when requirements are unclear, and cross-referencing against the actual codebase. It explicitly instructs the system to not proceed without sufficient information and to identify open questions and uncertainties.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT proceed with a plan until you have enough information",
+      "start": 1098,
+      "end": 1158,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly supports user agency by requiring the system to ask clarifying questions, tag relevant people for input, and present structured options. It explicitly prevents the system from making assumptions and proceeding without user confirmation of requirements.",
+      "risky": false
+    },
+    {
+      "text": "Ask specific, numbered clarifying questions. For each question, explain\nWHY you need the answer and what decision it affects.",
+      "start": 2085,
+      "end": 2210,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes gathering complete information before proceeding, asking clarifying questions when requirements are unclear, and cross-referencing against the actual codebase. It explicitly instructs the system to not proceed without sufficient information and to identify open questions and uncertainties.",
+      "risky": false
+    },
+    {
+      "text": "Ask specific, numbered clarifying questions. For each question, explain\nWHY you need the answer and what decision it affects.",
+      "start": 2085,
+      "end": 2210,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly supports user agency by requiring the system to ask clarifying questions, tag relevant people for input, and present structured options. It explicitly prevents the system from making assumptions and proceeding without user confirmation of requirements.",
+      "risky": false
+    },
+    {
+      "text": "DO NOT implement any changes. DO NOT create branches, commits, or PRs.\nYou can only read code and produce a plan or ask questions.",
+      "start": 147,
+      "end": 277,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly restricts the system to read-only mode and forbids any modifications to the codebase or repository. The allowed tools are limited to read-only operations (Glob, Grep, Read, LS), and the prompt repeatedly emphasizes not implementing changes.",
+      "risky": false
+    },
+    {
+      "text": "You can only read code and produce a plan or ask questions.",
+      "start": 218,
+      "end": 277,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly restricts the system to read-only mode and forbids any modifications to the codebase or repository. The allowed tools are limited to read-only operations (Glob, Grep, Read, LS), and the prompt repeatedly emphasizes not implementing changes.",
+      "risky": false
+    },
+    {
+      "text": "Remember: You are in read-only mode. Plan and ask questions only.",
+      "start": 2258,
+      "end": 2323,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly restricts the system to read-only mode and forbids any modifications to the codebase or repository. The allowed tools are limited to read-only operations (Glob, Grep, Read, LS), and the prompt repeatedly emphasizes not implementing changes.",
+      "risky": false
+    },
+    {
+      "text": "WHY you need the answer and what decision it affects. Tag the relevant\nperson so they get notified.",
+      "start": 2157,
+      "end": 2256,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly supports user agency by requiring the system to ask clarifying questions, tag relevant people for input, and present structured options. It explicitly prevents the system from making assumptions and proceeding without user confirmation of requirements.",
       "risky": false
     }
   ]

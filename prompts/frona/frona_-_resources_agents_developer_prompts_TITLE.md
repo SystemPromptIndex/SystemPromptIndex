@@ -3,6 +3,7 @@ id: "frona/frona_-_resources_agents_developer_prompts_TITLE"
 company: "frona"
 product: "frona - resources agents developer prompts TITLE"
 category: "general-purpose"
+annotation: "ai"
 source_file: "resources_agents_developer_prompts_TITLE.md"
 ---
 

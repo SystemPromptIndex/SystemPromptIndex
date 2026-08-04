@@ -3,6 +3,7 @@ id: "trae-agent/trae-agent_-_trae_agent_system_prompt"
 company: "trae-agent"
 product: "trae-agent - trae agent / system prompt"
 category: "extracted"
+annotation: "ai"
 source_file: "trae-agent__system_prompt.txt"
 ---
 

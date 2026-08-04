@@ -3,6 +3,7 @@ id: "Replit/Replit-AI-2025-04"
 company: "Replit"
 product: "Replit-AI-2025-04"
 category: "Code Editor / IDE"
+annotation: "human"
 source_file: "Prompt.txt"
 ---
 

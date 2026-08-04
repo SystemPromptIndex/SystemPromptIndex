@@ -2,6 +2,7 @@
 id: "Apple/Xcode-Preview-2025"
 company: "Apple"
 product: "Xcode-Preview-2025"
+annotation: "ai"
 source_file: "PreviewAction.txt"
 ---
 

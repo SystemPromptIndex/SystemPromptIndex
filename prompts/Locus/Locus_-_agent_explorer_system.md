@@ -3,6 +3,7 @@ id: "Locus/Locus_-_agent_explorer_system"
 company: "Locus"
 product: "Locus - agent explorer system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agent_explorer_system.md"
 ---
 

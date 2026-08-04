@@ -3,6 +3,7 @@ id: "genaiscript/genaiscript_-_.github_prompts_doc_writer.prompt"
 company: "genaiscript"
 product: "genaiscript - .github prompts doc writer.prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_prompts_doc-writer.prompt.md"
 ---
 

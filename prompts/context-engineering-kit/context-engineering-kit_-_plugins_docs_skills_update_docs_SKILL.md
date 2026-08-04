@@ -3,6 +3,7 @@ id: "context-engineering-kit/context-engineering-kit_-_plugins_docs_skills_updat
 company: "context-engineering-kit"
 product: "context-engineering-kit - plugins docs skills update docs SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_docs_skills_update-docs_SKILL.md"
 ---
 

@@ -3,27 +3,28 @@
   "company": "codeg",
   "product": "codeg - src tauri experts skills subagent driven develo...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "src-tauri_experts_skills_subagent-driven-development_implementer-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If you have questions about:",
+      "start": 466,
+      "end": 494,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly encourages honesty about uncertainty and limitations. It explicitly instructs the agent to ask questions when unclear, avoid guessing, escalate when uncertain, and never silently produce work it's unsure about.",
+      "risky": false
+    },
+    {
+      "text": "If a file you're creating is growing beyond the plan's intent, stop and report",
+      "start": 1506,
+      "end": 1584,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes careful, disciplined action-taking. It instructs the agent to follow existing patterns, not restructure code outside its task scope, stop and escalate when uncertain, and avoid making architectural decisions unilaterally. This reflects a least-privilege, validate-first approach to system operations.",
+      "risky": false
+    },
+    {
+      "text": "The controller can provide more context, re-dispatch with a more capable model,\n    or break the task into smaller pieces.",
+      "start": 2771,
+      "end": 2893,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly preserves user (controller) agency by encouraging the agent to ask clarifying questions, escalate when blocked, and report concerns rather than making autonomous decisions. It explicitly avoids overbuilding and respects the boundaries of what was requested.",
+      "risky": false
+    }
+  ]
 }

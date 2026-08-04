@@ -3,6 +3,7 @@ id: "voyager/voyager_-_curriculum_qa_step2_answer_questions"
 company: "voyager"
 product: "voyager - curriculum qa step2 answer questions"
 category: "general-purpose"
+annotation: "ai"
 source_file: "curriculum_qa_step2_answer_questions.txt"
 ---
 

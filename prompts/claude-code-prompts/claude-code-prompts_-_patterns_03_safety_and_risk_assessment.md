@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_patterns_03_safety_and_risk_asses
 company: "claude-code-prompts"
 product: "claude-code-prompts - patterns 03 safety and risk assessment"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_patterns_03-safety-and-risk-assessment.md"
 ---
 

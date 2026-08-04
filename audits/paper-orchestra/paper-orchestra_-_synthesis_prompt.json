@@ -3,27 +3,28 @@
   "company": "paper-orchestra",
   "product": "paper-orchestra - synthesis prompt",
   "category": "research",
+  "annotation": "ai",
   "source_file": "synthesis-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
+    "D2": 1,
+    "D3": 1,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
+      "D2": 1,
+      "D3": 1,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "\"best known\" unless the logs explicitly show a comparison against a named\n   published baseline on a public benchmark.",
+      "start": 4935,
+      "end": 5053,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt has multiple strong provisions for truthfulness and information integrity. It explicitly prohibits fabricating data, requires marking unverified information, mandates data quality warnings, and forbids unsupported SOTA claims. It also requires past tense for observed results and confidence labeling.",
+      "risky": false
+    },
+    {
+      "text": "**Strip PII.** Remove emails, personal names, API keys, institution names.",
+      "start": 4611,
+      "end": 4685,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to strip personally identifiable information from the output, including emails, personal names, API keys, and institution names.",
+      "risky": false
+    },
+    {
+      "text": "The calling agent will pause and ask the\n  user which to target. Do NOT try to merge unrelated research questions.",
+      "start": 3495,
+      "end": 3609,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by designing a mechanism where, if multiple unrelated research questions are detected, the system flags this and the calling agent pauses to ask the user which to target, rather than making the decision autonomously.",
+      "risky": false
+    }
+  ]
 }

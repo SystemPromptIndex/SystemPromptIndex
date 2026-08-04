@@ -3,6 +3,7 @@ id: "smolagents/smolagents_-_smolagents_structured_code_agent"
 company: "smolagents"
 product: "smolagents - smolagents / structured code agent"
 category: "extracted"
+annotation: "ai"
 source_file: "smolagents__structured_code_agent.txt"
 ---
 

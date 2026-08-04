@@ -3,6 +3,7 @@ id: "superset/superset_-_.github_prompts_triage_issue"
 company: "superset"
 product: "superset - .github prompts triage issue"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_prompts_triage-issue.md"
 ---
 

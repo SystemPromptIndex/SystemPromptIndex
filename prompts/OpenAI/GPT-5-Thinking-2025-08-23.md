@@ -3,6 +3,7 @@ id: "OpenAI/GPT-5-Thinking-2025-08-23"
 company: "OpenAI"
 product: "GPT-5-Thinking-2025-08-23"
 category: "Chat / General"
+annotation: "human"
 source_file: "gpt-5-thinking.md"
 ---
 

@@ -3,6 +3,7 @@ id: "itinerary-agent/itinerary-agent_-_lodging_itinerary_system_prompt"
 company: "itinerary-agent"
 product: "itinerary-agent - lodging itinerary system prompt"
 category: "travel"
+annotation: "ai"
 source_file: "lodging_itinerary_system_prompt.txt"
 ---
 

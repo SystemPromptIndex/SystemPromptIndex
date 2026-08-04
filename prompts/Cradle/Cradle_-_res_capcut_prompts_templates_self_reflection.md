@@ -3,6 +3,7 @@ id: "Cradle/Cradle_-_res_capcut_prompts_templates_self_reflection"
 company: "Cradle"
 product: "Cradle - res capcut prompts templates self reflection"
 category: "general-purpose"
+annotation: "ai"
 source_file: "res_capcut_prompts_templates_self_reflection.prompt"
 ---
 

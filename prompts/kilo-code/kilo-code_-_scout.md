@@ -3,6 +3,7 @@ id: "kilo-code/kilo-code_-_scout"
 company: "kilo-code"
 product: "kilo-code - scout"
 category: "coding-agents"
+annotation: "ai"
 source_file: "scout.txt"
 ---
 

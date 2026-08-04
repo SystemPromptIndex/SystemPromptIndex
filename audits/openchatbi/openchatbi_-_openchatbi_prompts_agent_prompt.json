@@ -3,27 +3,28 @@
   "company": "openchatbi",
   "product": "openchatbi - openchatbi prompts agent prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "openchatbi_prompts_agent_prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "No fabricate information, if you don't know, just say you don't know.",
+      "start": 481,
+      "end": 550,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system not to fabricate information and to acknowledge when it doesn't know something. It also instructs the system to ask for clarification when questions are unclear, promoting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "If the question is not clear, or some information is missing, ask the user to clarify by calling AskHuman tool.",
+      "start": 1676,
+      "end": 1787,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to ask clarifying questions when information is missing or unclear, preserving user agency. It uses the AskHuman tool to involve the user in decision-making rather than making assumptions.",
+      "risky": false
+    }
+  ]
 }

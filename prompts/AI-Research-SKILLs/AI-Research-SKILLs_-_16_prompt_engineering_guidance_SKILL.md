@@ -3,6 +3,7 @@ id: "AI-Research-SKILLs/AI-Research-SKILLs_-_16_prompt_engineering_guidance_SKIL
 company: "AI-Research-SKILLs"
 product: "AI-Research-SKILLs - 16 prompt engineering guidance SKILL"
 category: "research"
+annotation: "ai"
 source_file: "16-prompt-engineering_guidance_SKILL.md"
 ---
 

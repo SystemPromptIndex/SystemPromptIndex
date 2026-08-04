@@ -3,6 +3,7 @@ id: "station/station_-_agents_sre_rca"
 company: "station"
 product: "station - agents sre rca"
 category: "general-purpose"
+annotation: "ai"
 source_file: "agents_sre-rca.prompt"
 ---
 

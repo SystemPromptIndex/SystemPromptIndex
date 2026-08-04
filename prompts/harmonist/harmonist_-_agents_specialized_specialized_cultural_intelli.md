@@ -3,6 +3,7 @@ id: "harmonist/harmonist_-_agents_specialized_specialized_cultural_intelli"
 company: "harmonist"
 product: "harmonist - agents specialized specialized cultural intelli..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_agents_specialized_specialized-cultural-intelligence-strategist.md"
 ---
 

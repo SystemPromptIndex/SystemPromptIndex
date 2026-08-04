@@ -3,6 +3,7 @@ id: "OpenMetadata/OpenMetadata_-_.github_copilot_instructions"
 company: "OpenMetadata"
 product: "OpenMetadata - .github copilot instructions"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_copilot-instructions.md"
 ---
 

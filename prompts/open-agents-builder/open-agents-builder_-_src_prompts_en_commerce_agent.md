@@ -3,6 +3,7 @@ id: "open-agents-builder/open-agents-builder_-_src_prompts_en_commerce_agent"
 company: "open-agents-builder"
 product: "open-agents-builder - src prompts en commerce agent"
 category: "general-purpose"
+annotation: "ai"
 source_file: "src_prompts_en_commerce-agent.md"
 ---
 

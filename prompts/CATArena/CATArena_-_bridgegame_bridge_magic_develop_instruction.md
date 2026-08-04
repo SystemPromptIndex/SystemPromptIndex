@@ -3,6 +3,7 @@ id: "CATArena/CATArena_-_bridgegame_bridge_magic_develop_instruction"
 company: "CATArena"
 product: "CATArena - bridgegame bridge magic develop instruction"
 category: "coding-agents"
+annotation: "ai"
 source_file: "bridgegame_bridge_magic_develop_instruction.md"
 ---
 

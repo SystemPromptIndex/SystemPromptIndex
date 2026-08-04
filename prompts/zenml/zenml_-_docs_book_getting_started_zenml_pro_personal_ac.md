@@ -3,6 +3,7 @@ id: "zenml/zenml_-_docs_book_getting_started_zenml_pro_personal_ac"
 company: "zenml"
 product: "zenml - docs book getting started zenml pro personal ac..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_book_getting-started_zenml-pro_personal-access-tokens.md"
 ---
 

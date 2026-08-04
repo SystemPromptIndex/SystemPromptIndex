@@ -3,6 +3,7 @@ id: "skill/skill_-_tasks_task_log_ssh_brute_force"
 company: "skill"
 product: "skill - tasks task log ssh brute force"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_tasks_task_log_ssh_brute_force.md"
 ---
 

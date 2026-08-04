@@ -3,6 +3,7 @@ id: "project-nova/project-nova_-_SOUL"
 company: "project-nova"
 product: "project-nova - SOUL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "SOUL.md"
 ---
 

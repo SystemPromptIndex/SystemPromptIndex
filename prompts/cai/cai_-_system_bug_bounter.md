@@ -3,6 +3,7 @@ id: "cai/cai_-_system_bug_bounter"
 company: "cai"
 product: "cai - system bug bounter"
 category: "security"
+annotation: "ai"
 source_file: "system_bug_bounter.md"
 ---
 

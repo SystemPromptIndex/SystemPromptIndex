@@ -3,6 +3,7 @@ id: "openclaw-coolify/openclaw-coolify_-_docs_reference_templates_SOUL"
 company: "openclaw-coolify"
 product: "openclaw-coolify - docs reference templates SOUL"
 category: "legal"
+annotation: "ai"
 source_file: "docs_reference_templates_SOUL.md"
 ---
 

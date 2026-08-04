@@ -3,6 +3,7 @@ id: "goose/goose_-_system"
 company: "goose"
 product: "goose - system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "system.md"
 ---
 

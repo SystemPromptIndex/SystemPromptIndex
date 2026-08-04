@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_pair_programming"
 company: "codex-cli"
 product: "codex-cli - pair programming"
 category: "coding-agents"
+annotation: "ai"
 source_file: "pair_programming.md"
 ---
 

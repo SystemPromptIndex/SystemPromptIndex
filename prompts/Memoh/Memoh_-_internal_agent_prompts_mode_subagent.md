@@ -3,6 +3,7 @@ id: "Memoh/Memoh_-_internal_agent_prompts_mode_subagent"
 company: "Memoh"
 product: "Memoh - internal agent prompts mode subagent"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_internal_agent_prompts_mode_subagent.md"
 ---
 

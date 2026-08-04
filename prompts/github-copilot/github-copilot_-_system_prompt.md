@@ -3,7 +3,8 @@ id: "github-copilot/github-copilot_-_system_prompt"
 company: "github-copilot"
 product: "github-copilot - system prompt"
 category: "coding-agents"
-source_file: "system_prompt.md"
+annotation: "ai"
+source_file: "github-copilot__system_prompt.md"
 ---
 
 ## Identity

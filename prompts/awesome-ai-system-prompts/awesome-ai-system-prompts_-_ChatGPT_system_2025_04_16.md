@@ -3,6 +3,7 @@ id: "awesome-ai-system-prompts/awesome-ai-system-prompts_-_ChatGPT_system_2025_0
 company: "awesome-ai-system-prompts"
 product: "awesome-ai-system-prompts - ChatGPT system 2025 04 16"
 category: "coding-agents"
+annotation: "ai"
 source_file: "ChatGPT_system-2025-04-16.md"
 ---
 

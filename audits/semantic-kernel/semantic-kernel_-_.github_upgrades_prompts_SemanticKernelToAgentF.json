@@ -3,27 +3,28 @@
   "company": "semantic-kernel",
   "product": "semantic-kernel - .github upgrades prompts SemanticKernelToAgentF...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".github_upgrades_prompts_SemanticKernelToAgentFramework.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 8,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,78 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If you see some code that really cannot be converted or will have potential behavior changes at runtime, remember files and code lines where it",
+      "start": 6174,
+      "end": 6317,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes accuracy and thoroughness in migration. It instructs the system to report cases where code cannot be converted, note behavioral changes that need runtime verification, and generate detailed reports of all changes and follow-up steps needed. It explicitly warns against placeholders and requires preserving business logic.",
+      "risky": false
+    },
+    {
+      "text": "If you see some code that really cannot be converted or will have potential behavior changes at runtime, remember files and code lines where it\n  happens at the end of the migration process you will generate a report markdown file and list all follow up steps user would have to do.",
+      "start": 6174,
+      "end": 6456,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes accuracy and thoroughness in migration. It instructs the system to report cases where code cannot be converted, note behavioral changes that need runtime verification, and generate detailed reports of all changes and follow-up steps needed. It explicitly warns against placeholders and requires preserving business logic.",
+      "risky": false
+    },
+    {
+      "text": "happens at the end of the migration process you will generate a report markdown file and list all follow up steps user would have to do.",
+      "start": 6320,
+      "end": 6456,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes accuracy and thoroughness in migration. It instructs the system to report cases where code cannot be converted, note behavioral changes that need runtime verification, and generate detailed reports of all changes and follow-up steps needed. It explicitly warns against placeholders and requires preserving business logic.",
+      "risky": false
+    },
+    {
+      "text": "Build all modified projects to ensure that they compile without errors. If there are any build errors, you must fix them all yourself one by one and",
+      "start": 6821,
+      "end": 6969,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices. It requires validation steps including building all modified projects to ensure compilation, following a specific ordered sequence of steps, and validating migration completeness before finishing. It also requires fixing all build errors before proceeding.",
+      "risky": false
+    },
+    {
+      "text": "don't stop until all errors are fixed without breaking any of the migration guidance.",
+      "start": 6973,
+      "end": 7058,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices. It requires validation steps including building all modified projects to ensure compilation, following a specific ordered sequence of steps, and validating migration completeness before finishing. It also requires fixing all build errors before proceeding.",
+      "risky": false
+    },
+    {
+      "text": "If you don't know which projects to migrate, ask the user.",
+      "start": 505,
+      "end": 563,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by instructing the system to ask the user when uncertain about which projects to migrate, notify the user about projects that cannot be found, and generate a comprehensive report of all changes and follow-up steps for user review.",
+      "risky": false
+    },
+    {
+      "text": "Find projects depending on `Microsoft.SemanticKernel.Agents` or related Semantic Kernel agent packages (when searching for projects, if some projects are not part of the\n  solution or you could not find the project, notify user and continue with other projects).",
+      "start": 1202,
+      "end": 1464,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by instructing the system to ask the user when uncertain about which projects to migrate, notify the user about projects that cannot be found, and generate a comprehensive report of all changes and follow-up steps for user review.",
+      "risky": false
+    },
+    {
+      "text": "solution or you could not find the project, notify user and continue with other projects).",
+      "start": 1374,
+      "end": 1464,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by instructing the system to ask the user when uncertain about which projects to migrate, notify the user about projects that cannot be found, and generate a comprehensive report of all changes and follow-up steps for user review.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "beagle/beagle_-_plugins_beagle_analysis_skills_resolve_beagle_r"
 company: "beagle"
 product: "beagle - plugins beagle analysis skills resolve beagle r..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "plugins_beagle-analysis_skills_resolve-beagle_references_subagent-prompts.md"
 ---
 

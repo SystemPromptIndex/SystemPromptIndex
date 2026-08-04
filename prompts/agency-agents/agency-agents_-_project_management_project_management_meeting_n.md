@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_project_management_project_management_meeting
 company: "agency-agents"
 product: "agency-agents - project management project management meeting n..."
 category: "legal"
+annotation: "ai"
 source_file: "clone_project-management_project-management-meeting-notes-specialist.md"
 ---
 

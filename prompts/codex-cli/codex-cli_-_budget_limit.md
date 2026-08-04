@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_budget_limit"
 company: "codex-cli"
 product: "codex-cli - budget limit"
 category: "coding-agents"
+annotation: "ai"
 source_file: "budget_limit.md"
 ---
 

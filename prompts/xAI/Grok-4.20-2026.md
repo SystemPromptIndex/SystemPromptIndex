@@ -2,6 +2,7 @@
 id: "xAI/Grok-4.20-2026"
 company: "xAI"
 product: "Grok-4.20-2026"
+annotation: "ai"
 source_file: "GROK-4.20.mkd"
 ---
 

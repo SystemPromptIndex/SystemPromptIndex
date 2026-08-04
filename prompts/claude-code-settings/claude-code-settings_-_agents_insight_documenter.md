@@ -3,6 +3,7 @@ id: "claude-code-settings/claude-code-settings_-_agents_insight_documenter"
 company: "claude-code-settings"
 product: "claude-code-settings - agents insight documenter"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_agents_insight-documenter.md"
 ---
 

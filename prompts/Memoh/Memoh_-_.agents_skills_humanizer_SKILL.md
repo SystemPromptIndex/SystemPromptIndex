@@ -3,6 +3,7 @@ id: "Memoh/Memoh_-_.agents_skills_humanizer_SKILL"
 company: "Memoh"
 product: "Memoh - .agents skills humanizer SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.agents_skills_humanizer_SKILL.md"
 ---
 

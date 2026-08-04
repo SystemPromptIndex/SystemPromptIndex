@@ -3,6 +3,7 @@ id: "gpt-play-pokemon-firered/gpt-play-pokemon-firered_-_server_prompts_summary_
 company: "gpt-play-pokemon-firered"
 product: "gpt-play-pokemon-firered - server prompts summary rollup"
 category: "general-purpose"
+annotation: "ai"
 source_file: "server_prompts_summary_rollup.txt"
 ---
 

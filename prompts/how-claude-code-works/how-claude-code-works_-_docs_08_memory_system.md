@@ -3,6 +3,7 @@ id: "how-claude-code-works/how-claude-code-works_-_docs_08_memory_system"
 company: "how-claude-code-works"
 product: "how-claude-code-works - docs 08 memory system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_08-memory-system.md"
 ---
 

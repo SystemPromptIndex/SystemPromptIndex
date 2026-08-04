@@ -3,6 +3,7 @@ id: "deepnote/deepnote_-_docs_deprecating_personal_workspaces"
 company: "deepnote"
 product: "deepnote - docs deprecating personal workspaces"
 category: "data-analytics"
+annotation: "ai"
 source_file: "docs_deprecating-personal-workspaces.md"
 ---
 

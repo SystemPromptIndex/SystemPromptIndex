@@ -3,6 +3,7 @@ id: "agent-deck/agent-deck_-_skills_agent_deck_scripts_self_improvement_prom"
 company: "agent-deck"
 product: "agent-deck - skills agent deck scripts self improvement prom..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "skills_agent-deck_scripts_self-improvement_prompts_analyzer.md"
 ---
 

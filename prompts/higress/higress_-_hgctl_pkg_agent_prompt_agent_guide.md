@@ -3,6 +3,7 @@ id: "higress/higress_-_hgctl_pkg_agent_prompt_agent_guide"
 company: "higress"
 product: "higress - hgctl pkg agent prompt agent guide"
 category: "general-purpose"
+annotation: "ai"
 source_file: "hgctl_pkg_agent_prompt_agent_guide.md"
 ---
 

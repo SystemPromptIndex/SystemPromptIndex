@@ -3,6 +3,7 @@ id: "agent-to-merchant-payments/agent-to-merchant-payments_-_claude_desktop_PROJ
 company: "agent-to-merchant-payments"
 product: "agent-to-merchant-payments - claude desktop PROJECT INSTRUCTIONS"
 category: "general-purpose"
+annotation: "ai"
 source_file: "claude-desktop_PROJECT_INSTRUCTIONS.md"
 ---
 

@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_engineering_engineering_prompt_engineer"
 company: "agency-agents"
 product: "agency-agents - engineering engineering prompt engineer"
 category: "legal"
+annotation: "ai"
 source_file: "engineering_engineering-prompt-engineer.md"
 ---
 

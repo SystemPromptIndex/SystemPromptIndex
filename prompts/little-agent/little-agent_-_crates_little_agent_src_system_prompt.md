@@ -3,6 +3,7 @@ id: "little-agent/little-agent_-_crates_little_agent_src_system_prompt"
 company: "little-agent"
 product: "little-agent - crates little agent src system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "crates_little-agent_src_system_prompt.md"
 ---
 

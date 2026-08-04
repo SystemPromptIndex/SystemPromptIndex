@@ -2,6 +2,7 @@
 id: "Z.ai/Z.ai-Code-2025"
 company: "Z.ai"
 product: "Z.ai-Code-2025"
+annotation: "ai"
 source_file: "prompt.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "vibeyard/vibeyard_-_personas_code_reviewer"
 company: "vibeyard"
 product: "vibeyard - personas code reviewer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "personas_code-reviewer.md"
 ---
 

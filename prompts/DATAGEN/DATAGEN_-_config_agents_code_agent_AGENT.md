@@ -3,6 +3,7 @@ id: "DATAGEN/DATAGEN_-_config_agents_code_agent_AGENT"
 company: "DATAGEN"
 product: "DATAGEN - config agents code agent AGENT"
 category: "general-purpose"
+annotation: "ai"
 source_file: "config_agents_code_agent_AGENT.md"
 ---
 

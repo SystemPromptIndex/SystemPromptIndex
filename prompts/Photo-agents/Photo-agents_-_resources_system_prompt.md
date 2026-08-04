@@ -3,6 +3,7 @@ id: "Photo-agents/Photo-agents_-_resources_system_prompt"
 company: "Photo-agents"
 product: "Photo-agents - resources system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "resources_system_prompt.txt"
 ---
 

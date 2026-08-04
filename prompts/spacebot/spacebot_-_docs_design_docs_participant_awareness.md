@@ -3,6 +3,7 @@ id: "spacebot/spacebot_-_docs_design_docs_participant_awareness"
 company: "spacebot"
 product: "spacebot - docs design docs participant awareness"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_design-docs_participant-awareness.md"
 ---
 

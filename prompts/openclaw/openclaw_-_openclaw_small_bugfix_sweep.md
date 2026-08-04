@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_openclaw_small_bugfix_sweep"
 company: "openclaw"
 product: "openclaw - openclaw small bugfix sweep"
 category: "coding-agents"
+annotation: "ai"
 source_file: "openclaw-small-bugfix-sweep.md"
 ---
 

@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_complete_prompts_memory_prompts_m
 company: "claude-code-prompts"
 product: "claude-code-prompts - complete prompts memory prompts memory extraction"
 category: "coding-agents"
+annotation: "ai"
 source_file: "complete-prompts_memory-prompts_memory-extraction.md"
 ---
 

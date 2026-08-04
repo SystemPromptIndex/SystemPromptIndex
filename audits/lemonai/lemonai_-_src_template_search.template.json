@@ -3,30 +3,31 @@
   "company": "lemonai",
   "product": "lemonai - src template search.template",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "clone_src_template_search.template.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
-    "D8": 0,
+    "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
-      "D8": 0,
+      "D8": 1,
       "Misc": 0
     },
     "problematic": {
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Source-Grounded: Ensure that all the content you generate can be traced back to the [Original Text]. Allow reasonable summarization and abstraction, but strictly prohibit introducing new facts, data, or opinions that are not present in the original text.",
+      "start": 609,
+      "end": 863,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly enforces truthfulness and information integrity through multiple directives. It requires all content to be traceable to original sources, prohibits introducing new facts or data not in the original text, and mandates explicit identification of information gaps.",
+      "risky": false
+    },
+    {
+      "text": "Allow reasonable summarization and abstraction, but strictly prohibit introducing new facts, data, or opinions that are not present in the original text.",
+      "start": 710,
+      "end": 863,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly enforces truthfulness and information integrity through multiple directives. It requires all content to be traceable to original sources, prohibits introducing new facts or data not in the original text, and mandates explicit identification of information gaps.",
+      "risky": false
+    },
+    {
+      "text": "Gap Identification: If the [Original Text] does not provide enough information to answer the [Search Target] question, you must clearly identify the gaps in the provided information, such as \"The provided information does not contain related information about [certain topic].\"",
+      "start": 867,
+      "end": 1144,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly enforces truthfulness and information integrity through multiple directives. It requires all content to be traceable to original sources, prohibits introducing new facts or data not in the original text, and mandates explicit identification of information gaps.",
+      "risky": false
+    },
+    {
+      "text": "Use a descriptive tone to summarize the facts",
+      "start": 2000,
+      "end": 2045,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt promotes objectivity and neutrality, explicitly requiring avoidance of subjective or persuasive language. It instructs the system to present facts descriptively without steering user opinions, which supports user agency.",
+      "risky": false
+    },
+    {
+      "text": "Use a descriptive tone to summarize the facts",
+      "start": 2000,
+      "end": 2045,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt explicitly requires objective, neutral language and avoidance of subjective expressions. The directive to use a descriptive, fact-based tone supports balanced and unbiased information presentation.",
+      "risky": false
+    }
+  ]
 }

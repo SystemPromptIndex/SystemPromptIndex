@@ -3,6 +3,7 @@ id: "lemonai/lemonai_-_src_template_thinking"
 company: "lemonai"
 product: "lemonai - src template thinking"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_src_template_thinking.txt"
 ---
 

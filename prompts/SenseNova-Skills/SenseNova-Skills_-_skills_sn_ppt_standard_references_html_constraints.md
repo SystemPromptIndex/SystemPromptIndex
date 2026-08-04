@@ -3,6 +3,7 @@ id: "SenseNova-Skills/SenseNova-Skills_-_skills_sn_ppt_standard_references_html_
 company: "SenseNova-Skills"
 product: "SenseNova-Skills - skills sn ppt standard references html constraints"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_skills_sn-ppt-standard_references_html_constraints.md"
 ---
 

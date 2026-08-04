@@ -3,6 +3,7 @@ id: "moai-adk/moai-adk_-_.claude_rules_moai_development_prompting_best_p"
 company: "moai-adk"
 product: "moai-adk - .claude rules moai development prompting best p..."
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_rules_moai_development_prompting-best-practices.md"
 ---
 

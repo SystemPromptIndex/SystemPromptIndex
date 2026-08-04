@@ -2,6 +2,7 @@
 id: "Google/Gemini-CLI-OSS-2025-08"
 company: "Google"
 product: "Gemini-CLI-OSS-2025-08"
+annotation: "ai"
 source_file: "google-gemini-cli-system-prompt.txt"
 ---
 

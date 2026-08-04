@@ -3,6 +3,7 @@ id: "kiss_ai/kiss_ai_-_src_kiss_SYSTEM"
 company: "kiss_ai"
 product: "kiss_ai - src kiss SYSTEM"
 category: "multi-agent"
+annotation: "ai"
 source_file: "src_kiss_SYSTEM.md"
 ---
 

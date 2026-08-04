@@ -3,6 +3,7 @@ id: "ai-moive-studio/ai-moive-studio_-_backend_docs_prompts_5.视频提示词生
 company: "ai-moive-studio"
 product: "ai-moive-studio - backend docs prompts 5.视频提示词生成"
 category: "coding-agents"
+annotation: "ai"
 source_file: "backend_docs_prompts_5.视频提示词生成.md"
 ---
 

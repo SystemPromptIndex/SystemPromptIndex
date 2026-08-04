@@ -2,6 +2,7 @@
 id: "Kiro/Kiro-Classifier-2025-07"
 company: "Kiro"
 product: "Kiro-Classifier-2025-07"
+annotation: "ai"
 source_file: "Mode_Clasifier_Prompt.txt"
 ---
 

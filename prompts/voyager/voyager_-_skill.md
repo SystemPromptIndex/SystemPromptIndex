@@ -3,6 +3,7 @@ id: "voyager/voyager_-_skill"
 company: "voyager"
 product: "voyager - skill"
 category: "general-purpose"
+annotation: "ai"
 source_file: "skill.txt"
 ---
 

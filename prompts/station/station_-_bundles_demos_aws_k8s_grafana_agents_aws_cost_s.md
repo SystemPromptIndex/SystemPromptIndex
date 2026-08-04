@@ -3,6 +3,7 @@ id: "station/station_-_bundles_demos_aws_k8s_grafana_agents_aws_cost_s"
 company: "station"
 product: "station - bundles demos aws k8s grafana agents aws cost s..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "bundles_demos_aws-k8s-grafana_agents_aws-cost-spike-rca.prompt"
 ---
 

@@ -3,6 +3,7 @@ id: "memtrace-public/memtrace-public_-_benchmarks_swebench_retrieval_prompts_age
 company: "memtrace-public"
 product: "memtrace-public - benchmarks swebench retrieval prompts agentic s..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "benchmarks_swebench-retrieval_prompts_agentic_system.md"
 ---
 

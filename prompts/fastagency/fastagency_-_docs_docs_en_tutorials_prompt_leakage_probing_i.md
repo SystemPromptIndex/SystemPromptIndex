@@ -3,6 +3,7 @@ id: "fastagency/fastagency_-_docs_docs_en_tutorials_prompt_leakage_probing_i"
 company: "fastagency"
 product: "fastagency - docs docs en tutorials prompt leakage probing i..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_docs_en_tutorials_prompt_leakage_probing_index.md"
 ---
 

@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_writing_quality_check"
 company: "paper-orchestra"
 product: "paper-orchestra - writing quality check"
 category: "research"
+annotation: "ai"
 source_file: "writing_quality_check.md"
 ---
 

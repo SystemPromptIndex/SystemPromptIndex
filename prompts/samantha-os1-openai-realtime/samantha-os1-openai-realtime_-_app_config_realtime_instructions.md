@@ -3,6 +3,7 @@ id: "samantha-os1-openai-realtime/samantha-os1-openai-realtime_-_app_config_real
 company: "samantha-os1-openai-realtime"
 product: "samantha-os1-openai-realtime - app config realtime instructions"
 category: "general-purpose"
+annotation: "ai"
 source_file: "app_config_realtime_instructions.txt"
 ---
 

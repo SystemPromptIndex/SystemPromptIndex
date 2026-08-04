@@ -3,6 +3,7 @@ id: "Auto-Empirical-Research-Skills/Auto-Empirical-Research-Skills_-_skills_42_w
 company: "Auto-Empirical-Research-Skills"
 product: "Auto-Empirical-Research-Skills - skills 42 wanshuiyin ARIS skills skills codex c..."
 category: "research"
+annotation: "ai"
 source_file: "clone_skills_42-wanshuiyin-ARIS_skills_skills-codex-claude-review_research-refine_SKILL.md"
 ---
 

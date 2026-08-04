@@ -3,6 +3,7 @@ id: "AI-Engineering-Coach/AI-Engineering-Coach_-_src_core_rules_instruction_bloa
 company: "AI-Engineering-Coach"
 product: "AI-Engineering-Coach - src core rules instruction bloat"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_src_core_rules_instruction-bloat.md"
 ---
 

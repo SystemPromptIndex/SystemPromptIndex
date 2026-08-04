@@ -3,6 +3,7 @@ id: "agent-guardrails-template/agent-guardrails-template_-_docs_game_design_AI_D
 company: "agent-guardrails-template"
 product: "agent-guardrails-template - docs game design AI DEV 2026 PART02 PROMPTING"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_game-design_AI_DEV_2026_PART02_PROMPTING.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Archon/Archon_-_.github_prompts_prd.prompt"
 company: "Archon"
 product: "Archon - .github prompts prd.prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_prompts_prd.prompt.md"
 ---
 

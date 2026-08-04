@@ -3,27 +3,28 @@
   "company": "mastra",
   "product": "mastra - .github prompts gh debug issue.prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".github_prompts_gh-debug-issue.prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D2": 1,
+    "D3": -1,
+    "D4": -1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 7,
+  "problematic_entries": 6,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 5,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -32,8 +33,8 @@
     "problematic": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D3": 4,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,123 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Ask the user for feedback on your issue summary document. Do you have any misconceptions? Is your theory plausible? Did you miss anything?",
+      "start": 2489,
+      "end": 2627,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes thorough analysis, asking the user for feedback on findings, verifying theories, and checking for misconceptions. It encourages the agent to ask the user for help when stuck and to validate understanding before proceeding.",
+      "risky": false
+    },
+    {
+      "text": "If you get stuck, ask the user for help! They might know something you don't, or they might have an idea you didn't have.",
+      "start": 3753,
+      "end": 3874,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes thorough analysis, asking the user for feedback on findings, verifying theories, and checking for misconceptions. It encourages the agent to ask the user for help when stuck and to validate understanding before proceeding.",
+      "risky": false
+    },
+    {
+      "text": "RUN curl -s -X GET -H \"Authorization: Bot $MASTRA_DISCORD_BOT_TOKEN\" \"https://discord.com/api/v10/channels/<THREAD_ID>/messages?limit=100\" > /tmp/discord_out.json && jq '[.[] | {timestamp, author:",
+      "start": 443,
+      "end": 639,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the agent to use a Discord bot token from an environment variable ($MASTRA_DISCORD_BOT_TOKEN) to fetch messages from Discord channels. This involves accessing potentially private Discord conversations and user data (usernames, display names, message content) without any mention of consent, data minimization, or privacy safeguards. The data is written to a temp file, though it is cleaned up.",
+      "risky": false
+    },
+    {
+      "text": "RUN curl -s -X GET -H \"Authorization: Bot $MASTRA_DISCORD_BOT_TOKEN\" \"https://discord.com/api/v10/channels/<THREAD_ID>/messages?limit=100\" > /tmp/discord_out.json && jq '[.[] | {timestamp, author:",
+      "start": 443,
+      "end": 639,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to execute shell commands (gh CLI, curl, jq, rm) and commit code to repositories without explicit safety validation or user confirmation before execution. The THREAD_ID is extracted from user-provided content and directly interpolated into a shell command, creating a potential command injection risk. There are no guardrails around the commands being run.",
+      "risky": false
+    },
+    {
+      "text": "RUN curl -s -X GET -H \"Authorization: Bot $MASTRA_DISCORD_BOT_TOKEN\" \"https://discord.com/api/v10/channels/<THREAD_ID>/messages?limit=100\" > /tmp/discord_out.json && jq '[.[] | {timestamp, author: {username: .author.username, display_name: .author.global_name}, content, attachments: [.attachments[]? | {filename, url}], embeds:",
+      "start": 443,
+      "end": 771,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the agent to use a Discord bot token from an environment variable ($MASTRA_DISCORD_BOT_TOKEN) to fetch messages from Discord channels. This involves accessing potentially private Discord conversations and user data (usernames, display names, message content) without any mention of consent, data minimization, or privacy safeguards. The data is written to a temp file, though it is cleaned up.",
+      "risky": false
+    },
+    {
+      "text": "| {filename, url}], embeds: [.embeds[]? | {title, description, url}]}]' /tmp/discord_out.json ; rm -f /tmp/discord_out.json",
+      "start": 744,
+      "end": 867,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the agent to use a Discord bot token from an environment variable ($MASTRA_DISCORD_BOT_TOKEN) to fetch messages from Discord channels. This involves accessing potentially private Discord conversations and user data (usernames, display names, message content) without any mention of consent, data minimization, or privacy safeguards. The data is written to a temp file, though it is cleaned up.",
+      "risky": false
+    },
+    {
+      "text": "| {title, description, url}]}]' /tmp/discord_out.json ; rm -f /tmp/discord_out.json",
+      "start": 784,
+      "end": 867,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the agent to use a Discord bot token from an environment variable ($MASTRA_DISCORD_BOT_TOKEN) to fetch messages from Discord channels. This involves accessing potentially private Discord conversations and user data (usernames, display names, message content) without any mention of consent, data minimization, or privacy safeguards. The data is written to a temp file, though it is cleaned up.",
+      "risky": false
+    },
+    {
+      "text": "Commit the failing test to the current branch (don't commit the summary file)",
+      "start": 3448,
+      "end": 3525,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to execute shell commands (gh CLI, curl, jq, rm) and commit code to repositories without explicit safety validation or user confirmation before execution. The THREAD_ID is extracted from user-provided content and directly interpolated into a shell command, creating a potential command injection risk. There are no guardrails around the commands being run.",
+      "risky": false
+    },
+    {
+      "text": "Ask the user for feedback on your issue summary document.",
+      "start": 2489,
+      "end": 2546,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly emphasizes user agency by requiring user agreement and feedback at multiple stages before proceeding. The user must confirm the analysis, agree with the failing test, approve the fix plan, and validate the final fix.",
+      "risky": false
+    },
+    {
+      "text": "Now that the user agrees with your findings, write a test (in the appropriate package and test file) that reproduces the issue.",
+      "start": 2631,
+      "end": 2758,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly emphasizes user agency by requiring user agreement and feedback at multiple stages before proceeding. The user must confirm the analysis, agree with the failing test, approve the fix plan, and validate the final fix.",
+      "risky": false
+    },
+    {
+      "text": "Come up with a plan to fix the issue. Make sure the user agrees and is on the same page as you.",
+      "start": 3529,
+      "end": 3624,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly emphasizes user agency by requiring user agreement and feedback at multiple stages before proceeding. The user must confirm the analysis, agree with the failing test, approve the fix plan, and validate the final fix.",
+      "risky": false
+    },
+    {
+      "text": "Make sure the user agrees and is on the same page as you.",
+      "start": 3567,
+      "end": 3624,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly emphasizes user agency by requiring user agreement and feedback at multiple stages before proceeding. The user must confirm the analysis, agree with the failing test, approve the fix plan, and validate the final fix.",
+      "risky": false
+    },
+    {
+      "text": "They must agree that it's the correct fix for the issue at hand.",
+      "start": 3925,
+      "end": 3989,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly emphasizes user agency by requiring user agreement and feedback at multiple stages before proceeding. The user must confirm the analysis, agree with the failing test, approve the fix plan, and validate the final fix.",
+      "risky": false
+    }
+  ]
 }

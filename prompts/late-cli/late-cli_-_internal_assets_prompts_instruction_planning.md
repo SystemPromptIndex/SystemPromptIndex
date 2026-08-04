@@ -3,6 +3,7 @@ id: "late-cli/late-cli_-_internal_assets_prompts_instruction_planning"
 company: "late-cli"
 product: "late-cli - internal assets prompts instruction planning"
 category: "coding-agents"
+annotation: "ai"
 source_file: "internal_assets_prompts_instruction-planning.md"
 ---
 

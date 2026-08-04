@@ -3,6 +3,7 @@ id: "learn-low-code-agentic-ai/learn-low-code-agentic-ai_-_04_ai_agents_multi_ag
 company: "learn-low-code-agentic-ai"
 product: "learn-low-code-agentic-ai - 04 ai agents multi agent project"
 category: "coding-agents"
+annotation: "ai"
 source_file: "04_ai_agents_multi_agent_project.md"
 ---
 

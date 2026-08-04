@@ -3,6 +3,7 @@ id: "openui/openui_-_benchmarks_system_prompt"
 company: "openui"
 product: "openui - benchmarks system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "benchmarks_system-prompt.txt"
 ---
 

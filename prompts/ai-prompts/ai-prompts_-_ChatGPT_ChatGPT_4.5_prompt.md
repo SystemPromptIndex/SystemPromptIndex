@@ -3,6 +3,7 @@ id: "ai-prompts/ai-prompts_-_ChatGPT_ChatGPT_4.5_prompt"
 company: "ai-prompts"
 product: "ai-prompts - ChatGPT ChatGPT 4.5 prompt"
 category: "data-analytics"
+annotation: "ai"
 source_file: "ChatGPT_ChatGPT 4.5_prompt.txt"
 ---
 

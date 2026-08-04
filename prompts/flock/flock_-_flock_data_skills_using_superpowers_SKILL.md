@@ -3,6 +3,7 @@ id: "flock/flock_-_flock_data_skills_using_superpowers_SKILL"
 company: "flock"
 product: "flock - flock data skills using superpowers SKILL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_flock-data_skills_using-superpowers_SKILL.md"
 ---
 

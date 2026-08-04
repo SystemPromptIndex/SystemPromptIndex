@@ -3,6 +3,7 @@ id: "Microsoft/GitHub-Copilot-CLI-2026-01-21"
 company: "Microsoft"
 product: "GitHub-Copilot-CLI-2026-01-21"
 category: "Code Assistant"
+annotation: "human"
 source_file: "github_copilot_cli_20260121.md"
 ---
 

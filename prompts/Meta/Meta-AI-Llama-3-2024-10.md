@@ -3,6 +3,7 @@ id: "Meta/Meta-AI-Llama-3-2024-10"
 company: "Meta"
 product: "Meta-AI-Llama-3-2024-10"
 category: "Chat / General"
+annotation: "human"
 source_file: "MetaAIHiddenPrompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "loki-mode/loki-mode_-_magic_debate_personas_a11y"
 company: "loki-mode"
 product: "loki-mode - magic debate personas a11y"
 category: "coding-agents"
+annotation: "ai"
 source_file: "magic_debate_personas_a11y.md"
 ---
 

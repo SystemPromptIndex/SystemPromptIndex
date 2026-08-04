@@ -3,6 +3,7 @@ id: "Motion-Agent/Motion-Agent_-_example_prompt"
 company: "Motion-Agent"
 product: "Motion-Agent - example prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "example_prompt.txt"
 ---
 

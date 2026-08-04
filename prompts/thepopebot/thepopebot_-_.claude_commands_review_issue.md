@@ -3,6 +3,7 @@ id: "thepopebot/thepopebot_-_.claude_commands_review_issue"
 company: "thepopebot"
 product: "thepopebot - .claude commands review issue"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_.claude_commands_review-issue.md"
 ---
 

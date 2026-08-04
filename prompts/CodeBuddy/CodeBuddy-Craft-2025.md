@@ -2,6 +2,7 @@
 id: "CodeBuddy/CodeBuddy-Craft-2025"
 company: "CodeBuddy"
 product: "CodeBuddy-Craft-2025"
+annotation: "ai"
 source_file: "Craft Prompt.txt"
 ---
 

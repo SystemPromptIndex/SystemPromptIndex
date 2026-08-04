@@ -3,6 +3,7 @@ id: "dagu/dagu_-_internal_agent_system_prompt"
 company: "dagu"
 product: "dagu - internal agent system prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "internal_agent_system_prompt.txt"
 ---
 

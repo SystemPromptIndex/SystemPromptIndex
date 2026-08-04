@@ -3,6 +3,7 @@ id: "Meta/Meta-AI-Llama-3-2024-04-18"
 company: "Meta"
 product: "Meta-AI-Llama-3-2024-04-18"
 category: "Chat / General"
+annotation: "human"
 source_file: "metaai_llama3-04182024.md"
 ---
 

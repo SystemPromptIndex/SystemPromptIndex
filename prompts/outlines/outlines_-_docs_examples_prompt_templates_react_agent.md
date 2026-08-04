@@ -3,6 +3,7 @@ id: "outlines/outlines_-_docs_examples_prompt_templates_react_agent"
 company: "outlines"
 product: "outlines - docs examples prompt templates react agent"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_examples_prompt_templates_react_agent.txt"
 ---
 

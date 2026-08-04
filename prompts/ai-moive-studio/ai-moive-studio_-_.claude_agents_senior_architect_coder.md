@@ -3,6 +3,7 @@ id: "ai-moive-studio/ai-moive-studio_-_.claude_agents_senior_architect_coder"
 company: "ai-moive-studio"
 product: "ai-moive-studio - .claude agents senior architect coder"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.claude_agents_senior-architect-coder.md"
 ---
 

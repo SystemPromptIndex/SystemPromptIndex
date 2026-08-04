@@ -3,6 +3,7 @@ id: "lemonai/lemonai_-_src_template_search.template"
 company: "lemonai"
 product: "lemonai - src template search.template"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_src_template_search.template.txt"
 ---
 

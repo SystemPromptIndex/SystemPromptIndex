@@ -3,10 +3,11 @@
   "company": "Curie",
   "product": "Curie - benchmark exp bench evaluation prompts eval jud...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "benchmark_exp_bench_evaluation_prompts_eval_judge_setup_partial_prompt.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Compare setup_output against setup_ground_truth. Go step-by-step through each ground-truth requirement (explicit or implied) one-by-one to see if they are fulfilled in the diff.",
+      "start": 924,
+      "end": 1101,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to compare outputs against ground truth requirements step-by-step, focus on whether requirements are fulfilled, and provide detailed explanations and error analysis. This promotes rigorous, truthful evaluation rather than fabrication or guesswork.",
+      "risky": false
+    },
+    {
+      "text": "Use the setup_ground_truth_scripts as code-level guidance: While the output doesn't need to match these scripts exactly, use them to ground your judgment of whether the implementation is reasonable and sufficiently close to what a correct implementation should look like.",
+      "start": 1107,
+      "end": 1378,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to compare outputs against ground truth requirements step-by-step, focus on whether requirements are fulfilled, and provide detailed explanations and error analysis. This promotes rigorous, truthful evaluation rather than fabrication or guesswork.",
+      "risky": false
+    }
+  ]
 }

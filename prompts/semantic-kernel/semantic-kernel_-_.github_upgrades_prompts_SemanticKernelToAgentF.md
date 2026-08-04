@@ -3,6 +3,7 @@ id: "semantic-kernel/semantic-kernel_-_.github_upgrades_prompts_SemanticKernelTo
 company: "semantic-kernel"
 product: "semantic-kernel - .github upgrades prompts SemanticKernelToAgentF..."
 category: "general-purpose"
+annotation: "ai"
 source_file: ".github_upgrades_prompts_SemanticKernelToAgentFramework.md"
 ---
 

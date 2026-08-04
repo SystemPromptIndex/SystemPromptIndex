@@ -3,6 +3,7 @@ id: "yoyo-evolve/yoyo-evolve_-_docs_src_usage_single_prompt"
 company: "yoyo-evolve"
 product: "yoyo-evolve - docs src usage single prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_src_usage_single-prompt.md"
 ---
 

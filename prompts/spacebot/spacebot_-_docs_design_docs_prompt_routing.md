@@ -3,6 +3,7 @@ id: "spacebot/spacebot_-_docs_design_docs_prompt_routing"
 company: "spacebot"
 product: "spacebot - docs design docs prompt routing"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_design-docs_prompt-routing.md"
 ---
 

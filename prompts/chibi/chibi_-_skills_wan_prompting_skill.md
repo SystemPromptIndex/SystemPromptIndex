@@ -3,6 +3,7 @@ id: "chibi/chibi_-_skills_wan_prompting_skill"
 company: "chibi"
 product: "chibi - skills wan prompting skill"
 category: "general-purpose"
+annotation: "ai"
 source_file: "skills_wan_prompting_skill.md"
 ---
 

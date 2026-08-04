@@ -3,6 +3,7 @@ id: "12-factor-agents/12-factor-agents_-_workshops_2025_05_sections_01_cli_and_a
 company: "12-factor-agents"
 product: "12-factor-agents - workshops 2025 05 sections 01 cli and agent README"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_workshops_2025-05_sections_01-cli-and-agent_README.md"
 ---
 

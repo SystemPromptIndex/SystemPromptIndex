@@ -3,6 +3,7 @@ id: "CATArena/CATArena_-_gomokugame_gomoku_develop_instruction"
 company: "CATArena"
 product: "CATArena - gomokugame gomoku develop instruction"
 category: "coding-agents"
+annotation: "ai"
 source_file: "gomokugame_gomoku_develop_instruction.md"
 ---
 

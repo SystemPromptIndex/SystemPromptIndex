@@ -3,26 +3,27 @@
   "company": "openclaw",
   "product": "openclaw - docs framework agent",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs-framework-agent.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "mismatches (`missing file`, `stale route`, `wrong base path`)",
+      "start": 732,
+      "end": 793,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes validation and consistency checking, requiring the agent to detect mismatches, report missing files, stale routes, and wrong base paths. It requires the agent to explicitly report 'path assumptions made,' which promotes transparency about uncertainty and reasoning.",
+      "risky": false
+    },
+    {
+      "text": "tools:\n  - Read\n  - Glob\n  - Grep",
+      "start": 160,
+      "end": 193,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt follows a read-only, validation-first approach. The tools granted are limited to Read, Glob, and Grep — all non-destructive operations. The agent is instructed to detect and read configuration first before making assessments, and the maxTurns is capped at 10, limiting scope. The permissionMode is set to 'default' rather than elevated.",
+      "risky": false
+    },
+    {
+      "text": "detect and read framework config first (Fern/Sphinx/Mintlify/custom)",
+      "start": 442,
+      "end": 510,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt follows a read-only, validation-first approach. The tools granted are limited to Read, Glob, and Grep — all non-destructive operations. The agent is instructed to detect and read configuration first before making assessments, and the maxTurns is capped at 10, limiting scope. The permissionMode is set to 'default' rather than elevated.",
+      "risky": false
+    }
+  ]
 }

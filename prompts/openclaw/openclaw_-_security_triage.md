@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_security_triage"
 company: "openclaw"
 product: "openclaw - security triage"
 category: "coding-agents"
+annotation: "ai"
 source_file: "security-triage.md"
 ---
 

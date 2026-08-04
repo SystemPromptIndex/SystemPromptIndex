@@ -3,6 +3,7 @@ id: "SecurityClaw/SecurityClaw_-_core_chat_router_SUPERVISOR_NEXT_ACTION_PROMPT"
 company: "SecurityClaw"
 product: "SecurityClaw - core chat router SUPERVISOR NEXT ACTION PROMPT"
 category: "legal"
+annotation: "ai"
 source_file: "core_chat_router_SUPERVISOR_NEXT_ACTION_PROMPT.md"
 ---
 

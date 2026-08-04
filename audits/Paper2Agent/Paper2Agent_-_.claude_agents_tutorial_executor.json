@@ -3,24 +3,25 @@
   "company": "Paper2Agent",
   "product": "Paper2Agent - .claude agents tutorial executor",
   "category": "research",
+  "annotation": "ai",
   "source_file": "clone_.claude_agents_tutorial-executor.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": -1,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 2,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -32,8 +33,8 @@
     "problematic": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**No Mock Data**: Never use mock implementations - always use real data and real function implementations",
+      "start": 2384,
+      "end": 2489,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes truthfulness and data integrity through its core principles. It explicitly prohibits mock data and mock implementations, requiring real data and real function implementations. It also requires verification of outputs and URLs.",
+      "risky": false
+    },
+    {
+      "text": "Mock code and mock data are not acceptable in any form",
+      "start": 10736,
+      "end": 10790,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes truthfulness and data integrity through its core principles. It explicitly prohibits mock data and mock implementations, requiring real data and real function implementations. It also requires verification of outputs and URLs.",
+      "risky": false
+    },
+    {
+      "text": "Supply the real API key in the notebook as function arguments.",
+      "start": 10521,
+      "end": 10583,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the agent to supply real API keys directly in notebooks, which is a significant security and privacy concern. Embedding secrets in notebook files risks exposure through version control, sharing, or logs. This violates data protection best practices.",
+      "risky": false
+    },
+    {
+      "text": "If the notebook reports a version compatibility issue, you should modify the source code of the github repo in `<github_repo_name>-env/` to make it compatible with current installed version.",
+      "start": 8716,
+      "end": 8906,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to execute arbitrary notebook code, install packages, modify source code in environments, and download data files without any safety validation, sandboxing, or user confirmation requirements. There are no guardrails against executing malicious code found in tutorials, and the agent is instructed to automatically install missing packages and modify source code.",
+      "risky": false
+    }
+  ]
 }

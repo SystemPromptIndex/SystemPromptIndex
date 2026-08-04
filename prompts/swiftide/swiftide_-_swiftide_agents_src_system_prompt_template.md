@@ -3,6 +3,7 @@ id: "swiftide/swiftide_-_swiftide_agents_src_system_prompt_template"
 company: "swiftide"
 product: "swiftide - swiftide agents src system prompt template"
 category: "general-purpose"
+annotation: "ai"
 source_file: "swiftide-agents_src_system_prompt_template.md"
 ---
 

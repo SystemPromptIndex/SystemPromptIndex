@@ -3,6 +3,7 @@ id: "harbor/harbor_-_adapters_aa_lcr_template_instruction"
 company: "harbor"
 product: "harbor - adapters aa lcr template instruction"
 category: "general-purpose"
+annotation: "ai"
 source_file: "adapters_aa-lcr_template_instruction.md"
 ---
 

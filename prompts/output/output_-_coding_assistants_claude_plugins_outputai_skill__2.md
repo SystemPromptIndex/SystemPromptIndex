@@ -3,6 +3,7 @@ id: "output/output_-_coding_assistants_claude_plugins_outputai_skill__2"
 company: "output"
 product: "output - coding assistants claude plugins outputai skill..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "coding_assistants_claude_plugins_outputai_skills_output-dev-prompt-file_SKILL.md"
 ---
 

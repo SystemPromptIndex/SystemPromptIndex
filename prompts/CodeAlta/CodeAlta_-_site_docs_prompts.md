@@ -3,6 +3,7 @@ id: "CodeAlta/CodeAlta_-_site_docs_prompts"
 company: "CodeAlta"
 product: "CodeAlta - site docs prompts"
 category: "coding-agents"
+annotation: "ai"
 source_file: "site_docs_prompts.md"
 ---
 

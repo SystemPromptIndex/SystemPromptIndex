@@ -3,26 +3,27 @@
   "company": "claude-code-book",
   "product": "claude-code-book - 附录 A 源码导航地图",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_附录_A-源码导航地图.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 3,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "| Shell 执行引擎 | Shell 命令的权限校验、只读检测与安全沙箱执行。将 Shell 命令的执行抽象为统一的工具接口，包含命令注入防护、超时管理和输出截断 | 命令执行请求、输出流（stdout/stderr）、退出状态码 | 第 3 章、第 4 章 |",
+      "start": 1264,
+      "end": 1397,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt extensively describes safety mechanisms for tool execution, including permission checking pipelines, input validation via Zod schemas, read-only detection, security sandboxing for shell execution, command injection protection, and a multi-layered permission model (ask/auto-edit/full-auto/plan modes). The architecture explicitly requires every tool call to pass through a complete permission decision chain.",
+      "risky": false
+    },
+    {
+      "text": "权限管线是 Claude Code 安全模型的核心。每个工具调用都必须通过这条完整的决策链才能被执行。权限判定的结果决定了工具是否执行、是否需要用户确认、或者是否直接拒绝。",
+      "start": 9593,
+      "end": 9679,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt extensively describes safety mechanisms for tool execution, including permission checking pipelines, input validation via Zod schemas, read-only detection, security sandboxing for shell execution, command injection protection, and a multi-layered permission model (ask/auto-edit/full-auto/plan modes). The architecture explicitly requires every tool call to pass through a complete permission decision chain.",
+      "risky": false
+    },
+    {
+      "text": "步骤 [5] 的权限检查是系统中最重要的安全决策点，决定了工具是否被执行",
+      "start": 9455,
+      "end": 9491,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt extensively describes safety mechanisms for tool execution, including permission checking pipelines, input validation via Zod schemas, read-only detection, security sandboxing for shell execution, command injection protection, and a multi-layered permission model (ask/auto-edit/full-auto/plan modes). The architecture explicitly requires every tool call to pass through a complete permission decision chain.",
+      "risky": false
+    }
+  ]
 }

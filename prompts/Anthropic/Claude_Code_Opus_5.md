@@ -2,6 +2,7 @@
 id: "Anthropic/Claude_Code_Opus_5"
 company: "Anthropic"
 product: "Claude Code Opus 5"
+annotation: "ai"
 source_file: "claude-code-opus-5.md"
 ---
 

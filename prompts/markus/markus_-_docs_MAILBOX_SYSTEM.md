@@ -3,6 +3,7 @@ id: "markus/markus_-_docs_MAILBOX_SYSTEM"
 company: "markus"
 product: "markus - docs MAILBOX SYSTEM"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_MAILBOX-SYSTEM.md"
 ---
 

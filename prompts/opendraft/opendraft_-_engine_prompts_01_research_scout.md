@@ -3,6 +3,7 @@ id: "opendraft/opendraft_-_engine_prompts_01_research_scout"
 company: "opendraft"
 product: "opendraft - engine prompts 01 research scout"
 category: "coding-agents"
+annotation: "ai"
 source_file: "engine_prompts_01_research_scout.md"
 ---
 

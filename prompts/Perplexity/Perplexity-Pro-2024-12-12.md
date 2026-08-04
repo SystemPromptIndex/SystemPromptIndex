@@ -3,6 +3,7 @@ id: "Perplexity/Perplexity-Pro-2024-12-12"
 company: "Perplexity"
 product: "Perplexity-Pro-2024-12-12"
 category: "Search / Research"
+annotation: "human"
 source_file: "20241212-Perplexity-Pro.md"
 ---
 

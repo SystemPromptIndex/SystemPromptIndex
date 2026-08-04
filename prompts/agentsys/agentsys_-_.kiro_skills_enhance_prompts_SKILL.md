@@ -3,6 +3,7 @@ id: "agentsys/agentsys_-_.kiro_skills_enhance_prompts_SKILL"
 company: "agentsys"
 product: "agentsys - .kiro skills enhance prompts SKILL"
 category: "research"
+annotation: "ai"
 source_file: ".kiro_skills_enhance-prompts_SKILL.md"
 ---
 

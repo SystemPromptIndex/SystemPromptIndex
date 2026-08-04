@@ -3,26 +3,27 @@
   "company": "claude-seo",
   "product": "claude-seo - agents seo backlinks",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "clone_agents_seo-backlinks.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Never produce a misleading numeric score when most factors lack data sources",
+      "start": 1197,
+      "end": 1273,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes truthfulness and information integrity through confidence-weighted scoring, mandatory source labeling for every metric, explicit handling of insufficient data, and a prohibition against presenting inferences as facts. The tiered confidence system and pre-delivery validation checks are exemplary.",
+      "risky": false
+    },
+    {
+      "text": "SSRF and DNS-rebinding protection live in `scripts/url_safety.py` — never call `requests.get` directly on user-supplied URLs.",
+      "start": 5900,
+      "end": 6025,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt includes explicit security protections against SSRF and DNS-rebinding attacks, prohibits direct HTTP requests on user-supplied URLs, and routes all URL fetching through a safety module. This demonstrates awareness of data protection and secure handling of external inputs.",
+      "risky": false
+    },
+    {
+      "text": "**Rate limit:** 1 request per 10 seconds (built into script). Plan calls carefully.",
+      "start": 1652,
+      "end": 1735,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool safety practices including credential checking before execution, tiered access controls, rate limit awareness, mandatory pre-delivery validation, structured error handling for failures, and URL safety protections. It validates before acting and handles partial failures gracefully.",
+      "risky": false
+    }
+  ]
 }

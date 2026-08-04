@@ -3,6 +3,7 @@ id: "open-swe/open-swe_-_open_swe_prompt"
 company: "open-swe"
 product: "open-swe - open swe / prompt"
 category: "extracted"
+annotation: "ai"
 source_file: "open-swe__prompt.txt"
 ---
 

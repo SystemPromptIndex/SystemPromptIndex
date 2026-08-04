@@ -3,6 +3,7 @@ id: "Bolt/Bolt-Open-Source-2024-10"
 company: "Bolt"
 product: "Bolt-Open-Source-2024-10"
 category: "Other"
+annotation: "human"
 source_file: "Bolt.new.txt"
 ---
 

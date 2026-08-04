@@ -3,6 +3,7 @@ id: "owly/owly_-_AI_Tool_System"
 company: "owly"
 product: "owly - AI Tool System"
 category: "customer-service"
+annotation: "ai"
 source_file: "AI-Tool-System.md"
 ---
 

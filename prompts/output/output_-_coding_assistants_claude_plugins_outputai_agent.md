@@ -3,6 +3,7 @@ id: "output/output_-_coding_assistants_claude_plugins_outputai_agent"
 company: "output"
 product: "output - coding assistants claude plugins outputai agent..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "coding_assistants_claude_plugins_outputai_agents_workflow_prompt_writer.md"
 ---
 

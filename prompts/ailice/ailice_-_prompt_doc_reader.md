@@ -3,6 +3,7 @@ id: "ailice/ailice_-_prompt_doc_reader"
 company: "ailice"
 product: "ailice - prompt doc reader"
 category: "browser-automation"
+annotation: "ai"
 source_file: "prompt_doc_reader.txt"
 ---
 

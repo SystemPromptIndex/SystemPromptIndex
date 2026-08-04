@@ -3,6 +3,7 @@ id: "HaluMem/HaluMem_-_prompts_stage2_3_profile2skeleton_prompt"
 company: "HaluMem"
 product: "HaluMem - prompts stage2 3 profile2skeleton prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_stage2_3_profile2skeleton_prompt.txt"
 ---
 

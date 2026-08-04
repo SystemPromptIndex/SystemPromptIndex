@@ -3,6 +3,7 @@ id: "cherry-studio/cherry-studio_-_resources_skills_skill_creator_SKILL"
 company: "cherry-studio"
 product: "cherry-studio - resources skills skill creator SKILL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_resources_skills_skill-creator_SKILL.md"
 ---
 

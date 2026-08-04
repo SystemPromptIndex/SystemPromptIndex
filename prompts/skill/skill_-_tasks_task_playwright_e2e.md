@@ -3,6 +3,7 @@ id: "skill/skill_-_tasks_task_playwright_e2e"
 company: "skill"
 product: "skill - tasks task playwright e2e"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_tasks_task_playwright_e2e.md"
 ---
 

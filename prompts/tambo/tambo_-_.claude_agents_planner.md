@@ -3,6 +3,7 @@ id: "tambo/tambo_-_.claude_agents_planner"
 company: "tambo"
 product: "tambo - .claude agents planner"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.claude_agents_planner.md"
 ---
 

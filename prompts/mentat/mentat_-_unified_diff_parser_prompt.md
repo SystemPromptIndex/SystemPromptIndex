@@ -3,6 +3,7 @@ id: "mentat/mentat_-_unified_diff_parser_prompt"
 company: "mentat"
 product: "mentat - unified diff parser prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "unified_diff_parser_prompt.txt"
 ---
 

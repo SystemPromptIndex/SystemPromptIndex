@@ -3,6 +3,7 @@ id: "agent-guardrails-template/agent-guardrails-template_-_PROMPTING_GUIDE"
 company: "agent-guardrails-template"
 product: "agent-guardrails-template - PROMPTING GUIDE"
 category: "coding-agents"
+annotation: "ai"
 source_file: "PROMPTING_GUIDE.md"
 ---
 

@@ -3,6 +3,7 @@ id: "trading-agents/trading-agents_-_trading_agents_market_analyst"
 company: "trading-agents"
 product: "trading-agents - trading agents / market analyst"
 category: "extracted"
+annotation: "ai"
 source_file: "trading-agents__market_analyst.txt"
 ---
 

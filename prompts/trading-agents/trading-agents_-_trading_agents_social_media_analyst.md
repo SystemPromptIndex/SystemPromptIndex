@@ -3,6 +3,7 @@ id: "trading-agents/trading-agents_-_trading_agents_social_media_analyst"
 company: "trading-agents"
 product: "trading-agents - trading agents / social media analyst"
 category: "extracted"
+annotation: "ai"
 source_file: "trading-agents__social_media_analyst.txt"
 ---
 

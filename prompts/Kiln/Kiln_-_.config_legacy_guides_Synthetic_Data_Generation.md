@@ -3,6 +3,7 @@ id: "Kiln/Kiln_-_.config_legacy_guides_Synthetic_Data_Generation"
 company: "Kiln"
 product: "Kiln - .config legacy guides Synthetic Data Generation"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.config_legacy_guides_Synthetic Data Generation.md"
 ---
 

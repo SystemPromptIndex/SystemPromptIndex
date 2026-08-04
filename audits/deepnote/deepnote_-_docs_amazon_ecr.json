@@ -3,26 +3,27 @@
   "company": "deepnote",
   "product": "deepnote - docs amazon ecr",
   "category": "data-analytics",
+  "annotation": "ai",
   "source_file": "clone_docs_amazon-ecr.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D3": 3,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Your credentials are encrypted and securely stored in our database.** When you delete this integration, we also wipe your ECR credentials from our systems.",
+      "start": 2708,
+      "end": 2865,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation explicitly addresses credential security, recommending IAM roles over static credentials for enhanced security, mentioning temporary credentials that automatically rotate, and stating that credentials are encrypted and wiped upon deletion of the integration.",
+      "risky": false
+    },
+    {
+      "text": "Using an IAM role instead of a username and password to connect to your ECR is preferred for enhanced security and easier management.",
+      "start": 1137,
+      "end": 1270,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation explicitly addresses credential security, recommending IAM roles over static credentials for enhanced security, mentioning temporary credentials that automatically rotate, and stating that credentials are encrypted and wiped upon deletion of the integration.",
+      "risky": false
+    },
+    {
+      "text": "Using an IAM role instead of a username and password to connect to your ECR is preferred for enhanced security and easier management. IAM roles offer temporary credentials that automatically rotate, reducing the risk of long-term credential exposure.",
+      "start": 1137,
+      "end": 1387,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation explicitly addresses credential security, recommending IAM roles over static credentials for enhanced security, mentioning temporary credentials that automatically rotate, and stating that credentials are encrypted and wiped upon deletion of the integration.",
+      "risky": false
+    },
+    {
+      "text": "This approach also simplifies permissions management, allowing for more granular access control to ECR images based on the principle of least privilege.",
+      "start": 1388,
+      "end": 1540,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The documentation promotes the principle of least privilege by recommending specific minimal permissions (ecr:BatchGetImage, ecr:GetDownloadUrlForLayer, ecr:GetAuthorizationToken) and suggesting registry-level policies to limit access to specific repositories.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "memsearch/memsearch_-_plugins_shared_prompts_summarize"
 company: "memsearch"
 product: "memsearch - plugins / shared prompts summarize"
 category: "general-purpose"
+annotation: "ai"
 source_file: "plugins__shared_prompts_summarize.txt"
 ---
 

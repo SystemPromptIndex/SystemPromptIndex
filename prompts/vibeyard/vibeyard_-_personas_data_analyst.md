@@ -3,6 +3,7 @@ id: "vibeyard/vibeyard_-_personas_data_analyst"
 company: "vibeyard"
 product: "vibeyard - personas data analyst"
 category: "coding-agents"
+annotation: "ai"
 source_file: "personas_data-analyst.md"
 ---
 

@@ -2,6 +2,7 @@
 id: "Manus/Manus-Agent-Loop-2025-03"
 company: "Manus"
 product: "Manus-Agent-Loop-2025-03"
+annotation: "ai"
 source_file: "Agent loop.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "PantheonOS/PantheonOS_-_examples_single_cell_spatial_analysis_agents_sy"
 company: "PantheonOS"
 product: "PantheonOS - examples single cell spatial analysis agents sy..."
 category: "research"
+annotation: "ai"
 source_file: "examples_single_cell_spatial_analysis_agents_system_manager.md"
 ---
 

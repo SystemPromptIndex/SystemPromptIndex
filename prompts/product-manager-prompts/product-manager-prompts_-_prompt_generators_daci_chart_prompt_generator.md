@@ -3,6 +3,7 @@ id: "product-manager-prompts/product-manager-prompts_-_prompt_generators_daci_ch
 company: "product-manager-prompts"
 product: "product-manager-prompts - prompt generators daci chart prompt generator"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompt-generators_daci-chart-prompt-generator.md"
 ---
 

@@ -2,6 +2,7 @@
 id: "xAI/Grok-4.1-2025-11-17"
 company: "xAI"
 product: "Grok-4.1-2025-11-17"
+annotation: "ai"
 source_file: "GROK-4.1_Nov-17-2025.txt"
 ---
 

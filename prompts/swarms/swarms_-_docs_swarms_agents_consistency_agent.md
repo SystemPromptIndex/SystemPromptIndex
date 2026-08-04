@@ -3,6 +3,7 @@ id: "swarms/swarms_-_docs_swarms_agents_consistency_agent"
 company: "swarms"
 product: "swarms - docs swarms agents consistency agent"
 category: "multi-agent"
+annotation: "ai"
 source_file: "docs_swarms_agents_consistency_agent.md"
 ---
 

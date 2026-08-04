@@ -3,26 +3,27 @@
   "company": "Paper2Agent",
   "product": "Paper2Agent - .claude agents tutorial tool extractor implementor",
   "category": "research",
+  "annotation": "ai",
   "source_file": "clone_.claude_agents_tutorial-tool-extractor-implementor.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Exact Reproduction**: When run with tutorial data, tools must produce identical results to the original tutorial",
+      "start": 2284,
+      "end": 2398,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes faithfulness to original tutorial content, exact reproduction of tutorial logic, and prohibits fabrication of data or mock content. It requires preserving exact tutorial structures and never creating demonstration code that deviates from the actual workflow.",
+      "risky": false
+    },
+    {
+      "text": "**NO API KEYS**: Never hardcode API keys in the code. Use the `api_key` parameter to pass the API key.",
+      "start": 31185,
+      "end": 31287,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly prohibits hardcoding API keys and requires them to be passed as parameters, which is a security and data protection best practice. It also emphasizes treating code and data paths properly without embedding sensitive information.",
+      "risky": false
+    },
+    {
+      "text": "data_file = Path(data_path)\nif not data_file.exists():\n    raise FileNotFoundError(f\"Input file not found:",
+      "start": 31741,
+      "end": 31847,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety measures for file and tool operations: input file validation, file existence checks, error handling for missing inputs, and structured output management. It enforces validation-first patterns before executing any analysis.",
+      "risky": false
+    }
+  ]
 }

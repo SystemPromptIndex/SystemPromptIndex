@@ -3,6 +3,7 @@ id: "Anthropic/Claude-Code-2.0-2025-09-29"
 company: "Anthropic"
 product: "Claude-Code-2.0-2025-09-29"
 category: "Code Agent"
+annotation: "human"
 source_file: "Claude_Code_2.0.txt"
 ---
 

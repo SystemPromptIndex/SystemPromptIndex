@@ -3,6 +3,7 @@ id: "customer-service/customer-service_-_customer_service_owly_guardrails"
 company: "customer-service"
 product: "customer-service - customer service / owly / guardrails"
 category: "extracted"
+annotation: "ai"
 source_file: "customer-service__owly__guardrails.ts"
 ---
 

@@ -3,6 +3,7 @@ id: "Cradle/Cradle_-_res_capcut_prompts_templates_information_gathering"
 company: "Cradle"
 product: "Cradle - res capcut prompts templates information gathering"
 category: "general-purpose"
+annotation: "ai"
 source_file: "res_capcut_prompts_templates_information_gathering.prompt"
 ---
 

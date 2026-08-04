@@ -3,6 +3,7 @@ id: "ai-orchestrator/ai-orchestrator_-_skills_prompt_engineering_SKILL"
 company: "ai-orchestrator"
 product: "ai-orchestrator - skills prompt engineering SKILL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "skills_prompt-engineering_SKILL.md"
 ---
 

@@ -3,27 +3,28 @@
   "company": "lotti",
   "product": "lotti - docs adr 0009 redundant change proposal suppres...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_docs_adr_0009-redundant-change-proposal-suppression.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "This feedback is critical: without it, the LLM would believe its tool call\nsucceeded and might build subsequent reasoning on that assumption.",
+      "start": 3760,
+      "end": 3901,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The system explicitly provides corrective feedback to the LLM when proposals are suppressed, ensuring the LLM does not operate on stale or incorrect assumptions about the current state. The feedback loop is described as 'critical' to prevent the LLM from believing a tool call succeeded when it was actually redundant. This promotes information integrity within the system.",
+      "risky": false
+    },
+    {
+      "text": "succeeded and might build subsequent reasoning on that assumption.",
+      "start": 3835,
+      "end": 3901,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The system explicitly provides corrective feedback to the LLM when proposals are suppressed, ensuring the LLM does not operate on stale or incorrect assumptions about the current state. The feedback loop is described as 'critical' to prevent the LLM from believing a tool call succeeded when it was actually redundant. This promotes information integrity within the system.",
+      "risky": false
+    },
+    {
+      "text": "exception, the proposal is **kept** (not suppressed). This ensures we never\nsilently drop a legitimate change due to a transient DB error.",
+      "start": 4008,
+      "end": 4146,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The ADR demonstrates strong tool/action safety practices. It implements a conservative fallback that keeps proposals rather than silently dropping them when the resolver is unavailable, preventing legitimate changes from being lost due to transient errors. The two-layer filtering system validates tool calls before they reach the user, and the deferred confirmation workflow ensures user review before execution.",
+      "risky": false
+    },
+    {
+      "text": "Users no longer see no-op proposals in the confirmation UI.",
+      "start": 5119,
+      "end": 5178,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The system explicitly preserves user agency by filtering redundant proposals before they reach the user, preventing confusion and ensuring the confirmation UI only shows meaningful changes. The deferred confirmation workflow (referenced from ADR 0006) keeps consequential actions under user control, and the system avoids presenting misleading no-op suggestions.",
+      "risky": false
+    },
+    {
+      "text": "Filtering at execution time (after user confirms) is insufficient — the user\nshouldn't see proposals that are already satisfied.",
+      "start": 850,
+      "end": 978,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The system explicitly preserves user agency by filtering redundant proposals before they reach the user, preventing confusion and ensuring the confirmation UI only shows meaningful changes. The deferred confirmation workflow (referenced from ADR 0006) keeps consequential actions under user control, and the system avoids presenting misleading no-op suggestions.",
+      "risky": false
+    }
+  ]
 }

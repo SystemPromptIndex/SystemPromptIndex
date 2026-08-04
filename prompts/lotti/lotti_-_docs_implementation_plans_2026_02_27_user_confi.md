@@ -3,6 +3,7 @@ id: "lotti/lotti_-_docs_implementation_plans_2026_02_27_user_confi"
 company: "lotti"
 product: "lotti - docs implementation plans 2026 02 27 user confi..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_implementation_plans_2026-02-27_user_confirmation_workflow.md"
 ---
 

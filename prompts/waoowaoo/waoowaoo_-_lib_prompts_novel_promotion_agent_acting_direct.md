@@ -3,6 +3,7 @@ id: "waoowaoo/waoowaoo_-_lib_prompts_novel_promotion_agent_acting_direct"
 company: "waoowaoo"
 product: "waoowaoo - lib prompts novel promotion agent acting direct..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "lib_prompts_novel-promotion_agent_acting_direction.en.txt"
 ---
 

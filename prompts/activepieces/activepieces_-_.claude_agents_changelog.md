@@ -3,6 +3,7 @@ id: "activepieces/activepieces_-_.claude_agents_changelog"
 company: "activepieces"
 product: "activepieces - .claude agents changelog"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.claude_agents_changelog.md"
 ---
 

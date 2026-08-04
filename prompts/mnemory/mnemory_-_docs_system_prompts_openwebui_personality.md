@@ -3,6 +3,7 @@ id: "mnemory/mnemory_-_docs_system_prompts_openwebui_personality"
 company: "mnemory"
 product: "mnemory - docs system prompts openwebui personality"
 category: "multi-agent"
+annotation: "ai"
 source_file: "docs_system-prompts_openwebui-personality.md"
 ---
 

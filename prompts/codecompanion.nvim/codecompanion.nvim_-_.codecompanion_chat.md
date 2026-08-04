@@ -3,6 +3,7 @@ id: "codecompanion.nvim/codecompanion.nvim_-_.codecompanion_chat"
 company: "codecompanion.nvim"
 product: "codecompanion.nvim - .codecompanion chat"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.codecompanion_chat.md"
 ---
 

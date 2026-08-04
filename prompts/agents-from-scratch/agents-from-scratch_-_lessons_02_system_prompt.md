@@ -3,6 +3,7 @@ id: "agents-from-scratch/agents-from-scratch_-_lessons_02_system_prompt"
 company: "agents-from-scratch"
 product: "agents-from-scratch - lessons 02 system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "lessons_02_system_prompt.md"
 ---
 

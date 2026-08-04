@@ -3,6 +3,7 @@ id: "claude-council/claude-council_-_skills_deep_execution_agent_prompt_template
 company: "claude-council"
 product: "claude-council - skills deep execution agent prompt template"
 category: "general-purpose"
+annotation: "ai"
 source_file: "skills_deep-execution_agent-prompt-template.md"
 ---
 

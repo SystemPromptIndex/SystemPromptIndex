@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_complete_prompts_coordinator_prom
 company: "claude-code-prompts"
 product: "claude-code-prompts - complete prompts coordinator prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "complete-prompts_coordinator-prompt.md"
 ---
 

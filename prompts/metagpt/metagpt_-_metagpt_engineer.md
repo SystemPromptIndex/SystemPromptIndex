@@ -3,6 +3,7 @@ id: "metagpt/metagpt_-_metagpt_engineer"
 company: "metagpt"
 product: "metagpt - metagpt / engineer"
 category: "extracted"
+annotation: "ai"
 source_file: "metagpt__engineer.txt"
 ---
 

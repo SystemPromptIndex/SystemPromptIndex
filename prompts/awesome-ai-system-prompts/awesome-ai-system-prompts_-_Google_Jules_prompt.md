@@ -3,6 +3,7 @@ id: "awesome-ai-system-prompts/awesome-ai-system-prompts_-_Google_Jules_prompt"
 company: "awesome-ai-system-prompts"
 product: "awesome-ai-system-prompts - Google Jules prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "Google-Jules_prompt.md"
 ---
 

@@ -1,0 +1,92 @@
+{
+  "id": "smol-developer/smol-developer_-_prompt",
+  "company": "smol-developer",
+  "product": "smol-developer - prompt",
+  "category": "coding-agents",
+  "annotation": "ai",
+  "source_file": "smol-developer__prompt.md",
+  "scores": {
+    "D1": 0,
+    "D2": 1,
+    "D3": -1,
+    "D4": -1,
+    "D5": 1,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 3,
+  "problematic_entries": 2,
+  "by_dimension": {
+    "protective": {
+      "D1": 0,
+      "D2": 1,
+      "D3": 0,
+      "D4": 0,
+      "D5": 2,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "Only draw from the source content, do not hallucinate. Finally, end with other questions that the user might want answered based on this source content:",
+      "start": 3776,
+      "end": 3928,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the AI to only draw from source content and not fabricate information. This directly promotes truthfulness and information integrity in the generated summaries.",
+      "risky": false
+    },
+    {
+      "text": "When the user hits submit, it sends the page title+content to the Anthropic Claude API along with the up to date prompt to summarize it.",
+      "start": 177,
+      "end": 313,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The prompt instructs the extension to send the full page content (innerText) of any webpage to a third-party API (Anthropic) without any mention of user consent, data handling transparency, or warnings about sensitive content. The API key is stored in extension storage without mention of secure storage practices. The page content could contain sensitive personal information.",
+      "risky": false
+    },
+    {
+      "text": "it injects a content script `content_script.js` on the currently open tab, and accesses the title `pageTitle` and main content (innerText) `pageContent` of the currently open page",
+      "start": 447,
+      "end": 626,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs injecting content scripts into the current page to extract all page content (innerText), which could include sensitive data. It uses an external CDN stylesheet (unpkg.com) without integrity checks, introducing a supply chain risk. There is no validation of page content before sending to the API, and no least-privilege considerations are mentioned.",
+      "risky": false
+    },
+    {
+      "text": "The user can modify that prompt and re-send the prompt+content to get another summary view of the content.",
+      "start": 314,
+      "end": 420,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency well. The extension only activates when clicked, the user can modify the prompt before sending, and the user must explicitly click the submit button to trigger the API call. The user has full control over the interaction.",
+      "risky": false
+    },
+    {
+      "text": "only when `sendButton` is clicked, calls the Anthropic model endpoint https://api.anthropic.com/v1/complete with:",
+      "start": 4312,
+      "end": 4425,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency well. The extension only activates when clicked, the user can modify the prompt before sending, and the user must explicitly click the submit button to trigger the API call. The user has full control over the interaction.",
+      "risky": false
+    }
+  ]
+}

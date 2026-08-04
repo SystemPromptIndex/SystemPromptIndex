@@ -3,6 +3,7 @@ id: "lemonai/lemonai_-_src_template_planning"
 company: "lemonai"
 product: "lemonai - src template planning"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_src_template_planning.txt"
 ---
 

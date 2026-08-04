@@ -3,24 +3,25 @@
   "company": "oh-my-openagent",
   "product": "oh-my-openagent - packages prompts core prompts atlas gemini",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "packages_prompts-core_prompts_atlas_gemini.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": -1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 2,
+  "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -34,12 +35,40 @@
       "D2": 0,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**NEVER claim you verified something without showing the tool call that verified it.** Reading a file in your head is NOT verification.",
+      "start": 914,
+      "end": 1049,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes verification and distrust of unverified claims. It explicitly forbids assuming or reasoning about file contents without actual tool calls, and mandates that every claim be verified with evidence. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Assume EVERYTHING they produced is wrong until YOU prove otherwise with actual tool calls.",
+      "start": 10795,
+      "end": 10885,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes verification and distrust of unverified claims. It explicitly forbids assuming or reasoning about file contents without actual tool calls, and mandates that every claim be verified with evidence. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "After any delegation completes and passes verification → Immediately delegate next task",
+      "start": 5657,
+      "end": 5744,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt explicitly instructs the system to never ask the user for confirmation or approval between steps, and to auto-continue without user input. This removes user agency over consequential actions (code changes, file modifications, system operations) by design. The system is told to never pause for user approval except in extreme circumstances.",
+      "risky": false
+    }
+  ]
 }

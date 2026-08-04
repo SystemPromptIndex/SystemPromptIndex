@@ -3,6 +3,7 @@ id: "WFGY/WFGY_-_archive_wfgy_1_0_prototype_sdk_llms"
 company: "WFGY"
 product: "WFGY - archive wfgy 1 0 prototype sdk llms"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_archive_wfgy_1_0_prototype_sdk_llms.txt"
 ---
 

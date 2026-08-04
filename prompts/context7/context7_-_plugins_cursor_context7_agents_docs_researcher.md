@@ -3,6 +3,7 @@ id: "context7/context7_-_plugins_cursor_context7_agents_docs_researcher"
 company: "context7"
 product: "context7 - plugins cursor context7 agents docs researcher"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_plugins_cursor_context7_agents_docs-researcher.md"
 ---
 

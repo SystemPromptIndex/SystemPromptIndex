@@ -3,6 +3,7 @@ id: "openchatbi/openchatbi_-_openchatbi_prompts_schema_linking_prompt"
 company: "openchatbi"
 product: "openchatbi - openchatbi prompts schema linking prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "openchatbi_prompts_schema_linking_prompt.md"
 ---
 

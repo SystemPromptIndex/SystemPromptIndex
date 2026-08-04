@@ -3,6 +3,7 @@ id: "Claude-Code-Game-Studios/Claude-Code-Game-Studios_-_.claude_agents_qa_teste
 company: "Claude-Code-Game-Studios"
 product: "Claude-Code-Game-Studios - .claude agents qa tester"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.claude_agents_qa-tester.md"
 ---
 

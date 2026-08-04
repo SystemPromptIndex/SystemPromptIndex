@@ -3,6 +3,7 @@ id: "nexent/nexent_-_.claude_skills_prompts_writing_examples"
 company: "nexent"
 product: "nexent - .claude skills prompts writing examples"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".claude_skills_prompts-writing_examples.md"
 ---
 

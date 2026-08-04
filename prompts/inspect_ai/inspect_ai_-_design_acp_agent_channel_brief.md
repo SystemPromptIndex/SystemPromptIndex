@@ -3,6 +3,7 @@ id: "inspect_ai/inspect_ai_-_design_acp_agent_channel_brief"
 company: "inspect_ai"
 product: "inspect_ai - design acp agent channel brief"
 category: "multi-agent"
+annotation: "ai"
 source_file: "design_acp_agent_channel_brief.md"
 ---
 

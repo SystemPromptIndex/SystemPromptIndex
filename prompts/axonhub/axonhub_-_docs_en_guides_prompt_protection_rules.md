@@ -3,6 +3,7 @@ id: "axonhub/axonhub_-_docs_en_guides_prompt_protection_rules"
 company: "axonhub"
 product: "axonhub - docs en guides prompt protection rules"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_en_guides_prompt-protection-rules.md"
 ---
 

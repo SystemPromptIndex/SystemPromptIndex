@@ -3,6 +3,7 @@ id: "magic-context/magic-context_-_packages_plugin_scripts_calibrate_tokenizer_f
 company: "magic-context"
 product: "magic-context - packages plugin scripts calibrate tokenizer fix..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "packages_plugin_scripts_calibrate-tokenizer_fixture-system.txt"
 ---
 

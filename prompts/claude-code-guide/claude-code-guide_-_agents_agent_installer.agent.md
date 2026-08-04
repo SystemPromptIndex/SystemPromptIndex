@@ -3,6 +3,7 @@ id: "claude-code-guide/claude-code-guide_-_agents_agent_installer.agent"
 company: "claude-code-guide"
 product: "claude-code-guide - agents agent installer.agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agents_agent_installer.agent.md"
 ---
 

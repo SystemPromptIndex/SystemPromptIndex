@@ -3,6 +3,7 @@ id: "noderr/noderr_-_noderr_prompts_NDv1.9_Execute_Micro_Fix"
 company: "noderr"
 product: "noderr - noderr prompts NDv1.9 / Execute Micro Fix"
 category: "coding-agents"
+annotation: "ai"
 source_file: "noderr_prompts_NDv1.9__Execute_Micro_Fix.md"
 ---
 

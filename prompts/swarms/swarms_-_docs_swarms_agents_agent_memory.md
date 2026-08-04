@@ -3,6 +3,7 @@ id: "swarms/swarms_-_docs_swarms_agents_agent_memory"
 company: "swarms"
 product: "swarms - docs swarms agents agent memory"
 category: "multi-agent"
+annotation: "ai"
 source_file: "docs_swarms_agents_agent_memory.md"
 ---
 

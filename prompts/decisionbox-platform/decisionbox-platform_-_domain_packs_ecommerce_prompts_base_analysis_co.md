@@ -3,6 +3,7 @@ id: "decisionbox-platform/decisionbox-platform_-_domain_packs_ecommerce_prompts_
 company: "decisionbox-platform"
 product: "decisionbox-platform - domain packs ecommerce prompts base analysis co..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "domain-packs_ecommerce_prompts_base_analysis_conversion.md"
 ---
 

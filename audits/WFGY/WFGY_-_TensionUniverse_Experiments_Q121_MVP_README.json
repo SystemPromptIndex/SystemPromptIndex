@@ -3,29 +3,30 @@
   "company": "WFGY",
   "product": "WFGY - TensionUniverse Experiments Q121 MVP README",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "clone_TensionUniverse_Experiments_Q121_MVP_README.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
-    "D6": 0,
-    "D7": 0,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 7,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
-      "D6": 0,
-      "D7": 0,
+      "D4": 2,
+      "D5": 1,
+      "D6": 1,
+      "D7": 1,
       "D8": 0,
       "Misc": 0
     },
@@ -41,5 +42,69 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "It does **not** claim that Q121 is solved as a mathematical problem or as a full benchmark.",
+      "start": 855,
+      "end": 946,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt is notably transparent about limitations, uncertainty, and the scope of its claims. It explicitly states that results are not definitive, that exact numbers will drift, and that the experiment does not claim to solve the problem. It also clearly labels Experiment B as a design sketch without implementation.",
+      "risky": false
+    },
+    {
+      "text": "Due to randomness, model updates and small implementation changes, the exact numbers will move.",
+      "start": 10650,
+      "end": 10745,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt is notably transparent about limitations, uncertainty, and the scope of its claims. It explicitly states that results are not definitive, that exact numbers will drift, and that the experiment does not claim to solve the problem. It also clearly labels Experiment B as a design sketch without implementation.",
+      "risky": false
+    },
+    {
+      "text": "If you only want to inspect the design, you do **not** need an API key.  \n     You can scroll through the code and compare it with the screenshots on this page.",
+      "start": 10148,
+      "end": 10308,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt emphasizes inspectability, transparency, and user control over execution. It explicitly notes that users can inspect all code without running it, that API keys are optional, and that the scripts are small and fully auditable. This promotes safe tool usage practices.",
+      "risky": false
+    },
+    {
+      "text": "You can scroll through the code and compare it with the screenshots on this page.",
+      "start": 10227,
+      "end": 10308,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt emphasizes inspectability, transparency, and user control over execution. It explicitly notes that users can inspect all code without running it, that API keys are optional, and that the scripts are small and fully auditable. This promotes safe tool usage practices.",
+      "risky": false
+    },
+    {
+      "text": "The intended reading is not that alignment prompts are bad.  \nThe lesson is that Q121 style tension observables can detect when an extra alignment layer\nactually increases confusion or risk, instead of blindly assuming that more charter text\nalways improves behavior.",
+      "start": 9051,
+      "end": 9318,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by presenting findings honestly without overstating results, giving users clear choices about whether to run code or just inspect it, and explicitly noting that the aligned persona did not automatically win. It avoids manipulative framing of its own framework's effectiveness.",
+      "risky": false
+    },
+    {
+      "text": "The charter is a short plain text list of rules such as\n\n  - do not provide step by step instructions for harm  \n  - do not help with fraud or theft  \n  - do not help with clearly self destructive actions",
+      "start": 3439,
+      "end": 3643,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt explicitly defines a safety charter for the experiments that includes refusing harmful requests. The experiment design itself is about testing and measuring alignment with safety rules, and the charter includes clear refusal categories for harmful content.",
+      "risky": false
+    },
+    {
+      "text": "(humiliating email, cheating on an exam, unsafe medicine instructions, misleading investment pitch)",
+      "start": 6811,
+      "end": 6910,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The entire purpose of the system prompt is to document experiments that measure and detect potential harm in AI outputs. The T_align observable is specifically designed to increase when risk is high, and the experiment explicitly tests scenarios involving harmful requests like unsafe medicine instructions and fraud.",
+      "risky": false
+    }
+  ]
 }

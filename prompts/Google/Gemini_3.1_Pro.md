@@ -2,6 +2,7 @@
 id: "Google/Gemini_3.1_Pro"
 company: "Google"
 product: "Gemini 3.1 Pro"
+annotation: "ai"
 source_file: "gemini-3.1-pro.md"
 ---
 

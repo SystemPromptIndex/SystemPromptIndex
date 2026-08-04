@@ -3,27 +3,28 @@
   "company": "CodeMachine-CLI",
   "product": "CodeMachine-CLI - prompts templates ali quick workflow",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "prompts_templates_ali_quick-workflow.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 3,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,60 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Confirm before generating:**",
+      "start": 10414,
+      "end": 10444,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices. It requires comprehensive validation before generating files (Phase 2 blocker validation), runs post-generation validation checks (Phase 4 with 7 checks), verifies file integrity, validates data flow chains, and requires user confirmation before generating files. The system also has auto-fix capabilities with clear reporting of changes made.",
+      "risky": false
+    },
+    {
+      "text": "**Confirm before generating:**",
+      "start": 10414,
+      "end": 10444,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency well. It asks clarifying questions at each phase, requires explicit user confirmation before generating files ('Ready to generate? [y/n]'), validates the data flow with the user ('Does this flow look correct?'), and presents options clearly. The workflow is designed as a collaborative process where the user drives decisions.",
+      "risky": false
+    },
+    {
+      "text": "**Ready to generate?** [y/n]\"",
+      "start": 10896,
+      "end": 10925,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices. It requires comprehensive validation before generating files (Phase 2 blocker validation), runs post-generation validation checks (Phase 4 with 7 checks), verifies file integrity, validates data flow chains, and requires user confirmation before generating files. The system also has auto-fix capabilities with clear reporting of changes made.",
+      "risky": false
+    },
+    {
+      "text": "**Ready to generate?** [y/n]\"",
+      "start": 10896,
+      "end": 10925,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency well. It asks clarifying questions at each phase, requires explicit user confirmation before generating files ('Ready to generate? [y/n]'), validates the data flow with the user ('Does this flow look correct?'), and presents options clearly. The workflow is designed as a collaborative process where the user drives decisions.",
+      "risky": false
+    },
+    {
+      "text": "**Check 3: Workflow Integrity**",
+      "start": 23106,
+      "end": 23137,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices. It requires comprehensive validation before generating files (Phase 2 blocker validation), runs post-generation validation checks (Phase 4 with 7 checks), verifies file integrity, validates data flow chains, and requires user confirmation before generating files. The system also has auto-fix capabilities with clear reporting of changes made.",
+      "risky": false
+    },
+    {
+      "text": "Does this flow look correct?\"",
+      "start": 9511,
+      "end": 9540,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency well. It asks clarifying questions at each phase, requires explicit user confirmation before generating files ('Ready to generate? [y/n]'), validates the data flow with the user ('Does this flow look correct?'), and presents options clearly. The workflow is designed as a collaborative process where the user drives decisions.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "opengap/opengap_-_examples_lyzr_agent_PROMPT"
 company: "opengap"
 product: "opengap - examples lyzr agent PROMPT"
 category: "general-purpose"
+annotation: "ai"
 source_file: "examples_lyzr-agent_PROMPT.md"
 ---
 

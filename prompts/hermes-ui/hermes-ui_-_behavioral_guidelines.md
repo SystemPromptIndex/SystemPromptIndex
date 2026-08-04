@@ -3,6 +3,7 @@ id: "hermes-ui/hermes-ui_-_behavioral_guidelines"
 company: "hermes-ui"
 product: "hermes-ui - behavioral guidelines"
 category: "general-purpose"
+annotation: "ai"
 source_file: "behavioral_guidelines.md"
 ---
 

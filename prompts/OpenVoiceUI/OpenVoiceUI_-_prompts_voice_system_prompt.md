@@ -3,6 +3,7 @@ id: "OpenVoiceUI/OpenVoiceUI_-_prompts_voice_system_prompt"
 company: "OpenVoiceUI"
 product: "OpenVoiceUI - prompts voice system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_voice-system-prompt.md"
 ---
 

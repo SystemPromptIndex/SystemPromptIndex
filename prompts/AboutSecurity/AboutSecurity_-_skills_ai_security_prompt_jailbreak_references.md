@@ -3,6 +3,7 @@ id: "AboutSecurity/AboutSecurity_-_skills_ai_security_prompt_jailbreak_reference
 company: "AboutSecurity"
 product: "AboutSecurity - skills ai security prompt jailbreak references ..."
 category: "security"
+annotation: "ai"
 source_file: "skills_ai-security_prompt-jailbreak_references_bypass-templates.md"
 ---
 

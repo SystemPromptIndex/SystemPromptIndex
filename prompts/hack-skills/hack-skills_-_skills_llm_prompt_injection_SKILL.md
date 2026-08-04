@@ -3,6 +3,7 @@ id: "hack-skills/hack-skills_-_skills_llm_prompt_injection_SKILL"
 company: "hack-skills"
 product: "hack-skills - skills llm prompt injection SKILL"
 category: "security"
+annotation: "ai"
 source_file: "skills_llm-prompt-injection_SKILL.md"
 ---
 

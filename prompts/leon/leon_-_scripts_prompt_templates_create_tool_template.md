@@ -3,6 +3,7 @@ id: "leon/leon_-_scripts_prompt_templates_create_tool_template"
 company: "leon"
 product: "leon - scripts prompt templates create tool template"
 category: "coding-agents"
+annotation: "ai"
 source_file: "scripts_prompt-templates_create-tool-template.md"
 ---
 

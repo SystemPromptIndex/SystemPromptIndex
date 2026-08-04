@@ -3,6 +3,7 @@ id: "mate/mate_-_documents_agent_configurations_with_tools"
 company: "mate"
 product: "mate - documents agent configurations with tools"
 category: "general-purpose"
+annotation: "ai"
 source_file: "documents_agent_configurations_with_tools.md"
 ---
 

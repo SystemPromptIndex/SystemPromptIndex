@@ -3,6 +3,7 @@ id: "deepnote/deepnote_-_docs_amazon_ecr"
 company: "deepnote"
 product: "deepnote - docs amazon ecr"
 category: "data-analytics"
+annotation: "ai"
 source_file: "clone_docs_amazon-ecr.md"
 ---
 

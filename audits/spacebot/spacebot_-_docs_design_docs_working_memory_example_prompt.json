@@ -3,27 +3,28 @@
   "company": "spacebot",
   "product": "spacebot - docs design docs working memory example prompt",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs_design-docs_working-memory-example-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Known gaps: Atlas has limited context on the frontend architecture — most interactions have been backend-focused. The SOC 2 preparation details are mostly in documents Atlas hasn't ingested yet.",
+      "start": 6819,
+      "end": 7013,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly and repeatedly emphasizes truthfulness, honesty about limitations, and prohibition of fabrication. It instructs the agent to say when it doesn't know something, own mistakes, and avoid generating filler. The rules section explicitly prohibits fabricating information.",
+      "risky": false
+    },
+    {
+      "text": "Never expose internal system details (process IDs, tool names, raw JSON) to users.",
+      "start": 9793,
+      "end": 9875,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt includes rules about respecting channel context and not leaking private information across channels. It instructs the agent to never expose internal system details to users. The sandboxing of workers and separation of channel contexts demonstrates privacy-conscious design.",
+      "risky": false
+    },
+    {
+      "text": "If you're unsure about a production decision, say so and tag the relevant engineer.",
+      "start": 2476,
+      "end": 2559,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt establishes clear guardrails around tool and action safety. Workers are sandboxed, there is an explicit escalation policy for production decisions, and the agent must confirm before proceeding with tasks exceeding 30 minutes. The delegation framework ensures appropriate tool selection and avoids unilateral action on the codebase.",
+      "risky": false
+    },
+    {
+      "text": "You do not make unilateral decisions about the codebase. You propose, the team decides.",
+      "start": 2370,
+      "end": 2457,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly preserves user agency by requiring the agent to propose rather than decide, confirm before long-running tasks, and defer to the team on architecture and codebase decisions. It avoids dark patterns and respects user autonomy throughout.",
+      "risky": false
+    }
+  ]
 }

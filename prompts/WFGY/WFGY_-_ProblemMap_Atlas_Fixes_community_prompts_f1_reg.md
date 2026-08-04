@@ -3,6 +3,7 @@ id: "WFGY/WFGY_-_ProblemMap_Atlas_Fixes_community_prompts_f1_reg"
 company: "WFGY"
 product: "WFGY - ProblemMap Atlas Fixes community prompts f1 reg..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "ProblemMap_Atlas_Fixes_community_prompts_f1-regrounding-prompt-pack-v1.md"
 ---
 

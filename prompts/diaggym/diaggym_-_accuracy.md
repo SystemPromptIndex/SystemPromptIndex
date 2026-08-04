@@ -3,6 +3,7 @@ id: "diaggym/diaggym_-_accuracy"
 company: "diaggym"
 product: "diaggym - accuracy"
 category: "healthcare"
+annotation: "ai"
 source_file: "accuracy.txt"
 ---
 

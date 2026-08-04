@@ -3,6 +3,7 @@ id: "devika/devika_-_internal_monologue_prompt"
 company: "devika"
 product: "devika - internal monologue prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "internal_monologue_prompt.jinja2"
 ---
 

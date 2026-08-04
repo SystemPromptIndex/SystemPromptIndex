@@ -3,6 +3,7 @@ id: "connectonion/connectonion_-_connectonion_cli_co_ai_prompts_agents_explore"
 company: "connectonion"
 product: "connectonion - connectonion cli co ai prompts agents explore"
 category: "multi-agent"
+annotation: "ai"
 source_file: "connectonion_cli_co_ai_prompts_agents_explore.md"
 ---
 

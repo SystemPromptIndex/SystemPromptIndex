@@ -3,6 +3,7 @@ id: "smolagents/smolagents_-_smolagents_code_agent"
 company: "smolagents"
 product: "smolagents - smolagents / code agent"
 category: "extracted"
+annotation: "ai"
 source_file: "smolagents__code_agent.txt"
 ---
 

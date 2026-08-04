@@ -3,6 +3,7 @@ id: "xAI/Grok-Safety-Update-2026-01-10"
 company: "xAI"
 product: "Grok-Safety-Update-2026-01-10"
 category: "Chat / General"
+annotation: "human"
 source_file: "grok.com-post-new-safety-instructions.md"
 ---
 

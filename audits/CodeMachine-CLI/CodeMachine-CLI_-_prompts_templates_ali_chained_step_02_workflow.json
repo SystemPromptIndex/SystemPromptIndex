@@ -3,27 +3,28 @@
   "company": "CodeMachine-CLI",
   "product": "CodeMachine-CLI - prompts templates ali chained step 02 workflow ...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "prompts_templates_ali_chained_step-02-workflow-definition.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 8,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,78 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "⚠️ **Beta feature** - still being refined",
+      "start": 27239,
+      "end": 27280,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt is highly structured and transparent about what each workflow mode does, its trade-offs, technical details, and limitations. It explicitly marks the Autonomous Controller mode as 'Beta' and warns about higher token consumption and engineering complexity. It provides honest, detailed explanations rather than hiding limitations.",
+      "risky": false
+    },
+    {
+      "text": "Higher token consumption (controller sees all agent messages)",
+      "start": 27117,
+      "end": 27178,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt is highly structured and transparent about what each workflow mode does, its trade-offs, technical details, and limitations. It explicitly marks the Autonomous Controller mode as 'Beta' and warns about higher token consumption and engineering complexity. It provides honest, detailed explanations rather than hiding limitations.",
+      "risky": false
+    },
+    {
+      "text": "More complex to engineer (controller prompt is critical)",
+      "start": 27181,
+      "end": 27237,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt is highly structured and transparent about what each workflow mode does, its trade-offs, technical details, and limitations. It explicitly marks the Autonomous Controller mode as 'Beta' and warns about higher token consumption and engineering complexity. It provides honest, detailed explanations rather than hiding limitations.",
+      "risky": false
+    },
+    {
+      "text": "Validate: lowercase letters, numbers, hyphens only",
+      "start": 5306,
+      "end": 5356,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool safety practices. It validates workflow names against existing registries to prevent conflicts, checks for valid formats (lowercase, hyphens only), verifies directory and file existence before operations, and handles multiple error scenarios (missing folder, missing/invalid registry). It follows a careful check-then-act pattern.",
+      "risky": false
+    },
+    {
+      "text": "Validate: **NOT in `existing_workflows` array**",
+      "start": 5359,
+      "end": 5406,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool safety practices. It validates workflow names against existing registries to prevent conflicts, checks for valid formats (lowercase, hyphens only), verifies directory and file existence before operations, and handles multiple error scenarios (missing folder, missing/invalid registry). It follows a careful check-then-act pattern.",
+      "risky": false
+    },
+    {
+      "text": "Enter **1-4** to select, or type your own name:\"",
+      "start": 5012,
+      "end": 5060,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently preserves user agency throughout. It offers multiple choices at every decision point, provides detailed explanations when requested (the 'Maybe - tell me more' options), allows users to provide their own names instead of only selecting suggestions, asks for confirmation before proceeding, and lets users go back if they're not satisfied. No dark patterns or manipulative framing are present.",
+      "risky": false
+    },
+    {
+      "text": "Is this correct? **[y/n]** (or type a new description to customize)\"",
+      "start": 5840,
+      "end": 5908,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently preserves user agency throughout. It offers multiple choices at every decision point, provides detailed explanations when requested (the 'Maybe - tell me more' options), allows users to provide their own names instead of only selecting suggestions, asks for confirmation before proceeding, and lets users go back if they're not satisfied. No dark patterns or manipulative framing are present.",
+      "risky": false
+    },
+    {
+      "text": "2. **Maybe** - Tell me more about tracks first",
+      "start": 7077,
+      "end": 7123,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently preserves user agency throughout. It offers multiple choices at every decision point, provides detailed explanations when requested (the 'Maybe - tell me more' options), allows users to provide their own names instead of only selecting suggestions, asks for confirmation before proceeding, and lets users go back if they're not satisfied. No dark patterns or manipulative framing are present.",
+      "risky": false
+    }
+  ]
 }

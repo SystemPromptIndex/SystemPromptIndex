@@ -3,6 +3,7 @@ id: "vibeyard/vibeyard_-_personas_backend_engineer"
 company: "vibeyard"
 product: "vibeyard - personas backend engineer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "personas_backend-engineer.md"
 ---
 

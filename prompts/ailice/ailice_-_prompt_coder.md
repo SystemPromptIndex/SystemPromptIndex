@@ -3,6 +3,7 @@ id: "ailice/ailice_-_prompt_coder"
 company: "ailice"
 product: "ailice - prompt coder"
 category: "browser-automation"
+annotation: "ai"
 source_file: "prompt_coder.txt"
 ---
 

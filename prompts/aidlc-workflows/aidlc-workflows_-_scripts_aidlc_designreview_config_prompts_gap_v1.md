@@ -3,6 +3,7 @@ id: "aidlc-workflows/aidlc-workflows_-_scripts_aidlc_designreview_config_prompts
 company: "aidlc-workflows"
 product: "aidlc-workflows - scripts aidlc designreview config prompts gap v1"
 category: "general-purpose"
+annotation: "ai"
 source_file: "scripts_aidlc-designreview_config_prompts_gap-v1.md"
 ---
 

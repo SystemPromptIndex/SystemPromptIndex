@@ -3,6 +3,7 @@ id: "generative-ai-cdk-constructs/generative-ai-cdk-constructs_-_DESIGN_GUIDELIN
 company: "generative-ai-cdk-constructs"
 product: "generative-ai-cdk-constructs - DESIGN GUIDELINES"
 category: "general-purpose"
+annotation: "ai"
 source_file: "DESIGN_GUIDELINES.md"
 ---
 

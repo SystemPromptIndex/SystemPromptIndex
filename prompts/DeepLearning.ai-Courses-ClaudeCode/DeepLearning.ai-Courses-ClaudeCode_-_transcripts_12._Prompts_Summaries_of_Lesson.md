@@ -3,6 +3,7 @@ id: "DeepLearning.ai-Courses-ClaudeCode/DeepLearning.ai-Courses-ClaudeCode_-_tra
 company: "DeepLearning.ai-Courses-ClaudeCode"
 product: "DeepLearning.ai-Courses-ClaudeCode - transcripts 12. Prompts & Summaries of Lessons"
 category: "coding-agents"
+annotation: "ai"
 source_file: "transcripts_12. Prompts & Summaries of Lessons.md"
 ---
 

@@ -3,6 +3,7 @@ id: "crush/crush_-_internal_skills_builtin_crush_config_SKILL"
 company: "crush"
 product: "crush - internal skills builtin crush config SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_internal_skills_builtin_crush-config_SKILL.md"
 ---
 

@@ -3,6 +3,7 @@ id: "lemonai/lemonai_-_browser_server_browser_use_agent_prompt_base_sy"
 company: "lemonai"
 product: "lemonai - browser server browser use agent prompt base sy..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "browser_server_browser_use_agent_prompt_base_system_prompt.md"
 ---
 

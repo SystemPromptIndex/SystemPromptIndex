@@ -3,6 +3,7 @@ id: "mattermost-plugin-agents/mattermost-plugin-agents_-_docs_features_custom_pr
 company: "mattermost-plugin-agents"
 product: "mattermost-plugin-agents - docs features custom prompts"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_features_custom_prompts.md"
 ---
 

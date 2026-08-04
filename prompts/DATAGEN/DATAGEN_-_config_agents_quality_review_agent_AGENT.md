@@ -3,6 +3,7 @@ id: "DATAGEN/DATAGEN_-_config_agents_quality_review_agent_AGENT"
 company: "DATAGEN"
 product: "DATAGEN - config agents quality review agent AGENT"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_config_agents_quality_review_agent_AGENT.md"
 ---
 

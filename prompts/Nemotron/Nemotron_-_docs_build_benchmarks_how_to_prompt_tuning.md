@@ -3,6 +3,7 @@ id: "Nemotron/Nemotron_-_docs_build_benchmarks_how_to_prompt_tuning"
 company: "Nemotron"
 product: "Nemotron - docs build benchmarks how to prompt tuning"
 category: "browser-automation"
+annotation: "ai"
 source_file: "docs_build-benchmarks_how-to_prompt-tuning.md"
 ---
 

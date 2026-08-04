@@ -3,26 +3,27 @@
   "company": "qwen-code",
   "product": "qwen-code - docs audit and refresh SKILL",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs-audit-and-refresh_SKILL.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Prefer proving a gap with repository evidence before editing. Use current code",
+      "start": 1547,
+      "end": 1625,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes evidence-based documentation practices, requiring proof from the codebase before making changes and treating code/tests as authoritative sources rather than relying on intuition. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "and tests instead of intuition.",
+      "start": 1626,
+      "end": 1657,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes evidence-based documentation practices, requiring proof from the codebase before making changes and treating code/tests as authoritative sources rather than relying on intuition. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Do not rewrite large areas without evidence that they are wrong or missing.",
+      "start": 2700,
+      "end": 2775,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes evidence-based documentation practices, requiring proof from the codebase before making changes and treating code/tests as authoritative sources rather than relying on intuition. This promotes information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Keep README files out of scope for edits; limit changes to `docs/`.",
+      "start": 2778,
+      "end": 2845,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices by scoping changes narrowly, preferring minimal edits, validating changes before finishing, and explicitly limiting the scope of modifications to the docs/ directory only.",
+      "risky": false
+    },
+    {
+      "text": "Edit existing pages first",
+      "start": 2053,
+      "end": 2078,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices by scoping changes narrowly, preferring minimal edits, validating changes before finishing, and explicitly limiting the scope of modifications to the docs/ directory only.",
+      "risky": false
+    }
+  ]
 }

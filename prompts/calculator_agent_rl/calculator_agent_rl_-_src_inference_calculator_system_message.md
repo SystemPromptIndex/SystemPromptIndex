@@ -3,6 +3,7 @@ id: "calculator_agent_rl/calculator_agent_rl_-_src_inference_calculator_system_m
 company: "calculator_agent_rl"
 product: "calculator_agent_rl - src inference calculator system message"
 category: "general-purpose"
+annotation: "ai"
 source_file: "src_inference_calculator_system_message.md"
 ---
 

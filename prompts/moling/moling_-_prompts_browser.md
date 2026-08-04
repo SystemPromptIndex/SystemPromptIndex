@@ -3,6 +3,7 @@ id: "moling/moling_-_prompts_browser"
 company: "moling"
 product: "moling - prompts browser"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_browser.md"
 ---
 

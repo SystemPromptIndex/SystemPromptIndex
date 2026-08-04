@@ -3,6 +3,7 @@ id: "Cursor/Cursor-Agent-v1.0-2025-06-04"
 company: "Cursor"
 product: "Cursor-Agent-v1.0-2025-06-04"
 category: "Code Editor / IDE"
+annotation: "human"
 source_file: "Agent_Prompt_v1.0.txt"
 ---
 

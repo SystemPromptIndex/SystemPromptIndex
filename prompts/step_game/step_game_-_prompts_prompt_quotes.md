@@ -3,6 +3,7 @@ id: "step_game/step_game_-_prompts_prompt_quotes"
 company: "step_game"
 product: "step_game - prompts prompt quotes"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_prompt_quotes.txt"
 ---
 

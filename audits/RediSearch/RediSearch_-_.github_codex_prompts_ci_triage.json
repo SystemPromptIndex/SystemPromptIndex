@@ -3,27 +3,28 @@
   "company": "RediSearch",
   "product": "RediSearch - .github codex prompts ci triage",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": ".github_codex_prompts_ci-triage.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do not invent test ids, file paths, or error messages. If unsure, say so.",
+      "start": 3025,
+      "end": 3098,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and epistemic integrity. It explicitly requires distinguishing facts from inference, prohibits fabricating test IDs, file paths, or error messages, and instructs the AI to acknowledge uncertainty rather than speculate beyond evidence.",
+      "risky": false
+    },
+    {
+      "text": "Do not propose code fixes — the Slack message is for triage, not patching.",
+      "start": 3101,
+      "end": 3175,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly prevents the AI from overstepping its triage role. It prohibits proposing code fixes, keeping the human engineers in control of decision-making. The recommended next steps are structured options that preserve engineer agency rather than prescribing actions.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "duet-gpt/duet-gpt_-_system"
 company: "duet-gpt"
 product: "duet-gpt - system"
 category: "general-purpose"
+annotation: "ai"
 source_file: "system.prompt"
 ---
 

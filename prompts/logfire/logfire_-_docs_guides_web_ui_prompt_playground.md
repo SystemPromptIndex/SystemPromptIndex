@@ -3,6 +3,7 @@ id: "logfire/logfire_-_docs_guides_web_ui_prompt_playground"
 company: "logfire"
 product: "logfire - docs guides web ui prompt playground"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_guides_web-ui_prompt-playground.md"
 ---
 

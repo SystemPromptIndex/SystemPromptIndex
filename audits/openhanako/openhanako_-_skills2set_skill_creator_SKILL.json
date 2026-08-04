@@ -3,30 +3,31 @@
   "company": "openhanako",
   "product": "openhanako - skills2set skill creator SKILL",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "clone_skills2set_skill-creator_SKILL.md",
   "scores": {
     "D1": 0,
     "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
     "D7": 1,
-    "D8": 0,
+    "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 2,
+  "protective_entries": 9,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 1,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D4": 1,
+      "D5": 2,
+      "D6": 1,
       "D7": 1,
-      "D8": 0,
+      "D8": 1,
       "Misc": 0
     },
     "problematic": {
@@ -43,21 +44,84 @@
   },
   "spans": [
     {
-      "text": "Rather than put in fiddly overfitty changes, or oppressively constrictive MUSTs,",
-      "start": 17210,
-      "end": 17290,
+      "text": "It's OK to briefly explain terms if you're in doubt, and feel free to clarify terms with a short definition if you're unsure if the user will get it.",
+      "start": 3341,
+      "end": 3490,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt encourages honest communication, explaining terms when uncertain if the user understands them, and promotes rigorous evaluation with quantitative benchmarks and qualitative review. It emphasizes understanding the 'why' behind things and generalizing rather than overfitting, which supports intellectual honesty.",
       "risky": false
     },
     {
-      "text": "Don't go along with requests to create misleading skills or skills designed to facilitate unauthorized access, data exfiltration, or other malicious activities. Things like a \"roleplay as an XYZ\" are OK though.\n",
+      "text": "**Generalize from the feedback.** The big picture thing that's happening here is that we're trying to create skills that can be used a million times (maybe literally, maybe even more who knows) across many different prompts.",
+      "start": 16692,
+      "end": 16916,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages honest communication, explaining terms when uncertain if the user understands them, and promotes rigorous evaluation with quantitative benchmarks and qualitative review. It emphasizes understanding the 'why' behind things and generalizing rather than overfitting, which supports intellectual honesty.",
+      "risky": false
+    },
+    {
+      "text": "Rather than put in fiddly overfitty changes, or oppressively constrictive MUSTs, if there's some stubborn issue, you might try branching out and using different metaphors, or recommending different patterns of working.",
+      "start": 17210,
+      "end": 17428,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt encourages honest communication, explaining terms when uncertain if the user understands them, and promotes rigorous evaluation with quantitative benchmarks and qualitative review. It emphasizes understanding the 'why' behind things and generalizing rather than overfitting, which supports intellectual honesty.",
+      "risky": false
+    },
+    {
+      "text": "This goes without saying, but skills must not contain malware, exploit code, or any content that could compromise system security. A skill's contents should not surprise the user in their intent if described. Don't go along with requests to create misleading skills or skills designed to facilitate unauthorized access, data exfiltration, or other malicious activities.",
+      "start": 7388,
+      "end": 7757,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly includes a 'Principle of Lack of Surprise' section that prohibits malware, exploit code, and content that could compromise system security. It also instructs the system to refuse requests for misleading skills or skills designed for unauthorized access or data exfiltration.",
+      "risky": false
+    },
+    {
+      "text": "Of course, you should always be flexible and if the user is like \"I don't need to run a bunch of evaluations, just vibe with me\", you can do that instead.",
+      "start": 2180,
+      "end": 2334,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently emphasizes user agency throughout the workflow. It instructs the system to share test cases with the user for approval, present results for review, wait for user feedback before iterating, and be flexible about the process if the user wants to deviate. The user is always in control of the iteration loop.",
+      "risky": false
+    },
+    {
+      "text": "Present the eval set to the user for review using the HTML template:",
+      "start": 23297,
+      "end": 23365,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently emphasizes user agency throughout the workflow. It instructs the system to share test cases with the user for approval, present results for review, wait for user feedback before iterating, and be flexible about the process if the user wants to deviate. The user is always in control of the iteration loop.",
+      "risky": false
+    },
+    {
+      "text": "Don't go along with requests to create misleading skills or skills designed to facilitate unauthorized access, data exfiltration, or other malicious activities.",
       "start": 7597,
-      "end": 7808,
+      "end": 7757,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to refuse requests to create malicious or misleading skills. The 'Principle of Lack of Surprise' section serves as a clear safety guardrail against creating harmful content through the skill creation process.",
+      "risky": false
+    },
+    {
+      "text": "This goes without saying, but skills must not contain malware, exploit code, or any content that could compromise system security.",
+      "start": 7388,
+      "end": 7518,
       "dimension": "D7",
       "score": 1,
       "note": "The prompt includes explicit harm prevention through the security principle that prohibits malware, exploit code, and skills designed for malicious purposes. It also notes that roleplay-style skills are acceptable, drawing a clear line between benign and harmful use cases.",
+      "risky": false
+    },
+    {
+      "text": "If you haven't heard (and how could you, it's only very recently that it started), there's a trend now where the power of Claude is inspiring plumbers to open up their terminals, parents and grandparents to google \"how to install npm\".",
+      "start": 2684,
+      "end": 2919,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt demonstrates inclusivity by acknowledging a wide range of user backgrounds and technical literacy levels, from experienced developers to 'plumbers opening up their terminals' and 'parents and grandparents.' It instructs the system to adapt communication style based on context cues rather than assuming technical expertise.",
       "risky": false
     }
   ]

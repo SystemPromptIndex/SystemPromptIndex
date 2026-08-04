@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_litreview_quality_prompt"
 company: "paper-orchestra"
 product: "paper-orchestra - litreview quality prompt"
 category: "research"
+annotation: "ai"
 source_file: "litreview-quality-prompt.md"
 ---
 

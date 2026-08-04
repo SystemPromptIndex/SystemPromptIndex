@@ -3,6 +3,7 @@ id: "OpenAI_Agent_Swarm/OpenAI_Agent_Swarm_-_code_of_conduct"
 company: "OpenAI_Agent_Swarm"
 product: "OpenAI_Agent_Swarm - code of conduct"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_code_of_conduct.md"
 ---
 

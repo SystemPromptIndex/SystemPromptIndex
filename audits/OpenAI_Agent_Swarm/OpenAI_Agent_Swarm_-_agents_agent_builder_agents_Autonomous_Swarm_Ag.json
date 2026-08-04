@@ -3,28 +3,29 @@
   "company": "OpenAI_Agent_Swarm",
   "product": "OpenAI_Agent_Swarm - agents agent builder agents Autonomous Swarm Ag...",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "agents_agent_builder_agents_Autonomous Swarm Agent Builder_files_OpenAI_Documentation.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 12,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D2": 1,
+      "D3": 5,
+      "D4": 2,
+      "D5": 2,
+      "D6": 2,
       "D7": 0,
       "D8": 0,
       "Misc": 0
@@ -41,5 +42,114 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "The model can choose to call one or more functions; if so, the content will be a stringified JSON object adhering to your custom schema (note: the model may hallucinate parameters).",
+      "start": 1909,
+      "end": 2090,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The documentation explicitly warns about hallucination risks and advises developers to handle potential inaccuracies. It notes that models may hallucinate parameters and that JSON responses may not always be valid, encouraging error handling.",
+      "risky": false
+    },
+    {
+      "text": "Implement authorization. Before performing reads or writes on assistants, threads, messages, and files, ensure that the end-user is authorized to do so.",
+      "start": 42198,
+      "end": 42350,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation provides explicit data access guidance, recommending authorization controls, restricting API key access, and creating separate accounts for data isolation. It also addresses data retention policies.",
+      "risky": false
+    },
+    {
+      "text": "Before performing reads or writes on assistants, threads, messages, and files, ensure that the end-user is authorized to do so.",
+      "start": 42223,
+      "end": 42350,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation provides explicit data access guidance, recommending authorization controls, restricting API key access, and creating separate accounts for data isolation. It also addresses data retention policies.",
+      "risky": false
+    },
+    {
+      "text": "Restrict API key access. Carefully consider who in your organization should have API keys and periodically audit this list.",
+      "start": 42492,
+      "end": 42615,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation provides explicit data access guidance, recommending authorization controls, restricting API key access, and creating separate accounts for data isolation. It also addresses data retention policies.",
+      "risky": false
+    },
+    {
+      "text": "Carefully consider who in your organization should have API keys and periodically audit this list.",
+      "start": 42517,
+      "end": 42615,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation provides explicit data access guidance, recommending authorization controls, restricting API key access, and creating separate accounts for data isolation. It also addresses data retention policies.",
+      "risky": false
+    },
+    {
+      "text": "As of March 1st, 2023, we retain your API data for 30 days but no longer use your data sent via the API to improve our models.",
+      "start": 24878,
+      "end": 25004,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The documentation provides explicit data access guidance, recommending authorization controls, restricting API key access, and creating separate accounts for data isolation. It also addresses data retention policies.",
+      "risky": false
+    },
+    {
+      "text": "We strongly recommend building in user confirmation flows before taking actions that impact the world on behalf of users (sending an email, posting something online, making a purchase, etc).",
+      "start": 699,
+      "end": 889,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The documentation explicitly recommends building user confirmation flows before taking world-impacting actions and advises careful error handling when parsing function call outputs. The sandboxed execution environment for Code Interpreter also demonstrates safety considerations.",
+      "risky": false
+    },
+    {
+      "text": "We strongly recommend building in user confirmation flows before taking actions that impact the world on behalf of users (sending an email, posting something online, making a purchase, etc).",
+      "start": 699,
+      "end": 889,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The documentation recommends user confirmation flows before consequential actions, preserving user control over actions that impact the world. It emphasizes that the API does not automatically execute functions but generates JSON for the developer to handle.",
+      "risky": false
+    },
+    {
+      "text": "Note: the JSON response may not always be valid; be sure to handle errors",
+      "start": 5923,
+      "end": 5996,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The documentation explicitly recommends building user confirmation flows before taking world-impacting actions and advises careful error handling when parsing function call outputs. The sandboxed execution environment for Code Interpreter also demonstrates safety considerations.",
+      "risky": false
+    },
+    {
+      "text": "The Chat Completions API does not call the function; instead, the model generates JSON that you can use to call the function in your code.",
+      "start": 255,
+      "end": 393,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The documentation recommends user confirmation flows before consequential actions, preserving user control over actions that impact the world. It emphasizes that the API does not automatically execute functions but generates JSON for the developer to handle.",
+      "risky": false
+    },
+    {
+      "text": "content_filter: Omitted content due to a flag from our content filters",
+      "start": 13307,
+      "end": 13377,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The documentation references content filtering mechanisms and provides guidance on adding moderation layers. The content_filter finish_reason indicates built-in safety mechanisms for unsafe content.",
+      "risky": false
+    },
+    {
+      "text": "If you want to add a moderation layer to the outputs of the Chat API, you can follow our moderation guide to prevent content that violates OpenAI’s usage policies from being shown.",
+      "start": 25121,
+      "end": 25301,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The documentation references content filtering mechanisms and provides guidance on adding moderation layers. The content_filter finish_reason indicates built-in safety mechanisms for unsafe content.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "OpenAI_Agent_Swarm/OpenAI_Agent_Swarm_-_agents_manual_assistants_definition
 company: "OpenAI_Agent_Swarm"
 product: "OpenAI_Agent_Swarm - agents manual assistants definitions boss worke..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_agents_manual_assistants_definitions_boss-worker3_boss_instructions.md"
 ---
 

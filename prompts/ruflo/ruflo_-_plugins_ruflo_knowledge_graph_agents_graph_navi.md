@@ -3,6 +3,7 @@ id: "ruflo/ruflo_-_plugins_ruflo_knowledge_graph_agents_graph_navi"
 company: "ruflo"
 product: "ruflo - plugins ruflo knowledge graph agents graph navi..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_ruflo-knowledge-graph_agents_graph-navigator.md"
 ---
 

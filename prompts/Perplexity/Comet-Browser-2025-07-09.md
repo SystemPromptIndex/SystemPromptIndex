@@ -3,6 +3,7 @@ id: "Perplexity/Comet-Browser-2025-07-09"
 company: "Perplexity"
 product: "Comet-Browser-2025-07-09"
 category: "Search / Research"
+annotation: "human"
 source_file: "comet-browser-assistant.md"
 ---
 

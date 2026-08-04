@@ -3,6 +3,7 @@ id: "Paper2Agent/Paper2Agent_-_.claude_agents_tutorial_tool_extractor_implemento
 company: "Paper2Agent"
 product: "Paper2Agent - .claude agents tutorial tool extractor implementor"
 category: "research"
+annotation: "ai"
 source_file: "clone_.claude_agents_tutorial-tool-extractor-implementor.md"
 ---
 

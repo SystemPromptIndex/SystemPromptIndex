@@ -3,6 +3,7 @@ id: "reverse-api-engineer/reverse-api-engineer_-_src_reverse_api_prompts_auto_sy
 company: "reverse-api-engineer"
 product: "reverse-api-engineer - src reverse api prompts auto system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "src_reverse_api_prompts_auto_system.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Anthropic/Claude-Opus-4.6-2025-05-14"
 company: "Anthropic"
 product: "Claude-Opus-4.6-2025-05-14"
 category: "Chat / General"
+annotation: "human"
 source_file: "Claude_Opus_4.6.txt"
 ---
 

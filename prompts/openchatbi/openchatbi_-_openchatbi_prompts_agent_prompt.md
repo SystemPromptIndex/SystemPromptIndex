@@ -3,6 +3,7 @@ id: "openchatbi/openchatbi_-_openchatbi_prompts_agent_prompt"
 company: "openchatbi"
 product: "openchatbi - openchatbi prompts agent prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "openchatbi_prompts_agent_prompt.md"
 ---
 

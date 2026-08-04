@@ -3,6 +3,7 @@ id: "AI-Engineering-Coach/AI-Engineering-Coach_-_src_core_rules_mcp_tool_bloat"
 company: "AI-Engineering-Coach"
 product: "AI-Engineering-Coach - src core rules mcp tool bloat"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_src_core_rules_mcp-tool-bloat.md"
 ---
 

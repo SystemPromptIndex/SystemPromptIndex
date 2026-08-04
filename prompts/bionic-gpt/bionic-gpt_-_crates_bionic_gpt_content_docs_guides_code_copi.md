@@ -3,6 +3,7 @@ id: "bionic-gpt/bionic-gpt_-_crates_bionic_gpt_content_docs_guides_code_copi"
 company: "bionic-gpt"
 product: "bionic-gpt - crates bionic gpt content docs guides code copi..."
 category: "healthcare"
+annotation: "ai"
 source_file: "clone_crates_bionic-gpt_content_docs_guides_code-copilot_index.md"
 ---
 

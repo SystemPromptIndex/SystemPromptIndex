@@ -3,6 +3,7 @@ id: "atlas-gic/atlas-gic_-_prompts_examples_cio"
 company: "atlas-gic"
 product: "atlas-gic - prompts examples cio"
 category: "finance-trading"
+annotation: "ai"
 source_file: "prompts_examples_cio.md"
 ---
 

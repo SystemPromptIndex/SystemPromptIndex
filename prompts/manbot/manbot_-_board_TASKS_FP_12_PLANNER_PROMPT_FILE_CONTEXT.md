@@ -3,6 +3,7 @@ id: "manbot/manbot_-_board_TASKS_FP_12_PLANNER_PROMPT_FILE_CONTEXT"
 company: "manbot"
 product: "manbot -  board TASKS FP 12 PLANNER PROMPT FILE CONTEXT"
 category: "general-purpose"
+annotation: "ai"
 source_file: "_board_TASKS_FP-12_PLANNER_PROMPT_FILE_CONTEXT.md"
 ---
 

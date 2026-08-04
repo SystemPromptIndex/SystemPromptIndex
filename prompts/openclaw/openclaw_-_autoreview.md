@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_autoreview"
 company: "openclaw"
 product: "openclaw - autoreview"
 category: "coding-agents"
+annotation: "ai"
 source_file: "autoreview.md"
 ---
 

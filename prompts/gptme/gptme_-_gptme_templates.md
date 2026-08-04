@@ -3,6 +3,7 @@ id: "gptme/gptme_-_gptme_templates"
 company: "gptme"
 product: "gptme - gptme / templates"
 category: "extracted"
+annotation: "ai"
 source_file: "gptme__templates.txt"
 ---
 

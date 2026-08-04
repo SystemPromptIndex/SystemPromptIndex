@@ -3,6 +3,7 @@ id: "promptflow/promptflow_-_docs_how_to_guides_enable_streaming_mode"
 company: "promptflow"
 product: "promptflow - docs how to guides enable streaming mode"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_how-to-guides_enable-streaming-mode.md"
 ---
 

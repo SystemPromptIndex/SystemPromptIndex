@@ -3,6 +3,7 @@ id: "nanocoder/nanocoder_-_source_subagents_built_in_explore"
 company: "nanocoder"
 product: "nanocoder - source subagents built in explore"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_source_subagents_built-in_explore.md"
 ---
 

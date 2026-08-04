@@ -3,6 +3,7 @@ id: "Chaterm/Chaterm_-_AGENTS"
 company: "Chaterm"
 product: "Chaterm - AGENTS"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_AGENTS.md"
 ---
 

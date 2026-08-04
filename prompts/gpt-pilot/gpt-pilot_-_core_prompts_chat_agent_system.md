@@ -3,6 +3,7 @@ id: "gpt-pilot/gpt-pilot_-_core_prompts_chat_agent_system"
 company: "gpt-pilot"
 product: "gpt-pilot - core prompts chat agent system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "core_prompts_chat-agent_system.prompt"
 ---
 

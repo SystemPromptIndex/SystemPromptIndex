@@ -3,6 +3,7 @@ id: "FireRed-OpenStoryline/FireRed-OpenStoryline_-_prompts_tasks_filter_clips_en
 company: "FireRed-OpenStoryline"
 product: "FireRed-OpenStoryline - prompts tasks filter clips en system"
 category: "security"
+annotation: "ai"
 source_file: "prompts_tasks_filter_clips_en_system.md"
 ---
 

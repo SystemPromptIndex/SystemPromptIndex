@@ -3,6 +3,7 @@ id: "dialop/dialop_-_dialop_prompts_optimization"
 company: "dialop"
 product: "dialop - dialop prompts optimization"
 category: "general-purpose"
+annotation: "ai"
 source_file: "dialop_prompts_optimization.txt"
 ---
 

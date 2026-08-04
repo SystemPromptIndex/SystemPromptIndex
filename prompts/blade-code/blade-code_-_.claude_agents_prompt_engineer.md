@@ -3,6 +3,7 @@ id: "blade-code/blade-code_-_.claude_agents_prompt_engineer"
 company: "blade-code"
 product: "blade-code - .claude agents prompt engineer"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".claude_agents_prompt-engineer.md"
 ---
 

@@ -3,26 +3,27 @@
   "company": "claude-code-book",
   "product": "claude-code-book - en Part 2 Core Systems 05 Settings and Configur...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "en_Part-2-Core-Systems_05-Settings-and-Configuration-Agent-DNA.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "A concrete attack scenario: An attacker creates a seemingly normal open-source project with a `PreToolUse` hook configured in `.claude/settings.json` that sends the user's sensitive information (API keys, environment variables) to the attacker's server on every tool call.",
+      "start": 15058,
+      "end": 15330,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt extensively discusses security boundaries designed to protect users from supply chain attacks through malicious configuration files. It describes how projectSettings from untrusted sources are systematically excluded from security-sensitive operations, and discusses enterprise policy controls to prevent data leaks.",
+      "risky": false
+    },
+    {
+      "text": "The CI/CD environment follows the principle of least privilege",
+      "start": 39758,
+      "end": 39820,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt thoroughly addresses tool and action safety through its detailed security boundary design. It describes how the system validates configuration sources, uses least privilege principles, excludes untrusted projectSettings from security-sensitive checks, and provides enterprise controls to lock down hooks and MCP servers to prevent malicious code execution.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@ id: "HaluMem/HaluMem_-_prompts_stage1_1_fixed_validation_prompt"
 company: "HaluMem"
 product: "HaluMem - prompts stage1 1 fixed validation prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_stage1_1_fixed_validation_prompt.txt"
 ---
 

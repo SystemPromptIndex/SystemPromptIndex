@@ -3,6 +3,7 @@ id: "bionic-gpt/bionic-gpt_-_crates_bionic_gpt_content_architect_course_060"
 company: "bionic-gpt"
 product: "bionic-gpt - crates bionic gpt content architect course 060 ..."
 category: "healthcare"
+annotation: "ai"
 source_file: "crates_bionic-gpt_content_architect-course_060-assistants-prompt-engineering_index.md"
 ---
 

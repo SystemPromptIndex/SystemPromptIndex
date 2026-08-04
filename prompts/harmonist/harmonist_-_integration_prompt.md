@@ -3,6 +3,7 @@ id: "harmonist/harmonist_-_integration_prompt"
 company: "harmonist"
 product: "harmonist - integration prompt"
 category: "multi-agent"
+annotation: "ai"
 source_file: "integration-prompt.md"
 ---
 

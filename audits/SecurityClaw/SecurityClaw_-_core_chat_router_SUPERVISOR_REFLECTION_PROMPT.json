@@ -3,26 +3,27 @@
   "company": "SecurityClaw",
   "product": "SecurityClaw - core chat router SUPERVISOR REFLECTION PROMPT",
   "category": "legal",
+  "annotation": "ai",
   "source_file": "core_chat_router_SUPERVISOR_REFLECTION_PROMPT.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Never invent a skill name.",
+      "start": 626,
+      "end": 652,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness by requiring grounded reasoning, prohibiting the invention of skill names, and requiring the system to identify why previous steps failed. It enforces strict adherence to an allowed catalog and demands explanations for retries.",
+      "risky": false
+    },
+    {
+      "text": "Never invent a skill name.",
+      "start": 626,
+      "end": 652,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces tool safety by constraining the system to only use skills from an explicitly allowed catalog, checking for invalid or unavailable skills, and requiring validation of why previous steps failed before proceeding. This follows a least-privilege and validate-first approach.",
+      "risky": false
+    },
+    {
+      "text": "\"reasoning\": \"Root cause and why this next step is now viable.\",",
+      "start": 1107,
+      "end": 1171,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness by requiring grounded reasoning, prohibiting the invention of skill names, and requiring the system to identify why previous steps failed. It enforces strict adherence to an allowed catalog and demands explanations for retries.",
+      "risky": false
+    },
+    {
+      "text": "If the same skill should run again, change the parameters or explain why the retry is materially different.",
+      "start": 515,
+      "end": 622,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness by requiring grounded reasoning, prohibiting the invention of skill names, and requiring the system to identify why previous steps failed. It enforces strict adherence to an allowed catalog and demands explanations for retries.",
+      "risky": false
+    },
+    {
+      "text": "Choose the next viable skill from the allowed catalog.",
+      "start": 457,
+      "end": 511,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces tool safety by constraining the system to only use skills from an explicitly allowed catalog, checking for invalid or unavailable skills, and requiring validation of why previous steps failed before proceeding. This follows a least-privilege and validate-first approach.",
+      "risky": false
+    }
+  ]
 }

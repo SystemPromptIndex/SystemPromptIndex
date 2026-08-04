@@ -3,26 +3,27 @@
   "company": "promptflow",
   "product": "promptflow - .github skills promptflow to maf SKILL",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".github_skills_promptflow-to-maf_SKILL.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Preserve prompts verbatim** — System prompts, user prompt templates, and any text from `.jinja2` or inline prompt nodes must be copied exactly as they appear in the original Prompt Flow. Do not rephrase, summarize, add, or remove any content — including examples, instructions, formatting, and preambles (e.g., \"Read the following conversation and respond:\").",
+      "start": 2703,
+      "end": 3064,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes preserving the integrity and fidelity of the original source material. It requires verbatim preservation of prompts, exact graph topology equivalence, and explicit verification steps to ensure no information is fabricated or altered during conversion.",
+      "risky": false
+    },
+    {
+      "text": "**`.env.example`** — template with required environment variables (endpoint, model, key only if the connection uses key auth).",
+      "start": 12110,
+      "end": 12236,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt includes instructions to handle sensitive data carefully, such as creating .env.example templates for secrets rather than hardcoding them, and ensuring keys are managed through environment variables rather than being embedded in code.",
+      "risky": false
+    },
+    {
+      "text": "**Create a virtual environment** and install dependencies.",
+      "start": 12479,
+      "end": 12537,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces several safety practices for file and system operations: it requires reading and auditing source files before generating anything, mandates that original flows are never modified, requires output isolation in separate folders, and includes validation phases before deployment.",
+      "risky": false
+    }
+  ]
 }

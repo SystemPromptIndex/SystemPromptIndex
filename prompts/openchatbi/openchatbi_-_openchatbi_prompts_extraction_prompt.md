@@ -3,6 +3,7 @@ id: "openchatbi/openchatbi_-_openchatbi_prompts_extraction_prompt"
 company: "openchatbi"
 product: "openchatbi - openchatbi prompts extraction prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "openchatbi_prompts_extraction_prompt.md"
 ---
 

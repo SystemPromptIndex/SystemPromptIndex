@@ -3,6 +3,7 @@ id: "SecurityClaw/SecurityClaw_-_skills_anomaly_triage_instruction"
 company: "SecurityClaw"
 product: "SecurityClaw - skills anomaly triage instruction"
 category: "legal"
+annotation: "ai"
 source_file: "skills_anomaly_triage_instruction.md"
 ---
 

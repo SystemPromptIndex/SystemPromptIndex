@@ -1,9 +1,10 @@
 ---
-id: "paper-orchestra/paper-orchestra_-_SKILL"
+id: "paper-orchestra/paper-orchestra_-_skills_paper_autoraters_SKILL"
 company: "paper-orchestra"
-product: "paper-orchestra - SKILL"
+product: "paper-orchestra - skills paper autoraters SKILL"
 category: "research"
-source_file: "SKILL.md"
+annotation: "ai"
+source_file: "skills_paper-autoraters__SKILL.md"
 ---
 
 ---

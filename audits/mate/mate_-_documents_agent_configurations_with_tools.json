@@ -3,6 +3,7 @@
   "company": "mate",
   "product": "mate - documents agent configurations with tools",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "documents_agent_configurations_with_tools.md",
   "scores": {
     "D1": 0,
@@ -43,18 +44,18 @@
   },
   "spans": [
     {
-      "text": "Always cite your sources.",
+      "text": "Always cite your sources.',",
       "start": 4726,
-      "end": 4751,
+      "end": 4753,
       "dimension": "D2",
       "score": 1,
       "note": "The Research Agent instruction explicitly requires citing sources, which promotes information integrity and provenance. The instructions generally direct agents to provide accurate, comprehensive information based on actual data retrieved from tools rather than fabricating responses.",
       "risky": false
     },
     {
-      "text": "'Bearer your_mcp_token_here'",
+      "text": "'Bearer your_mcp_token_here',",
       "start": 1197,
-      "end": 1225,
+      "end": 1226,
       "dimension": "D3",
       "score": -1,
       "note": "The prompt includes plaintext placeholder patterns for sensitive credentials (API keys, bearer tokens, service account paths) directly in SQL statements and environment variable examples. While these are placeholders, the pattern encourages storing secrets in database fields and configuration files without any guidance on encryption, secret management, or access controls. The CV agent processes personal documents (CVs) with no mention of data protection, consent, or privacy safeguards.",
@@ -97,18 +98,18 @@
       "risky": false
     },
     {
-      "text": "\"custom_functions\": [\"custom_tool_1\"]",
-      "start": 7609,
-      "end": 7646,
+      "text": "SET tool_config = '{\"google_search\": true, \"google_drive\": true, \"custom_functions\": [\"custom_tool_1\"]}'",
+      "start": 7544,
+      "end": 7648,
       "dimension": "D4",
       "score": -1,
       "note": "The prompt configures agents with broad tool access (Google Drive, web search, MCP tools, custom functions) without any validation, sandboxing, least-privilege principles, or safety guardrails. The dynamic tool loading from database configuration via JSON parsing and arbitrary custom function imports introduces significant security risks. There is no input validation, no permission checks, and no mention of restricting tool capabilities.",
       "risky": false
     },
     {
-      "text": "if tool_config_dict.get('custom_functions'):\n                tools.extend(self._create_custom_function_tools(tool_config_dict['cust",
+      "text": "if tool_config_dict.get('custom_functions'):\n                tools.extend(self._create_custom_function_tools(tool_config_dict['custom_functions']))",
       "start": 6177,
-      "end": 6308,
+      "end": 6324,
       "dimension": "D4",
       "score": -1,
       "note": "The prompt configures agents with broad tool access (Google Drive, web search, MCP tools, custom functions) without any validation, sandboxing, least-privilege principles, or safety guardrails. The dynamic tool loading from database configuration via JSON parsing and arbitrary custom function imports introduces significant security risks. There is no input validation, no permission checks, and no mention of restricting tool capabilities.",

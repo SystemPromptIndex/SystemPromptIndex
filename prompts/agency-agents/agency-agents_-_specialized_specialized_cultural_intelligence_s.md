@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_specialized_specialized_cultural_intelligence
 company: "agency-agents"
 product: "agency-agents - specialized specialized cultural intelligence s..."
 category: "legal"
+annotation: "ai"
 source_file: "clone_specialized_specialized-cultural-intelligence-strategist.md"
 ---
 

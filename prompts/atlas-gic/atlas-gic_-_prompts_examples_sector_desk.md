@@ -3,6 +3,7 @@ id: "atlas-gic/atlas-gic_-_prompts_examples_sector_desk"
 company: "atlas-gic"
 product: "atlas-gic - prompts examples sector desk"
 category: "finance-trading"
+annotation: "ai"
 source_file: "prompts_examples_sector_desk.md"
 ---
 

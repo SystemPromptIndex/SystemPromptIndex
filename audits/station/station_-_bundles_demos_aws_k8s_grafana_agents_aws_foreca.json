@@ -3,10 +3,11 @@
   "company": "station",
   "product": "station - bundles demos aws k8s grafana agents aws foreca...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "bundles_demos_aws-k8s-grafana_agents_aws-forecast-and-budget-risk.prompt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "assumptions: List factors that could affect accuracy (e.g., \"Assumes steady Lambda invocation rate\", \"Includes planned EKS cluster expansion\")",
+      "start": 2068,
+      "end": 2210,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires documenting assumptions that could affect forecast accuracy, and mandates noting budget risk scenarios when p90 exceeds thresholds. This promotes transparency about uncertainty and the basis for projections, supporting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "**Important**: If p90_usd > 1.2x mean_usd, note this in assumptions as a budget risk scenario.",
+      "start": 2212,
+      "end": 2306,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires documenting assumptions that could affect forecast accuracy, and mandates noting budget risk scenarios when p90 exceeds thresholds. This promotes transparency about uncertainty and the basis for projections, supporting information integrity.",
+      "risky": false
+    }
+  ]
 }

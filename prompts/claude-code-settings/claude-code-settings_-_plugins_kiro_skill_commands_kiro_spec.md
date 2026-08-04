@@ -3,6 +3,7 @@ id: "claude-code-settings/claude-code-settings_-_plugins_kiro_skill_commands_kir
 company: "claude-code-settings"
 product: "claude-code-settings - plugins kiro skill commands kiro spec"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_kiro-skill_commands_kiro_spec.md"
 ---
 

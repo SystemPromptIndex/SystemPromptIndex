@@ -3,6 +3,7 @@ id: "agent-guardrails-template/agent-guardrails-template_-_docs_agentmcp_Sentine
 company: "agent-guardrails-template"
 product: "agent-guardrails-template - docs agentmcp Sentinel System Prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_agentmcp_Sentinel System Prompt.txt"
 ---
 

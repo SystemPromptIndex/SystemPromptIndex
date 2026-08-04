@@ -3,6 +3,7 @@ id: "agent-os/agent-os_-_.agent_research_system_prompt_injection_proposal"
 company: "agent-os"
 product: "agent-os - .agent research system prompt injection proposal"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".agent_research_system-prompt-injection-proposal.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Upsonic/Upsonic_-_prebuilt_autonomous_agents_applied_scientist_sy"
 company: "Upsonic"
 product: "Upsonic - prebuilt autonomous agents applied scientist sy..."
 category: "research"
+annotation: "ai"
 source_file: "clone_prebuilt_autonomous_agents_applied_scientist_system_prompt.md"
 ---
 

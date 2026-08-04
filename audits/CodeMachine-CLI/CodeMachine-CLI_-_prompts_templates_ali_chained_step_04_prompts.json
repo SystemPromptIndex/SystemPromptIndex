@@ -3,27 +3,28 @@
   "company": "CodeMachine-CLI",
   "product": "CodeMachine-CLI - prompts templates ali chained step 04 prompts",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "prompts_templates_ali_chained_step-04-prompts.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do NOT write output before the step tells you to",
+      "start": 34432,
+      "end": 34480,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates good tool/action safety practices by requiring user confirmation before every file creation, validating placeholder names for uniqueness, and following a structured step-by-step process that prevents premature or unvalidated actions. Files are only written after explicit user approval.",
+      "risky": false
+    },
+    {
+      "text": "Do you have any questions, or shall we start?\"",
+      "start": 2518,
+      "end": 2564,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt strongly preserves user agency throughout. It consistently offers multiple choices (accept, add more, remove, start fresh), asks for confirmation before every action, provides recommendations but allows the user to override them, and never forces a particular path. Users maintain control at every decision point.",
+      "risky": false
+    }
+  ]
 }

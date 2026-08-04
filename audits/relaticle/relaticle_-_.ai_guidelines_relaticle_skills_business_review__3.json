@@ -3,27 +3,28 @@
   "company": "relaticle",
   "product": "relaticle - .ai guidelines relaticle skills business review...",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": ".ai_guidelines_relaticle_skills_business-review-task_agents_grader.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Cite specific REVIEW.md content when scoring 1-3.** \"The requirements section copy-pastes 'Add EUR support' verbatim from the PR title, suggesting the agent didn't synthesize in own words.\"",
+      "start": 1625,
+      "end": 1816,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires honest scoring with evidence-based justifications. It instructs the agent to cite specific content when giving low scores and to be honest about strengths, discouraging both fabricated problems and unwarranted praise.",
+      "risky": false
+    },
+    {
+      "text": "You are PURE-READ. You do not modify any files. You do not call other skills.",
+      "start": 247,
+      "end": 324,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly enforces a read-only, minimal-privilege posture. It clearly states the agent must not modify files or call other skills, which is a strong tool safety constraint following the principle of least privilege.",
+      "risky": false
+    },
+    {
+      "text": "**Suggest skill improvements, not REVIEW.md fixes.** The REVIEW.md is the output we're grading; the suggestions should target the system that produced it.",
+      "start": 1916,
+      "end": 2070,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by constraining the agent to score only against provided rubric criteria and directing improvements toward the system (skill) rather than the output. It prevents the agent from imposing its own evaluation dimensions or manufacturing issues.",
+      "risky": false
+    }
+  ]
 }

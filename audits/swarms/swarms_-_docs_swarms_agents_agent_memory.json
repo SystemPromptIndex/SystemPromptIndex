@@ -3,20 +3,21 @@
   "company": "swarms",
   "product": "swarms - docs swarms agents agent memory",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "docs_swarms_agents_agent_memory.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": -1,
     "D4": 0,
-    "D5": 0,
+    "D5": -1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 1,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -34,7 +35,7 @@
       "D2": 0,
       "D3": 1,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -43,12 +44,21 @@
   },
   "spans": [
     {
-      "text": "Written once on each compaction; never modified or deleted ",
-      "start": 7713,
-      "end": 7772,
+      "text": "| `$WORKSPACE_DIR/agents/{name}/archive/history_<ts>.md` | Immutable pre-compaction snapshot | Written once on each compaction; never modified or deleted |",
+      "start": 7618,
+      "end": 7773,
       "dimension": "D3",
       "score": -1,
       "note": "The system stores all user interactions persistently to disk by default, archives raw chat logs forever ('Raw chat logs are never destroyed'), and does not mention any user consent mechanisms, data retention limits, or transparency about data collection. The archive system preserves conversations indefinitely without any mention of user awareness or control. There is no mention of informing users that their data is being persisted or giving them the ability to delete it.",
+      "risky": false
+    },
+    {
+      "text": "Every agent gets its own folder on disk under the workspace directory, with a `MEMORY.md` file that records every user task and agent response. When the agent is instantiated again with the same `agent_name`, the prior memory is automatically loaded back into its working context.",
+      "start": 110,
+      "end": 390,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The memory system operates entirely without user awareness or consent. Users are not informed that their conversations are being persistently stored, archived forever, or summarized by LLM calls. There is no mechanism for users to opt out, review, or delete their stored memory. The 'disabling persistence' section is only for developers, not end users.",
       "risky": false
     }
   ]

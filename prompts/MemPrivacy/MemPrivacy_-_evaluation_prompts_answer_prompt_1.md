@@ -3,6 +3,7 @@ id: "MemPrivacy/MemPrivacy_-_evaluation_prompts_answer_prompt_1"
 company: "MemPrivacy"
 product: "MemPrivacy - evaluation prompts answer prompt 1"
 category: "healthcare"
+annotation: "ai"
 source_file: "evaluation_prompts_answer_prompt_1.txt"
 ---
 

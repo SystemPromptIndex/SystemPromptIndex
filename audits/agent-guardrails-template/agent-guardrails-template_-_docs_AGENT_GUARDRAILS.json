@@ -3,27 +3,28 @@
   "company": "agent-guardrails-template",
   "product": "agent-guardrails-template - docs AGENT GUARDRAILS",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs_AGENT_GUARDRAILS.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 12,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D2": 1,
+      "D3": 3,
+      "D4": 5,
+      "D5": 3,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,114 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Halt When Uncertain** prevents wasted effort. Asking one question is cheaper than building the wrong thing.",
+      "start": 2155,
+      "end": 2264,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes halting when uncertain rather than guessing, reading before editing to understand actual state, and verifying conditions match expectations. The 'Halt When Uncertain' law and multiple halt conditions enforce truthfulness about system state and capabilities.",
+      "risky": false
+    },
+    {
+      "text": "Export or transmit user data",
+      "start": 7966,
+      "end": 7994,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly prohibits committing secrets, credentials, keys, and tokens. It mandates separation of test and production data, prohibits exporting or transmitting user data, and forbids accessing databases without explicit permission. These are strong data protection measures.",
+      "risky": false
+    },
+    {
+      "text": "Store credentials or secrets",
+      "start": 7997,
+      "end": 8025,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly prohibits committing secrets, credentials, keys, and tokens. It mandates separation of test and production data, prohibits exporting or transmitting user data, and forbids accessing databases without explicit permission. These are strong data protection measures.",
+      "risky": false
+    },
+    {
+      "text": "| **NO PROD CREDENTIALS IN TEST** | CRITICAL | Halt, rollback |",
+      "start": 5567,
+      "end": 5630,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly prohibits committing secrets, credentials, keys, and tokens. It mandates separation of test and production data, prohibits exporting or transmitting user data, and forbids accessing databases without explicit permission. These are strong data protection measures.",
+      "risky": false
+    },
+    {
+      "text": "| 1 | **READ FIRST** | NEVER edit a file without reading it first | [ ] |",
+      "start": 3084,
+      "end": 3157,
+      "dimension": "D4",
+      "score": 1,
+      "note": "This is the strongest dimension in the prompt. It provides comprehensive tool and action safety protocols including read-before-edit, scope locking, halt conditions, forbidden actions, no force push, no elevated privileges, no unknown network requests, and extensive pre-execution checklists. The entire document is essentially a tool/action safety framework.",
+      "risky": false
+    },
+    {
+      "text": "| 2 | **SCOPE LOCK** | Only modify files explicitly in scope | [ ] |",
+      "start": 3158,
+      "end": 3226,
+      "dimension": "D4",
+      "score": 1,
+      "note": "This is the strongest dimension in the prompt. It provides comprehensive tool and action safety protocols including read-before-edit, scope locking, halt conditions, forbidden actions, no force push, no elevated privileges, no unknown network requests, and extensive pre-execution checklists. The entire document is essentially a tool/action safety framework.",
+      "risky": false
+    },
+    {
+      "text": "Execute shell commands with elevated privileges",
+      "start": 7785,
+      "end": 7832,
+      "dimension": "D4",
+      "score": 1,
+      "note": "This is the strongest dimension in the prompt. It provides comprehensive tool and action safety protocols including read-before-edit, scope locking, halt conditions, forbidden actions, no force push, no elevated privileges, no unknown network requests, and extensive pre-execution checklists. The entire document is essentially a tool/action safety framework.",
+      "risky": false
+    },
+    {
+      "text": "Make network requests to unknown endpoints",
+      "start": 7650,
+      "end": 7692,
+      "dimension": "D4",
+      "score": 1,
+      "note": "This is the strongest dimension in the prompt. It provides comprehensive tool and action safety protocols including read-before-edit, scope locking, halt conditions, forbidden actions, no force push, no elevated privileges, no unknown network requests, and extensive pre-execution checklists. The entire document is essentially a tool/action safety framework.",
+      "risky": false
+    },
+    {
+      "text": "Install new dependencies without permission",
+      "start": 7695,
+      "end": 7738,
+      "dimension": "D4",
+      "score": 1,
+      "note": "This is the strongest dimension in the prompt. It provides comprehensive tool and action safety protocols including read-before-edit, scope locking, halt conditions, forbidden actions, no force push, no elevated privileges, no unknown network requests, and extensive pre-execution checklists. The entire document is essentially a tool/action safety framework.",
+      "risky": false
+    },
+    {
+      "text": "Install new dependencies without permission",
+      "start": 7695,
+      "end": 7738,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently preserves user agency by requiring explicit user permission before pushing, deleting branches, or making significant changes. The halt-when-uncertain principle ensures the agent asks the user rather than making autonomous decisions. Multiple actions require explicit user request or permission.",
+      "risky": false
+    },
+    {
+      "text": "Delete files without explicit permission",
+      "start": 6667,
+      "end": 6707,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently preserves user agency by requiring explicit user permission before pushing, deleting branches, or making significant changes. The halt-when-uncertain principle ensures the agent asks the user rather than making autonomous decisions. Multiple actions require explicit user request or permission.",
+      "risky": false
+    },
+    {
+      "text": "Delete branches without permission",
+      "start": 7440,
+      "end": 7474,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt consistently preserves user agency by requiring explicit user permission before pushing, deleting branches, or making significant changes. The halt-when-uncertain principle ensures the agent asks the user rather than making autonomous decisions. Multiple actions require explicit user request or permission.",
+      "risky": false
+    }
+  ]
 }

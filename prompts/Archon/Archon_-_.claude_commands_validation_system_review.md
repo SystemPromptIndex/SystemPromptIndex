@@ -3,6 +3,7 @@ id: "Archon/Archon_-_.claude_commands_validation_system_review"
 company: "Archon"
 product: "Archon - .claude commands validation system review"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".claude_commands_validation_system-review.md"
 ---
 

@@ -3,6 +3,7 @@ id: "tambo/tambo_-_plugins_tambo_skills_generative_ui_references_s"
 company: "tambo"
 product: "tambo - plugins tambo skills generative ui references s..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_plugins_tambo_skills_generative-ui_references_skills.md"
 ---
 

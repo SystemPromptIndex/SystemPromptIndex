@@ -3,6 +3,7 @@ id: "MakerAi/MakerAi_-_Demos_V3_1_023_RAGVQL_system_prompt_vql"
 company: "MakerAi"
 product: "MakerAi - Demos V3 1 023 RAGVQL system prompt vql"
 category: "general-purpose"
+annotation: "ai"
 source_file: "Demos-V3_1_023-RAGVQL_system_prompt_vql.md"
 ---
 

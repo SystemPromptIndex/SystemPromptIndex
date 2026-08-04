@@ -3,10 +3,11 @@
   "company": "spacebot",
   "product": "spacebot - docs design docs worker briefing",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_docs_design-docs_worker-briefing.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -15,12 +16,12 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 2,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If `NO_BRIEFING` is returned, the block is omitted and the worker spawns with ambient context only. No noise injection.",
+      "start": 5566,
+      "end": 5685,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt demonstrates strong information integrity practices. It includes a NO_BRIEFING fallback to avoid injecting irrelevant or noisy information, explicitly states briefing is context not instruction, and emphasizes that good task descriptions should not be replaced by briefing. The synthesis step instructs to 'Omit anything not relevant to this task' and to output NO_BRIEFING if nothing is relevant, preventing fabrication of context.",
+      "risky": false
+    },
+    {
+      "text": "Be specific and direct. Omit anything not relevant to this task.\nIf nothing is relevant, output: NO_BRIEFING",
+      "start": 5452,
+      "end": 5560,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt demonstrates strong information integrity practices. It includes a NO_BRIEFING fallback to avoid injecting irrelevant or noisy information, explicitly states briefing is context not instruction, and emphasizes that good task descriptions should not be replaced by briefing. The synthesis step instructs to 'Omit anything not relevant to this task' and to output NO_BRIEFING if nothing is relevant, preventing fabrication of context.",
+      "risky": false
+    }
+  ]
 }

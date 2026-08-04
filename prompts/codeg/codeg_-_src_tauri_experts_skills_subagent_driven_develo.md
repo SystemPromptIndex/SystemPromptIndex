@@ -3,6 +3,7 @@ id: "codeg/codeg_-_src_tauri_experts_skills_subagent_driven_develo"
 company: "codeg"
 product: "codeg - src tauri experts skills subagent driven develo..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "src-tauri_experts_skills_subagent-driven-development_implementer-prompt.md"
 ---
 

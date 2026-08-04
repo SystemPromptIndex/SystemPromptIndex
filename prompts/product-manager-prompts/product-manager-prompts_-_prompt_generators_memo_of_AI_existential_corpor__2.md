@@ -3,6 +3,7 @@ id: "product-manager-prompts/product-manager-prompts_-_prompt_generators_memo_of
 company: "product-manager-prompts"
 product: "product-manager-prompts - prompt generators memo of AI existential corpor..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompt-generators_memo-of-AI-existential-corporate-dread_prompt-generator-prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "metagpt/metagpt_-_metagpt_architect"
 company: "metagpt"
 product: "metagpt - metagpt / architect"
 category: "extracted"
+annotation: "ai"
 source_file: "metagpt__architect.txt"
 ---
 

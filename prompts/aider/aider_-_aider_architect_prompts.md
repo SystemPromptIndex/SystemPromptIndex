@@ -3,6 +3,7 @@ id: "aider/aider_-_aider_architect_prompts"
 company: "aider"
 product: "aider - aider / architect prompts"
 category: "extracted"
+annotation: "ai"
 source_file: "aider__architect_prompts.txt"
 ---
 

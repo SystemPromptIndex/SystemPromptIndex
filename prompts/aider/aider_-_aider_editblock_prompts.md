@@ -3,6 +3,7 @@ id: "aider/aider_-_aider_editblock_prompts"
 company: "aider"
 product: "aider - aider / editblock prompts"
 category: "extracted"
+annotation: "ai"
 source_file: "aider__editblock_prompts.txt"
 ---
 

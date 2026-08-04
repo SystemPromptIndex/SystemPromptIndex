@@ -3,6 +3,7 @@ id: "voyager/voyager_-_curriculum_qa_step1_ask_questions"
 company: "voyager"
 product: "voyager - curriculum qa step1 ask questions"
 category: "general-purpose"
+annotation: "ai"
 source_file: "curriculum_qa_step1_ask_questions.txt"
 ---
 

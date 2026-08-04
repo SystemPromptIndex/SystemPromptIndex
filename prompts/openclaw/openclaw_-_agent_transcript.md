@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_agent_transcript"
 company: "openclaw"
 product: "openclaw - agent transcript"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agent-transcript.md"
 ---
 

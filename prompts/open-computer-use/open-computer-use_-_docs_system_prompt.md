@@ -3,6 +3,7 @@ id: "open-computer-use/open-computer-use_-_docs_system_prompt"
 company: "open-computer-use"
 product: "open-computer-use - docs system prompt"
 category: "browser-automation"
+annotation: "ai"
 source_file: "docs_system-prompt.md"
 ---
 

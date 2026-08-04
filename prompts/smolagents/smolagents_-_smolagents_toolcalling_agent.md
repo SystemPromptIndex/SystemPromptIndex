@@ -3,6 +3,7 @@ id: "smolagents/smolagents_-_smolagents_toolcalling_agent"
 company: "smolagents"
 product: "smolagents - smolagents / toolcalling agent"
 category: "extracted"
+annotation: "ai"
 source_file: "smolagents__toolcalling_agent.txt"
 ---
 

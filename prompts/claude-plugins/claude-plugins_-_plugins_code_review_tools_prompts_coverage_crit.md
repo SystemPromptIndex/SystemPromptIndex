@@ -3,6 +3,7 @@ id: "claude-plugins/claude-plugins_-_plugins_code_review_tools_prompts_coverage_
 company: "claude-plugins"
 product: "claude-plugins - plugins code review tools prompts coverage crit..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "plugins_code-review_tools_prompts_coverage_critic_prompt.txt"
 ---
 

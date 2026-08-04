@@ -3,6 +3,7 @@ id: "logfire/logfire_-_docs_reference_advanced_prompt_management_scena"
 company: "logfire"
 product: "logfire - docs reference advanced prompt management scena..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_reference_advanced_prompt-management_scenarios.md"
 ---
 

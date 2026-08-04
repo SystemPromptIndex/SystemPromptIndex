@@ -3,6 +3,7 @@ id: "MemPrivacy/MemPrivacy_-_evaluation_prompts_extract_privacy"
 company: "MemPrivacy"
 product: "MemPrivacy - evaluation prompts extract privacy"
 category: "healthcare"
+annotation: "ai"
 source_file: "evaluation_prompts_extract_privacy.txt"
 ---
 

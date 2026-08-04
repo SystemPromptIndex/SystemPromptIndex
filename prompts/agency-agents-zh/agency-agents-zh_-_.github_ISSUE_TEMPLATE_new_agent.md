@@ -3,6 +3,7 @@ id: "agency-agents-zh/agency-agents-zh_-_.github_ISSUE_TEMPLATE_new_agent"
 company: "agency-agents-zh"
 product: "agency-agents-zh - .github ISSUE TEMPLATE new agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".github_ISSUE_TEMPLATE_new_agent.md"
 ---
 

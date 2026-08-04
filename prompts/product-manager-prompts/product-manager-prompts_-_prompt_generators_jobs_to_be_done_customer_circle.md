@@ -3,6 +3,7 @@ id: "product-manager-prompts/product-manager-prompts_-_prompt_generators_jobs_to
 company: "product-manager-prompts"
 product: "product-manager-prompts - prompt generators jobs to be done customer circle"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompt-generators_jobs-to-be-done customer circle.md"
 ---
 

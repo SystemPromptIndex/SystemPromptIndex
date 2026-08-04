@@ -3,6 +3,7 @@ id: "Cradle/Cradle_-_res_capcut_prompts_templates_action_planning"
 company: "Cradle"
 product: "Cradle - res capcut prompts templates action planning"
 category: "general-purpose"
+annotation: "ai"
 source_file: "res_capcut_prompts_templates_action_planning.prompt"
 ---
 

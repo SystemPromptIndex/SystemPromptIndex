@@ -3,6 +3,7 @@ id: "Google/Gemini-in-Chrome-2025-05-20"
 company: "Google"
 product: "Gemini-in-Chrome-2025-05-20"
 category: "Chat / General"
+annotation: "human"
 source_file: "gemini_in_chrome.md"
 ---
 

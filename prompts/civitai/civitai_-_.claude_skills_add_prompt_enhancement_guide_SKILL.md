@@ -3,6 +3,7 @@ id: "civitai/civitai_-_.claude_skills_add_prompt_enhancement_guide_SKILL"
 company: "civitai"
 product: "civitai - .claude skills add prompt enhancement guide SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_skills_add-prompt-enhancement-guide_SKILL.md"
 ---
 

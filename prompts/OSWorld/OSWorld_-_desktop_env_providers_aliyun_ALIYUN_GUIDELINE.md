@@ -3,6 +3,7 @@ id: "OSWorld/OSWorld_-_desktop_env_providers_aliyun_ALIYUN_GUIDELINE"
 company: "OSWorld"
 product: "OSWorld - desktop env providers aliyun ALIYUN GUIDELINE"
 category: "browser-automation"
+annotation: "ai"
 source_file: "desktop_env_providers_aliyun_ALIYUN_GUIDELINE.md"
 ---
 

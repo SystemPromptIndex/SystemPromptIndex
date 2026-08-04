@@ -3,6 +3,7 @@ id: "mate/mate_-_documents_DYNAMIC_MEMORY_INSTRUCTIONS"
 company: "mate"
 product: "mate - documents DYNAMIC MEMORY INSTRUCTIONS"
 category: "general-purpose"
+annotation: "ai"
 source_file: "documents_DYNAMIC_MEMORY_INSTRUCTIONS.md"
 ---
 

@@ -3,6 +3,7 @@ id: "claude-code-book/claude-code-book_-_en_Part_1_Foundations_03_The_Tool_Syste
 company: "claude-code-book"
 product: "claude-code-book - en Part 1 Foundations 03 The Tool System Agent ..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "en_Part-1-Foundations_03-The-Tool-System-Agent-Hands.md"
 ---
 

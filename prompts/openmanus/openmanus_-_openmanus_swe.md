@@ -3,6 +3,7 @@ id: "openmanus/openmanus_-_openmanus_swe"
 company: "openmanus"
 product: "openmanus - openmanus / swe"
 category: "extracted"
+annotation: "ai"
 source_file: "openmanus__swe.txt"
 ---
 

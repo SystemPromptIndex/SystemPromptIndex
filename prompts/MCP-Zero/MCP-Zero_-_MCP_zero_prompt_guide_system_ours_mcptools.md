@@ -3,6 +3,7 @@ id: "MCP-Zero/MCP-Zero_-_MCP_zero_prompt_guide_system_ours_mcptools"
 company: "MCP-Zero"
 product: "MCP-Zero - MCP zero prompt guide system ours mcptools"
 category: "general-purpose"
+annotation: "ai"
 source_file: "MCP-zero_prompt_guide_system_ours_mcptools.prompt"
 ---
 

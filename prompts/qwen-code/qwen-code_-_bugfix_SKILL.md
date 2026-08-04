@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_bugfix_SKILL"
 company: "qwen-code"
 product: "qwen-code - bugfix SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "bugfix_SKILL.md"
 ---
 

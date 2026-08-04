@@ -3,6 +3,7 @@ id: "Poke/Poke-p6-UnknownTime"
 company: "Poke"
 product: "Poke-p6-UnknownTime"
 category: "Social AI"
+annotation: "human"
 source_file: "Poke_p6.txt"
 ---
 

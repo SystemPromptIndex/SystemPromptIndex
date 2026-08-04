@@ -3,6 +3,7 @@ id: "context-engineering-kit/context-engineering-kit_-_plugins_review_agents_con
 company: "context-engineering-kit"
 product: "context-engineering-kit - plugins review agents contracts reviewer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_review_agents_contracts-reviewer.md"
 ---
 

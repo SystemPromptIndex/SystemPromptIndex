@@ -3,6 +3,7 @@ id: "activepieces/activepieces_-_.agents_rules_mintlify"
 company: "activepieces"
 product: "activepieces - .agents rules mintlify"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.agents_rules_mintlify.md"
 ---
 

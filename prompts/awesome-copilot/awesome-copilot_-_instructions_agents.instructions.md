@@ -3,6 +3,7 @@ id: "awesome-copilot/awesome-copilot_-_instructions_agents.instructions"
 company: "awesome-copilot"
 product: "awesome-copilot - instructions agents.instructions"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_instructions_agents.instructions.md"
 ---
 

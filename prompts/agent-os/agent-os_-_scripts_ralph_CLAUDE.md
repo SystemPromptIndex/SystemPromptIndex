@@ -3,6 +3,7 @@ id: "agent-os/agent-os_-_scripts_ralph_CLAUDE"
 company: "agent-os"
 product: "agent-os - scripts ralph CLAUDE"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_scripts_ralph_CLAUDE.md"
 ---
 

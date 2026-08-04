@@ -3,6 +3,7 @@ id: "mentat/mentat_-_revisor_prompt"
 company: "mentat"
 product: "mentat - revisor prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "revisor_prompt.txt"
 ---
 

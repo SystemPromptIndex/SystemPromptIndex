@@ -2,6 +2,7 @@
 id: "Cluely/Cluely-Default-2025"
 company: "Cluely"
 product: "Cluely-Default-2025"
+annotation: "ai"
 source_file: "Default Prompt.txt"
 ---
 

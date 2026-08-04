@@ -3,6 +3,7 @@ id: "Riona-AI-Agent/Riona-AI-Agent_-_riona_recaptcha_model_training_directives_d
 company: "Riona-AI-Agent"
 product: "Riona-AI-Agent - riona recaptcha model training directives defau..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "riona-recaptcha-model_training_directives_default_persona.txt"
 ---
 

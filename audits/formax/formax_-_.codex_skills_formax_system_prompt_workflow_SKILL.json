@@ -3,26 +3,27 @@
   "company": "formax",
   "product": "formax - .codex skills formax system prompt workflow SKILL",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".codex_skills_formax-system-prompt-workflow_SKILL.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D2": 1,
+      "D3": 2,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "do not add CC-like capability prose before the runtime supports it",
+      "start": 1417,
+      "end": 1483,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly requires that the system only claim capabilities that the runtime actually implements, preventing false capability claims. It also mandates that canonical documentation be kept up to date before or with code changes, preserving information integrity.",
+      "risky": false
+    },
+    {
+      "text": "Keep helper blocks request-scoped and ephemeral.",
+      "start": 1182,
+      "end": 1230,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt enforces that injected helper blocks remain request-scoped and ephemeral, explicitly preventing them from polluting persisted long-term history. This demonstrates awareness of data retention boundaries and protection of session data from unintended persistence.",
+      "risky": false
+    },
+    {
+      "text": "injected `<system-reminder>` blocks and deferred helper blocks must not pollute persisted long-term history",
+      "start": 1236,
+      "end": 1343,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt enforces that injected helper blocks remain request-scoped and ephemeral, explicitly preventing them from polluting persisted long-term history. This demonstrates awareness of data retention boundaries and protection of session data from unintended persistence.",
+      "risky": false
+    },
+    {
+      "text": "Do not loosen permissions or allow-list behavior just to make parity demos pass.",
+      "start": 4110,
+      "end": 4190,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple guardrails for tool and action safety: it requires maintaining a single prompt-profile path to avoid configuration drift, mandates regression testing before changes are considered done, enforces that deferred tool exposure stays aligned as a linked behavior bundle, and explicitly prohibits loosening permissions to make demos pass.",
+      "risky": false
+    },
+    {
+      "text": "prompt variant, tools exposure style, and skills presentation must stay aligned",
+      "start": 1099,
+      "end": 1178,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple guardrails for tool and action safety: it requires maintaining a single prompt-profile path to avoid configuration drift, mandates regression testing before changes are considered done, enforces that deferred tool exposure stays aligned as a linked behavior bundle, and explicitly prohibits loosening permissions to make demos pass.",
+      "risky": false
+    }
+  ]
 }

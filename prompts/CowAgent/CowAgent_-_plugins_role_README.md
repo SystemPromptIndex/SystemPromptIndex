@@ -3,6 +3,7 @@ id: "CowAgent/CowAgent_-_plugins_role_README"
 company: "CowAgent"
 product: "CowAgent - plugins role README"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_plugins_role_README.md"
 ---
 

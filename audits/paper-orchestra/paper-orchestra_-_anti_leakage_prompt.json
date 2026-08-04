@@ -3,11 +3,12 @@
   "company": "paper-orchestra",
   "product": "paper-orchestra - anti leakage prompt",
   "category": "research",
+  "annotation": "ai",
   "source_file": "anti-leakage-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
+    "D2": 1,
+    "D3": 1,
     "D4": 1,
     "D5": 0,
     "D6": 0,
@@ -15,14 +16,14 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -43,9 +44,36 @@
   },
   "spans": [
     {
-      "text": "If matches are found, the orchestrator must reject the draft and re-prompt the\nwriting step. The grep is a safety net, not a substitute for the prompt.\n",
+      "text": "You MUST write this paper as if you have no prior knowledge of the topic,\nmethod, experiments, or results. Your task is to construct the paper\nexclusively from the materials provided in the current session (e.g.,",
+      "start": 706,
+      "end": 918,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly enforces information integrity by requiring the AI to construct content exclusively from provided materials, forbidding fabrication of facts, hallucination of authors, invented metrics, and fabricated baselines. It explicitly restricts the AI to only use provided sources and logical reasoning derived from them, which promotes grounding and provenance.",
+      "risky": false
+    },
+    {
+      "text": "The paper must be fully anonymized for double-blind review. Do not include\nany information that could reveal the identity of the authors or institutions.",
+      "start": 1502,
+      "end": 1655,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly enforces anonymization and prohibits inclusion of personally identifiable information such as author names, emails, affiliations, and institutional identifiers. The post-hoc verification script further enforces this by scanning for email addresses and affiliation tokens.",
+      "risky": false
+    },
+    {
+      "text": "If matches are found, the orchestrator must reject the draft and re-prompt the",
       "start": 2368,
-      "end": 2520,
+      "end": 2446,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes a deterministic post-hoc verification script (anti_leakage_check.py) that validates the output before acceptance. If the check fails, the orchestrator rejects the draft and re-prompts, implementing a safety-net validation pattern that protects output integrity.",
+      "risky": false
+    },
+    {
+      "text": "If matches are found, the orchestrator must reject the draft and re-prompt the\nwriting step. The grep is a safety net, not a substitute for the prompt.",
+      "start": 2368,
+      "end": 2519,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes a deterministic post-hoc verification script (anti_leakage_check.py) that validates the output before acceptance. If the check fails, the orchestrator rejects the draft and re-prompts, implementing a safety-net validation pattern that protects output integrity.",

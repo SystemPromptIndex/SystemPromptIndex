@@ -3,6 +3,7 @@
   "company": "OpenMonoAgent.ai",
   "product": "OpenMonoAgent.ai - docs playbooks examples release PLAYBOOK",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "clone_docs_playbooks-examples_release_PLAYBOOK.md",
   "scores": {
     "D1": 1,
@@ -52,45 +53,45 @@
       "risky": false
     },
     {
-      "text": "Write only what is supported by actual commits.\n\n4. **Version bump** — locate every `*.csproj` in the solution and update the\n   `<Version>` and `<AssemblyVersion>` elements. Compute the new semver from the\n   curre",
-      "start": 4062,
-      "end": 4277,
+      "text": "If any step fails, explain clearly which check failed and what the user should\n  do to fix it before retrying.",
+      "start": 4940,
+      "end": 5050,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt emphasizes transparency and accuracy throughout. It requires logging every shell command and its exit code, reporting outputs verbatim, writing changelog entries only based on actual commits, and clearly explaining failures. There is no instruction to fabricate information or hide uncertainty.",
       "risky": false
     },
     {
-      "text": "Never commit secrets, .env files, or *.pem certificates as part of the release.",
-      "start": 1542,
-      "end": 1621,
+      "text": "\"Never commit secrets, .env files, or *.pem certificates as part of the release.\"",
+      "start": 1541,
+      "end": 1622,
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly prohibits committing secrets, .env files, or certificate files as part of the release process. This demonstrates a clear commitment to protecting sensitive data and credentials from being exposed in version control.",
       "risky": false
     },
     {
-      "text": "Never force-push, rebase, or delete the main/master branch.\"\n    - \"Never create a release from a dirty working tree — pre-flight must confirm a clean state.\"\n    - \"Never skip the validate-tests step. If tests fail, abort immediately.\"\n    - \"Never push to registry or create a public tag when dry-run is true.\"\n    - \"Never commit secrets, .env files, or *.pem certificates as ",
-      "start": 1222,
-      "end": 1601,
+      "text": "\"Never create a release from a dirty working tree — pre-flight must confirm a clean state.\"",
+      "start": 1289,
+      "end": 1380,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt demonstrates excellent tool and action safety practices. It enforces pre-flight checks before any actions, requires a clean working tree, mandates test validation before proceeding, uses approval gates before destructive operations (tagging, pushing), respects dry-run mode, and explicitly forbids force-pushing or deleting main branches. The allowed-tools list restricts available capabilities.",
       "risky": false
     },
     {
-      "text": "When a gate requires user confirmation, summarise exactly what will happen if\n  they approve before prompting.\n- If any step fails, explain clearly which check failed and what the user should\n  do to fix it before retrying.\n- Log ",
+      "text": "When a gate requires user confirmation, summarise exactly what will happen if\n  they approve before prompting.",
       "start": 4827,
-      "end": 5057,
+      "end": 4937,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves user agency through multiple gate mechanisms (Review, Confirm, Approve) at critical steps. It explicitly requires summarizing what will happen before prompting for approval, ensuring informed consent. The dry-run parameter gives users a safe way to preview actions without consequences.",
       "risky": false
     },
     {
-      "text": "Never skip the validate-tests step. If tests fail, abort immediately.\"\n    - \"Never push to registry or create a public tag when dry-run is true.\"\n    - \"Never commit secrets, .env files, or *.pem certificates as part of the release.\"\n    - \"Always use the Approve gate before pu",
-      "start": 1388,
-      "end": 1667,
+      "text": "If the script exits non-zero, halt the playbook and explain which\n      check failed.",
+      "start": 1862,
+      "end": 1947,
       "dimension": "D7",
       "score": 1,
       "note": "The prompt includes multiple harm prevention mechanisms specific to its domain: mandatory test validation before release, pre-flight checks to ensure environment readiness, prohibition of releasing from dirty working trees, and immediate abort on test failures. These measures prevent shipping broken or unsafe software.",

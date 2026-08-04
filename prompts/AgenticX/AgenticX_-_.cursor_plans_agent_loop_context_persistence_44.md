@@ -3,6 +3,7 @@ id: "AgenticX/AgenticX_-_.cursor_plans_agent_loop_context_persistence_44"
 company: "AgenticX"
 product: "AgenticX - .cursor plans agent loop context persistence 44..."
 category: "multi-agent"
+annotation: "ai"
 source_file: ".cursor_plans_agent_loop_context_persistence_4429188c.plan.md"
 ---
 

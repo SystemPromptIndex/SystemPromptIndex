@@ -3,6 +3,7 @@ id: "lemonai/lemonai_-_src_template_knowledge"
 company: "lemonai"
 product: "lemonai - src template knowledge"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_src_template_knowledge.txt"
 ---
 

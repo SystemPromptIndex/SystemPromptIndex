@@ -3,6 +3,7 @@ id: "AgenticX/AgenticX_-_.cursor_plans_meta_agent_team_architecture_f06c"
 company: "AgenticX"
 product: "AgenticX - .cursor plans meta agent team architecture f06c..."
 category: "multi-agent"
+annotation: "ai"
 source_file: ".cursor_plans_meta-agent_team_architecture_f06c2a83.plan.md"
 ---
 

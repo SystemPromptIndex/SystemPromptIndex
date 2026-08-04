@@ -3,6 +3,7 @@ id: "voyager/voyager_-_curriculum"
 company: "voyager"
 product: "voyager - curriculum"
 category: "general-purpose"
+annotation: "ai"
 source_file: "curriculum.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_design_design_persona_walkthrough"
 company: "agency-agents"
 product: "agency-agents - design design persona walkthrough"
 category: "legal"
+annotation: "ai"
 source_file: "clone_design_design-persona-walkthrough.md"
 ---
 

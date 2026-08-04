@@ -3,6 +3,7 @@ id: "Apple/Xcode-AI-2025-06"
 company: "Apple"
 product: "Xcode-AI-2025-06"
 category: "Code Editor / IDE"
+annotation: "human"
 source_file: "System.txt"
 ---
 

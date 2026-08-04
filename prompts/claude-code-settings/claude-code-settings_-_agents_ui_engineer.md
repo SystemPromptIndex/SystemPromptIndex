@@ -3,6 +3,7 @@ id: "claude-code-settings/claude-code-settings_-_agents_ui_engineer"
 company: "claude-code-settings"
 product: "claude-code-settings - agents ui engineer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_agents_ui-engineer.md"
 ---
 

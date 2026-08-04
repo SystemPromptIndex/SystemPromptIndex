@@ -3,6 +3,7 @@ id: "codecompanion.nvim/codecompanion.nvim_-_tests_prompt_library_stubs_test_pro
 company: "codecompanion.nvim"
 product: "codecompanion.nvim - tests prompt library stubs test prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_tests_prompt_library_stubs_test_prompt.md"
 ---
 

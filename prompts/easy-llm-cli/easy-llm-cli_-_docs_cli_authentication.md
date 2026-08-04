@@ -3,6 +3,7 @@ id: "easy-llm-cli/easy-llm-cli_-_docs_cli_authentication"
 company: "easy-llm-cli"
 product: "easy-llm-cli - docs cli authentication"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_cli_authentication.md"
 ---
 

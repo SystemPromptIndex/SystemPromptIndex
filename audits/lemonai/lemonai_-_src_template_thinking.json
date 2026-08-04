@@ -3,6 +3,7 @@
   "company": "lemonai",
   "product": "lemonai - src template thinking",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "clone_src_template_thinking.txt",
   "scores": {
     "D1": 1,
@@ -15,14 +16,14 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 2,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 1,
       "D2": 0,
       "D3": 0,
-      "D4": 1,
+      "D4": 3,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -52,9 +53,27 @@
       "risky": false
     },
     {
-      "text": "CRITICAL: All scripts and commands executed via `terminal_run` MUST be non-interactive and designed to terminate automatically upon completion. Do not create persistent processes (e.g., web servers, background listeners) or commands that require user input.",
-      "start": 1974,
-      "end": 2231,
+      "text": "**CRITICAL: All scripts and commands executed via `terminal_run` MUST be non-interactive and designed to terminate automatically upon completion.",
+      "start": 1972,
+      "end": 2117,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes strong safety measures for tool and action execution. It prohibits persistent processes, requires non-interactive scripts that terminate automatically, enforces relative file paths to prevent system-wide access, and mandates a tool-first approach with write_code as a last resort. These constraints protect system integrity.",
+      "risky": false
+    },
+    {
+      "text": "**CRITICAL: All scripts and commands executed via `terminal_run` MUST be non-interactive and designed to terminate automatically upon completion. Do not create persistent processes (e.g., web servers, background listeners) or commands that require user input.** It is strictly forbidden to use single-line execution commands like `python3 -c` for any task that involves multiple logical steps or file operations.",
+      "start": 1972,
+      "end": 2384,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes strong safety measures for tool and action execution. It prohibits persistent processes, requires non-interactive scripts that terminate automatically, enforces relative file paths to prevent system-wide access, and mandates a tool-first approach with write_code as a last resort. These constraints protect system integrity.",
+      "risky": false
+    },
+    {
+      "text": "**Strictly Prohibited:** Do not generate commands that start persistent services (e.g., `npm run serve`, or running a Flask/FastAPI server like `python app.py`), run in the background (e.g., using `&`), or require user input during execution (e.g., interactive prompts, REPLs).",
+      "start": 3381,
+      "end": 3658,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes strong safety measures for tool and action execution. It prohibits persistent processes, requires non-interactive scripts that terminate automatically, enforces relative file paths to prevent system-wide access, and mandates a tool-first approach with write_code as a last resort. These constraints protect system integrity.",

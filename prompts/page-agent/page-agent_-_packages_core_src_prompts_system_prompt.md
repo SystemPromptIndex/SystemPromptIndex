@@ -3,6 +3,7 @@ id: "page-agent/page-agent_-_packages_core_src_prompts_system_prompt"
 company: "page-agent"
 product: "page-agent - packages core src prompts system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "packages_core_src_prompts_system_prompt.md"
 ---
 

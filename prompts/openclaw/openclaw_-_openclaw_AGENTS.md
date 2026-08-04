@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_openclaw_AGENTS"
 company: "openclaw"
 product: "openclaw - openclaw / AGENTS"
 category: "extracted"
+annotation: "ai"
 source_file: "openclaw__AGENTS.md"
 ---
 

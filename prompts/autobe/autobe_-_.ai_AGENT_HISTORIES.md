@@ -3,6 +3,7 @@ id: "autobe/autobe_-_.ai_AGENT_HISTORIES"
 company: "autobe"
 product: "autobe - .ai AGENT HISTORIES"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".ai_AGENT_HISTORIES.md"
 ---
 

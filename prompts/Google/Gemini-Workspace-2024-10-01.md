@@ -3,6 +3,7 @@ id: "Google/Gemini-Workspace-2024-10-01"
 company: "Google"
 product: "Gemini-Workspace-2024-10-01"
 category: "Chat / General"
+annotation: "human"
 source_file: "gemini-workspace.md"
 ---
 

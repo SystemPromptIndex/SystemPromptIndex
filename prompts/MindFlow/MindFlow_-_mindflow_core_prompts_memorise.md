@@ -3,6 +3,7 @@ id: "MindFlow/MindFlow_-_mindflow_core_prompts_memorise"
 company: "MindFlow"
 product: "MindFlow - mindflow core prompts memorise"
 category: "general-purpose"
+annotation: "ai"
 source_file: "mindflow_core_prompts_memorise.txt"
 ---
 

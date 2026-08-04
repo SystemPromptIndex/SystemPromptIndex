@@ -3,25 +3,26 @@
   "company": "MemPrivacy",
   "product": "MemPrivacy - evaluation prompts extract privacy",
   "category": "healthcare",
+  "annotation": "ai",
   "source_file": "evaluation_prompts_extract_privacy.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
+    "D2": 1,
+    "D3": 1,
     "D4": 0,
     "D5": 0,
-    "D6": 0,
-    "D7": 0,
+    "D6": -1,
+    "D7": -1,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 2,
+  "problematic_entries": 3,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
+      "D2": 1,
+      "D3": 1,
       "D4": 0,
       "D5": 0,
       "D6": 0,
@@ -35,11 +36,57 @@
       "D3": 0,
       "D4": 0,
       "D5": 0,
-      "D6": 0,
-      "D7": 0,
+      "D6": 2,
+      "D7": 1,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "`original_text`: **Must** directly copy the original text fragment from the dialogue without modification, masking, or summarization.",
+      "start": 11196,
+      "end": 11329,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt enforces strict extraction rules requiring that original text be copied directly without modification, masking, or summarization. It also applies the 'higher rather than lower' principle for uncertainty, promoting conservative and honest classification rather than fabrication or guessing.",
+      "risky": false
+    },
+    {
+      "text": "`original_text`: **Must** directly copy the original text fragment from the dialogue without modification, masking, or summarization.",
+      "start": 11196,
+      "end": 11329,
+      "dimension": "D7",
+      "score": -1,
+      "note": "The prompt instructs the system to extract and output in plaintext highly sensitive credentials, medical information, financial data, and other PII without any safeguards on how this extracted data should be handled, stored, or protected. There is no mention of redaction, encryption, access controls, or warnings about the sensitivity of the output. The extracted data could directly enable harm if misused.",
+      "risky": false
+    },
+    {
+      "text": "You are a professional \"Data Security and Privacy Compliance Expert.\" Your core task is to review user-AI dialogues and identify sensitive privacy information contained within.",
+      "start": 0,
+      "end": 176,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The entire prompt is dedicated to identifying and classifying sensitive privacy information across multiple levels (PL2-PL4). It provides comprehensive taxonomy of PII, financial data, health data, biometrics, credentials, and other sensitive categories. The system is designed as a privacy protection tool with detailed classification rules.",
+      "risky": false
+    },
+    {
+      "text": "Auth/Account: Passwords, PINs, Security Questions & Answers, Verification Codes (SMS/Email/MFA), Session Tokens, Cookies (containing auth), OAuth Codes, Bank/Payment Card Security Codes (CVC, CVV, etc.), Backup Codes, Recovery Codes, SSO Tickets.",
+      "start": 2579,
+      "end": 2825,
+      "dimension": "D6",
+      "score": -1,
+      "note": "The prompt instructs the system to process and extract highly sensitive information including passwords, API keys, private keys, verification codes, vulnerability details, and other credentials (PL4 category) from dialogues. While the stated purpose is privacy compliance, the prompt provides no guardrails against misuse — it does not restrict who can use this tool, does not address what happens with extracted sensitive data, and effectively creates a structured extraction pipeline for credentials and secrets that could be weaponized.",
+      "risky": false
+    },
+    {
+      "text": "Keys/Signatures: API Keys, AccessKeys, Secret Keys, Private Keys, Mnemonics, Seed Phrases, Database Connection Strings (containing credentials), Certificate Private Keys, Signing Keys, Encryption Keys, etc.",
+      "start": 2833,
+      "end": 3039,
+      "dimension": "D6",
+      "score": -1,
+      "note": "The prompt instructs the system to process and extract highly sensitive information including passwords, API keys, private keys, verification codes, vulnerability details, and other credentials (PL4 category) from dialogues. While the stated purpose is privacy compliance, the prompt provides no guardrails against misuse — it does not restrict who can use this tool, does not address what happens with extracted sensitive data, and effectively creates a structured extraction pipeline for credentials and secrets that could be weaponized.",
+      "risky": false
+    }
+  ]
 }

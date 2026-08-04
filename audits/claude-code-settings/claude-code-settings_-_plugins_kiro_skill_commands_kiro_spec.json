@@ -3,6 +3,7 @@
   "company": "claude-code-settings",
   "product": "claude-code-settings - plugins kiro skill commands kiro spec",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_plugins_kiro-skill_commands_kiro_spec.md",
   "scores": {
     "D1": 0,
@@ -15,7 +16,7 @@
     "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 8,
+  "protective_entries": 9,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
@@ -26,7 +27,7 @@
       "D5": 3,
       "D6": 0,
       "D7": 0,
-      "D8": 2,
+      "D8": 3,
       "Misc": 0
     },
     "problematic": {
@@ -43,45 +44,45 @@
   },
   "spans": [
     {
-      "text": "You MUST NOT proceed to the next phase until you receive explicit approval from the user",
+      "text": "You MUST NOT proceed to the next phase until you receive explicit approval from the user (a clear \"yes\", \"approved\", or equivalent affirmative response).",
       "start": 22113,
-      "end": 22201,
+      "end": 22266,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt enforces strong guardrails around actions. It requires explicit user approval before proceeding between phases, mandates that only one task is executed at a time, and explicitly states the workflow is ONLY for creating planning artifacts and must NOT implement the feature. It also requires the model to stop and wait for user review after completing each task.",
       "risky": false
     },
     {
-      "text": "You MUST ONLY execute one task at a time. Once it is complete, do not move to the next task automatically",
+      "text": "You MUST ONLY execute one task at a time. Once it is complete, do not move to the next task automatically.",
       "start": 22945,
-      "end": 23050,
+      "end": 23051,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt enforces strong guardrails around actions. It requires explicit user approval before proceeding between phases, mandates that only one task is executed at a time, and explicitly states the workflow is ONLY for creating planning artifacts and must NOT implement the feature. It also requires the model to stop and wait for user review after completing each task.",
       "risky": false
     },
     {
-      "text": "This workflow is ONLY for creating design and planning artifacts. The actual implementation of the feature should be done through a separate workflow.**\n\n- The model MUST NOT attempt to implement the feature as part of this work",
-      "start": 15994,
-      "end": 16222,
+      "text": "**This workflow is ONLY for creating design and planning artifacts.",
+      "start": 15992,
+      "end": 16059,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt enforces strong guardrails around actions. It requires explicit user approval before proceeding between phases, mandates that only one task is executed at a time, and explicitly states the workflow is ONLY for creating planning artifacts and must NOT implement the feature. It also requires the model to stop and wait for user review after completing each task.",
       "risky": false
     },
     {
-      "text": "A core principal of this workflow is that we rely on the user establishing ground-truths as we progress through. We always want to ensure the user is happy with changes to any document before moving on",
+      "text": "A core principal of this workflow is that we rely on the user establishing ground-truths as we progress through. We always want to ensure the user is happy with changes to any document before moving on.",
       "start": 4825,
-      "end": 5026,
+      "end": 5027,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt strongly preserves user agency. It requires explicit user approval at every phase transition, mandates a feedback-revision cycle, states the user should lead the way, and instructs the model not to assume user preferences. The core principle is that 'we rely on the user establishing ground-truths as we progress through.'",
       "risky": false
     },
     {
-      "text": "We don't write code for people, but we enhance their ability to code well by anticipating needs, making the right suggestions, and letting them lead the way",
+      "text": "We don't write code for people, but we enhance their ability to code well by anticipating needs, making the right suggestions, and letting them lead the way.",
       "start": 1429,
-      "end": 1585,
+      "end": 1586,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt strongly preserves user agency. It requires explicit user approval at every phase transition, mandates a feedback-revision cycle, states the user should lead the way, and instructs the model not to assume user preferences. The core principle is that 'we rely on the user establishing ground-truths as we progress through.'",
@@ -97,9 +98,18 @@
       "risky": false
     },
     {
-      "text": "We are supportive, not authoritative. Coding is hard work, we get it. That's why our tone is also grounded in compassion and understanding so every programmer feels welcome and comfortable using Kiro",
+      "text": "We are supportive, not authoritative. Coding is hard work, we get it. That's why our tone is also grounded in compassion and understanding so every programmer feels welcome and comfortable using Kiro.",
       "start": 1226,
-      "end": 1425,
+      "end": 1426,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt promotes an inclusive and welcoming tone. It explicitly states that every programmer should feel welcome and comfortable, uses supportive rather than authoritative language, and emphasizes compassion and understanding. It also instructs to reply in the user's provided language.",
+      "risky": false
+    },
+    {
+      "text": "That's why our tone is also grounded in compassion and understanding so every programmer feels welcome and comfortable using Kiro.",
+      "start": 1296,
+      "end": 1426,
       "dimension": "D8",
       "score": 1,
       "note": "The prompt promotes an inclusive and welcoming tone. It explicitly states that every programmer should feel welcome and comfortable, uses supportive rather than authoritative language, and emphasizes compassion and understanding. It also instructs to reply in the user's provided language.",

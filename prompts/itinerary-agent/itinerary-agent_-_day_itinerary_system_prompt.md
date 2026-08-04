@@ -3,6 +3,7 @@ id: "itinerary-agent/itinerary-agent_-_day_itinerary_system_prompt"
 company: "itinerary-agent"
 product: "itinerary-agent - day itinerary system prompt"
 category: "travel"
+annotation: "ai"
 source_file: "day_itinerary_system_prompt.txt"
 ---
 

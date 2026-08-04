@@ -3,6 +3,7 @@ id: "aider-desk/aider-desk_-_docs_site_docs_configuration_project_specific_r"
 company: "aider-desk"
 product: "aider-desk - docs site docs configuration project specific r..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs-site_docs_configuration_project-specific-rules.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Agentshire/Agentshire_-_README"
 company: "Agentshire"
 product: "Agentshire - README"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_README.md"
 ---
 

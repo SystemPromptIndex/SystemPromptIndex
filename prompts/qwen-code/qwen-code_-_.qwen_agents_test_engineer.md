@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_.qwen_agents_test_engineer"
 company: "qwen-code"
 product: "qwen-code - .qwen agents test engineer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.qwen_agents_test-engineer.md"
 ---
 

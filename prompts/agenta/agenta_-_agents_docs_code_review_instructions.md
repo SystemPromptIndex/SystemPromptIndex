@@ -3,6 +3,7 @@ id: "agenta/agenta_-_agents_docs_code_review_instructions"
 company: "agenta"
 product: "agenta - agents docs code review instructions"
 category: "general-purpose"
+annotation: "ai"
 source_file: "agents_docs_code-review_instructions.md"
 ---
 

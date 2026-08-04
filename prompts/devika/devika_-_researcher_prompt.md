@@ -3,6 +3,7 @@ id: "devika/devika_-_researcher_prompt"
 company: "devika"
 product: "devika - researcher prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "researcher_prompt.jinja2"
 ---
 

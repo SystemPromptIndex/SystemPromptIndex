@@ -3,6 +3,7 @@ id: "promptflow/promptflow_-_docs_how_to_guides_develop_a_prompty_prompty_ou"
 company: "promptflow"
 product: "promptflow - docs how to guides develop a prompty prompty ou..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_how-to-guides_develop-a-prompty_prompty-output-format.md"
 ---
 

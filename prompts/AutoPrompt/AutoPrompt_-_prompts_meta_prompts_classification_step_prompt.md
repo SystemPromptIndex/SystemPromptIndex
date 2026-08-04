@@ -3,6 +3,7 @@ id: "AutoPrompt/AutoPrompt_-_prompts_meta_prompts_classification_step_prompt"
 company: "AutoPrompt"
 product: "AutoPrompt - prompts meta prompts classification step prompt"
 category: "research"
+annotation: "ai"
 source_file: "prompts_meta_prompts_classification_step_prompt.prompt"
 ---
 

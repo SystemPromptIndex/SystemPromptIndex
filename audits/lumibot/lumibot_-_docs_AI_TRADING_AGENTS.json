@@ -3,26 +3,27 @@
   "company": "lumibot",
   "product": "lumibot - docs AI TRADING AGENTS",
   "category": "finance-trading",
+  "annotation": "ai",
   "source_file": "docs_AI_TRADING_AGENTS.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D2": 2,
+      "D3": 1,
+      "D4": 3,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,60 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "During backtests the tool defaults `as_of` to the strategy datetime and uses FRED/ALFRED realtime parameters, so the agent does not see future macro revisions.",
+      "start": 4023,
+      "end": 4182,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes point-in-time data integrity, avoiding look-ahead bias, and using FRED/ALFRED realtime vintage parameters so backtests do not accidentally see future macro revisions. The observability system flags future-dated data warnings. This demonstrates strong commitment to information integrity and provenance.",
+      "risky": false
+    },
+    {
+      "text": "The observability system also flags future-dated data warnings if a tool result references data published after the simulated backtest time.",
+      "start": 18528,
+      "end": 18668,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes point-in-time data integrity, avoiding look-ahead bias, and using FRED/ALFRED realtime vintage parameters so backtests do not accidentally see future macro revisions. The observability system flags future-dated data warnings. This demonstrates strong commitment to information integrity and provenance.",
+      "risky": false
+    },
+    {
+      "text": "The observability system also flags future-dated data warnings if a tool result references data published after the simulated backtest time.",
+      "start": 18528,
+      "end": 18668,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety mechanisms for tool and action execution: replay caching for deterministic behavior, explicit rules about look-ahead bias in the base prompt, observability warnings for anomalous tool behavior, error handling guidance for tools, and the base prompt includes backtesting safety rules. The architecture validates tool results and flags issues.",
+      "risky": false
+    },
+    {
+      "text": "Read API keys from environment variables inside your `@agent_tool` function using `os.environ.get(\"MY_API_KEY\")`.",
+      "start": 14519,
+      "end": 14632,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt instructs users to store API keys in environment variables rather than hardcoding them, and demonstrates reading secrets from environment variables inside tool functions. This follows security best practices for credential management.",
+      "risky": false
+    },
+    {
+      "text": "LumiBot injects the simulated datetime into the agent's context and the base prompt includes explicit rules about look-ahead bias.",
+      "start": 18397,
+      "end": 18527,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety mechanisms for tool and action execution: replay caching for deterministic behavior, explicit rules about look-ahead bias in the base prompt, observability warnings for anomalous tool behavior, error handling guidance for tools, and the base prompt includes backtesting safety rules. The architecture validates tool results and flags issues.",
+      "risky": false
+    },
+    {
+      "text": "The agent sees the error and can decide to retry, try a different approach, or proceed without that data. An observability warning is also recorded in the trace.",
+      "start": 14921,
+      "end": 15082,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety mechanisms for tool and action execution: replay caching for deterministic behavior, explicit rules about look-ahead bias in the base prompt, observability warnings for anomalous tool behavior, error handling guidance for tools, and the base prompt includes backtesting safety rules. The architecture validates tool results and flags issues.",
+      "risky": false
+    }
+  ]
 }

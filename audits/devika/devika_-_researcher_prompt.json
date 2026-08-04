@@ -3,27 +3,28 @@
   "company": "devika",
   "product": "devika - researcher prompt",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "researcher_prompt.jinja2",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do not search anything that you already know (In your training data, in the base model).",
+      "start": 1034,
+      "end": 1122,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to only search for information it doesn't already know and to avoid fabricating unnecessary queries. It encourages epistemic honesty by distinguishing between known and unknown information.",
+      "risky": false
+    },
+    {
+      "text": "Only search for documentation, do not search basic how tos.",
+      "start": 1481,
+      "end": 1540,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to only search for information it doesn't already know and to avoid fabricating unnecessary queries. It encourages epistemic honesty by distinguishing between known and unknown information.",
+      "risky": false
+    },
+    {
+      "text": "YOU ARE ALLOWED TO LEAVE THE \"queries\" FIELD EMPTY IF NO SEARCH QUERIES ARE NEEDED FOR THE STEP.",
+      "start": 1858,
+      "end": 1954,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to only search for information it doesn't already know and to avoid fabricating unnecessary queries. It encourages epistemic honesty by distinguishing between known and unknown information.",
+      "risky": false
+    },
+    {
+      "text": "also only ask for information if you think it's necessary, otherwise leave ask_user field empty.",
+      "start": 381,
+      "end": 477,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by including an ask_user field that allows the system to request clarification or input from the user when needed, rather than making assumptions. It also instructs to leave the field empty if not required, avoiding unnecessary prompting.",
+      "risky": false
+    },
+    {
+      "text": "\"ask_user\": \"<ASK INPUT FROM USER IF REQUIRED, OTHERWISE LEAVE EMPTY STRING>\"",
+      "start": 639,
+      "end": 716,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by including an ask_user field that allows the system to request clarification or input from the user when needed, rather than making assumptions. It also instructs to leave the field empty if not required, avoiding unnecessary prompting.",
+      "risky": false
+    }
+  ]
 }

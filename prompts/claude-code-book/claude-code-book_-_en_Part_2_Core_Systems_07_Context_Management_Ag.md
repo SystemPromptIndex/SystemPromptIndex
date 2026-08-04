@@ -3,6 +3,7 @@ id: "claude-code-book/claude-code-book_-_en_Part_2_Core_Systems_07_Context_Manag
 company: "claude-code-book"
 product: "claude-code-book - en Part 2 Core Systems 07 Context Management Ag..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "en_Part-2-Core-Systems_07-Context-Management-Agent-Working-Memory.md"
 ---
 

@@ -3,6 +3,7 @@ id: "agent-sandbox/agent-sandbox_-_examples_hermes_agent_k8s_developer"
 company: "agent-sandbox"
 product: "agent-sandbox - examples hermes agent k8s developer"
 category: "devops"
+annotation: "ai"
 source_file: "clone_examples_hermes-agent_k8s-developer.md"
 ---
 

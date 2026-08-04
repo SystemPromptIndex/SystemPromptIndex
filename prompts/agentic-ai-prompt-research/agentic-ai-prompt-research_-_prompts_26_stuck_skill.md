@@ -3,6 +3,7 @@ id: "agentic-ai-prompt-research/agentic-ai-prompt-research_-_prompts_26_stuck_sk
 company: "agentic-ai-prompt-research"
 product: "agentic-ai-prompt-research - prompts 26 stuck skill"
 category: "research"
+annotation: "ai"
 source_file: "clone_prompts_26_stuck_skill.md"
 ---
 

@@ -3,6 +3,7 @@ id: "system-prompts-and-models-of-ai-tools-chinese/system-prompts-and-models-of-
 company: "system-prompts-and-models-of-ai-tools-chinese"
 product: "system-prompts-and-models-of-ai-tools-chinese - Augment Code claude 4 sonnet agent prompts"
 category: "coding-agents"
+annotation: "ai"
 source_file: "Augment Code_claude-4-sonnet-agent-prompts.txt"
 ---
 

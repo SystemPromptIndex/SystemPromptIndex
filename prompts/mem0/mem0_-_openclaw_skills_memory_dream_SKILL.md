@@ -3,6 +3,7 @@ id: "mem0/mem0_-_openclaw_skills_memory_dream_SKILL"
 company: "mem0"
 product: "mem0 - openclaw skills memory dream SKILL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_openclaw_skills_memory-dream_SKILL.md"
 ---
 

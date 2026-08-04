@@ -3,6 +3,7 @@ id: "intelligent-app-workshop/intelligent-app-workshop_-_docs_assets_Skills_Advi
 company: "intelligent-app-workshop"
 product: "intelligent-app-workshop - docs assets Skills AdvisorSkill InvestmentAdvis..."
 category: "finance-trading"
+annotation: "ai"
 source_file: "docs_assets_Skills_AdvisorSkill_InvestmentAdvise_skprompt.txt"
 ---
 

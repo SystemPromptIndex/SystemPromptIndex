@@ -3,6 +3,7 @@ id: "agent-teams-lite/agent-teams-lite_-_examples_vscode_copilot_instructions"
 company: "agent-teams-lite"
 product: "agent-teams-lite - examples vscode copilot instructions"
 category: "multi-agent"
+annotation: "ai"
 source_file: "examples_vscode_copilot-instructions.md"
 ---
 

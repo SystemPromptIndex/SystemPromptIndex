@@ -3,6 +3,7 @@ id: "gateway/gateway_-_cookbook_use_cases_use_openai_sdk_with_portkey"
 company: "gateway"
 product: "gateway - cookbook use cases use openai sdk with portkey ..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "cookbook_use-cases_use-openai-sdk-with-portkey-prompt-templates.md"
 ---
 

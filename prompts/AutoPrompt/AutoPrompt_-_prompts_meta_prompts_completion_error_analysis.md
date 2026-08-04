@@ -3,6 +3,7 @@ id: "AutoPrompt/AutoPrompt_-_prompts_meta_prompts_completion_error_analysis"
 company: "AutoPrompt"
 product: "AutoPrompt - prompts meta prompts completion error analysis"
 category: "research"
+annotation: "ai"
 source_file: "prompts_meta_prompts_completion_error_analysis.prompt"
 ---
 

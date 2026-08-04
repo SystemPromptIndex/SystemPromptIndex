@@ -3,6 +3,7 @@ id: "kilo-code/kilo-code_-_.opencode_agent_triage"
 company: "kilo-code"
 product: "kilo-code - .opencode agent triage"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.opencode_agent_triage.md"
 ---
 

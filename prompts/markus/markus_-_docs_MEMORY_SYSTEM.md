@@ -3,6 +3,7 @@ id: "markus/markus_-_docs_MEMORY_SYSTEM"
 company: "markus"
 product: "markus - docs MEMORY SYSTEM"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_MEMORY-SYSTEM.md"
 ---
 

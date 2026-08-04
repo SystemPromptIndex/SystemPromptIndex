@@ -3,6 +3,7 @@ id: "higress/higress_-_plugins_wasm_rust_extensions_ai_intent_README"
 company: "higress"
 product: "higress - plugins wasm rust extensions ai intent README"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_plugins_wasm-rust_extensions_ai-intent_README.md"
 ---
 

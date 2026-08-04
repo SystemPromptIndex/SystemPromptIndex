@@ -3,6 +3,7 @@ id: "connectonion/connectonion_-_connectonion_cli_browser_agent_prompts_element"
 company: "connectonion"
 product: "connectonion - connectonion cli browser agent prompts element ..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "connectonion_cli_browser_agent_prompts_element_matcher.md"
 ---
 

@@ -3,6 +3,7 @@ id: "Personal_AI_Infrastructure/Personal_AI_Infrastructure_-_Packs_Fabric_src_Pa
 company: "Personal_AI_Infrastructure"
 product: "Personal_AI_Infrastructure - Packs Fabric src Patterns agility story system"
 category: "devops"
+annotation: "ai"
 source_file: "Packs_Fabric_src_Patterns_agility_story_system.md"
 ---
 

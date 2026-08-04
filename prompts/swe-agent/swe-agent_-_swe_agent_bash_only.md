@@ -3,6 +3,7 @@ id: "swe-agent/swe-agent_-_swe_agent_bash_only"
 company: "swe-agent"
 product: "swe-agent - swe agent / bash only"
 category: "extracted"
+annotation: "ai"
 source_file: "swe-agent__bash_only.txt"
 ---
 

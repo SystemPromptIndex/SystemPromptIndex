@@ -3,6 +3,7 @@ id: "eGEOagents/eGEOagents_-_prompts_rewriter_system"
 company: "eGEOagents"
 product: "eGEOagents - prompts rewriter system"
 category: "multi-agent"
+annotation: "ai"
 source_file: "prompts_rewriter_system.txt"
 ---
 

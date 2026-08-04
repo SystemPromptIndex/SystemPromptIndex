@@ -3,6 +3,7 @@ id: "mentat/mentat_-_feature_selection_prompt"
 company: "mentat"
 product: "mentat - feature selection prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "feature_selection_prompt.txt"
 ---
 

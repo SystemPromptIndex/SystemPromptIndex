@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_objective_updated"
 company: "codex-cli"
 product: "codex-cli - objective updated"
 category: "coding-agents"
+annotation: "ai"
 source_file: "objective_updated.md"
 ---
 

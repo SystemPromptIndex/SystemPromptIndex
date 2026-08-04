@@ -3,27 +3,28 @@
   "company": "codex-cli",
   "product": "codex-cli - AGENTS",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "AGENTS.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Never add or modify any code related to `CODEX_SANDBOX_NETWORK_DISABLED_ENV_VAR` or `CODEX_SANDBOX_ENV_VAR`.",
+      "start": 402,
+      "end": 510,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces sandbox execution constraints, prohibits modification of sandbox security variables, requires validation steps before finalizing changes, and mandates running linters and tests. The sandbox environment prevents network access and constrains process execution.",
+      "risky": false
+    },
+    {
+      "text": "You operate in a sandbox where `CODEX_SANDBOX_NETWORK_DISABLED=1` will be set whenever you use the `shell` tool.",
+      "start": 515,
+      "end": 627,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces sandbox execution constraints, prohibits modification of sandbox security variables, requires validation steps before finalizing changes, and mandates running linters and tests. The sandbox environment prevents network access and constrains process execution.",
+      "risky": false
+    },
+    {
+      "text": "project-specific or individual tests can be run without asking the user, but do ask the user before running the complete test suite.",
+      "start": 7164,
+      "end": 7296,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the AI to ask the user before running the complete test suite, and by structuring workflows that keep the user informed and in control of consequential actions.",
+      "risky": false
+    }
+  ]
 }

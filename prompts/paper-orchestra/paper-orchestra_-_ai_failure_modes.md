@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_ai_failure_modes"
 company: "paper-orchestra"
 product: "paper-orchestra - ai failure modes"
 category: "research"
+annotation: "ai"
 source_file: "ai_failure_modes.md"
 ---
 

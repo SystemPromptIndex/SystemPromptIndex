@@ -3,6 +3,7 @@ id: "sweet_rl/sweet_rl_-_prompts_human_simulator_code_prompt"
 company: "sweet_rl"
 product: "sweet_rl - prompts human simulator code prompt"
 category: "research"
+annotation: "ai"
 source_file: "prompts_human_simulator_code_prompt.txt"
 ---
 

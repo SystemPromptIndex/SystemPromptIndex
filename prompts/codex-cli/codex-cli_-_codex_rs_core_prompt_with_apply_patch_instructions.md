@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_codex_rs_core_prompt_with_apply_patch_instructions"
 company: "codex-cli"
 product: "codex-cli - codex rs core prompt with apply patch instructions"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_codex-rs_core_prompt_with_apply_patch_instructions.md"
 ---
 

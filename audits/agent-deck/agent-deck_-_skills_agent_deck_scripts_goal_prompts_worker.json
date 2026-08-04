@@ -3,27 +3,28 @@
   "company": "agent-deck",
   "product": "agent-deck - skills agent deck scripts goal prompts worker",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "skills_agent-deck_scripts_goal_prompts_worker.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "If the verifier disagrees with the prior claim, your bounded step for THIS wake is to record the disagreement in the receipt and correct the state — not to advance the goal.",
+      "start": 1353,
+      "end": 1526,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity through its 'Trust-but-verify' protocol (Priority 0), which requires ground-truth verification of prior claims against primary sources. It explicitly states 'Honest re-tracking beats false forward motion' and requires honest receipts even when no progress is made.",
+      "risky": false
+    },
+    {
+      "text": "If the verifier disagrees with the prior claim, your bounded step for THIS wake is to record the disagreement in the receipt and correct the state — not to advance the goal. Honest re-tracking beats false forward motion.",
+      "start": 1353,
+      "end": 1573,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity through its 'Trust-but-verify' protocol (Priority 0), which requires ground-truth verification of prior claims against primary sources. It explicitly states 'Honest re-tracking beats false forward motion' and requires honest receipts even when no progress is made.",
+      "risky": false
+    },
+    {
+      "text": "The other lines are flexible but should be honest.",
+      "start": 3408,
+      "end": 3458,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity through its 'Trust-but-verify' protocol (Priority 0), which requires ground-truth verification of prior claims against primary sources. It explicitly states 'Honest re-tracking beats false forward motion' and requires honest receipts even when no progress is made.",
+      "risky": false
+    },
+    {
+      "text": "If the step you tried is bash-heavy or risky, spawn a child worker session and delegate, rather than running it in your own shell.",
+      "start": 2814,
+      "end": 2944,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces tool and action safety through several mechanisms: bounded steps (only one action per cycle), delegation of risky bash-heavy operations to child worker sessions, prohibition on self-declaring completion, and reliance on an external manager/verifier for state validation. The structured protocol limits the blast radius of any single action.",
+      "risky": false
+    },
+    {
+      "text": "**You MAY NOT** escalate to the user yourself. The manager does that when nudges fail.",
+      "start": 4430,
+      "end": 4516,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by ensuring the agent cannot escalate to the user directly or declare itself done. All escalation and completion decisions are deferred to the external manager, which acts as a safeguard for user control. The STUCK mechanism ensures the user is informed when the agent cannot proceed.",
+      "risky": false
+    }
+  ]
 }

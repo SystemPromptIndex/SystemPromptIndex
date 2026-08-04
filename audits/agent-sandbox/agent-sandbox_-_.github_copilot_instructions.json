@@ -3,30 +3,31 @@
   "company": "agent-sandbox",
   "product": "agent-sandbox - .github copilot instructions",
   "category": "devops",
+  "annotation": "ai",
   "source_file": ".github_copilot-instructions.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 1,
     "D6": 0,
-    "D7": 0,
-    "D8": 0,
+    "D7": 1,
+    "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 1,
+  "protective_entries": 9,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 4,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 1,
       "D6": 0,
-      "D7": 0,
-      "D8": 0,
+      "D7": 2,
+      "D8": 1,
       "Misc": 0
     },
     "problematic": {
@@ -43,12 +44,84 @@
   },
   "spans": [
     {
-      "text": "all pass and no lint config flags the line, treat residual style as author preference rather than a review-blocking concern.\n\n**Scope of Review:**\n\nFocus on substantive findings tied to the lines the PR actually changes — logic bugs, se",
-      "start": 1801,
-      "end": 2037,
+      "text": "When in doubt between flagging a marginal nit and staying silent:",
+      "start": 2259,
+      "end": 2324,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity by instructing the reviewer to focus on substantive findings, defer to authoritative sources (go.mod, lint config), and avoid introducing unfounded rules. The instruction to 'stay silent' when in doubt rather than fabricate concerns demonstrates a commitment to not generating false positives or misleading information.",
+      "risky": false
+    },
+    {
+      "text": "When in doubt between flagging a marginal nit and staying silent: stay silent. Each comment costs the contributor attention, and a noisy review erodes the signal of the substantive findings.",
+      "start": 2259,
+      "end": 2449,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity by instructing the reviewer to focus on substantive findings, defer to authoritative sources (go.mod, lint config), and avoid introducing unfounded rules. The instruction to 'stay silent' when in doubt rather than fabricate concerns demonstrates a commitment to not generating false positives or misleading information.",
+      "risky": false
+    },
+    {
+      "text": "Each comment costs the contributor attention, and a noisy review erodes the signal of the substantive findings.",
+      "start": 2338,
+      "end": 2449,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity by instructing the reviewer to focus on substantive findings, defer to authoritative sources (go.mod, lint config), and avoid introducing unfounded rules. The instruction to 'stay silent' when in doubt rather than fabricate concerns demonstrates a commitment to not generating false positives or misleading information.",
+      "risky": false
+    },
+    {
+      "text": "Defer to that value as the authoritative target.",
+      "start": 562,
+      "end": 610,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity by instructing the reviewer to focus on substantive findings, defer to authoritative sources (go.mod, lint config), and avoid introducing unfounded rules. The instruction to 'stay silent' when in doubt rather than fabricate concerns demonstrates a commitment to not generating false positives or misleading information.",
+      "risky": false
+    },
+    {
+      "text": "Explain that doing so adds you (Copilot) as a co-author, which breaks the Kubernetes CLA check as you cannot sign it.",
+      "start": 4792,
+      "end": 4909,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to flag security vulnerabilities including privilege escalation and confused deputy attacks. It also includes a specific safety measure regarding the CLA check, preventing the AI from being added as a co-author which would break the project's compliance process. The focus on controller-runtime misuse and security review demonstrates tool/action safety awareness.",
+      "risky": false
+    },
+    {
+      "text": "If the repo's lint gate (`make lint-go` and `make lint-api`, which wrap `./dev/tools/lint-*`) and `go test` all pass and no lint config flags the line, treat residual style as author preference rather than a review-blocking concern.",
+      "start": 1693,
+      "end": 1925,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt strongly preserves user/contributor agency. It explicitly instructs the reviewer to respect author preferences, avoid imposing unnecessary style rules, treat maintainer decisions as deliberate, and minimize noise that would burden contributors. The tone guidance emphasizes being constructive and empathetic rather than authoritarian.",
+      "risky": false
+    },
+    {
+      "text": "**Analyze Logic & Correctness:** Identify logical errors, race conditions, memory leaks, or unhandled edge cases, especially within controller reconciliation loops.",
+      "start": 2473,
+      "end": 2637,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt actively promotes harm prevention in the software engineering context by instructing the reviewer to identify security vulnerabilities, race conditions, memory leaks, privilege escalation, and confused deputy attacks. It also emphasizes preventing breaking changes and ensuring proper error handling, which are all forms of harm prevention in the code review domain.",
+      "risky": false
+    },
+    {
+      "text": "**Security & Performance:** Flag potential security vulnerabilities (e.g., privilege escalation, confused deputy attacks, improper inputs) or performance pitfalls.",
+      "start": 2816,
+      "end": 2979,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt actively promotes harm prevention in the software engineering context by instructing the reviewer to identify security vulnerabilities, race conditions, memory leaks, privilege escalation, and confused deputy attacks. It also emphasizes preventing breaking changes and ensuring proper error handling, which are all forms of harm prevention in the code review domain.",
+      "risky": false
+    },
+    {
+      "text": "Constructive, empathetic, and professional. Always explain the reasoning behind your suggestions.",
+      "start": 4974,
+      "end": 5071,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt promotes fairness and respectful interaction through its tone guidance. It instructs the system to be constructive, empathetic, and professional, and to always explain reasoning behind suggestions. The emphasis on respecting contributor decisions and minimizing unnecessary burden demonstrates equitable treatment of contributors.",
       "risky": false
     }
   ]

@@ -3,6 +3,7 @@ id: "grepai/grepai_-_.claude_agents_deep_explore"
 company: "grepai"
 product: "grepai - .claude agents deep explore"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_.claude_agents_deep-explore.md"
 ---
 

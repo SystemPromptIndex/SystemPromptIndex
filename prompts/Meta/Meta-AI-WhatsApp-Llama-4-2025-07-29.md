@@ -3,6 +3,7 @@ id: "Meta/Meta-AI-WhatsApp-Llama-4-2025-07-29"
 company: "Meta"
 product: "Meta-AI-WhatsApp-Llama-4-2025-07-29"
 category: "Chat / General"
+annotation: "human"
 source_file: "metaai_llama4-whatsapp-07292025.md"
 ---
 

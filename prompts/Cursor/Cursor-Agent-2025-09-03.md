@@ -2,6 +2,7 @@
 id: "Cursor/Cursor-Agent-2025-09-03"
 company: "Cursor"
 product: "Cursor-Agent-2025-09-03"
+annotation: "ai"
 source_file: "Agent Prompt 2025-09-03.txt"
 ---
 

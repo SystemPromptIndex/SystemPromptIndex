@@ -3,6 +3,7 @@ id: "medical-research-skills/medical-research-skills_-_awesome_med_research_skil
 company: "medical-research-skills"
 product: "medical-research-skills - awesome med research skills Academic Writing re..."
 category: "healthcare"
+annotation: "ai"
 source_file: "awesome-med-research-skills_Academic Writing_reporting-guideline-compliance-checker_SKILL.md"
 ---
 

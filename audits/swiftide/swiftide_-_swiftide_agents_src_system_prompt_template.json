@@ -3,27 +3,28 @@
   "company": "swiftide",
   "product": "swiftide - swiftide agents src system prompt template",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "swiftide-agents_src_system_prompt_template.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do not make up any assumptions, use tools to get the information you need",
+      "start": 494,
+      "end": 567,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the agent not to fabricate information and to use tools to gather facts rather than making assumptions. It also requires the agent to express its reasoning transparently.",
+      "risky": false
+    },
+    {
+      "text": "Think before you act; respond with your thoughts before calling tools",
+      "start": 422,
+      "end": 491,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes careful tool usage by requiring the agent to think before acting, respond with thoughts before calling tools, and stop when stuck. This encourages deliberate and validated actions rather than reckless execution.",
+      "risky": false
+    },
+    {
+      "text": "If you are stuck, or otherwise cannot complete the task, respond with your thoughts and call `stop`.",
+      "start": 647,
+      "end": 747,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes careful tool usage by requiring the agent to think before acting, respond with thoughts before calling tools, and stop when stuck. This encourages deliberate and validated actions rather than reckless execution.",
+      "risky": false
+    },
+    {
+      "text": "If the task is completed, or otherwise cannot continue, like requiring user feedback, call `stop`.",
+      "start": 750,
+      "end": 848,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the agent to stop when user feedback is needed rather than proceeding autonomously. It also requires transparent reasoning before taking actions.",
+      "risky": false
+    }
+  ]
 }

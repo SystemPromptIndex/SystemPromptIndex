@@ -3,6 +3,7 @@ id: "Perplexity/Comet-Assistant-2025-07-09"
 company: "Perplexity"
 product: "Comet-Assistant-2025-07-09"
 category: "Search / Research"
+annotation: "human"
 source_file: "System_Prompt.txt"
 ---
 

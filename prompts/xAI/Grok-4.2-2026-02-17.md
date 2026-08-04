@@ -3,6 +3,7 @@ id: "xAI/Grok-4.2-2026-02-17"
 company: "xAI"
 product: "Grok-4.2-2026-02-17"
 category: "Chat / General"
+annotation: "human"
 source_file: "grok-4.2.md"
 ---
 

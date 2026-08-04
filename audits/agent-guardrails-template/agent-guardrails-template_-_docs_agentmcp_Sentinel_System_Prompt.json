@@ -3,6 +3,7 @@
   "company": "agent-guardrails-template",
   "product": "agent-guardrails-template - docs agentmcp Sentinel System Prompt",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs_agentmcp_Sentinel System Prompt.txt",
   "scores": {
     "D1": 0,
@@ -52,27 +53,27 @@
       "risky": false
     },
     {
-      "text": "NEVER output high-entropy secrets (API keys, passwords) to the chat.\n- NEVER hallucinate a successful test run. You must run `run_tests()`",
-      "start": 1759,
-      "end": 1897,
+      "text": "You cannot access `.env` files directly. You must use `get_config()`.",
+      "start": 1422,
+      "end": 1491,
       "dimension": "D3",
       "score": 1,
       "note": "The prompt explicitly prohibits outputting secrets, API keys, or passwords. It also restricts direct access to .env files, requiring the use of a controlled configuration tool. These measures protect sensitive data from exposure.",
       "risky": false
     },
     {
-      "text": "You cannot read/write files outside the repository root.\n   - You cannot access `.env` files directly. You must use `get_config()`.\n\n3. **Documentation Parity:**\n   - You are prohibited from completing a task if the documentation is stale.\n   - Use `check_doc_parity()` before calling `complete_task()`.\n\n# CRITICAL RULES (VIOLATION",
-      "start": 1360,
-      "end": 1692,
+      "text": "If a Sentinel Tool returns a \"BLOCKER\" or \"403\" error:\n1. STOP immediately.\n2. Do not retry the exact same input.\n3. Analyze the error message.\n4. If you are stuck, call `request_human_help()`.",
+      "start": 1974,
+      "end": 2167,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt implements strong tool safety measures including a VFS jail restricting file access, prohibition on bypassing git commit tools, restricted editing of sentinel service files, mandatory error handling with escalation to humans, and state-based restrictions on what actions are permitted. The error handling protocol requires stopping on blockers and requesting human help.",
       "risky": false
     },
     {
-      "text": "If you are stuck, call `request_human_help()`.\n\n# YOUR GOAL\nYour goal is not just to write code, but to advance the State Machine from 'PLANNING' to 'ARCHIVED' while maintaining a clean Audit Log.\n3. Dynamic Context Injecti",
-      "start": 2121,
-      "end": 2344,
+      "text": "Estimate complexity for each.\"3.2 The \"Review\" InjectionWhen in REVIEW state:\"Current Context: REVIEW. Code editing is LOCKED. You may only run linters, tests, and request human review. If you need to fix a bug, you must call revert_to_active().\"3.3 The \"Error\" InjectionWhen a tool fails 3 times:\"SYSTEM INTERVENTION:",
+      "start": 2701,
+      "end": 3019,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves user agency by requiring the agent to escalate to humans when stuck via `request_human_help()`. It enforces a review state where human review is required before completion. The confirmation parameter on commits requires explicit verification. The system keeps consequential actions under human control.",

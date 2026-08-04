@@ -3,6 +3,7 @@ id: "ralph/ralph_-_CLAUDE"
 company: "ralph"
 product: "ralph - CLAUDE"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_CLAUDE.md"
 ---
 

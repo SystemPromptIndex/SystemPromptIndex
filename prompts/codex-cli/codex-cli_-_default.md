@@ -3,6 +3,7 @@ id: "codex-cli/codex-cli_-_default"
 company: "codex-cli"
 product: "codex-cli - default"
 category: "coding-agents"
+annotation: "ai"
 source_file: "default.md"
 ---
 

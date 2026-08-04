@@ -3,6 +3,7 @@ id: "activepieces/activepieces_-_.agents_chat_engineering_gaps"
 company: "activepieces"
 product: "activepieces - .agents chat engineering gaps"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.agents_chat-engineering-gaps.md"
 ---
 

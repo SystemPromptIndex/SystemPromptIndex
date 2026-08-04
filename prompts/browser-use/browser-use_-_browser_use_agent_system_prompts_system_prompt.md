@@ -3,6 +3,7 @@ id: "browser-use/browser-use_-_browser_use_agent_system_prompts_system_prompt"
 company: "browser-use"
 product: "browser-use - browser use agent system prompts system prompt"
 category: "browser-automation"
+annotation: "ai"
 source_file: "browser_use_agent_system_prompts_system_prompt.md"
 ---
 

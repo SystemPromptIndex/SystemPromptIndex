@@ -3,6 +3,7 @@ id: "mentat/mentat_-_json_parser_prompt"
 company: "mentat"
 product: "mentat - json parser prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "json_parser_prompt.txt"
 ---
 

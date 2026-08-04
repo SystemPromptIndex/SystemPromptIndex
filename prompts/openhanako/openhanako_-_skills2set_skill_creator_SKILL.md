@@ -3,6 +3,7 @@ id: "openhanako/openhanako_-_skills2set_skill_creator_SKILL"
 company: "openhanako"
 product: "openhanako - skills2set skill creator SKILL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_skills2set_skill-creator_SKILL.md"
 ---
 

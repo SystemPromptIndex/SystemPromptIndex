@@ -3,6 +3,7 @@ id: "qiushi-skill/qiushi-skill_-_skills_investigation_first_investigation_agent"
 company: "qiushi-skill"
 product: "qiushi-skill - skills investigation first investigation agent ..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "skills_investigation-first_investigation-agent-prompt.md"
 ---
 

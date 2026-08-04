@@ -3,6 +3,7 @@ id: "HaluMem/HaluMem_-_prompts_stage1_3_preferences_validation_prompt"
 company: "HaluMem"
 product: "HaluMem - prompts stage1 3 preferences validation prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_stage1_3_preferences_validation_prompt.txt"
 ---
 

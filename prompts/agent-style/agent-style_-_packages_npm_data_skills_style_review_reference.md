@@ -3,6 +3,7 @@ id: "agent-style/agent-style_-_packages_npm_data_skills_style_review_reference"
 company: "agent-style"
 product: "agent-style - packages npm data skills style review reference..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "packages_npm_data_skills_style-review_references_revision-prompt.md"
 ---
 

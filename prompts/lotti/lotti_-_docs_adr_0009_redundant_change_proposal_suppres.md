@@ -3,6 +3,7 @@ id: "lotti/lotti_-_docs_adr_0009_redundant_change_proposal_suppres"
 company: "lotti"
 product: "lotti - docs adr 0009 redundant change proposal suppres..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_adr_0009-redundant-change-proposal-suppression.md"
 ---
 

@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_patterns_06_verification_and_test
 company: "claude-code-prompts"
 product: "claude-code-prompts - patterns 06 verification and testing"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_patterns_06-verification-and-testing.md"
 ---
 

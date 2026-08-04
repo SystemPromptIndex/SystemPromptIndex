@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_docs_audit_and_refresh_SKILL"
 company: "qwen-code"
 product: "qwen-code - docs audit and refresh SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs-audit-and-refresh_SKILL.md"
 ---
 

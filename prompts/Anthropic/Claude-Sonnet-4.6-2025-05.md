@@ -2,6 +2,7 @@
 id: "Anthropic/Claude-Sonnet-4.6-2025-05"
 company: "Anthropic"
 product: "Claude-Sonnet-4.6-2025-05"
+annotation: "ai"
 source_file: "Claude Sonnet 4.6.txt"
 ---
 

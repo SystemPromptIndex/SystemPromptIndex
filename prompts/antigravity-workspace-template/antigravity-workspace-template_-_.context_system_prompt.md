@@ -3,6 +3,7 @@ id: "antigravity-workspace-template/antigravity-workspace-template_-_.context_sy
 company: "antigravity-workspace-template"
 product: "antigravity-workspace-template - .context system prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".context_system_prompt.md"
 ---
 

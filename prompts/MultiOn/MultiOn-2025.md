@@ -2,6 +2,7 @@
 id: "MultiOn/MultiOn-2025"
 company: "MultiOn"
 product: "MultiOn-2025"
+annotation: "ai"
 source_file: "MultiOn.md"
 ---
 

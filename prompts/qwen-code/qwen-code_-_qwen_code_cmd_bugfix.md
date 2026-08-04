@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_qwen_code_cmd_bugfix"
 company: "qwen-code"
 product: "qwen-code - qwen code / cmd bugfix"
 category: "extracted"
+annotation: "ai"
 source_file: "qwen-code__cmd_bugfix.md"
 ---
 

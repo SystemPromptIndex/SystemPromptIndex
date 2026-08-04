@@ -3,6 +3,7 @@ id: "sweet_rl/sweet_rl_-_prompts_generate_code_example"
 company: "sweet_rl"
 product: "sweet_rl - prompts generate code example"
 category: "research"
+annotation: "ai"
 source_file: "prompts_generate_code_example.txt"
 ---
 

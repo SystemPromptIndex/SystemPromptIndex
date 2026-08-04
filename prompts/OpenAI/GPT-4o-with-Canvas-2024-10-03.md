@@ -3,6 +3,7 @@ id: "OpenAI/GPT-4o-with-Canvas-2024-10-03"
 company: "OpenAI"
 product: "GPT-4o-with-Canvas-2024-10-03"
 category: "Chat / General"
+annotation: "human"
 source_file: "gpt40_with_canvas.md"
 ---
 

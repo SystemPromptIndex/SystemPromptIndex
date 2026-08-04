@@ -3,6 +3,7 @@ id: "DiffMem/DiffMem_-_src_diffmem_retrieval_agent_prompts_system"
 company: "DiffMem"
 product: "DiffMem - src diffmem retrieval agent prompts system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "src_diffmem_retrieval_agent_prompts_system.txt"
 ---
 

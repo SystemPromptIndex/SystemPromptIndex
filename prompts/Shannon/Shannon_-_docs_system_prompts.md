@@ -3,6 +3,7 @@ id: "Shannon/Shannon_-_docs_system_prompts"
 company: "Shannon"
 product: "Shannon - docs system prompts"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_system-prompts.md"
 ---
 

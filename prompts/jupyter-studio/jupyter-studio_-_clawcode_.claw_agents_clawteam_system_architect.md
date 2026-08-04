@@ -3,6 +3,7 @@ id: "jupyter-studio/jupyter-studio_-_clawcode_.claw_agents_clawteam_system_archi
 company: "jupyter-studio"
 product: "jupyter-studio - clawcode .claw agents clawteam system architect"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clawcode_.claw_agents_clawteam-system-architect.md"
 ---
 

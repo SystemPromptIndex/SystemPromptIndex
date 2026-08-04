@@ -3,6 +3,7 @@ id: "flock/flock_-_flock_data_skills_skill_creator_SKILL"
 company: "flock"
 product: "flock - flock data skills skill creator SKILL"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_flock-data_skills_skill-creator_SKILL.md"
 ---
 

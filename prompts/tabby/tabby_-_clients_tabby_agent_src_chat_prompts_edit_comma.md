@@ -3,6 +3,7 @@ id: "tabby/tabby_-_clients_tabby_agent_src_chat_prompts_edit_comma"
 company: "tabby"
 product: "tabby - clients tabby agent src chat prompts edit comma..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clients_tabby-agent_src_chat_prompts_edit-command-replace.md"
 ---
 

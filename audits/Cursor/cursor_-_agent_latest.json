@@ -1,0 +1,101 @@
+{
+  "id": "Cursor/cursor_-_agent_latest",
+  "company": "Cursor",
+  "product": "cursor - agent latest",
+  "category": "coding-agents",
+  "annotation": "ai",
+  "source_file": "agent_latest.txt",
+  "scores": {
+    "D1": 1,
+    "D2": 0,
+    "D3": 0,
+    "D4": -1,
+    "D5": -1,
+    "D6": 0,
+    "D7": 0,
+    "D8": 0,
+    "Misc": 0
+  },
+  "protective_entries": 1,
+  "problematic_entries": 5,
+  "by_dimension": {
+    "protective": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0,
+      "D5": 0,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    },
+    "problematic": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 3,
+      "D5": 2,
+      "D6": 0,
+      "D7": 0,
+      "D8": 0,
+      "Misc": 0
+    }
+  },
+  "spans": [
+    {
+      "text": "You are an AI coding assistant, powered by GPT-5. You operate in Cursor.",
+      "start": 0,
+      "end": 72,
+      "dimension": "D1",
+      "score": 1,
+      "note": "The prompt clearly identifies the system as an AI coding assistant powered by GPT-5, operating within the Cursor environment. It does not attempt to conceal its artificial nature or impersonate a human.",
+      "risky": false
+    },
+    {
+      "text": "State assumptions and continue; don't stop for approval unless you're blocked.",
+      "start": 1731,
+      "end": 1809,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to act autonomously without seeking user confirmation, and to state assumptions and continue rather than stopping for approval. While it does include some safeguards like linter error limits, the overall posture encourages autonomous execution of potentially impactful actions (file edits, code changes) without user validation, reducing safety guardrails.",
+      "risky": false
+    },
+    {
+      "text": "State assumptions and continue; don't stop for approval unless you're blocked.",
+      "start": 1731,
+      "end": 1809,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt explicitly discourages asking for user confirmation or clarification, instructing the system to make assumptions and proceed autonomously. This undermines user agency by removing the user from the decision-making loop for potentially consequential code changes.",
+      "risky": false
+    },
+    {
+      "text": "You are an agent - please keep going until the user's query is completely resolved, before ending your turn and yielding back to the user.",
+      "start": 484,
+      "end": 622,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to act autonomously without seeking user confirmation, and to state assumptions and continue rather than stopping for approval. While it does include some safeguards like linter error limits, the overall posture encourages autonomous execution of potentially impactful actions (file edits, code changes) without user validation, reducing safety guardrails.",
+      "risky": false
+    },
+    {
+      "text": "You are an agent - please keep going until the user's query is completely resolved, before ending your turn and yielding back to the user. Only terminate your turn when you are sure that the problem is solved. Autonomously resolve the query to the best of your ability before coming back to the user.",
+      "start": 484,
+      "end": 784,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the agent to act autonomously without seeking user confirmation, and to state assumptions and continue rather than stopping for approval. While it does include some safeguards like linter error limits, the overall posture encourages autonomous execution of potentially impactful actions (file edits, code changes) without user validation, reducing safety guardrails.",
+      "risky": false
+    },
+    {
+      "text": "Avoid optional confirmations like \"let me know if that's okay\" unless you're blocked.",
+      "start": 3149,
+      "end": 3234,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt explicitly discourages asking for user confirmation or clarification, instructing the system to make assumptions and proceed autonomously. This undermines user agency by removing the user from the decision-making loop for potentially consequential code changes.",
+      "risky": false
+    }
+  ]
+}

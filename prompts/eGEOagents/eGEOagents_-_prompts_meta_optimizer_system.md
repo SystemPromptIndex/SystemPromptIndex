@@ -3,6 +3,7 @@ id: "eGEOagents/eGEOagents_-_prompts_meta_optimizer_system"
 company: "eGEOagents"
 product: "eGEOagents - prompts meta optimizer system"
 category: "multi-agent"
+annotation: "ai"
 source_file: "prompts_meta_optimizer_system.txt"
 ---
 

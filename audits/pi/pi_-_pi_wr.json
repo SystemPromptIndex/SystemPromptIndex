@@ -3,26 +3,27 @@
   "company": "pi",
   "product": "pi - pi / wr",
   "category": "extracted",
+  "annotation": "ai",
   "source_file": "pi__wr.md",
   "scores": {
     "D1": 1,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 2,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 1,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 1,
       "D6": 0,
       "D7": 0,
@@ -52,9 +53,18 @@
       "risky": false
     },
     {
-      "text": "If it is tied to multiple issues, stop and ask which one to use. If it is not tied to any issue, do not include `closes #` or `fixes #` in the commit message.\n5. Check the current git branch. If it is not `main`,",
+      "text": "If it is not `main`, stop and ask what to do. Do not push from another branch unless I explicitly say so.",
+      "start": 1466,
+      "end": 1571,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It explicitly prohibits staging unrelated files, forbids broad git add commands, requires running checks before committing, and includes multiple safeguards like stopping to ask the user before pushing from non-main branches or when multiple issues are involved.",
+      "risky": false
+    },
+    {
+      "text": "If it is tied to multiple issues, stop and ask which one to use.",
       "start": 1274,
-      "end": 1486,
+      "end": 1338,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves user agency by requiring explicit user confirmation or instruction at multiple decision points. It stops and asks the user what to do when on a non-main branch, when multiple issues are tied to the task, and requires explicit user override for actions like opening a PR or pushing from another branch.",

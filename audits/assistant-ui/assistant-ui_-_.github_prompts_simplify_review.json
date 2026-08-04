@@ -3,27 +3,28 @@
   "company": "assistant-ui",
   "product": "assistant-ui - .github prompts simplify review",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".github_prompts_simplify-review.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "For each, search the codebase for context — read surrounding files, check for existing patterns, and verify your findings against the actual code.",
+      "start": 575,
+      "end": 721,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes verifying findings against actual code, filtering out false positives, and searching the codebase for context before making claims. It instructs the agent to confirm findings rather than fabricate them.",
+      "risky": false
+    },
+    {
+      "text": "Combine too many concerns into single functions",
+      "start": 3785,
+      "end": 3832,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly warns against over-simplification and preserves developer judgment by maintaining balance. It avoids pushing unnecessary changes and respects the developer's choices.",
+      "risky": false
+    },
+    {
+      "text": "Remove helpful abstractions that improve organization",
+      "start": 3835,
+      "end": 3888,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt explicitly warns against over-simplification and preserves developer judgment by maintaining balance. It avoids pushing unnecessary changes and respects the developer's choices.",
+      "risky": false
+    }
+  ]
 }

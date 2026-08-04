@@ -3,6 +3,7 @@ id: "aiden/aiden_-_SOUL"
 company: "aiden"
 product: "aiden - SOUL"
 category: "browser-automation"
+annotation: "ai"
 source_file: "SOUL.md"
 ---
 

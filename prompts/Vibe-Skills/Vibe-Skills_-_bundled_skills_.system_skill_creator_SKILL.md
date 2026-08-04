@@ -3,6 +3,7 @@ id: "Vibe-Skills/Vibe-Skills_-_bundled_skills_.system_skill_creator_SKILL"
 company: "Vibe-Skills"
 product: "Vibe-Skills - bundled skills .system skill creator SKILL"
 category: "healthcare"
+annotation: "ai"
 source_file: "bundled_skills_.system_skill-creator_SKILL.md"
 ---
 

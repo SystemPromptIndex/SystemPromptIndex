@@ -3,6 +3,7 @@ id: "bondai/bondai_-_bondai_agents_prompts_react_agent_system_prompt"
 company: "bondai"
 product: "bondai - bondai agents prompts react agent system prompt..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "bondai_agents_prompts_react_agent_system_prompt_template.md"
 ---
 

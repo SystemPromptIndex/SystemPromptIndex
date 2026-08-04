@@ -3,28 +3,29 @@
   "company": "harmonist",
   "product": "harmonist - integration prompt",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "integration-prompt.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 7,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D2": 2,
+      "D3": 1,
+      "D4": 2,
+      "D5": 1,
+      "D6": 1,
       "D7": 0,
       "D8": 0,
       "Misc": 0
@@ -41,5 +42,69 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do NOT self-check. Run the objective verifier from the project root:",
+      "start": 23205,
+      "end": 23273,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes verification, integrity checks, and objective truth over self-reporting. It repeatedly insists on running automated verification scripts rather than trusting the AI's self-assessment, and includes supply-chain integrity checks via SHA256 manifests and prompt-injection scanning.",
+      "risky": false
+    },
+    {
+      "text": "matches every shipped file** (supply-chain integrity), and **the catalog is\nclean of prompt-injection / exfiltration patterns**.",
+      "start": 1582,
+      "end": 1710,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes verification, integrity checks, and objective truth over self-reporting. It repeatedly insists on running automated verification scripts rather than trusting the AI's self-assessment, and includes supply-chain integrity checks via SHA256 manifests and prompt-injection scanning.",
+      "risky": false
+    },
+    {
+      "text": "matches every shipped file** (supply-chain integrity), and **the catalog is\nclean of prompt-injection / exfiltration patterns**.",
+      "start": 1582,
+      "end": 1710,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It requires running a preflight health check before any integration, includes SHA256 manifest verification for supply-chain integrity, scans for prompt-injection/exfiltration patterns, validates hooks and scripts, runs smoke tests before real use, and enforces a review gate that blocks code changes until security and quality reviewers have run.",
+      "risky": false
+    },
+    {
+      "text": "matches every shipped file** (supply-chain integrity), and **the catalog is\nclean of prompt-injection / exfiltration patterns**.",
+      "start": 1582,
+      "end": 1710,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt includes explicit protections against prompt injection and exfiltration patterns in the agent catalog, enforces strict protocol compliance, includes a rules conflict scanner that refuses rules that would subvert enforcement (e.g., skipping reviewers or disabling hooks), and maintains a strict review gate.",
+      "risky": false
+    },
+    {
+      "text": "**Local telemetry is on by default.** The hooks will start filling",
+      "start": 24239,
+      "end": 24305,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly addresses data protection by gitignoring memory files that accumulate project-sensitive state, keeping telemetry local, and providing clear opt-in/opt-out mechanisms for data sharing. It also mentions security reviews (OWASP, secrets, auth) and domain-specific compliance (PCI DSS, HIPAA, PHI handling).",
+      "risky": false
+    },
+    {
+      "text": "First run the pack's own preflight so a stale clone / truncated\ndownload / local edit doesn't silently produce a half-integrated\nproject:",
+      "start": 959,
+      "end": 1096,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It requires running a preflight health check before any integration, includes SHA256 manifest verification for supply-chain integrity, scans for prompt-injection/exfiltration patterns, validates hooks and scripts, runs smoke tests before real use, and enforces a review gate that blocks code changes until security and quality reviewers have run.",
+      "risky": false
+    },
+    {
+      "text": "Ask the user: What is this project? What domain? What tech stack do you want?",
+      "start": 652,
+      "end": 729,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by explicitly asking the user for input before proceeding when the project is empty, waiting for answers before generating code, and providing clear opt-in/opt-out controls for telemetry and data sharing. It does not use dark patterns or manipulative framing.",
+      "risky": false
+    }
+  ]
 }

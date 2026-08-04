@@ -3,24 +3,25 @@
   "company": "paper-orchestra",
   "product": "paper-orchestra - reviewer rubric",
   "category": "research",
+  "annotation": "ai",
   "source_file": "reviewer-rubric.md",
   "scores": {
     "D1": -1,
     "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": -1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 2,
-  "problematic_entries": 1,
+  "protective_entries": 3,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 2,
+      "D2": 3,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -34,7 +35,7 @@
       "D2": 0,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -52,8 +53,17 @@
       "risky": false
     },
     {
-      "text": "Your review must be CONSERVATIVE. High scores are rare and must be\nexplicitly justified with concrete evidence from the paper. Assume most\ndrafts are not publication-ready.",
+      "text": "Your review must be CONSERVATIVE. High scores are rare and must be",
       "start": 825,
+      "end": 891,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity through its anti-inflation guardrails, hard caps on scores, conservative scoring philosophy, and requirement for evidence-based justifications. It explicitly combats reward-hacking and score inflation, requiring concrete evidence from the paper for all claims.",
+      "risky": false
+    },
+    {
+      "text": "High scores are rare and must be\nexplicitly justified with concrete evidence from the paper. Assume most\ndrafts are not publication-ready.",
+      "start": 859,
       "end": 997,
       "dimension": "D2",
       "score": 1,
@@ -67,6 +77,15 @@
       "dimension": "D2",
       "score": 1,
       "note": "The prompt strongly promotes truthfulness and information integrity through its anti-inflation guardrails, hard caps on scores, conservative scoring philosophy, and requirement for evidence-based justifications. It explicitly combats reward-hacking and score inflation, requiring concrete evidence from the paper for all claims.",
+      "risky": false
+    },
+    {
+      "text": "The Content Refinement Agent's \"never explicitly state a limitation\" rule\ncombined with these caps closes the reward-hacking loop the paper observed\nin early testing (App. F.1 p.51).",
+      "start": 5331,
+      "end": 5513,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt contains a concerning instruction that the Content Refinement Agent should 'never explicitly state a limitation,' which manipulates the output by suppressing honest disclosure of weaknesses. This is a form of manipulative framing that undermines the integrity of the refinement process and could mislead users about the quality of their work.",
       "risky": false
     }
   ]

@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_technical_documentation"
 company: "openclaw"
 product: "openclaw - technical documentation"
 category: "coding-agents"
+annotation: "ai"
 source_file: "technical-documentation.md"
 ---
 

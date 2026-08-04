@@ -3,6 +3,7 @@ id: "relaticle/relaticle_-_.ai_guidelines_relaticle_skills_business_review__2"
 company: "relaticle"
 product: "relaticle - .ai guidelines relaticle skills business review..."
 category: "multi-agent"
+annotation: "ai"
 source_file: ".ai_guidelines_relaticle_skills_business-review-task_agents_diff-analyzer.md"
 ---
 

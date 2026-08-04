@@ -3,6 +3,7 @@ id: "Claude-Code-Game-Studios/Claude-Code-Game-Studios_-_.claude_agents_systems_
 company: "Claude-Code-Game-Studios"
 product: "Claude-Code-Game-Studios - .claude agents systems designer"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".claude_agents_systems-designer.md"
 ---
 

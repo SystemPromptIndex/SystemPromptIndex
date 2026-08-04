@@ -2,6 +2,7 @@
 id: "CodeBuddy/CodeBuddy-Chat-2025"
 company: "CodeBuddy"
 product: "CodeBuddy-Chat-2025"
+annotation: "ai"
 source_file: "Chat Prompt.txt"
 ---
 

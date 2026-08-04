@@ -3,6 +3,7 @@ id: "healthcare/healthcare_-_healthcare_diaggym_hit_ratio"
 company: "healthcare"
 product: "healthcare - healthcare / diaggym / hit ratio"
 category: "extracted"
+annotation: "ai"
 source_file: "healthcare__diaggym__hit_ratio.txt"
 ---
 

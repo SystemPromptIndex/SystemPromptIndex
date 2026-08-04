@@ -3,27 +3,28 @@
   "company": "gollem",
   "product": "gollem - strategy planexec prompts plan",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "strategy_planexec_prompts_plan.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 2,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Transform the request into what information the user seeks, not what action to perform.",
+      "start": 1876,
+      "end": 1963,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes understanding user intent accurately, transforming requests into result-oriented information needs, and being concrete rather than vague. It encourages honest representation of what information is being sought and avoids fabrication by focusing on targeted, verifiable tool calls.",
+      "risky": false
+    },
+    {
+      "text": "Example: \"Do not expose credentials in logs\"",
+      "start": 2827,
+      "end": 2871,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt includes an example constraint about not exposing credentials and treating sensitive data appropriately, demonstrating awareness of data protection principles.",
+      "risky": false
+    },
+    {
+      "text": "Start with the minimum: what is the one tool call you absolutely need? Add a second task only if the first cannot possibly give you the answer.",
+      "start": 381,
+      "end": 524,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes a minimal, focused approach to tool execution, emphasizing least-effort and targeted tool calls rather than broad exploration. It encourages planning before execution and only using tools when necessary, which aligns with least privilege and validation-first principles.",
+      "risky": false
+    },
+    {
+      "text": "Create a plan if and only if the request requires executing tools. If you can answer without using any tools, respond directly without creating a plan.",
+      "start": 132,
+      "end": 283,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes a minimal, focused approach to tool execution, emphasizing least-effort and targeted tool calls rather than broad exploration. It encourages planning before execution and only using tools when necessary, which aligns with least privilege and validation-first principles.",
+      "risky": false
+    },
+    {
+      "text": "Before creating a plan, understand what the user truly wants to know:",
+      "start": 1504,
+      "end": 1573,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt focuses on understanding user intent and providing what the user actually wants to know. It emphasizes result-oriented responses aligned with user needs rather than steering users toward particular outcomes.",
+      "risky": false
+    }
+  ]
 }

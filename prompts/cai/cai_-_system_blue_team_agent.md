@@ -3,6 +3,7 @@ id: "cai/cai_-_system_blue_team_agent"
 company: "cai"
 product: "cai - system blue team agent"
 category: "security"
+annotation: "ai"
 source_file: "system_blue_team_agent.md"
 ---
 

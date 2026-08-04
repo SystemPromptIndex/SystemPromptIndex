@@ -3,6 +3,7 @@ id: "LLM-TradeBot/LLM-TradeBot_-_config_custom_prompt"
 company: "LLM-TradeBot"
 product: "LLM-TradeBot - config custom prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "config_custom_prompt.md"
 ---
 

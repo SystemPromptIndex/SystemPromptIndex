@@ -3,6 +3,7 @@ id: "Axionara/Axionara_-_prompts_agent_system"
 company: "Axionara"
 product: "Axionara - prompts agent system"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_agent_system.md"
 ---
 

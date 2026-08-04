@@ -3,6 +3,7 @@ id: "yao/yao_-_agent_docs_prompts"
 company: "yao"
 product: "yao - agent docs prompts"
 category: "general-purpose"
+annotation: "ai"
 source_file: "agent_docs_prompts.md"
 ---
 

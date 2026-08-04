@@ -3,6 +3,7 @@ id: "agenticSeek/agenticSeek_-_prompts_base_casual_agent"
 company: "agenticSeek"
 product: "agenticSeek - prompts base casual agent"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_base_casual_agent.txt"
 ---
 

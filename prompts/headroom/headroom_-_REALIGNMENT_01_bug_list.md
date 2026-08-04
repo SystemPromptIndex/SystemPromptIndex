@@ -3,6 +3,7 @@ id: "headroom/headroom_-_REALIGNMENT_01_bug_list"
 company: "headroom"
 product: "headroom - REALIGNMENT 01 bug list"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_REALIGNMENT_01-bug-list.md"
 ---
 

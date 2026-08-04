@@ -3,6 +3,7 @@ id: "spacebot/spacebot_-_docs_design_docs_worker_briefing"
 company: "spacebot"
 product: "spacebot - docs design docs worker briefing"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_design-docs_worker-briefing.md"
 ---
 

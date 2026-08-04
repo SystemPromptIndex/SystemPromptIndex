@@ -3,6 +3,7 @@ id: "mutahunter/mutahunter_-_src_mutahunter_core_templates_mutant_generation"
 company: "mutahunter"
 product: "mutahunter - src mutahunter core templates mutant generation..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "src_mutahunter_core_templates_mutant_generation_mutator_system.txt"
 ---
 

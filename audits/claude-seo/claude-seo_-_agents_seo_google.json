@@ -3,27 +3,28 @@
   "company": "claude-seo",
   "product": "claude-seo - agents seo google",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "clone_agents_seo-google.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 0,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
       "D4": 0,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,51 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Include data freshness notes (CrUX: 28-day rolling, GSC:",
+      "start": 1955,
+      "end": 2011,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness by requiring data source attribution ('Note data source as Google API (field data) to distinguish from static analysis'), data freshness notes, and explicit error reporting. It also requires fallback reporting when data is unavailable rather than fabricating results.",
+      "risky": false
+    },
+    {
+      "text": "Never fail silently -- always report what succeeded and what failed",
+      "start": 2887,
+      "end": 2954,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness by requiring data source attribution ('Note data source as Google API (field data) to distinguish from static analysis'), data freshness notes, and explicit error reporting. It also requires fallback reporting when data is unavailable rather than fabricating results.",
+      "risky": false
+    },
+    {
+      "text": "If CrUX returns 404, note insufficient Chrome traffic and fall back to PSI lab data",
+      "start": 2711,
+      "end": 2794,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes truthfulness by requiring data source attribution ('Note data source as Google API (field data) to distinguish from static analysis'), data freshness notes, and explicit error reporting. It also requires fallback reporting when data is unavailable rather than fabricating results.",
+      "risky": false
+    },
+    {
+      "text": "After completing data collection at any tier, ALWAYS offer to generate a PDF report.",
+      "start": 2076,
+      "end": 2160,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by instructing the agent to 'ALWAYS offer to generate a PDF report' rather than automatically generating it, and by reporting available tiers and options when credentials are limited, allowing the user to make informed decisions.",
+      "risky": false
+    },
+    {
+      "text": "If credentials are missing, report which tier is available and what can still be checked",
+      "start": 2620,
+      "end": 2708,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by instructing the agent to 'ALWAYS offer to generate a PDF report' rather than automatically generating it, and by reporting available tiers and options when credentials are limited, allowing the user to make informed decisions.",
+      "risky": false
+    }
+  ]
 }

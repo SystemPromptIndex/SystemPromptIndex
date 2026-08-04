@@ -3,6 +3,7 @@ id: "snow-cli/snow-cli_-_docs_role_en_01.Snow_CLI_Plan_Every_Step"
 company: "snow-cli"
 product: "snow-cli - docs role en 01.Snow CLI Plan Every Step"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_role_en_01.Snow CLI Plan Every Step.md"
 ---
 

@@ -3,6 +3,7 @@ id: "trading-agents/trading-agents_-_trading_agents_research_manager"
 company: "trading-agents"
 product: "trading-agents - trading agents / research manager"
 category: "extracted"
+annotation: "ai"
 source_file: "trading-agents__research_manager.txt"
 ---
 

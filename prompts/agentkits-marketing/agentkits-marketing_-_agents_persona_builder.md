@@ -3,6 +3,7 @@ id: "agentkits-marketing/agentkits-marketing_-_agents_persona_builder"
 company: "agentkits-marketing"
 product: "agentkits-marketing - agents persona builder"
 category: "general-purpose"
+annotation: "ai"
 source_file: "agents_persona-builder.md"
 ---
 

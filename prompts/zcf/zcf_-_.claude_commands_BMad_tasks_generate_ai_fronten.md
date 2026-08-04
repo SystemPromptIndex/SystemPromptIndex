@@ -3,6 +3,7 @@ id: "zcf/zcf_-_.claude_commands_BMad_tasks_generate_ai_fronten"
 company: "zcf"
 product: "zcf - .claude commands BMad tasks generate ai fronten..."
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_commands_BMad_tasks_generate-ai-frontend-prompt.md"
 ---
 

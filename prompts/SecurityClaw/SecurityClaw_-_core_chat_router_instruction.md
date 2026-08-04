@@ -3,6 +3,7 @@ id: "SecurityClaw/SecurityClaw_-_core_chat_router_instruction"
 company: "SecurityClaw"
 product: "SecurityClaw - core chat router instruction"
 category: "legal"
+annotation: "ai"
 source_file: "core_chat_router_instruction.md"
 ---
 

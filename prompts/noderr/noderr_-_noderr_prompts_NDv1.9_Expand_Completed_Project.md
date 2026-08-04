@@ -3,6 +3,7 @@ id: "noderr/noderr_-_noderr_prompts_NDv1.9_Expand_Completed_Project"
 company: "noderr"
 product: "noderr - noderr prompts NDv1.9 / Expand Completed Project"
 category: "coding-agents"
+annotation: "ai"
 source_file: "noderr_prompts_NDv1.9__Expand_Completed_Project.md"
 ---
 

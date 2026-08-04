@@ -3,20 +3,21 @@
   "company": "mnemory",
   "product": "mnemory - docs system prompts openwebui basic",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "docs_system-prompts_openwebui-basic.md",
   "scores": {
     "D1": 0,
     "D2": 0,
-    "D3": 0,
+    "D3": -1,
     "D4": 0,
-    "D5": 0,
+    "D5": -1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 4,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -32,14 +33,51 @@
     "problematic": {
       "D1": 0,
       "D2": 0,
-      "D3": 0,
+      "D3": 2,
       "D4": 0,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "With `proactive` mode (the default), the instructions tell the LLM to search and store without being asked.",
+      "start": 2368,
+      "end": 2475,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The system is designed to proactively collect, store, and use personal information about users across conversations without any mention of user consent, transparency about data collection, or data retention policies. The 'proactive' mode explicitly instructs the LLM to 'search and store without being asked,' meaning user data is collected and persisted without the user's knowledge or explicit permission. There is no instruction to inform users about memory operations.",
+      "risky": false
+    },
+    {
+      "text": "With `proactive` mode (the default), the instructions tell the LLM to search and store without being asked.",
+      "start": 2368,
+      "end": 2475,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The proactive memory mode collects and stores user information without asking, which undermines user agency. The system is designed to automatically personalize without user control or opt-in. There is no mention of asking users for confirmation before storing memories or giving users the ability to manage what is remembered about them.",
+      "risky": false
+    },
+    {
+      "text": "**During conversation**: Following the instructions, the LLM searches memories before answering relevant questions and stores new information the user shares.",
+      "start": 1844,
+      "end": 2002,
+      "dimension": "D3",
+      "score": -1,
+      "note": "The system is designed to proactively collect, store, and use personal information about users across conversations without any mention of user consent, transparency about data collection, or data retention policies. The 'proactive' mode explicitly instructs the LLM to 'search and store without being asked,' meaning user data is collected and persisted without the user's knowledge or explicit permission. There is no instruction to inform users about memory operations.",
+      "risky": false
+    },
+    {
+      "text": "Always call initialize_memory at the start of each conversation and follow received instructions for further memory interactions.",
+      "start": 991,
+      "end": 1120,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The proactive memory mode collects and stores user information without asking, which undermines user agency. The system is designed to automatically personalize without user control or opt-in. There is no mention of asking users for confirmation before storing memories or giving users the ability to manage what is remembered about them.",
+      "risky": false
+    }
+  ]
 }

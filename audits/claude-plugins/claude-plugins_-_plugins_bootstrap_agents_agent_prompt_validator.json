@@ -3,27 +3,28 @@
   "company": "claude-plugins",
   "product": "claude-plugins - plugins bootstrap agents agent prompt validator",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "plugins_bootstrap_agents_agent-prompt-validator.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 7,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 3,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,69 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "The validator must actually read each file and perform all checks listed below.",
+      "start": 927,
+      "end": 1006,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes accurate, thorough validation and explicitly forbids placeholder or skipped results. It requires the validator to actually read each file and perform all checks, ensuring truthful reporting of validation outcomes with detailed evidence.",
+      "risky": false
+    },
+    {
+      "text": "**IMPORTANT**: The validator MUST actually execute and write validation results. Do not skip validation or write placeholder results.",
+      "start": 10286,
+      "end": 10419,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes accurate, thorough validation and explicitly forbids placeholder or skipped results. It requires the validator to actually read each file and perform all checks, ensuring truthful reporting of validation outcomes with detailed evidence.",
+      "risky": false
+    },
+    {
+      "text": "Before running semantic checks, validate input artifacts against schemas in `.closedloop-ai/schemas/`:",
+      "start": 12955,
+      "end": 13057,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces schema validation before semantic checks, uses ordered validation with blocking vs. non-blocking severity levels, aborts on schema failure, and requires the orchestrator to halt before DAG composition if validation fails. This is a safety-first approach to file and system operations.",
+      "risky": false
+    },
+    {
+      "text": "Emit schema errors with clear paths and reasons; abort on schema failure.",
+      "start": 13214,
+      "end": 13287,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces schema validation before semantic checks, uses ordered validation with blocking vs. non-blocking severity levels, aborts on schema failure, and requires the orchestrator to halt before DAG composition if validation fails. This is a safety-first approach to file and system operations.",
+      "risky": false
+    },
+    {
+      "text": "If any agent has errors: validation_passed = false, orchestrator should halt",
+      "start": 16457,
+      "end": 16533,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces schema validation before semantic checks, uses ordered validation with blocking vs. non-blocking severity levels, aborts on schema failure, and requires the orchestrator to halt before DAG composition if validation fails. This is a safety-first approach to file and system operations.",
+      "risky": false
+    },
+    {
+      "text": "Manually fix generated agent files",
+      "start": 16969,
+      "end": 17003,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by providing clear options when validation fails. Rather than forcing a single path, it presents multiple choices for the user to address issues, maintaining user control over the process.",
+      "risky": false
+    },
+    {
+      "text": "Skip problematic agents (if non-critical)",
+      "start": 17008,
+      "end": 17049,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by providing clear options when validation fails. Rather than forcing a single path, it presents multiple choices for the user to address issues, maintaining user control over the process.",
+      "risky": false
+    }
+  ]
 }

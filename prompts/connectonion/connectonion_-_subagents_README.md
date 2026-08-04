@@ -3,6 +3,7 @@ id: "connectonion/connectonion_-_subagents_README"
 company: "connectonion"
 product: "connectonion - subagents README"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_subagents_README.md"
 ---
 

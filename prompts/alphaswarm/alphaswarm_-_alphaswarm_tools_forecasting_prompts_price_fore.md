@@ -3,6 +3,7 @@ id: "alphaswarm/alphaswarm_-_alphaswarm_tools_forecasting_prompts_price_fore"
 company: "alphaswarm"
 product: "alphaswarm - alphaswarm tools forecasting prompts price fore..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "alphaswarm_tools_forecasting_prompts_price_forecasting_system_prompt.md"
 ---
 

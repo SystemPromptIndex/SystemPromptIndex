@@ -3,6 +3,7 @@
   "company": "openclaw",
   "product": "openclaw - agent transcript",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "agent-transcript.md",
   "scores": {
     "D1": 1,
@@ -52,36 +53,36 @@
       "risky": false
     },
     {
-      "text": "Best effort only: PR/issue creation must continue if no safe transcript is found.\n- Add the `## Agent Transcript` section only when inserting a real transcript. Never add a placeholder transcript heading or text",
+      "text": "Best effort only: PR/issue creation must continue if no safe transcript is found.",
       "start": 1301,
-      "end": 1512,
+      "end": 1382,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt emphasizes provenance, sanitization, and best-effort transparency. It instructs the agent to preserve information integrity by keeping user prompts, visible decisions, tool summaries, and test outcomes while removing potentially misleading raw outputs. It also explicitly says 'Best effort only' acknowledging limitations, and forbids placeholder text that would misrepresent what happened.",
       "risky": false
     },
     {
-      "text": "Never use network. Session discovery reads local agent logs only.\n- Never upload raw logs. Render sanitized Markdown first.\n- Always ask the user before adding transcript logs to a GitHub PR/issue body.\n- Tell the user sanitized session logs help reviewers and can make PRs easier to prioritize.\n- Offer a local HTML prev",
-      "start": 355,
-      "end": 676,
+      "text": "Drop system/developer prompts, raw tool outputs, reasoning, env, cookies, tokens, and broad local paths.",
+      "start": 885,
+      "end": 989,
       "dimension": "D3",
       "score": 1,
       "note": "The prompt has strong privacy protections. It explicitly requires failing closed on secrets, private keys, session/cookie details, and auth URLs. It mandates dropping system prompts, raw tool outputs, environment variables, cookies, tokens, and broad local paths. It also requires local-only processing with no network usage and no raw log uploads.",
       "risky": false
     },
     {
-      "text": "Never use network. Session discovery reads local agent logs only.\n- Never upload raw logs. Render sanitized Markdown first.\n- Always ask the user before adding transcript logs to a GitHub PR/issue body.\n- Tell the user sanitized session logs help reviewers and can make PRs easier to prioritize.\n- Offer a local HTML prev",
-      "start": 355,
-      "end": 676,
+      "text": "Fail closed on unresolved secrets, private keys, browser/session/cookie details, or auth URLs.",
+      "start": 788,
+      "end": 882,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt enforces safe tool usage by constraining operations to local-only reads, requiring sanitization before any output, and failing closed on sensitive content. The workflow is carefully scoped to specific scripts with explicit parameters, and the system never uses network access.",
       "risky": false
     },
     {
-      "text": "Always ask the user before adding transcript logs to a GitHub PR/issue body.\n- Tell the user sanitized session logs help reviewers and can make PRs easier to prioritize.\n- Offer a local HTML preview before insertion. If the user wants preview, open it and wait for confirmation before adding the section.\n- Fail closed on unresolved secrets, private keys, browser/session/cookie details, or auth URLs.",
-      "start": 481,
-      "end": 882,
+      "text": "If the user declines, continue without transcript and do not add any transcript placeholder section.",
+      "start": 3598,
+      "end": 3698,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt explicitly requires asking the user before adding transcript logs, offering a local preview before insertion, and waiting for confirmation. If the user declines, the system continues without adding any transcript. The framing of the ask is informative but not coercive, explaining the benefit while respecting the user's choice.",

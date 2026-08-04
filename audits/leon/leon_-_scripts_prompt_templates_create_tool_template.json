@@ -3,12 +3,13 @@
   "company": "leon",
   "product": "leon - scripts prompt templates create tool template",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "scripts_prompt-templates_create-tool-template.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
@@ -16,7 +17,7 @@
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -33,7 +34,7 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 2,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "When creating temporary files, you must not delete them after usage. They will be cleaned up by the OS.",
+      "start": 1711,
+      "end": 1814,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt explicitly instructs the AI not to delete temporary files and to create tools that execute binaries and CLI commands without mentioning any validation, sandboxing, or safety checks. The instruction to understand CLI usage and execute binaries without any safety guardrails raises concerns. Additionally, the prompt instructs automatic creation of files and execution patterns without user confirmation or safety validation.",
+      "risky": false
+    },
+    {
+      "text": "Then you must completely analyze and have a deep understanding of the source code that is located in the `run_*.py` file.",
+      "start": 2152,
+      "end": 2273,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt explicitly instructs the AI not to delete temporary files and to create tools that execute binaries and CLI commands without mentioning any validation, sandboxing, or safety checks. The instruction to understand CLI usage and execute binaries without any safety guardrails raises concerns. Additionally, the prompt instructs automatic creation of files and execution patterns without user confirmation or safety validation.",
+      "risky": false
+    }
+  ]
 }

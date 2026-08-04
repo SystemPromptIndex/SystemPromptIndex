@@ -3,6 +3,7 @@ id: "SenseNova-Skills/SenseNova-Skills_-_skills_sn_ppt_standard_prompts_page_htm
 company: "SenseNova-Skills"
 product: "SenseNova-Skills - skills sn ppt standard prompts page html rewrite"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_skills_sn-ppt-standard_prompts_page_html_rewrite.md"
 ---
 

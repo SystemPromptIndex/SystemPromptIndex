@@ -3,6 +3,7 @@ id: "GPTDiscord/GPTDiscord_-_openers_midjourney_prompt_engineer"
 company: "GPTDiscord"
 product: "GPTDiscord - openers midjourney prompt engineer"
 category: "general-purpose"
+annotation: "ai"
 source_file: "openers_midjourney_prompt_engineer.txt"
 ---
 

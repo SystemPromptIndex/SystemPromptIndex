@@ -2,6 +2,7 @@
 id: "Cursor/Cursor-Tools-2025"
 company: "Cursor"
 product: "Cursor-Tools-2025"
+annotation: "ai"
 source_file: "Cursor_Tools.md"
 ---
 

@@ -3,6 +3,7 @@ id: "vibeyard/vibeyard_-_personas_architect"
 company: "vibeyard"
 product: "vibeyard - personas architect"
 category: "coding-agents"
+annotation: "ai"
 source_file: "personas_architect.md"
 ---
 

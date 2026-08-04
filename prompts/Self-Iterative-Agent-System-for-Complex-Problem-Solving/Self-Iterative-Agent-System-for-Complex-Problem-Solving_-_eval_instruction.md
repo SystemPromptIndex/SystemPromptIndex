@@ -3,6 +3,7 @@ id: "Self-Iterative-Agent-System-for-Complex-Problem-Solving/Self-Iterative-Agen
 company: "Self-Iterative-Agent-System-for-Complex-Problem-Solving"
 product: "Self-Iterative-Agent-System-for-Complex-Problem-Solving - eval instruction"
 category: "general-purpose"
+annotation: "ai"
 source_file: "eval_instruction.txt"
 ---
 

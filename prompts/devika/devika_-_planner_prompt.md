@@ -3,6 +3,7 @@ id: "devika/devika_-_planner_prompt"
 company: "devika"
 product: "devika - planner prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "planner_prompt.jinja2"
 ---
 

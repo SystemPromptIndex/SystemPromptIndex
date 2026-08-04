@@ -3,6 +3,7 @@ id: "OwnPilot/OwnPilot_-_docs_PERSONAL_ASSISTANT_INJECTION_ROOT_CAUSE"
 company: "OwnPilot"
 product: "OwnPilot - docs PERSONAL ASSISTANT INJECTION ROOT CAUSE"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_PERSONAL_ASSISTANT_INJECTION_ROOT_CAUSE.md"
 ---
 

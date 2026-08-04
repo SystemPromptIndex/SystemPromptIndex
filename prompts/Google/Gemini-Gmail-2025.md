@@ -2,6 +2,7 @@
 id: "Google/Gemini-Gmail-2025"
 company: "Google"
 product: "Gemini-Gmail-2025"
+annotation: "ai"
 source_file: "Gemini_Gmail_Assistant.txt"
 ---
 

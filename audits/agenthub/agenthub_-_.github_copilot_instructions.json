@@ -3,27 +3,28 @@
   "company": "agenthub",
   "product": "agenthub - .github copilot instructions",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": ".github_copilot-instructions.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Ensure that the documentation is accurate and up-to-date.",
+      "start": 3543,
+      "end": 3600,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt promotes information integrity by requiring consultation of reference documentation ('Always consult the llmsdk_docs/README.md for AI model SDK usage details'), ensuring documentation accuracy ('Ensure that the documentation is accurate and up-to-date'), and avoiding misleading broad pattern matching in favor of explicit version matching.",
+      "risky": false
+    },
+    {
+      "text": "Make sure to handle these credentials securely and never log or expose them in test output.",
+      "start": 5195,
+      "end": 5286,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly addresses credential security by instructing to handle API keys securely and never expose them. It also lists secrets management practices for GitHub workflows and emphasizes secure handling of sensitive credentials.",
+      "risky": false
+    },
+    {
+      "text": "**DO NOT** modify files under `llmsdk_docs/` unless the user explicitly requests changes to reference SDK documentation.",
+      "start": 3064,
+      "end": 3184,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes multiple safety-oriented implementation rules: avoiding the requests library in favor of async httpx to prevent blocking the event loop, prohibiting modifications to reference documentation unless explicitly requested, requiring explicit version matching instead of broad pattern matching, and enforcing linting and testing before commits.",
+      "risky": false
+    },
+    {
+      "text": "When making changes, by default synchronize updates to both Python and TypeScript implementations unless the user explicitly specifies otherwise.",
+      "start": 2648,
+      "end": 2793,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring explicit user requests before creating example files, modifying documentation, or changing scope between Python and TypeScript implementations. Multiple rules are gated on user explicit consent.",
+      "risky": false
+    }
+  ]
 }

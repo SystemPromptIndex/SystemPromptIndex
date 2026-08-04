@@ -2,6 +2,7 @@
 id: "Replit/Replit-Functions-2025"
 company: "Replit"
 product: "Replit-Functions-2025"
+annotation: "ai"
 source_file: "Replit_Functions.md"
 ---
 

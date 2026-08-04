@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_openclaw_pr_maintainer"
 company: "openclaw"
 product: "openclaw - openclaw pr maintainer"
 category: "coding-agents"
+annotation: "ai"
 source_file: "openclaw-pr-maintainer.md"
 ---
 

@@ -3,6 +3,7 @@ id: "cherry-studio/cherry-studio_-_.agents_skills_gh_pr_review_references_teams_
 company: "cherry-studio"
 product: "cherry-studio - .agents skills gh pr review references teams re..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_.agents_skills_gh-pr-review_references_teams-review.md"
 ---
 

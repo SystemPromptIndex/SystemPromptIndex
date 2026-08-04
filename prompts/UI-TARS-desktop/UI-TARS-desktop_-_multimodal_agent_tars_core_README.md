@@ -3,6 +3,7 @@ id: "UI-TARS-desktop/UI-TARS-desktop_-_multimodal_agent_tars_core_README"
 company: "UI-TARS-desktop"
 product: "UI-TARS-desktop - multimodal agent tars core README"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_multimodal_agent-tars_core_README.md"
 ---
 

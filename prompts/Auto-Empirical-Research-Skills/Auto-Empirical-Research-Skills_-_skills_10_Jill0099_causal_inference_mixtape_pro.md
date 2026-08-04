@@ -3,6 +3,7 @@ id: "Auto-Empirical-Research-Skills/Auto-Empirical-Research-Skills_-_skills_10_J
 company: "Auto-Empirical-Research-Skills"
 product: "Auto-Empirical-Research-Skills - skills 10 Jill0099 causal inference mixtape pro..."
 category: "research"
+annotation: "ai"
 source_file: "skills_10-Jill0099-causal-inference-mixtape_prompts_01-implement-method.md"
 ---
 

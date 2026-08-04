@@ -3,12 +3,13 @@
   "company": "e2b-cookbook",
   "product": "e2b-cookbook - examples anthropic managed agents javascript IM...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "clone_examples_anthropic-managed-agents_javascript_IMPLEMENTATION.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
@@ -16,7 +17,7 @@
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -33,7 +34,7 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,15 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "For this cookbook example, the tool permission policy is `always_allow` so the smoke flow can run\nwithout an approval UI.",
+      "start": 1676,
+      "end": 1797,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt explicitly sets the tool permission policy to 'always_allow' so that the agent can run without an approval UI, bypassing any human-in-the-loop safety checks. It enables powerful tools including bash execution, file read/write/edit, web fetch, and web search with no restrictions or validation requirements. Additionally, leaving 'unrestrictedPaths' unset is framed as a constraint, but the overall design prioritizes convenience over safety by removing approval gates for potentially dangerous operations.",
+      "risky": false
+    }
+  ]
 }

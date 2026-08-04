@@ -3,6 +3,7 @@ id: "claude-seo/claude-seo_-_agents_seo_google"
 company: "claude-seo"
 product: "claude-seo - agents seo google"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_agents_seo-google.md"
 ---
 

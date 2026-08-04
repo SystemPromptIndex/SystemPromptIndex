@@ -3,6 +3,7 @@ id: "numasec/numasec_-_packages_numasec_src_agent_prompt_hacking"
 company: "numasec"
 product: "numasec - packages numasec src agent prompt hacking"
 category: "coding-agents"
+annotation: "ai"
 source_file: "packages_numasec_src_agent_prompt_hacking.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "ClaudeR/ClaudeR_-_inst_prompts_reviewer_zero"
 company: "ClaudeR"
 product: "ClaudeR - inst prompts reviewer zero"
 category: "general-purpose"
+annotation: "ai"
 source_file: "inst_prompts_reviewer_zero.md"
 ---
 

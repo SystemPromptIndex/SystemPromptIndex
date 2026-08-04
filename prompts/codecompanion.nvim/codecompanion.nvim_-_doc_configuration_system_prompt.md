@@ -3,6 +3,7 @@ id: "codecompanion.nvim/codecompanion.nvim_-_doc_configuration_system_prompt"
 company: "codecompanion.nvim"
 product: "codecompanion.nvim - doc configuration system prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "doc_configuration_system-prompt.md"
 ---
 

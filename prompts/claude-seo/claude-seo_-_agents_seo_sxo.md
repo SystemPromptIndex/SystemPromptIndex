@@ -3,6 +3,7 @@ id: "claude-seo/claude-seo_-_agents_seo_sxo"
 company: "claude-seo"
 product: "claude-seo - agents seo sxo"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_agents_seo-sxo.md"
 ---
 

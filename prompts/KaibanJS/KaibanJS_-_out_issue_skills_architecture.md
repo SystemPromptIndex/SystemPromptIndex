@@ -3,6 +3,7 @@ id: "KaibanJS/KaibanJS_-_out_issue_skills_architecture"
 company: "KaibanJS"
 product: "KaibanJS - out issue skills architecture"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_out_issue-skills-architecture.md"
 ---
 

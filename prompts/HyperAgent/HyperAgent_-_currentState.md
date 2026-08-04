@@ -3,6 +3,7 @@ id: "HyperAgent/HyperAgent_-_currentState"
 company: "HyperAgent"
 product: "HyperAgent - currentState"
 category: "browser-automation"
+annotation: "ai"
 source_file: "clone_currentState.md"
 ---
 

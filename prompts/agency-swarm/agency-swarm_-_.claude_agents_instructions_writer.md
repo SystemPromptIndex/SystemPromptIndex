@@ -3,6 +3,7 @@ id: "agency-swarm/agency-swarm_-_.claude_agents_instructions_writer"
 company: "agency-swarm"
 product: "agency-swarm - .claude agents instructions writer"
 category: "multi-agent"
+annotation: "ai"
 source_file: ".claude_agents_instructions-writer.md"
 ---
 

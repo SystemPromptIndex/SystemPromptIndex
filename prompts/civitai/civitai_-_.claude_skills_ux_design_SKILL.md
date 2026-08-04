@@ -3,6 +3,7 @@ id: "civitai/civitai_-_.claude_skills_ux_design_SKILL"
 company: "civitai"
 product: "civitai - .claude skills ux design SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.claude_skills_ux-design_SKILL.md"
 ---
 

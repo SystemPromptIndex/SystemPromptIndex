@@ -3,6 +3,7 @@ id: "cocoplus/cocoplus_-_.cortex_skills_prompt_studio_prompt_new.skill"
 company: "cocoplus"
 product: "cocoplus - .cortex skills prompt studio prompt new.skill"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".cortex_skills_prompt-studio_prompt-new.skill.md"
 ---
 

@@ -3,6 +3,7 @@ id: "oh-my-openagent/oh-my-openagent_-_packages_prompts_core_prompts_atlas_gemin
 company: "oh-my-openagent"
 product: "oh-my-openagent - packages prompts core prompts atlas gemini"
 category: "coding-agents"
+annotation: "ai"
 source_file: "packages_prompts-core_prompts_atlas_gemini.md"
 ---
 

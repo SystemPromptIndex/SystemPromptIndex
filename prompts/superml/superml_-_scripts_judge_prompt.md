@@ -3,6 +3,7 @@ id: "superml/superml_-_scripts_judge_prompt"
 company: "superml"
 product: "superml - scripts judge prompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "scripts_judge_prompt.md"
 ---
 

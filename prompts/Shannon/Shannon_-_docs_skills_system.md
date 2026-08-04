@@ -3,6 +3,7 @@ id: "Shannon/Shannon_-_docs_skills_system"
 company: "Shannon"
 product: "Shannon - docs skills system"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_skills-system.md"
 ---
 

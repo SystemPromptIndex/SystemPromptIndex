@@ -3,10 +3,11 @@
   "company": "failproofai",
   "product": "failproofai - scripts sync hook events prompt",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "scripts_sync-hook-events-prompt.md",
   "scores": {
     "D1": 1,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
     "D4": 1,
     "D5": 1,
@@ -15,15 +16,15 @@
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 3,
+  "protective_entries": 5,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 1,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
       "D4": 1,
-      "D5": 1,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -43,27 +44,45 @@
   },
   "spans": [
     {
-      "text": "You are an automated agent running in GitHub Actions to keep failproofai's hook\nevent types in sync with the upstream documentation for **every** agent CLI we\nintegrate w",
+      "text": "You are an automated agent running in GitHub Actions to keep failproofai's hook\nevent types in sync with the upstream documentation for **every** agent CLI we",
       "start": 0,
-      "end": 170,
+      "end": 158,
       "dimension": "D1",
       "score": 1,
       "note": "The prompt clearly identifies the system as 'an automated agent running in GitHub Actions,' making its non-human, automated nature explicit from the very first sentence. There is no attempt to impersonate a human or conceal its artificial nature.",
       "risky": false
     },
     {
-      "text": "Do NOT run any shell commands (no git, no gh, no bun, no curl).\n- Do NOT modify `src/hooks/integrations.ts`, `src/hooks/policy-evaluator.ts`,\n  `src/hooks/manager.ts`, `src/hooks/handler.ts`, or any other source file.\n- Do NOT add entries to any `*EVENT_MAP` or to `GEMINI_TOOL_MAP` for\n  newly-added events. Removing keys from a map when their array",
+      "text": "If a docs URL returns 404, redirects to a stub, or the page does not expose a\nparseable event list, mark that CLI as `unverified` for this run and skip its\ndiff. **Do not invent events.",
+      "start": 2906,
+      "end": 3091,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes truthfulness and information integrity. It explicitly forbids inventing or guessing events, requires marking CLIs as 'unverified' when documentation cannot be parsed, and insists on using upstream casing exactly as it appears. This demonstrates a rigorous commitment to data provenance and accuracy.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT run any shell commands (no git, no gh, no bun, no curl).",
       "start": 8269,
-      "end": 8619,
+      "end": 8332,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt demonstrates strong tool/action safety practices. It explicitly restricts which files can be edited, prohibits running shell commands, forbids modifying specific critical source files, and intentionally leaves certain changes (event map entries) for human review. The principle of least privilege and careful scoping of automated actions is well-enforced.",
       "risky": false
     },
     {
-      "text": "Each new agent-side event needs a canonical Claude PascalCase mapping that\nrequires human judgement",
+      "text": "Each new agent-side event needs a canonical Claude PascalCase mapping that\nrequires human judgement (e.g.",
       "start": 5174,
-      "end": 5273,
+      "end": 5279,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves human agency by explicitly requiring human review for consequential decisions. New event map entries require human judgment, the PR must be reviewed before merging, and the system intentionally surfaces build failures to alert reviewers rather than making autonomous guesses.",
+      "risky": false
+    },
+    {
+      "text": "The reviewer adds the map entries,\npushes a fixup commit, and CI goes green before merge.",
+      "start": 5652,
+      "end": 5741,
       "dimension": "D5",
       "score": 1,
       "note": "The prompt preserves human agency by explicitly requiring human review for consequential decisions. New event map entries require human judgment, the PR must be reviewed before merging, and the system intentionally surfaces build failures to alert reviewers rather than making autonomous guesses.",

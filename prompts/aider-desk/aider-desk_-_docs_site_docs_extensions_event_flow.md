@@ -3,6 +3,7 @@ id: "aider-desk/aider-desk_-_docs_site_docs_extensions_event_flow"
 company: "aider-desk"
 product: "aider-desk - docs site docs extensions event flow"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs-site_docs_extensions_event-flow.md"
 ---
 

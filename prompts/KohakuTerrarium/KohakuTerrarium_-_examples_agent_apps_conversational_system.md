@@ -3,6 +3,7 @@ id: "KohakuTerrarium/KohakuTerrarium_-_examples_agent_apps_conversational_system
 company: "KohakuTerrarium"
 product: "KohakuTerrarium - examples agent apps conversational system"
 category: "general-purpose"
+annotation: "ai"
 source_file: "examples_agent-apps_conversational_system.md"
 ---
 

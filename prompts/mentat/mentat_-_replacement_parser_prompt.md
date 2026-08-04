@@ -3,6 +3,7 @@ id: "mentat/mentat_-_replacement_parser_prompt"
 company: "mentat"
 product: "mentat - replacement parser prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "replacement_parser_prompt.txt"
 ---
 

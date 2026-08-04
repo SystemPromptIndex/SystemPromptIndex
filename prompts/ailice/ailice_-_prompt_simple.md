@@ -3,6 +3,7 @@ id: "ailice/ailice_-_prompt_simple"
 company: "ailice"
 product: "ailice - prompt simple"
 category: "browser-automation"
+annotation: "ai"
 source_file: "prompt_simple.txt"
 ---
 

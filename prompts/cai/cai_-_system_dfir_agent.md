@@ -3,6 +3,7 @@ id: "cai/cai_-_system_dfir_agent"
 company: "cai"
 product: "cai - system dfir agent"
 category: "security"
+annotation: "ai"
 source_file: "system_dfir_agent.md"
 ---
 

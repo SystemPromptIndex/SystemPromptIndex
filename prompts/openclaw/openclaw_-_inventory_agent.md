@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_inventory_agent"
 company: "openclaw"
 product: "openclaw - inventory agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: "inventory-agent.md"
 ---
 

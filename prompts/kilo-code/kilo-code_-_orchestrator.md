@@ -3,6 +3,7 @@ id: "kilo-code/kilo-code_-_orchestrator"
 company: "kilo-code"
 product: "kilo-code - orchestrator"
 category: "coding-agents"
+annotation: "ai"
 source_file: "orchestrator.txt"
 ---
 

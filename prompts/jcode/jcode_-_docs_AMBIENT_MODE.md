@@ -3,6 +3,7 @@ id: "jcode/jcode_-_docs_AMBIENT_MODE"
 company: "jcode"
 product: "jcode - docs AMBIENT MODE"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_AMBIENT_MODE.md"
 ---
 

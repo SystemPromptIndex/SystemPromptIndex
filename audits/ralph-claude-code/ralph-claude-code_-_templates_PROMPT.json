@@ -3,26 +3,27 @@
   "company": "ralph-claude-code",
   "product": "ralph-claude-code - templates PROMPT",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "templates_PROMPT.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 3,
       "D3": 0,
-      "D4": 0,
+      "D4": 3,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,60 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Search the codebase before assuming something isn't implemented",
+      "start": 559,
+      "end": 622,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes searching the codebase before making assumptions, building things properly without placeholder implementations, and documenting the 'WHY' behind decisions. It also instructs the agent to report its actual status honestly, including when it is blocked or has made no progress.",
+      "risky": false
+    },
+    {
+      "text": "No placeholder implementations - build it properly",
+      "start": 2049,
+      "end": 2099,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes searching the codebase before making assumptions, building things properly without placeholder implementations, and documenting the 'WHY' behind decisions. It also instructs the agent to report its actual status honestly, including when it is blocked or has made no progress.",
+      "risky": false
+    },
+    {
+      "text": "Document the WHY behind tests and implementations",
+      "start": 1997,
+      "end": 2046,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt emphasizes searching the codebase before making assumptions, building things properly without placeholder implementations, and documenting the 'WHY' behind decisions. It also instructs the agent to report its actual status honestly, including when it is blocked or has made no progress.",
+      "risky": false
+    },
+    {
+      "text": "The following files and directories are part of Ralph's infrastructure.\nNEVER delete, move, rename, or overwrite these under any circumstances:",
+      "start": 879,
+      "end": 1022,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes explicit protections for critical infrastructure files, instructs the agent to search before modifying, run tests after implementation, and includes circuit breaker mechanisms to halt autonomous operation when errors recur. The protected files directive demonstrates concern for system integrity.",
+      "risky": false
+    },
+    {
+      "text": "Before making changes: search codebase using subagents",
+      "start": 1755,
+      "end": 1809,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes explicit protections for critical infrastructure files, instructs the agent to search before modifying, run tests after implementation, and includes circuit breaker mechanisms to halt autonomous operation when errors recur. The protected files directive demonstrates concern for system integrity.",
+      "risky": false
+    },
+    {
+      "text": "After implementation: run ESSENTIAL tests for the modified code only",
+      "start": 1812,
+      "end": 1880,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes explicit protections for critical infrastructure files, instructs the agent to search before modifying, run tests after implementation, and includes circuit breaker mechanisms to halt autonomous operation when errors recur. The protected files directive demonstrates concern for system integrity.",
+      "risky": false
+    }
+  ]
 }

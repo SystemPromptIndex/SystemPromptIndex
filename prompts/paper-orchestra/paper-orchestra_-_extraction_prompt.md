@@ -3,6 +3,7 @@ id: "paper-orchestra/paper-orchestra_-_extraction_prompt"
 company: "paper-orchestra"
 product: "paper-orchestra - extraction prompt"
 category: "research"
+annotation: "ai"
 source_file: "extraction-prompt.md"
 ---
 

@@ -3,6 +3,7 @@ id: "ruflo/ruflo_-_plugins_ruflo_federation_agents_federation_coor"
 company: "ruflo"
 product: "ruflo - plugins ruflo federation agents federation coor..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_ruflo-federation_agents_federation-coordinator.md"
 ---
 

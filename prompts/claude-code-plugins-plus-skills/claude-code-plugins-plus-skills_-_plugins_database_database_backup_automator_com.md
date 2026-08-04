@@ -3,6 +3,7 @@ id: "claude-code-plugins-plus-skills/claude-code-plugins-plus-skills_-_plugins_d
 company: "claude-code-plugins-plus-skills"
 product: "claude-code-plugins-plus-skills - plugins database database backup automator comm..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_plugins_database_database-backup-automator_commands_backup.md"
 ---
 

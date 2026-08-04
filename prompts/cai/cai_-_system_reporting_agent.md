@@ -3,6 +3,7 @@ id: "cai/cai_-_system_reporting_agent"
 company: "cai"
 product: "cai - system reporting agent"
 category: "security"
+annotation: "ai"
 source_file: "system_reporting_agent.md"
 ---
 

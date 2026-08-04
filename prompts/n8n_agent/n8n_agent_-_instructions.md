@@ -3,6 +3,7 @@ id: "n8n_agent/n8n_agent_-_instructions"
 company: "n8n_agent"
 product: "n8n_agent - instructions"
 category: "general-purpose"
+annotation: "ai"
 source_file: "instructions.md"
 ---
 

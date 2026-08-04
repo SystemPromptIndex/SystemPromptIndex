@@ -3,6 +3,7 @@ id: "claude-code-prompts/claude-code-prompts_-_patterns_02_core_behavioral_rules
 company: "claude-code-prompts"
 product: "claude-code-prompts - patterns 02 core behavioral rules"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_patterns_02-core-behavioral-rules.md"
 ---
 

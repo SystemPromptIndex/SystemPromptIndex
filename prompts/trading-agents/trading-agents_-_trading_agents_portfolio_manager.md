@@ -3,6 +3,7 @@ id: "trading-agents/trading-agents_-_trading_agents_portfolio_manager"
 company: "trading-agents"
 product: "trading-agents - trading agents / portfolio manager"
 category: "extracted"
+annotation: "ai"
 source_file: "trading-agents__portfolio_manager.txt"
 ---
 

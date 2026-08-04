@@ -3,6 +3,7 @@ id: "osaurus/osaurus_-_docs_plugins_EXAMPLE_TELEGRAM"
 company: "osaurus"
 product: "osaurus - docs plugins EXAMPLE TELEGRAM"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_docs_plugins_EXAMPLE_TELEGRAM.md"
 ---
 

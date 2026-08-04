@@ -3,6 +3,7 @@ id: "travel/travel_-_travel_itinerary_agent_macro_itinerary_syst"
 company: "travel"
 product: "travel - travel / itinerary agent / macro itinerary syst..."
 category: "extracted"
+annotation: "ai"
 source_file: "travel__itinerary-agent__macro_itinerary_system_prompt.txt"
 ---
 

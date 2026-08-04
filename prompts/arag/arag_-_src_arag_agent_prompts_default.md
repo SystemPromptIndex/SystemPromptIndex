@@ -3,6 +3,7 @@ id: "arag/arag_-_src_arag_agent_prompts_default"
 company: "arag"
 product: "arag - src arag agent prompts default"
 category: "general-purpose"
+annotation: "ai"
 source_file: "src_arag_agent_prompts_default.txt"
 ---
 

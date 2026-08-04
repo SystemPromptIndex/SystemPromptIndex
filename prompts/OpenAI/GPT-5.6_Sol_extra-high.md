@@ -2,6 +2,7 @@
 id: "OpenAI/GPT-5.6_Sol_extra-high"
 company: "OpenAI"
 product: "GPT-5.6 Sol (extra-high)"
+annotation: "ai"
 source_file: "gpt-5.6-sol-extra-high.md"
 ---
 

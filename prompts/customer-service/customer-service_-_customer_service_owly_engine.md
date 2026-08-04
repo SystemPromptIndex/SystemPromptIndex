@@ -3,6 +3,7 @@ id: "customer-service/customer-service_-_customer_service_owly_engine"
 company: "customer-service"
 product: "customer-service - customer service / owly / engine"
 category: "extracted"
+annotation: "ai"
 source_file: "customer-service__owly__engine.ts"
 ---
 

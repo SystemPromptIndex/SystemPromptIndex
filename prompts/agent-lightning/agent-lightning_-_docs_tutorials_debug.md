@@ -3,6 +3,7 @@ id: "agent-lightning/agent-lightning_-_docs_tutorials_debug"
 company: "agent-lightning"
 product: "agent-lightning - docs tutorials debug"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_docs_tutorials_debug.md"
 ---
 

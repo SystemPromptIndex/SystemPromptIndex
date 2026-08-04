@@ -3,6 +3,7 @@ id: "LuaN1aoAgent/LuaN1aoAgent_-_core_prompts_templates_en_branch_replan_templat
 company: "LuaN1aoAgent"
 product: "LuaN1aoAgent - core prompts templates en branch replan template"
 category: "general-purpose"
+annotation: "ai"
 source_file: "core_prompts_templates_en_branch_replan_template.jinja2"
 ---
 

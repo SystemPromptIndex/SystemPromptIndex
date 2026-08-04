@@ -3,6 +3,7 @@ id: "numasec/numasec_-_packages_numasec_src_agent_prompt_explore"
 company: "numasec"
 product: "numasec - packages numasec src agent prompt explore"
 category: "coding-agents"
+annotation: "ai"
 source_file: "packages_numasec_src_agent_prompt_explore.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "opencode/opencode_-_anthropic"
 company: "opencode"
 product: "opencode - anthropic"
 category: "coding-agents"
+annotation: "ai"
 source_file: "anthropic.txt"
 ---
 

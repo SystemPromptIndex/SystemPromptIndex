@@ -3,6 +3,7 @@ id: "avante.nvim/avante.nvim_-_py_rag_service_README"
 company: "avante.nvim"
 product: "avante.nvim - py rag service README"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_py_rag-service_README.md"
 ---
 

@@ -3,6 +3,7 @@ id: "qwen-code/qwen-code_-_.qwen_commands_qc_code_review"
 company: "qwen-code"
 product: "qwen-code - .qwen commands qc code review"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.qwen_commands_qc_code-review.md"
 ---
 

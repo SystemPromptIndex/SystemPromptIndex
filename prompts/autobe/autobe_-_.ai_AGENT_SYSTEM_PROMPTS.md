@@ -3,6 +3,7 @@ id: "autobe/autobe_-_.ai_AGENT_SYSTEM_PROMPTS"
 company: "autobe"
 product: "autobe - .ai AGENT SYSTEM PROMPTS"
 category: "coding-agents"
+annotation: "ai"
 source_file: ".ai_AGENT_SYSTEM_PROMPTS.md"
 ---
 

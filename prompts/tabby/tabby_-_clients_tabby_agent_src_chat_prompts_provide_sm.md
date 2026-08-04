@@ -3,6 +3,7 @@ id: "tabby/tabby_-_clients_tabby_agent_src_chat_prompts_provide_sm"
 company: "tabby"
 product: "tabby - clients tabby agent src chat prompts provide sm..."
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_clients_tabby-agent_src_chat_prompts_provide-smart-apply-line-range.md"
 ---
 

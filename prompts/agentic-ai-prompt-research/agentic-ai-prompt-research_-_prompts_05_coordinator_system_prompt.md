@@ -3,6 +3,7 @@ id: "agentic-ai-prompt-research/agentic-ai-prompt-research_-_prompts_05_coordina
 company: "agentic-ai-prompt-research"
 product: "agentic-ai-prompt-research - prompts 05 coordinator system prompt"
 category: "research"
+annotation: "ai"
 source_file: "prompts_05_coordinator_system_prompt.md"
 ---
 

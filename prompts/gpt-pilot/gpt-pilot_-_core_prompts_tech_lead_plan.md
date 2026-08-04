@@ -3,6 +3,7 @@ id: "gpt-pilot/gpt-pilot_-_core_prompts_tech_lead_plan"
 company: "gpt-pilot"
 product: "gpt-pilot - core prompts tech lead plan"
 category: "coding-agents"
+annotation: "ai"
 source_file: "core_prompts_tech-lead_plan.prompt"
 ---
 

@@ -3,6 +3,7 @@ id: "smartrag/smartrag_-_app_ingestion_prompts_summarize_descriptions_pr"
 company: "smartrag"
 product: "smartrag - app ingestion prompts summarize descriptions pr..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "app_ingestion_prompts_summarize-descriptions-prompt.txt"
 ---
 

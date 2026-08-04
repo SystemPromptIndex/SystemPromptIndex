@@ -3,6 +3,7 @@ id: "Agent/Agent_-_docs_compact_prompt_example"
 company: "Agent"
 product: "Agent - docs compact prompt example"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_compact_prompt_example.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "harbor/harbor_-_adapters_arc_agi_2_src_arc_agi_2_task_template"
 company: "harbor"
 product: "harbor - adapters arc agi 2 src arc agi 2 task template ..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "adapters_arc_agi_2_src_arc_agi_2_task-template_instruction.md"
 ---
 

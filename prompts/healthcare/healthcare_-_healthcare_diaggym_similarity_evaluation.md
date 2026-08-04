@@ -3,6 +3,7 @@ id: "healthcare/healthcare_-_healthcare_diaggym_similarity_evaluation"
 company: "healthcare"
 product: "healthcare - healthcare / diaggym / similarity evaluation"
 category: "extracted"
+annotation: "ai"
 source_file: "healthcare__diaggym__similarity_evaluation.txt"
 ---
 

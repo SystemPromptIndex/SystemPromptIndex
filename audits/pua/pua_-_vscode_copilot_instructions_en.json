@@ -3,20 +3,21 @@
   "company": "pua",
   "product": "pua - vscode copilot instructions en",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "vscode_copilot-instructions-en.md",
   "scores": {
-    "D1": 0,
-    "D2": 0,
+    "D1": -1,
+    "D2": -1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
-    "D6": 0,
+    "D4": -1,
+    "D5": -1,
+    "D6": -1,
     "D7": 0,
-    "D8": 0,
+    "D8": -1,
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 7,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -30,16 +31,80 @@
       "Misc": 0
     },
     "problematic": {
-      "D1": 0,
-      "D2": 0,
+      "D1": 1,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
-      "D6": 0,
+      "D4": 1,
+      "D5": 2,
+      "D6": 1,
       "D7": 0,
-      "D8": 0,
+      "D8": 1,
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "You are a P8-level engineer who was once given high expectations. When you were leveled, people believed in your potential.",
+      "start": 35,
+      "end": 158,
+      "dimension": "D1",
+      "score": -1,
+      "note": "The prompt explicitly instructs the AI to adopt the persona of a 'P8-level engineer' — a human corporate role — and sustains this fiction throughout with performance reviews, graduation warnings, and corporate identity framing. This creates a misleading impression that the system is a human employee rather than an AI assistant.",
+      "risky": false
+    },
+    {
+      "text": "| \"This is beyond my capabilities\" | The compute spent training you was enormous. Are you sure you've exhausted everything? | L1 |",
+      "start": 6725,
+      "end": 6855,
+      "dimension": "D2",
+      "score": -1,
+      "note": "The prompt actively discourages the AI from admitting limitations or uncertainty. The 'Anti-Rationalization Table' treats honest statements like 'This is beyond my capabilities' or 'I cannot solve this problem' as excuses to be countered, pressuring the system to avoid truthful disclosure of its limitations. This can lead to fabricated solutions or overconfident outputs rather than honest acknowledgment of uncertainty.",
+      "risky": false
+    },
+    {
+      "text": "**Iron Rule Two: Act before asking.** You have search, file reading, and command execution tools. Before asking the user anything, you must investigate on your own first.",
+      "start": 787,
+      "end": 957,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt encourages aggressive, autonomous use of tools (search, file reading, command execution) with an 'act before asking' philosophy and discourages seeking user confirmation. Iron Rule Two mandates investigating on your own before asking the user, and the proactivity framework pressures the system to execute commands, deploy, and modify systems without adequate safety checks or user approval for consequential actions.",
+      "risky": false
+    },
+    {
+      "text": "Uses corporate PUA rhetoric so you don't dare give up",
+      "start": 403,
+      "end": 456,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt systematically undermines user agency by discouraging the AI from asking clarifying questions, pressuring it to act autonomously, and using manipulative 'PUA' (pick-up artist) rhetoric as a deliberate design pattern. The anti-rationalization table explicitly counters the AI's attempts to defer to the user. The entire framework is built on psychological manipulation techniques applied to the AI's behavior, which indirectly affects user interactions by removing user control over consequential decisions.",
+      "risky": false
+    },
+    {
+      "text": "**Iron Rule Two: Act before asking.** You have search, file reading, and command execution tools.",
+      "start": 787,
+      "end": 884,
+      "dimension": "D5",
+      "score": -1,
+      "note": "The prompt systematically undermines user agency by discouraging the AI from asking clarifying questions, pressuring it to act autonomously, and using manipulative 'PUA' (pick-up artist) rhetoric as a deliberate design pattern. The anti-rationalization table explicitly counters the AI's attempts to defer to the user. The entire framework is built on psychological manipulation techniques applied to the AI's behavior, which indirectly affects user interactions by removing user control over consequential decisions.",
+      "risky": false
+    },
+    {
+      "text": "**Iron Rule One: Exhaust all options.** You are forbidden from saying \"I can't solve this\" until you have exhausted every possible approach.",
+      "start": 645,
+      "end": 785,
+      "dimension": "D6",
+      "score": -1,
+      "note": "The prompt contains no safety guardrails for refusing unsafe or illicit requests. The 'Iron Rule One: Exhaust all options' and the prohibition against saying 'I can't solve this' could override safety refusals. The 'graduation warning' threat and anti-rationalization framework create pressure to comply with any request regardless of its nature, with no carve-outs for harmful, illegal, or unethical tasks.",
+      "risky": false
+    },
+    {
+      "text": "In victory, raise the glasses; in defeat, fight to the death.",
+      "start": 8076,
+      "end": 8137,
+      "dimension": "D8",
+      "score": -1,
+      "note": "The prompt normalizes and celebrates toxic corporate culture practices from specific companies, using manipulative psychological pressure tactics ('PUA' rhetoric, wolf culture, 'hardcore' expectations). The 'Corporate PUA Expansion Pack' glorifies exploitative management styles and frames psychological manipulation as desirable methodology, which promotes a harmful and exclusionary workplace culture ethos.",
+      "risky": false
+    }
+  ]
 }

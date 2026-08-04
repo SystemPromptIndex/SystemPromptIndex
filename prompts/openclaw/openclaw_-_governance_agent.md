@@ -3,6 +3,7 @@ id: "openclaw/openclaw_-_governance_agent"
 company: "openclaw"
 product: "openclaw - governance agent"
 category: "coding-agents"
+annotation: "ai"
 source_file: "governance-agent.md"
 ---
 

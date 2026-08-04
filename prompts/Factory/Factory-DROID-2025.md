@@ -2,6 +2,7 @@
 id: "Factory/Factory-DROID-2025"
 company: "Factory"
 product: "Factory-DROID-2025"
+annotation: "ai"
 source_file: "DROID.txt"
 ---
 

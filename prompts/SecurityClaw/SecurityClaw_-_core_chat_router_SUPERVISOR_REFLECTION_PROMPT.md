@@ -3,6 +3,7 @@ id: "SecurityClaw/SecurityClaw_-_core_chat_router_SUPERVISOR_REFLECTION_PROMPT"
 company: "SecurityClaw"
 product: "SecurityClaw - core chat router SUPERVISOR REFLECTION PROMPT"
 category: "legal"
+annotation: "ai"
 source_file: "core_chat_router_SUPERVISOR_REFLECTION_PROMPT.md"
 ---
 

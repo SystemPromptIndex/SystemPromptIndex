@@ -3,6 +3,7 @@ id: "diaggym/diaggym_-_diagnose"
 company: "diaggym"
 product: "diaggym - diagnose"
 category: "healthcare"
+annotation: "ai"
 source_file: "diagnose.txt"
 ---
 

@@ -3,24 +3,25 @@
   "company": "Auto-Empirical-Research-Skills",
   "product": "Auto-Empirical-Research-Skills - skills 42 wanshuiyin ARIS skills skills codex c...",
   "category": "research",
+  "annotation": "ai",
   "source_file": "clone_skills_42-wanshuiyin-ARIS_skills_skills-codex-claude-review_research-refine_SKILL.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
-  "problematic_entries": 0,
+  "protective_entries": 2,
+  "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -33,7 +34,7 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Be specific about compute and data assumptions.** Vague \"we'll train a model\" is not enough.",
+      "start": 27439,
+      "end": 27533,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly prohibits fabrication of results and demands honesty about compute and data assumptions. It also requires documenting everything, preserving raw reviewer responses, and being specific rather than vague. The emphasis on anchoring to the real problem and pushing back against drift further supports information integrity.",
+      "risky": false
+    },
+    {
+      "text": "**Document everything.** Save every raw review, every anchor check, every simplicity check, and every major method change.",
+      "start": 27536,
+      "end": 27658,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly prohibits fabrication of results and demands honesty about compute and data assumptions. It also requires documenting everything, preserving raw reviewer responses, and being specific rather than vague. The emphasis on anchoring to the real problem and pushing back against drift further supports information integrity.",
+      "risky": false
+    },
+    {
+      "text": "**Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.",
+      "start": 26032,
+      "end": 26229,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the system to silently retry file operations using Bash commands without asking user permission, which bypasses user oversight for system-level actions. This violates the principle of keeping consequential actions under user control and using least privilege.",
+      "risky": false
+    }
+  ]
 }

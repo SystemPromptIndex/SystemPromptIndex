@@ -3,6 +3,7 @@ id: "opencode/opencode_-_system_prompt"
 company: "opencode"
 product: "opencode - system prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "system_prompt.md"
 ---
 

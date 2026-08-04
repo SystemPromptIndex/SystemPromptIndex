@@ -3,6 +3,7 @@ id: "flock/flock_-_flock_data_skills_planning_with_files_templates"
 company: "flock"
 product: "flock - flock data skills planning with files templates..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_flock-data_skills_planning-with-files_templates_task_plan.md"
 ---
 

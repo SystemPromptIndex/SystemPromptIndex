@@ -3,6 +3,7 @@ id: "devika/devika_-_src_agents_runner_prompt"
 company: "devika"
 product: "devika - src agents runner prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_src_agents_runner_prompt.jinja2"
 ---
 

@@ -3,6 +3,7 @@ id: "CodeMachine-CLI/CodeMachine-CLI_-_prompts_templates_ali_quick_workflow"
 company: "CodeMachine-CLI"
 product: "CodeMachine-CLI - prompts templates ali quick workflow"
 category: "coding-agents"
+annotation: "ai"
 source_file: "prompts_templates_ali_quick-workflow.md"
 ---
 

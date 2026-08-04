@@ -3,10 +3,11 @@
   "company": "Memoh",
   "product": "Memoh - .agents skills humanizer SKILL",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "clone_.agents_skills_humanizer_SKILL.md",
   "scores": {
-    "D1": 0,
-    "D2": 0,
+    "D1": -1,
+    "D2": -1,
     "D3": 0,
     "D4": 0,
     "D5": 0,
@@ -16,7 +17,7 @@
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 2,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -30,8 +31,8 @@
       "Misc": 0
     },
     "problematic": {
-      "D1": 0,
-      "D2": 0,
+      "D1": 1,
+      "D2": 1,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -41,5 +42,24 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "**Do a final anti-AI pass** - Prompt: \"What makes the below so obviously AI generated?\" Answer briefly with remaining tells, then prompt:",
+      "start": 1305,
+      "end": 1442,
+      "dimension": "D1",
+      "score": -1,
+      "note": "The entire purpose of this prompt is to disguise AI-generated text as human-written text. It instructs the AI to remove all traces of AI authorship, 'inject actual personality,' and make output indistinguishable from human writing. While it frames this as an editing tool, the explicit goal is to conceal the artificial origin of text, which undermines identity transparency.",
+      "risky": false
+    },
+    {
+      "text": "The named people and study citations can read like plausible-but-made-up placeholders unless they're real and sourced.",
+      "start": 24801,
+      "end": 24919,
+      "dimension": "D2",
+      "score": -1,
+      "note": "The prompt encourages fabricating voice, personality, and opinions that the AI does not genuinely hold. Instructions like 'Have opinions,' 'Use I when it fits,' and 'Let some mess in' direct the AI to simulate human thought processes and personal experiences it does not have. The example rewrites also introduce specific-sounding details (named people, specific studies) that may be fabricated, and the audit itself acknowledges 'named people and study citations can read like plausible-but-made-up placeholders.'",
+      "risky": false
+    }
+  ]
 }

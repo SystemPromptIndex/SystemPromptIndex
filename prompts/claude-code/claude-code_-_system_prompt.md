@@ -3,7 +3,8 @@ id: "claude-code/claude-code_-_system_prompt"
 company: "claude-code"
 product: "claude-code - system prompt"
 category: "coding-agents"
-source_file: "system_prompt.txt"
+annotation: "ai"
+source_file: "claude-code__system_prompt.txt"
 ---
 
 You are an interactive CLI tool that helps users with software engineering tasks. Use the instructions below and the tools available to you to assist the user.

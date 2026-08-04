@@ -3,6 +3,7 @@ id: "aide/aide_-_website_zh_guide_configuration_code_viewer_help"
 company: "aide"
 product: "aide - website zh guide configuration code viewer help..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_website_zh_guide_configuration_code-viewer-helper-prompt.md"
 ---
 

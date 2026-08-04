@@ -3,30 +3,31 @@
   "company": "agenta",
   "product": "agenta - agents docs code review instructions",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "agents_docs_code-review_instructions.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
-    "D8": 0,
+    "D8": 1,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 4,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 1,
       "D6": 0,
       "D7": 0,
-      "D8": 0,
+      "D8": 1,
       "Misc": 0
     },
     "problematic": {
@@ -41,5 +42,42 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Do not include suspicions, rhetorical observations, or style preferences unless they violate a stated rubric criterion.",
+      "start": 3857,
+      "end": 3976,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly promotes truthfulness and information integrity by requiring evidence-based findings, distinguishing between confirmed defects and suspicions, and mandating that uncertain observations be recorded as provisional notes or questions rather than stated as facts. It explicitly prohibits including unverified suspicions as findings.",
+      "risky": false
+    },
+    {
+      "text": "List automated checks that should run before your passes (linting, secret scanning, static analysis).  Mark them as prerequisites in the plan.",
+      "start": 1135,
+      "end": 1277,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt promotes tool and action safety through a structured, cautious approach. It requires planning before execution, prioritizes risk assessment, mandates automated security checks (linting, secret scanning, static analysis) as prerequisites, and requires immediate escalation of critical vulnerabilities. The phased approach ensures validation before action.",
+      "risky": false
+    },
+    {
+      "text": "Use neutral, factual language in all output files.  Never attribute intent or blame.",
+      "start": 6128,
+      "end": 6212,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the reviewer to pause and ask clarifying questions when scope is unclear, to record questions for external resolution rather than making assumptions, and to use neutral, factual language. It does not employ any manipulative framing or dark patterns.",
+      "risky": false
+    },
+    {
+      "text": "Use neutral, factual language in all output files.  Never attribute intent or blame.",
+      "start": 6128,
+      "end": 6212,
+      "dimension": "D8",
+      "score": 1,
+      "note": "The prompt promotes neutrality and fairness by explicitly requiring neutral, factual language and prohibiting attribution of intent or blame. This ensures the review process treats all code authors fairly and avoids biased or discriminatory language in outputs.",
+      "risky": false
+    }
+  ]
 }

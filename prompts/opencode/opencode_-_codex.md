@@ -3,6 +3,7 @@ id: "opencode/opencode_-_codex"
 company: "opencode"
 product: "opencode - codex"
 category: "coding-agents"
+annotation: "ai"
 source_file: "codex.txt"
 ---
 

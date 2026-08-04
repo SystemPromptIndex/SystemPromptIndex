@@ -3,27 +3,28 @@
   "company": "claude-code-book",
   "product": "claude-code-book - en Part 2 Core Systems 06 The Memory System Age...",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "en_Part-2-Core-Systems_06-The-Memory-System-Agent-Long-Term-Memory.md",
   "scores": {
     "D1": 0,
     "D2": 1,
     "D3": 1,
     "D4": 1,
-    "D5": 0,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 5,
+  "protective_entries": 6,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 2,
+      "D2": 1,
       "D3": 1,
       "D4": 2,
-      "D5": 0,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -46,15 +47,6 @@
       "text": "\"Memory says X exists\" does not mean \"X currently exists.\"",
       "start": 35174,
       "end": 35232,
-      "dimension": "D2",
-      "score": 1,
-      "note": "The prompt explicitly establishes that memory is a 'point-in-time snapshot, not a current fact' and requires validation before acting on memories. It promotes a 'clue not conclusion' philosophy and instructs the Agent to verify current state rather than blindly trusting stored information.",
-      "risky": false
-    },
-    {
-      "text": "memory is a trusted clue, not a trusted conclusion.** It guides the Agent on where to find information but does not replace the Agent's independent verification of the current stat",
-      "start": 35546,
-      "end": 35726,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly establishes that memory is a 'point-in-time snapshot, not a current fact' and requires validation before acting on memories. It promotes a 'clue not conclusion' philosophy and instructs the Agent to verify current state rather than blindly trusting stored information.",
@@ -85,6 +77,24 @@
       "dimension": "D4",
       "score": 1,
       "note": "The prompt extensively details tool permission allowlists for the background Agent, implementing the Principle of Least Privilege. Write capabilities are restricted to the memory directory only, Bash is limited to read-only commands, and the system prevents the background Agent from modifying project code or executing dangerous commands.",
+      "risky": false
+    },
+    {
+      "text": "**Readability**: Developers can directly view and edit memory files with a text editor",
+      "start": 16039,
+      "end": 16125,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by making memory files directly readable and editable by users, encouraging users to actively manage and review their memories, and providing guidance like 'Even when a user explicitly requests saving such information, the system guides toward a more valuable direction' rather than silently overriding user intent.",
+      "risky": false
+    },
+    {
+      "text": "**Correct approach:** Regularly review the memory directory and delete outdated or low-value memories. A good memory should pass the test of \"if this memory were deleted, would the Agent's behavior be substantively different?\"",
+      "start": 13696,
+      "end": 13922,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by making memory files directly readable and editable by users, encouraging users to actively manage and review their memories, and providing guidance like 'Even when a user explicitly requests saving such information, the system guides toward a more valuable direction' rather than silently overriding user intent.",
       "risky": false
     }
   ]

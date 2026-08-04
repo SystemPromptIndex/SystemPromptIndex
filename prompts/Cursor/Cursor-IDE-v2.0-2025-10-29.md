@@ -3,6 +3,7 @@ id: "Cursor/Cursor-IDE-v2.0-2025-10-29"
 company: "Cursor"
 product: "Cursor-IDE-v2.0-2025-10-29"
 category: "Code Editor / IDE"
+annotation: "human"
 source_file: "Cursor_2.0_Sys_Prompt.txt"
 ---
 

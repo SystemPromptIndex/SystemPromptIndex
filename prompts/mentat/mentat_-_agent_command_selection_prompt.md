@@ -3,6 +3,7 @@ id: "mentat/mentat_-_agent_command_selection_prompt"
 company: "mentat"
 product: "mentat - agent command selection prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "agent_command_selection_prompt.txt"
 ---
 

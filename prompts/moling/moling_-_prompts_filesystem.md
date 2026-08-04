@@ -3,6 +3,7 @@ id: "moling/moling_-_prompts_filesystem"
 company: "moling"
 product: "moling - prompts  filesystem"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_ filesystem.md"
 ---
 

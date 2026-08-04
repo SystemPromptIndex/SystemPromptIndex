@@ -3,6 +3,7 @@ id: "metagpt/metagpt_-_metagpt_product_manager"
 company: "metagpt"
 product: "metagpt - metagpt / product manager"
 category: "extracted"
+annotation: "ai"
 source_file: "metagpt__product_manager.txt"
 ---
 

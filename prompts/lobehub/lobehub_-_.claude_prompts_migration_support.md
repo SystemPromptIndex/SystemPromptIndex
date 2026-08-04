@@ -3,6 +3,7 @@ id: "lobehub/lobehub_-_.claude_prompts_migration_support"
 company: "lobehub"
 product: "lobehub - .claude prompts migration support"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_prompts_migration-support.md"
 ---
 

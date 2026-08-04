@@ -3,6 +3,7 @@ id: "llamafarm/llamafarm_-_.claude_skills_generate_subsystem_skills_SKILL"
 company: "llamafarm"
 product: "llamafarm - .claude skills generate subsystem skills SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".claude_skills_generate-subsystem-skills_SKILL.md"
 ---
 

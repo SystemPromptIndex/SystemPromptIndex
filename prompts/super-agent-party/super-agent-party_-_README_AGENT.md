@@ -3,6 +3,7 @@ id: "super-agent-party/super-agent-party_-_README_AGENT"
 company: "super-agent-party"
 product: "super-agent-party - README AGENT"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_README_AGENT.md"
 ---
 

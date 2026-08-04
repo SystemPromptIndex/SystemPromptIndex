@@ -3,6 +3,7 @@ id: "kwaak/kwaak_-_templates_agentic_answer_prompt"
 company: "kwaak"
 product: "kwaak - templates agentic answer prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "templates_agentic_answer_prompt.md"
 ---
 

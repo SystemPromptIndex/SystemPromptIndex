@@ -3,6 +3,7 @@ id: "sweet_rl/sweet_rl_-_prompts_llm_agent_html_prompt"
 company: "sweet_rl"
 product: "sweet_rl - prompts llm agent html prompt"
 category: "research"
+annotation: "ai"
 source_file: "prompts_llm_agent_html_prompt.txt"
 ---
 

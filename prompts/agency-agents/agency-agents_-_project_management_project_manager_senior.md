@@ -3,6 +3,7 @@ id: "agency-agents/agency-agents_-_project_management_project_manager_senior"
 company: "agency-agents"
 product: "agency-agents - project management project manager senior"
 category: "legal"
+annotation: "ai"
 source_file: "clone_project-management_project-manager-senior.md"
 ---
 

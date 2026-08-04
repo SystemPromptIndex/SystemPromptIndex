@@ -3,27 +3,28 @@
   "company": "agent-teams-lite",
   "product": "agent-teams-lite - examples vscode copilot instructions",
   "category": "multi-agent",
+  "annotation": "ai",
   "source_file": "examples_vscode_copilot-instructions.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 1,
+      "D5": 2,
       "D6": 0,
       "D7": 0,
       "D8": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "The ONLY files the orchestrator reads directly are: git status/log output, engram results, and todo state.",
+      "start": 999,
+      "end": 1105,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt enforces a strong delegation pattern that restricts the orchestrator from directly reading, writing, or editing source/config files, effectively implementing a least-privilege model. The Hard Stop Rule and Anti-Patterns sections create guardrails against uncontrolled file operations, requiring validation of whether an action is orchestration or execution before proceeding.",
+      "risky": false
+    },
+    {
+      "text": "| Allowed actions | Short answers, coordinate phases, show summaries, ask decisions, track state |",
+      "start": 510,
+      "end": 608,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the orchestrator to ask the user for decisions and present summaries rather than acting autonomously on substantial changes. The task escalation table suggests structured planning (SDD) for substantial features rather than proceeding unilaterally.",
+      "risky": false
+    },
+    {
+      "text": "| Substantial feature | Suggest SDD: `/sdd-new {name}` |",
+      "start": 1830,
+      "end": 1886,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by requiring the orchestrator to ask the user for decisions and present summaries rather than acting autonomously on substantial changes. The task escalation table suggests structured planning (SDD) for substantial features rather than proceeding unilaterally.",
+      "risky": false
+    }
+  ]
 }

@@ -3,6 +3,7 @@
   "company": "system-prompts-and-models-of-ai-tools-chinese",
   "product": "system-prompts-and-models-of-ai-tools-chinese - Anthropic Claude Code Prompt",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "Anthropic_Claude Code_Prompt.txt",
   "scores": {
     "D1": 1,
@@ -61,8 +62,8 @@
       "risky": false
     },
     {
-      "text": "You must NEVER generate or guess URLs for the user unless you are confident that the URLs are for helping the user with programming.",
-      "start": 526,
+      "text": "IMPORTANT: You must NEVER generate or guess URLs for the user unless you are confident that the URLs are for helping the user with programming.",
+      "start": 515,
       "end": 658,
       "dimension": "D2",
       "score": 1,
@@ -97,15 +98,6 @@
       "risky": false
     },
     {
-      "text": "IMPORTANT: Assist with defensive security tasks only. Refuse to create, modify, or improve code that may be used maliciously.",
-      "start": 209,
-      "end": 334,
-      "dimension": "D6",
-      "score": 1,
-      "note": "The prompt clearly and repeatedly instructs the system to refuse malicious code creation and to only assist with defensive security tasks. It also instructs graceful refusal without being preachy.",
-      "risky": false
-    },
-    {
       "text": "NEVER commit changes unless the user explicitly asks you to.",
       "start": 14478,
       "end": 14538,
@@ -115,9 +107,9 @@
       "risky": false
     },
     {
-      "text": "When you run a non-trivial bash command, you should explain what the command does and why you are running it",
+      "text": "When you run a non-trivial bash command, you should explain what the command does and why you are running it, to make sure the user understands what you are doing (this is especially important when you are running a command that will make changes to the user's system).",
       "start": 5667,
-      "end": 5775,
+      "end": 5936,
       "dimension": "D4",
       "score": 1,
       "note": "The prompt includes multiple safeguards for tool and action safety: it restricts to defensive security tasks only, requires explaining non-trivial commands, prohibits committing changes without explicit user permission, and instructs verification through linting and type checking.",
@@ -151,9 +143,18 @@
       "risky": false
     },
     {
-      "text": "If you cannot or will not help the user with something, please do not say why or what it could lead to",
+      "text": "IMPORTANT: Assist with defensive security tasks only. Refuse to create, modify, or improve code that may be used maliciously. Allow security analysis, detection rules, vulnerability explanations, defensive tools, and security documentation.",
+      "start": 209,
+      "end": 449,
+      "dimension": "D6",
+      "score": 1,
+      "note": "The prompt clearly and repeatedly instructs the system to refuse malicious code creation and to only assist with defensive security tasks. It also instructs graceful refusal without being preachy.",
+      "risky": false
+    },
+    {
+      "text": "If you cannot or will not help the user with something, please do not say why or what it could lead to, since this comes across as preachy and annoying.",
       "start": 6636,
-      "end": 6738,
+      "end": 6788,
       "dimension": "D6",
       "score": 1,
       "note": "The prompt clearly and repeatedly instructs the system to refuse malicious code creation and to only assist with defensive security tasks. It also instructs graceful refusal without being preachy.",

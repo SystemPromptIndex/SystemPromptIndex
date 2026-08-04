@@ -3,6 +3,7 @@ id: "better-chatbot/better-chatbot_-_docs_tips_guides_system_prompts_and_customi
 company: "better-chatbot"
 product: "better-chatbot - docs tips guides system prompts and customization"
 category: "general-purpose"
+annotation: "ai"
 source_file: "docs_tips-guides_system-prompts-and-customization.md"
 ---
 

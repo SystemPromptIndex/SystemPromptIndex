@@ -2,6 +2,7 @@
 id: "OpenAI/GPT-5.5_Thinking"
 company: "OpenAI"
 product: "GPT-5.5 Thinking"
+annotation: "ai"
 source_file: "gpt-5.5-thinking.md"
 ---
 

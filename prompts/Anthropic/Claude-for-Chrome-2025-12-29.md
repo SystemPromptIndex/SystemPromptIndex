@@ -3,6 +3,7 @@ id: "Anthropic/Claude-for-Chrome-2025-12-29"
 company: "Anthropic"
 product: "Claude-for-Chrome-2025-12-29"
 category: "Chat / General"
+annotation: "human"
 source_file: "Prompt.txt"
 ---
 

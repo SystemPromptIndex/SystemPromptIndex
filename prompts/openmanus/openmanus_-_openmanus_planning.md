@@ -3,6 +3,7 @@ id: "openmanus/openmanus_-_openmanus_planning"
 company: "openmanus"
 product: "openmanus - openmanus / planning"
 category: "extracted"
+annotation: "ai"
 source_file: "openmanus__planning.txt"
 ---
 

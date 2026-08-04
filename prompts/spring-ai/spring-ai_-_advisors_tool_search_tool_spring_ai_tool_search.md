@@ -3,6 +3,7 @@ id: "spring-ai/spring-ai_-_advisors_tool_search_tool_spring_ai_tool_search"
 company: "spring-ai"
 product: "spring-ai - advisors tool search tool spring ai tool search..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "advisors_tool-search-tool_spring-ai-tool-search-tool-advisor_src_main_resources_DEFAULT_SYSTEM_PROMPT_SUFFIX_LARGE.md"
 ---
 

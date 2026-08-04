@@ -3,6 +3,7 @@ id: "spacebot/spacebot_-_docs_design_docs_working_memory_example_prompt"
 company: "spacebot"
 product: "spacebot - docs design docs working memory example prompt"
 category: "coding-agents"
+annotation: "ai"
 source_file: "docs_design-docs_working-memory-example-prompt.md"
 ---
 

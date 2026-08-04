@@ -3,6 +3,7 @@ id: "harmonist/harmonist_-_agents_specialized_specialized_korean_business"
 company: "harmonist"
 product: "harmonist - agents specialized specialized korean business ..."
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_agents_specialized_specialized-korean-business-navigator.md"
 ---
 

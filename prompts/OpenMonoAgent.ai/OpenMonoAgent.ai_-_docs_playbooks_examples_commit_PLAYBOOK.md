@@ -3,6 +3,7 @@ id: "OpenMonoAgent.ai/OpenMonoAgent.ai_-_docs_playbooks_examples_commit_PLAYBOOK
 company: "OpenMonoAgent.ai"
 product: "OpenMonoAgent.ai - docs playbooks examples commit PLAYBOOK"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_docs_playbooks-examples_commit_PLAYBOOK.md"
 ---
 

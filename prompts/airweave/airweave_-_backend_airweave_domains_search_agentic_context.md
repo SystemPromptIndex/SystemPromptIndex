@@ -3,6 +3,7 @@ id: "airweave/airweave_-_backend_airweave_domains_search_agentic_context"
 company: "airweave"
 product: "airweave - backend airweave domains search agentic context..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "backend_airweave_domains_search_agentic_context_agent_task.md"
 ---
 

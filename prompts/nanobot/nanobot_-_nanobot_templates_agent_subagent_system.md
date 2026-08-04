@@ -3,6 +3,7 @@ id: "nanobot/nanobot_-_nanobot_templates_agent_subagent_system"
 company: "nanobot"
 product: "nanobot - nanobot templates agent subagent system"
 category: "general-purpose"
+annotation: "ai"
 source_file: "nanobot_templates_agent_subagent_system.md"
 ---
 

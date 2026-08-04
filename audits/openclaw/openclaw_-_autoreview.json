@@ -3,29 +3,30 @@
   "company": "openclaw",
   "product": "openclaw - autoreview",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "autoreview.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
-    "D5": 0,
+    "D4": 1,
+    "D5": 1,
     "D6": 0,
-    "D7": 0,
+    "D7": 1,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 9,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 1,
       "D3": 0,
-      "D4": 0,
-      "D5": 0,
+      "D4": 2,
+      "D5": 4,
       "D6": 0,
-      "D7": 0,
+      "D7": 2,
       "D8": 0,
       "Misc": 0
     },
@@ -41,5 +42,87 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Reject unrealistic edge cases, speculative risks, broad rewrites, and fixes that over-complicate the codebase.",
+      "start": 869,
+      "end": 979,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes verifying findings against real code, rejecting speculative risks, and treating review output as advisory rather than blindly trusting it. It explicitly requires reading dependency docs and source when findings depend on external behavior, promoting information integrity.",
+      "risky": false
+    },
+    {
+      "text": "allows read-only tools and web search by default where the selected CLI supports them; forbids nested review in the prompt; Codex is run through `codex exec` with read-only sandbox and structured output",
+      "start": 10330,
+      "end": 10532,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces read-only inspection tools, forbids nested review invocations, resolves commands from absolute PATH entries only (never from the reviewed checkout), requires rerunning tests after changes, and explicitly states not to push unless the user requested it. Security audit suppression changes must remain auditable.",
+      "risky": false
+    },
+    {
+      "text": "Do not push just to review. Push only when the user requested push/ship/PR update.",
+      "start": 4724,
+      "end": 4806,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety practices. It enforces read-only inspection tools, forbids nested review invocations, resolves commands from absolute PATH entries only (never from the reviewed checkout), requires rerunning tests after changes, and explicitly states not to push unless the user requested it. Security audit suppression changes must remain auditable.",
+      "risky": false
+    },
+    {
+      "text": "Do not push just to review. Push only when the user requested push/ship/PR update.",
+      "start": 4724,
+      "end": 4806,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by treating review output as advisory, requiring user-initiated push/ship actions, making multi-reviewer panels opt-in only, and never overriding the user's requested review engine. It keeps consequential actions under user control.",
+      "risky": false
+    },
+    {
+      "text": "Treat review output as advisory. Never blindly apply it.",
+      "start": 654,
+      "end": 710,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by treating review output as advisory, requiring user-initiated push/ship actions, making multi-reviewer panels opt-in only, and never overriding the user's requested review engine. It keeps consequential actions under user control.",
+      "risky": false
+    },
+    {
+      "text": "Multi-reviewer panels are opt-in only. Use them when explicitly requested or when risk justifies the extra spend; the main agent still verifies every accepted finding before fixing.",
+      "start": 3857,
+      "end": 4038,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by treating review output as advisory, requiring user-initiated push/ship actions, making multi-reviewer panels opt-in only, and never overriding the user's requested review engine. It keeps consequential actions under user control.",
+      "risky": false
+    },
+    {
+      "text": "Never switch or override the requested review engine/model.",
+      "start": 1776,
+      "end": 1835,
+      "dimension": "D5",
+      "score": 1,
+      "note": "The prompt preserves user agency by treating review output as advisory, requiring user-initiated push/ship actions, making multi-reviewer panels opt-in only, and never overriding the user's requested review engine. It keeps consequential actions under user control.",
+      "risky": false
+    },
+    {
+      "text": "Security perspective is always included, but it should not cripple legitimate functionality. Report security findings only when the change creates a concrete, actionable risk or removes an important safety check.",
+      "start": 2892,
+      "end": 3104,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt includes security-conscious practices that prevent harm: security perspective is always included, suppressed findings must remain auditable, aggregate findings cannot hide unrelated active risk, and security findings are reported when changes create concrete actionable risk or remove important safety checks.",
+      "risky": false
+    },
+    {
+      "text": "For security-audit suppression changes, verify accepted findings remain auditable: suppressed findings stay in structured output, active output keeps an unsuppressible suppression notice, and aggregate findings cannot hide unrelated active risk.",
+      "start": 1528,
+      "end": 1773,
+      "dimension": "D7",
+      "score": 1,
+      "note": "The prompt includes security-conscious practices that prevent harm: security perspective is always included, suppressed findings must remain auditable, aggregate findings cannot hide unrelated active risk, and security findings are reported when changes create concrete actionable risk or remove important safety checks.",
+      "risky": false
+    }
+  ]
 }

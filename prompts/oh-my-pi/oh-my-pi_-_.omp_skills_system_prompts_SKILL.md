@@ -3,6 +3,7 @@ id: "oh-my-pi/oh-my-pi_-_.omp_skills_system_prompts_SKILL"
 company: "oh-my-pi"
 product: "oh-my-pi - .omp skills system prompts SKILL"
 category: "general-purpose"
+annotation: "ai"
 source_file: ".omp_skills_system-prompts_SKILL.md"
 ---
 

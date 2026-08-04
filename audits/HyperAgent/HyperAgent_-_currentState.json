@@ -3,12 +3,13 @@
   "company": "HyperAgent",
   "product": "HyperAgent - currentState",
   "category": "browser-automation",
+  "annotation": "ai",
   "source_file": "clone_currentState.md",
   "scores": {
     "D1": 0,
     "D2": 0,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
@@ -16,7 +17,7 @@
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 0,
+  "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -33,7 +34,7 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,15 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "await locator.click({ force: true });",
+      "start": 6856,
+      "end": 6893,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The system allows an LLM-powered agent to execute arbitrary browser actions including clicking elements, inputting text, navigating to URLs, and pressing keys with force flags and no validation or safety checks. Actions are executed with 'force: true' bypassing normal safety checks, and there is no mention of validating URLs, restricting dangerous actions, or requiring user confirmation for consequential operations. The MCP integration allows connecting arbitrary external tools as custom actions without apparent safety validation.",
+      "risky": false
+    }
+  ]
 }

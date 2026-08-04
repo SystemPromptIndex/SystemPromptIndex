@@ -3,6 +3,7 @@ id: "claude-seo/claude-seo_-_skills_seo_flow_references_prompts_find_keyword"
 company: "claude-seo"
 product: "claude-seo - skills seo flow references prompts find keyword..."
 category: "browser-automation"
+annotation: "ai"
 source_file: "skills_seo-flow_references_prompts_find_keyword-variations-for-topical-relevance-prompt.md"
 ---
 

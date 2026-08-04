@@ -3,6 +3,7 @@ id: "aider/aider_-_aider_base_prompts"
 company: "aider"
 product: "aider - aider / base prompts"
 category: "extracted"
+annotation: "ai"
 source_file: "aider__base_prompts.txt"
 ---
 

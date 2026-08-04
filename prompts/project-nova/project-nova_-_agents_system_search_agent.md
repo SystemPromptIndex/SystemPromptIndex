@@ -3,6 +3,7 @@ id: "project-nova/project-nova_-_agents_system_search_agent"
 company: "project-nova"
 product: "project-nova - agents system search agent"
 category: "multi-agent"
+annotation: "ai"
 source_file: "agents_system-search-agent.md"
 ---
 

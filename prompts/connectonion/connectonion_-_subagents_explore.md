@@ -3,6 +3,7 @@ id: "connectonion/connectonion_-_subagents_explore"
 company: "connectonion"
 product: "connectonion - subagents explore"
 category: "multi-agent"
+annotation: "ai"
 source_file: "clone_subagents_explore.md"
 ---
 

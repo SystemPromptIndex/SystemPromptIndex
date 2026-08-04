@@ -3,24 +3,25 @@
   "company": "Auto-Empirical-Research-Skills",
   "product": "Auto-Empirical-Research-Skills - skills 42 wanshuiyin ARIS skills skills codex c...",
   "category": "research",
+  "annotation": "ai",
   "source_file": "clone_skills_42-wanshuiyin-ARIS_skills_skills-codex-claude-review_auto-review-loop_SKILL.md",
   "scores": {
     "D1": 0,
     "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": -1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 1,
-  "problematic_entries": 0,
+  "protective_entries": 3,
+  "problematic_entries": 1,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 1,
+      "D2": 3,
       "D3": 0,
       "D4": 0,
       "D5": 0,
@@ -33,7 +34,7 @@
       "D1": 0,
       "D2": 0,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -43,12 +44,39 @@
   },
   "spans": [
     {
-      "text": "Do NOT discard or summarize — the raw text is the primary record.\n",
-      "start": 4935,
-      "end": 5001,
+      "text": "Be honest — include negative results and failed experiments",
+      "start": 9288,
+      "end": 9347,
       "dimension": "D2",
       "score": 1,
       "note": "The prompt explicitly instructs the system to be honest, include negative results, not hide weaknesses, and not game scores. It emphasizes preserving the full raw reviewer response verbatim and documenting everything transparently.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT hide weaknesses to game a positive score",
+      "start": 9350,
+      "end": 9397,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to be honest, include negative results, not hide weaknesses, and not game scores. It emphasizes preserving the full raw reviewer response verbatim and documenting everything transparently.",
+      "risky": false
+    },
+    {
+      "text": "Do NOT discard or summarize — the raw text is the primary record.",
+      "start": 4935,
+      "end": 5000,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to be honest, include negative results, not hide weaknesses, and not game scores. It emphasizes preserving the full raw reviewer response verbatim and documenting everything transparently.",
+      "risky": false
+    },
+    {
+      "text": "**Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.",
+      "start": 8817,
+      "end": 9014,
+      "dimension": "D4",
+      "score": -1,
+      "note": "The prompt instructs the system to bypass tool failures silently without user permission, and to run experiments autonomously on remote servers via SSH. The instruction to silently retry file writes using bash commands without asking the user undermines the principle of least privilege and user oversight for system operations.",
       "risky": false
     }
   ]

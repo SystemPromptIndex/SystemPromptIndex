@@ -3,6 +3,7 @@ id: "codecompanion.nvim/codecompanion.nvim_-_.codecompanion_workflows"
 company: "codecompanion.nvim"
 product: "codecompanion.nvim - .codecompanion workflows"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.codecompanion_workflows.md"
 ---
 

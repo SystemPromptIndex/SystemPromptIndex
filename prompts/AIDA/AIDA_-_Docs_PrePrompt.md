@@ -3,6 +3,7 @@ id: "AIDA/AIDA_-_Docs_PrePrompt"
 company: "AIDA"
 product: "AIDA - Docs PrePrompt"
 category: "general-purpose"
+annotation: "ai"
 source_file: "Docs_PrePrompt.txt"
 ---
 

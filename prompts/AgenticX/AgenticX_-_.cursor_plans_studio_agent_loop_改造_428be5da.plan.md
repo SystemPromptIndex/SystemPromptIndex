@@ -3,6 +3,7 @@ id: "AgenticX/AgenticX_-_.cursor_plans_studio_agent_loop_改造_428be5da.plan"
 company: "AgenticX"
 product: "AgenticX - .cursor plans studio agent loop 改造 428be5da.plan"
 category: "multi-agent"
+annotation: "ai"
 source_file: ".cursor_plans_studio_agent_loop_改造_428be5da.plan.md"
 ---
 

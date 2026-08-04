@@ -3,6 +3,7 @@ id: "superset/superset_-_.agents_commands_create_pr"
 company: "superset"
 product: "superset - .agents commands create pr"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_.agents_commands_create-pr.md"
 ---
 

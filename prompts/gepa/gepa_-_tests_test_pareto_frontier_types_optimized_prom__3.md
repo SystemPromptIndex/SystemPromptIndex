@@ -3,6 +3,7 @@ id: "gepa/gepa_-_tests_test_pareto_frontier_types_optimized_prom__3"
 company: "gepa"
 product: "gepa - tests test pareto frontier types optimized prom..."
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_tests_test_pareto_frontier_types_optimized_prompt_hybrid.txt"
 ---
 

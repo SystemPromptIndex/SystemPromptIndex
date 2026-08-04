@@ -3,6 +3,7 @@ id: "ResearchClawBench/ResearchClawBench_-_tasks_Information_002_data_2111.01152
 company: "ResearchClawBench"
 product: "ResearchClawBench - tasks Information 002 data 2111.01152 Prompt te..."
 category: "legal"
+annotation: "ai"
 source_file: "tasks_Information_002_data_2111.01152_Prompt_template.md"
 ---
 

@@ -3,6 +3,7 @@ id: "webots/webots_-_docs_reference_proto_design_guidelines"
 company: "webots"
 product: "webots - docs reference proto design guidelines"
 category: "security"
+annotation: "ai"
 source_file: "docs_reference_proto-design-guidelines.md"
 ---
 

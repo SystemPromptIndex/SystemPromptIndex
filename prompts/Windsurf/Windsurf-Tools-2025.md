@@ -2,6 +2,7 @@
 id: "Windsurf/Windsurf-Tools-2025"
 company: "Windsurf"
 product: "Windsurf-Tools-2025"
+annotation: "ai"
 source_file: "Windsurf_Tools.md"
 ---
 

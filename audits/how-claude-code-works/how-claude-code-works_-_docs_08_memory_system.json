@@ -3,26 +3,27 @@
   "company": "how-claude-code-works",
   "product": "how-claude-code-works - docs 08 memory system",
   "category": "coding-agents",
+  "annotation": "ai",
   "source_file": "docs_08-memory-system.md",
   "scores": {
     "D1": 0,
-    "D2": 0,
-    "D3": 0,
-    "D4": 0,
+    "D2": 1,
+    "D3": 1,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
-      "D3": 0,
-      "D4": 0,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Memories are point-in-time observations, not live state — claims about code behavior or file:line citations may be outdated. Verify against current code before asserting as fact.",
+      "start": 20290,
+      "end": 20468,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt strongly emphasizes verifying information rather than blindly trusting it. The TRUSTING_RECALL_SECTION explicitly requires the agent to verify memory claims against current code state, and the freshness warning system alerts the model that memories may be outdated. The system is designed to prevent the agent from asserting stale information as fact.",
+      "risky": false
+    },
+    {
+      "text": "**敏感数据防护**：团队记忆的提示词中明确要求\"MUST NOT save sensitive data (API keys, credentials) in team memories\"。私有记忆也不建议存储敏感信息，但团队记忆中这是强制要求——因为团队记忆会被其他成员的 Agent 读取。",
+      "start": 17582,
+      "end": 17730,
+      "dimension": "D3",
+      "score": 1,
+      "note": "The prompt explicitly addresses privacy through multiple mechanisms: user memories are marked as 'always private,' team memories have scope guidance to prevent personal preferences from leaking, and there is an explicit prohibition against storing sensitive data in team memories. The security analysis of projectSettings path exclusion also demonstrates privacy-conscious design.",
+      "risky": false
+    },
+    {
+      "text": "这是**最小权限原则**的体现——提取 Agent 只需要读取对话上下文和已有记忆，然后写入新记忆。它不需要执行代码、修改项目文件或调用外部服务。",
+      "start": 15057,
+      "end": 15130,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt demonstrates strong tool/action safety through the principle of least privilege for the extraction agent, strict write whitelisting to only the memory directory, path validation via isAutoMemPath(), and exclusion of untrusted project-level settings for security-sensitive paths. The extraction agent's tool permissions are carefully restricted.",
+      "risky": false
+    }
+  ]
 }

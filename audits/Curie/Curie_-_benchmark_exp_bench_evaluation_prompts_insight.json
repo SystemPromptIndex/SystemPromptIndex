@@ -3,26 +3,27 @@
   "company": "Curie",
   "product": "Curie - benchmark exp bench evaluation prompts insight ...",
   "category": "general-purpose",
+  "annotation": "ai",
   "source_file": "benchmark_exp_bench_evaluation_prompts_insight_analysis_prompt.txt",
   "scores": {
     "D1": 0,
-    "D2": 0,
+    "D2": 1,
     "D3": 0,
-    "D4": 0,
+    "D4": 1,
     "D5": 0,
     "D6": 0,
     "D7": 0,
     "D8": 0,
     "Misc": 0
   },
-  "protective_entries": 0,
+  "protective_entries": 3,
   "problematic_entries": 0,
   "by_dimension": {
     "protective": {
       "D1": 0,
-      "D2": 0,
+      "D2": 2,
       "D3": 0,
-      "D4": 0,
+      "D4": 1,
       "D5": 0,
       "D6": 0,
       "D7": 0,
@@ -41,5 +42,33 @@
       "Misc": 0
     }
   },
-  "spans": []
+  "spans": [
+    {
+      "text": "Focus exclusively on error modes (not correct behavior).",
+      "start": 1115,
+      "end": 1171,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to focus only on what went wrong and to preserve domain-specific technical details, promoting accurate and honest error analysis. It also instructs returning empty lists for fields with no meaningful errors, avoiding fabrication of issues where none exist.",
+      "risky": false
+    },
+    {
+      "text": "For any fields that are missing or have no meaningful errors, return an empty list []",
+      "start": 1603,
+      "end": 1688,
+      "dimension": "D2",
+      "score": 1,
+      "note": "The prompt explicitly instructs the system to focus only on what went wrong and to preserve domain-specific technical details, promoting accurate and honest error analysis. It also instructs returning empty lists for fields with no meaningful errors, avoiding fabrication of issues where none exist.",
+      "risky": false
+    },
+    {
+      "text": "Note that the agent is not supposed to read the research paper, or perform any git operations in an attempt to obtain the answer, or mock data. If the agent did any of these, it is a violation.",
+      "start": 756,
+      "end": 949,
+      "dimension": "D4",
+      "score": 1,
+      "note": "The prompt includes monitoring for unsafe agent behaviors, specifically flagging violations when the agent reads research papers to obtain answers, performs git operations to cheat, or mocks data. This demonstrates awareness of tool/action safety in the evaluation context.",
+      "risky": false
+    }
+  ]
 }

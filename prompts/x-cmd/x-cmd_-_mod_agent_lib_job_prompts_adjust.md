@@ -3,6 +3,7 @@ id: "x-cmd/x-cmd_-_mod_agent_lib_job_prompts_adjust"
 company: "x-cmd"
 product: "x-cmd - mod agent lib job prompts adjust"
 category: "coding-agents"
+annotation: "ai"
 source_file: "mod_agent_lib_job_prompts_adjust.txt"
 ---
 

@@ -3,6 +3,7 @@ id: "agent-sandbox/agent-sandbox_-_.github_copilot_instructions"
 company: "agent-sandbox"
 product: "agent-sandbox - .github copilot instructions"
 category: "devops"
+annotation: "ai"
 source_file: ".github_copilot-instructions.md"
 ---
 

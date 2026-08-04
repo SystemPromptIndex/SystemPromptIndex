@@ -3,6 +3,7 @@ id: "MCP-Zero/MCP-Zero_-_MCP_tools_build_data_server_summary"
 company: "MCP-Zero"
 product: "MCP-Zero - MCP tools build data server summary"
 category: "general-purpose"
+annotation: "ai"
 source_file: "MCP-tools_build_data_server_summary.prompt"
 ---
 

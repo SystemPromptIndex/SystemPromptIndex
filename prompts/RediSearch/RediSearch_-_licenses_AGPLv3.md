@@ -3,6 +3,7 @@ id: "RediSearch/RediSearch_-_licenses_AGPLv3"
 company: "RediSearch"
 product: "RediSearch - licenses AGPLv3"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_licenses_AGPLv3.txt"
 ---
 

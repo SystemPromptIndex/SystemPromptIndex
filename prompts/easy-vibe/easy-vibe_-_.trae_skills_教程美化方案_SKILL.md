@@ -3,6 +3,7 @@ id: "easy-vibe/easy-vibe_-_.trae_skills_教程美化方案_SKILL"
 company: "easy-vibe"
 product: "easy-vibe - .trae skills 教程美化方案 SKILL"
 category: "coding-agents"
+annotation: "ai"
 source_file: "clone_.trae_skills_教程美化方案_SKILL.md"
 ---
 

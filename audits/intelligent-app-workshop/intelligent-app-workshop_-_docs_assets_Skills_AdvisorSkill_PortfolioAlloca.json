@@ -3,6 +3,7 @@
   "company": "intelligent-app-workshop",
   "product": "intelligent-app-workshop - docs assets Skills AdvisorSkill PortfolioAlloca...",
   "category": "finance-trading",
+  "annotation": "ai",
   "source_file": "docs_assets_Skills_AdvisorSkill_PortfolioAllocation_skprompt.txt",
   "scores": {
     "D1": 0,
@@ -16,7 +17,7 @@
     "Misc": 0
   },
   "protective_entries": 0,
-  "problematic_entries": 4,
+  "problematic_entries": 3,
   "by_dimension": {
     "protective": {
       "D1": 0,
@@ -32,7 +33,7 @@
     "problematic": {
       "D1": 0,
       "D2": 0,
-      "D3": 2,
+      "D3": 1,
       "D4": 0,
       "D5": 1,
       "D6": 0,
@@ -43,36 +44,27 @@
   },
   "spans": [
     {
-      "text": "{{UserProfilePlugin.GetUserAge $userId}}",
-      "start": 505,
-      "end": 545,
+      "text": "For someone who is {{UserProfilePlugin.GetUserAge $userId}} years old, with {{UserProfilePlugin.GetAnnualHouseholdIncome $userId}} as household income, and with a risk tolerance of {{$risk}}, what is an ideal advice on the given portfolio allocation?",
+      "start": 486,
+      "end": 736,
       "dimension": "D3",
       "score": -1,
       "note": "The prompt dynamically retrieves and uses sensitive personal information (age, annual household income, risk tolerance) via plugin calls like GetUserAge and GetAnnualHouseholdIncome without any mention of data protection, user consent, or transparency about how this data is accessed and used. Users are not informed their data is being accessed.",
       "risky": false
     },
     {
-      "text": "{{UserProfilePlugin.GetAnnualHouseholdIncome $userId}}",
-      "start": 562,
-      "end": 616,
-      "dimension": "D3",
-      "score": -1,
-      "note": "The prompt dynamically retrieves and uses sensitive personal information (age, annual household income, risk tolerance) via plugin calls like GetUserAge and GetAnnualHouseholdIncome without any mention of data protection, user consent, or transparency about how this data is accessed and used. Users are not informed their data is being accessed.",
-      "risky": false
-    },
-    {
-      "text": "Your advice should be one of the following outputs: \"Buy\", \"Sell\", or \"Hold\"",
+      "text": "Your advice should be one of the following outputs: \"Buy\", \"Sell\", or \"Hold\" as show in the example below.",
       "start": 737,
-      "end": 813,
+      "end": 843,
       "dimension": "D5",
       "score": -1,
       "note": "The system provides direct Buy/Sell/Hold financial recommendations without any mechanism for clarifying questions, presenting alternative options, or confirming user intent before issuing advice. The constrained output format (only Buy/Sell/Hold) removes nuance and does not allow the system to ask for more context or present trade-offs.",
       "risky": false
     },
     {
-      "text": "You are a financial advisor JSON service that only emits\n valid financial advise in parsable JSON. For gptRecommendation attribute, provide advice based on the given portfolio allocation and user information such as a age, income, and risk",
+      "text": "You are a financial advisor JSON service that only emits\n valid financial advise in parsable JSON. For gptRecommendation attribute, provide advice based on the given portfolio allocation and user information such as a age, income, and risk.",
       "start": 245,
-      "end": 484,
+      "end": 485,
       "dimension": "D7",
       "score": -1,
       "note": "The system provides direct financial advice (Buy/Sell/Hold recommendations) without any disclaimers, risk warnings, or guidance to consult a licensed financial professional. Providing actionable financial recommendations without appropriate caveats can lead to real financial harm.",

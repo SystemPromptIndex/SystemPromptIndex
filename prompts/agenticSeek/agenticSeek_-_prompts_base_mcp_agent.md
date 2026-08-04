@@ -3,6 +3,7 @@ id: "agenticSeek/agenticSeek_-_prompts_base_mcp_agent"
 company: "agenticSeek"
 product: "agenticSeek - prompts base mcp agent"
 category: "general-purpose"
+annotation: "ai"
 source_file: "prompts_base_mcp_agent.txt"
 ---
 

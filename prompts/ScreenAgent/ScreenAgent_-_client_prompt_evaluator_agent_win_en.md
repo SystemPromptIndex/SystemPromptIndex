@@ -3,6 +3,7 @@ id: "ScreenAgent/ScreenAgent_-_client_prompt_evaluator_agent_win_en"
 company: "ScreenAgent"
 product: "ScreenAgent - client prompt evaluator agent win en"
 category: "general-purpose"
+annotation: "ai"
 source_file: "client_prompt_evaluator_agent_win_en.txt"
 ---
 

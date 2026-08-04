@@ -3,6 +3,7 @@ id: "SuperPrompt/SuperPrompt_-_super_prompt_v2_test1"
 company: "SuperPrompt"
 product: "SuperPrompt - super prompt v2 test1"
 category: "general-purpose"
+annotation: "ai"
 source_file: "clone_super_prompt_v2_test1.md"
 ---
 
