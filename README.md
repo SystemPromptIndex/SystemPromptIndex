@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="https://systempromptindex.com">
+  <a href="https://systempromptindex.ai">
     <img src="docs/homepage.png" alt="System Prompt Index — the homepage, showing quoted instructions from real system prompts around the headline, and counts of 400+ products and 1,000+ system prompts" width="100%">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://systempromptindex.com"><b>systempromptindex.com</b></a> &nbsp;·&nbsp;
+  <a href="https://systempromptindex.ai"><b>systempromptindex.ai</b></a> &nbsp;·&nbsp;
   <a href="https://arxiv.org/abs/2607.28617">Paper</a> &nbsp;·&nbsp;
-  <a href="https://systempromptindex.com/aispa">AISPA standard</a> &nbsp;·&nbsp;
+  <a href="https://systempromptindex.ai/aispa">AISPA standard</a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md">Contributing</a> &nbsp;·&nbsp;
   <a href="https://x.com/aisystemprompt">@aisystemprompt</a>
 </p>
@@ -94,7 +94,7 @@ is also the one it most often gets backwards. Privacy is the mirror image:
 addressed less often (62%), but rarely wrong when it is (2%).
 
 More figures, and the trend over time, are on the
-[website](https://systempromptindex.com) and in the
+[website](https://systempromptindex.ai) and in the
 [paper](https://arxiv.org/abs/2607.28617).
 
 ## Audit schema

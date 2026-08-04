@@ -1,7 +1,7 @@
 # Contributing
 
 This repository is the public dataset behind
-[systempromptindex.com](https://systempromptindex.com): the prompt corpus and
+[systempromptindex.ai](https://systempromptindex.ai): the prompt corpus and
 its AISPA audits. Contributions that add prompts, correct provenance, or
 challenge an audit are all welcome.
 
