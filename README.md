@@ -24,9 +24,9 @@ git clone https://github.com/SystemPromptIndex/SystemPromptIndex.git
 ```
 
 ```python
-import json
+import glob, json
 
-audits = json.load(open("data/audits.json"))
+audits = [json.load(open(f)) for f in glob.glob("audits/*/*.json")]
 
 # Instructions that work against the user, with the reason
 for a in audits:
@@ -38,11 +38,11 @@ for a in audits:
 
 ```bash
 # Products carrying the most problematic instructions
-jq -r 'sort_by(-.problematic_entries)[:10]
-       | .[] | "\(.problematic_entries)\t\(.company)/\(.product)"' data/audits.json
+jq -s -r 'sort_by(-.problematic_entries)[:10]
+          | .[] | "\(.problematic_entries)\t\(.company)/\(.product)"' audits/*/*.json
 
 # Everything scored on privacy
-jq '[.[] | .spans[] | select(.dimension=="D3")]' data/audits.json
+jq -s '[.[] | .spans[] | select(.dimension=="D3")]' audits/*/*.json
 ```
 
 Prompt bodies live in `prompts/`, one Markdown file each, so you can also just
@@ -53,20 +53,19 @@ browse the tree.
 ```
 prompts/<org>/<product>.md     prompt text, with YAML front matter
 audits/<org>/<product>.json    the audit for that prompt
-data/prompts.json              every prompt in one file
-data/audits.json               every audit in one file
 dimensions.json                the eight dimensions, in full
 ```
 
-`id` is the path under `prompts/` and `audits/`, so a record in the aggregate
-always points at its own files. Per-file and aggregate views hold the same data.
+One prompt, one audit, same path under both trees — `id` is that path, so a
+record always tells you where its own files are.
 
 | | |
 |---|---:|
-| Prompts | 1,017 |
-| Organisations | 406 |
-| Audited spans | 5,217 |
-| Protective / problematic | 4,656 / 514 |
+| Prompts | 1,058 |
+| Organisations | 413 |
+| Audited spans | 7,484 |
+| Protective / problematic | 6,556 / 881 |
+| Human- / model-annotated | 88 / 970 |
 
 ## The eight dimensions
 
@@ -114,7 +113,8 @@ Offsets index the prompt body — the text *after* the front matter in the
 matching `prompts/` file.
 
 At the prompt level, `scores` / `by_dimension` / `protective_entries` /
-`problematic_entries` summarise the spans.
+`problematic_entries` summarise the spans, and `annotation` is `human` or `ai`
+— whether a person or a model produced the findings.
 
 ### On method
 
