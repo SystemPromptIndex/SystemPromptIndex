@@ -1,6 +1,6 @@
-# The 88 human-audited products
+# Human-audited dataset
 
-Records with `"annotation": "human"`: 88 products, 1,818 unique spans, 2,420 (span, dimension) entries (2,346 protective, 74 problematic).
+The 88 products analysed in the paper, audited by human annotators and experts (`"annotation": "human"` in each record): 88 products, 1,818 unique spans, 2,420 (span, dimension) entries (2,346 protective, 74 problematic).
 
 | Organisation | Product | +1 | -1 | Audit | Prompt |
 |:--|:--|--:|--:|:--|:--|
