@@ -1,11 +1,6 @@
 # The 88 human-audited products
 
-These are the records analysed in the paper: every span was proposed by an LLM pre-annotator or added by a human,
-screened by trained annotators, and adjudicated by three experts. They carry `"annotation": "human"`.
-
-Totals: 88 products, 35 organisations, 1,818 unique spans, 2,420 (span, dimension) entries, of which 2,346 are protective (+1) and 74 problematic (-1).
-
-The other 970 records in `audits/` carry `"annotation": "ai"`. They were labelled by a model only, were not reviewed by a person, and are not part of any result reported in the paper.
+Records with `"annotation": "human"`: 88 products, 1,818 unique spans, 2,420 (span, dimension) entries (2,346 protective, 74 problematic).
 
 | Organisation | Product | +1 | -1 | Audit | Prompt |
 |:--|:--|--:|--:|:--|:--|
