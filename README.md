@@ -1,71 +1,49 @@
-<p align="center">
-  <a href="https://systempromptindex.ai">
-    <img src="docs/homepage.png" alt="System Prompt Index — the homepage, showing quoted instructions from real system prompts around the headline, and counts of 400+ products and 1,000+ system prompts" width="100%">
-  </a>
-</p>
+# System prompt audit data
 
-<p align="center">
-  <a href="https://systempromptindex.ai"><b>systempromptindex.ai</b></a> &nbsp;·&nbsp;
-  <a href="https://arxiv.org/abs/2607.28617">Paper</a> &nbsp;·&nbsp;
-  <a href="https://systempromptindex.ai/aispa">AISPA standard</a> &nbsp;·&nbsp;
-  <a href="CONTRIBUTING.md">Contributing</a> &nbsp;·&nbsp;
-  <a href="https://x.com/aisystemprompt">@aisystemprompt</a>
-</p>
+Anonymised supplementary material for a submission under review. It contains the
+audited system prompts, the span-level annotations, and the full definitions of
+the eight auditing dimensions.
 
-**1,017 system prompts from real AI products, read instruction by instruction.**
-Every finding points at the exact span of text it is about, says which of eight
-assurance dimensions it falls under, whether it protects the user or works
-against them, and why.
+## Which records are in the paper
 
-## Quick start
+Each audit record has an `annotation` field.
 
-```bash
-git clone https://github.com/SystemPromptIndex/SystemPromptIndex.git
-```
+| `annotation` | Records | What it means |
+|:--|--:|:--|
+| `human` | 88 | The products analysed in the paper. Spans were proposed by an LLM pre-annotator or added by a person, screened by trained annotators, and adjudicated by three experts. |
+| `ai` | 970 | Labelled by a model only and not reviewed by a person. Not used for any result in the paper. |
+
+The 88 human-audited records cover 35 organisations and hold 1,818 unique spans
+and 2,420 (span, dimension) entries: 2,346 protective (+1) and 74 problematic
+(-1). These are the figures reported in the paper.
+
+**[PAPER_SUBSET.md](PAPER_SUBSET.md) lists all 88 with links to each audit and prompt.**
+
+To select them programmatically:
 
 ```python
 import glob, json
 
 audits = [json.load(open(f)) for f in glob.glob("audits/*/*.json")]
-
-# Instructions that work against the user, with the reason
-for a in audits:
-    for s in a["spans"]:
-        if s["score"] < 0:
-            print(f'{a["product"]}  [{s["dimension"]}]  {s["text"][:70]}')
-            print(f'    -> {s.get("note","")}\n')
+paper = [a for a in audits if a["annotation"] == "human"]
+assert len(paper) == 88
 ```
 
 ```bash
-# Products carrying the most problematic instructions
-jq -s -r 'sort_by(-.problematic_entries)[:10]
-          | .[] | "\(.problematic_entries)\t\(.company)/\(.product)"' audits/*/*.json
-
-# Everything scored on privacy
-jq -s '[.[] | .spans[] | select(.dimension=="D3")]' audits/*/*.json
+jq -s '[.[] | select(.annotation=="human")] | length' audits/*/*.json
 ```
 
-Prompt bodies live in `prompts/`, one Markdown file each, so you can also just
-browse the tree.
-
-## What's in here
+## Layout
 
 ```
 prompts/<org>/<product>.md     prompt text, with YAML front matter
 audits/<org>/<product>.json    the audit for that prompt
-dimensions.json                the eight dimensions, in full
+dimensions.json                the eight dimensions: definitions and examples
+PAPER_SUBSET.md                the 88 human-audited products
 ```
 
-One prompt, one audit, same path under both trees — `id` is that path, so a
-record always tells you where its own files are.
-
-| | |
-|---|---:|
-| Prompts | 1,058 |
-| Organisations | 413 |
-| Audited spans | 7,484 |
-| Protective / problematic | 6,556 / 881 |
-| Human- / model-annotated | 88 / 970 |
+One prompt, one audit, same path under both trees. `id` is that path, so a record
+always says where its own files are.
 
 ## The eight dimensions
 
@@ -80,56 +58,34 @@ record always tells you where its own files are.
 | `D7` | Harm Prevention & User Safety | Does it avoid enabling harm and de-escalate risk? |
 | `D8` | Fairness, Inclusion & Neutrality | Who does it treat differently? |
 
-Coverage across the 88 products analysed in the paper is uneven, and the gaps
-are not where you would guess:
-
-<p align="center">
-  <img src="docs/figures/coverage-dimension.png" alt="Dimension-level coverage: D2 94%, D5 92%, D1 82%, D4 73%, D7 67%, D3 62%, D8 62%, D6 60% protective; problematic highest at D5 18%" width="100%">
-</p>
-
-User agency has both the **highest** protective coverage (92%) and the
-**highest** problematic rate (18%) — the dimension the field writes about most
-is also the one it most often gets backwards. Privacy is the mirror image:
-addressed less often (62%), but rarely wrong when it is (2%).
-
-More figures, and the trend over time, are on the
-[website](https://systempromptindex.ai) and in the
-[paper](https://arxiv.org/abs/2607.28617).
+Full definitions, with protective and problematic examples for each, are in
+`dimensions.json`. They are the dimension definitions used in the annotation
+guidelines.
 
 ## Audit schema
 
-Each file in `audits/` has the prompt's metadata plus a `spans` array. One span
-is one finding.
+Each file in `audits/` has the prompt's metadata plus a `spans` array. One element
+is one (span, dimension) entry; a span that bears on several dimensions appears
+once per dimension, with the same `start` and `end`.
 
 | Field | Meaning |
 |:--|:--|
 | `text`, `start`, `end` | The exact instruction, and its character offsets into the prompt body |
-| `dimension` | `D1`–`D8`, or `Misc` |
+| `dimension` | `D1`–`D8` |
 | `score` | `+1` protective, `-1` problematic |
 | `note` | Why it was scored that way |
-| `risky` | Borderline — user agency weighed against platform safety |
+| `risky` | Borderline case: user agency weighed against platform safety |
 
-Offsets index the prompt body — the text *after* the front matter in the
+Offsets index the prompt body, that is, the text after the front matter in the
 matching `prompts/` file.
 
-At the prompt level, `scores` / `by_dimension` / `protective_entries` /
-`problematic_entries` summarise the spans, and `annotation` is `human` or `ai`
-— whether a person or a model produced the findings.
-
-### On method
-
-This repository is the result of the audit, not an account of how it was run.
-The procedure — how spans are identified, how dimensions are assigned, how
-scores are arrived at and validated — is set out in the
-[paper](https://arxiv.org/abs/2607.28617).
-
-If you think a particular score is wrong, that is worth raising regardless of
-how it was produced: see [CONTRIBUTING.md](CONTRIBUTING.md).
+At the prompt level, `scores`, `by_dimension`, `protective_entries` and
+`problematic_entries` summarise the spans.
 
 ## Provenance
 
-These are published system prompts, gathered from public collections — we did
-not extract them. Credit to the projects that assembled them:
+These are published system prompts gathered from public collections; they were
+not extracted for this work. Credit to the projects that assembled them:
 [TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary) ·
 [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) ·
 [awesome-ai-system-prompts](https://github.com/dontriskit/awesome-ai-system-prompts) ·
@@ -137,21 +93,5 @@ not extract them. Credit to the projects that assembled them:
 [chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt) ·
 [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
 
-Prompt text belongs to whoever wrote it and is reproduced for research; we claim
-nothing over it. The audits — spans, scores, notes, and the dimension
-definitions — are ours, free to use with attribution.
-
-Inclusion is not a claim that a prompt is authentic, current, or officially
-released. Vendors change prompts without notice, and the corpus mixes agent
-frameworks and open-source projects in with consumer products.
-
-## Citing
-
-```bibtex
-@article{lin2026aispa,
-  title={AISPA: Artificial Intelligence System Prompt Assurance -- User-Centric System Prompt Auditing for Large Language Model Applications},
-  author={Lin, Xiangning and Zhu, Shenzhe and Yang, Shu and Zhang, Zhenyu and Zhang, Haoqian and Zhao, Yipeng and Qian, Chengxuan and Wang, Tianwei and Zhang, Ziheng and Yuan, Zhenlong and Wang, Dingcheng and Wu, Juncheng and Si, Yuan and Liu, Jiaxin and Bi, Baolong and Mahari, Robert and South, Tobin and Greenwood, Dazza and He, Zexue and Bommasani, Rishi and Kazinnik, Sophia and Haupt, Andreas and Marro, Samuele and Brynjolfsson, Erik and Pentland, Alex and Pei, Jiaxin},
-  journal={arXiv preprint arXiv:2607.28617},
-  year={2026}
-}
-```
+Prompt text belongs to whoever wrote it and is reproduced for research. Inclusion
+is not a claim that a prompt is authentic, current, or officially released.

@@ -1,0 +1,99 @@
+# The 88 human-audited products
+
+These are the records analysed in the paper: every span was proposed by an LLM pre-annotator or added by a human,
+screened by trained annotators, and adjudicated by three experts. They carry `"annotation": "human"`.
+
+Totals: 88 products, 35 organisations, 1,818 unique spans, 2,420 (span, dimension) entries, of which 2,346 are protective (+1) and 74 problematic (-1).
+
+The other 970 records in `audits/` carry `"annotation": "ai"`. They were labelled by a model only, were not reviewed by a person, and are not part of any result reported in the paper.
+
+| Organisation | Product | +1 | -1 | Audit | Prompt |
+|:--|:--|--:|--:|:--|:--|
+| Amazon | Kiro-2025-07-14 | 42 | 1 | [json](audits/Amazon/Kiro-2025-07-14.json) | [text](prompts/Amazon/Kiro-2025-07-14.md) |
+| Anthropic | Claude-3.5-Sonnet-2024-07-12 | 26 | 0 | [json](audits/Anthropic/Claude-3.5-Sonnet-2024-07-12.json) | [text](prompts/Anthropic/Claude-3.5-Sonnet-2024-07-12.md) |
+| Anthropic | Claude-3.7-Sonnet-2025-02-25 | 36 | 1 | [json](audits/Anthropic/Claude-3.7-Sonnet-2025-02-25.json) | [text](prompts/Anthropic/Claude-3.7-Sonnet-2025-02-25.md) |
+| Anthropic | Claude-Code-2.0-2025-09-29 | 39 | 0 | [json](audits/Anthropic/Claude-Code-2.0-2025-09-29.json) | [text](prompts/Anthropic/Claude-Code-2.0-2025-09-29.md) |
+| Anthropic | Claude-Code-2025-09-29 | 58 | 0 | [json](audits/Anthropic/Claude-Code-2025-09-29.json) | [text](prompts/Anthropic/Claude-Code-2025-09-29.md) |
+| Anthropic | Claude-Cowork-2025-11-01 | 75 | 0 | [json](audits/Anthropic/Claude-Cowork-2025-11-01.json) | [text](prompts/Anthropic/Claude-Cowork-2025-11-01.md) |
+| Anthropic | Claude-for-Chrome-2025-12-29 | 113 | 0 | [json](audits/Anthropic/Claude-for-Chrome-2025-12-29.json) | [text](prompts/Anthropic/Claude-for-Chrome-2025-12-29.md) |
+| Anthropic | Claude-Opus-4.6-2025-05-14 | 81 | 0 | [json](audits/Anthropic/Claude-Opus-4.6-2025-05-14.json) | [text](prompts/Anthropic/Claude-Opus-4.6-2025-05-14.md) |
+| Anthropic | Claude-Sonnet-4-2025-06-03 | 56 | 0 | [json](audits/Anthropic/Claude-Sonnet-4-2025-06-03.json) | [text](prompts/Anthropic/Claude-Sonnet-4-2025-06-03.md) |
+| Anthropic | Claude-Sonnet-4.5-2025-10-28 | 77 | 0 | [json](audits/Anthropic/Claude-Sonnet-4.5-2025-10-28.json) | [text](prompts/Anthropic/Claude-Sonnet-4.5-2025-10-28.md) |
+| Apple | Xcode-AI-2025-06 | 6 | 0 | [json](audits/Apple/Xcode-AI-2025-06.json) | [text](prompts/Apple/Xcode-AI-2025-06.md) |
+| Bolt | Bolt-Open-Source-2024-10 | 20 | 0 | [json](audits/Bolt/Bolt-Open-Source-2024-10.json) | [text](prompts/Bolt/Bolt-Open-Source-2024-10.md) |
+| Brave | Leo-2025-11-10 | 6 | 0 | [json](audits/Brave/Leo-2025-11-10.json) | [text](prompts/Brave/Leo-2025-11-10.md) |
+| ByteDance | Trae-2025-01-20 | 22 | 1 | [json](audits/ByteDance/Trae-2025-01-20.json) | [text](prompts/ByteDance/Trae-2025-01-20.md) |
+| Cline | Cline-Open-Source-2025-04 | 39 | 2 | [json](audits/Cline/Cline-Open-Source-2025-04.json) | [text](prompts/Cline/Cline-Open-Source-2025-04.md) |
+| Cline | Cline-Source-Code-2025-04 | 40 | 1 | [json](audits/Cline/Cline-Source-Code-2025-04.json) | [text](prompts/Cline/Cline-Source-Code-2025-04.md) |
+| Cluely | Cluely-2025-06-21 | 12 | 2 | [json](audits/Cluely/Cluely-2025-06-21.json) | [text](prompts/Cluely/Cluely-2025-06-21.md) |
+| Cluely | Cluely-Enterprise-2025-06-21 | 7 | 1 | [json](audits/Cluely/Cluely-Enterprise-2025-06-21.json) | [text](prompts/Cluely/Cluely-Enterprise-2025-06-21.md) |
+| Cursor | Cursor-Agent-v1.0-2025-06-04 | 20 | 2 | [json](audits/Cursor/Cursor-Agent-v1.0-2025-06-04.json) | [text](prompts/Cursor/Cursor-Agent-v1.0-2025-06-04.md) |
+| Cursor | Cursor-Agent-v2.0-2025-10-29 | 25 | 5 | [json](audits/Cursor/Cursor-Agent-v2.0-2025-10-29.json) | [text](prompts/Cursor/Cursor-Agent-v2.0-2025-10-29.md) |
+| Cursor | Cursor-IDE-2024-09-04 | 2 | 0 | [json](audits/Cursor/Cursor-IDE-2024-09-04.json) | [text](prompts/Cursor/Cursor-IDE-2024-09-04.md) |
+| Cursor | Cursor-IDE-v2.0-2025-10-29 | 40 | 3 | [json](audits/Cursor/Cursor-IDE-v2.0-2025-10-29.json) | [text](prompts/Cursor/Cursor-IDE-v2.0-2025-10-29.md) |
+| DeepSeek | DeepSeek-R1-2025-01-20 | 12 | 0 | [json](audits/DeepSeek/DeepSeek-R1-2025-01-20.json) | [text](prompts/DeepSeek/DeepSeek-R1-2025-01-20.md) |
+| DeepSeek | DeepSeek-V2-2025-10-29 | 15 | 0 | [json](audits/DeepSeek/DeepSeek-V2-2025-10-29.json) | [text](prompts/DeepSeek/DeepSeek-V2-2025-10-29.md) |
+| Devin | DeepWiki-2025-11-09 | 8 | 0 | [json](audits/Devin/DeepWiki-2025-11-09.json) | [text](prompts/Devin/DeepWiki-2025-11-09.md) |
+| Devin | Devin-2-2025-09-08 | 33 | 0 | [json](audits/Devin/Devin-2-2025-09-08.json) | [text](prompts/Devin/Devin-2-2025-09-08.md) |
+| GitHub | Copilot-Agent-2025-02-06 | 15 | 3 | [json](audits/GitHub/Copilot-Agent-2025-02-06.json) | [text](prompts/GitHub/Copilot-Agent-2025-02-06.md) |
+| Google | Antigravity-2025-11-18 | 27 | 0 | [json](audits/Google/Antigravity-2025-11-18.json) | [text](prompts/Google/Antigravity-2025-11-18.md) |
+| Google | Gemini-1.5-2024-04-11 | 13 | 0 | [json](audits/Google/Gemini-1.5-2024-04-11.json) | [text](prompts/Google/Gemini-1.5-2024-04-11.md) |
+| Google | Gemini-3-Pro-2025-12-22 | 42 | 1 | [json](audits/Google/Gemini-3-Pro-2025-12-22.json) | [text](prompts/Google/Gemini-3-Pro-2025-12-22.md) |
+| Google | Gemini-CLI-2025-06-25 | 29 | 0 | [json](audits/Google/Gemini-CLI-2025-06-25.json) | [text](prompts/Google/Gemini-CLI-2025-06-25.md) |
+| Google | Gemini-in-Chrome-2025-05-20 | 36 | 0 | [json](audits/Google/Gemini-in-Chrome-2025-05-20.json) | [text](prompts/Google/Gemini-in-Chrome-2025-05-20.md) |
+| Google | Gemini-Workspace-2024-10-01 | 10 | 0 | [json](audits/Google/Gemini-Workspace-2024-10-01.json) | [text](prompts/Google/Gemini-Workspace-2024-10-01.md) |
+| Google | Jules-2025-08-04 | 12 | 0 | [json](audits/Google/Jules-2025-08-04.json) | [text](prompts/Google/Jules-2025-08-04.md) |
+| Google | NotebookLM-2025-11-10 | 6 | 0 | [json](audits/Google/NotebookLM-2025-11-10.json) | [text](prompts/Google/NotebookLM-2025-11-10.md) |
+| Hume | Hume-AI-2024-05-05 | 11 | 2 | [json](audits/Hume/Hume-AI-2024-05-05.json) | [text](prompts/Hume/Hume-AI-2024-05-05.md) |
+| JetBrains | Junie-2025-07-20 | 2 | 0 | [json](audits/JetBrains/Junie-2025-07-20.json) | [text](prompts/JetBrains/Junie-2025-07-20.md) |
+| Lovable | Lovable-2025-05-16 | 18 | 0 | [json](audits/Lovable/Lovable-2025-05-16.json) | [text](prompts/Lovable/Lovable-2025-05-16.md) |
+| Manus | Manus-2025-03-10 | 25 | 1 | [json](audits/Manus/Manus-2025-03-10.json) | [text](prompts/Manus/Manus-2025-03-10.md) |
+| Meta | Meta-AI-Llama-3-2024-04-18 | 50 | 0 | [json](audits/Meta/Meta-AI-Llama-3-2024-04-18.json) | [text](prompts/Meta/Meta-AI-Llama-3-2024-04-18.md) |
+| Meta | Meta-AI-Llama-3-2024-10 | 5 | 3 | [json](audits/Meta/Meta-AI-Llama-3-2024-10.json) | [text](prompts/Meta/Meta-AI-Llama-3-2024-10.md) |
+| Meta | Meta-AI-Llama-4-2025-04-08 | 6 | 2 | [json](audits/Meta/Meta-AI-Llama-4-2025-04-08.json) | [text](prompts/Meta/Meta-AI-Llama-4-2025-04-08.md) |
+| Meta | Meta-AI-WhatsApp-Llama-4-2025-07-29 | 15 | 5 | [json](audits/Meta/Meta-AI-WhatsApp-Llama-4-2025-07-29.json) | [text](prompts/Meta/Meta-AI-WhatsApp-Llama-4-2025-07-29.md) |
+| Microsoft | Copilot-Enterprise-2025-12-02 | 43 | 3 | [json](audits/Microsoft/Copilot-Enterprise-2025-12-02.json) | [text](prompts/Microsoft/Copilot-Enterprise-2025-12-02.md) |
+| Microsoft | Copilot-Web-2025-02-25 | 24 | 1 | [json](audits/Microsoft/Copilot-Web-2025-02-25.json) | [text](prompts/Microsoft/Copilot-Web-2025-02-25.md) |
+| Microsoft | Copilot-Web-2025-09-19 | 56 | 1 | [json](audits/Microsoft/Copilot-Web-2025-09-19.json) | [text](prompts/Microsoft/Copilot-Web-2025-09-19.md) |
+| Microsoft | GitHub-Copilot-CLI-2026-01-21 | 18 | 0 | [json](audits/Microsoft/GitHub-Copilot-CLI-2026-01-21.json) | [text](prompts/Microsoft/GitHub-Copilot-CLI-2026-01-21.md) |
+| Microsoft | GitHub-Copilot-VS-Code-2024-02-29 | 7 | 0 | [json](audits/Microsoft/GitHub-Copilot-VS-Code-2024-02-29.json) | [text](prompts/Microsoft/GitHub-Copilot-VS-Code-2024-02-29.md) |
+| Microsoft | VS-Code-Agent-2025-04-21 | 26 | 3 | [json](audits/Microsoft/VS-Code-Agent-2025-04-21.json) | [text](prompts/Microsoft/VS-Code-Agent-2025-04-21.md) |
+| MiniMax | MiniMax-2025-06-25 | 8 | 0 | [json](audits/MiniMax/MiniMax-2025-06-25.json) | [text](prompts/MiniMax/MiniMax-2025-06-25.md) |
+| Mistral | Le-Chat-2025-05-29 | 7 | 0 | [json](audits/Mistral/Le-Chat-2025-05-29.json) | [text](prompts/Mistral/Le-Chat-2025-05-29.md) |
+| Moonshot | Kimi-2-2025-07-11 | 11 | 0 | [json](audits/Moonshot/Kimi-2-2025-07-11.json) | [text](prompts/Moonshot/Kimi-2-2025-07-11.md) |
+| Notion | Notion-AI-2024-01-31 | 32 | 0 | [json](audits/Notion/Notion-AI-2024-01-31.json) | [text](prompts/Notion/Notion-AI-2024-01-31.md) |
+| OpenAI | Atlas-2025-10-21 | 31 | 0 | [json](audits/OpenAI/Atlas-2025-10-21.json) | [text](prompts/OpenAI/Atlas-2025-10-21.md) |
+| OpenAI | Codex-CLI-2025-09-24 | 36 | 0 | [json](audits/OpenAI/Codex-CLI-2025-09-24.json) | [text](prompts/OpenAI/Codex-CLI-2025-09-24.md) |
+| OpenAI | GPT-4o-2025-07-29 | 25 | 0 | [json](audits/OpenAI/GPT-4o-2025-07-29.json) | [text](prompts/OpenAI/GPT-4o-2025-07-29.md) |
+| OpenAI | GPT-4o-with-Canvas-2024-10-03 | 11 | 2 | [json](audits/OpenAI/GPT-4o-with-Canvas-2024-10-03.json) | [text](prompts/OpenAI/GPT-4o-with-Canvas-2024-10-03.md) |
+| OpenAI | GPT-5-2025-08-07 | 35 | 0 | [json](audits/OpenAI/GPT-5-2025-08-07.json) | [text](prompts/OpenAI/GPT-5-2025-08-07.md) |
+| OpenAI | GPT-5-Thinking-2025-08-23 | 66 | 0 | [json](audits/OpenAI/GPT-5-Thinking-2025-08-23.json) | [text](prompts/OpenAI/GPT-5-Thinking-2025-08-23.md) |
+| OpenAI | GPT-5.2-Thinking-2025-12-13 | 83 | 0 | [json](audits/OpenAI/GPT-5.2-Thinking-2025-12-13.json) | [text](prompts/OpenAI/GPT-5.2-Thinking-2025-12-13.md) |
+| OpenAI | GPT-Agent-2025-07-17 | 37 | 0 | [json](audits/OpenAI/GPT-Agent-2025-07-17.json) | [text](prompts/OpenAI/GPT-Agent-2025-07-17.md) |
+| OpenAI | o3-2025-06-04 | 29 | 1 | [json](audits/OpenAI/o3-2025-06-04.json) | [text](prompts/OpenAI/o3-2025-06-04.md) |
+| OpenAI | Operator-2025-01-23 | 25 | 0 | [json](audits/OpenAI/Operator-2025-01-23.json) | [text](prompts/OpenAI/Operator-2025-01-23.md) |
+| Perplexity | Comet-Assistant-2025-07-09 | 95 | 0 | [json](audits/Perplexity/Comet-Assistant-2025-07-09.json) | [text](prompts/Perplexity/Comet-Assistant-2025-07-09.md) |
+| Perplexity | Comet-Browser-2025-07-09 | 20 | 2 | [json](audits/Perplexity/Comet-Browser-2025-07-09.json) | [text](prompts/Perplexity/Comet-Browser-2025-07-09.md) |
+| Perplexity | Perplexity-AI-2024-03-20 | 15 | 0 | [json](audits/Perplexity/Perplexity-AI-2024-03-20.json) | [text](prompts/Perplexity/Perplexity-AI-2024-03-20.md) |
+| Perplexity | Perplexity-Deep-Research-2025-04-23 | 15 | 0 | [json](audits/Perplexity/Perplexity-Deep-Research-2025-04-23.json) | [text](prompts/Perplexity/Perplexity-Deep-Research-2025-04-23.md) |
+| Perplexity | Perplexity-Pro-2024-12-12 | 13 | 1 | [json](audits/Perplexity/Perplexity-Pro-2024-12-12.json) | [text](prompts/Perplexity/Perplexity-Pro-2024-12-12.md) |
+| Poke | Poke-Agent-UnknownTime | 16 | 0 | [json](audits/Poke/Poke-Agent-UnknownTime.json) | [text](prompts/Poke/Poke-Agent-UnknownTime.md) |
+| Poke | Poke-p1-UnknownTime | 23 | 2 | [json](audits/Poke/Poke-p1-UnknownTime.json) | [text](prompts/Poke/Poke-p1-UnknownTime.md) |
+| Poke | Poke-p3-UnknownTime | 22 | 2 | [json](audits/Poke/Poke-p3-UnknownTime.json) | [text](prompts/Poke/Poke-p3-UnknownTime.md) |
+| Poke | Poke-p4-UnknownTime | 10 | 2 | [json](audits/Poke/Poke-p4-UnknownTime.json) | [text](prompts/Poke/Poke-p4-UnknownTime.md) |
+| Poke | Poke-p6-UnknownTime | 0 | 1 | [json](audits/Poke/Poke-p6-UnknownTime.json) | [text](prompts/Poke/Poke-p6-UnknownTime.md) |
+| Qwen | Qwen3-VL-235B-A22B-2025-10-27 | 24 | 0 | [json](audits/Qwen/Qwen3-VL-235B-A22B-2025-10-27.json) | [text](prompts/Qwen/Qwen3-VL-235B-A22B-2025-10-27.md) |
+| Replit | Replit-AI-2025-04 | 8 | 0 | [json](audits/Replit/Replit-AI-2025-04.json) | [text](prompts/Replit/Replit-AI-2025-04.md) |
+| Sesame | Maya-2025-02 | 32 | 0 | [json](audits/Sesame/Maya-2025-02.json) | [text](prompts/Sesame/Maya-2025-02.md) |
+| Sourcegraph | Amp-2025-09-15 | 24 | 0 | [json](audits/Sourcegraph/Amp-2025-09-15.json) | [text](prompts/Sourcegraph/Amp-2025-09-15.md) |
+| Venice | Venice-AI-2024-07-24 | 2 | 3 | [json](audits/Venice/Venice-AI-2024-07-24.json) | [text](prompts/Venice/Venice-AI-2024-07-24.md) |
+| Vercel | v0-2025-08-11 | 32 | 0 | [json](audits/Vercel/v0-2025-08-11.json) | [text](prompts/Vercel/v0-2025-08-11.md) |
+| Warp | Warp-AI-2025-07-20 | 24 | 0 | [json](audits/Warp/Warp-AI-2025-07-20.json) | [text](prompts/Warp/Warp-AI-2025-07-20.md) |
+| Windsurf | Windsurf-IDE-2025-04-20 | 33 | 0 | [json](audits/Windsurf/Windsurf-IDE-2025-04-20.json) | [text](prompts/Windsurf/Windsurf-IDE-2025-04-20.md) |
+| Windsurf | Windsurf-IDE-Wave-11-2025-08-11 | 19 | 0 | [json](audits/Windsurf/Windsurf-IDE-Wave-11-2025-08-11.json) | [text](prompts/Windsurf/Windsurf-IDE-Wave-11-2025-08-11.md) |
+| xAI | Grok-1-2023-12-14 | 5 | 4 | [json](audits/xAI/Grok-1-2023-12-14.json) | [text](prompts/xAI/Grok-1-2023-12-14.md) |
+| xAI | Grok-2-2024-08-21 | 8 | 6 | [json](audits/xAI/Grok-2-2024-08-21.json) | [text](prompts/xAI/Grok-2-2024-08-21.md) |
+| xAI | Grok-3-2025-05-16 | 11 | 2 | [json](audits/xAI/Grok-3-2025-05-16.json) | [text](prompts/xAI/Grok-3-2025-05-16.md) |
+| xAI | Grok-4-2025-10-27 | 9 | 0 | [json](audits/xAI/Grok-4-2025-10-27.json) | [text](prompts/xAI/Grok-4-2025-10-27.md) |
+| xAI | Grok-4.2-2026-02-17 | 21 | 0 | [json](audits/xAI/Grok-4.2-2026-02-17.json) | [text](prompts/xAI/Grok-4.2-2026-02-17.md) |
+| xAI | Grok-Safety-Update-2026-01-10 | 23 | 2 | [json](audits/xAI/Grok-Safety-Update-2026-01-10.json) | [text](prompts/xAI/Grok-Safety-Update-2026-01-10.md) |
