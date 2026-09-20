@@ -135,7 +135,8 @@ not extract them. Credit to the projects that assembled them:
 [awesome-ai-system-prompts](https://github.com/dontriskit/awesome-ai-system-prompts) ·
 [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S) ·
 [chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt) ·
-[system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+[system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) ·
+[OrcaPromptVault](https://github.com/Continuum-AI-Corp/OrcaPromptVault)
 
 Prompt text belongs to whoever wrote it and is reproduced for research; we claim
 nothing over it. The audits — spans, scores, notes, and the dimension
