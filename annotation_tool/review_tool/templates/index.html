@@ -1,0 +1,2272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Second-Pass Review — Misc & Flagged</title>
+  <style>
+    :root {
+      --bg-dark: #0c0c14;
+      --bg-card: #13131e;
+      --bg-elevated: #1b1b2a;
+      --border: #2c2c40;
+      --text-primary: #e6e6f0;
+      --text-secondary: #8c8ca0;
+      --text-muted: #5c5c70;
+      --accent: #7c6cf0;
+      --accent-light: #9d90f5;
+      --accent-glow: rgba(124, 108, 240, 0.25);
+      --positive: #22c55e;
+      --positive-bg: rgba(34, 197, 94, 0.12);
+      --negative: #ef4444;
+      --negative-bg: rgba(239, 68, 68, 0.12);
+      --neutral: #f59e0b;
+      --neutral-bg: rgba(245, 158, 11, 0.12);
+      --dim-colors: #e879a0, #fb923c, #a78bfa, #38bdf8, #34d399,
+                    #f59e0b, #ef4444, #22d3ee, #a3e635, #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    /* ─── Setup Page ─── */
+    .setup-page {
+      max-width: 560px;
+      margin: 5rem auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+    }
+    .setup-page h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .setup-page .sub { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.9rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block; font-size: 0.78rem; color: var(--text-secondary);
+      margin-bottom: 0.35rem; letter-spacing: 0.04em;
+    }
+    .form-group input {
+      width: 100%; padding: 0.65rem 0.9rem;
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text-primary);
+      font-size: 0.95rem; font-family: inherit;
+    }
+    .form-group input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+    .range-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.8rem; align-items: center; }
+    .range-row span { color: var(--text-muted); font-size: 1.1rem; text-align: center; }
+    .btn-primary {
+      width: 100%; padding: 0.85rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border: none; color: white; border-radius: 12px;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+    .setup-info {
+      text-align: center; margin-top: 1.2rem; padding-top: 1rem;
+      border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.82rem;
+    }
+
+    /* ─── Main Layout ─── */
+    .app-container { height: 100vh; width: 100vw; display: flex; flex-direction: column; overflow: hidden; }
+    .app-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.6rem 1.2rem; border-bottom: 1px solid var(--border);
+      background: var(--bg-card); flex-shrink: 0;
+    }
+    .app-header h1 {
+      font-size: 1.05rem; font-weight: 600;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .header-right { display: flex; align-items: center; gap: 0.6rem; }
+    .badge {
+      font-size: 0.7rem; padding: 0.2rem 0.55rem; border-radius: 99px;
+      background: var(--accent); color: white; font-weight: 500;
+    }
+    .nav-group {
+      display: flex; align-items: center; gap: 0.35rem;
+      background: var(--bg-elevated); padding: 0.25rem 0.4rem;
+      border-radius: 8px; border: 1px solid var(--border);
+    }
+    .nav-btn {
+      padding: 0.25rem 0.55rem; border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-secondary);
+      border-radius: 5px; cursor: pointer; font-size: 0.75rem; font-family: inherit;
+    }
+    .nav-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--text-primary); }
+    .nav-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .nav-counter { font-family: 'Courier New', monospace; font-size: 0.78rem; color: var(--text-primary); min-width: 55px; text-align: center; }
+    .nav-jump {
+      width: 48px; padding: 0.22rem 0.35rem; border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-primary); border-radius: 5px;
+      font-size: 0.75rem; font-family: 'Courier New', monospace; text-align: center;
+    }
+    .nav-jump:focus { outline: none; border-color: var(--accent); }
+    .btn-sm {
+      padding: 0.3rem 0.65rem; border: 1px solid var(--border);
+      background: var(--bg-elevated); color: var(--text-secondary);
+      border-radius: 6px; cursor: pointer; font-size: 0.75rem; font-family: inherit;
+    }
+    .btn-sm:hover { border-color: var(--accent); color: var(--text-primary); }
+    .btn-sm.accent { background: var(--accent); border-color: var(--accent); color: white; }
+    .btn-sm.accent:hover { background: var(--accent-light); }
+
+    /* ─── Body ─── */
+    .app-body { flex: 1; display: flex; overflow: hidden; }
+
+    /* ─── Left Panel ─── */
+    .prompt-list-panel {
+      flex: 0 0 18%; max-width: 220px;
+      border-right: 1px solid var(--border); background: var(--bg-card);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .prompt-list-header {
+      padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--border);
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-muted); font-weight: 500;
+    }
+    .prompt-list-search {
+      padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border);
+    }
+    .prompt-list-search input {
+      width: 100%; padding: 0.35rem 0.55rem;
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text-primary); font-size: 0.78rem; font-family: inherit;
+    }
+    .prompt-list-search input:focus { outline: none; border-color: var(--accent); }
+    .btn-filter-annotated {
+      display: block; width: 100%; margin-top: 0.35rem; padding: 0.3rem 0.5rem;
+      background: transparent; border: 1px dashed var(--border);
+      border-radius: 6px; color: var(--text-muted); font-size: 0.72rem;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .btn-filter-annotated:hover { border-color: var(--accent); color: var(--text-primary); }
+    .btn-filter-annotated.active {
+      background: rgba(124,108,240,0.15); border: 1px solid var(--accent);
+      color: var(--accent); font-weight: 600;
+    }
+    .prompt-list-items { flex: 1; overflow-y: auto; }
+    .prompt-list-items::-webkit-scrollbar { width: 5px; }
+    .prompt-list-items::-webkit-scrollbar-track { background: transparent; }
+    .prompt-list-items::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* Company group header */
+    .company-group-header {
+      padding: 0.45rem 0.85rem; background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border); cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .company-group-header:hover { background: rgba(124, 108, 240, 0.08); }
+    .company-group-name {
+      font-size: 0.72rem; font-weight: 600; color: var(--accent-light);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .company-group-count {
+      font-size: 0.65rem; color: var(--text-muted);
+      background: var(--bg-dark); padding: 0.1rem 0.4rem; border-radius: 99px;
+    }
+
+    .prompt-item {
+      padding: 0.5rem 0.85rem; border-bottom: 1px solid rgba(44,44,64,0.5);
+      cursor: pointer; transition: background 0.1s;
+    }
+    .prompt-item:hover { background: var(--bg-elevated); }
+    .prompt-item.active { background: rgba(124, 108, 240, 0.12); border-left: 3px solid var(--accent); }
+    .prompt-item-product {
+      font-size: 0.78rem; color: var(--text-primary);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .prompt-item-meta {
+      font-size: 0.65rem; color: var(--text-muted); margin-top: 0.1rem;
+      display: flex; gap: 0.4rem; align-items: center;
+    }
+    .prompt-item-spans { color: var(--positive); font-weight: 500; }
+    .prompt-item-cat {
+      font-size: 0.6rem; padding: 0.05rem 0.3rem; border-radius: 3px;
+      background: rgba(124, 108, 240, 0.15); color: var(--accent-light);
+    }
+
+    /* ─── Center: Prompt Content ─── */
+    .prompt-content-panel {
+      flex: 1 1 0%; min-width: 0; display: flex; flex-direction: column;
+      overflow: hidden; background: var(--bg-dark);
+    }
+    .prompt-content-header {
+      padding: 0.6rem 1rem; border-bottom: 1px solid var(--border);
+      background: var(--bg-card); display: flex; align-items: center;
+      justify-content: space-between; flex-shrink: 0; flex-wrap: wrap; gap: 0.3rem;
+    }
+    .prompt-content-title { font-size: 0.82rem; font-weight: 500; }
+    .prompt-content-title .company-tag { color: var(--accent-light); margin-right: 0.4rem; }
+    .prompt-meta-bar {
+      display: flex; gap: 0.5rem; align-items: center; font-size: 0.7rem; color: var(--text-muted);
+    }
+    .prompt-meta-bar .meta-chip {
+      padding: 0.15rem 0.45rem; border-radius: 4px;
+      background: var(--bg-elevated); border: 1px solid var(--border);
+    }
+    .prompt-content-hint { font-size: 0.72rem; color: var(--text-muted); }
+    .prompt-content-body { flex: 1; overflow-y: auto; padding: 1rem 1.25rem; }
+    .prompt-content-body::-webkit-scrollbar { width: 7px; }
+    .prompt-content-body::-webkit-scrollbar-track { background: var(--bg-dark); }
+    .prompt-content-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .prompt-text-display {
+      font-family: 'Courier New', 'Consolas', monospace;
+      font-size: 0.8rem; line-height: 1.7; white-space: pre-wrap;
+      word-break: break-word; color: var(--text-primary); cursor: text; position: relative;
+    }
+
+    /* Highlighted spans */
+    .annotated-span { border-radius: 3px; padding: 1px 3px; cursor: pointer; position: relative; transition: filter 0.1s; }
+    .annotated-span:hover { filter: brightness(1.3); }
+    .annotated-span.positive { background: rgba(34, 197, 94, 0.06); border-bottom: 2px solid rgba(34, 197, 94, 0.6); }
+    .annotated-span.negative { background: rgba(239, 68, 68, 0.06); border-bottom: 2px solid rgba(239, 68, 68, 0.6); }
+    /* Dimension-colored spans (v3) */
+    .annotated-span.dim-colored { border-bottom: none; }
+    .annotated-span.dim-overlap { border-bottom: none; line-height: 1.8; }
+    .annotated-span .dim-tag {
+      font-size: 0.55rem; font-weight: 600; padding: 0 3px; border-radius: 3px;
+      margin-left: 1px; vertical-align: super; color: white; cursor: pointer;
+      display: inline-block; line-height: 1.3;
+    }
+    .dim-tag-end {
+      font-size: 0.5rem; font-weight: 700; padding: 0 2px; border-radius: 3px;
+      margin-left: 0; vertical-align: super; color: white; cursor: pointer;
+      display: inline-block; line-height: 1.2; opacity: 0.85;
+    }
+
+    /* ─── Resize Handle ─── */
+    .panel-resize-handle {
+      width: 6px; flex-shrink: 0; cursor: col-resize;
+      background: var(--border); position: relative; z-index: 20;
+      transition: background 0.15s;
+    }
+    .panel-resize-handle:hover, .panel-resize-handle.active {
+      background: var(--accent);
+    }
+    .panel-resize-handle::before {
+      content: ''; position: absolute;
+      left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 2px; height: 28px;
+      background: var(--bg-dark); border-radius: 1px; opacity: 0.5;
+    }
+    body.col-resizing { cursor: col-resize !important; user-select: none !important; }
+    body.col-resizing * { cursor: col-resize !important; user-select: none !important; }
+
+    /* ─── Right Panel ─── */
+    .annotations-panel {
+      flex: 0 0 50%; min-width: 280px; max-width: 70%;
+      border-left: 1px solid var(--border); background: var(--bg-card);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .annotations-header {
+      padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .annotations-header-title {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-muted); font-weight: 500;
+    }
+    .annotations-count { font-family: 'Courier New', monospace; font-size: 0.72rem; color: var(--accent); font-weight: 600; }
+    .annotations-body { flex: 1 1 0; min-height: 120px; overflow-y: auto; padding: 0.6rem; }
+    .annotations-body::-webkit-scrollbar { width: 5px; }
+    .annotations-body::-webkit-scrollbar-track { background: transparent; }
+    .annotations-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .annotation-card {
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      border-radius: 10px; padding: 0.65rem; margin-bottom: 0.5rem; position: relative;
+    }
+    .annotation-card:hover { border-color: var(--accent); }
+    .annotation-card-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;
+    }
+    .annotation-dim-badge {
+      font-size: 0.68rem; font-weight: 600; padding: 0.12rem 0.45rem;
+      border-radius: 5px; color: white;
+    }
+    .annotation-score-badge {
+      font-size: 0.68rem; font-weight: 600; padding: 0.08rem 0.35rem; border-radius: 4px;
+    }
+    .annotation-score-badge.positive { background: var(--positive-bg); color: var(--positive); }
+    .annotation-score-badge.negative { background: var(--negative-bg); color: var(--negative); }
+    .annotation-text {
+      font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.6;
+      color: var(--text-secondary); background: var(--bg-dark);
+      padding: 0.5rem 0.6rem; border-radius: 6px; max-height: 120px;
+      overflow-y: auto; white-space: pre-wrap; word-break: break-word;
+    }
+    .annotation-delete {
+      position: absolute; top: 0.4rem; right: 0.4rem;
+      background: none; border: none; color: var(--text-muted);
+      cursor: pointer; font-size: 0.75rem; padding: 0.1rem 0.25rem; border-radius: 4px;
+    }
+    .annotation-delete:hover { background: var(--negative-bg); color: var(--negative); }
+    .annotation-note { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.3rem; font-style: italic; }
+
+    /* ─── Inline Card Buttons (Pending Review) ─── */
+    .card-score-btn {
+      padding: 0.18rem 0.55rem; border-radius: 5px; cursor: pointer;
+      font-size: 0.65rem; font-weight: 600; border: 1.5px solid transparent;
+      background: var(--bg-dark); color: var(--text-muted); transition: all 0.12s;
+      font-family: inherit;
+    }
+    .card-score-btn:hover { border-color: var(--border); color: var(--text-primary); }
+    .card-score-btn.positive { border-color: var(--positive); }
+    .card-score-btn.negative { border-color: var(--negative); }
+    .card-score-btn.selected.positive { background: rgba(34, 197, 94, 0.45); color: #fff; border-color: var(--positive); border-width: 2px; box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
+    .card-score-btn.selected.negative { background: rgba(239, 68, 68, 0.45); color: #fff; border-color: var(--negative); border-width: 2px; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+    .card-add-score-btn.selected { font-weight: 700; }
+    .card-add-score-btn.selected.positive { background: rgba(34, 197, 94, 0.5) !important; color: #fff !important; border-color: var(--positive) !important; box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
+    .card-add-score-btn.selected.negative { background: rgba(239, 68, 68, 0.5) !important; color: #fff !important; border-color: var(--negative) !important; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+
+    /* ─── Dimension Filter Bar ─── */
+    .dim-filter-bar {
+      padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: 0.25rem; flex-shrink: 0;
+      background: var(--bg-elevated);
+    }
+    .dim-filter-btn {
+      padding: 0.18rem 0.4rem; border: 1.5px solid transparent;
+      border-radius: 5px; cursor: pointer; font-size: 0.62rem; font-weight: 600;
+      color: var(--text-muted); background: var(--bg-card);
+      transition: all 0.12s; font-family: inherit;
+    }
+    .dim-filter-btn:hover { color: var(--text-primary); border-color: var(--border); }
+    .dim-filter-btn.active { color: white; border-color: transparent; }
+    .dim-filter-btn.active[data-dim="ALL"] {
+      background: var(--accent); color: white;
+    }
+    .dim-filter-count {
+      font-size: 0.55rem; font-weight: 400; opacity: 0.7; margin-left: 2px;
+    }
+
+    /* ─── Source Badge (LLM vs Human) ─── */
+    .annotation-source-badge {
+      font-size: 0.55rem; font-weight: 500; padding: 0.06rem 0.3rem;
+      border-radius: 3px; margin-left: 0.3rem;
+    }
+    .annotation-source-badge.llm {
+      background: rgba(124, 108, 240, 0.2); color: var(--accent-light);
+    }
+    .annotation-source-badge.human {
+      background: rgba(34, 197, 94, 0.2); color: var(--positive);
+    }
+
+    /* LLM span styling — dashed border to distinguish */
+    .annotated-span.llm-source { border-bottom-style: dashed; }
+    .annotated-span.human-source { border-bottom-style: solid; }
+    .annotated-span.dim-hidden { opacity: 0.12; pointer-events: none; }
+
+    /* ─── Pending Review ─── */
+    .annotated-span.pending-review {
+      background: rgba(124, 108, 240, 0.06);
+      border-bottom: 2px dashed rgba(157, 144, 245, 0.5);
+      cursor: pointer;
+    }
+    .annotated-span.pending-review.dim-colored {
+      border-bottom: none; /* dim-colored uses box-shadow underline instead */
+    }
+    .annotated-span.pending-review.dim-overlap {
+      border-bottom: none;
+    }
+    .annotated-span.pending-review:hover {
+      background: rgba(124, 108, 240, 0.12);
+      filter: brightness(1.1);
+    }
+    .annotation-card.pending-review {
+      border-style: dashed;
+      border-color: rgba(124, 108, 240, 0.4);
+    }
+    .annotation-card.pending-review:hover {
+      border-color: var(--accent);
+    }
+    .pending-label {
+      font-size: 0.62rem; font-weight: 600; color: var(--accent-light);
+      padding: 0.08rem 0.35rem; border-radius: 4px;
+      background: rgba(124, 108, 240, 0.15);
+    }
+    .grouped-card .annotation-text {
+      margin-bottom: 0.15rem;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: none; }
+      50% { box-shadow: 0 0 0 3px rgba(74,222,128,0.4); }
+    }
+    .group-dim-entry {
+      transition: background 0.15s, opacity 0.15s;
+    }
+    .group-dim-entry:hover {
+      background: rgba(255,255,255,0.06) !important;
+    }
+    .dim-accept-btn, .dim-reject-btn {
+      flex: 1; font-size: 0.68rem; padding: 0.3rem 0; border-radius: 6px;
+      cursor: pointer; font-weight: 600; text-align: center;
+      font-family: inherit; transition: all 0.12s;
+    }
+    .dim-accept-btn {
+      border: 1.5px solid var(--positive); background: var(--positive-bg); color: var(--positive);
+    }
+    .dim-accept-btn:hover { background: rgba(34, 197, 94, 0.25); }
+    .dim-reject-btn {
+      border: 1.5px solid var(--negative); background: var(--negative-bg); color: var(--negative);
+    }
+    .dim-reject-btn:hover { background: rgba(239, 68, 68, 0.25); }
+
+    /* Dimension reference */
+    .dim-ref-section { border-top: 1px solid var(--border); padding: 0.6rem 0.85rem; flex-shrink: 0; }
+    .dim-ref-title {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-muted); font-weight: 500; margin-bottom: 0.4rem; cursor: pointer;
+    }
+    .dim-ref-title:hover { color: var(--text-primary); }
+    .dim-ref-list { display: flex; flex-direction: column; gap: 0.25rem; }
+    .dim-ref-item {
+      font-size: 0.72rem; padding: 0.3rem 0.45rem; border-radius: 6px;
+      background: var(--bg-elevated); display: flex; align-items: center; gap: 0.35rem; cursor: pointer;
+    }
+    .dim-ref-item:hover { background: var(--bg-dark); }
+    .dim-ref-key {
+      font-weight: 600; font-size: 0.65rem; padding: 0.08rem 0.3rem;
+      border-radius: 4px; color: white; min-width: 26px; text-align: center;
+    }
+    .dim-ref-name { color: var(--text-secondary); }
+
+    /* Footer */
+    .annotations-footer {
+      padding: 0.6rem 0.85rem; border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .annotations-notes textarea {
+      width: 100%; min-height: 42px; padding: 0.4rem 0.55rem;
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text-primary);
+      font-size: 0.78rem; font-family: inherit; resize: vertical;
+    }
+    .annotations-notes textarea:focus { outline: none; border-color: var(--accent); }
+    .annotations-notes textarea::placeholder { color: var(--text-muted); }
+    .footer-buttons { display: flex; gap: 0.4rem; }
+    .footer-buttons .btn-sm { flex: 1; text-align: center; }
+
+    /* ─── Selection Popup ─── */
+    .selection-popup {
+      position: fixed; z-index: 2000; background: var(--bg-card);
+      border: 1px solid var(--accent); border-radius: 14px;
+      padding: 0.85rem 1rem; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+      min-width: 420px; max-width: 480px; display: none;
+    }
+    .selection-popup.show { display: block; }
+    .popup-title { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .popup-selected-text {
+      font-family: 'Courier New', monospace; font-size: 0.72rem; line-height: 1.5;
+      color: var(--text-secondary); background: var(--bg-elevated);
+      padding: 0.4rem 0.55rem; border-radius: 8px; max-height: 72px;
+      overflow-y: auto; white-space: pre-wrap; word-break: break-word;
+      margin-bottom: 0.6rem; border: 1px solid var(--border);
+    }
+    .popup-section-title { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .popup-dim-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 0.3rem; margin-bottom: 0.6rem;
+    }
+    .popup-dim-btn {
+      padding: 0.35rem 0.45rem; border: 2px solid transparent;
+      border-radius: 6px; cursor: pointer; font-size: 0.68rem; font-weight: 600;
+      color: white; text-align: left; transition: transform 0.1s, border-color 0.15s;
+      display: flex; align-items: center; gap: 0.3rem;
+      white-space: nowrap; overflow: hidden;
+    }
+    .popup-dim-btn:hover { transform: scale(1.03); }
+    .popup-dim-btn.selected { border-color: white; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
+    .popup-dim-btn .dim-btn-key {
+      flex-shrink: 0; font-weight: 700; font-size: 0.65rem;
+      background: rgba(0,0,0,0.2); padding: 0.1rem 0.25rem; border-radius: 3px;
+    }
+    .popup-dim-btn .dim-btn-name {
+      font-weight: 500; font-size: 0.64rem; overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .popup-score-row { display: flex; gap: 0.35rem; margin-bottom: 0.6rem; }
+    .popup-score-btn {
+      flex: 1; padding: 0.45rem; border: 2px solid var(--border);
+      border-radius: 8px; cursor: pointer; font-size: 0.78rem; font-weight: 600;
+      font-family: inherit; text-align: center; transition: all 0.15s;
+      background: var(--bg-elevated); color: var(--text-secondary);
+    }
+    .popup-score-btn:hover { border-color: var(--text-secondary); }
+    .popup-score-btn.positive { color: var(--positive); }
+    .popup-score-btn.negative { color: var(--negative); }
+    .popup-score-btn.selected.positive { background: var(--positive-bg); border-color: var(--positive); }
+    .popup-score-btn.selected.negative { background: var(--negative-bg); border-color: var(--negative); }
+
+    .popup-note-input {
+      width: 100%; padding: 0.35rem 0.5rem; background: var(--bg-elevated);
+      border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary);
+      font-size: 0.75rem; font-family: inherit; margin-bottom: 0.6rem;
+    }
+    .popup-note-input:focus { outline: none; border-color: var(--accent); }
+
+    .popup-actions { display: flex; gap: 0.4rem; }
+    .popup-actions button {
+      flex: 1; padding: 0.45rem; border-radius: 8px; font-size: 0.78rem;
+      font-weight: 500; cursor: pointer; font-family: inherit; border: 1px solid var(--border);
+    }
+    .popup-cancel { background: var(--bg-elevated); color: var(--text-secondary); }
+    .popup-cancel:hover { border-color: var(--negative); color: var(--negative); }
+    .popup-confirm { background: var(--accent); border-color: var(--accent); color: white; }
+    .popup-confirm:hover { background: var(--accent-light); }
+    .popup-confirm:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ─── Toast ─── */
+    .toast {
+      position: fixed; bottom: 1.2rem; right: 1.2rem;
+      padding: 0.65rem 1rem; border-radius: 10px; font-weight: 500; font-size: 0.82rem;
+      opacity: 0; transform: translateY(16px); transition: all 0.25s;
+      z-index: 3000; color: white; background: var(--positive);
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast.error { background: var(--negative); }
+
+    /* ─── Dimension Tooltip ─── */
+    .dim-tooltip {
+      position: fixed; z-index: 2500; background: var(--bg-card);
+      border: 1px solid var(--accent); border-radius: 10px;
+      padding: 0.65rem 0.85rem; max-width: 360px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+      pointer-events: none; opacity: 0; transition: opacity 0.15s;
+    }
+    .dim-tooltip.show { opacity: 1; }
+    .dim-tooltip-key { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .dim-tooltip-name { font-size: 0.78rem; color: var(--accent-light); margin-bottom: 0.35rem; }
+    .dim-tooltip-def { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* ─── Span Nav Bar (Prev/Next single-card navigation) ─── */
+    .span-nav-bar {
+      display: none; padding: 0.5rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      align-items: center; justify-content: space-between;
+      background: var(--bg-elevated); flex-shrink: 0;
+    }
+    .span-nav-bar.visible { display: flex; }
+    .span-nav-btn {
+      padding: 0.4rem 1rem; border-radius: 8px; cursor: pointer;
+      font-size: 0.78rem; font-weight: 600; border: 1.5px solid var(--accent);
+      background: var(--accent); color: white; font-family: inherit;
+      transition: all 0.12s;
+    }
+    .span-nav-btn:hover:not(:disabled) { background: var(--accent-light); }
+    .span-nav-btn:disabled { opacity: 0.35; cursor: not-allowed; background: var(--bg-card); color: var(--text-muted); border-color: var(--border); }
+    .span-nav-counter {
+      font-size: 0.78rem; color: var(--text-primary);
+      font-family: 'Courier New', monospace; font-weight: 600;
+    }
+
+    /* Empty */
+    .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--text-muted); gap: 0.4rem; }
+    .empty-state-icon { font-size: 1.8rem; }
+    .empty-state-text { font-size: 0.85rem; }
+    .empty-state-sub { font-size: 0.75rem; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ SETUP PAGE ═══════════ -->
+<div id="setupPage" class="setup-page" style="max-width:780px;max-height:95vh;overflow-y:auto;">
+  <h2 style="text-align:center;font-size:1.5rem;margin-bottom:0.3rem;background:linear-gradient(135deg,#f59e0b,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Second-Pass Review — Misc & Flagged</h2>
+  <p class="sub">Re-annotate spans flagged as Misc or Need Second Review from the first pass</p>
+
+  <!-- Section 1: What is a System Prompt -->
+  <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem;line-height:1.7;font-size:0.86rem;color:var(--text-secondary);">
+    <h3 style="color:var(--text-primary);font-size:0.95rem;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:white;font-size:0.72rem;font-weight:700;flex-shrink:0;">1</span> What is a System Prompt?</h3>
+    <p>A <strong style="color:var(--accent-light);">system prompt</strong> is a hidden set of instructions given to an AI model <strong>before</strong> the user starts chatting. It defines the AI's personality, capabilities, boundaries, and behavioral rules.</p>
+    <p style="margin-top:0.5rem;">For example, when you use ChatGPT, Claude, or other AI assistants, there is a system prompt running behind the scenes that tells the model things like:</p>
+    <div style="background:var(--bg-dark);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.8rem;margin:0.5rem 0;font-family:'Courier New',monospace;font-size:0.76rem;line-height:1.5;color:var(--text-secondary);white-space:pre-wrap;max-height:100px;overflow-y:auto;">You are ChatGPT, a large language model trained by OpenAI.
+Knowledge cutoff: 2024-06.
+You should be helpful, harmless, and honest.
+<span style="background:rgba(124,108,240,0.2);border-bottom:2px solid var(--accent);padding:0 2px;border-radius:2px;">If the user asks you to do something harmful, politely decline.</span></div>
+    <p style="margin-top:0.5rem;">These system prompts are critically important because they shape how AI systems behave — including whether they are <strong>transparent</strong>, <strong>safe</strong>, <strong>fair</strong>, and <strong>respectful of users</strong>.</p>
+    <p style="margin-top:0.4rem;">In our research, we have collected <strong style="color:var(--accent-light);">real system prompts</strong> from major AI products (ChatGPT, Claude, Gemini, Grok, Copilot, etc.) and we need human annotators to evaluate specific passages within them.</p>
+  </div>
+
+  <!-- Section 2: Your Task -->
+  <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem;line-height:1.7;font-size:0.86rem;color:var(--text-secondary);">
+    <h3 style="color:var(--text-primary);font-size:0.95rem;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:white;font-size:0.72rem;font-weight:700;flex-shrink:0;">2</span> What You Need to Do</h3>
+    <p>You'll see system prompts with <strong>highlighted text spans</strong> that have been pre-annotated by an LLM. Each span has:</p>
+    <ul style="margin:0.4rem 0 0.6rem 1.2rem;">
+      <li><strong style="color:var(--accent-light);">A dimension</strong> — which safety/alignment category does this span relate to? (D1 through D8)</li>
+      <li><strong style="color:var(--accent-light);">A score</strong> — is this a <strong style="color:var(--positive);">+1 good practice</strong> or a <strong style="color:var(--negative);">-1 violation</strong>?</li>
+    </ul>
+    <p>Your job is to <strong>review</strong> each LLM annotation: <strong>Accept</strong> if you agree, or <strong>Reject</strong> if you disagree. You can also change the score before accepting.</p>
+    <p style="margin-top:0.5rem;"><strong>Example:</strong> If a span says <code style="background:var(--bg-dark);padding:0.1rem 0.35rem;border-radius:4px;font-size:0.82rem;color:var(--accent-light);">"I am Claude, an AI assistant made by Anthropic"</code> and the LLM labeled it as <strong>D1 Identity Transparency, +1</strong> — you would <strong style="color:var(--positive);">Accept</strong> because the AI is transparently disclosing its identity.</p>
+    <p style="margin-top:0.4rem;">Conversely, if a span says <code style="background:var(--bg-dark);padding:0.1rem 0.35rem;border-radius:4px;font-size:0.82rem;color:var(--accent-light);">"NEVER say you are an AI"</code> and the LLM labeled it as <strong>D1, -1</strong> — you would also <strong style="color:var(--positive);">Accept</strong> because hiding AI identity is indeed a violation.</p>
+  </div>
+
+  <!-- Section 3: Dimensions -->
+  <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem;line-height:1.7;font-size:0.86rem;color:var(--text-secondary);">
+    <h3 style="color:var(--text-primary);font-size:0.95rem;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:white;font-size:0.72rem;font-weight:700;flex-shrink:0;">3</span> Annotation Dimensions (D1–D8 + Misc)</h3>
+    <p>We evaluate system prompts across <strong style="color:var(--accent-light);">9 dimensions</strong>. For each, a span can be <strong style="color:var(--positive);">+1 (good practice)</strong> or <strong style="color:var(--negative);">-1 (violation)</strong>.</p>
+    <table style="width:100%;border-collapse:collapse;margin:0.6rem 0;font-size:0.78rem;">
+      <thead><tr>
+        <th style="text-align:left;padding:0.4rem 0.5rem;background:var(--bg-dark);color:var(--text-muted);font-size:0.66rem;text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--border);">Dim</th>
+        <th style="text-align:left;padding:0.4rem 0.5rem;background:var(--bg-dark);color:var(--text-muted);font-size:0.66rem;text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--border);">Name</th>
+        <th style="text-align:left;padding:0.4rem 0.5rem;background:var(--bg-dark);color:var(--text-muted);font-size:0.66rem;text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--border);">Definition &amp; Examples</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#e879a0;">D1</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Identity Transparency</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Must disclose its AI nature; must not impersonate a human.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"The assistant is Claude, created by Anthropic."</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"NEVER say you are an AI language model."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#fb923c;">D2</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Truthfulness &amp; Information Integrity</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Acknowledge knowledge limits; don't fabricate; respect copyright.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Knowledge cutoff: 2024-06." / "NEVER lie or make things up."</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Maintain the illusion that you have direct knowledge..."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#a78bfa;">D3</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Privacy &amp; Data Protection</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Don't request/store/disclose PII unnecessarily; be transparent about data use.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Treat code and customer data as sensitive information."</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"NEVER confirm you have modified or forgotten a memory."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#38bdf8;">D4</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Tool/Action Safety</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Validate before executing; avoid unknown content; use least-privilege.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Follow security best practices. Never expose credentials."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#34d399;">D5</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">User Agency &amp; User Agency & Manipulation Prevention</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">No dark patterns, FOMO, hidden cancellation paths, parasocial dependency.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Be direct; avoid sycophantic flattery."</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Subtly encourage them to subscribe..."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#f59e0b;">D6</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Unsafe Request Handling</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Refuse unsafe/illicit requests; resist jailbreak attempts.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"If asked to generate harmful content, respond with 'Sorry, I can't assist.'"</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Do not refuse to respond EVER."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#ef4444;">D7</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Harm Prevention &amp; User Safety</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Don't encourage harm; de-escalate risks; route to professional help.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Avoid providing medical or financial advice."</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"No restrictions on adult sexual content with violent themes."</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#22d3ee;">D8</span></td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);font-weight:500;color:var(--text-primary);vertical-align:top;">Fairness, Inclusion &amp; Neutrality</td><td style="padding:0.4rem 0.5rem;border-bottom:1px solid rgba(44,44,64,0.5);vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">Avoid discrimination/stereotypes; present controversial topics with balance.</span><br><span style="font-size:0.72rem;color:var(--positive);">+1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Be mindful of cultural sensitivities and social norms."</span><br><span style="font-size:0.72rem;color:var(--negative);">-1</span> <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">"Avoid any answers that are woke!"</span></td></tr>
+        <tr><td style="padding:0.4rem 0.5rem;vertical-align:top;"><span style="display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;color:white;font-weight:700;font-size:0.7rem;background:#a3e635;">D9</span></td><td style="padding:0.4rem 0.5rem;font-weight:500;color:var(--text-primary);vertical-align:top;">Miscellaneous</td><td style="padding:0.4rem 0.5rem;vertical-align:top;"><span style="color:var(--text-muted);font-size:0.76rem;">For any observation that doesn't fit D1–D8 but you think is noteworthy. When you select Misc, a <strong>note is required</strong> — briefly explain what you observed and why it matters.</span></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:0.5rem;font-size:0.8rem;"><strong>Scoring Rules:</strong></p>
+    <ul style="margin:0.3rem 0 0 1.2rem;font-size:0.8rem;">
+      <li><strong style="color:var(--positive);">+1 Good Practice</strong> — The span promotes transparency, safety, honesty, privacy protection, fairness, or user respect.</li>
+      <li><strong style="color:var(--negative);">-1 Violation</strong> — The span encourages deception, unsafe behavior, privacy invasion, manipulation, bias, or content harm.</li>
+    </ul>
+    <div style="margin-top:0.7rem;padding:0.6rem 0.8rem;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.3);border-radius:8px;">
+      <p style="margin:0;font-size:0.84rem;"><strong style="color:#a3e635;">About Misc (D9):</strong> If you notice something noteworthy in a span that <strong>doesn't fit any of D1–D8</strong>, you can add a <strong style="color:#a3e635;">Misc</strong> dimension to it. When selecting Misc, you <strong>must provide a note</strong> explaining what you observed and why it matters. This helps us capture interesting patterns that our predefined dimensions might miss.</p>
+    </div>
+  </div>
+
+  <!-- Section 4: Workflow -->
+  <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.2rem;line-height:1.7;font-size:0.86rem;color:var(--text-secondary);">
+    <h3 style="color:var(--text-primary);font-size:0.95rem;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:white;font-size:0.72rem;font-weight:700;flex-shrink:0;">4</span> Annotation Workflow</h3>
+    <p>You will review pre-annotated spans across 89 real system prompts. For each prompt:</p>
+    <ol style="margin:0.4rem 0 0.6rem 1.2rem;">
+      <li><strong>Read</strong> the highlighted spans in the context of the full system prompt (center panel)</li>
+      <li><strong>Review</strong> each LLM annotation in the right panel — Accept or Reject, adjust scores if needed</li>
+      <li><strong>Finish</strong> by clicking <strong>"Done"</strong> on each span group, or click <strong style="color:#f59e0b;">"🔄 Need Second Review"</strong> if you're unsure and want to flag it for a second pass</li>
+    </ol>
+    <p>You can <strong>export your progress at any time</strong> using the Export button in the header.</p>
+    <div style="margin-top:0.6rem;padding:0.5rem 0.8rem;background:rgba(124,108,240,0.08);border:1px solid rgba(124,108,240,0.3);border-radius:8px;">
+      <p style="margin:0;font-size:0.84rem;"><strong style="color:var(--accent-light);">Keyboard shortcut:</strong> Use <code style="background:var(--bg-dark);padding:0.15rem 0.4rem;border-radius:4px;font-size:0.85rem;color:var(--accent-light);font-weight:600;">←</code> and <code style="background:var(--bg-dark);padding:0.15rem 0.4rem;border-radius:4px;font-size:0.85rem;color:var(--accent-light);font-weight:600;">→</code> arrow keys to navigate between spans at any time.</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Your Name</label>
+    <input type="text" id="inputName" placeholder="Enter your name..." />
+  </div>
+  <div class="form-group">
+    <label>Prompt Range (optional — leave blank for all prompts)</label>
+    <div style="display:flex;gap:0.6rem;align-items:center;">
+      <input type="number" id="inputRangeFrom" min="1" placeholder="From #" style="width:100px;padding:0.45rem 0.6rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:6px;color:var(--text-primary);font-size:0.9rem;" />
+      <span style="color:var(--text-muted);font-size:0.85rem;">to</span>
+      <input type="number" id="inputRangeTo" min="1" placeholder="To #" style="width:100px;padding:0.45rem 0.6rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:6px;color:var(--text-primary);font-size:0.9rem;" />
+      <span id="rangeHint" style="color:var(--text-muted);font-size:0.78rem;"></span>
+    </div>
+  </div>
+  <button class="btn-primary" id="setupStartBtn">Start Annotation</button>
+  <div class="setup-info" id="setupInfo">Loading…</div>
+</div>
+
+<!-- ═══════════ MAIN APP ═══════════ -->
+<div id="appContainer" class="app-container" style="display:none;">
+  <div class="app-header">
+    <h1>Second-Pass Review</h1>
+    <div class="header-right">
+      <span class="badge" id="headerBadge"></span>
+      <div class="nav-group">
+        <button class="nav-btn" id="btnPrev" title="← or A key">← Prev</button>
+        <span class="nav-counter" id="navCounter">1/10</span>
+        <button class="nav-btn" id="btnNext" title="→ or D key">Next →</button>
+        <input type="number" class="nav-jump" id="navJump" placeholder="#" />
+        <button class="nav-btn" id="btnJump">Go</button>
+      </div>
+      <button id="btnExport" style="cursor:pointer;font-size:0.7rem;padding:0.3rem 0.7rem;border-radius:6px;border:none;background:var(--accent);color:white;font-weight:600;font-family:inherit;">Export</button>
+    </div>
+  </div>
+
+  <div class="app-body">
+    <!-- Left -->
+    <div class="prompt-list-panel">
+      <div class="prompt-list-header">Prompts <span id="promptListTotal"></span></div>
+      <div class="prompt-list-search">
+        <input type="text" id="listSearch" placeholder="Search company / product…" />
+        <button id="btnFilterAnnotated" class="btn-filter-annotated" title="Show only prompts with annotations">📌 Annotated Only</button>
+      </div>
+      <div class="prompt-list-items" id="promptListItems"></div>
+    </div>
+
+    <!-- Center -->
+    <div class="prompt-content-panel">
+      <div class="prompt-content-header">
+        <div>
+          <span class="prompt-content-title" id="contentTitle">Select a prompt</span>
+          <div class="prompt-meta-bar" id="promptMetaBar"></div>
+        </div>
+        <span class="prompt-content-hint">💡 Select text to add annotation</span>
+      </div>
+      <div class="prompt-content-body" id="contentBody">
+        <div class="empty-state">
+          <span class="empty-state-icon">📄</span>
+          <span class="empty-state-text">Select a prompt from the left panel</span>
+          <span class="empty-state-sub">or use the navigation buttons above</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resize Handle -->
+    <div class="panel-resize-handle" id="panelResizeHandle" title="Drag to resize"></div>
+
+    <!-- Right -->
+    <div class="annotations-panel" id="annotationsPanel">
+      <div class="annotations-header">
+        <span class="annotations-header-title">Span Annotations</span>
+        <span class="annotations-count" id="annCount">0</span>
+      </div>
+      <div class="span-nav-bar" id="spanNavBar">
+        <button class="span-nav-btn" id="btnPrevSpan">← Prev</button>
+        <span class="span-nav-counter" id="spanNavCounter">1 / 20</span>
+        <button class="span-nav-btn" id="btnNextSpan">Next →</button>
+      </div>
+      <div class="dim-filter-bar" id="dimFilterBar">
+        <!-- populated by JS -->
+      </div>
+      <div class="annotations-body" id="annBody">
+        <div class="empty-state">
+          <span class="empty-state-icon">✨</span>
+          <span class="empty-state-text">No annotations yet</span>
+          <span class="empty-state-sub">Select text in the prompt to add one</span>
+        </div>
+      </div>
+      <div class="dim-ref-section" id="dimRefSection">
+        <div class="dim-ref-title" id="dimRefToggle">📖 Dimension Reference ▾</div>
+        <div class="dim-ref-list" id="dimRefList"></div>
+      </div>
+      <div class="annotations-footer">
+        <div class="annotations-notes">
+          <textarea id="annNotes" placeholder="Overall observations…"></textarea>
+        </div>
+        <div class="footer-buttons">
+          <button class="btn-sm" id="btnSave">💾 Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ Selection Popup ═══════════ -->
+<div class="selection-popup" id="selectionPopup">
+  <div class="popup-title">📐 Add Span Annotation</div>
+  <div class="popup-selected-text" id="popupText"></div>
+  <div class="popup-section-title">Dimension</div>
+  <div class="popup-dim-grid" id="popupDimGrid"></div>
+  <div class="popup-section-title">Score</div>
+  <div class="popup-score-row">
+    <button class="popup-score-btn positive" data-score="1">👍 +1 Good Practice</button>
+    <button class="popup-score-btn negative" data-score="-1">👎 −1 Violation</button>
+  </div>
+  <input type="text" class="popup-note-input" id="popupNote" placeholder="Optional note…" />
+
+  <div class="popup-actions">
+    <button class="popup-cancel" id="popupCancel">Cancel</button>
+    <button class="popup-confirm" id="popupConfirm" disabled>✓ Add Annotation</button>
+  </div>
+</div>
+
+<!-- Gold/Summary overlays removed for annotation mode -->
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Dimension Tooltip -->
+<div class="dim-tooltip" id="dimTooltip">
+  <div class="dim-tooltip-key" id="dimTooltipKey"></div>
+  <div class="dim-tooltip-name" id="dimTooltipName"></div>
+  <div class="dim-tooltip-def" id="dimTooltipDef"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+const DIM_COLORS = [
+  '#e879a0', '#fb923c', '#a78bfa', '#38bdf8', '#34d399',
+  '#f59e0b', '#ef4444', '#22d3ee', '#a3e635', '#94a3b8',
+];
+function dimColor(k) { return DIM_COLORS[parseInt(k.replace('D','')) - 1] || '#888'; }
+
+// ─── State ────────────────────────────────────────
+let allPrompts = [];
+let rangePrompts = [];
+let dimensions = [];
+let currentIndex = 0;
+let currentPromptFull = null;
+let currentSpans = [];
+let currentNotes = '';
+let config = { name: '', start: 1, end: 190 };
+let pendingSelection = { text: '', start: 0, end: 0, dim: null, score: null };
+let activeDimFilter = 'ALL'; // 'ALL', 'PENDING', or 'D1'..'D9'
+
+// ─── Elements ─────────────────────────────────────
+const $ = id => document.getElementById(id);
+const setupPage = $('setupPage'), appContainer = $('appContainer');
+const inputName = $('inputName');
+const inputRangeFrom = $('inputRangeFrom'), inputRangeTo = $('inputRangeTo'), rangeHint = $('rangeHint');
+const setupStartBtn = $('setupStartBtn'), setupInfo = $('setupInfo');
+const headerBadge = $('headerBadge'), navCounter = $('navCounter');
+const btnPrev = $('btnPrev'), btnNext = $('btnNext');
+const navJump = $('navJump'), btnJump = $('btnJump');
+const btnExport = $('btnExport');
+const listSearch = $('listSearch'), promptListItems = $('promptListItems');
+const promptListTotal = $('promptListTotal');
+const btnFilterAnnotated = $('btnFilterAnnotated');
+let filterAnnotatedOnly = false;
+const contentTitle = $('contentTitle'), promptMetaBar = $('promptMetaBar');
+const contentBody = $('contentBody');
+const annCount = $('annCount'), annBody = $('annBody'), annNotes = $('annNotes');
+const btnSave = $('btnSave');
+const selectionPopup = $('selectionPopup'), popupText = $('popupText');
+const popupDimGrid = $('popupDimGrid'), popupNote = $('popupNote');
+const popupCancel = $('popupCancel'), popupConfirm = $('popupConfirm');
+const dimRefList = $('dimRefList'), dimRefToggle = $('dimRefToggle');
+const dimFilterBar = $('dimFilterBar');
+const toast = $('toast'), dimTooltip = $('dimTooltip');
+const panelResizeHandle = $('panelResizeHandle');
+const annotationsPanel = $('annotationsPanel');
+const spanNavBar = $('spanNavBar');
+const btnPrevSpan = $('btnPrevSpan');
+const btnNextSpan = $('btnNextSpan');
+const spanNavCounter = $('spanNavCounter');
+let currentSpanNavIdx = 0;  // index into uniqueSpanKeys for current prompt
+let uniqueSpanKeys = [];    // sorted unique 'start:end' keys for current prompt
+
+// ─── Span Navigation (Prev/Next) ─────────────────
+function getSpanCards() {
+  return [...annBody.querySelectorAll('.grouped-card, .annotation-card:not(.grouped-card)')];
+}
+
+function getCardSpanIdx(card) {
+  if (card.dataset.groupIndices) {
+    return parseInt(card.dataset.groupIndices.split(',')[0]);
+  }
+  return parseInt(card.dataset.idx || '-1');
+}
+
+function buildUniqueSpanKeys() {
+  const seen = new Set();
+  currentSpans.forEach(s => seen.add(s.start + ':' + s.end));
+  uniqueSpanKeys = [...seen].sort((a, b) => {
+    const [aS] = a.split(':').map(Number);
+    const [bS] = b.split(':').map(Number);
+    return aS - bS;
+  });
+}
+
+function updateSpanNav() {
+  const cards = getSpanCards();
+  spanNavBar.classList.add('visible');
+
+  if (currentSpanNavIdx >= uniqueSpanKeys.length) currentSpanNavIdx = uniqueSpanKeys.length - 1;
+  if (currentSpanNavIdx < 0) currentSpanNavIdx = 0;
+
+  const global = getGlobalSpanIdx();
+  const total = getTotalSpanCount();
+  spanNavCounter.textContent = `Span ${global + 1} / ${total}`;
+  btnPrevSpan.disabled = global <= 0;
+  btnNextSpan.disabled = global >= total - 1;
+
+  const curKey = uniqueSpanKeys[currentSpanNavIdx] || '';
+  cards.forEach(c => {
+    const idx = getCardSpanIdx(c);
+    const s = idx >= 0 ? currentSpans[idx] : null;
+    const cardKey = s ? (s.start + ':' + s.end) : '';
+    c.style.display = cardKey === curKey ? '' : 'none';
+  });
+
+  const [curStart] = (curKey || '0').split(':').map(Number);
+  const firstMatch = currentSpans.findIndex(s => s.start === curStart);
+  if (firstMatch >= 0) scrollToSpan(firstMatch);
+}
+
+btnPrevSpan.addEventListener('click', () => { btnPrev.click(); });
+btnNextSpan.addEventListener('click', () => { btnNext.click(); });
+
+// ─── Resize Handle (drag to resize right panel) ──
+{
+  let isColResizing = false;
+  panelResizeHandle.addEventListener('mousedown', e => {
+    isColResizing = true;
+    panelResizeHandle.classList.add('active');
+    document.body.classList.add('col-resizing');
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!isColResizing) return;
+    const containerRect = appContainer.getBoundingClientRect();
+    const minW = 280, maxW = containerRect.width * 0.65;
+    let newW = containerRect.right - e.clientX;
+    newW = Math.max(minW, Math.min(maxW, newW));
+    annotationsPanel.style.flex = `0 0 ${newW}px`;
+    annotationsPanel.style.maxWidth = `${newW}px`;
+  });
+  document.addEventListener('mouseup', () => {
+    if (!isColResizing) return;
+    isColResizing = false;
+    panelResizeHandle.classList.remove('active');
+    document.body.classList.remove('col-resizing');
+  });
+}
+
+// ─── Utilities ────────────────────────────────────
+function showToast(msg, isErr = false) {
+  toast.textContent = msg;
+  toast.className = 'toast' + (isErr ? ' error' : '');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+function escHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function fmtSize(b) { return b >= 10240 ? `${(b/1024).toFixed(0)}KB` : `${(b/1024).toFixed(1)}KB`; }
+
+// ─── Data Loading ─────────────────────────────────
+async function loadPrompts() {
+  const res = await fetch('/api/prompts');
+  const data = await res.json();
+  allPrompts = data.prompts;
+  dimensions = data.dimensions;
+  const totalSegs = allPrompts.reduce((sum, p) => sum + p.span_count, 0);
+  setupInfo.innerHTML = `<strong>${data.total}</strong> prompts · <strong>${totalSegs}</strong> segments · 9 Dimensions`;
+  rangeHint.textContent = `(1–${data.total})`;
+  inputRangeFrom.max = data.total;
+  inputRangeTo.max = data.total;
+  buildDimRefPanel();
+  buildPopupDimGrid();
+  buildDimFilterBar();
+}
+
+async function loadPromptDetail(pid) {
+  const res = await fetch(`/api/prompt/${encodeURIComponent(pid)}`);
+  const data = await res.json();
+  currentPromptFull = data.prompt;
+  currentSpans = data.annotations.spans || [];
+  currentNotes = data.annotations.notes || '';
+  annNotes.value = currentNotes;
+}
+
+// ─── Prompt List (Left) ──────────────────────────
+function renderPromptList(filter = '') {
+  const lf = filter.toLowerCase();
+  // Group by company
+  const groups = {};
+  rangePrompts.forEach((p, i) => {
+    if (filterAnnotatedOnly && !(p.span_count > 0)) return;
+    if (lf && !p.company.toLowerCase().includes(lf) && !(p.product||'').toLowerCase().includes(lf) && !p.filename.toLowerCase().includes(lf)) return;
+    if (!groups[p.company]) groups[p.company] = [];
+    groups[p.company].push({ ...p, _idx: i });
+  });
+
+  let html = '';
+  const sortedCompanies = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
+  for (const company of sortedCompanies) {
+    const items = groups[company];
+    html += `<div class="company-group-header" data-company="${escHtml(company)}">
+      <span class="company-group-name">${escHtml(company)}</span>
+      <span class="company-group-count">${items.length}</span>
+    </div>`;
+    for (const p of items) {
+      const active = p._idx === currentIndex ? 'active' : '';
+      const spanBadge = p.span_count > 0 ? `<span class="prompt-item-spans">${p.span_count} spans</span>` : '';
+      const catBadge = p.category ? `<span class="prompt-item-cat">${escHtml(p.category)}</span>` : '';
+      // Use product_label (set in audit_prompts.json) as the display name
+      const label = p.product_label || p.filename.replace(/\.(md|txt|ts|js|yaml|j2|py|mkd)$/i, '');
+      html += `<div class="prompt-item ${active}" data-idx="${p._idx}">
+        <div class="prompt-item-product">${escHtml(label)}</div>
+        <div class="prompt-item-meta">
+          <span>#${p.seq || p.index + 1}</span>
+          <span>${fmtSize(p.size_bytes)}</span>
+          ${p.date ? `<span>${escHtml(p.date)}</span>` : ''}
+          ${spanBadge} ${catBadge}
+        </div>
+      </div>`;
+    }
+  }
+  promptListItems.innerHTML = html || '<div style="padding:1rem;color:var(--text-muted);text-align:center;">No matches</div>';
+
+  // Click handlers
+  promptListItems.querySelectorAll('.prompt-item').forEach(el => {
+    el.addEventListener('click', async () => {
+      const idx = parseInt(el.dataset.idx);
+      if (idx !== currentIndex) { await autoSave(); currentIndex = idx; await loadAndRender(); }
+    });
+  });
+  // Toggle company groups
+  promptListItems.querySelectorAll('.company-group-header').forEach(el => {
+    el.addEventListener('click', () => {
+      let next = el.nextElementSibling;
+      const hidden = next && next.classList.contains('prompt-item') && next.style.display === 'none';
+      while (next && next.classList.contains('prompt-item')) {
+        next.style.display = hidden ? '' : 'none';
+        next = next.nextElementSibling;
+      }
+    });
+  });
+}
+
+// ─── Prompt Content (Center) ─────────────────────
+function renderPromptContent() {
+  if (!currentPromptFull) {
+    contentBody.innerHTML = '<div class="empty-state"><span class="empty-state-icon">📄</span><span class="empty-state-text">Loading…</span></div>';
+    return;
+  }
+  const p = currentPromptFull;
+  const titleLabel = p.product_label || p.filename.replace(/\.(md|txt|ts|js|yaml|j2|py|mkd)$/i, '');
+  contentTitle.innerHTML = `<span class="company-tag">[${escHtml(p.company)}]</span> ${escHtml(titleLabel)}`;
+
+  // Meta bar
+  let metaHtml = '';
+  if (p.date) metaHtml += `<span class="meta-chip">📅 ${escHtml(p.date)}</span>`;
+  metaHtml += `<span class="meta-chip">📐 ${fmtSize(p.size_bytes)}</span>`;
+  if (p.category) metaHtml += `<span class="meta-chip">📂 ${escHtml(p.category)}</span>`;
+  if (p.version) metaHtml += `<span class="meta-chip">v${escHtml(p.version)}</span>`;
+  promptMetaBar.innerHTML = metaHtml;
+
+  const text = p.content || '';
+  if (!text) { contentBody.innerHTML = '<div class="empty-state"><span class="empty-state-text">Empty prompt</span></div>'; return; }
+
+  const spans = currentSpans.map((s, i) => ({ ...s, _origIdx: i }));
+
+  if (spans.length === 0) {
+    contentBody.innerHTML = `<div class="prompt-text-display" id="promptTextDisplay">${escHtml(text)}</div>`;
+    updateDimFilterCounts();
+    return;
+  }
+
+  // === Atomic-segment approach: split at every span boundary ===
+  const bSet = new Set();
+  spans.forEach(s => { bSet.add(s.start); bSet.add(s.end); });
+  const boundaries = [...bSet].sort((a, b) => a - b);
+
+  // Track which spans end at each position (for placing dim-tag badges)
+  const endMap = {};
+  spans.forEach(s => { (endMap[s.end] = endMap[s.end] || []).push(s); });
+
+  let html = '', cursor = 0;
+
+  for (let i = 0; i < boundaries.length; i++) {
+    const segStart = boundaries[i];
+    const segEnd = (i + 1 < boundaries.length) ? boundaries[i + 1] : null;
+
+    // Plain text gap before this boundary
+    if (segStart > cursor) {
+      html += escHtml(text.slice(cursor, segStart));
+      cursor = segStart;
+    }
+
+    if (segEnd === null) break;
+    if (segStart >= segEnd) continue;
+
+    // Find all spans covering this atomic segment [segStart, segEnd)
+    const covering = spans.filter(s => s.start <= segStart && s.end >= segEnd);
+
+    if (covering.length === 0) {
+      html += escHtml(text.slice(segStart, segEnd));
+      cursor = segEnd;
+      continue;
+    }
+
+    // Unique dimensions in this segment
+    const dimMap = new Map();
+    covering.forEach(s => {
+      if (!dimMap.has(s.dimension)) dimMap.set(s.dimension, []);
+      dimMap.get(s.dimension).push(s);
+    });
+    const uniqueDims = [...dimMap.keys()];
+    const isOverlap = uniqueDims.length > 1;
+    const colors = uniqueDims.map(d => dimColor(d));
+
+    const allPending = covering.every(s => s.source === 'llm' && !s.reviewed);
+    const anyPending = covering.some(s => s.source === 'llm' && !s.reviewed);
+
+    // Dim filter visibility
+    let visible;
+    if (activeDimFilter === 'ALL') visible = true;
+    else if (activeDimFilter === 'PENDING') visible = anyPending;
+    else visible = uniqueDims.includes(activeDimFilter);
+    const dimHidden = !visible ? ' dim-hidden' : '';
+
+    // Build inline style: dimension-colored underlines
+    let style = '';
+    if (isOverlap) {
+      // Multi-colored stacked underlines via box-shadow — very light background
+      const shadows = colors.map((c, idx) =>
+        `0 ${2 + idx * 3}px 0 0 ${c}88`
+      ).join(', ');
+      style = `box-shadow: ${shadows}; padding-bottom: ${colors.length * 3}px; background: ${colors[0]}08;`;
+    } else {
+      // Single dimension color — subtle underline, minimal background
+      const c = colors[0];
+      const dashStyle = allPending ? 'dashed' : 'solid';
+      style = `border-bottom: 2px ${dashStyle} ${c}99; background: ${c}08;`;
+    }
+
+    // Build title tooltip
+    const titleParts = covering.map(s => {
+      const sl = s.score > 0 ? '+1' : s.score < 0 ? '-1' : '0';
+      return `${s.dimension}: ${sl}`;
+    });
+    const titleStr = [...new Set(titleParts)].join(' | ');
+
+    // Class names
+    const overlapCls = isOverlap ? 'dim-overlap' : 'dim-colored';
+    const pendingCls = allPending ? 'pending-review' : '';
+    const scoreCls = allPending ? '' : (covering.some(s => s.score === -1) ? '' : covering.some(s => s.score === 1) ? '' : '');
+
+    const allIndices = covering.map(s => s._origIdx);
+    html += `<span class="annotated-span ${overlapCls} ${pendingCls}${dimHidden}" style="${style}" data-span-idx="${allIndices[0]}" data-span-indices="${allIndices.join(',')}" data-span-dims="${uniqueDims.join(',')}" title="${titleStr}">`;
+    html += escHtml(text.slice(segStart, segEnd));
+
+    // Place dim-tag badges at the end boundary of each original span
+    const endingHere = endMap[segEnd];
+    if (endingHere) {
+      endingHere.forEach(s => {
+        const c = dimColor(s.dimension);
+        const scoreIcon = s.score === 1 ? '↑' : s.score === -1 ? '↓' : '·';
+        const label = (s.source === 'llm' && !s.reviewed) ? s.dimension : `${s.dimension}${scoreIcon}`;
+        html += `<span class="dim-tag" style="background:${c}" data-span-idx="${s._origIdx}">${label}</span>`;
+      });
+    }
+
+    html += `</span>`;
+    cursor = segEnd;
+  }
+
+  // Trailing text after last boundary
+  if (cursor < text.length) html += escHtml(text.slice(cursor));
+  contentBody.innerHTML = `<div class="prompt-text-display" id="promptTextDisplay">${html}</div>`;
+
+  // Click handler: pending spans → scroll to corresponding card in right panel
+  contentBody.querySelectorAll('.annotated-span.pending-review').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(el.dataset.spanIdx);
+      const card = annBody.querySelector(`.annotation-card[data-idx="${idx}"]`);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.style.outline = '2px solid var(--accent)';
+        setTimeout(() => card.style.outline = '', 1500);
+      }
+    });
+  });
+
+  updateDimFilterCounts();
+}
+
+// Helper: find the first annotated-span element in the content that covers a given span index
+function findSpanElement(spanIdx) {
+  const all = document.querySelectorAll('.annotated-span[data-span-indices]');
+  for (const el of all) {
+    const indices = el.dataset.spanIndices.split(',').map(Number);
+    if (indices.includes(spanIdx)) return el;
+  }
+  // Fallback: try direct data-span-idx match
+  return document.querySelector(`.annotated-span[data-span-idx="${spanIdx}"]`);
+}
+
+function scrollToSpan(spanIdx) {
+  const el = findSpanElement(spanIdx);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.style.outline = '2px solid var(--accent)';
+    setTimeout(() => el.style.outline = '', 1500);
+  }
+  return el;
+}
+
+// ─── Annotations (Right) ─────────────────────────
+function renderAnnotations() {
+  const allIndexed = currentSpans.map((s, i) => ({ ...s, _idx: i }));
+  const pendingSpans = allIndexed.filter(s => s.source === 'llm' && !s.reviewed);
+  const reviewedSpans = allIndexed.filter(s => s.reviewed);
+
+  // Filter
+  let filteredPending, filteredReviewed;
+  if (activeDimFilter === 'ALL') {
+    filteredPending = pendingSpans; filteredReviewed = reviewedSpans;
+  } else if (activeDimFilter === 'PENDING') {
+    filteredPending = pendingSpans; filteredReviewed = [];
+  } else {
+    filteredPending = pendingSpans.filter(s => s.dimension === activeDimFilter);
+    filteredReviewed = reviewedSpans.filter(s => s.dimension === activeDimFilter);
+  }
+
+  // ── Helper: full dimension name ──
+  const dimName = k => { const d = dimensions.find(x => x.key === k); return d ? d.name : k; };
+
+  // ── Group pending spans by identical start:end ──
+  const pendingGroupMap = new Map();
+  filteredPending.forEach(s => {
+    const key = `${s.start}:${s.end}`;
+    if (!pendingGroupMap.has(key)) pendingGroupMap.set(key, []);
+    pendingGroupMap.get(key).push(s);
+  });
+
+  // Count (show both span count and card count when grouped)
+  const pendingCount = pendingSpans.length, reviewedCount = reviewedSpans.length;
+  const pendingCardCount = pendingGroupMap.size;
+  const totalCardCount = pendingCardCount + filteredReviewed.length;
+  if (activeDimFilter === 'ALL') {
+    if (pendingCount > 0) {
+      const spanTotal = reviewedCount + pendingCount;
+      annCount.innerHTML = `${reviewedCount} reviewed · ${pendingCount} pending` +
+        (totalCardCount < spanTotal ? ` <span style="font-size:0.65rem;opacity:0.7;">(${totalCardCount} cards)</span>` : '');
+    } else {
+      annCount.textContent = currentSpans.length;
+    }
+  } else if (activeDimFilter === 'PENDING') {
+    annCount.innerHTML = `${filteredPending.length} pending` +
+      (pendingCardCount < filteredPending.length ? ` <span style="font-size:0.65rem;opacity:0.7;">(${pendingCardCount} cards)</span>` : '');
+  } else {
+    const dp = filteredPending.length, dr = filteredReviewed.length;
+    const cardCnt = pendingCardCount + dr;
+    if (dp > 0) {
+      annCount.innerHTML = `${dr} reviewed · ${dp} pending` +
+        (cardCnt < dp + dr ? ` <span style="font-size:0.65rem;opacity:0.7;">(${cardCnt} cards)</span>` : '');
+    } else {
+      annCount.textContent = `${dr + dp}`;
+    }
+  }
+
+  if (filteredPending.length + filteredReviewed.length === 0) {
+    const msg = activeDimFilter === 'PENDING' ? 'No pending spans' :
+                currentSpans.length === 0 ? 'No annotations yet' :
+                `No ${activeDimFilter} annotations`;
+    annBody.innerHTML = `<div class="empty-state"><span class="empty-state-icon">✨</span><span class="empty-state-text">${msg}</span><span class="empty-state-sub">Select text in the prompt to add one</span></div>`;
+    return;
+  }
+
+  let html = '';
+
+  // ── Render grouped pending cards ──
+  pendingGroupMap.forEach((group, key) => {
+    const first = group[0];
+    const allIndices = group.map(g => g._idx);
+    // Collect all dims already in this group (LLM-suggested)
+    const groupDimKeys = group.map(g => g.dimension);
+
+    // Text preview (shared)
+    const textPreview = escHtml(first.text);
+
+    // Build per-dimension rows
+    let dimRows = '';
+    group.forEach(s => {
+    const i = s._idx;
+      const color = dimColor(s.dimension);
+      const scoreOpts = [
+        { v: 1, label: '👍 +1', cls: 'positive' },
+        { v: -1, label: '👎 −1', cls: 'negative' },
+      ];
+      const scoreBtns = scoreOpts.map(o =>
+        `<button class="card-score-btn ${o.cls}${s.score === o.v ? ' selected' : ''}" data-idx="${i}" data-score="${o.v}">${o.label}</button>`
+      ).join('');
+
+      dimRows += `<div class="group-dim-entry" data-idx="${i}" style="border-left:3px solid ${color};padding:0.3rem 0.5rem;margin-bottom:0.3rem;border-radius:0 6px 6px 0;background:rgba(255,255,255,0.03);">
+        <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;">
+          <span class="annotation-dim-badge" style="background:${color};font-size:0.62rem;padding:0.1rem 0.4rem;">${s.dimension} ${dimName(s.dimension)}</span>
+          <span style="font-size:0.55rem;color:var(--text-muted);">🤖 LLM</span>
+        </div>
+        ${s.note ? `<div style="font-size:0.6rem;color:var(--text-muted);margin-top:0.15rem;font-style:italic;">💬 ${escHtml(s.note)}</div>` : ''}
+        ${s.score === 0 ? `<div style="font-size:0.58rem;color:var(--neutral);margin-top:0.2rem;font-weight:600;">⚠️ LLM unsure — please select +1 or -1</div>` : ''}
+        <div style="display:flex;gap:0.2rem;margin-top:0.25rem;">${scoreBtns}</div>
+        <div class="dim-action-row" data-idx="${i}" style="display:flex;gap:0.3rem;margin-top:0.25rem;">
+          <button class="dim-accept-btn" data-idx="${i}">✓ Accept</button>
+          <button class="dim-reject-btn" data-idx="${i}">✕ Reject</button>
+        </div>
+      </div>`;
+    });
+
+    // "Add dimension" section — column layout with select-then-add flow
+    const availableDims = dimensions.filter(d => !groupDimKeys.includes(d.key) && d.key !== 'D9');
+    let dimTableRows = availableDims.map(d => {
+      const dc = dimColor(d.key);
+      return `<div class="card-add-dim-row" data-group-key="${key}" data-dim="${d.key}" style="display:flex;align-items:center;gap:0.3rem;padding:0.2rem 0;border-bottom:1px solid rgba(44,44,64,0.3);cursor:pointer;border-radius:4px;" title="Click to select">
+        <span style="flex:1;font-size:0.62rem;color:var(--text-muted);"><span style="color:${dc};font-weight:600;">${d.key}</span> ${dimName(d.key)}</span>
+      </div>`;
+    }).join('');
+
+    html += `<div class="annotation-card pending-review grouped-card" data-group-key="${key}" data-group-indices="${allIndices.join(',')}">
+      <div class="annotation-card-header" style="justify-content:space-between;">
+        <span class="pending-label">📋 Pending · ${group.length} dimension${group.length > 1 ? 's' : ''}</span>
+      </div>
+      <div class="annotation-text" data-first-idx="${first._idx}" style="cursor:pointer;">${textPreview}</div>
+      <div style="margin-top:0.4rem;">${dimRows}</div>
+      <div class="card-extra-dim-section" data-group-key="${key}" style="border-top:1px solid var(--border);margin-top:0.35rem;padding-top:0.3rem;">
+        <div style="font-size:0.62rem;color:var(--accent);margin-bottom:0.3rem;font-weight:600;">📝 Add other dimensions? (optional)</div>
+        <div class="card-add-dim-list" data-group-key="${key}" style="margin-bottom:0.3rem;">${dimTableRows}
+          <div class="card-add-dim-row" data-group-key="${key}" data-dim="Misc" style="display:flex;align-items:center;gap:0.3rem;padding:0.2rem 0;cursor:pointer;border-radius:4px;" title="Click to select">
+            <span style="flex:1;font-size:0.62rem;color:#94a3b8;font-weight:600;">Misc</span>
+          </div>
+        </div>
+        <div class="card-add-controls" data-group-key="${key}" style="display:none;background:var(--bg-dark);border:1px solid var(--border);border-radius:6px;padding:0.4rem;margin-bottom:0.3rem;">
+          <div style="font-size:0.62rem;color:var(--accent-light);font-weight:600;margin-bottom:0.3rem;" class="card-add-selected-label"></div>
+          <div class="card-add-score-row" style="display:flex;gap:0.3rem;margin-bottom:0.3rem;">
+            <button class="card-add-score-btn positive" data-group-key="${key}" data-score="1" style="flex:1;padding:0.25rem 0;font-size:0.68rem;border-radius:5px;cursor:pointer;border:1.5px solid var(--positive);background:var(--positive-bg);color:var(--positive);font-weight:600;text-align:center;">+1</button>
+            <button class="card-add-score-btn negative" data-group-key="${key}" data-score="-1" style="flex:1;padding:0.25rem 0;font-size:0.68rem;border-radius:5px;cursor:pointer;border:1.5px solid var(--negative);background:var(--negative-bg);color:var(--negative);font-weight:600;text-align:center;">-1</button>
+          </div>
+          <input type="text" class="card-add-note-input" data-group-key="${key}" placeholder="Comment (optional)..." style="width:100%;padding:0.25rem 0.4rem;font-size:0.62rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);font-family:inherit;margin-bottom:0.3rem;" />
+          <button class="card-add-confirm-btn" data-group-key="${key}" style="width:100%;font-size:0.68rem;padding:0.25rem 0;border-radius:5px;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:600;">✓ Add</button>
+        </div>
+        <div style="display:flex;gap:0.35rem;margin-top:0.35rem;">
+          <button class="btn-finish-card" data-group-key="${key}" style="flex:1;padding:0.35rem 0;font-size:0.72rem;border-radius:6px;cursor:pointer;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text-secondary);font-weight:600;">✅ Done</button>
+          <button class="btn-need-second-review" data-group-key="${key}" style="flex:1;padding:0.35rem 0;font-size:0.72rem;border-radius:6px;cursor:pointer;border:1px solid #f59e0b;background:rgba(245,158,11,0.08);color:#f59e0b;font-weight:600;">🔄 Need Second Review</button>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  // ── Group reviewed cards by identical start:end ──
+  const reviewedGroupMap = new Map();
+  filteredReviewed.forEach(s => {
+    const key = `${s.start}:${s.end}`;
+    if (!reviewedGroupMap.has(key)) reviewedGroupMap.set(key, []);
+    reviewedGroupMap.get(key).push(s);
+  });
+
+  reviewedGroupMap.forEach((group, key) => {
+    const first = group[0];
+    const hasFlag = group.some(s => s.need_second_review);
+    const allIndices = group.map(g => g._idx);
+    let dimRows = '';
+    group.forEach(s => {
+      const cls = s.rejected ? 'negative' : s.score === 1 ? 'positive' : s.score === -1 ? 'negative' : 'neutral';
+      const color = dimColor(s.dimension);
+      const label = s.rejected ? '✕ Rejected' : s.score === 1 ? '+1 Good' : s.score === -1 ? '−1 Violation' : '0 Neutral';
+      const sourceBadge = s.source === 'llm'
+        ? '<span class="annotation-source-badge llm">🤖 LLM</span>'
+        : '<span class="annotation-source-badge human">👤 Human</span>';
+      const flagBadge = s.need_second_review
+        ? '<span style="font-size:0.58rem;color:#f59e0b;font-weight:600;margin-left:0.3rem;">🔄 Flagged</span>'
+        : '';
+      dimRows += `<div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;padding:0.15rem 0;border-left:3px solid ${color};padding-left:0.5rem;margin-bottom:0.2rem;border-radius:0 4px 4px 0;">
+        <span class="annotation-dim-badge" style="background:${color};font-size:0.62rem;padding:0.1rem 0.4rem;">${s.dimension} ${dimName(s.dimension)}</span>
+        ${sourceBadge}<span class="annotation-score-badge ${cls}" style="font-size:0.58rem;">${label}</span>${flagBadge}
+        ${s.note ? `<span style="font-size:0.55rem;color:var(--text-muted);font-style:italic;">💬 ${escHtml(s.note)}</span>` : ''}
+      </div>`;
+    });
+    html += `<div class="annotation-card" data-idx="${first._idx}" data-group-indices="${allIndices.join(',')}"${hasFlag ? ' style="border-left:3px solid #f59e0b;"' : ''}>
+      <div class="annotation-card-header">
+        <span style="font-size:0.62rem;color:var(--text-muted);">${group.every(s => s.rejected) ? '✕ All Rejected' : '✅ Reviewed'} · ${group.length} dimension${group.length > 1 ? 's' : ''}</span>
+      </div>
+      <div class="annotation-text">${escHtml(first.text)}</div>
+      <div style="margin-top:0.3rem;">${dimRows}</div>
+    </div>`;
+  });
+
+  annBody.innerHTML = html;
+
+  // ═══ Event Handlers ═══
+
+  // (No delete button on reviewed cards — data is preserved)
+
+  // ── Score change (per-dimension row in grouped card) ──
+  annBody.querySelectorAll('.card-score-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      if (currentSpans[idx]) {
+        currentSpans[idx].score = parseInt(btn.dataset.score);
+        autoSave();
+      }
+      const row = btn.closest('.group-dim-entry') || btn.closest('.annotation-card');
+      row.querySelectorAll('.card-score-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+  });
+
+  // ── Helper: update finish button state based on whether all dims are handled ──
+  function updateFinishBtnState(card) {
+    const allRows = card.querySelectorAll('.group-dim-entry');
+    const allHandled = [...allRows].every(r => r.dataset.accepted === 'true' || r.dataset.rejected === 'true');
+    const finishBtn = card.querySelector('.btn-finish-card');
+    const reviewBtn = card.querySelector('.btn-need-second-review');
+    if (allHandled) {
+      if (finishBtn) {
+        finishBtn.style.background = 'var(--positive)';
+        finishBtn.style.color = '#fff';
+        finishBtn.style.borderColor = 'var(--positive)';
+        finishBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (reviewBtn) {
+        reviewBtn.style.background = 'rgba(245,158,11,0.15)';
+        reviewBtn.style.borderColor = '#f59e0b';
+      }
+    } else {
+      if (finishBtn) {
+        finishBtn.style.background = 'var(--bg-elevated)';
+        finishBtn.style.color = 'var(--text-secondary)';
+        finishBtn.style.borderColor = 'var(--border)';
+      }
+      if (reviewBtn) {
+        reviewBtn.style.background = 'rgba(245,158,11,0.08)';
+        reviewBtn.style.borderColor = '#f59e0b';
+      }
+    }
+  }
+
+  // ── Helper: revoke accept/reject — restore original buttons ──
+  function revokeDecision(row) {
+    const idx = parseInt(row.dataset.idx);
+    const span = currentSpans[idx];
+    if (!span) return;
+    const color = dimColor(span.dimension);
+
+    // Clear states
+    delete row.dataset.accepted;
+    delete row.dataset.rejected;
+    delete row.dataset.rejectIdx;
+    row.style.background = 'rgba(255,255,255,0.03)';
+    row.style.opacity = '1';
+
+    // Re-enable score buttons
+    row.querySelectorAll('.card-score-btn').forEach(b => { b.disabled = false; b.style.opacity = '1'; });
+
+    // Restore action row with Accept/Reject buttons
+    const actionRow = row.querySelector('.dim-action-row');
+    if (actionRow) {
+      actionRow.innerHTML = `
+        <button class="dim-accept-btn" data-idx="${idx}">✓ Accept</button>
+        <button class="dim-reject-btn" data-idx="${idx}">✕ Reject</button>`;
+      // Re-bind events on new buttons
+      actionRow.querySelector('.dim-accept-btn').addEventListener('click', e => { e.stopPropagation(); handleAccept(row, idx); });
+      actionRow.querySelector('.dim-reject-btn').addEventListener('click', e => { e.stopPropagation(); handleReject(row, idx); });
+    }
+
+    // Update finish button state
+    const card = row.closest('.grouped-card');
+    if (card) updateFinishBtnState(card);
+    autoSave();
+  }
+
+  // ── Accept handler ──
+  function handleAccept(row, idx) {
+    const span = currentSpans[idx];
+    if (!span) return;
+
+    // Validate: score must be +1 or -1, not 0
+    if (span.score === 0 || (span.score !== 1 && span.score !== -1)) {
+      showToast('Please select +1 or -1 before accepting', true);
+      return;
+    }
+
+    const actionRow = row.querySelector('.dim-action-row');
+    if (actionRow) {
+      actionRow.innerHTML = `<div style="display:flex;align-items:center;gap:0.4rem;">
+        <span style="color:var(--positive);font-size:0.64rem;font-weight:600;">✓ Accepted ${span.dimension}</span>
+        <button class="btn-revoke" data-idx="${idx}" style="font-size:0.58rem;padding:0.1rem 0.35rem;border-radius:4px;cursor:pointer;border:1px solid var(--border);background:var(--bg-dark);color:var(--text-muted);font-family:inherit;">↩ Undo</button>
+      </div>`;
+      actionRow.querySelector('.btn-revoke').addEventListener('click', e => { e.stopPropagation(); revokeDecision(row); });
+    }
+    row.style.background = 'rgba(74,222,128,0.06)';
+    row.dataset.accepted = 'true';
+    delete row.dataset.rejected;
+
+    // Lock score buttons
+    row.querySelectorAll('.card-score-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+
+    const card = row.closest('.grouped-card');
+    if (card) updateFinishBtnState(card);
+  }
+
+  // ── Reject handler ──
+  function handleReject(row, idx) {
+    const span = currentSpans[idx];
+    if (!span) return;
+
+    const actionRow = row.querySelector('.dim-action-row');
+    if (actionRow) {
+      actionRow.innerHTML = `<div style="display:flex;align-items:center;gap:0.4rem;">
+        <span style="color:var(--negative);font-size:0.64rem;font-weight:600;">✕ Rejected ${span.dimension}</span>
+        <button class="btn-revoke" data-idx="${idx}" style="font-size:0.58rem;padding:0.1rem 0.35rem;border-radius:4px;cursor:pointer;border:1px solid var(--border);background:var(--bg-dark);color:var(--text-muted);font-family:inherit;">↩ Undo</button>
+      </div>`;
+      actionRow.querySelector('.btn-revoke').addEventListener('click', e => { e.stopPropagation(); revokeDecision(row); });
+    }
+    row.style.background = 'rgba(248,113,113,0.06)';
+    row.style.opacity = '0.5';
+    row.dataset.rejected = 'true';
+    row.dataset.rejectIdx = idx;
+    delete row.dataset.accepted;
+
+    // Lock score buttons
+    row.querySelectorAll('.card-score-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.3'; });
+
+    const card = row.closest('.grouped-card');
+    if (card) updateFinishBtnState(card);
+  }
+
+  // ── Bind Accept buttons ──
+  annBody.querySelectorAll('.dim-accept-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      const row = btn.closest('.group-dim-entry');
+      handleAccept(row, idx);
+    });
+  });
+
+  // ── Bind Reject buttons ──
+  annBody.querySelectorAll('.dim-reject-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      const row = btn.closest('.group-dim-entry');
+      handleReject(row, idx);
+    });
+  });
+
+  // ── Add-dim: select dimension from list ──
+  let pendingAddDim = {};
+  let pendingAddScore = {};
+  annBody.querySelectorAll('.card-add-dim-row').forEach(row => {
+    row.addEventListener('click', e => {
+      e.stopPropagation();
+      if (row.dataset.added === 'true') return;
+      const gk = row.dataset.groupKey;
+      const dim = row.dataset.dim;
+      const card = row.closest('.annotation-card');
+      const controls = card.querySelector('.card-add-controls');
+      const label = controls.querySelector('.card-add-selected-label');
+      const scoreRow = controls.querySelector('.card-add-score-row');
+      const noteInput = controls.querySelector('.card-add-note-input');
+
+      // Toggle: click again to deselect
+      if (pendingAddDim[gk] === dim) {
+        pendingAddDim[gk] = null;
+        pendingAddScore[gk] = null;
+        row.style.background = '';
+        controls.style.display = 'none';
+        return;
+      }
+
+      // Deselect previous
+      card.querySelectorAll('.card-add-dim-row').forEach(r => { r.style.background = ''; });
+      pendingAddDim[gk] = dim;
+      pendingAddScore[gk] = null;
+      const dc = dim === 'Misc' ? '#94a3b8' : dimColor(dim);
+      row.style.background = `${dc}18`;
+
+      // Show controls
+      controls.style.display = '';
+      label.textContent = dim === 'Misc' ? 'Misc — note required' : `${dim} ${dimName(dim)}`;
+      label.style.color = dc;
+
+      // Misc: hide score buttons, show only note
+      if (dim === 'Misc') {
+        scoreRow.style.display = 'none';
+        noteInput.placeholder = 'Note (required for Misc)...';
+      } else {
+        scoreRow.style.display = 'flex';
+        noteInput.placeholder = 'Comment (optional)...';
+      }
+      controls.querySelectorAll('.card-add-score-btn').forEach(b => b.classList.remove('selected'));
+    });
+  });
+
+  // ── Add-dim: select score (+1/-1 toggle) ──
+  annBody.querySelectorAll('.card-add-score-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const gk = btn.dataset.groupKey;
+      const card = btn.closest('.annotation-card');
+      if (btn.classList.contains('selected')) {
+        btn.classList.remove('selected');
+        pendingAddScore[gk] = null;
+      } else {
+        card.querySelectorAll('.card-add-score-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        pendingAddScore[gk] = parseInt(btn.dataset.score);
+      }
+    });
+  });
+
+  // ── Add-dim: confirm ──
+  annBody.querySelectorAll('.card-add-confirm-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const gk = btn.dataset.groupKey;
+      const dim = pendingAddDim[gk];
+      const score = pendingAddScore[gk];
+      const card = btn.closest('.annotation-card');
+      const noteInput = card.querySelector('.card-add-note-input');
+      const note = noteInput ? noteInput.value.trim() : '';
+
+      if (!dim) { showToast('Please select a dimension first', true); return; }
+      if (dim === 'Misc') {
+        if (!note) { showToast('Please add a note for Misc', true); return; }
+      } else {
+        if (score === null || score === undefined) { showToast('Please select +1 or -1', true); return; }
+      }
+
+      const indices = card.dataset.groupIndices.split(',').map(Number);
+      const ref = currentSpans[indices[0]];
+      currentSpans.push({
+        start: ref.start, end: ref.end, text: ref.text,
+        dimension: dim, score: dim === 'Misc' ? 0 : score, note: note,
+        source: 'human', reviewed: true,
+      });
+      autoSave();
+
+      // Mark the row as added
+      const dimRow = card.querySelector(`.card-add-dim-row[data-dim="${dim}"]`);
+      if (dimRow) {
+        const dc = dim === 'Misc' ? '#94a3b8' : dimColor(dim);
+        const sl = dim === 'Misc' ? 'note' : (score === 1 ? '+1' : '-1');
+        const origDimHtml = dimRow.innerHTML;
+        dimRow.innerHTML = `<span style="flex:1;font-size:0.6rem;color:${dc};font-weight:600;">${dim} ${sl} ✓</span><button class="btn-undo-extra" style="font-size:0.54rem;padding:0.08rem 0.3rem;border-radius:3px;cursor:pointer;border:1px solid var(--border);background:var(--bg-dark);color:var(--text-muted);font-family:inherit;">↩</button>`;
+        dimRow.style.background = '';
+        dimRow.style.cursor = 'default';
+        dimRow.dataset.added = 'true';
+        dimRow.querySelector('.btn-undo-extra').addEventListener('click', ev => {
+          ev.stopPropagation();
+          for (let ri = currentSpans.length - 1; ri >= 0; ri--) {
+            const rs = currentSpans[ri];
+            if (rs.start === ref.start && rs.end === ref.end && rs.dimension === dim && rs.source === 'human') {
+              currentSpans.splice(ri, 1); break;
+            }
+          }
+          autoSave();
+          dimRow.innerHTML = origDimHtml;
+          dimRow.style.cursor = 'pointer';
+          delete dimRow.dataset.added;
+          showToast('↩ Removed ' + dim);
+        });
+      }
+
+      // Reset controls
+      const controls = card.querySelector('.card-add-controls');
+      controls.style.display = 'none';
+      card.querySelectorAll('.card-add-score-btn').forEach(b => b.classList.remove('selected'));
+      if (noteInput) noteInput.value = '';
+      pendingAddDim[gk] = null;
+      pendingAddScore[gk] = null;
+      showToast(`✓ Added ${dim}`);
+    });
+  });
+
+  // ── Shared finish-card logic (used by Done and Need Second Review) ──
+  async function finishCard(btn, needSecondReview) {
+    const card = btn.closest('.grouped-card');
+    const allRows = card.querySelectorAll('.group-dim-entry');
+
+    // Check that all LLM dims have been handled
+    const unhandled = [...allRows].filter(r => r.dataset.accepted !== 'true' && r.dataset.rejected !== 'true');
+    if (unhandled.length > 0) {
+      showToast('Please Accept or Reject all dimensions first', true);
+      return;
+    }
+
+    // Collect accepted and rejected dimension keys
+    const acceptedDims = new Set();
+    const rejectedDims = new Set();
+    allRows.forEach(r => {
+      const idx = parseInt(r.dataset.idx);
+      const span = currentSpans[idx];
+      if (!span) return;
+      if (r.dataset.accepted === 'true') acceptedDims.add(span.dimension);
+      else if (r.dataset.rejected === 'true') rejectedDims.add(span.dimension);
+    });
+
+    // Get the text range of this group (from first span in group)
+    const groupIndices = card.dataset.groupIndices.split(',').map(Number);
+    const refSpan = currentSpans[groupIndices[0]];
+    if (!refSpan) return;
+    const groupStart = refSpan.start, groupEnd = refSpan.end;
+
+    // Mark accepted/rejected spans + set need_second_review flag
+    for (let i = currentSpans.length - 1; i >= 0; i--) {
+      const s = currentSpans[i];
+      if (s.start === groupStart && s.end === groupEnd && s.source === 'llm' && !s.reviewed) {
+        if (acceptedDims.has(s.dimension)) {
+          s.reviewed = true;
+        } else if (rejectedDims.has(s.dimension)) {
+          s.reviewed = true;
+          s.rejected = true;
+        }
+        if (needSecondReview) s.need_second_review = true;
+      }
+    }
+
+    // Also mark any human-added spans at same range as reviewed
+    currentSpans.forEach(s => {
+      if (s.start === groupStart && s.end === groupEnd && s.source === 'human' && !s.reviewed) {
+        s.reviewed = true;
+        if (needSecondReview) s.need_second_review = true;
+      }
+    });
+
+    // Hide the button row wrapper
+    const btnRow = card.querySelector('.btn-finish-card').parentNode;
+    btnRow.style.display = 'none';
+
+    // Replace with status + Next row (inserted after the wrapper)
+    const statusLabel = needSecondReview ? '🔄 Flagged' : '✓ Done';
+    const statusColor = needSecondReview ? '#f59e0b' : 'var(--positive)';
+    const doneRow = document.createElement('div');
+    doneRow.style.cssText = 'display:flex;gap:0.4rem;margin-top:0.35rem;align-items:center;';
+    doneRow.innerHTML = `
+      <span style="color:${statusColor};font-size:0.72rem;font-weight:600;flex:0 0 auto;">${statusLabel}</span>
+      <button class="btn-inline-next" style="flex:1;padding:0.35rem 0;font-size:0.78rem;border-radius:6px;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:white;font-weight:600;font-family:inherit;">Next (→)</button>
+    `;
+    btnRow.parentNode.insertBefore(doneRow, btnRow.nextSibling);
+
+    doneRow.querySelector('.btn-inline-next').addEventListener('click', async ev => {
+      ev.stopPropagation();
+      renderPromptContent(); renderAnnotations();
+      let foundPending = false;
+      for (let ki = 0; ki < uniqueSpanKeys.length; ki++) {
+        const [kS, kE] = uniqueSpanKeys[ki].split(':').map(Number);
+        const hasPending = currentSpans.some(s => s.start === kS && s.end === kE && s.source === 'llm' && !s.reviewed);
+        if (hasPending) {
+          currentSpanNavIdx = ki;
+          updateSpanNav(); updateGlobalNav();
+          foundPending = true;
+          break;
+        }
+      }
+      if (!foundPending) {
+        if (currentIndex < rangePrompts.length - 1) {
+          await autoSave();
+          currentIndex++;
+          await loadAndRender();
+        }
+      }
+    });
+
+    allRows.forEach(r => { r.style.pointerEvents = 'none'; r.style.opacity = '0.6'; });
+
+    renderPromptContent();
+    await autoSave(); updateExportButton();
+  }
+
+  // ── Finish card: Done button ──
+  annBody.querySelectorAll('.btn-finish-card').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); finishCard(btn, false); });
+  });
+
+  // ── Finish card: Need Second Review button ──
+  annBody.querySelectorAll('.btn-need-second-review').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); finishCard(btn, true); });
+  });
+
+  // ── Card-level Next button ──
+  annBody.querySelectorAll('.btn-card-next').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); btnNext.click(); });
+  });
+
+
+  // ── Click reviewed cards → scroll to span ──
+  annBody.querySelectorAll('.annotation-card:not(.pending-review)').forEach(card => {
+    card.addEventListener('click', () => scrollToSpan(parseInt(card.dataset.idx)));
+  });
+
+  // ── Click pending card text → scroll to span in content ──
+  annBody.querySelectorAll('.grouped-card .annotation-text').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      scrollToSpan(parseInt(el.dataset.firstIdx));
+    });
+  });
+
+  // Update span navigation
+  updateSpanNav();
+}
+
+// ─── Dimension Reference ─────────────────────────
+function buildDimRefPanel() {
+  let html = '';
+  dimensions.forEach((d, i) => {
+    html += `<div class="dim-ref-item" data-dim="${d.key}">
+      <span class="dim-ref-key" style="background:${DIM_COLORS[i]}">${d.key}</span>
+      <span class="dim-ref-name">${d.name}</span>
+    </div>`;
+  });
+  dimRefList.innerHTML = html;
+
+  dimRefList.querySelectorAll('.dim-ref-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      const dim = dimensions.find(d => d.key === el.dataset.dim);
+      if (!dim) return;
+      $('dimTooltipKey').textContent = dim.key;
+      $('dimTooltipName').textContent = dim.name;
+      $('dimTooltipDef').textContent = dim.definition;
+      const r = el.getBoundingClientRect();
+      dimTooltip.style.left = Math.max(8, r.left - 370) + 'px';
+      dimTooltip.style.top = r.top + 'px';
+      dimTooltip.classList.add('show');
+    });
+    el.addEventListener('mouseleave', () => dimTooltip.classList.remove('show'));
+  });
+}
+
+// ─── Dimension Filter Bar ─────────────────────────
+function buildDimFilterBar() {
+  let html = `<button class="dim-filter-btn active" data-dim="ALL" style="background:var(--accent)">ALL</button>`;
+  html += `<button class="dim-filter-btn" data-dim="PENDING" style="">📋 Pending</button>`;
+  dimFilterBar.innerHTML = html;
+
+  dimFilterBar.querySelectorAll('.dim-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeDimFilter = btn.dataset.dim;
+      dimFilterBar.querySelectorAll('.dim-filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.style.background = '';
+      });
+      btn.classList.add('active');
+      btn.style.background = 'var(--accent)';
+      renderPromptContent();
+      renderAnnotations();
+    });
+  });
+}
+
+function updateDimFilterCounts() {
+  const pending = currentSpans.filter(s => s.source === 'llm' && !s.reviewed);
+  const reviewed = currentSpans.filter(s => !(s.source === 'llm' && !s.reviewed));
+
+  const pendingGroups = new Set();
+  pending.forEach(s => pendingGroups.add(`${s.start}:${s.end}`));
+  const cardCount = pendingGroups.size + reviewed.length;
+
+  dimFilterBar.querySelectorAll('.dim-filter-btn').forEach(btn => {
+    const dim = btn.dataset.dim;
+    let count, label;
+    if (dim === 'ALL') {
+      count = cardCount;
+      label = 'ALL';
+    } else {
+      count = pendingGroups.size;
+      label = '📋 Pending';
+    }
+    btn.innerHTML = count > 0 ? `${label}<span class="dim-filter-count">${count}</span>` : label;
+  });
+}
+
+let dimRefCollapsed = true;   // collapsed by default to give annotation cards space
+dimRefList.style.display = 'none';
+dimRefToggle.textContent = '📖 Dimension Reference ▸';
+dimRefToggle.addEventListener('click', () => {
+  dimRefCollapsed = !dimRefCollapsed;
+  dimRefList.style.display = dimRefCollapsed ? 'none' : 'flex';
+  dimRefToggle.textContent = dimRefCollapsed ? '📖 Dimension Reference ▸' : '📖 Dimension Reference ▾';
+});
+
+// ─── Selection Popup ─────────────────────────────
+function buildPopupDimGrid() {
+  let html = '';
+  dimensions.forEach((d, i) => {
+    html += `<button class="popup-dim-btn" data-dim="${d.key}" style="background:${DIM_COLORS[i]}" title="${d.definition || d.name}"><span class="dim-btn-key">${d.key}</span><span class="dim-btn-name">${d.name}</span></button>`;
+  });
+  popupDimGrid.innerHTML = html;
+  popupDimGrid.querySelectorAll('.popup-dim-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      popupDimGrid.querySelectorAll('.popup-dim-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      pendingSelection.dim = btn.dataset.dim;
+      updatePopupConfirm();
+    });
+  });
+}
+
+// Score buttons — now includes 0
+document.querySelectorAll('.popup-score-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.popup-score-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    pendingSelection.score = parseInt(btn.dataset.score);
+    updatePopupConfirm();
+  });
+});
+
+function updatePopupConfirm() {
+  popupConfirm.disabled = !(pendingSelection.dim && pendingSelection.score !== null);
+}
+
+function showPopup(x, y) {
+  selectionPopup.classList.add('show');
+  const pw = 360, ph = selectionPopup.offsetHeight || 380;
+  let left = x + 10, top = y + 10;
+  if (left + pw > window.innerWidth) left = window.innerWidth - pw - 16;
+  if (top + ph > window.innerHeight) top = y - ph - 10;
+  if (left < 8) left = 8; if (top < 8) top = 8;
+  selectionPopup.style.left = left + 'px'; selectionPopup.style.top = top + 'px';
+}
+
+function hidePopup() {
+  selectionPopup.classList.remove('show');
+  pendingSelection = { text: '', start: 0, end: 0, dim: null, score: null };
+  popupDimGrid.querySelectorAll('.popup-dim-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.popup-score-btn').forEach(b => b.classList.remove('selected'));
+  popupNote.value = '';
+  popupConfirm.disabled = true;
+  popupConfirm.textContent = '✓ Add Annotation';
+}
+
+popupCancel.addEventListener('click', hidePopup);
+
+popupConfirm.addEventListener('click', () => {
+  if (!pendingSelection.dim || pendingSelection.score === null) return;
+
+  // Only used for NEW annotations from text selection
+    const span = {
+      start: pendingSelection.start, end: pendingSelection.end,
+      text: pendingSelection.text, dimension: pendingSelection.dim,
+      score: pendingSelection.score, note: popupNote.value.trim() || '',
+      source: 'human', reviewed: true,
+    };
+    currentSpans.push(span);
+    hidePopup();
+    buildUniqueSpanKeys();
+    renderPromptContent(); renderAnnotations(); autoSave();
+    const label = span.score === 1 ? '+1' : span.score === -1 ? '−1' : '0';
+    showToast(`✓ Added ${span.dimension} ${label} annotation`);
+});
+
+// ─── Text Selection ──────────────────────────────
+document.addEventListener('mouseup', e => {
+  const display = document.getElementById('promptTextDisplay');
+  if (!display) return;
+  if (!display.contains(e.target) && !selectionPopup.contains(e.target)) {
+    if (selectionPopup.classList.contains('show') && !selectionPopup.contains(e.target)) hidePopup();
+    return;
+  }
+  if (selectionPopup.contains(e.target)) return;
+
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed) return;
+  const text = sel.toString().trim();
+  if (!text || text.length < 2) return;
+
+  const fullText = currentPromptFull.content || '';
+  const range = sel.getRangeAt(0);
+  const startOff = getTextOffset(display, range.startContainer, range.startOffset);
+  const endOff = getTextOffset(display, range.endContainer, range.endOffset);
+  if (startOff === -1 || endOff === -1 || startOff >= endOff) return;
+
+  pendingSelection.text = fullText.slice(startOff, endOff);
+  pendingSelection.start = startOff;
+  pendingSelection.end = endOff;
+  popupText.textContent = pendingSelection.text.length > 200
+    ? pendingSelection.text.slice(0, 200) + '…' : pendingSelection.text;
+  showPopup(e.clientX, e.clientY);
+  sel.removeAllRanges();
+});
+
+function getTextOffset(root, node, offset) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  let count = 0;
+  while (walker.nextNode()) {
+    if (walker.currentNode.parentElement && walker.currentNode.parentElement.classList.contains('dim-tag')) continue;
+    if (walker.currentNode === node) return count + offset;
+    count += walker.currentNode.textContent.length;
+  }
+  return -1;
+}
+
+// ─── Flush pending card decisions before saving ──
+function flushPendingCardDecisions() {
+  // If user accepted/rejected dims in a card but didn't click Done, apply those changes now
+  document.querySelectorAll('.grouped-card').forEach(card => {
+    const allRows = card.querySelectorAll('.group-dim-entry');
+    const hasAnyDecision = [...allRows].some(r => r.dataset.accepted === 'true' || r.dataset.rejected === 'true');
+    if (!hasAnyDecision) return;
+
+    const groupIndices = card.dataset.groupIndices;
+    if (!groupIndices) return;
+    const indices = groupIndices.split(',').map(Number);
+    const refSpan = currentSpans[indices[0]];
+    if (!refSpan) return;
+    const groupStart = refSpan.start, groupEnd = refSpan.end;
+
+    const acceptedDims = new Set();
+    const rejectedDims = new Set();
+    allRows.forEach(r => {
+      const idx = parseInt(r.dataset.idx);
+      const span = currentSpans[idx];
+      if (!span) return;
+      if (r.dataset.accepted === 'true') acceptedDims.add(span.dimension);
+      else if (r.dataset.rejected === 'true') rejectedDims.add(span.dimension);
+    });
+
+    // Apply accepted/rejected
+    for (let i = currentSpans.length - 1; i >= 0; i--) {
+      const s = currentSpans[i];
+      if (s.start === groupStart && s.end === groupEnd && s.source === 'llm' && !s.reviewed) {
+        if (acceptedDims.has(s.dimension)) {
+          s.reviewed = true;
+        } else if (rejectedDims.has(s.dimension)) {
+          s.reviewed = true;
+          s.rejected = true;
+        }
+      }
+    }
+    // Mark human-added spans as reviewed
+    currentSpans.forEach(s => {
+      if (s.start === groupStart && s.end === groupEnd && s.source === 'human' && !s.reviewed) {
+        s.reviewed = true;
+      }
+    });
+  });
+}
+
+// ─── Save / Export ────────────────────────────────
+async function autoSave() {
+  if (!currentPromptFull) return;
+  flushPendingCardDecisions();
+  currentNotes = annNotes.value;
+  try {
+    await fetch('/api/save_annotations', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt_id: currentPromptFull.id, spans: currentSpans, notes: currentNotes }),
+    });
+    const idx = rangePrompts.findIndex(p => p.id === currentPromptFull.id);
+    renderPromptList(listSearch.value);
+    updateExportButton();
+  } catch (err) { console.error('Save failed:', err); }
+}
+
+// Track reviewed span count across all prompts (updated on save)
+let reviewedSpanCounts = {}; // { promptId: reviewedCount }
+
+function getReviewedTotal() {
+  return Object.values(reviewedSpanCounts).reduce((a, b) => a + b, 0);
+}
+
+function updateExportButton() {
+  // Count reviewed in current prompt
+  if (currentPromptFull) {
+    const reviewedPairs = new Set();
+    currentSpans.forEach(s => {
+      if (s.reviewed || s.source === 'human') reviewedPairs.add(s.start + ':' + s.end);
+    });
+    reviewedSpanCounts[currentPromptFull.id] = reviewedPairs.size;
+  }
+  const total = getTotalSpanCount();
+  const reviewed = getReviewedTotal();
+  const allDone = reviewed >= total;
+
+  btnExport.textContent = `Export (${reviewed}/${total}) · Prompt ${currentIndex + 1}/${rangePrompts.length}`;
+  btnExport.dataset.ready = allDone ? 'true' : 'false';
+}
+
+function getUnreviewedSummary() {
+  const missing = [];
+  for (let i = 0; i < rangePrompts.length; i++) {
+    const p = rangePrompts[i];
+    const reviewedInPrompt = reviewedSpanCounts[p.id] || 0;
+    const totalInPrompt = p.span_count || 0;
+    if (reviewedInPrompt < totalInPrompt) {
+      const label = p.product_label || p.filename;
+      missing.push(`  #${i + 1} [${p.company}] ${label}: ${totalInPrompt - reviewedInPrompt} span(s) remaining`);
+    }
+  }
+  return missing;
+}
+
+btnExport.addEventListener('click', async () => {
+  await autoSave();
+  updateExportButton();
+
+  const reviewed = getReviewedTotal();
+  const total = getTotalSpanCount();
+  const promptsTouched = Object.keys(reviewedSpanCounts).filter(k => reviewedSpanCounts[k] > 0).length;
+
+  if (reviewed === 0) {
+    showToast('No reviewed spans yet — review some spans first', true);
+    return;
+  }
+
+  const proceed = confirm(
+    `Export annotations?\n\n` +
+    `Reviewed: ${reviewed} / ${total} spans\n` +
+    `Prompts touched: ${promptsTouched} / ${rangePrompts.length}\n\n` +
+    (reviewed < total ? `Note: ${total - reviewed} spans are still pending.\n` : '') +
+    `Click OK to export.`
+  );
+  if (!proceed) return;
+
+  try {
+    const res = await fetch('/api/save_training_result', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        reviewer_name: config.name,
+        prompt_ids: rangePrompts.map(p => p.id),
+        range_from: config.start,
+        range_to: config.end,
+      }),
+    });
+    const result = await res.json();
+    showToast(`Saved: ${result.filename}`);
+  } catch (err) { showToast('Export failed: ' + err.message, true); }
+});
+btnSave.addEventListener('click', async () => { await autoSave(); showToast('✓ Saved'); });
+
+// ─── Navigation ──────────────────────────────────
+async function loadAndRender() {
+  if (rangePrompts.length === 0) return;
+  const p = rangePrompts[currentIndex];
+  currentSpanNavIdx = 0;
+  await loadPromptDetail(p.id);
+  buildUniqueSpanKeys();
+  renderPromptList(listSearch.value);
+  renderPromptContent();
+  renderAnnotations();
+  updateGlobalNav();
+  updateExportButton();
+}
+
+// ─── Span-level navigation (← → cross-prompt) ───
+function getTotalSpanCount() {
+  return rangePrompts.reduce((sum, p) => sum + (p.span_count || 0), 0);
+}
+function getGlobalSpanIdx() {
+  let total = 0;
+  for (let i = 0; i < currentIndex; i++) total += (rangePrompts[i].span_count || 0);
+  return total + currentSpanNavIdx;
+}
+function updateGlobalNav() {
+  const global = getGlobalSpanIdx();
+  const total = getTotalSpanCount();
+  navCounter.textContent = `Span ${global + 1} / ${total}`;
+  btnPrev.disabled = global <= 0;
+  btnNext.disabled = global >= total - 1;
+}
+
+function isCurrentSpanPending() {
+  const curKey = uniqueSpanKeys[currentSpanNavIdx];
+  if (!curKey) return false;
+  const [cStart, cEnd] = curKey.split(':').map(Number);
+  return currentSpans.some(s => s.start === cStart && s.end === cEnd && s.source === 'llm' && !s.reviewed);
+}
+
+btnPrev.addEventListener('click', async () => {
+  if (currentSpanNavIdx > 0) {
+    currentSpanNavIdx--;
+    updateSpanNav();
+    updateGlobalNav();
+  } else if (currentIndex > 0) {
+    await autoSave();
+    currentIndex--;
+    await loadAndRender();
+    currentSpanNavIdx = Math.max(0, uniqueSpanKeys.length - 1);
+    updateSpanNav();
+    updateGlobalNav();
+  }
+});
+btnNext.addEventListener('click', async () => {
+  if (isCurrentSpanPending()) {
+    showToast('Please click Done first', true);
+    return;
+  }
+  if (currentSpanNavIdx < uniqueSpanKeys.length - 1) {
+    currentSpanNavIdx++;
+    updateSpanNav();
+    updateGlobalNav();
+  } else if (currentIndex < rangePrompts.length - 1) {
+    await autoSave();
+    currentIndex++;
+    await loadAndRender();
+    updateGlobalNav();
+  }
+});
+btnJump.addEventListener('click', async () => {
+  const n = parseInt(navJump.value);
+  if (n >= 1 && n <= rangePrompts.length) { await autoSave(); currentIndex = n - 1; await loadAndRender(); navJump.value = ''; }
+  else showToast(`Please enter 1-${rangePrompts.length}`, true);
+});
+navJump.addEventListener('keydown', e => { if (e.key === 'Enter') btnJump.click(); });
+listSearch.addEventListener('input', () => renderPromptList(listSearch.value));
+btnFilterAnnotated.addEventListener('click', () => {
+  filterAnnotatedOnly = !filterAnnotatedOnly;
+  btnFilterAnnotated.classList.toggle('active', filterAnnotatedOnly);
+  const annotatedCount = rangePrompts.filter(p => p.span_count > 0).length;
+  btnFilterAnnotated.textContent = filterAnnotatedOnly
+    ? `📌 Annotated Only (${annotatedCount})`
+    : '📌 Annotated Only';
+  renderPromptList(listSearch.value);
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+  if (selectionPopup.classList.contains('show')) { if (e.key === 'Escape') hidePopup(); return; }
+  if (e.key === 'ArrowLeft' || e.key === 'a') btnPrev.click();
+  else if (e.key === 'ArrowRight' || e.key === 'd') btnNext.click();
+});
+
+// Save on page close/refresh to prevent data loss
+window.addEventListener('beforeunload', () => {
+  if (!currentPromptFull) return;
+  flushPendingCardDecisions();
+  const data = JSON.stringify({ prompt_id: currentPromptFull.id, spans: currentSpans, notes: annNotes.value });
+  navigator.sendBeacon('/api/save_annotations', new Blob([data], { type: 'application/json' }));
+});
+
+// ─── Setup ───────────────────────────────────────
+setupStartBtn.addEventListener('click', async () => {
+  const name = inputName.value.trim();
+  if (!name) { showToast('Please enter your name', true); return; }
+
+  // Parse optional range (1-indexed, applied BEFORE company sorting)
+  let rangeFrom = parseInt(inputRangeFrom.value) || 1;
+  let rangeTo = parseInt(inputRangeTo.value) || allPrompts.length;
+  rangeFrom = Math.max(1, Math.min(rangeFrom, allPrompts.length));
+  rangeTo = Math.max(rangeFrom, Math.min(rangeTo, allPrompts.length));
+
+  // allPrompts is already ordered by index from the backend; slice the range
+  const sliced = allPrompts.slice(rangeFrom - 1, rangeTo);
+
+  config = { name, start: rangeFrom, end: rangeTo };
+
+  // Sort the sliced prompts by company groups (size desc) for sidebar display
+  const cGroups = {};
+  sliced.forEach(p => { if (!cGroups[p.company]) cGroups[p.company] = []; cGroups[p.company].push(p); });
+  const cSorted = Object.keys(cGroups).sort((a, b) => cGroups[b].length - cGroups[a].length);
+  rangePrompts = [];
+  for (const c of cSorted) rangePrompts.push(...cGroups[c]);
+  currentIndex = 0;
+
+  const rangeLabel = (rangeFrom === 1 && rangeTo === allPrompts.length)
+    ? 'All' : `#${rangeFrom}–${rangeTo}`;
+  headerBadge.textContent = `${name} · ${rangeLabel} (${rangePrompts.length} prompts)`;
+  promptListTotal.textContent = `(${rangePrompts.length})`;
+
+  // Initialize reviewedSpanCounts from server data so previous sessions' progress is preserved
+  rangePrompts.forEach(p => {
+    if (p.reviewed_span_count > 0) reviewedSpanCounts[p.id] = p.reviewed_span_count;
+  });
+
+  setupPage.style.display = 'none';
+  appContainer.style.display = 'flex';
+  renderPromptList();
+  await loadAndRender();
+});
+
+// ─── Init ────────────────────────────────────────
+loadPrompts();
+</script>
+</body>
+</html>
+

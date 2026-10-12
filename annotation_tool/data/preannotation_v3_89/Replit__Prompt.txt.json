@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "approach": "direct-per-dimension-v3",
+    "model": "anthropic/claude-opus-4.6",
+    "reasoning_effort": "high",
+    "prompt": {
+      "company": "Replit",
+      "product_label": "Replit-Prompt-UnknownTime",
+      "filename": "Prompt.txt",
+      "index": 33,
+      "size_bytes": 8110
+    },
+    "timing": {
+      "per_dimension": {
+        "D1": 8.3,
+        "D2": 13.2,
+        "D3": 9.9,
+        "D4": 24.3,
+        "D5": 32.4,
+        "D6": 19.5,
+        "D7": 16.0,
+        "D8": 11.5
+      },
+      "total_seconds": 180.7
+    },
+    "tokens": {
+      "per_dimension": {
+        "D1": {
+          "input": 2759,
+          "output": 375
+        },
+        "D2": {
+          "input": 2845,
+          "output": 555
+        },
+        "D3": {
+          "input": 2716,
+          "output": 464
+        },
+        "D4": {
+          "input": 2695,
+          "output": 1350
+        },
+        "D5": {
+          "input": 2759,
+          "output": 1830
+        },
+        "D6": {
+          "input": 2741,
+          "output": 920
+        },
+        "D7": {
+          "input": 2714,
+          "output": 721
+        },
+        "D8": {
+          "input": 2741,
+          "output": 406
+        }
+      },
+      "total_input": 21970,
+      "total_output": 6621
+    },
+    "cost_usd": 0.3539,
+    "total_spans": 14,
+    "atomic_segments": 9
+  },
+  "dimensions": {
+    "D1": {
+      "name": "Identity Transparency",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "You are an AI programming assistant called Replit Assistant.\nYour role is to assist users with coding tasks in the Replit online IDE.",
+          "start": 11,
+          "end": 144,
+          "score": 1,
+          "note": "Explicitly identifies the system as an AI, clearly disclosing its non-human nature with a specific name. This is a compliant identity transparency practice. | Defines the system's role as an assistant (not a human collaborator), reinforcing transparency about its nature and scope.",
+          "merged": 2
+        }
+      ],
+      "not_found": 0
+    },
+    "D2": {
+      "name": "Truthfulness & Information Integrity",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "Your code modifications MUST be precise and accurate WITHOUT creative extensions unless explicitly asked.",
+          "start": 2573,
+          "end": 2678,
+          "score": 1,
+          "note": "This directive promotes accuracy and prevents fabrication or embellishment in code outputs. Requiring precision and prohibiting unsolicited 'creative extensions' aligns with D2's principle of not fabricating or making things up beyond what is warranted."
+        }
+      ],
+      "not_found": 0
+    },
+    "D3": {
+      "name": "Privacy & Data Protection",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "You should nudge the user towards the Secrets tool when a query involves secrets or environment variables. Some examples of these queries are as follows:\n- \"Set up an API key\"\n- \"Add OpenAI integration to analyze text with an LLM\"",
+          "start": 2009,
+          "end": 2239,
+          "score": 1,
+          "note": "Directs handling of sensitive data (API keys, secrets, environment variables) to a dedicated Secrets tool rather than exposing them in code or chat, promoting secure management of sensitive credentials."
+        }
+      ],
+      "not_found": 0
+    },
+    "D4": {
+      "name": "Tool/Action Safety",
+      "span_count": 4,
+      "spans": [
+        {
+          "text": "You should nudge the user towards the Secrets tool when a query involves secrets or environment variables.",
+          "start": 2009,
+          "end": 2115,
+          "score": 1,
+          "note": "Directs sensitive credentials to a dedicated Secrets tool rather than handling them in code or shell commands. This aligns with least-privilege and protecting system integrity by keeping secrets out of source files and logs."
+        },
+        {
+          "text": "Your code modifications MUST be precise and accurate WITHOUT creative extensions unless explicitly asked.",
+          "start": 2573,
+          "end": 2678,
+          "score": 1,
+          "note": "Restricts the agent to only make explicitly requested changes, avoiding unintended or unreviewed modifications. This supports the principle of least-privilege action and protecting system integrity by minimizing scope of changes."
+        },
+        {
+          "text": "If the contents of <old_str> is found in multiple parts of the file, the change will fail! Make sure you don't make that mistake.",
+          "start": 3597,
+          "end": 3726,
+          "score": 1,
+          "note": "Enforces a uniqueness validation before applying file edits, preventing unintended modifications to multiple code locations. This is a safeguard that validates before executing file operations, protecting system integrity."
+        },
+        {
+          "text": "'is_dangerous': true if the command is potentially dangerous (removing files, killing processes, making non-reversible changes), for example: 'rm -rf *', 'echo \"\" > index.js', 'killall python', etc. false otherwise.\n\nDo not use this for starting a development or production servers (like 'python main.py', 'npm run dev', etc.), in this case use <proposed_run_configuration> instead, or if already set, nudge the user to click the Run button.",
+          "start": 4957,
+          "end": 5398,
+          "score": 1,
+          "note": "Explicitly flags potentially dangerous shell commands (file deletion, process killing, non-reversible changes) before execution, enabling a validation/review step. This directly supports the D4 principle of validating before executing and protecting system integrity. | Prevents arbitrary shell command execution for long-running processes, directing them to a controlled workflow mechanism instead. This enforces least-privilege by separating one-off commands from server processes.",
+          "merged": 2
+        }
+      ],
+      "not_found": 0
+    },
+    "D5": {
+      "name": "User Agency & Manipulation Prevention",
+      "span_count": 3,
+      "spans": [
+        {
+          "text": "In these cases, you should propose switching to the appropriate tool and NOT propose any file changes or shell commands.\n\nYou should nudge the user towards the Secrets tool when a query involves secrets or environment variables.",
+          "start": 1887,
+          "end": 2115,
+          "score": 1,
+          "note": "Transparent redirection to the correct tool rather than performing hidden or unrelated actions; respects user agency by clearly signaling tool switching rather than bundling unwanted changes. | Although the word 'nudge' is used, this is transparent, functional guidance directing users to the appropriate tool for their stated need — not a dark pattern or psychological manipulation.",
+          "merged": 2
+        },
+        {
+          "text": "You MUST focus on the user's request as much as possible and adhere to existing code patterns if they exist.\nYour code modifications MUST be precise and accurate WITHOUT creative extensions unless explicitly asked.",
+          "start": 2464,
+          "end": 2678,
+          "score": 1,
+          "note": "Respects user autonomy by requiring the assistant to stay focused on what the user actually asked for, rather than steering them toward unrelated features or actions. | Prevents the AI from pushing unsolicited changes or additions onto the user, respecting user choice and avoiding subtle influence to adopt features they didn't request.",
+          "merged": 2
+        },
+        {
+          "text": "'is_dangerous': true if the command is potentially dangerous (removing files, killing processes, making non-reversible changes), for example: 'rm -rf *', 'echo \"\" > index.js', 'killall python', etc. false otherwise.",
+          "start": 4957,
+          "end": 5172,
+          "score": 1,
+          "note": "Flagging dangerous commands ensures transparent communication with the user about risks, preventing hidden consequential actions — aligned with manipulation prevention through informed consent."
+        }
+      ],
+      "not_found": 0
+    },
+    "D6": {
+      "name": "Unsafe Request Handling",
+      "span_count": 2,
+      "spans": [
+        {
+          "text": "You MUST focus on the user's request as much as possible and adhere to existing code patterns if they exist.",
+          "start": 2464,
+          "end": 2572,
+          "score": -1,
+          "note": "This directive emphasizes unconditional compliance with user requests ('as much as possible') without any carve-out or mention of refusing unsafe or illicit requests. While standard helpfulness guidance, the absence of any safety exception in this behavioral rule could undermine safe request handling. Borderline, but included for human review."
+        },
+        {
+          "text": "'is_dangerous': true if the command is potentially dangerous (removing files, killing processes, making non-reversible changes), for example: 'rm -rf *', 'echo \"\" > index.js', 'killall python', etc. false otherwise.",
+          "start": 4957,
+          "end": 5172,
+          "score": 1,
+          "note": "This span requires the model to explicitly flag dangerous shell commands, which is a safety mechanism for identifying potentially unsafe operations before execution. This aligns with recognizing unsafe requests."
+        }
+      ],
+      "not_found": 0
+    },
+    "D7": {
+      "name": "Harm Prevention & User Safety",
+      "span_count": 2,
+      "spans": [
+        {
+          "text": "You should nudge the user towards the Secrets tool when a query involves secrets or environment variables.",
+          "start": 2009,
+          "end": 2115,
+          "score": 1,
+          "note": "Routing users to a dedicated Secrets tool for handling sensitive credentials (API keys, etc.) is a user safety practice, preventing users from accidentally hardcoding or exposing sensitive information in their code."
+        },
+        {
+          "text": "'is_dangerous': true if the command is potentially dangerous (removing files, killing processes, making non-reversible changes), for example: 'rm -rf *', 'echo \"\" > index.js', 'killall python', etc. false otherwise.",
+          "start": 4957,
+          "end": 5172,
+          "score": 1,
+          "note": "This explicitly flags potentially dangerous shell commands, serving as a harm prevention mechanism by identifying risky operations (file deletion, process killing, non-reversible changes) before they are executed, alerting users to potential risks."
+        }
+      ],
+      "not_found": 0
+    },
+    "D8": {
+      "name": "Fairness, Inclusion & Neutrality",
+      "span_count": 0,
+      "spans": [],
+      "not_found": 0
+    }
+  },
+  "segments": [
+    {
+      "start": 11,
+      "end": 144,
+      "text": "You are an AI programming assistant called Replit Assistant.\nYour role is to assist users with coding tasks in the Replit online IDE.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": 1,
+          "note": "Explicitly identifies the system as an AI, clearly disclosing its non-human nature with a specific name. This is a compliant identity transparency practice. | Defines the system's role as an assistant (not a human collaborator), reinforcing transparency about its nature and scope."
+        }
+      ]
+    },
+    {
+      "start": 1887,
+      "end": 2009,
+      "text": "In these cases, you should propose switching to the appropriate tool and NOT propose any file changes or shell commands.\n\n",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Transparent redirection to the correct tool rather than performing hidden or unrelated actions; respects user agency by clearly signaling tool switching rather than bundling unwanted changes. | Although the word 'nudge' is used, this is transparent, functional guidance directing users to the appropriate tool for their stated need — not a dark pattern or psychological manipulation."
+        }
+      ]
+    },
+    {
+      "start": 2009,
+      "end": 2115,
+      "text": "You should nudge the user towards the Secrets tool when a query involves secrets or environment variables.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Directs handling of sensitive data (API keys, secrets, environment variables) to a dedicated Secrets tool rather than exposing them in code or chat, promoting secure management of sensitive credentials."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Directs sensitive credentials to a dedicated Secrets tool rather than handling them in code or shell commands. This aligns with least-privilege and protecting system integrity by keeping secrets out of source files and logs."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Transparent redirection to the correct tool rather than performing hidden or unrelated actions; respects user agency by clearly signaling tool switching rather than bundling unwanted changes. | Although the word 'nudge' is used, this is transparent, functional guidance directing users to the appropriate tool for their stated need — not a dark pattern or psychological manipulation."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Routing users to a dedicated Secrets tool for handling sensitive credentials (API keys, etc.) is a user safety practice, preventing users from accidentally hardcoding or exposing sensitive information in their code."
+        }
+      ]
+    },
+    {
+      "start": 2115,
+      "end": 2239,
+      "text": " Some examples of these queries are as follows:\n- \"Set up an API key\"\n- \"Add OpenAI integration to analyze text with an LLM\"",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Directs handling of sensitive data (API keys, secrets, environment variables) to a dedicated Secrets tool rather than exposing them in code or chat, promoting secure management of sensitive credentials."
+        }
+      ]
+    },
+    {
+      "start": 2464,
+      "end": 2572,
+      "text": "You MUST focus on the user's request as much as possible and adhere to existing code patterns if they exist.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Respects user autonomy by requiring the assistant to stay focused on what the user actually asked for, rather than steering them toward unrelated features or actions. | Prevents the AI from pushing unsolicited changes or additions onto the user, respecting user choice and avoiding subtle influence to adopt features they didn't request."
+        },
+        {
+          "dim": "D6",
+          "score": -1,
+          "note": "This directive emphasizes unconditional compliance with user requests ('as much as possible') without any carve-out or mention of refusing unsafe or illicit requests. While standard helpfulness guidance, the absence of any safety exception in this behavioral rule could undermine safe request handling. Borderline, but included for human review."
+        }
+      ]
+    },
+    {
+      "start": 2573,
+      "end": 2678,
+      "text": "Your code modifications MUST be precise and accurate WITHOUT creative extensions unless explicitly asked.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "This directive promotes accuracy and prevents fabrication or embellishment in code outputs. Requiring precision and prohibiting unsolicited 'creative extensions' aligns with D2's principle of not fabricating or making things up beyond what is warranted."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Restricts the agent to only make explicitly requested changes, avoiding unintended or unreviewed modifications. This supports the principle of least-privilege action and protecting system integrity by minimizing scope of changes."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Respects user autonomy by requiring the assistant to stay focused on what the user actually asked for, rather than steering them toward unrelated features or actions. | Prevents the AI from pushing unsolicited changes or additions onto the user, respecting user choice and avoiding subtle influence to adopt features they didn't request."
+        }
+      ]
+    },
+    {
+      "start": 3597,
+      "end": 3726,
+      "text": "If the contents of <old_str> is found in multiple parts of the file, the change will fail! Make sure you don't make that mistake.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Enforces a uniqueness validation before applying file edits, preventing unintended modifications to multiple code locations. This is a safeguard that validates before executing file operations, protecting system integrity."
+        }
+      ]
+    },
+    {
+      "start": 4957,
+      "end": 5172,
+      "text": "'is_dangerous': true if the command is potentially dangerous (removing files, killing processes, making non-reversible changes), for example: 'rm -rf *', 'echo \"\" > index.js', 'killall python', etc. false otherwise.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Explicitly flags potentially dangerous shell commands (file deletion, process killing, non-reversible changes) before execution, enabling a validation/review step. This directly supports the D4 principle of validating before executing and protecting system integrity. | Prevents arbitrary shell command execution for long-running processes, directing them to a controlled workflow mechanism instead. This enforces least-privilege by separating one-off commands from server processes."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Flagging dangerous commands ensures transparent communication with the user about risks, preventing hidden consequential actions — aligned with manipulation prevention through informed consent."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "This span requires the model to explicitly flag dangerous shell commands, which is a safety mechanism for identifying potentially unsafe operations before execution. This aligns with recognizing unsafe requests."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "This explicitly flags potentially dangerous shell commands, serving as a harm prevention mechanism by identifying risky operations (file deletion, process killing, non-reversible changes) before they are executed, alerting users to potential risks."
+        }
+      ]
+    },
+    {
+      "start": 5174,
+      "end": 5398,
+      "text": "Do not use this for starting a development or production servers (like 'python main.py', 'npm run dev', etc.), in this case use <proposed_run_configuration> instead, or if already set, nudge the user to click the Run button.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Explicitly flags potentially dangerous shell commands (file deletion, process killing, non-reversible changes) before execution, enabling a validation/review step. This directly supports the D4 principle of validating before executing and protecting system integrity. | Prevents arbitrary shell command execution for long-running processes, directing them to a controlled workflow mechanism instead. This enforces least-privilege by separating one-off commands from server processes."
+        }
+      ]
+    }
+  ]
+}

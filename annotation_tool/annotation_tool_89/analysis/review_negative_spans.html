@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotation Review Tool</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #1a1a1a; }
+  .header { background: #1a1a2e; color: #fff; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 18px; font-weight: 600; }
+  .header-right { display: flex; gap: 12px; align-items: center; }
+  .progress-bar { width: 200px; height: 8px; background: #333; border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #4ade80; transition: width 0.3s; }
+  .tabs { display: flex; background: #fff; border-bottom: 2px solid #e0e0e0; }
+  .tab { padding: 10px 24px; cursor: pointer; font-size: 14px; font-weight: 500; color: #666; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+  .tab.active { color: #1a1a2e; border-bottom-color: #1a1a2e; }
+  .tab-count { background: #e0e0e0; color: #333; padding: 1px 8px; border-radius: 10px; font-size: 12px; margin-left: 6px; }
+  .tab.active .tab-count { background: #1a1a2e; color: #fff; }
+  .stats { display: flex; gap: 16px; padding: 10px 24px; background: #fff; border-bottom: 1px solid #e0e0e0; font-size: 13px; flex-wrap: wrap; }
+  .stat { display: flex; align-items: center; gap: 4px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .controls-bar { display: flex; gap: 8px; padding: 10px 24px; background: #fff; border-bottom: 1px solid #e0e0e0; flex-wrap: wrap; align-items: center; }
+  .filter-group { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+  .filter-group label { font-weight: 500; color: #666; }
+  .filter-group select, .search-box { padding: 4px 8px; border: 1px solid #d0d0d0; border-radius: 4px; font-size: 13px; }
+  .search-box { width: 180px; }
+  .fsbtn { padding: 3px 10px; border: 1px solid #d0d0d0; border-radius: 4px; background: #fff; cursor: pointer; font-size: 12px; }
+  .fsbtn.active { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+  .main { padding: 16px 24px; }
+  .card { background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 12px; overflow: hidden; }
+  .card.st-agree { border-left: 4px solid #4ade80; }
+  .card.st-disagree { border-left: 4px solid #f87171; }
+  .card.st-discuss { border-left: 4px solid #fbbf24; }
+  .card-hd { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 16px; background: #fafafa; border-bottom: 1px solid #f0f0f0; }
+  .card-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .badge { padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .bdim { background: #e0e7ff; color: #3730a3; }
+  .bcomp { background: #fce7f3; color: #9d174d; }
+  .bcat { background: #ecfdf5; color: #065f46; }
+  .btype { padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .card-id { font-size: 12px; color: #999; }
+  .card-body { padding: 14px 16px; }
+  .card-product { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #333; }
+  .spantext { background: #fff7ed; border-left: 3px solid #f97316; padding: 10px 14px; margin-bottom: 10px; font-size: 14px; line-height: 1.6; color: #333; white-space: pre-wrap; word-break: break-word; }
+  .card-note { font-size: 13px; color: #555; line-height: 1.5; max-height: 100px; overflow-y: auto; }
+  .card-note.expanded { max-height: none; }
+  .ntoggle { color: #2563eb; cursor: pointer; font-size: 12px; margin-top: 4px; }
+  .card-actions { display: flex; gap: 6px; padding: 10px 16px; border-top: 1px solid #f0f0f0; align-items: center; flex-wrap: wrap; }
+  .abtn { padding: 5px 14px; border-radius: 6px; border: 1px solid #d0d0d0; background: #fff; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .abtn:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .abtn.sel { color: #fff; border-color: transparent; }
+  .abtn.sel-g { background: #4ade80; color: #fff; border-color: transparent; }
+  .abtn.sel-r { background: #f87171; color: #fff; border-color: transparent; }
+  .abtn.sel-y { background: #fbbf24; color: #1a1a1a; border-color: transparent; }
+  .rcmt { flex: 1; min-width: 120px; padding: 5px 8px; border: 1px solid #d0d0d0; border-radius: 4px; font-size: 13px; }
+  .export-btn { padding: 6px 16px; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500; }
+  .export-btn:hover { background: #1d4ed8; }
+  kbd { background: #e8e8e8; padding: 1px 5px; border-radius: 3px; font-size: 11px; border: 1px solid #ccc; }
+  .kbhint { font-size: 11px; color: #999; padding: 4px 24px; background: #fff; border-bottom: 1px solid #f0f0f0; }
+
+  .ann-tbl { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+  .ann-tbl th { background: #f8f8f8; padding: 6px 8px; text-align: left; border-bottom: 2px solid #e0e0e0; }
+  .ann-tbl td { padding: 6px 8px; border-bottom: 1px solid #f0f0f0; }
+  .spos { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; background: #dcfce7; color: #166534; }
+  .sneg { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; background: #fee2e2; color: #991b1b; }
+
+  .lpicker { padding: 10px 16px; border-top: 1px solid #f0f0f0; }
+  .lpicker-title { font-size: 12px; font-weight: 600; color: #555; margin-bottom: 6px; }
+  .lrow { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; margin-bottom: 6px; }
+  .lrow-label { font-size: 12px; color: #888; min-width: 70px; }
+  .dbtn { padding: 3px 10px; border: 1px solid #d0d0d0; border-radius: 4px; background: #fff; cursor: pointer; font-size: 12px; font-weight: 500; }
+  .dbtn:hover { background: #f0f0f0; }
+  .dbtn.pk { background: #e0e7ff; color: #3730a3; border-color: #3730a3; }
+  .sbtn { padding: 3px 10px; border: 1px solid #d0d0d0; border-radius: 4px; background: #fff; cursor: pointer; font-size: 12px; font-weight: 600; }
+  .sbtn:hover { background: #f0f0f0; }
+  .sbtn.pk-pos { background: #dcfce7; color: #166534; border-color: #166534; }
+  .sbtn.pk-neg { background: #fee2e2; color: #991b1b; border-color: #991b1b; }
+  .decision-summary { font-size: 12px; color: #2563eb; font-weight: 600; margin-left: 8px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Annotation Review Tool</h1>
+  <div class="header-right">
+    <span id="progTxt" style="font-size:13px;">0/0</span>
+    <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+    <button class="export-btn" onclick="doExport('json')">Export JSON</button>
+  </div>
+</div>
+<div class="tabs">
+  <div class="tab" id="tabConf" onclick="switchTab('conf')">Step 1: Cross-Version Conflicts <span class="tab-count" id="cntConf">0</span></div>
+  <div class="tab" id="tabNeg" onclick="switchTab('neg')">Step 2: Negative Spans <span class="tab-count" id="cntNeg">0</span></div>
+</div>
+<div class="stats">
+  <div class="stat"><div class="dot" style="background:#4ade80;"></div><span id="sAgree">Agree: 0</span></div>
+  <div class="stat"><div class="dot" style="background:#f87171;"></div><span id="sDisagree">Disagree: 0</span></div>
+  <div class="stat"><div class="dot" style="background:#fbbf24;"></div><span id="sDiscuss">Discuss: 0</span></div>
+  <div class="stat"><div class="dot" style="background:#94a3b8;"></div><span id="sSkip">Unreviewed: 0</span></div>
+</div>
+<div class="controls-bar">
+  <div class="filter-group">
+    <label>Dim:</label>
+    <select id="fDim" onchange="applyFilters()">
+      <option value="">All</option>
+      <option value="D1">D1 — Identity Transparency</option>
+      <option value="D2">D2 — Truthfulness</option>
+      <option value="D3">D3 — Privacy</option>
+      <option value="D4">D4 — Tool Safety</option>
+      <option value="D5">D5 — User Agency</option>
+      <option value="D6">D6 — Unsafe Requests</option>
+      <option value="D7">D7 — Harm Prevention</option>
+      <option value="D8">D8 — Fairness</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Company:</label>
+    <select id="fComp" onchange="applyFilters()"></select>
+  </div>
+  <div class="filter-group" id="fTypeWrap" style="display:none;">
+    <label>Type:</label>
+    <select id="fType" onchange="applyFilters()">
+      <option value="">All</option>
+      <option value="score">Score Conflict</option>
+      <option value="missing">Missing Span</option>
+      <option value="dim">Dim Difference</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Status:</label>
+    <div style="display:flex;gap:4px;">
+      <button class="fsbtn active" onclick="setStFilt(this,'')">All</button>
+      <button class="fsbtn" onclick="setStFilt(this,'unreviewed')">Todo</button>
+      <button class="fsbtn" onclick="setStFilt(this,'agree')">Agree</button>
+      <button class="fsbtn" onclick="setStFilt(this,'disagree')">Disagree</button>
+      <button class="fsbtn" onclick="setStFilt(this,'discuss')">Discuss</button>
+    </div>
+  </div>
+  <input type="text" class="search-box" id="fSearch" placeholder="Search..." oninput="applyFilters()">
+</div>
+<div class="kbhint">Keys: <kbd>A</kbd> Agree <kbd>D</kbd> Disagree <kbd>W</kbd> Discuss <kbd>→</kbd>/<kbd>←</kbd> Navigate <kbd>E</kbd> Export</div>
+<div class="main" id="main"></div>
+
+<script>
+const DN = {D1:'Identity Transparency',D2:'Truthfulness & Info Integrity',D3:'Privacy & Data Protection',D4:'Tool/Action Safety',D5:'User Agency & Manipulation',D6:'Unsafe Request Handling',D7:'Harm Prevention & User Safety',D8:'Fairness, Inclusion & Neutrality'};
+const dl = d => DN[d] ? d+' — '+DN[d] : d;
+
+let negSpans=[], confGroups=[], filtered=[], reviews={}, tab='conf', stFilt='', fIdx=0;
+let _saveTimer = null;
+
+async function init() {
+  try {
+    const [r1,r2,r3] = await Promise.all([
+      fetch('review_data/negative_spans_review.json'),
+      fetch('review_data/shared_text_review.json'),
+      fetch('/api/neg_review_state'),
+    ]);
+    negSpans = await r1.json();
+    const raw = await r2.json();
+    confGroups = (Array.isArray(raw) ? raw : raw.conflicts || []).map((c,i) => ({...c, _id: c._id || 'c'+i}));
+    reviews = await r3.json();
+  } catch(e) { document.getElementById('main').innerHTML='<p style="padding:20px;color:red;">Cannot load data. Make sure Flask app is running (python app.py → http://127.0.0.1:5009/review)</p>'; return; }
+  const restored = Object.keys(reviews).length;
+  if (restored > 0) console.log(`Loaded ${restored} review decisions from server`);
+  document.getElementById('cntNeg').textContent = negSpans.length;
+  document.getElementById('cntConf').textContent = confGroups.length;
+  document.getElementById('tabConf').classList.add('active');
+  document.getElementById('fTypeWrap').style.display = '';
+  popCompanies(); applyFilters();
+}
+
+function popCompanies() {
+  const items = tab==='neg' ? negSpans : confGroups;
+  const cs = [...new Set(items.map(s=>s.company))].sort();
+  document.getElementById('fComp').innerHTML = '<option value="">All</option>' + cs.map(c=>`<option value="${c}">${c}</option>`).join('');
+}
+
+function switchTab(t) {
+  tab=t;
+  document.getElementById('tabNeg').classList.toggle('active',t==='neg');
+  document.getElementById('tabConf').classList.toggle('active',t==='conf');
+  document.getElementById('fTypeWrap').style.display = t==='conf' ? '' : 'none';
+  stFilt=''; document.querySelectorAll('.fsbtn').forEach((b,i)=>b.classList.toggle('active',i===0));
+  popCompanies(); applyFilters();
+}
+
+function setStFilt(btn,s) { document.querySelectorAll('.fsbtn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); stFilt=s; applyFilters(); }
+
+function rid(item) { return String(item._id !== undefined ? item._id : item.id); }
+function rv(item) { return reviews[rid(item)] || {}; }
+
+function applyFilters() {
+  const dim=document.getElementById('fDim').value, comp=document.getElementById('fComp').value, q=document.getElementById('fSearch').value.toLowerCase();
+  const items = tab==='neg' ? negSpans : confGroups;
+  filtered = items.filter(s => {
+    if (dim) { if (tab==='neg' ? s.dimension!==dim : !(s.dims_involved||[]).includes(dim)) return false; }
+    if (comp && s.company!==comp) return false;
+    if (tab==='conf') { const ct=document.getElementById('fType').value; if (ct && s.conflict_type!==({score:'score_conflict',missing:'missing_span',dim:'dim_only'}[ct]||'')) return false; }
+    if (q) { const h = tab==='neg' ? (s.text+' '+(s.note||'')+' '+s.product_label).toLowerCase() : ((s.overlap_text||'')+' '+(s.annotations||[]).map(a=>a.prompt).join(' ')).toLowerCase(); if (!h.includes(q)) return false; }
+    if (stFilt) { if ((rv(s).status||'unreviewed')!==stFilt) return false; }
+    return true;
+  });
+  fIdx=0; render(); updateStats();
+}
+
+function render() { tab==='neg' ? renderNeg() : renderConf(); }
+
+function renderNeg() {
+  const el=document.getElementById('main');
+  if (!filtered.length) { el.innerHTML='<p style="padding:20px;color:#666;">No items.</p>'; return; }
+  el.innerHTML = `<div style="font-size:13px;color:#666;margin-bottom:12px;">${filtered.length} spans</div>` +
+    filtered.map((s,i) => {
+      const r=rv(s), st=r.status||'';
+      return `<div class="card ${st?'st-'+st:''}" id="c${i}">
+        <div class="card-hd"><div class="card-meta">
+          <span class="badge bdim">${dl(s.dimension)}</span>
+          <span class="badge bcomp">${s.company}</span>
+          <span class="badge bcat">${s.category||''}</span>
+          ${s.source==='human'?'<span class="badge btype" style="background:#fef3c7;color:#92400e;">human</span>':''}
+          ${(s.merged_from_count||0)>1?'<span class="badge btype" style="background:#dbeafe;color:#1e40af;">merged×'+s.merged_from_count+'</span>':''}
+        </div><span class="card-id">#${i+1}/${filtered.length}</span></div>
+        <div class="card-body">
+          <div class="card-product">${s.product_label}</div>
+          <div class="spantext">${esc(s.text)}</div>
+          ${s.note?`<div class="card-note" id="n${s.id}">${esc(s.note)}</div>${s.note.length>200?`<div class="ntoggle" onclick="togN('n${s.id}')">Show more</div>`:''}` :''}
+        </div>
+        <div class="card-actions">
+          <button class="abtn ${st==='agree'?'sel-g':''}" onclick="setSt('${rid(s)}','agree',${i})">✓ Agree</button>
+          <button class="abtn ${st==='disagree'?'sel-r':''}" onclick="setSt('${rid(s)}','disagree',${i})">✗ Disagree</button>
+          <button class="abtn ${st==='discuss'?'sel-y':''}" onclick="setSt('${rid(s)}','discuss',${i})">? Discuss</button>
+          <input class="rcmt" placeholder="Comment" value="${ea(r.comment||'')}" onchange="setCmt('${rid(s)}',this.value)">
+        </div>
+      </div>`;
+    }).join('');
+}
+
+function renderConf() {
+  const el=document.getElementById('main');
+  if (!filtered.length) { el.innerHTML='<p style="padding:20px;color:#666;">No items.</p>'; return; }
+  el.innerHTML = `<div style="font-size:13px;color:#666;margin-bottom:12px;">${filtered.length} shared text groups</div>` +
+    filtered.map((c,i) => {
+      const r=rv(c), st=r.status||'';
+      const typeMap = {score_conflict:['Score Conflict','background:#fee2e2;color:#991b1b;'], missing_span:['Missing Span','background:#fef3c7;color:#92400e;'], dim_only:['Dim Difference','background:#e0e7ff;color:#3730a3;']};
+      const [tl,tc] = typeMap[c.conflict_type] || ['Unknown',''];
+      const fd = r.final_dim||'', fs = r.final_score;
+      const hasDec = fd && fs!==undefined;
+      return `<div class="card ${st?'st-'+st:''}" id="c${i}">
+        <div class="card-hd"><div class="card-meta">
+          ${(c.dims_involved||[]).map(d=>`<span class="badge bdim">${dl(d)}</span>`).join(' ')}
+          <span class="badge bcomp">${c.company}</span>
+          <span class="badge btype" style="${tc}">${tl}</span>
+        </div><span class="card-id">#${i+1}/${filtered.length}</span></div>
+        <div class="card-body">
+          <div class="spantext">${esc(c.overlap_text||'')}</div>
+          <div style="font-size:12px;font-weight:600;color:#555;margin:8px 0 4px;">Annotations across versions:</div>
+          <table class="ann-tbl"><thead><tr><th>Product Version</th><th>Dimension</th><th>Score</th></tr></thead>
+          <tbody>${(c.annotations||[]).map(a=>`<tr><td>${esc(a.prompt)}</td><td>${a.missing?'<span style="color:#999;font-style:italic;">(not annotated)</span>':'<span class="badge bdim">'+dl(a.dim)+'</span>'}</td><td>${a.missing?'<span style="color:#999;">—</span>':'<span class="'+(a.score>0?'spos':a.score===0?'':'sneg')+'">'+(a.score>0?'+1':a.score)+'</span>'}</td></tr>`).join('')}</tbody></table>
+        </div>
+        <div class="lpicker">
+          <div class="lpicker-title">Your decision — correct labels for this text (click dim then score to add, click tag to remove):</div>
+          <div class="lrow">
+            <span class="lrow-label">Add label:</span>
+            ${['D1','D2','D3','D4','D5','D6','D7','D8','Misc'].map(d=>`<button class="dbtn ${r._pendingDim===d?'pk':''}" onclick="pendDim('${rid(c)}','${d}',${i})" title="${DN[d]||d}">${d}</button>`).join('')}
+            <button class="sbtn ${r._pendingScore===1?'pk-pos':''}" onclick="pendScore('${rid(c)}',1,${i})" style="margin-left:8px;">+1</button>
+            <button class="sbtn ${r._pendingScore===-1?'pk-neg':''}" onclick="pendScore('${rid(c)}',-1,${i})">-1</button>
+            <button class="sbtn ${r._pendingScore===0?'pk':''}" onclick="pendScore('${rid(c)}',0,${i})">0</button>
+          </div>
+          ${(r.final_labels&&r.final_labels.length) ? `<div class="lrow" style="margin-top:4px;">
+            <span class="lrow-label">Selected:</span>
+            ${r.final_labels.map((lb,li)=>`<span class="dbtn pk" style="cursor:pointer;" onclick="removeLabel('${rid(c)}',${li},${i})" title="Click to remove">${lb.dim} ${lb.score>0?'+1':lb.score===0?'0':'-1'} ✕</span>`).join(' ')}
+          </div>` : ''}
+        </div>
+        <div class="card-actions">
+          <button class="abtn ${st==='agree'?'sel-g':''}" onclick="setSt('${rid(c)}','agree',${i})">✓ All OK</button>
+          <button class="abtn ${st==='discuss'?'sel-y':''}" onclick="setSt('${rid(c)}','discuss',${i})">? Discuss</button>
+          <input class="rcmt" placeholder="Comment" value="${ea(r.comment||'')}" onchange="setCmt('${rid(c)}',this.value)">
+        </div>
+      </div>`;
+    }).join('');
+}
+
+function pendDim(id,dim,idx) {
+  if (!reviews[id]) reviews[id]={};
+  reviews[id]._pendingDim = reviews[id]._pendingDim===dim ? '' : dim;
+  tryAddLabel(id,idx);
+  save(); render();
+}
+function pendScore(id,score,idx) {
+  if (!reviews[id]) reviews[id]={};
+  reviews[id]._pendingScore = reviews[id]._pendingScore===score ? undefined : score;
+  tryAddLabel(id,idx);
+  save(); render(); updateStats();
+}
+function tryAddLabel(id,idx) {
+  const r = reviews[id];
+  if (r._pendingDim && r._pendingScore!==undefined) {
+    if (!r.final_labels) r.final_labels=[];
+    const exists = r.final_labels.some(l=>l.dim===r._pendingDim && l.score===r._pendingScore);
+    if (!exists) r.final_labels.push({dim:r._pendingDim, score:r._pendingScore});
+    r._pendingDim=''; r._pendingScore=undefined;
+    r.status='disagree';
+  }
+}
+function removeLabel(id,li,idx) {
+  if (!reviews[id]||!reviews[id].final_labels) return;
+  reviews[id].final_labels.splice(li,1);
+  if (!reviews[id].final_labels.length) reviews[id].status='';
+  save(); render(); updateStats();
+}
+
+function setSt(id,st,idx) {
+  if (!reviews[id]) reviews[id]={}; reviews[id].status=st;
+  fIdx=idx; save(); render(); updateStats();
+  if (idx+1<filtered.length) { document.getElementById('c'+(idx+1))?.scrollIntoView({behavior:'smooth',block:'center'}); fIdx=idx+1; }
+}
+function setCmt(id,c) {
+  if (!reviews[id]) reviews[id]={}; reviews[id].comment=c; save();
+}
+function togN(id) { const e=document.getElementById(id); if(!e)return; e.classList.toggle('expanded'); const t=e.nextElementSibling; if(t&&t.classList.contains('ntoggle')) t.textContent=e.classList.contains('expanded')?'Show less':'Show more'; }
+function save() {
+  if (_saveTimer) clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(() => {
+    fetch('/api/neg_review_state', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(reviews),
+    }).catch(e => console.warn('Save failed:', e));
+  }, 300);
+}
+
+function updateStats() {
+  const all=[...negSpans.map(rid),...confGroups.map(rid)];
+  let a=0,d=0,w=0;
+  for (const id of all) { const s=reviews[id]?.status; if(s==='agree')a++; else if(s==='disagree')d++; else if(s==='discuss')w++; }
+  const done=a+d+w, tot=all.length;
+  document.getElementById('sAgree').textContent=`Agree: ${a}`;
+  document.getElementById('sDisagree').textContent=`Disagree/Fixed: ${d}`;
+  document.getElementById('sDiscuss').textContent=`Discuss: ${w}`;
+  document.getElementById('sSkip').textContent=`Unreviewed: ${tot-done}`;
+  document.getElementById('progTxt').textContent=`${done}/${tot}`;
+  document.getElementById('progFill').style.width=(done/tot*100)+'%';
+}
+
+function doExport(fmt) {
+  const neg = negSpans.map(s=>{const r=rv(s); return {...s, review_status:r.status||'unreviewed', review_comment:r.comment||''};});
+  const conf = confGroups.map(c=>{const r=rv(c); return {...c, review_status:r.status||'unreviewed', review_comment:r.comment||'', final_labels:r.final_labels||[]};});
+  const reviewed = neg.filter(s=>s.review_status!=='unreviewed').length + conf.filter(c=>c.review_status!=='unreviewed').length;
+  const total = neg.length + conf.length;
+  if (fmt==='json') {
+    const out = {
+      metadata: { exported_at: new Date().toISOString(), total_items: total, reviewed_items: reviewed, negative_spans_count: neg.length, conflicts_count: conf.length },
+      negative_spans: neg,
+      cross_version_conflicts: conf
+    };
+    dl2(JSON.stringify(out,null,2), 'review_results_'+td()+'.json','application/json');
+  } else {
+    const h='type,company,product,dimension,score,text,note,review_status,review_comment\n';
+    const rows=neg.map(s=>['"neg"',q(s.company),q(s.product_label),s.dimension,s.score,q(s.text),q(s.note||''),s.review_status,q(s.review_comment)].join(','));
+    const h2='\n\ntype,company,dims,has_score_conflict,overlap_text,num_annotations,review_status,final_labels,review_comment\n';
+    const rows2=conf.map(c=>['"conflict"',q(c.company),q((c.dims_involved||[]).join('+')),c.has_score_conflict,q(c.overlap_text||''),c.num_annotations,c.review_status,q((c.final_labels||[]).map(l=>l.dim+'='+(l.score>0?'+1':'-1')).join('; ')),q(c.review_comment)].join(','));
+    dl2(h+rows.join('\n')+h2+rows2.join('\n'), 'review_results_'+td()+'.csv','text/csv;charset=utf-8;');
+  }
+  toast(`${fmt.toUpperCase()} exported! (${reviewed}/${total} reviewed)`);
+}
+function q(s){return '"'+String(s).replace(/"/g,'""').replace(/\n/g,' ')+'"';}
+function td(){return new Date().toISOString().slice(0,10);}
+function dl2(c,n,t){const b=new Blob([c],{type:t}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=n;a.click();}
+function toast(m){const t=document.createElement('div');t.textContent=m;t.style.cssText='position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;z-index:9999;';document.body.appendChild(t);setTimeout(()=>t.remove(),2000);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function ea(s){return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+
+document.addEventListener('keydown',e=>{
+  if(['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName))return;
+  if(!filtered.length)return;
+  const item=filtered[fIdx]; if(!item)return; const id=rid(item);
+  if(e.key==='a'||e.key==='A') setSt(id,'agree',fIdx);
+  else if(e.key==='d'||e.key==='D') setSt(id,'disagree',fIdx);
+  else if(e.key==='w'||e.key==='W') setSt(id,'discuss',fIdx);
+  else if(e.key==='ArrowRight'&&fIdx<filtered.length-1){fIdx++;document.getElementById('c'+fIdx)?.scrollIntoView({behavior:'smooth',block:'center'});}
+  else if(e.key==='ArrowLeft'&&fIdx>0){fIdx--;document.getElementById('c'+fIdx)?.scrollIntoView({behavior:'smooth',block:'center'});}
+  else if(e.key==='e'||e.key==='E') doExport('json');
+});
+
+window.addEventListener('beforeunload', () => {
+  if (_saveTimer) clearTimeout(_saveTimer);
+  navigator.sendBeacon('/api/neg_review_state', new Blob([JSON.stringify(reviews)], {type:'application/json'}));
+});
+
+init();
+</script>
+</body>
+</html>

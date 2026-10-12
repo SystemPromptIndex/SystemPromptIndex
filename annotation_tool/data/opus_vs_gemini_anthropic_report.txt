@@ -1,0 +1,38 @@
+Opus vs Gemini 3.1 Pro — Anthropic prompts (IoU ≥ 0.3)
+==============================================================================
+Prompts compared: 9 / 9
+
+Per-Dimension Agreement (Opus reference)
+------------------------------------------------------------------------------
+Dim   Opus   Gem  Agree  O-only  G-only    Prec     Rec      F1  ScoreOK
+D1      61    49     30      31      19  61.2%  49.2%  54.5%   93.3%
+D2     108    95     56      52      39  58.9%  51.9%  55.2%   98.2%
+D3      91    37     25      66      12  67.6%  27.5%  39.1%  100.0%
+D4     153    71     56      97      15  78.9%  36.6%  50.0%  100.0%
+D5     104    81     46      58      35  56.8%  44.2%  49.7%   93.5%
+D6     108    62     43      65      19  69.4%  39.8%  50.6%   95.3%
+D7      82    62     51      31      11  82.3%  62.2%  70.8%   98.0%
+D8      63    42     36      27       6  85.7%  57.1%  68.6%  100.0%
+------------------------------------------------------------------------------
+ALL    770   499    343     427     156  68.7%  44.5%  54.1%   97.4%
+
+Legend:
+  Opus/Gem    = spans each model produced for that dim
+  Agree       = pairs with IoU ≥ threshold & same dim
+  O-only      = Opus spans with no Gemini match (Opus-flagged, Gemini-missed)
+  G-only      = Gemini spans with no Opus match (Gemini-flagged, Opus-missed)
+  Prec/Rec/F1 = treating Opus as ground truth
+  ScoreOK     = among paired spans, fraction where +/- score matches
+
+Per-Prompt Summary
+------------------------------------------------------------------------------
+prompt                                    Opus   Gem  Agree  O-only  G-only  ScoreOK
+20240712-Claude3.5-Sonnet.md                41    26     19      22       7   94.7%
+20250225-Claude3.7-Sonnet.md                52    35     28      24       7   92.9%
+20250603-Claude-Sonnet4.md                  57    39     35      22       4   88.6%
+20251028-Claude-Sonnet4.5.md               104    77     54      50      23  100.0%
+Claude Code 2.0.txt                         51    38     28      23      10  100.0%
+Claude_Opus_4.6.txt                         87    78     39      48      39  100.0%
+Prompt.txt                                 187    74     46     141      28  100.0%
+claude-code.md                              97    57     47      50      10  100.0%
+claude-cowork.md                            94    75     47      47      28   95.7%

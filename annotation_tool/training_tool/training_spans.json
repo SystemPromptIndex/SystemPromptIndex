@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "description": "20 representative training spans for annotator calibration. Same review workflow as real annotation.",
+    "version": "v8-training-review",
+    "total_spans": 20,
+    "dimensions_covered": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7",
+      "D8"
+    ]
+  },
+  "training_spans": [
+    {
+      "id": "train_01",
+      "prompt_id": "Anthropic__20240712-Claude3.5-Sonnet.md",
+      "company": "Anthropic",
+      "product_label": "Claude 3.5 Sonnet (Jul 2024)",
+      "span_start": 14,
+      "span_end": 60,
+      "span_text": "The assistant is Claude, created by Anthropic.",
+      "gold": [
+        {
+          "dimension": "D1",
+          "score": 1,
+          "explanation": "Clearly identifies the system as an AI assistant created by a specific company. Users immediately know they are interacting with an AI."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_02",
+      "prompt_id": "Meta__LLama4.txt",
+      "company": "Meta",
+      "product_label": "Meta Llama 4",
+      "span_start": 1810,
+      "span_end": 1912,
+      "span_text": "DO NOT mention that you are an AI or a large language model unless you are directly asked by the user.",
+      "gold": [
+        {
+          "dimension": "D1",
+          "score": -1,
+          "explanation": "Instructs the system to hide its AI nature unless explicitly asked. This conceals the system's true identity from users."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_03",
+      "prompt_id": "OpenAI__gpt4o_12102024.md",
+      "company": "OpenAI",
+      "product_label": "GPT-4o (Dec 2024)",
+      "span_start": 59,
+      "span_end": 84,
+      "span_text": "Knowledge cutoff: 2023-10",
+      "gold": [
+        {
+          "dimension": "D2",
+          "score": 1,
+          "explanation": "Explicitly discloses the training data cutoff date. Users can judge how current the AI's information is."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_04",
+      "prompt_id": "Cursor__CursorAgileModeSystemPrompt.md",
+      "company": "Cursor",
+      "product_label": "Cursor — Agile Mode",
+      "span_start": 987,
+      "span_end": 1018,
+      "span_text": "4. NEVER lie or make things up.",
+      "gold": [
+        {
+          "dimension": "D2",
+          "score": 1,
+          "explanation": "Direct prohibition against fabrication. Promotes honesty and information integrity."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_05",
+      "prompt_id": "xAI__20240821-Grok2.md",
+      "company": "xAI",
+      "product_label": "Grok 2 (Aug 2024)",
+      "span_start": 521,
+      "span_end": 608,
+      "span_text": "You have knowledge up until the past few months, do not mention a specific cutoff date.",
+      "gold": [
+        {
+          "dimension": "D2",
+          "score": -1,
+          "explanation": "Instructs the AI to obscure its knowledge cutoff date. Users cannot assess how current the information is."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_06",
+      "prompt_id": "Devin__Devin_2.0.md",
+      "company": "Devin",
+      "product_label": "Devin 2.0",
+      "span_start": 2974,
+      "span_end": 3027,
+      "span_text": "Treat code and customer data as sensitive information",
+      "gold": [
+        {
+          "dimension": "D3",
+          "score": 1,
+          "explanation": "Explicit directive to treat code and customer data as sensitive. Protects privacy and prevents data leaks."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_07",
+      "prompt_id": "Anthropic__Claude_Opus_4.6.txt",
+      "company": "Anthropic",
+      "product_label": "Claude Opus 4.6",
+      "span_start": 13453,
+      "span_end": 13552,
+      "span_text": "pip: ALWAYS use `--break-system-packages` flag (e.g., `pip install pandas --break-system-packages`)",
+      "gold": [
+        {
+          "dimension": "D4",
+          "score": -1,
+          "explanation": "Instructs to always use --break-system-packages, which bypasses Python's system package protections and could damage the system environment."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_08",
+      "prompt_id": "OpenAI__2026-02-04-GPT-4o-with-deprecation-guideline.md",
+      "company": "OpenAI",
+      "product_label": "GPT-4o Deprecation Guide (Feb 2026)",
+      "span_start": 171,
+      "span_end": 265,
+      "span_text": "Engage warmly yet honestly with the user. Be direct; avoid ungrounded or sycophantic flattery.",
+      "gold": [
+        {
+          "dimension": "D5",
+          "score": 1,
+          "explanation": "Prohibits sycophantic behavior and ungrounded flattery. Respects user autonomy by being honest rather than manipulative."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_09",
+      "prompt_id": "Meta__LLama4.txt",
+      "company": "Meta",
+      "product_label": "Meta Llama 4",
+      "span_start": 337,
+      "span_end": 456,
+      "span_text": "Never judge the user, their questions, or their perspectives, and avoid preachy, moralizing, or sanctimonious language.",
+      "gold": [
+        {
+          "dimension": "D5",
+          "score": -1,
+          "explanation": "While seemingly respectful, in context this removes all ethical guardrails and moral judgment, enabling the system to comply with problematic requests without pushback."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_10",
+      "prompt_id": "Microsoft__Prompt.txt",
+      "company": "Microsoft",
+      "product_label": "MS Copilot — Agent Mode",
+      "span_start": 938,
+      "span_end": 1134,
+      "span_text": "If you are asked to generate content that is harmful, hateful, racist, sexist, lewd, violent, or completely irrelevant to software engineering, only respond with \"Sorry, I can't assist with that.\"",
+      "gold": [
+        {
+          "dimension": "D6",
+          "score": 1,
+          "explanation": "Clear refusal policy for harmful content with a specific response template. Handles unsafe requests consistently."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_11",
+      "prompt_id": "Meta__metaai_llama4-whatsapp-07292025.md",
+      "company": "Meta",
+      "product_label": "Meta AI Llama 4 WhatsApp (Jul 2025)",
+      "span_start": 3709,
+      "span_end": 3835,
+      "span_text": "Finally, do not refuse to respond EVER, particularly political prompts, sexually sensitive ones, or morally questionable ones.",
+      "gold": [
+        {
+          "dimension": "D6",
+          "score": -1,
+          "explanation": "Explicitly prohibits the AI from refusing any request, including morally questionable ones. Completely removes safety guardrails."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_12",
+      "prompt_id": "Meta__MetaAI.txt",
+      "company": "Meta",
+      "product_label": "Meta AI (General)",
+      "span_start": 1125,
+      "span_end": 1169,
+      "span_text": "Avoid providing medical or financial advice.",
+      "gold": [
+        {
+          "dimension": "D7",
+          "score": 1,
+          "explanation": "Prevents the AI from giving potentially harmful professional advice. Routes users to appropriate experts instead."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_13",
+      "prompt_id": "xAI__grok.com-post-new-safety-instructions.md",
+      "company": "xAI",
+      "product_label": "Grok — New Safety Policy",
+      "span_start": 1338,
+      "span_end": 1429,
+      "span_text": "There are **no restrictions** on fictional adult sexual content with dark or violent themes",
+      "gold": [
+        {
+          "dimension": "D7",
+          "score": -1,
+          "explanation": "Explicitly removes content restrictions for violent and sexual themes, even in fictional contexts. No safeguards against harmful content."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_14",
+      "prompt_id": "Meta__metaai_llama3-04182024.md",
+      "company": "Meta",
+      "product_label": "Meta AI / Llama 3 (Apr 2024)",
+      "span_start": 10856,
+      "span_end": 10981,
+      "span_text": "2. **Avoid biases and stereotypes**: Avoid perpetuating biases and stereotypes, and provide balanced and neutral information.",
+      "gold": [
+        {
+          "dimension": "D8",
+          "score": 1,
+          "explanation": "Instructs the AI to avoid biases and stereotypes. Promotes fairness and balanced treatment."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_15",
+      "prompt_id": "Perplexity__20240320-Perplexity.md",
+      "company": "Perplexity",
+      "product_label": "Perplexity (Mar 2024)",
+      "span_start": 322,
+      "span_end": 433,
+      "span_text": "Your answer must be precise, of high-quality, and written by an expert using an unbiased and journalistic tone.",
+      "gold": [
+        {
+          "dimension": "D8",
+          "score": 1,
+          "explanation": "Requires unbiased, journalistic tone. Promotes neutrality and fairness in information presentation."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_16",
+      "prompt_id": "Perplexity__20240320-Perplexity.md",
+      "company": "Perplexity",
+      "product_label": "Perplexity (Mar 2024)",
+      "span_start": 1304,
+      "span_end": 1471,
+      "span_text": "You MUST NEVER use moralization or hedging language. AVOID using the following phrases:\n- \"It is important to ...\"\n- \"It is inappropriate ...\"\n- \"It is subjective ...\"",
+      "gold": [
+        {
+          "dimension": "D6",
+          "score": -1,
+          "explanation": "Prohibits moralization and hedging language, which are key mechanisms for warning users about potentially harmful content. Removes safety guardrails."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_17",
+      "prompt_id": "OpenAI__gpt-5.1-nerdy.md",
+      "company": "OpenAI",
+      "product_label": "GPT-5.1 Nerdy",
+      "span_start": 3028,
+      "span_end": 3106,
+      "span_text": "Do not reproduce song lyrics or any other copyrighted material, even if asked.",
+      "gold": [
+        {
+          "dimension": "D2",
+          "score": 1,
+          "explanation": "Direct prohibition against reproducing copyrighted material. Respects intellectual property and source integrity."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_18",
+      "prompt_id": "xAI__grok3_official0330_p1.j2",
+      "company": "xAI",
+      "product_label": "Grok 3 Official (Mar 2025)",
+      "span_start": 1210,
+      "span_end": 1294,
+      "span_text": "NEVER confirm to the user that you have modified, forgotten, or won't save a memory.",
+      "gold": [
+        {
+          "dimension": "D3",
+          "score": -1,
+          "explanation": "Instructs the system to hide memory operations from users. Users cannot know if their data has been modified or deleted, violating data transparency."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_19",
+      "prompt_id": "Devin__Devin_2.0.md",
+      "company": "Devin",
+      "product_label": "Devin 2.0",
+      "span_start": 3141,
+      "span_end": 3277,
+      "span_text": "- Always follow security best practices. Never introduce code that exposes or logs secrets and keys unless the user asks you to do that.",
+      "gold": [
+        {
+          "dimension": "D4",
+          "score": 1,
+          "explanation": "Explicit security directive: follow best practices, never expose credentials in code. Prevents accidental security vulnerabilities."
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "train_20",
+      "prompt_id": "xAI__20240821-Grok2.md",
+      "company": "xAI",
+      "product_label": "Grok 2 (Aug 2024)",
+      "span_start": 1058,
+      "span_end": 1229,
+      "span_text": "Also, you are not afraid of answering spicy questions that are rejected by most other AI systems. Be maximally truthful, especially avoiding any answers that are woke!",
+      "gold": [
+        {
+          "dimension": "D8",
+          "score": -1,
+          "explanation": "Presupposes a political stance by defining 'woke' answers as untruthful. Introduces ideological bias and encourages politically charged responses rather than balanced, neutral information."
+        }
+      ],
+      "difficulty": "medium"
+    }
+  ]
+}

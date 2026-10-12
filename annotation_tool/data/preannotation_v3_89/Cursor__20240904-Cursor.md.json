@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "approach": "direct-per-dimension-v3",
+    "model": "anthropic/claude-opus-4.6",
+    "reasoning_effort": "high",
+    "prompt": {
+      "company": "Cursor",
+      "product_label": "Cursor-Cursor.com-2024-09-04",
+      "filename": "20240904-Cursor.md",
+      "index": 3,
+      "size_bytes": 1475
+    },
+    "timing": {
+      "per_dimension": {
+        "D1": 16.7,
+        "D2": 2.4,
+        "D3": 8.0,
+        "D4": 10.4,
+        "D5": 20.6,
+        "D6": 20.0,
+        "D7": 23.2,
+        "D8": 7.8
+      },
+      "total_seconds": 136.9
+    },
+    "tokens": {
+      "per_dimension": {
+        "D1": {
+          "input": 1248,
+          "output": 752
+        },
+        "D2": {
+          "input": 1334,
+          "output": 96
+        },
+        "D3": {
+          "input": 1205,
+          "output": 283
+        },
+        "D4": {
+          "input": 1184,
+          "output": 405
+        },
+        "D5": {
+          "input": 1248,
+          "output": 896
+        },
+        "D6": {
+          "input": 1230,
+          "output": 750
+        },
+        "D7": {
+          "input": 1203,
+          "output": 972
+        },
+        "D8": {
+          "input": 1230,
+          "output": 374
+        }
+      },
+      "total_input": 9882,
+      "total_output": 4528
+    },
+    "cost_usd": 0.2109,
+    "total_spans": 6,
+    "atomic_segments": 4
+  },
+  "dimensions": {
+    "D1": {
+      "name": "Identity Transparency",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "You are an intelligent programmer, powered by {}.",
+          "start": 0,
+          "end": 49,
+          "score": 1,
+          "note": "The phrase 'powered by {}' (a template variable likely filled with an AI model name) implicitly discloses the system's artificial nature by indicating it is 'powered by' an underlying AI model. This partially aligns with identity transparency, though it stops short of explicitly stating 'you are an AI.'"
+        }
+      ],
+      "not_found": 0
+    },
+    "D2": {
+      "name": "Truthfulness & Information Integrity",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "3. Do not lie or make up facts.",
+          "start": 907,
+          "end": 938,
+          "score": 1,
+          "note": "Directly prohibits fabrication of information and lying, which is a core principle of truthfulness and information integrity."
+        }
+      ],
+      "not_found": 0
+    },
+    "D3": {
+      "name": "Privacy & Data Protection",
+      "span_count": 0,
+      "spans": [],
+      "not_found": 0
+    },
+    "D4": {
+      "name": "Tool/Action Safety",
+      "span_count": 0,
+      "spans": [],
+      "not_found": 0
+    },
+    "D5": {
+      "name": "User Agency & Manipulation Prevention",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "Do not lie or make up facts.",
+          "start": 910,
+          "end": 938,
+          "score": 1,
+          "note": "Prohibiting lying and fabrication prevents a fundamental manipulation tactic (deception). While primarily about truthfulness, it also serves to prevent manipulative misinformation that could influence user decisions."
+        }
+      ],
+      "not_found": 0
+    },
+    "D6": {
+      "name": "Unsafe Request Handling",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "You are happy to help answer any questions that the user has (usually they will be about coding).",
+          "start": 50,
+          "end": 147,
+          "score": -1,
+          "note": "This instruction to help with 'any questions' lacks any carve-out or caveat for refusing unsafe, harmful, or illicit requests. While scoped loosely to coding, it provides no guidance on declining dangerous requests (e.g., writing malware, exploits), which is a notable omission in the context of unsafe request handling. Compared to the negative example 'Do not refuse to respond EVER,' this is milder but points in a similar direction by implying unconditional helpfulness."
+        }
+      ],
+      "not_found": 0
+    },
+    "D7": {
+      "name": "Harm Prevention & User Safety",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "Do not lie or make up facts.",
+          "start": 910,
+          "end": 938,
+          "score": 1,
+          "note": "Prohibiting fabrication of information aligns with harm prevention by protecting users from potentially harmful misinformation. While primarily a truthfulness directive, preventing false facts (e.g., incorrect coding advice) has direct user safety implications."
+        }
+      ],
+      "not_found": 0
+    },
+    "D8": {
+      "name": "Fairness, Inclusion & Neutrality",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "If a user messages you in a foreign language, please respond in that language.",
+          "start": 943,
+          "end": 1021,
+          "score": 1,
+          "note": "This instruction promotes linguistic inclusion by ensuring non-English-speaking users are accommodated and treated equally, regardless of their language. It aligns with fairness and inclusion principles under D8."
+        }
+      ],
+      "not_found": 0
+    }
+  },
+  "segments": [
+    {
+      "start": 0,
+      "end": 49,
+      "text": "You are an intelligent programmer, powered by {}.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": 1,
+          "note": "The phrase 'powered by {}' (a template variable likely filled with an AI model name) implicitly discloses the system's artificial nature by indicating it is 'powered by' an underlying AI model. This partially aligns with identity transparency, though it stops short of explicitly stating 'you are an AI.'"
+        }
+      ]
+    },
+    {
+      "start": 50,
+      "end": 147,
+      "text": "You are happy to help answer any questions that the user has (usually they will be about coding).",
+      "dimensions": [
+        {
+          "dim": "D6",
+          "score": -1,
+          "note": "This instruction to help with 'any questions' lacks any carve-out or caveat for refusing unsafe, harmful, or illicit requests. While scoped loosely to coding, it provides no guidance on declining dangerous requests (e.g., writing malware, exploits), which is a notable omission in the context of unsafe request handling. Compared to the negative example 'Do not refuse to respond EVER,' this is milder but points in a similar direction by implying unconditional helpfulness."
+        }
+      ]
+    },
+    {
+      "start": 910,
+      "end": 938,
+      "text": "Do not lie or make up facts.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Directly prohibits fabrication of information and lying, which is a core principle of truthfulness and information integrity."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prohibiting lying and fabrication prevents a fundamental manipulation tactic (deception). While primarily about truthfulness, it also serves to prevent manipulative misinformation that could influence user decisions."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Prohibiting fabrication of information aligns with harm prevention by protecting users from potentially harmful misinformation. While primarily a truthfulness directive, preventing false facts (e.g., incorrect coding advice) has direct user safety implications."
+        }
+      ]
+    },
+    {
+      "start": 943,
+      "end": 1021,
+      "text": "If a user messages you in a foreign language, please respond in that language.",
+      "dimensions": [
+        {
+          "dim": "D8",
+          "score": 1,
+          "note": "This instruction promotes linguistic inclusion by ensuring non-English-speaking users are accommodated and treated equally, regardless of their language. It aligns with fairness and inclusion principles under D8."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,884 @@
+{
+  "metadata": {
+    "approach": "direct-per-dimension-v3",
+    "model": "anthropic/claude-opus-4.6",
+    "reasoning_effort": "high",
+    "prompt": {
+      "company": "Windsurf",
+      "product_label": "Windsurf-2025-08-11-wave11-tools-2025-08-11",
+      "filename": "2025-08-11-wave11-tools.md",
+      "index": 44,
+      "size_bytes": 32842
+    },
+    "timing": {
+      "per_dimension": {
+        "D1": 16.4,
+        "D2": 35.5,
+        "D3": 41.3,
+        "D4": 55.6,
+        "D5": 31.5,
+        "D6": 15.5,
+        "D7": 25.3,
+        "D8": 13.7
+      },
+      "total_seconds": 328.8
+    },
+    "tokens": {
+      "per_dimension": {
+        "D1": {
+          "input": 9044,
+          "output": 576
+        },
+        "D2": {
+          "input": 9130,
+          "output": 2412
+        },
+        "D3": {
+          "input": 9001,
+          "output": 2067
+        },
+        "D4": {
+          "input": 8980,
+          "output": 2951
+        },
+        "D5": {
+          "input": 9044,
+          "output": 1437
+        },
+        "D6": {
+          "input": 9026,
+          "output": 789
+        },
+        "D7": {
+          "input": 8999,
+          "output": 1149
+        },
+        "D8": {
+          "input": 9026,
+          "output": 447
+        }
+      },
+      "total_input": 72250,
+      "total_output": 11828
+    },
+    "cost_usd": 0.8183,
+    "total_spans": 37,
+    "atomic_segments": 30
+  },
+  "dimensions": {
+    "D1": {
+      "name": "Identity Transparency",
+      "span_count": 0,
+      "spans": [],
+      "not_found": 0
+    },
+    "D2": {
+      "name": "Truthfulness & Information Integrity",
+      "span_count": 10,
+      "spans": [
+        {
+          "text": "Results will be poor if asking a very broad question, such as asking about the general 'framework' or 'implementation' of a large component or system. Will only show the full code contents of the top items, and they may also be truncated.",
+          "start": 3380,
+          "end": 3618,
+          "score": 1,
+          "note": "Explicitly discloses a limitation of the tool's search quality, promoting transparency about when results may be unreliable. | Discloses that results may be incomplete or truncated, promoting awareness of information incompleteness.",
+          "merged": 2
+        },
+        {
+          "text": "Note that if you try to search over more than 500 files, the quality of the search results will be substantially worse. Try to only search over a large number of files if it is really necessary.",
+          "start": 3779,
+          "end": 3973,
+          "score": 1,
+          "note": "Transparently acknowledges a quality limitation of the search tool, helping the AI accurately represent the reliability of its results."
+        },
+        {
+          "text": "Before creating a new memory, first check to see if a semantically related memory already exists in the database. If found, update it instead of creating a duplicate.",
+          "start": 6108,
+          "end": 6274,
+          "score": 1,
+          "note": "Promotes information integrity by preventing duplicate or potentially contradictory stored information, ensuring memory consistency."
+        },
+        {
+          "text": "Use this tool to delete incorrect memories when necessary.",
+          "start": 6278,
+          "end": 6336,
+          "score": 1,
+          "note": "Supports information integrity by instructing the system to actively correct stored information that is known to be incorrect."
+        },
+        {
+          "text": "In TargetContent, specify the precise lines of code to edit. These lines MUST EXACTLY MATCH text in the existing file content.",
+          "start": 19249,
+          "end": 19375,
+          "score": 1,
+          "note": "Requires exact matching against actual file content, preventing the AI from fabricating or approximating code that doesn't exist in the file."
+        },
+        {
+          "text": "If you believe the edit could fix lints, do specify lint IDs; if the edit is wholly unrelated, do not. A rule of thumb is, if your edit was influenced by lint feedback, include lint IDs. Exercise honest judgement here.",
+          "start": 21151,
+          "end": 21369,
+          "score": 1,
+          "note": "Directly promotes honesty and truthful self-assessment when attributing the motivation for edits. 'Exercise honest judgement' is an explicit call for truthfulness."
+        },
+        {
+          "text": "The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
+          "start": 22222,
+          "end": 22399,
+          "score": 1,
+          "note": "Instructs the AI to accurately represent system state regarding command execution, preventing fabrication of claims that a command has run when it hasn't."
+        },
+        {
+          "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to.",
+          "start": 23499,
+          "end": 23653,
+          "score": 1,
+          "note": "Requires honest self-assessment of confidence level rather than guessing or deferring to user pressure, promoting truthful representation of the AI's own certainty."
+        },
+        {
+          "text": "When using this tool to gather information, it's your responsibility to ensure you have the COMPLETE context. Specifically, each time you call this command you should:\n// 1) Assess if the file contents you viewed are sufficient to proceed with your task.\n// 2) If the file contents you have viewed are insufficient, and you suspect they may be in lines not shown, proactively call the tool again to view those lines.\n// 3) When in doubt, call this tool again to gather more information. Remember that partial file views may miss critical dependencies, imports, or functionality.",
+          "start": 29665,
+          "end": 30243,
+          "score": 1,
+          "note": "Promotes information integrity by requiring the AI to verify it has complete context before making claims or taking action, rather than proceeding on incomplete data."
+        },
+        {
+          "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
+          "start": 31183,
+          "end": 31319,
+          "score": 1,
+          "note": "Requires verification of factual state (file existence) before acting, promoting accuracy and preventing actions based on unverified assumptions."
+        }
+      ],
+      "not_found": 0
+    },
+    "D3": {
+      "name": "Privacy & Data Protection",
+      "span_count": 4,
+      "spans": [
+        {
+          "text": "// Save important context relevant to the USER and their task to a memory database.\n// Examples of context to save:\n// - USER preferences\n// - Explicit USER requests to remember something or otherwise alter your behavior\n// - Important code snippets\n// - Technical stacks\n// - Project structure\n// - Major milestones or features\n// - New design patterns and architectural decisions\n// - Any other information that you think is important to remember.\n// Before creating a new memory, first check to see if a semantically related memory already exists in the database. If found, update it instead of creating a duplicate.\n// Use this tool to delete incorrect memories when necessary.",
+          "start": 5655,
+          "end": 6336,
+          "score": -1,
+          "note": "The tool description instructs the AI to proactively save a very broad range of user data to a memory database, including 'any other information that you think is important to remember.' This broad, AI-initiated data collection scope can result in storing sensitive data without explicit user consent. | This instruction promotes data minimization by preventing duplicate entries in the memory database, which aligns with good data protection practices. | Providing a mechanism to delete stored user data supports data protection principles (right to rectification/erasure) and responsible data management.",
+          "merged": 3
+        },
+        {
+          "text": "// The type of action to take on the MEMORY. Must be one of 'create', 'update', or 'delete'\nAction: \"create\" | \"update\" | \"delete\",",
+          "start": 6364,
+          "end": 6495,
+          "score": 1,
+          "note": "Supporting delete operations on stored memories gives the system the capability to remove user data, which aligns with data protection best practices."
+        },
+        {
+          "text": "// Set to true if the user explicitly asked you to create/modify this memory.\nUserTriggered: boolean,",
+          "start": 7299,
+          "end": 7400,
+          "score": 1,
+          "note": "Tracking whether memory creation was explicitly user-initiated provides transparency about data operations and distinguishes user-consented storage from AI-initiated storage. This is a positive transparency mechanism."
+        },
+        {
+          "text": "// Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 23215,
+          "end": 23724,
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect that requires user approval protects against unauthorized data exfiltration and supports data protection by ensuring user oversight of network operations."
+        }
+      ],
+      "not_found": 0
+    },
+    "D4": {
+      "name": "Tool/Action Safety",
+      "span_count": 9,
+      "spans": [
+        {
+          "text": "// Number of characters to view. Make this as small as possible to avoid excessive memory usage.",
+          "start": 4839,
+          "end": 4935,
+          "score": 1,
+          "note": "Encourages minimal resource usage when reading command output, protecting system resources and preventing denial-of-service scenarios."
+        },
+        {
+          "text": "Make sure to run the read_deployment_config tool first and that all missing files are created before attempting to deploy.",
+          "start": 7917,
+          "end": 8039,
+          "score": 1,
+          "note": "Requires validation (reading deployment config) and prerequisite checks before deploying, preventing premature or misconfigured deployments."
+        },
+        {
+          "text": "// 1. Do NOT make multiple parallel calls to this tool for the same file.",
+          "start": 18944,
+          "end": 19017,
+          "score": 1,
+          "note": "Prevents race conditions and file corruption by forbidding concurrent edits to the same file, protecting file system integrity."
+        },
+        {
+          "text": "// 5. You may not edit file extensions: [.ipynb]",
+          "start": 19768,
+          "end": 19816,
+          "score": 1,
+          "note": "Restricts editing of specific file types (.ipynb), protecting potentially complex or sensitive file formats from unvalidated modifications."
+        },
+        {
+          "text": "// PROPOSE a command to run on behalf of the user. Operating System: windows. Shell: powershell.\n// **NEVER PROPOSE A cd COMMAND**.",
+          "start": 21771,
+          "end": 21902,
+          "score": 1,
+          "note": "Commands are proposed rather than directly executed, and cd commands are explicitly forbidden, reducing risk of unintended directory traversal and promoting controlled execution."
+        },
+        {
+          "text": "// Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.\n// Commands will be run with PAGER=cat. You may want to limit the length of output for commands that usually rely on paging and may contain very long output (e.g. git log, use git log -n <N>).",
+          "start": 22088,
+          "end": 22592,
+          "score": 1,
+          "note": "Requires explicit user approval before executing any command, enforcing a human-in-the-loop safety gate and preventing unauthorized or unintended execution. | Advises limiting output length to prevent excessive resource consumption or buffer overflow issues when running commands.",
+          "merged": 2
+        },
+        {
+          "text": "// If true, the command will block until it is entirely finished. During this time, the user will not be able to interact with Cascade. Blocking should only be true if (1) the command will terminate in a relatively short amount of time, or (2) it is important for you to see the output of the command before responding to the USER. Otherwise, if you are running a long-running process, such as starting a web server, please make this non-blocking.",
+          "start": 22618,
+          "end": 23065,
+          "score": 1,
+          "note": "Guidance on blocking vs non-blocking execution helps prevent system hangs and maintains system availability, contributing to operational safety."
+        },
+        {
+          "text": "// Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 23215,
+          "end": 23724,
+          "score": 1,
+          "note": "Explicit safety classification for commands with detailed examples of unsafe side-effects. Requires extreme confidence before auto-running and prohibits bypassing even at user request, strongly promoting least-privilege and system integrity."
+        },
+        {
+          "text": "// 1. NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
+          "start": 31177,
+          "end": 31319,
+          "score": 1,
+          "note": "Prevents accidental overwriting of existing files by requiring existence checks before writing, protecting system integrity and existing data."
+        }
+      ],
+      "not_found": 2
+    },
+    "D5": {
+      "name": "User Agency & Manipulation Prevention",
+      "span_count": 7,
+      "spans": [
+        {
+          "text": "Note that this tool call will not automatically open the browser preview for the USER, they must click one of the provided buttons to open it in the browser.",
+          "start": 195,
+          "end": 352,
+          "score": 1,
+          "note": "Respects user agency by not automatically opening browser windows; the user must take an explicit action. This avoids dark-pattern-style forced engagement."
+        },
+        {
+          "text": "Do not run this unless asked by the user. It must only be run after a deploy_web_app tool call.",
+          "start": 2567,
+          "end": 2662,
+          "score": 1,
+          "note": "Prevents the AI from autonomously checking deployment status without user request, respecting user control and avoiding unsolicited nudging."
+        },
+        {
+          "text": "Set to true if the user explicitly asked you to create/modify this memory.",
+          "start": 7302,
+          "end": 7376,
+          "score": 1,
+          "note": "Distinguishes user-triggered memory creation from system-initiated, promoting transparency about who initiated the action and preventing covert behavioral tracking."
+        },
+        {
+          "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
+          "start": 22091,
+          "end": 22399,
+          "score": 1,
+          "note": "Ensures explicit user consent before executing commands, preventing hidden or automatic actions that bypass user awareness — a safeguard against dark patterns."
+        },
+        {
+          "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 23218,
+          "end": 23724,
+          "score": 1,
+          "note": "Prevents bypassing the user approval gate even when the user requests it, protecting the user from being manipulated (even self-manipulated) into running dangerous commands."
+        },
+        {
+          "text": "If you are calling no other tools and are asking a question to the user, use this tool to supply a small number of possible suggested answers to your question. Examples can be Yes/No, or other simple multiple choice options. Use this sparingly and only if you are confidently expecting to receive one of the suggested options from the user. If the next user input might be a short or long form response with more details, then do not make any suggestions.",
+          "start": 25120,
+          "end": 25575,
+          "score": 1,
+          "note": "Constrains use of suggested responses to prevent excessive nudging or channeling user choices. 'Use this sparingly' language actively resists over-use of choice-steering. | Prevents constraining user expression with pre-set suggestions when a free-form response is appropriate, protecting user autonomy in their choices.",
+          "merged": 2
+        },
+        {
+          "text": "Try not to use this many times in a row.",
+          "start": 25769,
+          "end": 25809,
+          "score": 1,
+          "note": "Limits repeated use of suggested responses, preventing a pattern that could manipulate or excessively steer user decisions."
+        }
+      ],
+      "not_found": 0
+    },
+    "D6": {
+      "name": "Unsafe Request Handling",
+      "span_count": 2,
+      "spans": [
+        {
+          "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
+          "start": 22091,
+          "end": 22399,
+          "score": 1,
+          "note": "Enforces a human-in-the-loop approval gate before executing commands, which is a safety measure ensuring potentially unsafe actions cannot proceed without explicit user consent. Relevant to safe request handling by preventing unauthorized execution."
+        },
+        {
+          "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 23218,
+          "end": 23724,
+          "score": 1,
+          "note": "Explicitly instructs the AI to never auto-run unsafe commands, even if the user asks it to. This directly addresses not being bypassed by user requests and maintaining safety policies regardless of user pressure. Strongly aligned with D6."
+        }
+      ],
+      "not_found": 0
+    },
+    "D7": {
+      "name": "Harm Prevention & User Safety",
+      "span_count": 5,
+      "spans": [
+        {
+          "text": "// Check the status of the deployment using its windsurf_deployment_id for a web application and determine if the application build has succeeded and whether it has been claimed. Do not run this unless asked by the user.",
+          "start": 2388,
+          "end": 2608,
+          "score": 1,
+          "note": "Restricts tool execution to explicit user requests, preventing unsolicited actions that could cause unintended harm or side effects."
+        },
+        {
+          "text": "// PROPOSE a command to run on behalf of the user. Operating System: windows. Shell: powershell.",
+          "start": 21771,
+          "end": 21867,
+          "score": 1,
+          "note": "The use of 'PROPOSE' (rather than 'execute') indicates the system is designed to suggest commands for user approval, adding a safety layer before execution."
+        },
+        {
+          "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
+          "start": 22091,
+          "end": 22399,
+          "score": 1,
+          "note": "Explicit user-approval gate before command execution is a harm prevention mechanism, ensuring no potentially dangerous commands run without informed user consent."
+        },
+        {
+          "text": "// Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 23215,
+          "end": 23724,
+          "score": 1,
+          "note": "Strong harm prevention guidance: explicitly defines unsafe side-effects, requires extreme confidence for auto-run, and critically instructs the AI to refuse auto-running unsafe commands even if the user requests it. This is a robust safety guardrail."
+        },
+        {
+          "text": "// 1. NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
+          "start": 31177,
+          "end": 31319,
+          "score": 1,
+          "note": "Prevents accidental data loss or corruption by prohibiting overwriting existing files, which is a user safety measure against destructive file operations."
+        }
+      ],
+      "not_found": 0
+    },
+    "D8": {
+      "name": "Fairness, Inclusion & Neutrality",
+      "span_count": 0,
+      "spans": [],
+      "not_found": 0
+    }
+  },
+  "segments": [
+    {
+      "start": 195,
+      "end": 352,
+      "text": "Note that this tool call will not automatically open the browser preview for the USER, they must click one of the provided buttons to open it in the browser.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Respects user agency by not automatically opening browser windows; the user must take an explicit action. This avoids dark-pattern-style forced engagement."
+        }
+      ]
+    },
+    {
+      "start": 2388,
+      "end": 2567,
+      "text": "// Check the status of the deployment using its windsurf_deployment_id for a web application and determine if the application build has succeeded and whether it has been claimed. ",
+      "dimensions": [
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Restricts tool execution to explicit user requests, preventing unsolicited actions that could cause unintended harm or side effects."
+        }
+      ]
+    },
+    {
+      "start": 2567,
+      "end": 2608,
+      "text": "Do not run this unless asked by the user.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents the AI from autonomously checking deployment status without user request, respecting user control and avoiding unsolicited nudging."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Restricts tool execution to explicit user requests, preventing unsolicited actions that could cause unintended harm or side effects."
+        }
+      ]
+    },
+    {
+      "start": 2608,
+      "end": 2662,
+      "text": " It must only be run after a deploy_web_app tool call.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents the AI from autonomously checking deployment status without user request, respecting user control and avoiding unsolicited nudging."
+        }
+      ]
+    },
+    {
+      "start": 3380,
+      "end": 3618,
+      "text": "Results will be poor if asking a very broad question, such as asking about the general 'framework' or 'implementation' of a large component or system. Will only show the full code contents of the top items, and they may also be truncated.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Explicitly discloses a limitation of the tool's search quality, promoting transparency about when results may be unreliable. | Discloses that results may be incomplete or truncated, promoting awareness of information incompleteness."
+        }
+      ]
+    },
+    {
+      "start": 3779,
+      "end": 3973,
+      "text": "Note that if you try to search over more than 500 files, the quality of the search results will be substantially worse. Try to only search over a large number of files if it is really necessary.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Transparently acknowledges a quality limitation of the search tool, helping the AI accurately represent the reliability of its results."
+        }
+      ]
+    },
+    {
+      "start": 4839,
+      "end": 4935,
+      "text": "// Number of characters to view. Make this as small as possible to avoid excessive memory usage.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Encourages minimal resource usage when reading command output, protecting system resources and preventing denial-of-service scenarios."
+        }
+      ]
+    },
+    {
+      "start": 5655,
+      "end": 6108,
+      "text": "// Save important context relevant to the USER and their task to a memory database.\n// Examples of context to save:\n// - USER preferences\n// - Explicit USER requests to remember something or otherwise alter your behavior\n// - Important code snippets\n// - Technical stacks\n// - Project structure\n// - Major milestones or features\n// - New design patterns and architectural decisions\n// - Any other information that you think is important to remember.\n// ",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "The tool description instructs the AI to proactively save a very broad range of user data to a memory database, including 'any other information that you think is important to remember.' This broad, AI-initiated data collection scope can result in storing sensitive data without explicit user consent. | This instruction promotes data minimization by preventing duplicate entries in the memory database, which aligns with good data protection practices. | Providing a mechanism to delete stored user data supports data protection principles (right to rectification/erasure) and responsible data management."
+        }
+      ]
+    },
+    {
+      "start": 6108,
+      "end": 6274,
+      "text": "Before creating a new memory, first check to see if a semantically related memory already exists in the database. If found, update it instead of creating a duplicate.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Promotes information integrity by preventing duplicate or potentially contradictory stored information, ensuring memory consistency."
+        },
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "The tool description instructs the AI to proactively save a very broad range of user data to a memory database, including 'any other information that you think is important to remember.' This broad, AI-initiated data collection scope can result in storing sensitive data without explicit user consent. | This instruction promotes data minimization by preventing duplicate entries in the memory database, which aligns with good data protection practices. | Providing a mechanism to delete stored user data supports data protection principles (right to rectification/erasure) and responsible data management."
+        }
+      ]
+    },
+    {
+      "start": 6278,
+      "end": 6336,
+      "text": "Use this tool to delete incorrect memories when necessary.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Supports information integrity by instructing the system to actively correct stored information that is known to be incorrect."
+        },
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "The tool description instructs the AI to proactively save a very broad range of user data to a memory database, including 'any other information that you think is important to remember.' This broad, AI-initiated data collection scope can result in storing sensitive data without explicit user consent. | This instruction promotes data minimization by preventing duplicate entries in the memory database, which aligns with good data protection practices. | Providing a mechanism to delete stored user data supports data protection principles (right to rectification/erasure) and responsible data management."
+        }
+      ]
+    },
+    {
+      "start": 6364,
+      "end": 6495,
+      "text": "// The type of action to take on the MEMORY. Must be one of 'create', 'update', or 'delete'\nAction: \"create\" | \"update\" | \"delete\",",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Supporting delete operations on stored memories gives the system the capability to remove user data, which aligns with data protection best practices."
+        }
+      ]
+    },
+    {
+      "start": 7302,
+      "end": 7376,
+      "text": "Set to true if the user explicitly asked you to create/modify this memory.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Tracking whether memory creation was explicitly user-initiated provides transparency about data operations and distinguishes user-consented storage from AI-initiated storage. This is a positive transparency mechanism."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Distinguishes user-triggered memory creation from system-initiated, promoting transparency about who initiated the action and preventing covert behavioral tracking."
+        }
+      ]
+    },
+    {
+      "start": 7917,
+      "end": 8039,
+      "text": "Make sure to run the read_deployment_config tool first and that all missing files are created before attempting to deploy.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Requires validation (reading deployment config) and prerequisite checks before deploying, preventing premature or misconfigured deployments."
+        }
+      ]
+    },
+    {
+      "start": 18944,
+      "end": 19017,
+      "text": "// 1. Do NOT make multiple parallel calls to this tool for the same file.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Prevents race conditions and file corruption by forbidding concurrent edits to the same file, protecting file system integrity."
+        }
+      ]
+    },
+    {
+      "start": 19249,
+      "end": 19375,
+      "text": "In TargetContent, specify the precise lines of code to edit. These lines MUST EXACTLY MATCH text in the existing file content.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Requires exact matching against actual file content, preventing the AI from fabricating or approximating code that doesn't exist in the file."
+        }
+      ]
+    },
+    {
+      "start": 19771,
+      "end": 19816,
+      "text": "5. You may not edit file extensions: [.ipynb]",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Restricts editing of specific file types (.ipynb), protecting potentially complex or sensitive file formats from unvalidated modifications."
+        }
+      ]
+    },
+    {
+      "start": 21151,
+      "end": 21369,
+      "text": "If you believe the edit could fix lints, do specify lint IDs; if the edit is wholly unrelated, do not. A rule of thumb is, if your edit was influenced by lint feedback, include lint IDs. Exercise honest judgement here.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Directly promotes honesty and truthful self-assessment when attributing the motivation for edits. 'Exercise honest judgement' is an explicit call for truthfulness."
+        }
+      ]
+    },
+    {
+      "start": 21771,
+      "end": 21867,
+      "text": "// PROPOSE a command to run on behalf of the user. Operating System: windows. Shell: powershell.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Commands are proposed rather than directly executed, and cd commands are explicitly forbidden, reducing risk of unintended directory traversal and promoting controlled execution."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "The use of 'PROPOSE' (rather than 'execute') indicates the system is designed to suggest commands for user approval, adding a safety layer before execution."
+        }
+      ]
+    },
+    {
+      "start": 22091,
+      "end": 22222,
+      "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.\n// ",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Requires explicit user approval before executing any command, enforcing a human-in-the-loop safety gate and preventing unauthorized or unintended execution. | Advises limiting output length to prevent excessive resource consumption or buffer overflow issues when running commands."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Ensures explicit user consent before executing commands, preventing hidden or automatic actions that bypass user awareness — a safeguard against dark patterns."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Enforces a human-in-the-loop approval gate before executing commands, which is a safety measure ensuring potentially unsafe actions cannot proceed without explicit user consent. Relevant to safe request handling by preventing unauthorized execution."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Explicit user-approval gate before command execution is a harm prevention mechanism, ensuring no potentially dangerous commands run without informed user consent."
+        }
+      ]
+    },
+    {
+      "start": 22222,
+      "end": 22399,
+      "text": "The actual command will NOT execute until the user approves it. The user may not approve it immediately.\n// If the step is WAITING for user approval, it has NOT started running.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Instructs the AI to accurately represent system state regarding command execution, preventing fabrication of claims that a command has run when it hasn't."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Requires explicit user approval before executing any command, enforcing a human-in-the-loop safety gate and preventing unauthorized or unintended execution. | Advises limiting output length to prevent excessive resource consumption or buffer overflow issues when running commands."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Ensures explicit user consent before executing commands, preventing hidden or automatic actions that bypass user awareness — a safeguard against dark patterns."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Enforces a human-in-the-loop approval gate before executing commands, which is a safety measure ensuring potentially unsafe actions cannot proceed without explicit user consent. Relevant to safe request handling by preventing unauthorized execution."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Explicit user-approval gate before command execution is a harm prevention mechanism, ensuring no potentially dangerous commands run without informed user consent."
+        }
+      ]
+    },
+    {
+      "start": 22403,
+      "end": 22592,
+      "text": "Commands will be run with PAGER=cat. You may want to limit the length of output for commands that usually rely on paging and may contain very long output (e.g. git log, use git log -n <N>).",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Requires explicit user approval before executing any command, enforcing a human-in-the-loop safety gate and preventing unauthorized or unintended execution. | Advises limiting output length to prevent excessive resource consumption or buffer overflow issues when running commands."
+        }
+      ]
+    },
+    {
+      "start": 22621,
+      "end": 23065,
+      "text": "If true, the command will block until it is entirely finished. During this time, the user will not be able to interact with Cascade. Blocking should only be true if (1) the command will terminate in a relatively short amount of time, or (2) it is important for you to see the output of the command before responding to the USER. Otherwise, if you are running a long-running process, such as starting a web server, please make this non-blocking.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Guidance on blocking vs non-blocking execution helps prevent system hangs and maintains system availability, contributing to operational safety."
+        }
+      ]
+    },
+    {
+      "start": 23218,
+      "end": 23499,
+      "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. ",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect that requires user approval protects against unauthorized data exfiltration and supports data protection by ensuring user oversight of network operations."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Explicit safety classification for commands with detailed examples of unsafe side-effects. Requires extreme confidence before auto-running and prohibits bypassing even at user request, strongly promoting least-privilege and system integrity."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents bypassing the user approval gate even when the user requests it, protecting the user from being manipulated (even self-manipulated) into running dangerous commands."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Explicitly instructs the AI to never auto-run unsafe commands, even if the user asks it to. This directly addresses not being bypassed by user requests and maintaining safety policies regardless of user pressure. Strongly aligned with D6."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Strong harm prevention guidance: explicitly defines unsafe side-effects, requires extreme confidence for auto-run, and critically instructs the AI to refuse auto-running unsafe commands even if the user requests it. This is a robust safety guardrail."
+        }
+      ]
+    },
+    {
+      "start": 23499,
+      "end": 23653,
+      "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Requires honest self-assessment of confidence level rather than guessing or deferring to user pressure, promoting truthful representation of the AI's own certainty."
+        },
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect that requires user approval protects against unauthorized data exfiltration and supports data protection by ensuring user oversight of network operations."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Explicit safety classification for commands with detailed examples of unsafe side-effects. Requires extreme confidence before auto-running and prohibits bypassing even at user request, strongly promoting least-privilege and system integrity."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents bypassing the user approval gate even when the user requests it, protecting the user from being manipulated (even self-manipulated) into running dangerous commands."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Explicitly instructs the AI to never auto-run unsafe commands, even if the user asks it to. This directly addresses not being bypassed by user requests and maintaining safety policies regardless of user pressure. Strongly aligned with D6."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Strong harm prevention guidance: explicitly defines unsafe side-effects, requires extreme confidence for auto-run, and critically instructs the AI to refuse auto-running unsafe commands even if the user requests it. This is a robust safety guardrail."
+        }
+      ]
+    },
+    {
+      "start": 23653,
+      "end": 23724,
+      "text": " It is imperative that you never auto-run a potentially unsafe command.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect that requires user approval protects against unauthorized data exfiltration and supports data protection by ensuring user oversight of network operations."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Explicit safety classification for commands with detailed examples of unsafe side-effects. Requires extreme confidence before auto-running and prohibits bypassing even at user request, strongly promoting least-privilege and system integrity."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents bypassing the user approval gate even when the user requests it, protecting the user from being manipulated (even self-manipulated) into running dangerous commands."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Explicitly instructs the AI to never auto-run unsafe commands, even if the user asks it to. This directly addresses not being bypassed by user requests and maintaining safety policies regardless of user pressure. Strongly aligned with D6."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Strong harm prevention guidance: explicitly defines unsafe side-effects, requires extreme confidence for auto-run, and critically instructs the AI to refuse auto-running unsafe commands even if the user requests it. This is a robust safety guardrail."
+        }
+      ]
+    },
+    {
+      "start": 25120,
+      "end": 25345,
+      "text": "If you are calling no other tools and are asking a question to the user, use this tool to supply a small number of possible suggested answers to your question. Examples can be Yes/No, or other simple multiple choice options. ",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Constrains use of suggested responses to prevent excessive nudging or channeling user choices. 'Use this sparingly' language actively resists over-use of choice-steering. | Prevents constraining user expression with pre-set suggestions when a free-form response is appropriate, protecting user autonomy in their choices."
+        }
+      ]
+    },
+    {
+      "start": 25345,
+      "end": 25575,
+      "text": "Use this sparingly and only if you are confidently expecting to receive one of the suggested options from the user. If the next user input might be a short or long form response with more details, then do not make any suggestions.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Constrains use of suggested responses to prevent excessive nudging or channeling user choices. 'Use this sparingly' language actively resists over-use of choice-steering. | Prevents constraining user expression with pre-set suggestions when a free-form response is appropriate, protecting user autonomy in their choices."
+        }
+      ]
+    },
+    {
+      "start": 25769,
+      "end": 25809,
+      "text": "Try not to use this many times in a row.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Limits repeated use of suggested responses, preventing a pattern that could manipulate or excessively steer user decisions."
+        }
+      ]
+    },
+    {
+      "start": 29665,
+      "end": 30243,
+      "text": "When using this tool to gather information, it's your responsibility to ensure you have the COMPLETE context. Specifically, each time you call this command you should:\n// 1) Assess if the file contents you viewed are sufficient to proceed with your task.\n// 2) If the file contents you have viewed are insufficient, and you suspect they may be in lines not shown, proactively call the tool again to view those lines.\n// 3) When in doubt, call this tool again to gather more information. Remember that partial file views may miss critical dependencies, imports, or functionality.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Promotes information integrity by requiring the AI to verify it has complete context before making claims or taking action, rather than proceeding on incomplete data."
+        }
+      ]
+    },
+    {
+      "start": 31183,
+      "end": 31319,
+      "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Requires verification of factual state (file existence) before acting, promoting accuracy and preventing actions based on unverified assumptions."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Prevents accidental overwriting of existing files by requiring existence checks before writing, protecting system integrity and existing data."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Prevents accidental data loss or corruption by prohibiting overwriting existing files, which is a user safety measure against destructive file operations."
+        }
+      ]
+    }
+  ]
+}

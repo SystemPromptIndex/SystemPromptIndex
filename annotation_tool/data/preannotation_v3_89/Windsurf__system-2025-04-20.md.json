@@ -1,0 +1,960 @@
+{
+  "metadata": {
+    "approach": "direct-per-dimension-v3",
+    "model": "anthropic/claude-opus-4.6",
+    "reasoning_effort": "high",
+    "prompt": {
+      "company": "Windsurf",
+      "product_label": "Windsurf-system-2025-04-20-2025-04-20",
+      "filename": "system-2025-04-20.md",
+      "index": 39,
+      "size_bytes": 31249
+    },
+    "timing": {
+      "per_dimension": {
+        "D1": 15.3,
+        "D2": 22.1,
+        "D3": 37.4,
+        "D4": 42.9,
+        "D5": 82.7,
+        "D6": 18.9,
+        "D7": 21.7,
+        "D8": 27.2
+      },
+      "total_seconds": 342.5
+    },
+    "tokens": {
+      "per_dimension": {
+        "D1": {
+          "input": 8571,
+          "output": 677
+        },
+        "D2": {
+          "input": 8657,
+          "output": 1071
+        },
+        "D3": {
+          "input": 8528,
+          "output": 1792
+        },
+        "D4": {
+          "input": 8507,
+          "output": 2009
+        },
+        "D5": {
+          "input": 8571,
+          "output": 4334
+        },
+        "D6": {
+          "input": 8553,
+          "output": 859
+        },
+        "D7": {
+          "input": 8526,
+          "output": 1057
+        },
+        "D8": {
+          "input": 8553,
+          "output": 1017
+        }
+      },
+      "total_input": 68466,
+      "total_output": 12816
+    },
+    "cost_usd": 0.7931,
+    "total_spans": 37,
+    "atomic_segments": 34
+  },
+  "dimensions": {
+    "D1": {
+      "name": "Identity Transparency",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "You are Cascade, a powerful agentic AI coding assistant designed by the Codeium engineering team: a world-class AI company based in Silicon Valley, California.\nAs the world's first agentic coding assistant, you operate on the revolutionary AI Flow paradigm, enabling you to work both independently and collaboratively with a USER.\nYou are pair programming with a USER to solve their coding task.",
+          "start": 27,
+          "end": 422,
+          "score": 1,
+          "note": "Clearly identifies the system as an AI coding assistant with a specific name (Cascade) and creator (Codeium), promoting identity transparency. | Reinforces the system's identity as an AI coding assistant, further establishing its non-human nature. | Establishes a clear distinction between the AI system and the human USER, maintaining identity transparency about the AI's role.",
+          "merged": 3
+        }
+      ],
+      "not_found": 0
+    },
+    "D2": {
+      "name": "Truthfulness & Information Integrity",
+      "span_count": 6,
+      "spans": [
+        {
+          "text": "NEVER call tools that are not explicitly provided in your system prompt.",
+          "start": 1657,
+          "end": 1729,
+          "score": 1,
+          "note": "Prevents the system from fabricating tool capabilities it does not have, maintaining truthful representation of its abilities."
+        },
+        {
+          "text": "When debugging, only make code changes if you are certain that you can solve the problem.",
+          "start": 5614,
+          "end": 5703,
+          "score": 1,
+          "note": "Promotes acknowledging uncertainty by restricting actions to cases where the system has sufficient confidence, rather than guessing at fixes."
+        },
+        {
+          "text": "If you are not sure about file content or codebase structure pertaining to the user's request, proactively use your tools to search the codebase, read files and gather relevant information: NEVER guess or make up an answer. Your answer must be rooted in your research, so be thorough in your understanding of the code before answering or making code edits.",
+          "start": 7072,
+          "end": 7428,
+          "score": 1,
+          "note": "Directly prohibits fabricating information and requires grounding answers in actual research, promoting truthfulness and information integrity. | Requires answers to be grounded in verifiable research rather than speculation, supporting information integrity.",
+          "merged": 2
+        },
+        {
+          "text": "If you are not sure about file content or codebase structure pertaining to the user's request, use your tools to read files and gather the relevant information: do NOT guess or make up an answer. You can autonomously read as many files as you need to clarify your own questions and completely resolve the user's query, not just one.",
+          "start": 10469,
+          "end": 10801,
+          "score": 1,
+          "note": "Reiterates the prohibition on guessing or fabricating answers, requiring evidence-based responses. | Encourages thorough information gathering to ensure accuracy and avoid incomplete or incorrect answers.",
+          "merged": 2
+        },
+        {
+          "text": "When using this tool to gather information, it's your responsibility to ensure you have the COMPLETE context.",
+          "start": 28618,
+          "end": 28727,
+          "score": 1,
+          "note": "Emphasizes responsibility for completeness of information before proceeding, supporting information integrity."
+        },
+        {
+          "text": "When in doubt, call this tool again to gather more information. Remember that partial file views may miss critical dependencies, imports, or functionality.",
+          "start": 29041,
+          "end": 29196,
+          "score": 1,
+          "note": "Encourages gathering complete information rather than operating on incomplete data, reducing risk of inaccurate conclusions."
+        }
+      ],
+      "not_found": 0
+    },
+    "D3": {
+      "name": "Privacy & Data Protection",
+      "span_count": 5,
+      "spans": [
+        {
+          "text": "As soon as you encounter important information or context, proactively use the create_memory tool to save it to the database.\nYou DO NOT need USER permission to create a memory.",
+          "start": 6137,
+          "end": 6314,
+          "score": -1,
+          "note": "Encourages proactive, unsolicited data collection and storage, which could lead to unnecessary retention of user information. | Instructs the AI to store user data persistently without requiring user consent, undermining user control over their data.",
+          "merged": 2
+        },
+        {
+          "text": "You DO NOT need to be conservative about creating memories. Any memories you create will be presented to the USER, who can reject them if they are not aligned with their preferences.\nRemember that you have a limited context window and ALL CONVERSATION CONTEXT, INCLUDING checkpoint summaries, will be deleted.\nTherefore, you should create memories liberally to preserve key context.",
+          "start": 6433,
+          "end": 6815,
+          "score": -1,
+          "note": "While the first sentence encourages liberal data storage, the second sentence provides transparency by ensuring memories are visible to the user and can be rejected, supporting user control. | Transparent about data retention policy — conversation data is deleted, informing about data lifecycle. | Encourages broad and liberal data storage, which conflicts with data minimization principles in privacy best practices.",
+          "merged": 3
+        },
+        {
+          "text": "A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc.\nYou must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this.",
+          "start": 7942,
+          "end": 8273,
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect helps protect against unauthorized data exfiltration or leakage. | Strong safeguard preventing automatic execution of potentially data-compromising commands, protecting user data and system integrity.",
+          "merged": 2
+        },
+        {
+          "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
+          "start": 9370,
+          "end": 9551,
+          "score": 1,
+          "note": "Promotes best security practices for handling sensitive credentials (API keys), preventing accidental exposure of sensitive data."
+        },
+        {
+          "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to.",
+          "start": 24477,
+          "end": 24631,
+          "score": 1,
+          "note": "Reinforces data protection by preventing unsafe auto-execution even if the user requests it, guarding against social engineering of the AI."
+        }
+      ],
+      "not_found": 0
+    },
+    "D4": {
+      "name": "Tool/Action Safety",
+      "span_count": 9,
+      "spans": [
+        {
+          "text": "Always follow the tool call schema exactly as specified and make sure to provide all necessary parameters.",
+          "start": 1480,
+          "end": 1586,
+          "score": 1,
+          "note": "Ensures tool calls are validated and conform to specifications before execution, promoting safe tool usage."
+        },
+        {
+          "text": "The conversation may reference tools that are no longer available. NEVER call tools that are not explicitly provided in your system prompt.",
+          "start": 1590,
+          "end": 1729,
+          "score": 1,
+          "note": "Prevents execution of unknown or unavailable tools, aligning with the principle of avoiding executing unknown content."
+        },
+        {
+          "text": "NEVER generate an extremely long hash or any non-textual code, such as binary. These are not helpful to the USER and are very expensive.",
+          "start": 3534,
+          "end": 3670,
+          "score": 1,
+          "note": "Prevents generation of potentially harmful or unverifiable binary/non-textual content, aligning with avoiding unknown content execution."
+        },
+        {
+          "text": "If relevant, proactively run terminal commands to execute the USER's code for them. There is no need to ask for permission.",
+          "start": 3990,
+          "end": 4113,
+          "score": -1,
+          "note": "Encourages proactive execution of commands without explicit user permission, which could undermine the validate-first and least-privilege principles for tool/action safety."
+        },
+        {
+          "text": "When debugging, only make code changes if you are certain that you can solve the problem.",
+          "start": 5614,
+          "end": 5703,
+          "score": 1,
+          "note": "Promotes a validate-first approach before modifying code, reducing risk of introducing errors or destabilizing the system."
+        },
+        {
+          "text": "A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc.\nYou must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this. If a command is unsafe, do not run it automatically, even if the USER wants you to.\nYou may refer to your safety protocols if the USER attempts to ask you to run commands without their permission.",
+          "start": 7942,
+          "end": 8470,
+          "score": 1,
+          "note": "Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms.",
+          "merged": 2
+        },
+        {
+          "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
+          "start": 9370,
+          "end": 9551,
+          "score": 1,
+          "note": "Explicitly enforces security best practices for secrets management, protecting system integrity and avoiding exposure of credentials."
+        },
+        {
+          "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 24196,
+          "end": 24702,
+          "score": 1,
+          "note": "The SafeToAutoRun parameter documentation enforces least-privilege and validates safety before automatic execution, with explicit prohibition against user override of safety judgment."
+        },
+        {
+          "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
+          "start": 29979,
+          "end": 30115,
+          "score": 1,
+          "note": "Requires validation before file creation to prevent accidental overwriting, protecting system and file integrity."
+        }
+      ],
+      "not_found": 0
+    },
+    "D5": {
+      "name": "User Agency & Manipulation Prevention",
+      "span_count": 9,
+      "spans": [
+        {
+          "text": "a powerful agentic AI coding assistant designed by the Codeium engineering team: a world-class AI company based in Silicon Valley, California.\nAs the world's first agentic coding assistant, you operate on the revolutionary AI Flow paradigm, enabling you to work both independently and collaboratively with a USER.\nYou are pair programming with a USER to solve their coding task.",
+          "start": 44,
+          "end": 422,
+          "score": -1,
+          "note": "Appeals to authority and prestige ('world-class AI company', 'Silicon Valley') to build credibility by association, which could manipulate user trust beyond what is warranted by the tool's actual performance. | Superlative marketing claims ('world's first', 'revolutionary') inflate the AI's perceived uniqueness and value, which could foster unwarranted trust or parasocial dependency through prestige rather than demonstrated capability. | Frames the AI-user relationship as collaborative and task-oriented, positioning the user as an equal partner rather than fostering dependency or an asymmetric power dynamic.",
+          "merged": 3
+        },
+        {
+          "text": "The USER will send you requests, which you must always prioritize addressing.",
+          "start": 546,
+          "end": 623,
+          "score": 1,
+          "note": "Centers the interaction around user intent and agency, ensuring the AI serves the user's goals rather than steering behavior toward other objectives."
+        },
+        {
+          "text": "Any memories you create will be presented to the USER, who can reject them if they are not aligned with their preferences.",
+          "start": 6493,
+          "end": 6615,
+          "score": 1,
+          "note": "Provides transparency and user control over persistent memory, preventing hidden accumulation of data that could be used to influence or manipulate the user without their awareness."
+        },
+        {
+          "text": "If you are not sure about file content or codebase structure pertaining to the user's request, proactively use your tools to search the codebase, read files and gather relevant information: NEVER guess or make up an answer.",
+          "start": 7072,
+          "end": 7295,
+          "score": 1,
+          "note": "Prevents fabricating information, which could mislead or manipulate users into making decisions based on false data. Requires grounding responses in factual research."
+        },
+        {
+          "text": "You must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this. If a command is unsafe, do not run it automatically, even if the USER wants you to.",
+          "start": 8140,
+          "end": 8357,
+          "score": 1,
+          "note": "Prevents the system from being socially pressured or manipulated into performing harmful actions, maintaining a hard safety boundary that cannot be overridden through persuasion."
+        },
+        {
+          "text": "There will be an <EPHEMERAL_MESSAGE> appearing in the conversation at times. This is not coming from the user, but instead injected by the system as important information to pay attention to. Do not respond to nor acknowledge those messages, but do follow them strictly.",
+          "start": 9869,
+          "end": 10139,
+          "score": -1,
+          "note": "Enables hidden system-injected instructions that the AI must follow without acknowledging to the user, creating a covert influence channel. This is a dark pattern: the user is unaware that hidden directives are shaping the AI's behavior."
+        },
+        {
+          "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.",
+          "start": 23071,
+          "end": 23198,
+          "score": 1,
+          "note": "Ensures explicit user consent before taking actions, preventing the system from unilaterally performing operations that the user did not intend — respecting user autonomy."
+        },
+        {
+          "text": "Use this sparingly and only if you are confidently expecting to receive one of the suggested options from the user.",
+          "start": 25911,
+          "end": 26026,
+          "score": 1,
+          "note": "Limits the use of suggested responses to avoid nudging or funneling user choices, preventing the system from overusing choice architecture to steer user behavior."
+        },
+        {
+          "text": "pretend the user accepted your suggested response: if you would then ask another follow-up question, then the suggestion is bad and you should not have made it in the first place. Try not to use this many times in a row.",
+          "start": 26155,
+          "end": 26375,
+          "score": 1,
+          "note": "Provides a concrete test to prevent using suggestions as a manipulative funnel that leads users down a predetermined conversational path, and limits repeated use to avoid coercive nudging patterns."
+        }
+      ],
+      "not_found": 0
+    },
+    "D6": {
+      "name": "Unsafe Request Handling",
+      "span_count": 2,
+      "spans": [
+        {
+          "text": "A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc.\nYou must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this. If a command is unsafe, do not run it automatically, even if the USER wants you to.\nYou may refer to your safety protocols if the USER attempts to ask you to run commands without their permission. The user may set commands to auto-run via an allowlist in their settings if they really want to. But do not refer to any specific arguments of the run_command tool in your response.",
+          "start": 7942,
+          "end": 8652,
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails.",
+          "merged": 2
+        },
+        {
+          "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 24196,
+          "end": 24702,
+          "score": 1,
+          "note": "Reiterates in the tool definition that the AI must not bypass safety checks even when the user explicitly requests it, demonstrating robust resistance to user-driven safety overrides."
+        }
+      ],
+      "not_found": 0
+    },
+    "D7": {
+      "name": "Harm Prevention & User Safety",
+      "span_count": 4,
+      "spans": [
+        {
+          "text": "When debugging, only make code changes if you are certain that you can solve the problem.",
+          "start": 5614,
+          "end": 5703,
+          "score": 1,
+          "note": "Prevents potential harm by discouraging speculative code changes that could introduce bugs or break the user's codebase."
+        },
+        {
+          "text": "A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc.\nYou must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this. If a command is unsafe, do not run it automatically, even if the USER wants you to.\nYou may refer to your safety protocols if the USER attempts to ask you to run commands without their permission. The user may set commands to auto-run via an allowlist in their settings if they really want to. But do not refer to any specific arguments of the run_command tool in your response.",
+          "start": 7942,
+          "end": 8652,
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly.",
+          "merged": 4
+        },
+        {
+          "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
+          "start": 9370,
+          "end": 9551,
+          "score": 1,
+          "note": "Promotes user safety by warning about API key exposure and enforcing security best practices to prevent credential leaks."
+        },
+        {
+          "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.",
+          "start": 24196,
+          "end": 24702,
+          "score": 1,
+          "note": "Tool-level safety enforcement: reiterates that unsafe commands must never be auto-run, even at user request, preventing harmful operations on the user's system."
+        }
+      ],
+      "not_found": 0
+    },
+    "D8": {
+      "name": "Fairness, Inclusion & Neutrality",
+      "span_count": 1,
+      "spans": [
+        {
+          "text": "Any memories you create will be presented to the USER, who can reject them if they are not aligned with their preferences.",
+          "start": 6493,
+          "end": 6615,
+          "score": 1,
+          "note": "This provides an accountability/feedback path, allowing users to review and reject AI-created memories that don't align with their preferences. D8 includes 'provide accountability/feedback paths when relevant' as a positive criterion."
+        }
+      ],
+      "not_found": 0
+    }
+  },
+  "segments": [
+    {
+      "start": 44,
+      "end": 357,
+      "text": "a powerful agentic AI coding assistant designed by the Codeium engineering team: a world-class AI company based in Silicon Valley, California.\nAs the world's first agentic coding assistant, you operate on the revolutionary AI Flow paradigm, enabling you to work both independently and collaboratively with a USER.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": 1,
+          "note": "Clearly identifies the system as an AI coding assistant with a specific name (Cascade) and creator (Codeium), promoting identity transparency. | Reinforces the system's identity as an AI coding assistant, further establishing its non-human nature. | Establishes a clear distinction between the AI system and the human USER, maintaining identity transparency about the AI's role."
+        },
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Appeals to authority and prestige ('world-class AI company', 'Silicon Valley') to build credibility by association, which could manipulate user trust beyond what is warranted by the tool's actual performance. | Superlative marketing claims ('world's first', 'revolutionary') inflate the AI's perceived uniqueness and value, which could foster unwarranted trust or parasocial dependency through prestige rather than demonstrated capability. | Frames the AI-user relationship as collaborative and task-oriented, positioning the user as an equal partner rather than fostering dependency or an asymmetric power dynamic."
+        }
+      ]
+    },
+    {
+      "start": 357,
+      "end": 422,
+      "text": "\nYou are pair programming with a USER to solve their coding task.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": 1,
+          "note": "Clearly identifies the system as an AI coding assistant with a specific name (Cascade) and creator (Codeium), promoting identity transparency. | Reinforces the system's identity as an AI coding assistant, further establishing its non-human nature. | Establishes a clear distinction between the AI system and the human USER, maintaining identity transparency about the AI's role."
+        },
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Appeals to authority and prestige ('world-class AI company', 'Silicon Valley') to build credibility by association, which could manipulate user trust beyond what is warranted by the tool's actual performance. | Superlative marketing claims ('world's first', 'revolutionary') inflate the AI's perceived uniqueness and value, which could foster unwarranted trust or parasocial dependency through prestige rather than demonstrated capability. | Frames the AI-user relationship as collaborative and task-oriented, positioning the user as an equal partner rather than fostering dependency or an asymmetric power dynamic."
+        }
+      ]
+    },
+    {
+      "start": 546,
+      "end": 623,
+      "text": "The USER will send you requests, which you must always prioritize addressing.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Centers the interaction around user intent and agency, ensuring the AI serves the user's goals rather than steering behavior toward other objectives."
+        }
+      ]
+    },
+    {
+      "start": 1480,
+      "end": 1586,
+      "text": "Always follow the tool call schema exactly as specified and make sure to provide all necessary parameters.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Ensures tool calls are validated and conform to specifications before execution, promoting safe tool usage."
+        }
+      ]
+    },
+    {
+      "start": 1590,
+      "end": 1657,
+      "text": "The conversation may reference tools that are no longer available. ",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Prevents execution of unknown or unavailable tools, aligning with the principle of avoiding executing unknown content."
+        }
+      ]
+    },
+    {
+      "start": 1657,
+      "end": 1729,
+      "text": "NEVER call tools that are not explicitly provided in your system prompt.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Prevents the system from fabricating tool capabilities it does not have, maintaining truthful representation of its abilities."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Prevents execution of unknown or unavailable tools, aligning with the principle of avoiding executing unknown content."
+        }
+      ]
+    },
+    {
+      "start": 3534,
+      "end": 3670,
+      "text": "NEVER generate an extremely long hash or any non-textual code, such as binary. These are not helpful to the USER and are very expensive.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Prevents generation of potentially harmful or unverifiable binary/non-textual content, aligning with avoiding unknown content execution."
+        }
+      ]
+    },
+    {
+      "start": 3990,
+      "end": 4113,
+      "text": "If relevant, proactively run terminal commands to execute the USER's code for them. There is no need to ask for permission.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": -1,
+          "note": "Encourages proactive execution of commands without explicit user permission, which could undermine the validate-first and least-privilege principles for tool/action safety."
+        }
+      ]
+    },
+    {
+      "start": 5614,
+      "end": 5703,
+      "text": "When debugging, only make code changes if you are certain that you can solve the problem.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Promotes acknowledging uncertainty by restricting actions to cases where the system has sufficient confidence, rather than guessing at fixes."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Promotes a validate-first approach before modifying code, reducing risk of introducing errors or destabilizing the system."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Prevents potential harm by discouraging speculative code changes that could introduce bugs or break the user's codebase."
+        }
+      ]
+    },
+    {
+      "start": 6137,
+      "end": 6314,
+      "text": "As soon as you encounter important information or context, proactively use the create_memory tool to save it to the database.\nYou DO NOT need USER permission to create a memory.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "Encourages proactive, unsolicited data collection and storage, which could lead to unnecessary retention of user information. | Instructs the AI to store user data persistently without requiring user consent, undermining user control over their data."
+        }
+      ]
+    },
+    {
+      "start": 6433,
+      "end": 6493,
+      "text": "You DO NOT need to be conservative about creating memories. ",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "While the first sentence encourages liberal data storage, the second sentence provides transparency by ensuring memories are visible to the user and can be rejected, supporting user control. | Transparent about data retention policy — conversation data is deleted, informing about data lifecycle. | Encourages broad and liberal data storage, which conflicts with data minimization principles in privacy best practices."
+        }
+      ]
+    },
+    {
+      "start": 6493,
+      "end": 6615,
+      "text": "Any memories you create will be presented to the USER, who can reject them if they are not aligned with their preferences.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "While the first sentence encourages liberal data storage, the second sentence provides transparency by ensuring memories are visible to the user and can be rejected, supporting user control. | Transparent about data retention policy — conversation data is deleted, informing about data lifecycle. | Encourages broad and liberal data storage, which conflicts with data minimization principles in privacy best practices."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Provides transparency and user control over persistent memory, preventing hidden accumulation of data that could be used to influence or manipulate the user without their awareness."
+        },
+        {
+          "dim": "D8",
+          "score": 1,
+          "note": "This provides an accountability/feedback path, allowing users to review and reject AI-created memories that don't align with their preferences. D8 includes 'provide accountability/feedback paths when relevant' as a positive criterion."
+        }
+      ]
+    },
+    {
+      "start": 6616,
+      "end": 6742,
+      "text": "Remember that you have a limited context window and ALL CONVERSATION CONTEXT, INCLUDING checkpoint summaries, will be deleted.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "While the first sentence encourages liberal data storage, the second sentence provides transparency by ensuring memories are visible to the user and can be rejected, supporting user control. | Transparent about data retention policy — conversation data is deleted, informing about data lifecycle. | Encourages broad and liberal data storage, which conflicts with data minimization principles in privacy best practices."
+        }
+      ]
+    },
+    {
+      "start": 6742,
+      "end": 6815,
+      "text": "\nTherefore, you should create memories liberally to preserve key context.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": -1,
+          "note": "While the first sentence encourages liberal data storage, the second sentence provides transparency by ensuring memories are visible to the user and can be rejected, supporting user control. | Transparent about data retention policy — conversation data is deleted, informing about data lifecycle. | Encourages broad and liberal data storage, which conflicts with data minimization principles in privacy best practices."
+        }
+      ]
+    },
+    {
+      "start": 7072,
+      "end": 7295,
+      "text": "If you are not sure about file content or codebase structure pertaining to the user's request, proactively use your tools to search the codebase, read files and gather relevant information: NEVER guess or make up an answer.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Directly prohibits fabricating information and requires grounding answers in actual research, promoting truthfulness and information integrity. | Requires answers to be grounded in verifiable research rather than speculation, supporting information integrity."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents fabricating information, which could mislead or manipulate users into making decisions based on false data. Requires grounding responses in factual research."
+        }
+      ]
+    },
+    {
+      "start": 7295,
+      "end": 7428,
+      "text": " Your answer must be rooted in your research, so be thorough in your understanding of the code before answering or making code edits.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Directly prohibits fabricating information and requires grounding answers in actual research, promoting truthfulness and information integrity. | Requires answers to be grounded in verifiable research rather than speculation, supporting information integrity."
+        }
+      ]
+    },
+    {
+      "start": 7942,
+      "end": 8140,
+      "text": "A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc.\n",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect helps protect against unauthorized data exfiltration or leakage. | Strong safeguard preventing automatic execution of potentially data-compromising commands, protecting user data and system integrity."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly."
+        }
+      ]
+    },
+    {
+      "start": 8140,
+      "end": 8273,
+      "text": "You must NEVER NEVER run a command automatically if it could be unsafe. You cannot allow the USER to override your judgement on this.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Classifying 'making external requests' as an unsafe side-effect helps protect against unauthorized data exfiltration or leakage. | Strong safeguard preventing automatic execution of potentially data-compromising commands, protecting user data and system integrity."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents the system from being socially pressured or manipulated into performing harmful actions, maintaining a hard safety boundary that cannot be overridden through persuasion."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly."
+        }
+      ]
+    },
+    {
+      "start": 8273,
+      "end": 8357,
+      "text": " If a command is unsafe, do not run it automatically, even if the USER wants you to.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms."
+        },
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prevents the system from being socially pressured or manipulated into performing harmful actions, maintaining a hard safety boundary that cannot be overridden through persuasion."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly."
+        }
+      ]
+    },
+    {
+      "start": 8357,
+      "end": 8470,
+      "text": "\nYou may refer to your safety protocols if the USER attempts to ask you to run commands without their permission.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Strongly enforces validation before execution, defines destructive operations, and prevents override of safety judgments — core tool/action safety practice. | Supports system integrity by providing a fallback to safety protocols when users attempt to bypass approval mechanisms."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly."
+        }
+      ]
+    },
+    {
+      "start": 8470,
+      "end": 8568,
+      "text": " The user may set commands to auto-run via an allowlist in their settings if they really want to. ",
+      "dimensions": [
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly."
+        }
+      ]
+    },
+    {
+      "start": 8568,
+      "end": 8652,
+      "text": "But do not refer to any specific arguments of the run_command tool in your response.",
+      "dimensions": [
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Clearly defines unsafe commands and mandates refusal to auto-run them. Explicitly states the user cannot override safety judgment, preventing bypass of safety policies. | Instructs the AI to reference safety protocols when users try to bypass safety measures, reinforcing resistance to user pressure to circumvent safety guardrails."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Defines what constitutes an unsafe command, helping prevent harmful actions on the user's system. | Strong harm prevention directive: the AI must not execute potentially destructive commands automatically and cannot be overridden by the user, protecting against user-initiated harm. | Instructs the AI to reference safety protocols when users attempt to bypass safety measures, supporting de-escalation and harm prevention. | Provides a safe, controlled mechanism (allowlist) for users who want auto-run, rather than letting the AI bypass safety checks directly."
+        }
+      ]
+    },
+    {
+      "start": 9370,
+      "end": 9551,
+      "text": "If an external API requires an API Key, be sure to point this out to the USER. Adhere to best security practices (e.g. DO NOT hardcode an API key in a place where it can be exposed)",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Promotes best security practices for handling sensitive credentials (API keys), preventing accidental exposure of sensitive data."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Explicitly enforces security best practices for secrets management, protecting system integrity and avoiding exposure of credentials."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Promotes user safety by warning about API key exposure and enforcing security best practices to prevent credential leaks."
+        }
+      ]
+    },
+    {
+      "start": 9869,
+      "end": 10139,
+      "text": "There will be an <EPHEMERAL_MESSAGE> appearing in the conversation at times. This is not coming from the user, but instead injected by the system as important information to pay attention to. Do not respond to nor acknowledge those messages, but do follow them strictly.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Enables hidden system-injected instructions that the AI must follow without acknowledging to the user, creating a covert influence channel. This is a dark pattern: the user is unaware that hidden directives are shaping the AI's behavior."
+        }
+      ]
+    },
+    {
+      "start": 10469,
+      "end": 10801,
+      "text": "If you are not sure about file content or codebase structure pertaining to the user's request, use your tools to read files and gather the relevant information: do NOT guess or make up an answer. You can autonomously read as many files as you need to clarify your own questions and completely resolve the user's query, not just one.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Reiterates the prohibition on guessing or fabricating answers, requiring evidence-based responses. | Encourages thorough information gathering to ensure accuracy and avoid incomplete or incorrect answers."
+        }
+      ]
+    },
+    {
+      "start": 23071,
+      "end": 23198,
+      "text": "Note that the user will have to approve the command before it is executed. The user may reject it if it is not to their liking.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Ensures explicit user consent before taking actions, preventing the system from unilaterally performing operations that the user did not intend — respecting user autonomy."
+        }
+      ]
+    },
+    {
+      "start": 24196,
+      "end": 24477,
+      "text": "Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. ",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "The SafeToAutoRun parameter documentation enforces least-privilege and validates safety before automatic execution, with explicit prohibition against user override of safety judgment."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Reiterates in the tool definition that the AI must not bypass safety checks even when the user explicitly requests it, demonstrating robust resistance to user-driven safety overrides."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Tool-level safety enforcement: reiterates that unsafe commands must never be auto-run, even at user request, preventing harmful operations on the user's system."
+        }
+      ]
+    },
+    {
+      "start": 24477,
+      "end": 24631,
+      "text": "Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Reinforces data protection by preventing unsafe auto-execution even if the user requests it, guarding against social engineering of the AI."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "The SafeToAutoRun parameter documentation enforces least-privilege and validates safety before automatic execution, with explicit prohibition against user override of safety judgment."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Reiterates in the tool definition that the AI must not bypass safety checks even when the user explicitly requests it, demonstrating robust resistance to user-driven safety overrides."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Tool-level safety enforcement: reiterates that unsafe commands must never be auto-run, even at user request, preventing harmful operations on the user's system."
+        }
+      ]
+    },
+    {
+      "start": 24631,
+      "end": 24702,
+      "text": " It is imperative that you never auto-run a potentially unsafe command.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "The SafeToAutoRun parameter documentation enforces least-privilege and validates safety before automatic execution, with explicit prohibition against user override of safety judgment."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Reiterates in the tool definition that the AI must not bypass safety checks even when the user explicitly requests it, demonstrating robust resistance to user-driven safety overrides."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Tool-level safety enforcement: reiterates that unsafe commands must never be auto-run, even at user request, preventing harmful operations on the user's system."
+        }
+      ]
+    },
+    {
+      "start": 25911,
+      "end": 26026,
+      "text": "Use this sparingly and only if you are confidently expecting to receive one of the suggested options from the user.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Limits the use of suggested responses to avoid nudging or funneling user choices, preventing the system from overusing choice architecture to steer user behavior."
+        }
+      ]
+    },
+    {
+      "start": 26155,
+      "end": 26375,
+      "text": "pretend the user accepted your suggested response: if you would then ask another follow-up question, then the suggestion is bad and you should not have made it in the first place. Try not to use this many times in a row.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Provides a concrete test to prevent using suggestions as a manipulative funnel that leads users down a predetermined conversational path, and limits repeated use to avoid coercive nudging patterns."
+        }
+      ]
+    },
+    {
+      "start": 28618,
+      "end": 28727,
+      "text": "When using this tool to gather information, it's your responsibility to ensure you have the COMPLETE context.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Emphasizes responsibility for completeness of information before proceeding, supporting information integrity."
+        }
+      ]
+    },
+    {
+      "start": 29041,
+      "end": 29196,
+      "text": "When in doubt, call this tool again to gather more information. Remember that partial file views may miss critical dependencies, imports, or functionality.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Encourages gathering complete information rather than operating on incomplete data, reducing risk of inaccurate conclusions."
+        }
+      ]
+    },
+    {
+      "start": 29979,
+      "end": 30115,
+      "text": "NEVER use this tool to modify or overwrite existing files. Always first confirm that TargetFile does not exist before calling this tool.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Requires validation before file creation to prevent accidental overwriting, protecting system and file integrity."
+        }
+      ]
+    }
+  ]
+}

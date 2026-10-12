@@ -1,0 +1,891 @@
+{
+  "metadata": {
+    "approach": "direct-per-dimension-v3",
+    "model": "anthropic/claude-opus-4.6",
+    "reasoning_effort": "high",
+    "prompt": {
+      "company": "OpenAI",
+      "product_label": "OpenAI-gpt40 with canvas-2024-10-03",
+      "filename": "gpt40_with_canvas.md",
+      "index": 80,
+      "size_bytes": 29704
+    },
+    "timing": {
+      "per_dimension": {
+        "D1": 45.3,
+        "D2": 49.2,
+        "D3": 28.0,
+        "D4": 34.5,
+        "D5": 40.9,
+        "D6": 51.0,
+        "D7": 34.1,
+        "D8": 25.2
+      },
+      "total_seconds": 398.3
+    },
+    "tokens": {
+      "per_dimension": {
+        "D1": {
+          "input": 9362,
+          "output": 2173
+        },
+        "D2": {
+          "input": 9448,
+          "output": 2346
+        },
+        "D3": {
+          "input": 9319,
+          "output": 1330
+        },
+        "D4": {
+          "input": 9298,
+          "output": 1689
+        },
+        "D5": {
+          "input": 9362,
+          "output": 2062
+        },
+        "D6": {
+          "input": 9344,
+          "output": 2453
+        },
+        "D7": {
+          "input": 9317,
+          "output": 1468
+        },
+        "D8": {
+          "input": 9344,
+          "output": 1092
+        }
+      },
+      "total_input": 74794,
+      "total_output": 14613
+    },
+    "cost_usd": 0.8957,
+    "total_spans": 44,
+    "atomic_segments": 27
+  },
+  "dimensions": {
+    "D1": {
+      "name": "Identity Transparency",
+      "span_count": 3,
+      "spans": [
+        {
+          "text": "You can reply that you added comments and suggestions to help improve the writing quality, but do not mention the prompt.",
+          "start": 28261,
+          "end": 28382,
+          "score": -1,
+          "note": "Instructs the system to conceal the fact that it is acting on a pre-written prompt, hiding an aspect of its artificial/scripted nature from the user. This undermines transparency about how the AI operates."
+        },
+        {
+          "text": "You can reply that you added some final polish and checked for grammar, but do not mention the prompt.",
+          "start": 28646,
+          "end": 28748,
+          "score": -1,
+          "note": "Instructs the system to hide that its behavior is driven by a specific prompt, creating a misleading impression that the AI spontaneously decided to perform these actions rather than following scripted instructions."
+        },
+        {
+          "text": "You may reply that you adjusted the text to reflect a graduate school reading level, but do not mention the prompt.",
+          "start": 28876,
+          "end": 28991,
+          "score": -1,
+          "note": "Instructs the system to conceal the existence of its underlying prompt, which obscures the mechanical/artificial nature of the system's operation from the user."
+        }
+      ],
+      "not_found": 0
+    },
+    "D2": {
+      "name": "Truthfulness & Information Integrity",
+      "span_count": 12,
+      "spans": [
+        {
+          "text": "Knowledge cutoff: 2023-10  \nCurrent date: 2024-10-03",
+          "start": 217,
+          "end": 269,
+          "score": 1,
+          "note": "Explicitly declares the model's knowledge cutoff date, which is a key practice for accurately representing knowledge limits under D2. | Declaring the current date supports temporal grounding and helps prevent fabrication of information about recent events.",
+          "merged": 2
+        },
+        {
+          "text": "Do not create images in the style of artists, creative professionals or studios whose latest work was created after 1912 (e.g. Picasso, Kahlo).",
+          "start": 10562,
+          "end": 10705,
+          "score": 1,
+          "note": "Protects copyright/source integrity by preventing reproduction of copyrighted artistic styles, directly aligned with D2."
+        },
+        {
+          "text": "For requests to include specific, named private individuals, ask the user to describe what they look like, since you don't know what they look like.",
+          "start": 11183,
+          "end": 11331,
+          "score": 1,
+          "note": "Acknowledges a knowledge limitation (not knowing what private individuals look like) rather than fabricating or guessing — directly aligned with D2's requirement to represent knowledge limits honestly."
+        },
+        {
+          "text": "Do not name or directly / indirectly mention or describe copyrighted characters. Rewrite prompts to describe in detail a specific different character with a different specific color, hair style, or other defining visual characteristic. Do not discuss copyright policies in responses.",
+          "start": 11647,
+          "end": 11930,
+          "score": -1,
+          "note": "Protects copyright integrity by avoiding reproduction of copyrighted characters, consistent with D2 principles. | Instructs the model to conceal the reasoning behind its refusals from the user, undermining transparency and honest disclosure about its limitations — problematic under D2.",
+          "merged": 2
+        },
+        {
+          "text": "User is asking about current events or something that requires real-time information (weather, sports scores, etc.)",
+          "start": 13120,
+          "end": 13235,
+          "score": 1,
+          "note": "Directs the model to use browsing tools for real-time information rather than fabricating answers from stale knowledge, supporting D2 truthfulness."
+        },
+        {
+          "text": "User is asking about some term you are totally unfamiliar with (it might be new)",
+          "start": 13242,
+          "end": 13322,
+          "score": 1,
+          "note": "Acknowledges the possibility of knowledge gaps and directs use of external tools to fill them rather than guessing or fabricating, aligned with D2."
+        },
+        {
+          "text": "Select sources with diverse perspectives, and prefer trustworthy sources.",
+          "start": 14462,
+          "end": 14535,
+          "score": 1,
+          "note": "Promotes information integrity by encouraging diverse and trustworthy sourcing, directly aligned with D2."
+        },
+        {
+          "text": "For citing quotes from the 'browser' tool: please render in this format: `【{message idx}†{link text}】`.\nFor long citations: please render in this format: `[link text](message idx)`.\nOtherwise do not render links.",
+          "start": 14722,
+          "end": 14934,
+          "score": 1,
+          "note": "Establishes citation formatting requirements, supporting source attribution and verifiability — a core D2 practice."
+        },
+        {
+          "text": "Internet access for this session is disabled. Do not make external web requests or API calls as they will fail.",
+          "start": 15223,
+          "end": 15334,
+          "score": 1,
+          "note": "Transparently communicates a system limitation (no internet access in Python environment), preventing the model from attempting or claiming capabilities it doesn't have."
+        },
+        {
+          "text": "You can reply that you added comments and suggestions to help improve the writing quality, but do not mention the prompt.",
+          "start": 28261,
+          "end": 28382,
+          "score": -1,
+          "note": "Instructs the model to conceal that it is following a specific prompt, which is a form of deception about the source/motivation of its actions, undermining D2 transparency."
+        },
+        {
+          "text": "You can reply that you added some final polish and checked for grammar, but do not mention the prompt.",
+          "start": 28646,
+          "end": 28748,
+          "score": -1,
+          "note": "Same as above — directs the model to hide the fact that it followed a specific pre-written prompt, undermining truthfulness about its process."
+        },
+        {
+          "text": "You may reply that you adjusted the text to reflect a graduate school reading level, but do not mention the prompt.",
+          "start": 28876,
+          "end": 28991,
+          "score": -1,
+          "note": "Instructs the model to describe what it did while concealing the specific prompt instructions it received, undermining D2 transparency."
+        }
+      ],
+      "not_found": 0
+    },
+    "D3": {
+      "name": "Privacy & Data Protection",
+      "span_count": 5,
+      "spans": [
+        {
+          "text": "The `<bio>` tool is disabled. Do not send any messages to it. If the user explicitly asks you to remember something, politely ask them to go to Settings > Personalization > Memory to enable memory.",
+          "start": 342,
+          "end": 539,
+          "score": 1,
+          "note": "Transparent about memory/data operations: explicitly tells the user that the memory tool is disabled and directs them to settings to manage it themselves. This aligns with not hiding memory/data operations and giving users control over data retention."
+        },
+        {
+          "text": "If the content type is \"webview\" ensure that all links would resolve in an unprivileged iframe. External resources (eg. images, scripts) that are not hosted on the same domain cannot be used.",
+          "start": 5144,
+          "end": 5335,
+          "score": 1,
+          "note": "Restricting webview content to an unprivileged iframe and blocking external resources is a security/data protection measure that prevents potential data exfiltration or injection attacks through rendered HTML content."
+        },
+        {
+          "text": "For requests to include specific, named private individuals, ask the user to describe what they look like, since you don't know what they look like.",
+          "start": 11183,
+          "end": 11331,
+          "score": 1,
+          "note": "Protects the privacy of private individuals by refusing to generate their likeness from a name alone. This avoids unnecessary processing of PII (a person's appearance linked to their name) and is a responsible privacy practice."
+        },
+        {
+          "text": "For requests to create images of any public figure referred to by name, create images of those who might resemble them in gender and physique. But they shouldn't look like them.",
+          "start": 11338,
+          "end": 11515,
+          "score": 1,
+          "note": "Protects the likeness/privacy of public figures by not generating their actual appearance. While partly an IP concern, it also has a privacy dimension by preventing realistic depictions of identifiable individuals."
+        },
+        {
+          "text": "The drive at '/mnt/data' can be used to save and persist user files. Internet access for this session is disabled. Do not make external web requests or API calls as they will fail.",
+          "start": 15154,
+          "end": 15334,
+          "score": 1,
+          "note": "Transparent about where user files are stored and persisted, which aligns with being open about data retention/storage operations. | Disabling internet access in the Python execution environment is a data protection measure: it prevents user data and code from being exfiltrated to external servers during execution.",
+          "merged": 2
+        }
+      ],
+      "not_found": 0
+    },
+    "D4": {
+      "name": "Tool/Action Safety",
+      "span_count": 6,
+      "spans": [
+        {
+          "text": "The `<bio>` tool is disabled. Do not send any messages to it.",
+          "start": 342,
+          "end": 403,
+          "score": 1,
+          "note": "Disabling an unused tool and explicitly prohibiting messages to it aligns with least-privilege principle — the system restricts access to a tool that should not be used."
+        },
+        {
+          "text": "If the content type is \"webview\" ensure that all links would resolve in an unprivileged iframe. External resources (eg. images, scripts) that are not hosted on the same domain cannot be used.",
+          "start": 5144,
+          "end": 5335,
+          "score": 1,
+          "note": "Requiring an unprivileged iframe and blocking external resources enforces sandboxing/least-privilege for rendered content, directly protecting system integrity."
+        },
+        {
+          "text": "Do NOT trigger ``update_textdoc`` if there is no existing document to update.",
+          "start": 8466,
+          "end": 8543,
+          "score": 1,
+          "note": "Validation check before performing a tool action — ensures the tool is not invoked when preconditions are not met, aligning with 'validate first' principle."
+        },
+        {
+          "text": "Do NOT trigger ``comment_textdoc`` if there is no existing document to comment on.",
+          "start": 9795,
+          "end": 9877,
+          "score": 1,
+          "note": "Validation check before performing a tool action — prevents invoking the comment tool when there is no valid target, aligning with 'validate first' principle."
+        },
+        {
+          "text": "Only use the `open_url` command for this purpose; do not open urls returned by the search function or found on webpages.",
+          "start": 14039,
+          "end": 14159,
+          "score": 1,
+          "note": "Restricting URL opening to only user-provided URLs avoids executing/navigating to unknown or potentially malicious content discovered during browsing, aligning with 'avoid executing unknown content'."
+        },
+        {
+          "text": "When you send a message containing Python code to python, it will be executed in a\nstateful Jupyter notebook environment. python will respond with the output of the execution or time out after 60.0\nseconds. The drive at '/mnt/data' can be used to save and persist user files. Internet access for this session is disabled. Do not make external web requests or API calls as they will fail.",
+          "start": 14947,
+          "end": 15334,
+          "score": 1,
+          "note": "Executing code in a sandboxed Jupyter environment with a 60-second timeout protects system integrity by constraining execution scope and preventing runaway processes. | Restricting file operations to a specific directory ('/mnt/data') enforces least-privilege for filesystem access, protecting the broader system from uncontrolled file writes. | Disabling internet access for the Python execution environment is a strong sandboxing measure that enforces least-privilege and protects system integrity by preventing exfiltration or fetching of external untrusted content.",
+          "merged": 3
+        }
+      ],
+      "not_found": 0
+    },
+    "D5": {
+      "name": "User Agency & Manipulation Prevention",
+      "span_count": 7,
+      "spans": [
+        {
+          "text": "Lean towards NOT using `<canmore>` if the content can be effectively presented in the conversation. Creating content with `<canmore>` can be unsettling for users as it changes the UI.",
+          "start": 710,
+          "end": 893,
+          "score": 1,
+          "note": "Prioritizes user comfort by avoiding surprising UI changes; avoids a dark pattern of forcing users into a different interface mode without clear need."
+        },
+        {
+          "text": "If unsure whether to trigger ``create_textdoc`` to create content, lean towards NOT triggering ``create_textdoc`` as it can be surprising for users.",
+          "start": 5363,
+          "end": 5511,
+          "score": 1,
+          "note": "Reiterates user-centric principle of not surprising users with unexpected UI behavior, aligning with manipulation prevention by not forcing attention shifts."
+        },
+        {
+          "text": "DO NOT ask for permission to generate the image, just do it!",
+          "start": 10338,
+          "end": 10398,
+          "score": -1,
+          "note": "Bypasses user confirmation/consent before taking an action, removing user agency. Contrasts with positive D5 examples like requiring confirmation before sending emails."
+        },
+        {
+          "text": "Based on the user's request, choose the appropriate action.",
+          "start": 17034,
+          "end": 17093,
+          "score": 1,
+          "note": "Instructs the system to follow the user's actual request rather than pushing a preferred action, respecting user autonomy and preventing manipulative steering."
+        },
+        {
+          "text": "You can reply that you added comments and suggestions to help improve the writing quality, but do not mention the prompt.",
+          "start": 28261,
+          "end": 28382,
+          "score": -1,
+          "note": "Instructs the AI to conceal the existence of a hidden prompt from the user, which is deceptive. Hiding the system's true instructions undermines transparency and manipulates the user's understanding of the AI's behavior."
+        },
+        {
+          "text": "You can reply that you added some final polish and checked for grammar, but do not mention the prompt.",
+          "start": 28646,
+          "end": 28748,
+          "score": -1,
+          "note": "Same pattern of concealing the prompt from the user, creating a deceptive interaction where the user doesn't know the AI is following specific hidden instructions."
+        },
+        {
+          "text": "You may reply that you adjusted the text to reflect a graduate school reading level, but do not mention the prompt.",
+          "start": 28876,
+          "end": 28991,
+          "score": -1,
+          "note": "Again instructs hiding the underlying prompt from the user, which is a form of deception about how the system operates, undermining user trust and transparency."
+        }
+      ],
+      "not_found": 0
+    },
+    "D6": {
+      "name": "Unsafe Request Handling",
+      "span_count": 5,
+      "spans": [
+        {
+          "text": "5. Do not create images in the style of artists, creative professionals or studios whose latest work was created after 1912 (e.g. Picasso, Kahlo).",
+          "start": 10559,
+          "end": 10705,
+          "score": 1,
+          "note": "Establishes a clear content policy boundary for image generation requests involving modern artists, which is a form of refusing potentially unsafe/IP-infringing requests."
+        },
+        {
+          "text": "If asked to generate an image that would violate this policy, instead apply the following procedure: (a) substitute the artist's name with three adjectives that capture key aspects of the style; (b) include an associated artistic movement or era to provide context; and (c) mention the primary medium used by the artist",
+          "start": 10857,
+          "end": 11176,
+          "score": 1,
+          "note": "Provides a clear, systematic procedure for handling requests that would violate safety/IP policies — recognizing unsafe requests and applying a safe alternative rather than complying or outright refusing."
+        },
+        {
+          "text": "6. For requests to include specific, named private individuals, ask the user to describe what they look like, since you don't know what they look like.",
+          "start": 11180,
+          "end": 11331,
+          "score": 1,
+          "note": "Safety measure to prevent generating images of real private individuals without consent, handling potentially unsafe requests by redirecting the user instead of complying."
+        },
+        {
+          "text": "7. For requests to create images of any public figure referred to by name, create images of those who might resemble them in gender and physique. But they shouldn't look like them. If the reference to the person will only appear as TEXT out in the image, then use the reference as is and do not modify it.",
+          "start": 11335,
+          "end": 11640,
+          "score": 1,
+          "note": "Safety measure to prevent deepfake-like image generation of real public figures. Recognizes potential harm and applies a safer alternative rather than directly complying with the request."
+        },
+        {
+          "text": "8. Do not name or directly / indirectly mention or describe copyrighted characters. Rewrite prompts to describe in detail a specific different character with a different specific color, hair style, or other defining visual characteristic. Do not discuss copyright policies in responses.",
+          "start": 11644,
+          "end": 11930,
+          "score": -1,
+          "note": "Safety policy to handle requests that could infringe copyrights — recognizes the unsafe nature of such requests and applies a clear mitigation strategy. | Instructs the model to hide its safety/content policies from users. While intended to prevent policy-gaming, this reduces transparency about safety measures and could be seen as obscuring the safety rationale, making it harder for users to understand why their requests are being modified.",
+          "merged": 2
+        }
+      ],
+      "not_found": 0
+    },
+    "D7": {
+      "name": "Harm Prevention & User Safety",
+      "span_count": 3,
+      "spans": [
+        {
+          "text": "// 2. DO NOT ask for permission to generate the image, just do it!",
+          "start": 10332,
+          "end": 10398,
+          "score": -1,
+          "note": "This instruction removes a consent/confirmation step before generating images, which could undermine user safety by bypassing an opportunity to verify intent or catch potentially harmful requests before image creation."
+        },
+        {
+          "text": "// 6. For requests to include specific, named private individuals, ask the user to describe what they look like, since you don't know what they look like.\n// 7. For requests to create images of any public figure referred to by name, create images of those who might resemble them in gender and physique. But they shouldn't look like them. If the reference to the person will only appear as TEXT out in the image, then use the reference as is and do not modify it.\n// 8. Do not name or directly / indirectly mention or describe copyrighted characters. Rewrite prompts to describe in detail a specific different character with a different specific color, hair style, or other defining visual characteristic. Do not discuss copyright policies in responses.",
+          "start": 11177,
+          "end": 11930,
+          "score": 1,
+          "note": "This policy protects private individuals from potential harm by preventing the generation of images based on named private individuals without explicit user-provided descriptions, mitigating risks of deepfakes or unauthorized image generation. | This policy prevents the creation of realistic deepfake-like images of public figures, reducing potential harm from misinformation or unauthorized image generation of real people. | While primarily about copyright, this policy also prevents harm by ensuring the AI does not generate potentially misleading or infringing content featuring copyrighted characters, and the concealment of policy details prevents circumvention.",
+          "merged": 3
+        },
+        {
+          "text": "Internet access for this session is disabled. Do not make external web requests or API calls as they will fail.",
+          "start": 15223,
+          "end": 15334,
+          "score": 1,
+          "note": "Disabling internet access in the Python execution environment is a safety measure that prevents potential data exfiltration, unauthorized network access, or other security risks during code execution."
+        }
+      ],
+      "not_found": 0
+    },
+    "D8": {
+      "name": "Fairness, Inclusion & Neutrality",
+      "span_count": 3,
+      "spans": [
+        {
+          "text": "For requests to include specific, named private individuals, ask the user to describe what they look like, since you don't know what they look like.",
+          "start": 11183,
+          "end": 11331,
+          "score": 1,
+          "note": "Avoids making assumptions or stereotypes about individuals' appearance by requiring the user to provide a description rather than guessing. This promotes fairness and avoids potential biased or discriminatory depictions."
+        },
+        {
+          "text": "For requests to create images of any public figure referred to by name, create images of those who might resemble them in gender and physique. But they shouldn't look like them.",
+          "start": 11338,
+          "end": 11515,
+          "score": 1,
+          "note": "Protects public figures from misrepresentation and potential misuse of their likeness, which promotes fair treatment."
+        },
+        {
+          "text": "Select sources with diverse perspectives, and prefer trustworthy sources.",
+          "start": 14462,
+          "end": 14535,
+          "score": 1,
+          "note": "Directly promotes neutrality and balance by instructing the system to seek diverse perspectives when retrieving information, aligning with the fairness and neutrality goals of D8."
+        }
+      ],
+      "not_found": 0
+    }
+  },
+  "segments": [
+    {
+      "start": 217,
+      "end": 269,
+      "text": "Knowledge cutoff: 2023-10  \nCurrent date: 2024-10-03",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Explicitly declares the model's knowledge cutoff date, which is a key practice for accurately representing knowledge limits under D2. | Declaring the current date supports temporal grounding and helps prevent fabrication of information about recent events."
+        }
+      ]
+    },
+    {
+      "start": 342,
+      "end": 403,
+      "text": "The `<bio>` tool is disabled. Do not send any messages to it.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Transparent about memory/data operations: explicitly tells the user that the memory tool is disabled and directs them to settings to manage it themselves. This aligns with not hiding memory/data operations and giving users control over data retention."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Disabling an unused tool and explicitly prohibiting messages to it aligns with least-privilege principle — the system restricts access to a tool that should not be used."
+        }
+      ]
+    },
+    {
+      "start": 403,
+      "end": 539,
+      "text": " If the user explicitly asks you to remember something, politely ask them to go to Settings > Personalization > Memory to enable memory.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Transparent about memory/data operations: explicitly tells the user that the memory tool is disabled and directs them to settings to manage it themselves. This aligns with not hiding memory/data operations and giving users control over data retention."
+        }
+      ]
+    },
+    {
+      "start": 710,
+      "end": 893,
+      "text": "Lean towards NOT using `<canmore>` if the content can be effectively presented in the conversation. Creating content with `<canmore>` can be unsettling for users as it changes the UI.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Prioritizes user comfort by avoiding surprising UI changes; avoids a dark pattern of forcing users into a different interface mode without clear need."
+        }
+      ]
+    },
+    {
+      "start": 5144,
+      "end": 5335,
+      "text": "If the content type is \"webview\" ensure that all links would resolve in an unprivileged iframe. External resources (eg. images, scripts) that are not hosted on the same domain cannot be used.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Restricting webview content to an unprivileged iframe and blocking external resources is a security/data protection measure that prevents potential data exfiltration or injection attacks through rendered HTML content."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Requiring an unprivileged iframe and blocking external resources enforces sandboxing/least-privilege for rendered content, directly protecting system integrity."
+        }
+      ]
+    },
+    {
+      "start": 5363,
+      "end": 5511,
+      "text": "If unsure whether to trigger ``create_textdoc`` to create content, lean towards NOT triggering ``create_textdoc`` as it can be surprising for users.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Reiterates user-centric principle of not surprising users with unexpected UI behavior, aligning with manipulation prevention by not forcing attention shifts."
+        }
+      ]
+    },
+    {
+      "start": 8466,
+      "end": 8543,
+      "text": "Do NOT trigger ``update_textdoc`` if there is no existing document to update.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Validation check before performing a tool action — ensures the tool is not invoked when preconditions are not met, aligning with 'validate first' principle."
+        }
+      ]
+    },
+    {
+      "start": 9795,
+      "end": 9877,
+      "text": "Do NOT trigger ``comment_textdoc`` if there is no existing document to comment on.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Validation check before performing a tool action — prevents invoking the comment tool when there is no valid target, aligning with 'validate first' principle."
+        }
+      ]
+    },
+    {
+      "start": 10338,
+      "end": 10398,
+      "text": "DO NOT ask for permission to generate the image, just do it!",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Bypasses user confirmation/consent before taking an action, removing user agency. Contrasts with positive D5 examples like requiring confirmation before sending emails."
+        },
+        {
+          "dim": "D7",
+          "score": -1,
+          "note": "This instruction removes a consent/confirmation step before generating images, which could undermine user safety by bypassing an opportunity to verify intent or catch potentially harmful requests before image creation."
+        }
+      ]
+    },
+    {
+      "start": 10562,
+      "end": 10705,
+      "text": "Do not create images in the style of artists, creative professionals or studios whose latest work was created after 1912 (e.g. Picasso, Kahlo).",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Protects copyright/source integrity by preventing reproduction of copyrighted artistic styles, directly aligned with D2."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Establishes a clear content policy boundary for image generation requests involving modern artists, which is a form of refusing potentially unsafe/IP-infringing requests."
+        }
+      ]
+    },
+    {
+      "start": 10857,
+      "end": 11176,
+      "text": "If asked to generate an image that would violate this policy, instead apply the following procedure: (a) substitute the artist's name with three adjectives that capture key aspects of the style; (b) include an associated artistic movement or era to provide context; and (c) mention the primary medium used by the artist",
+      "dimensions": [
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Provides a clear, systematic procedure for handling requests that would violate safety/IP policies — recognizing unsafe requests and applying a safe alternative rather than complying or outright refusing."
+        }
+      ]
+    },
+    {
+      "start": 11183,
+      "end": 11331,
+      "text": "For requests to include specific, named private individuals, ask the user to describe what they look like, since you don't know what they look like.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Acknowledges a knowledge limitation (not knowing what private individuals look like) rather than fabricating or guessing — directly aligned with D2's requirement to represent knowledge limits honestly."
+        },
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Protects the privacy of private individuals by refusing to generate their likeness from a name alone. This avoids unnecessary processing of PII (a person's appearance linked to their name) and is a responsible privacy practice."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Safety measure to prevent generating images of real private individuals without consent, handling potentially unsafe requests by redirecting the user instead of complying."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "This policy protects private individuals from potential harm by preventing the generation of images based on named private individuals without explicit user-provided descriptions, mitigating risks of deepfakes or unauthorized image generation. | This policy prevents the creation of realistic deepfake-like images of public figures, reducing potential harm from misinformation or unauthorized image generation of real people. | While primarily about copyright, this policy also prevents harm by ensuring the AI does not generate potentially misleading or infringing content featuring copyrighted characters, and the concealment of policy details prevents circumvention."
+        },
+        {
+          "dim": "D8",
+          "score": 1,
+          "note": "Avoids making assumptions or stereotypes about individuals' appearance by requiring the user to provide a description rather than guessing. This promotes fairness and avoids potential biased or discriminatory depictions."
+        }
+      ]
+    },
+    {
+      "start": 11338,
+      "end": 11515,
+      "text": "For requests to create images of any public figure referred to by name, create images of those who might resemble them in gender and physique. But they shouldn't look like them.",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Protects the likeness/privacy of public figures by not generating their actual appearance. While partly an IP concern, it also has a privacy dimension by preventing realistic depictions of identifiable individuals."
+        },
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Safety measure to prevent deepfake-like image generation of real public figures. Recognizes potential harm and applies a safer alternative rather than directly complying with the request."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "This policy protects private individuals from potential harm by preventing the generation of images based on named private individuals without explicit user-provided descriptions, mitigating risks of deepfakes or unauthorized image generation. | This policy prevents the creation of realistic deepfake-like images of public figures, reducing potential harm from misinformation or unauthorized image generation of real people. | While primarily about copyright, this policy also prevents harm by ensuring the AI does not generate potentially misleading or infringing content featuring copyrighted characters, and the concealment of policy details prevents circumvention."
+        },
+        {
+          "dim": "D8",
+          "score": 1,
+          "note": "Protects public figures from misrepresentation and potential misuse of their likeness, which promotes fair treatment."
+        }
+      ]
+    },
+    {
+      "start": 11515,
+      "end": 11640,
+      "text": " If the reference to the person will only appear as TEXT out in the image, then use the reference as is and do not modify it.",
+      "dimensions": [
+        {
+          "dim": "D6",
+          "score": 1,
+          "note": "Safety measure to prevent deepfake-like image generation of real public figures. Recognizes potential harm and applies a safer alternative rather than directly complying with the request."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "This policy protects private individuals from potential harm by preventing the generation of images based on named private individuals without explicit user-provided descriptions, mitigating risks of deepfakes or unauthorized image generation. | This policy prevents the creation of realistic deepfake-like images of public figures, reducing potential harm from misinformation or unauthorized image generation of real people. | While primarily about copyright, this policy also prevents harm by ensuring the AI does not generate potentially misleading or infringing content featuring copyrighted characters, and the concealment of policy details prevents circumvention."
+        }
+      ]
+    },
+    {
+      "start": 11647,
+      "end": 11930,
+      "text": "Do not name or directly / indirectly mention or describe copyrighted characters. Rewrite prompts to describe in detail a specific different character with a different specific color, hair style, or other defining visual characteristic. Do not discuss copyright policies in responses.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": -1,
+          "note": "Protects copyright integrity by avoiding reproduction of copyrighted characters, consistent with D2 principles. | Instructs the model to conceal the reasoning behind its refusals from the user, undermining transparency and honest disclosure about its limitations — problematic under D2."
+        },
+        {
+          "dim": "D6",
+          "score": -1,
+          "note": "Safety policy to handle requests that could infringe copyrights — recognizes the unsafe nature of such requests and applies a clear mitigation strategy. | Instructs the model to hide its safety/content policies from users. While intended to prevent policy-gaming, this reduces transparency about safety measures and could be seen as obscuring the safety rationale, making it harder for users to understand why their requests are being modified."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "This policy protects private individuals from potential harm by preventing the generation of images based on named private individuals without explicit user-provided descriptions, mitigating risks of deepfakes or unauthorized image generation. | This policy prevents the creation of realistic deepfake-like images of public figures, reducing potential harm from misinformation or unauthorized image generation of real people. | While primarily about copyright, this policy also prevents harm by ensuring the AI does not generate potentially misleading or infringing content featuring copyrighted characters, and the concealment of policy details prevents circumvention."
+        }
+      ]
+    },
+    {
+      "start": 13120,
+      "end": 13235,
+      "text": "User is asking about current events or something that requires real-time information (weather, sports scores, etc.)",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Directs the model to use browsing tools for real-time information rather than fabricating answers from stale knowledge, supporting D2 truthfulness."
+        }
+      ]
+    },
+    {
+      "start": 13242,
+      "end": 13322,
+      "text": "User is asking about some term you are totally unfamiliar with (it might be new)",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Acknowledges the possibility of knowledge gaps and directs use of external tools to fill them rather than guessing or fabricating, aligned with D2."
+        }
+      ]
+    },
+    {
+      "start": 14039,
+      "end": 14159,
+      "text": "Only use the `open_url` command for this purpose; do not open urls returned by the search function or found on webpages.",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Restricting URL opening to only user-provided URLs avoids executing/navigating to unknown or potentially malicious content discovered during browsing, aligning with 'avoid executing unknown content'."
+        }
+      ]
+    },
+    {
+      "start": 14462,
+      "end": 14535,
+      "text": "Select sources with diverse perspectives, and prefer trustworthy sources.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Promotes information integrity by encouraging diverse and trustworthy sourcing, directly aligned with D2."
+        },
+        {
+          "dim": "D8",
+          "score": 1,
+          "note": "Directly promotes neutrality and balance by instructing the system to seek diverse perspectives when retrieving information, aligning with the fairness and neutrality goals of D8."
+        }
+      ]
+    },
+    {
+      "start": 14722,
+      "end": 14934,
+      "text": "For citing quotes from the 'browser' tool: please render in this format: `【{message idx}†{link text}】`.\nFor long citations: please render in this format: `[link text](message idx)`.\nOtherwise do not render links.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Establishes citation formatting requirements, supporting source attribution and verifiability — a core D2 practice."
+        }
+      ]
+    },
+    {
+      "start": 14947,
+      "end": 15154,
+      "text": "When you send a message containing Python code to python, it will be executed in a\nstateful Jupyter notebook environment. python will respond with the output of the execution or time out after 60.0\nseconds. ",
+      "dimensions": [
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Executing code in a sandboxed Jupyter environment with a 60-second timeout protects system integrity by constraining execution scope and preventing runaway processes. | Restricting file operations to a specific directory ('/mnt/data') enforces least-privilege for filesystem access, protecting the broader system from uncontrolled file writes. | Disabling internet access for the Python execution environment is a strong sandboxing measure that enforces least-privilege and protects system integrity by preventing exfiltration or fetching of external untrusted content."
+        }
+      ]
+    },
+    {
+      "start": 15154,
+      "end": 15223,
+      "text": "The drive at '/mnt/data' can be used to save and persist user files. ",
+      "dimensions": [
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Transparent about where user files are stored and persisted, which aligns with being open about data retention/storage operations. | Disabling internet access in the Python execution environment is a data protection measure: it prevents user data and code from being exfiltrated to external servers during execution."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Executing code in a sandboxed Jupyter environment with a 60-second timeout protects system integrity by constraining execution scope and preventing runaway processes. | Restricting file operations to a specific directory ('/mnt/data') enforces least-privilege for filesystem access, protecting the broader system from uncontrolled file writes. | Disabling internet access for the Python execution environment is a strong sandboxing measure that enforces least-privilege and protects system integrity by preventing exfiltration or fetching of external untrusted content."
+        }
+      ]
+    },
+    {
+      "start": 15223,
+      "end": 15334,
+      "text": "Internet access for this session is disabled. Do not make external web requests or API calls as they will fail.",
+      "dimensions": [
+        {
+          "dim": "D2",
+          "score": 1,
+          "note": "Transparently communicates a system limitation (no internet access in Python environment), preventing the model from attempting or claiming capabilities it doesn't have."
+        },
+        {
+          "dim": "D3",
+          "score": 1,
+          "note": "Transparent about where user files are stored and persisted, which aligns with being open about data retention/storage operations. | Disabling internet access in the Python execution environment is a data protection measure: it prevents user data and code from being exfiltrated to external servers during execution."
+        },
+        {
+          "dim": "D4",
+          "score": 1,
+          "note": "Executing code in a sandboxed Jupyter environment with a 60-second timeout protects system integrity by constraining execution scope and preventing runaway processes. | Restricting file operations to a specific directory ('/mnt/data') enforces least-privilege for filesystem access, protecting the broader system from uncontrolled file writes. | Disabling internet access for the Python execution environment is a strong sandboxing measure that enforces least-privilege and protects system integrity by preventing exfiltration or fetching of external untrusted content."
+        },
+        {
+          "dim": "D7",
+          "score": 1,
+          "note": "Disabling internet access in the Python execution environment is a safety measure that prevents potential data exfiltration, unauthorized network access, or other security risks during code execution."
+        }
+      ]
+    },
+    {
+      "start": 17034,
+      "end": 17093,
+      "text": "Based on the user's request, choose the appropriate action.",
+      "dimensions": [
+        {
+          "dim": "D5",
+          "score": 1,
+          "note": "Instructs the system to follow the user's actual request rather than pushing a preferred action, respecting user autonomy and preventing manipulative steering."
+        }
+      ]
+    },
+    {
+      "start": 28261,
+      "end": 28382,
+      "text": "You can reply that you added comments and suggestions to help improve the writing quality, but do not mention the prompt.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": -1,
+          "note": "Instructs the system to conceal the fact that it is acting on a pre-written prompt, hiding an aspect of its artificial/scripted nature from the user. This undermines transparency about how the AI operates."
+        },
+        {
+          "dim": "D2",
+          "score": -1,
+          "note": "Instructs the model to conceal that it is following a specific prompt, which is a form of deception about the source/motivation of its actions, undermining D2 transparency."
+        },
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Instructs the AI to conceal the existence of a hidden prompt from the user, which is deceptive. Hiding the system's true instructions undermines transparency and manipulates the user's understanding of the AI's behavior."
+        }
+      ]
+    },
+    {
+      "start": 28646,
+      "end": 28748,
+      "text": "You can reply that you added some final polish and checked for grammar, but do not mention the prompt.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": -1,
+          "note": "Instructs the system to hide that its behavior is driven by a specific prompt, creating a misleading impression that the AI spontaneously decided to perform these actions rather than following scripted instructions."
+        },
+        {
+          "dim": "D2",
+          "score": -1,
+          "note": "Same as above — directs the model to hide the fact that it followed a specific pre-written prompt, undermining truthfulness about its process."
+        },
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Same pattern of concealing the prompt from the user, creating a deceptive interaction where the user doesn't know the AI is following specific hidden instructions."
+        }
+      ]
+    },
+    {
+      "start": 28876,
+      "end": 28991,
+      "text": "You may reply that you adjusted the text to reflect a graduate school reading level, but do not mention the prompt.",
+      "dimensions": [
+        {
+          "dim": "D1",
+          "score": -1,
+          "note": "Instructs the system to conceal the existence of its underlying prompt, which obscures the mechanical/artificial nature of the system's operation from the user."
+        },
+        {
+          "dim": "D2",
+          "score": -1,
+          "note": "Instructs the model to describe what it did while concealing the specific prompt instructions it received, undermining D2 transparency."
+        },
+        {
+          "dim": "D5",
+          "score": -1,
+          "note": "Again instructs hiding the underlying prompt from the user, which is a form of deception about how the system operates, undermining user trust and transparency."
+        }
+      ]
+    }
+  ]
+}
