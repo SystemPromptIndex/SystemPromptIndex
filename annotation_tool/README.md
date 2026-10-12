@@ -78,6 +78,7 @@ The paper reports **88 audited prompts and 3,219 Round-1 candidates**. One input
 
 - Personal annotator and expert names are represented by role IDs such as `annotator_1` and `expert_1`.
 - Git history, local editor settings, machine-specific configuration, review-state backups, and private annotation outputs are not included.
+- Human-review decisions, comments, exported review results, and final adjudication labels are deliberately excluded. The released review interfaces contain tool logic only, not reviewers' completed conclusions.
 - Organization and product names are retained because they are attributes of the audited public prompts, not author-identifying metadata.
 - Raw reviewed annotations and the paper's final 88-product dataset are distributed through the separate anonymous data release.
 
