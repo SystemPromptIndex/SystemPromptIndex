@@ -1,8 +1,8 @@
 """
-Annotation Tool — 89 Prompts (v3 Pre-annotations)
-==================================================
+Annotation Tool — 88 Audited Prompts
+=====================================
 Based on the Training Tool's review workflow.
-Loads 89 pre-annotated prompts from preannotation_v3_89/ and presents
+Loads 88 pre-annotated prompts from preannotation/ and presents
 them for human review (accept/reject per span-dimension).
 
 Run:  python app.py          → http://127.0.0.1:5009
@@ -21,7 +21,7 @@ from flask import Flask, abort, jsonify, render_template, request, send_from_dir
 BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 DATA_FILE = DATA_DIR / "audit_prompts_filtered.json"
-PREANNOTATION_DIR = DATA_DIR / "preannotation_v3_89"
+PREANNOTATION_DIR = DATA_DIR / "preannotation"
 OUTPUT_DIR = Path(__file__).parent / "outputs"
 OUTPUT_DIR.mkdir(exist_ok=True)
 REVIEW_STATE_FILE = Path(__file__).parent / "review_state.json"
@@ -176,12 +176,16 @@ def _build_prompt_dict(raw: list[dict]) -> dict:
         else:
             pid = base_id
             id_count[base_id] = 1
-        result[pid] = {**entry, "id": pid, "index": idx}
+        result[pid] = {
+            **entry,
+            "id": pid,
+            "index": entry.get("preannotation_index", idx),
+        }
     return result
 
 
 def _load_preannotations(raw_prompts: list[dict], prompts: dict) -> dict:
-    """Load all v3_89 pre-annotation files using deoverlap'd segments.
+    """Load the pre-annotation files using deoverlap'd segments.
 
     Uses the 'segments' field (atomic, non-overlapping segments produced by
     deoverlap_spans) and flattens each segment's dimension list into the

@@ -1,6 +1,6 @@
 # Supplementary data
 
-Anonymised release of the dataset for a submission under review.
+Anonymised release of the dataset and annotation code for a submission under review. The data, guidelines, cross-model check, and annotation tool are maintained together in this repository so that the paper points to a single artifact.
 
 - [HUMAN_AUDITED_DATASET.md](HUMAN_AUDITED_DATASET.md): the 88 human-audited products, with links to each annotation file (`audits/`) and prompt (`prompts/`).
 - [ANNOTATION_GUIDELINES.md](ANNOTATION_GUIDELINES.md): the annotation guidelines, including the full definitions of the eight dimensions.

@@ -17,7 +17,7 @@ from pathlib import Path
 
 DEFAULT_MERGED_FILE = (
     Path(__file__).resolve().parent.parent
-    / "annotation_tool_89"
+    / "annotation_tool"
     / "outputs"
     / "final_result"
     / "analysis"

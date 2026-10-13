@@ -8,7 +8,7 @@ Anthropic prompts in the paper (everything under company=Anthropic in
 audit_prompts_filtered.json, excluding research_lead_agent.md).
 
 Outputs land in data/gemini_preannotation_anthropic/ with the same JSON
-structure as data/preannotation_v3_89/ — diffable span-for-span.
+structure as data/preannotation/ — diffable span-for-span.
 
 Usage:
   export GEMINI_API_KEY="AIzaSy..."

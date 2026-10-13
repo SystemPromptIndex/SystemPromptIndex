@@ -2,12 +2,11 @@
 
 Round 1 of the audit used one LLM pre-annotator. To check whether its labels are specific to that model, a second model from a different provider (Gemini-3.1-Pro) was given every Round-1 candidate span and asked to assign dimensions and polarities, without access to the original labels.
 
-`second_model_labels.jsonl` has one line per candidate span: 3,251 spans from 89 prompts. 32 of them (`in_audited_set: false`) belong to one prompt whose review was not completed and which is not part of the released dataset; the other 3,219 belong to the 88 audited products.
+`second_model_labels.jsonl` has one line for each of the 3,219 Round-1 candidate spans from the 88 audited products.
 
 | Field | Meaning |
 |:--|:--|
 | `id` | the product, matching `audits/<id>.json` and `prompts/<id>.md` |
-| `in_audited_set` | whether the product is among the 88 released ones |
 | `start`, `end`, `text` | the candidate span (character offsets into the prompt body as it was pre-annotated) |
 | `round1_labels` | dimensions and scores proposed by the pre-annotator in Round 1, before human review |
 | `second_model_labels` | dimensions and scores assigned independently by the second model |

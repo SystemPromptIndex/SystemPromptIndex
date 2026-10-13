@@ -8,25 +8,11 @@ A toolkit for auditing AI system prompts across safety and transparency dimensio
 
 ```bash
 pip install flask
-cd annotation_tool_89
+cd annotation_tool
 python app.py
 ```
 
 Open **http://127.0.0.1:5009** → Enter an anonymous participant ID → Enter the assigned prompt range → Start.
-
-### Annotator Assignments
-
-| Annotator | From | To | Prompts | Spans |
-|-----------|------|----|---------|-------|
-| 1 | 1 | 11 | 11 | 464 |
-| 2 | 12 | 24 | 13 | 467 |
-| 3 | 25 | 35 | 11 | 464 |
-| 4 | 36 | 47 | 12 | 463 |
-| 5 | 48 | 59 | 12 | 466 |
-| 6 | 60 | 75 | 16 | 463 |
-| 7 | 76 | 89 | 14 | 464 |
-
-Prompts are ordered so that same-company prompts are distributed across different annotators. Spans are balanced (~464 per person).
 
 ### Training Tool (Calibration)
 
@@ -43,7 +29,7 @@ Open **http://127.0.0.1:5008** — 16 training prompts with 20 spans for annotat
 export OPENROUTER_API_KEY="sk-or-..."
 
 python scripts/llm_preannotate_v3.py --index 1              # Single prompt
-python scripts/llm_preannotate_v3.py --batch --all           # All 89 prompts
+python scripts/llm_preannotate_v3.py --batch --all           # All audited prompts
 python scripts/llm_preannotate_v3.py --batch --all --parallel 5 --parallel-dims  # Parallel
 python scripts/llm_preannotate_v3.py --batch --all --resume  # Resume interrupted
 ```
@@ -67,12 +53,11 @@ D9 (Miscellaneous) is available for annotators to add manual notes not covered b
 
 ## Dataset Summary
 
-- **89 pre-annotation inputs** from 35 organizations
-- **3,251 initial candidate spans** (non-overlapping, 6–100 words each)
-- **5,810 dimension entries** (D1–D8, no D9)
+- **88 audited prompts** from 35 organizations
+- **3,219 Round-1 candidate spans**
 - Pre-annotated by Claude Opus 4.6 via per-dimension span extraction
 
-The paper reports **88 audited prompts and 3,219 Round-1 candidates**. One input prompt with 32 candidates did not complete human review and is excluded from every reported analysis. It remains in the pre-annotation inputs so the released code reflects the workflow as run; downstream analysis must apply the documented exclusion.
+These are the same audited products and Round-1 candidates reported in the paper. Final human-reviewed annotations are distributed in the root of this same anonymous repository.
 
 ## Anonymization
 
@@ -88,10 +73,9 @@ The paper reports **88 audited prompts and 3,219 Round-1 candidates**. One input
 .
 ├── data/                              # Prompt inputs and pre-annotations
 │   ├── audit_prompts.json             #   Full prompt corpus
-│   ├── audit_prompts_filtered.json    #   89 curated system prompts
-│   ├── all_segments_3251.json         #   All segments flattened
-│   ├── preannotation_v3_89/           #   LLM pre-annotation results (89 files)
-│   ├── cross_validation_results.json  #   Cross-validation output
+│   ├── audit_prompts_filtered.json    #   88 audited system prompts
+│   ├── all_segments.json              #   3,219 Round-1 candidates
+│   ├── preannotation/                 #   LLM pre-annotation results
 │   ├── standards_dimensions.txt       #   Dimension definitions & examples
 │   ├── unique_system_prompts_summary.json
 │   ├── unique_system_prompts_summary.csv
@@ -103,7 +87,7 @@ The paper reports **88 audited prompts and 3,219 Round-1 candidates**. One input
 │   ├── cross_validate.py              #   Cross-validation analysis
 │   └── prune_overdim.py               #   Prune over-annotated dimensions
 │
-├── annotation_tool_89/                # Main annotation tool (89 prompts)
+├── annotation_tool/                   # Main annotation tool
 │   ├── app.py                         #   Flask backend (port 5009)
 │   ├── templates/index.html           #   Frontend (single-page app)
 │   ├── analysis/                      #   Analysis pipeline & plots
@@ -130,16 +114,16 @@ The paper reports **88 audited prompts and 3,219 Round-1 candidates**. One input
 data/audit_prompts_filtered.json
         │
         ▼
-scripts/llm_preannotate_v3.py  ──→  data/preannotation_v3_89/*.json
+scripts/llm_preannotate_v3.py  ──→  data/preannotation/*.json
         │
         ▼  (loaded by annotation tool)
-annotation_tool_89/app.py  ──→  review_state.json (local auto-save; ignored by Git)
+annotation_tool/app.py  ──→  review_state.json (local auto-save; ignored by Git)
         │
         ▼  (export)
 local exported annotation JSON
         │
         ▼  (merge & analyze)
-annotation_tool_89/analysis/  ──→  local merged results + plots/
+annotation_tool/analysis/  ──→  local merged results + plots/
 ```
 
 ## Troubleshooting

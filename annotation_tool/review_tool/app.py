@@ -1,7 +1,7 @@
 """
 Review Tool — Second-Pass Annotation (Misc & Need-Second-Review)
 ================================================================
-Same UI and workflow as annotation_tool_89, but only shows prompts/spans
+Same UI and workflow as annotation_tool, but only shows prompts/spans
 that were flagged as Misc or Need Second Review in the first pass.
 
 Original LLM scores and notes are preserved; reviewer decisions are stripped
@@ -23,7 +23,7 @@ from flask import Flask, abort, jsonify, render_template, request
 
 BASE_DIR = Path(__file__).parent.parent
 DATA_FILE = BASE_DIR / "audit_prompts_filtered.json"
-FINAL_RESULT_DIR = BASE_DIR / "annotation_tool_89" / "outputs" / "final_result"
+FINAL_RESULT_DIR = BASE_DIR / "annotation_tool" / "outputs" / "final_result"
 OUTPUT_DIR = Path(__file__).parent / "outputs"
 OUTPUT_DIR.mkdir(exist_ok=True)
 REVIEW_STATE_FILE = Path(__file__).parent / "review_state.json"

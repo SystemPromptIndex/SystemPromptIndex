@@ -43,7 +43,7 @@ def _load_dotenv():
 _load_dotenv()
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-PREANNOTATION_DIR = Path(__file__).parent / "preannotation_v3_89"
+PREANNOTATION_DIR = Path(__file__).parent / "preannotation"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 MODEL = "anthropic/claude-opus-4.6"

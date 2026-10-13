@@ -14,7 +14,7 @@ Usage:
   python llm_preannotate_v3.py --index 5                    # specific prompt by index
   python llm_preannotate_v3.py --filename gpt4o_12102024.md
   python llm_preannotate_v3.py --batch                      # run on 20 pilot prompts
-  python llm_preannotate_v3.py --batch --all                # run on ALL 89 filtered prompts
+  python llm_preannotate_v3.py --batch --all                # run on all audited prompts
   python llm_preannotate_v3.py --batch --all --resume       # resume interrupted batch
   python llm_preannotate_v3.py --batch --all --dry-run      # show plan only
   python llm_preannotate_v3.py --batch --all --use-full     # use full 190 prompts instead
@@ -56,7 +56,7 @@ _load_dotenv()
 # ─── Config ───────────────────────────────────────────────────────────────────
 DATA_FILE_FULL = Path(__file__).parent / "audit_prompts.json"
 DATA_FILE_FILTERED = Path(__file__).parent / "audit_prompts_filtered.json"
-DATA_FILE = DATA_FILE_FILTERED  # default to filtered 89 prompts
+DATA_FILE = DATA_FILE_FILTERED  # default to the audited prompt set
 OUTPUT_DIR = Path(__file__).parent / "preannotation_v3"
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -1204,7 +1204,7 @@ def main():
     parser.add_argument("--parallel-dims", action="store_true",
                         help="Also parallelize 9 dimensions within each prompt")
     parser.add_argument("--use-full", action="store_true",
-                        help="Use full audit_prompts.json (190) instead of filtered (89)")
+                        help="Use full audit_prompts.json instead of the audited set")
     args = parser.parse_args()
 
     # Switch data file if requested

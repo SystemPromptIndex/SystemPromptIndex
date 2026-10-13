@@ -23,7 +23,7 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-OPUS_DIR = Path(__file__).parent.parent / "data" / "preannotation_v3_89"
+OPUS_DIR = Path(__file__).parent.parent / "data" / "preannotation"
 GEMINI_DIR = Path(__file__).parent.parent / "data" / "gemini_preannotation_anthropic"
 OUTPUT_JSON = Path(__file__).parent.parent / "data" / "opus_vs_gemini_anthropic.json"
 OUTPUT_TXT = Path(__file__).parent.parent / "data" / "opus_vs_gemini_anthropic_report.txt"

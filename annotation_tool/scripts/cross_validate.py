@@ -47,7 +47,7 @@ def _load_dotenv():
 _load_dotenv()
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-SEGMENTS_FILE = Path(__file__).parent / "all_segments_3251.json"
+SEGMENTS_FILE = Path(__file__).parent.parent / "data" / "all_segments.json"
 OUTPUT_FILE = Path(__file__).parent / "cross_validation_results.json"
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"

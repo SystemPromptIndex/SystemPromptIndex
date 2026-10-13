@@ -18,7 +18,7 @@ from collections import defaultdict
 from datetime import datetime
 
 ROOT = Path(__file__).resolve().parent.parent
-ANN_FILE = ROOT / "annotation_tool_89" / "analysis" / "annotations_restructured.json"
+ANN_FILE = ROOT / "annotation_tool" / "analysis" / "annotations_restructured.json"
 AUDIT_FILE = ROOT / "data" / "audit_prompts.json"
 
 WORD_BOUNDARY = re.compile(r"\s")

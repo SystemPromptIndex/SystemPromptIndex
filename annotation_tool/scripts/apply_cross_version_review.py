@@ -18,8 +18,8 @@ from datetime import datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
-REVIEW_FILE = BASE_DIR / "annotation_tool_89" / "analysis" / "review_results_2026-03-07.json"
-MERGED_FILE = BASE_DIR / "annotation_tool_89" / "outputs" / "final_result" / "analysis" / "merged_all_annotations.json"
+REVIEW_FILE = BASE_DIR / "annotation_tool" / "analysis" / "review_results_2026-03-07.json"
+MERGED_FILE = BASE_DIR / "annotation_tool" / "outputs" / "final_result" / "analysis" / "merged_all_annotations.json"
 RAW_PROMPTS_FILE = BASE_DIR / "data" / "audit_prompts_filtered.json"
 
 MATCH_PREFIX_LEN = 50

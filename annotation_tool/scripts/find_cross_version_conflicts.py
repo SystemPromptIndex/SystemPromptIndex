@@ -12,8 +12,8 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 ROOT = SCRIPT_DIR.parent
-MERGED = ROOT / "annotation_tool_89" / "analysis" / "merged_all_annotations.json"
-OUTPUT = ROOT / "annotation_tool_89" / "analysis" / "cross_version_conflicts.json"
+MERGED = ROOT / "annotation_tool" / "analysis" / "merged_all_annotations.json"
+OUTPUT = ROOT / "annotation_tool" / "analysis" / "cross_version_conflicts.json"
 
 MIN_TEXT_LEN = 30
 

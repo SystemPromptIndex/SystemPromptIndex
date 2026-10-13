@@ -8,8 +8,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-MERGED = ROOT / "annotation_tool_89" / "analysis" / "merged_all_annotations.json"
-OUTPUT = ROOT / "annotation_tool_89" / "analysis" / "negative_spans_review.json"
+MERGED = ROOT / "annotation_tool" / "analysis" / "merged_all_annotations.json"
+OUTPUT = ROOT / "annotation_tool" / "analysis" / "negative_spans_review.json"
 
 
 def main():

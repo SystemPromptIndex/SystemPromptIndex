@@ -20,8 +20,8 @@ from collections import defaultdict
 
 SCRIPT_DIR = Path(__file__).parent
 ROOT_DIR = SCRIPT_DIR.parent
-FINAL_RESULT_DIR = ROOT_DIR / "annotation_tool_89" / "outputs" / "final_result"
-ANALYSIS_DIR = ROOT_DIR / "annotation_tool_89" / "analysis"
+FINAL_RESULT_DIR = ROOT_DIR / "annotation_tool" / "outputs" / "final_result"
+ANALYSIS_DIR = ROOT_DIR / "annotation_tool" / "analysis"
 AUDIT_PROMPTS_FILE = ROOT_DIR / "data" / "audit_prompts.json"
 OUTPUT_FILE = ANALYSIS_DIR / "merged_all_annotations.json"
 

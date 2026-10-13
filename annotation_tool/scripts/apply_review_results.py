@@ -21,7 +21,7 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(__file__).parent.parent
-MERGED = ROOT / "annotation_tool_89" / "analysis" / "merged_all_annotations.json"
+MERGED = ROOT / "annotation_tool" / "analysis" / "merged_all_annotations.json"
 AUDIT = ROOT / "data" / "audit_prompts.json"
 
 
