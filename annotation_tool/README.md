@@ -65,7 +65,7 @@ These are the same audited products and Round-1 candidates reported in the paper
 - Git history, local editor settings, machine-specific configuration, review-state backups, and private annotation outputs are not included.
 - Human-review decisions, comments, exported review results, and final adjudication labels are deliberately excluded. The released review interfaces contain tool logic only, not reviewers' completed conclusions.
 - Organization and product names are retained because they are attributes of the audited public prompts, not author-identifying metadata.
-- Raw reviewed annotations and the paper's final 88-product dataset are distributed through the separate anonymous data release.
+- The paper's final 88-product dataset and reviewed annotations are available from the root of this same anonymous repository.
 
 ## Project Structure
 
@@ -78,8 +78,7 @@ These are the same audited products and Round-1 candidates reported in the paper
 │   ├── preannotation/                 #   LLM pre-annotation results
 │   ├── standards_dimensions.txt       #   Dimension definitions & examples
 │   ├── unique_system_prompts_summary.json
-│   ├── unique_system_prompts_summary.csv
-│   └── filtered_prompt_list.txt
+│   └── unique_system_prompts_summary.csv
 │
 ├── scripts/                           # Pipeline scripts
 │   ├── llm_preannotate_v3.py          #   LLM pre-annotation (per-dimension, D1–D8)
